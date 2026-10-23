@@ -1,0 +1,41 @@
+name: 发布 GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 组装移动端与桌面端页面
+        run: |
+          mkdir -p _site/desktop _site/data
+          cp worklens-mobile_8a6r/v2/* _site/
+          cp worklens_zn3k/v3/* _site/desktop/
+          cp data/*.json _site/data/
+          touch _site/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: 发布 Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

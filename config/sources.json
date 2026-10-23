@@ -1,0 +1,23 @@
+{
+  "github_queries": [
+    "topic:agent-skills stars:>50 archived:false",
+    "topic:github-pages stars:>100 archived:false",
+    "topic:design-system stars:>200 archived:false",
+    "topic:developer-tools stars:>500 archived:false",
+    "topic:ai-agent stars:>500 archived:false"
+  ],
+  "repositories": [
+    "wuyoscar/AISafetyHot-Hub",
+    "DIYgod/RSSHub",
+    "mshibanami/GitHubTrendingRSS",
+    "CodeSigils/skill-discovery",
+    "VoltAgent/awesome-agent-skills"
+  ],
+  "rss": [],
+  "policy": {
+    "max_candidates_per_query": 10,
+    "minimum_stars": 20,
+    "exclude_archived": true,
+    "require_license_for_adoption": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "signals": {
+    "repositories": {"enabled": true, "weight": 0.24},
+    "meetings": {"enabled": false, "weight": 0.14},
+    "lark_docs": {"enabled": false, "weight": 0.14},
+    "podcasts_articles": {"enabled": false, "weight": 0.12},
+    "taste_ledger": {"enabled": true, "weight": 0.18}
+  },
+  "interests": [],
+  "feedback": [],
+  "privacy": {
+    "store_raw_content": false,
+    "evidence_required": true,
+    "allow_source_level_disable": true
+  }
+}
