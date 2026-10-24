@@ -8,3 +8,6 @@ __pycache__/
 coverage/
 dist/
 _site/
+private-inputs/
+*.signals.jsonl
+.profile-signal-salt

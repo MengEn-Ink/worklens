@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "generated_at": null,
+  "privacy": {
+    "raw_content_stored": false,
+    "titles_stored": false,
+    "urls_stored": false,
+    "evidence_hashed": true
+  },
+  "summary": {
+    "record_count": 0,
+    "sources": {},
+    "topics": [],
+    "evidence_hashes": []
+  }
+}
