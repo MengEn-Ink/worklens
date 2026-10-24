@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-24T05:11:42.406204+00:00",
+  "generated_at": "2026-10-24T05:53:20.220979+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -33,12 +33,12 @@
         "search:topic:developer-tools stars:>500 archived:false"
       ],
       "enqueued_at": "2026-10-24T04:55:16.586362+00:00",
-      "metadata_synced_at": "2026-10-24T04:55:16.586362+00:00",
+      "metadata_synced_at": "2026-10-24T05:53:20.217353+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 373475,
-      "pushed_at": "2026-10-24T02:13:42Z",
+      "stars": 374211,
+      "pushed_at": "2026-10-24T05:48:06Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -129,11 +129,11 @@
       "source": "repository:VoltAgent/awesome-agent-skills",
       "also_seen_in": [],
       "enqueued_at": "2026-10-24T04:55:16.587321+00:00",
-      "metadata_synced_at": "2026-10-24T04:55:16.587321+00:00",
+      "metadata_synced_at": "2026-10-24T05:53:20.218320+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 36238,
+      "stars": 36247,
       "pushed_at": "2026-10-23T08:16:35Z",
       "checks": {
         "license_declared": {
@@ -259,12 +259,12 @@
       "source": "search:topic:agent-skills stars:>50 archived:false",
       "also_seen_in": [],
       "enqueued_at": "2026-10-24T04:55:16.589192+00:00",
-      "metadata_synced_at": "2026-10-24T04:55:16.589192+00:00",
+      "metadata_synced_at": "2026-10-24T05:53:20.219937+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 340,
-      "pushed_at": "2026-10-24T02:05:27Z",
+      "stars": 341,
+      "pushed_at": "2026-10-24T05:52:55Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -374,6 +374,170 @@
       "history": [
         {
           "at": "2026-10-24T04:55:16.590112+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0012",
+      "subject": "CherryHQ/cherry-studio",
+      "html_url": "https://github.com/CherryHQ/cherry-studio",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [
+        "search:topic:ai-agent stars:>500 archived:false"
+      ],
+      "enqueued_at": "2026-10-24T05:53:20.218018+00:00",
+      "metadata_synced_at": "2026-10-24T05:53:20.218018+00:00",
+      "state": "candidate",
+      "license": "AGPL-3.0",
+      "archived": false,
+      "stars": 52928,
+      "pushed_at": "2026-10-24T05:51:19Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=AGPL-3.0",
+          "checked_at": "2026-10-24T05:53:20.218018+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-24T05:53:20.218018+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0013",
+      "subject": "sickn33/agentic-awesome-skills",
+      "html_url": "https://github.com/sickn33/agentic-awesome-skills",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-24T05:53:20.218088+00:00",
+      "metadata_synced_at": "2026-10-24T05:53:20.218088+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 48422,
+      "pushed_at": "2026-10-24T05:47:00Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-10-24T05:53:20.218088+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-24T05:53:20.218088+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0014",
+      "subject": "aipoch/open-science",
+      "html_url": "https://github.com/aipoch/open-science",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [
+        "search:topic:ai-agent stars:>500 archived:false"
+      ],
+      "enqueued_at": "2026-10-24T05:53:20.219084+00:00",
+      "metadata_synced_at": "2026-10-24T05:53:20.219084+00:00",
+      "state": "candidate",
+      "license": "Apache-2.0",
+      "archived": false,
+      "stars": 5355,
+      "pushed_at": "2026-10-24T05:51:40Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=Apache-2.0",
+          "checked_at": "2026-10-24T05:53:20.219084+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-24T05:53:20.219084+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0015",
+      "subject": "JKHeadley/instar",
+      "html_url": "https://github.com/JKHeadley/instar",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-24T05:53:20.220459+00:00",
+      "metadata_synced_at": "2026-10-24T05:53:20.220459+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 84,
+      "pushed_at": "2026-10-24T05:51:55Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-10-24T05:53:20.220459+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-24T05:53:20.220459+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0016",
+      "subject": "TserenTserenov/FMT-exocortex-template",
+      "html_url": "https://github.com/TserenTserenov/FMT-exocortex-template",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-24T05:53:20.220533+00:00",
+      "metadata_synced_at": "2026-10-24T05:53:20.220533+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 63,
+      "pushed_at": "2026-10-24T05:52:04Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-10-24T05:53:20.220533+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-24T05:53:20.220533+00:00",
           "event": "enqueued",
           "by": "worklens-bot",
           "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"

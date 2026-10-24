@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T02:15:22.646859+00:00",
+  "generated_at": "2026-10-24T05:53:20.136636+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -28,19 +28,15 @@
         "touhou"
       ],
       "language": "TypeScript",
-      "stars": 373475,
-      "forks": 93414,
-      "open_issues": 1493,
+      "stars": 374211,
+      "forks": 93591,
+      "open_issues": 1447,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-24T02:13:42Z",
-      "updated_at": "2026-10-24T02:15:04Z",
+      "pushed_at": "2026-10-24T05:48:06Z",
+      "updated_at": "2026-10-24T05:53:12Z",
       "source": "search:topic:agent-skills stars:>50 archived:false",
-      "collected_at": "2026-10-24T02:15:12.310810+00:00",
-      "also_seen_in": [
-        "search:topic:developer-tools stars:>500 archived:false"
-      ],
-      "relationships": []
+      "collected_at": "2026-10-24T05:53:16.855675+00:00"
     },
     {
       "full_name": "microsoft/PowerToys",
@@ -61,15 +57,15 @@
         "windows-11"
       ],
       "language": "C",
-      "stars": 139678,
+      "stars": 139710,
       "forks": 8622,
       "open_issues": 7850,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-10-23T21:22:18Z",
-      "updated_at": "2026-10-24T02:06:38Z",
+      "updated_at": "2026-10-24T05:46:34Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741401+00:00",
+      "collected_at": "2026-10-24T05:53:16.140904+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -100,55 +96,18 @@
         "windsurf-ai"
       ],
       "language": "Python",
-      "stars": 139457,
-      "forks": 14771,
+      "stars": 139517,
+      "forks": 14777,
       "open_issues": 88,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-10-23T10:06:31Z",
-      "updated_at": "2026-10-24T02:13:22Z",
+      "updated_at": "2026-10-24T05:52:52Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741420+00:00",
+      "collected_at": "2026-10-24T05:53:16.140916+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
-    },
-    {
-      "full_name": "paperclipai/paperclip",
-      "html_url": "https://github.com/paperclipai/paperclip",
-      "description": "The open-source app everyone uses to manage agents at work",
-      "topics": [
-        "acpx",
-        "agent-orchestration",
-        "agent-skills",
-        "agentic-ai",
-        "ai-agents",
-        "ai-engineering",
-        "ai-governance",
-        "ai-tools",
-        "autonomous-agents",
-        "claude",
-        "claude-code",
-        "claude-skills",
-        "codex",
-        "hermes",
-        "llm",
-        "mcp",
-        "multi-agent",
-        "openclaw",
-        "project-management",
-        "workflow-automation"
-      ],
-      "language": "TypeScript",
-      "stars": 106613,
-      "forks": 17722,
-      "open_issues": 6446,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-10-24T02:14:17Z",
-      "updated_at": "2026-10-24T02:14:20Z",
-      "source": "search:topic:agent-skills stars:>50 archived:false",
-      "collected_at": "2026-10-24T02:15:12.310786+00:00"
     },
     {
       "full_name": "mui/material-ui",
@@ -163,14 +122,14 @@
       ],
       "language": "JavaScript",
       "stars": 99262,
-      "forks": 32489,
-      "open_issues": 1519,
+      "forks": 32488,
+      "open_issues": 1518,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-24T00:46:01Z",
-      "updated_at": "2026-10-24T02:12:00Z",
+      "pushed_at": "2026-10-24T05:23:59Z",
+      "updated_at": "2026-10-24T05:25:22Z",
       "source": "search:topic:design-system stars:>200 archived:false",
-      "collected_at": "2026-10-24T02:15:15.664469+00:00"
+      "collected_at": "2026-10-24T05:53:18.394201+00:00"
     },
     {
       "full_name": "tailwindlabs/tailwindcss",
@@ -186,15 +145,15 @@
         "utility-classes"
       ],
       "language": "TypeScript",
-      "stars": 98035,
-      "forks": 8325,
+      "stars": 98036,
+      "forks": 8326,
       "open_issues": 99,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-10-19T15:50:56Z",
-      "updated_at": "2026-10-24T01:53:26Z",
+      "updated_at": "2026-10-24T05:45:04Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741454+00:00",
+      "collected_at": "2026-10-24T05:53:16.140944+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -218,15 +177,15 @@
         "websocket"
       ],
       "language": "JavaScript",
-      "stars": 92810,
+      "stars": 92816,
       "forks": 8599,
-      "open_issues": 858,
+      "open_issues": 860,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-24T00:06:03Z",
-      "updated_at": "2026-10-24T01:43:47Z",
+      "pushed_at": "2026-10-24T04:21:24Z",
+      "updated_at": "2026-10-24T05:48:05Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741393+00:00",
+      "collected_at": "2026-10-24T05:53:16.140892+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -237,15 +196,15 @@
       "description": "中英文敏感词、语言检测、中外手机/电话归属地/运营商查询、名字推断性别、手机号抽取、身份证抽取、邮箱抽取、中日文人名库、中文缩写库、拆字词典、词汇情感值、停用词、反动词表、暴恐词表、繁简体转换、英文模拟中文发音、汪峰歌词生成器、职业名称词库、同义词库、反义词库、否定词库、汽车品牌词库、汽车零件词库、连续英文切割、各种中文词向量、公司名字大全、古诗词库、IT词库、财经词库、成语词库、地名词库、历史名人词库、诗词词库、医学词库、饮食词库、法律词库、汽车词库、动物词库、中文聊天语料、中文谣言数据、百度中文问答数据集、句子相似度匹配算法集合、bert资源、文本生成&摘要相关工具、cocoNLP信息抽取工具、国内电话号码正则匹配、清华大学XLORE:中英文跨语言百科知识图谱、清华大学人工智能技术系列报告、自然语言生成、NLU太难了系列、自动对联数据及机器人、用户名黑名单列表、罪名法务名词及分类模型、微信公众号语料、cs224n深度学习自然语言处理课程、中文手写汉字识别、中文自然语言处理 语料/数据集、变量命名神器、分词语料库+代码、任务型对话英文数据集、ASR 语音数据集 + 基于深度学习的中文语音识别系统、笑声检测器、Microsoft多语言数字/单位/如日期时间识别包、中华新华字典数据库及api(包括常用歇后语、成语、词语和汉字)、文档图谱自动生成、SpaCy 中文模型、Common Voice语音识别数据集新版、神经网络关系抽取、基于bert的命名实体识别、关键词(Keyphrase)抽取包pke、基于医疗领域知识图谱的问答系统、基于依存句法与语义角色标注的事件三元组抽取、依存句法分析4万句高质量标注数据、cnocr：用来做中文OCR的Python3包、中文人物关系知识图谱项目、中文nlp竞赛项目及代码汇总、中文字符数据、speech-aligner: 从“人声语音”及其“语言文本”产生音素级别时间对齐标注的工具、AmpliGraph: 知识图谱表示学习(Python)库：知识图谱概念链接预测、Scattertext 文本可视化(python)、语言/知识表示工具：BERT & ERNIE、中文对比英文自然语言处理NLP的区别综述、Synonyms中文近义词工具包、HarvestText领域自适应文本挖掘工具（新词发现-情感分析-实体链接等）、word2word：(Python)方便易用的多语言词-词对集：62种语言/3,564个多语言对、语音识别语料生成工具：从具有音频/字幕的在线视频创建自动语音识别(ASR)语料库、构建医疗实体识别的模型（包含词典和语料标注）、单文档非监督的关键词抽取、Kashgari中使用gpt-2语言模型、开源的金融投资数据提取工具、文本自动摘要库TextTeaser: 仅支持英文、人民日报语料处理工具集、一些关于自然语言的基本模型、基于14W歌曲知识库的问答尝试--功能包括歌词接龙and已知歌词找歌曲以及歌曲歌手歌词三角关系的问答、基于Siamese bilstm模型的相似句子判定模型并提供训练数据集和测试数据集、用Transformer编解码模型实现的根据Hacker News文章标题自动生成评论、用BERT进行序列标记和文本分类的模板代码、LitBank：NLP数据集——支持自然语言处理和计算人文学科任务的100部带标记英文小说语料、百度开源的基准信息抽取系统、虚假新闻数据集、Facebook: LAMA语言模型分析，提供Transformer-XL/BERT/ELMo/GPT预训练语言模型的统一访问接口、CommonsenseQA：面向常识的英文QA挑战、中文知识图谱资料、数据及工具、各大公司内部里大牛分享的技术文档 PDF 或者 PPT、自然语言生成SQL语句（英文）、中文NLP数据增强（EDA）工具、英文NLP数据增强工具 、基于医药知识图谱的智能问答系统、京东商品知识图谱、基于mongodb存储的军事领域知识图谱问答项目、基于远监督的中文关系抽取、语音情感分析、中文ULMFiT-情感分析-文本分类-语料及模型、一个拍照做题程序、世界各国大规模人名库、一个利用有趣中文语料库 qingyun 训练出来的中文聊天机器人、中文聊天机器人seqGAN、省市区镇行政区划数据带拼音标注、教育行业新闻语料库包含自动文摘功能、开放了对话机器人-知识图谱-语义理解-自然语言处理工具及数据、中文知识图谱：基于百度百科中文页面-抽取三元组信息-构建中文知识图谱、masr: 中文语音识别-提供预训练模型-高识别率、Python音频数据增广库、中文全词覆盖BERT及两份阅读理解数据、ConvLab：开源多域端到端对话系统平台、中文自然语言处理数据集、基于最新版本rasa搭建的对话系统、基于TensorFlow和BERT的管道式实体及关系抽取、一个小型的证券知识图谱/知识库、复盘所有NLP比赛的TOP方案、OpenCLaP：多领域开源中文预训练语言模型仓库、UER：基于不同语料+编码器+目标任务的中文预训练模型仓库、中文自然语言处理向量合集、基于金融-司法领域(兼有闲聊性质)的聊天机器人、g2pC：基于上下文的汉语读音自动标记模块、Zincbase 知识图谱构建工具包、诗歌质量评价/细粒度情感诗歌语料库、快速转化「中文数字」和「阿拉伯数字」、百度知道问答语料库、基于知识图谱的问答系统、jieba_fast 加速版的jieba、正则表达式教程、中文阅读理解数据集、基于BERT等最新语言模型的抽取式摘要提取、Python利用深度学习进行文本摘要的综合指南、知识图谱深度学习相关资料整理、维基大规模平行文本语料、StanfordNLP 0.2.0：纯Python版自然语言处理包、NeuralNLP-NeuralClassifier：腾讯开源深度学习文本分类工具、端到端的封闭域对话系统、中文命名实体识别：NeuroNER vs. BertNER、新闻事件线索抽取、2019年百度的三元组抽取比赛：“科学空间队”源码、基于依存句法的开放域文本知识三元组抽取和知识库构建、中文的GPT2训练代码、ML-NLP - 机器学习(Machine Learning)NLP面试中常考到的知识点和代码实现、nlp4han:中文自然语言处理工具集(断句/分词/词性标注/组块/句法分析/语义分析/NER/N元语法/HMM/代词消解/情感分析/拼写检查、XLM：Facebook的跨语言预训练语言模型、用基于BERT的微调和特征提取方法来进行知识图谱百度百科人物词条属性抽取、中文自然语言处理相关的开放任务-数据集-当前最佳结果、CoupletAI - 基于CNN+Bi-LSTM+Attention 的自动对对联系统、抽象知识图谱、MiningZhiDaoQACorpus - 580万百度知道问答数据挖掘项目、brat rapid annotation tool: 序列标注工具、大规模中文知识图谱数据：1.4亿实体、数据增强在机器翻译及其他nlp任务中的应用及效果、allennlp阅读理解:支持多种数据和模型、PDF表格数据提取工具 、 Graphbrain：AI开源软件库和科研工具，目的是促进自动意义提取和文本理解以及知识的探索和推断、简历自动筛选系统、基于命名实体识别的简历自动摘要、中文语言理解测评基准，包括代表性的数据集&基准模型&语料库&排行榜、树洞 OCR 文字识别 、从包含表格的扫描图片中识别表格和文字、语声迁移、Python口语自然语言处理工具集(英文)、 similarity：相似度计算工具包，java编写、海量中文预训练ALBERT模型 、Transformers 2.0 、基于大规模音频数据集Audioset的音频增强 、Poplar：网页版自然语言标注工具、图片文字去除，可用于漫画翻译 、186种语言的数字叫法库、Amazon发布基于知识的人-人开放领域对话数据集 、中文文本纠错模块代码、繁简体转换 、 Python实现的多种文本可读性评价指标、类似于人名/地名/组织机构名的命名体识别数据集 、东南大学《知识图谱》研究生课程(资料)、. 英文拼写检查库 、 wwsearch是企业微信后台自研的全文检索引擎、CHAMELEON：深度学习新闻推荐系统元架构 、 8篇论文梳理BERT相关模型进展与反思、DocSearch：免费文档搜索引擎、 LIDA：轻量交互式对话标注工具 、aili - the fastest in-memory index in the East 东半球最快并发索引 、知识图谱车音工作项目、自然语言生成资源大全 、中日韩分词库mecab的Python接口库、中文文本摘要/关键词提取、汉字字符特征提取器 (featurizer)，提取汉字的特征（发音特征、字形特征）用做深度学习的特征、中文生成任务基准测评 、中文缩写数据集、中文任务基准测评 - 代表性的数据集-基准(预训练)模型-语料库-baseline-工具包-排行榜、PySS3：面向可解释AI的SS3文本分类器机器可视化工具 、中文NLP数据集列表、COPE - 格律诗编辑程序、doccano：基于网页的开源协同多语言文本标注工具 、PreNLP：自然语言预处理库、简单的简历解析器，用来从简历中提取关键信息、用于中文闲聊的GPT2模型：GPT2-chitchat、基于检索聊天机器人多轮响应选择相关资源列表(Leaderboards、Datasets、Papers)、(Colab)抽象文本摘要实现集锦(教程 、词语拼音数据、高效模糊搜索工具、NLP数据增广资源集、微软对话机器人框架 、 GitHub Typo Corpus：大规模GitHub多语言拼写错误/语法错误数据集、TextCluster：短文本聚类预处理模块 Short text cluster、面向语音识别的中文文本规范化、BLINK：最先进的实体链接库、BertPunc：基于BERT的最先进标点修复模型、Tokenizer：快速、可定制的文本词条化库、中文语言理解测评基准，包括代表性的数据集、基准(预训练)模型、语料库、排行榜、spaCy 医学文本挖掘与信息提取 、 NLP任务示例项目代码集、 python拼写检查库、chatbot-list - 行业内关于智能客服、聊天机器人的应用和架构、算法分享和介绍、语音质量评价指标(MOSNet, BSSEval, STOI, PESQ, SRMR)、 用138GB语料训练的法文RoBERTa预训练语言模型 、BERT-NER-Pytorch：三种不同模式的BERT中文NER实验、无道词典 - 有道词典的命令行版本，支持英汉互查和在线查询、2019年NLP亮点回顾、 Chinese medical dialogue data 中文医疗对话数据集 、最好的汉字数字(中文数字)-阿拉伯数字转换工具、 基于百科知识库的中文词语多词义/义项获取与特定句子词语语义消歧、awesome-nlp-sentiment-analysis - 情感分析、情绪原因识别、评价对象和评价词抽取、LineFlow：面向所有深度学习框架的NLP数据高效加载器、中文医学NLP公开资源整理 、MedQuAD：(英文)医学问答数据集、将自然语言数字串解析转换为整数和浮点数、Transfer Learning in Natural Language Processing (NLP) 、面向语音识别的中文/英文发音辞典、Tokenizers：注重性能与多功能性的最先进分词器、CLUENER 细粒度命名实体识别 Fine Grained Named Entity Recognition、 基于BERT的中文命名实体识别、中文谣言数据库、NLP数据集/基准任务大列表、nlp相关的一些论文及代码, 包括主题模型、词向量(Word Embedding)、命名实体识别(NER)、文本分类(Text Classificatin)、文本生成(Text Generation)、文本相似性(Text Similarity)计算等，涉及到各种与nlp相关的算法，基于keras和tensorflow 、Python文本挖掘/NLP实战示例、 Blackstone：面向非结构化法律文本的spaCy pipeline和NLP模型通过同义词替换实现文本“变脸” 、中文 预训练 ELECTREA 模型: 基于对抗学习 pretrain Chinese Model 、albert-chinese-ner - 用预训练语言模型ALBERT做中文NER 、基于GPT2的特定主题文本生成/文本增广、开源预训练语言模型合集、多语言句向量包、编码、标记和实现：一种可控高效的文本生成方法、 英文脏话大列表 、attnvis：GPT2、BERT等transformer语言模型注意力交互可视化、CoVoST：Facebook发布的多语种语音-文本翻译语料库，包括11种语言(法语、德语、荷兰语、俄语、西班牙语、意大利语、土耳其语、波斯语、瑞典语、蒙古语和中文)的语音、文字转录及英文译文、Jiagu自然语言处理工具 - 以BiLSTM等模型为基础，提供知识图谱关系抽取 中文分词 词性标注 命名实体识别 情感分析 新词发现 关键词 文本摘要 文本聚类等功能、用unet实现对文档表格的自动检测，表格重建、NLP事件提取文献资源列表 、 金融领域自然语言处理研究资源大列表、CLUEDatasetSearch - 中英文NLP数据集：搜索所有中文NLP数据集，附常用英文NLP数据集 、medical_NER - 中文医学知识图谱命名实体识别 、(哈佛)讲因果推理的免费书、知识图谱相关学习资料/数据集/工具资源大列表、Forte：灵活强大的自然语言处理pipeline工具集 、Python字符串相似性算法库、PyLaia：面向手写文档分析的深度学习工具包、TextFooler：针对文本分类/推理的对抗文本生成模块、Haystack：灵活、强大的可扩展问答(QA)框架、中文关键短语抽取工具",
       "topics": [],
       "language": "Python",
-      "stars": 84113,
+      "stars": 84116,
       "forks": 15293,
       "open_issues": 55,
       "license": null,
       "archived": false,
       "pushed_at": "2024-05-10T07:38:24Z",
-      "updated_at": "2026-10-24T02:00:34Z",
+      "updated_at": "2026-10-24T04:28:53Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741552+00:00",
+      "collected_at": "2026-10-24T05:53:16.141024+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -267,15 +226,15 @@
         "tutorial"
       ],
       "language": "Python",
-      "stars": 79101,
-      "forks": 12644,
+      "stars": 79112,
+      "forks": 12645,
       "open_issues": 69,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-09-28T13:49:16Z",
-      "updated_at": "2026-10-24T02:07:41Z",
+      "updated_at": "2026-10-24T05:40:55Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741477+00:00",
+      "collected_at": "2026-10-24T05:53:16.140962+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -298,9 +257,9 @@
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-10-19T04:03:30Z",
-      "updated_at": "2026-10-24T02:11:16Z",
+      "updated_at": "2026-10-24T03:51:16Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741458+00:00",
+      "collected_at": "2026-10-24T05:53:16.140947+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -326,15 +285,15 @@
         "swagger"
       ],
       "language": "TypeScript",
-      "stars": 65334,
-      "forks": 5095,
-      "open_issues": 712,
+      "stars": 65340,
+      "forks": 5096,
+      "open_issues": 705,
       "license": "NOASSERTION",
       "archived": false,
-      "pushed_at": "2026-10-23T14:07:56Z",
-      "updated_at": "2026-10-24T01:13:24Z",
+      "pushed_at": "2026-10-24T03:43:31Z",
+      "updated_at": "2026-10-24T04:41:06Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741416+00:00",
+      "collected_at": "2026-10-24T05:53:16.140895+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -353,10 +312,77 @@
       "pushed_at": "2024-04-11T11:32:12Z",
       "updated_at": "2026-10-24T00:01:32Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741559+00:00",
+      "collected_at": "2026-10-24T05:53:16.141030+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
+    },
+    {
+      "full_name": "CherryHQ/cherry-studio",
+      "html_url": "https://github.com/CherryHQ/cherry-studio",
+      "description": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs",
+      "topics": [
+        "agent-skills",
+        "ai-agent",
+        "claude-code",
+        "codex",
+        "deepseek",
+        "hermes-agent",
+        "open-code-review",
+        "skills",
+        "vibe-coding"
+      ],
+      "language": "TypeScript",
+      "stars": 52928,
+      "forks": 5117,
+      "open_issues": 2122,
+      "license": "AGPL-3.0",
+      "archived": false,
+      "pushed_at": "2026-10-24T05:51:19Z",
+      "updated_at": "2026-10-24T05:40:46Z",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "collected_at": "2026-10-24T05:53:16.855696+00:00",
+      "also_seen_in": [
+        "search:topic:ai-agent stars:>500 archived:false"
+      ],
+      "relationships": []
+    },
+    {
+      "full_name": "sickn33/agentic-awesome-skills",
+      "html_url": "https://github.com/sickn33/agentic-awesome-skills",
+      "description": "AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,600+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.",
+      "topics": [
+        "agent-skills",
+        "agentic-skills",
+        "ai-agent-skills",
+        "ai-agents",
+        "ai-coding",
+        "ai-workflows",
+        "antigravity",
+        "antigravity-skills",
+        "claude-code",
+        "claude-code-skills",
+        "codex-cli",
+        "codex-skills",
+        "cursor",
+        "cursor-skills",
+        "developer-tools",
+        "gemini-cli",
+        "gemini-skills",
+        "kiro",
+        "mcp",
+        "skill-library"
+      ],
+      "language": "Python",
+      "stars": 48422,
+      "forks": 7036,
+      "open_issues": 3,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-10-24T05:47:00Z",
+      "updated_at": "2026-10-24T05:46:15Z",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "collected_at": "2026-10-24T05:53:16.855679+00:00"
     },
     {
       "full_name": "jeecgboot/JeecgBoot",
@@ -386,14 +412,14 @@
       ],
       "language": "Java",
       "stars": 48269,
-      "forks": 16224,
+      "forks": 16223,
       "open_issues": 9,
       "license": "Apache-2.0",
       "archived": false,
       "pushed_at": "2026-10-23T05:49:36Z",
       "updated_at": "2026-10-24T01:36:50Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741424+00:00",
+      "collected_at": "2026-10-24T05:53:16.140919+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -423,15 +449,15 @@
         "zhihu"
       ],
       "language": "TypeScript",
-      "stars": 46630,
+      "stars": 46631,
       "forks": 10289,
       "open_issues": 36,
       "license": "AGPL-3.0",
       "archived": false,
-      "pushed_at": "2026-10-24T01:05:05Z",
-      "updated_at": "2026-10-24T01:31:07Z",
+      "pushed_at": "2026-10-24T03:16:13Z",
+      "updated_at": "2026-10-24T05:29:09Z",
       "source": "repository:DIYgod/RSSHub",
-      "collected_at": "2026-10-24T02:14:55.338309+00:00"
+      "collected_at": "2026-10-24T05:53:12.322988+00:00"
     },
     {
       "full_name": "saadeghi/daisyui",
@@ -460,15 +486,15 @@
         "ui-pattern"
       ],
       "language": "JavaScript",
-      "stars": 42667,
-      "forks": 1713,
+      "stars": 42668,
+      "forks": 1714,
       "open_issues": 35,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-10-17T16:05:50Z",
-      "updated_at": "2026-10-24T00:24:28Z",
+      "updated_at": "2026-10-24T04:06:15Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741461+00:00",
+      "collected_at": "2026-10-24T05:53:16.140950+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -508,7 +534,7 @@
       "pushed_at": "2026-10-23T18:07:49Z",
       "updated_at": "2026-10-23T22:50:08Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741413+00:00",
+      "collected_at": "2026-10-24T05:53:16.140913+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -540,15 +566,15 @@
         "workflows"
       ],
       "language": "TypeScript",
-      "stars": 41111,
+      "stars": 41113,
       "forks": 4817,
       "open_issues": 4511,
       "license": "Apache-2.0",
       "archived": false,
       "pushed_at": "2026-10-23T21:02:01Z",
-      "updated_at": "2026-10-23T22:54:52Z",
+      "updated_at": "2026-10-24T02:57:35Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741405+00:00",
+      "collected_at": "2026-10-24T05:53:16.140908+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -570,15 +596,15 @@
         "vuejs"
       ],
       "language": "Go",
-      "stars": 37364,
+      "stars": 37363,
       "forks": 2197,
       "open_issues": 838,
       "license": "Apache-2.0",
       "archived": false,
       "pushed_at": "2026-09-28T10:37:14Z",
-      "updated_at": "2026-10-24T01:31:26Z",
+      "updated_at": "2026-10-24T05:25:59Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741481+00:00",
+      "collected_at": "2026-10-24T05:53:16.140965+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -616,7 +642,7 @@
       "pushed_at": "2026-10-14T20:59:56Z",
       "updated_at": "2026-10-23T23:01:24Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741466+00:00",
+      "collected_at": "2026-10-24T05:53:16.140954+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -642,15 +668,15 @@
         "skills"
       ],
       "language": null,
-      "stars": 36238,
+      "stars": 36247,
       "forks": 3947,
       "open_issues": 44,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-10-23T08:16:35Z",
-      "updated_at": "2026-10-24T01:59:00Z",
+      "updated_at": "2026-10-24T05:52:52Z",
       "source": "repository:VoltAgent/awesome-agent-skills",
-      "collected_at": "2026-10-24T02:15:04.012409+00:00"
+      "collected_at": "2026-10-24T05:53:13.813887+00:00"
     },
     {
       "full_name": "geekxh/hello-algorithm",
@@ -672,7 +698,7 @@
       "pushed_at": "2023-06-13T04:13:17Z",
       "updated_at": "2026-10-23T15:51:47Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741569+00:00",
+      "collected_at": "2026-10-24T05:53:16.141039+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -707,7 +733,7 @@
       "pushed_at": "2024-05-30T03:51:08Z",
       "updated_at": "2026-10-23T19:27:15Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741548+00:00",
+      "collected_at": "2026-10-24T05:53:16.141022+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -736,53 +762,18 @@
         "wasm"
       ],
       "language": "Rust",
-      "stars": 31058,
+      "stars": 31060,
       "forks": 2597,
       "open_issues": 21,
       "license": null,
       "archived": false,
       "pushed_at": "2026-08-24T07:34:23Z",
-      "updated_at": "2026-10-24T01:37:42Z",
+      "updated_at": "2026-10-24T05:44:57Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741488+00:00",
+      "collected_at": "2026-10-24T05:53:16.140975+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
-    },
-    {
-      "full_name": "trycua/cua",
-      "html_url": "https://github.com/trycua/cua",
-      "description": "Scale computer-use 2.0 with open-source drivers, cross-OS sandboxes, and benchmarks for training, evaluation, and data generation.",
-      "topics": [
-        "agent",
-        "ai-agent",
-        "apple",
-        "computer-use",
-        "computer-use-agent",
-        "containerization",
-        "cua",
-        "desktop-automation",
-        "hacktoberfest",
-        "lume",
-        "macos",
-        "manus",
-        "operator",
-        "swift",
-        "virtualization",
-        "virtualization-framework",
-        "windows",
-        "windows-sandbox"
-      ],
-      "language": "Rust",
-      "stars": 30814,
-      "forks": 2244,
-      "open_issues": 1258,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-10-24T02:14:39Z",
-      "updated_at": "2026-10-24T02:03:53Z",
-      "source": "search:topic:ai-agent stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:22.446759+00:00"
     },
     {
       "full_name": "QwenLM/qwen-code",
@@ -803,15 +794,15 @@
         "typescript"
       ],
       "language": "TypeScript",
-      "stars": 28679,
+      "stars": 28684,
       "forks": 3252,
-      "open_issues": 2069,
+      "open_issues": 2063,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-10-24T02:14:18Z",
-      "updated_at": "2026-10-24T02:12:08Z",
+      "pushed_at": "2026-10-24T05:49:45Z",
+      "updated_at": "2026-10-24T05:49:26Z",
       "source": "search:topic:developer-tools stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:17.256660+00:00",
+      "collected_at": "2026-10-24T05:53:19.123866+00:00",
       "also_seen_in": [
         "search:topic:ai-agent stars:>500 archived:false"
       ],
@@ -841,7 +832,7 @@
       "pushed_at": "2025-12-21T19:49:52Z",
       "updated_at": "2026-10-24T01:56:53Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741513+00:00",
+      "collected_at": "2026-10-24T05:53:16.140996+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -865,50 +856,18 @@
         "yeoman-generator"
       ],
       "language": "TypeScript",
-      "stars": 22462,
+      "stars": 22461,
       "forks": 4193,
       "open_issues": 74,
       "license": "Apache-2.0",
       "archived": false,
       "pushed_at": "2026-10-24T00:35:27Z",
-      "updated_at": "2026-10-23T23:24:14Z",
+      "updated_at": "2026-10-24T04:10:36Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741389+00:00",
+      "collected_at": "2026-10-24T05:53:16.140898+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
-    },
-    {
-      "full_name": "getpaseo/paseo",
-      "html_url": "https://github.com/getpaseo/paseo",
-      "description": "Orchestrate multiple coding agents from desktop and mobile",
-      "topics": [
-        "ade",
-        "agents",
-        "android",
-        "claude-code",
-        "codex",
-        "copilot",
-        "developer-tools",
-        "hermes",
-        "ios",
-        "linux",
-        "mobile",
-        "opencode",
-        "orchestration",
-        "pi",
-        "windows"
-      ],
-      "language": "TypeScript",
-      "stars": 21817,
-      "forks": 2626,
-      "open_issues": 1542,
-      "license": "NOASSERTION",
-      "archived": false,
-      "pushed_at": "2026-10-24T02:06:08Z",
-      "updated_at": "2026-10-24T02:07:01Z",
-      "source": "search:topic:developer-tools stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:17.256679+00:00"
     },
     {
       "full_name": "SocialSisterYi/bilibili-API-collect",
@@ -916,15 +875,15 @@
       "description": "",
       "topics": [],
       "language": null,
-      "stars": 20163,
-      "forks": 2910,
+      "stars": 20162,
+      "forks": 2909,
       "open_issues": 178,
       "license": null,
       "archived": true,
       "pushed_at": "2026-01-30T09:06:33Z",
-      "updated_at": "2026-10-23T01:44:43Z",
+      "updated_at": "2026-10-24T04:08:26Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741509+00:00",
+      "collected_at": "2026-10-24T05:53:16.140993+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -946,10 +905,47 @@
       "pushed_at": "2026-10-20T13:25:10Z",
       "updated_at": "2026-10-23T12:30:36Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741444+00:00",
+      "collected_at": "2026-10-24T05:53:16.140935+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
+    },
+    {
+      "full_name": "superset-sh/superset",
+      "html_url": "https://github.com/superset-sh/superset",
+      "description": "Superset is an agentic IDE to orchestrate 100+ coding agents in parallel. Run any agent with your own subscription.",
+      "topics": [
+        "ade",
+        "agent",
+        "agent-orchestration",
+        "ai-agents",
+        "ai-coding",
+        "claude-code",
+        "cli",
+        "codex",
+        "coding-agents",
+        "cursor-agent",
+        "developer-tools",
+        "devtools",
+        "ide",
+        "macos",
+        "opencode",
+        "orchestration",
+        "parallel-agents",
+        "terminal",
+        "worktrees",
+        "yc-backed"
+      ],
+      "language": "TypeScript",
+      "stars": 15503,
+      "forks": 1372,
+      "open_issues": 1030,
+      "license": "NOASSERTION",
+      "archived": false,
+      "pushed_at": "2026-10-24T05:53:12Z",
+      "updated_at": "2026-10-24T05:53:17Z",
+      "source": "search:topic:developer-tools stars:>500 archived:false",
+      "collected_at": "2026-10-24T05:53:19.123825+00:00"
     },
     {
       "full_name": "AmazingAng/WTF-Solidity",
@@ -975,15 +971,15 @@
         "web3"
       ],
       "language": "Solidity",
-      "stars": 14064,
+      "stars": 14065,
       "forks": 2432,
       "open_issues": 25,
       "license": "NOASSERTION",
       "archived": false,
       "pushed_at": "2026-10-11T14:38:51Z",
-      "updated_at": "2026-10-23T15:39:52Z",
+      "updated_at": "2026-10-24T05:21:03Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741470+00:00",
+      "collected_at": "2026-10-24T05:53:16.140957+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -1002,15 +998,15 @@
         "web"
       ],
       "language": "TypeScript",
-      "stars": 11801,
-      "forks": 614,
-      "open_issues": 81,
+      "stars": 11807,
+      "forks": 615,
+      "open_issues": 83,
       "license": "Apache-2.0",
       "archived": false,
       "pushed_at": "2026-10-23T20:01:11Z",
-      "updated_at": "2026-10-24T01:38:30Z",
+      "updated_at": "2026-10-24T04:28:36Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741409+00:00",
+      "collected_at": "2026-10-24T05:53:16.140910+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -1036,15 +1032,15 @@
         "website"
       ],
       "language": "JavaScript",
-      "stars": 11601,
-      "forks": 33314,
-      "open_issues": 120,
+      "stars": 11604,
+      "forks": 33324,
+      "open_issues": 101,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-24T02:02:23Z",
-      "updated_at": "2026-10-24T02:02:37Z",
+      "pushed_at": "2026-10-24T05:51:08Z",
+      "updated_at": "2026-10-24T05:51:14Z",
       "source": "search:topic:github-pages stars:>100 archived:false",
-      "collected_at": "2026-10-24T02:15:13.995865+00:00"
+      "collected_at": "2026-10-24T05:53:17.631050+00:00"
     },
     {
       "full_name": "mui/base-ui",
@@ -1061,15 +1057,15 @@
         "wai-aria"
       ],
       "language": "TypeScript",
-      "stars": 11220,
+      "stars": 11222,
       "forks": 589,
-      "open_issues": 455,
+      "open_issues": 454,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-24T00:46:31Z",
-      "updated_at": "2026-10-24T00:54:27Z",
+      "pushed_at": "2026-10-24T05:20:20Z",
+      "updated_at": "2026-10-24T04:29:35Z",
       "source": "search:topic:design-system stars:>200 archived:false",
-      "collected_at": "2026-10-24T02:15:15.664466+00:00"
+      "collected_at": "2026-10-24T05:53:18.394240+00:00"
     },
     {
       "full_name": "omnigent-ai/omnigent",
@@ -1094,15 +1090,19 @@
         "sandbox"
       ],
       "language": "Python",
-      "stars": 11015,
+      "stars": 11019,
       "forks": 1799,
-      "open_issues": 2396,
+      "open_issues": 2399,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-10-24T02:12:53Z",
-      "updated_at": "2026-10-24T02:03:19Z",
-      "source": "search:topic:ai-agent stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:22.446764+00:00"
+      "pushed_at": "2026-10-24T05:52:16Z",
+      "updated_at": "2026-10-24T05:52:22Z",
+      "source": "search:topic:developer-tools stars:>500 archived:false",
+      "collected_at": "2026-10-24T05:53:19.123852+00:00",
+      "also_seen_in": [
+        "search:topic:ai-agent stars:>500 archived:false"
+      ],
+      "relationships": []
     },
     {
       "full_name": "DouyinFE/semi-design",
@@ -1130,32 +1130,10 @@
       "pushed_at": "2026-10-20T11:47:16Z",
       "updated_at": "2026-10-24T00:02:17Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741448+00:00",
+      "collected_at": "2026-10-24T05:53:16.140938+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
-    },
-    {
-      "full_name": "carbon-design-system/carbon",
-      "html_url": "https://github.com/carbon-design-system/carbon",
-      "description": "A design system built by IBM",
-      "topics": [
-        "design-system",
-        "hacktoberfest",
-        "javascript",
-        "react",
-        "scss"
-      ],
-      "language": "TypeScript",
-      "stars": 9575,
-      "forks": 2298,
-      "open_issues": 1087,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-10-23T22:22:22Z",
-      "updated_at": "2026-10-24T00:25:55Z",
-      "source": "search:topic:design-system stars:>200 archived:false",
-      "collected_at": "2026-10-24T02:15:15.664488+00:00"
     },
     {
       "full_name": "mvschwarz/openrig",
@@ -1175,15 +1153,15 @@
         "typescript"
       ],
       "language": "TypeScript",
-      "stars": 8139,
-      "forks": 661,
-      "open_issues": 143,
+      "stars": 8143,
+      "forks": 662,
+      "open_issues": 145,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-10-24T02:11:49Z",
-      "updated_at": "2026-10-24T02:01:24Z",
+      "pushed_at": "2026-10-24T05:53:08Z",
+      "updated_at": "2026-10-24T05:37:51Z",
       "source": "search:topic:agent-skills stars:>50 archived:false",
-      "collected_at": "2026-10-24T02:15:12.310832+00:00"
+      "collected_at": "2026-10-24T05:53:16.855700+00:00"
     },
     {
       "full_name": "subhra74/xdm",
@@ -1212,85 +1190,48 @@
       "language": "Kotlin",
       "stars": 8049,
       "forks": 1198,
-      "open_issues": 865,
+      "open_issues": 866,
       "license": "GPL-3.0",
       "archived": false,
       "pushed_at": "2026-10-23T22:37:29Z",
-      "updated_at": "2026-10-23T22:37:37Z",
+      "updated_at": "2026-10-24T04:15:37Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741397+00:00",
+      "collected_at": "2026-10-24T05:53:16.140902+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
     },
     {
-      "full_name": "Gentleman-Programming/gentle-ai",
-      "html_url": "https://github.com/Gentleman-Programming/gentle-ai",
-      "description": "Gentle-AI configures the AI coding agents you already use: Claude Code, Cursor, OpenCode, Codex, Pi, and more. Choose persistent memory, Organic-Driven Development, curated skills, MCP servers, personas, and optional bounded review. Open source, no agent lock-in.",
+      "full_name": "repowise-dev/repowise",
+      "html_url": "https://github.com/repowise-dev/repowise",
+      "description": "Codebase intelligence for AI and humans: code health scores, auto-generated docs, git analytics, dead code detection, and architectural decisions via MCP.",
       "topics": [
-        "agent-skills",
-        "ai-agents",
-        "ai-coding",
-        "claude-code",
-        "code-review",
-        "codex",
-        "coding-agents",
-        "copilot",
-        "cursor",
+        "ai",
+        "code-complexity",
+        "code-health",
+        "code-intelligence",
+        "code-quality",
+        "dead-code",
         "developer-tools",
-        "golang",
-        "llm",
+        "documentation",
+        "git-analytics",
         "mcp",
-        "opencode",
-        "persistent-memory",
-        "pi",
-        "spec-driven-development"
+        "open-source",
+        "python",
+        "refactoring",
+        "static-analysis",
+        "technical-debt"
       ],
-      "language": "Go",
-      "stars": 7967,
-      "forks": 858,
-      "open_issues": 987,
-      "license": "MIT",
+      "language": "Python",
+      "stars": 7893,
+      "forks": 942,
+      "open_issues": 436,
+      "license": "AGPL-3.0",
       "archived": false,
-      "pushed_at": "2026-10-24T02:05:54Z",
-      "updated_at": "2026-10-24T02:00:54Z",
-      "source": "search:topic:agent-skills stars:>50 archived:false",
-      "collected_at": "2026-10-24T02:15:12.310835+00:00"
-    },
-    {
-      "full_name": "Devin-AXIS/iPolloWork",
-      "html_url": "https://github.com/Devin-AXIS/iPolloWork",
-      "description": "Enterprise-grade, local-first Agent Workbench for people and agent teams. A unified multi-engine workspace for Codex Harness, DeepSeek Harness, and OpenCode, with unified plugins and Skills, multi-agent projects and tasks, and editable code, documents, presentations, design, and video.",
-      "topics": [
-        "agent-collaboration",
-        "agent-skills",
-        "ai-agents",
-        "ai-work",
-        "claude-code",
-        "codex",
-        "codex-plugin",
-        "deepseek-harness",
-        "dsh-plugin",
-        "enterprise-agent-workspace",
-        "hermes-agent",
-        "ipollowork-plugin",
-        "ipollowork-skill",
-        "multi-agent-workspace",
-        "opencode",
-        "opencode-plugin",
-        "self-evolving-ai",
-        "visual-editor"
-      ],
-      "language": "TypeScript",
-      "stars": 7223,
-      "forks": 1134,
-      "open_issues": 89,
-      "license": "NOASSERTION",
-      "archived": false,
-      "pushed_at": "2026-10-24T02:10:02Z",
-      "updated_at": "2026-10-24T02:14:34Z",
-      "source": "search:topic:agent-skills stars:>50 archived:false",
-      "collected_at": "2026-10-24T02:15:12.310814+00:00"
+      "pushed_at": "2026-10-24T05:51:19Z",
+      "updated_at": "2026-10-24T05:51:21Z",
+      "source": "search:topic:developer-tools stars:>500 archived:false",
+      "collected_at": "2026-10-24T05:53:19.123858+00:00"
     },
     {
       "full_name": "abuanwar072/Flutter-Responsive-Admin-Panel-or-Dashboard",
@@ -1312,43 +1253,10 @@
       "pushed_at": "2026-07-28T16:33:48Z",
       "updated_at": "2026-10-21T09:53:28Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741495+00:00",
+      "collected_at": "2026-10-24T05:53:16.140981+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
-    },
-    {
-      "full_name": "unovue/reka-ui",
-      "html_url": "https://github.com/unovue/reka-ui",
-      "description": "An open-source UI component library for building high-quality, accessible design systems and web apps for Vue. Previously Radix Vue",
-      "topics": [
-        "accessibility",
-        "accessible",
-        "component-library",
-        "design-system",
-        "headless",
-        "nuxt",
-        "primitives",
-        "radix-ui",
-        "reka-ui",
-        "ui",
-        "ui-components",
-        "ui-kit",
-        "vue",
-        "vue-component-library",
-        "vue-components",
-        "vue-radix"
-      ],
-      "language": "Vue",
-      "stars": 6901,
-      "forks": 571,
-      "open_issues": 259,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-10-23T23:06:13Z",
-      "updated_at": "2026-10-24T01:17:34Z",
-      "source": "search:topic:design-system stars:>200 archived:false",
-      "collected_at": "2026-10-24T02:15:15.664481+00:00"
     },
     {
       "full_name": "zouzg/mybatis-generator-gui",
@@ -1364,7 +1272,7 @@
       "pushed_at": "2024-07-09T08:13:22Z",
       "updated_at": "2026-10-23T01:34:25Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741533+00:00",
+      "collected_at": "2026-10-24T05:53:16.141016+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -1389,7 +1297,7 @@
       "pushed_at": "2026-10-21T04:28:51Z",
       "updated_at": "2026-10-21T12:32:13Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741432+00:00",
+      "collected_at": "2026-10-24T05:53:16.140925+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -1412,10 +1320,51 @@
       "pushed_at": "2026-03-30T11:30:39Z",
       "updated_at": "2026-10-22T16:58:55Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741505+00:00",
+      "collected_at": "2026-10-24T05:53:16.140990+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
+    },
+    {
+      "full_name": "aipoch/open-science",
+      "html_url": "https://github.com/aipoch/open-science",
+      "description": "The open-source AI research workbench for scientific research and agent workflows. Local-first, model-agnostic desktop app with extensible skills, MCP tools and connectors, Python/R execution and traceable artifacts for reproducible research on macOS, Windows and Linux.",
+      "topics": [
+        "agent-skills",
+        "ai-agent",
+        "ai-for-science",
+        "ai-research",
+        "ai-research-workbench",
+        "ai-workbench",
+        "desktop-app",
+        "local-first",
+        "mcp",
+        "model-agnostic",
+        "open-science",
+        "open-source",
+        "reproducible-research",
+        "research-tools",
+        "science",
+        "science-agent",
+        "science-package",
+        "scientific-ai",
+        "scientific-computing",
+        "scientific-research"
+      ],
+      "language": "TypeScript",
+      "stars": 5355,
+      "forks": 534,
+      "open_issues": 48,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-10-24T05:51:40Z",
+      "updated_at": "2026-10-24T05:41:12Z",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "collected_at": "2026-10-24T05:53:16.855690+00:00",
+      "also_seen_in": [
+        "search:topic:ai-agent stars:>500 archived:false"
+      ],
+      "relationships": []
     },
     {
       "full_name": "zlt2000/microservices-platform",
@@ -1446,36 +1395,10 @@
       "pushed_at": "2025-04-28T09:50:09Z",
       "updated_at": "2026-10-22T12:01:25Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741520+00:00",
+      "collected_at": "2026-10-24T05:53:16.141002+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
-    },
-    {
-      "full_name": "kirodotdev/KiroCrew",
-      "html_url": "https://github.com/kirodotdev/KiroCrew",
-      "description": "A persistent workspace for development work that self-improves and continues beyond one session.",
-      "topics": [
-        "agent",
-        "agentic-ai",
-        "agents",
-        "ai-agent",
-        "ai-agents",
-        "automation",
-        "devtools",
-        "kiro",
-        "llm"
-      ],
-      "language": "Python",
-      "stars": 4556,
-      "forks": 867,
-      "open_issues": 2960,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-10-24T02:12:24Z",
-      "updated_at": "2026-10-24T02:06:39Z",
-      "source": "search:topic:ai-agent stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:22.446747+00:00"
     },
     {
       "full_name": "zendesk/maxwell",
@@ -1491,7 +1414,7 @@
       "pushed_at": "2026-10-02T01:48:30Z",
       "updated_at": "2026-10-23T23:02:41Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741474+00:00",
+      "collected_at": "2026-10-24T05:53:16.140960+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -1510,47 +1433,17 @@
       ],
       "language": "CSS",
       "stars": 3756,
-      "forks": 889,
+      "forks": 888,
       "open_issues": 2,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-10-21T06:32:10Z",
       "updated_at": "2026-10-20T13:13:26Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741428+00:00",
+      "collected_at": "2026-10-24T05:53:16.140922+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
-    },
-    {
-      "full_name": "makecindy/cindy",
-      "html_url": "https://github.com/makecindy/cindy",
-      "description": "Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
-      "topics": [
-        "agent",
-        "ai-agent",
-        "ai-assistant",
-        "android",
-        "claude-code",
-        "codex",
-        "electron",
-        "ios",
-        "llm",
-        "macos",
-        "react-native",
-        "typescript",
-        "windows"
-      ],
-      "language": "TypeScript",
-      "stars": 3564,
-      "forks": 539,
-      "open_issues": 1888,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-10-24T02:08:27Z",
-      "updated_at": "2026-10-24T02:14:42Z",
-      "source": "search:topic:ai-agent stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:22.446741+00:00"
     },
     {
       "full_name": "estevanmaito/windmill-dashboard",
@@ -1566,36 +1459,10 @@
       "pushed_at": "2024-02-28T08:03:50Z",
       "updated_at": "2026-10-22T21:20:59Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741566+00:00",
+      "collected_at": "2026-10-24T05:53:16.141036+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
-    },
-    {
-      "full_name": "carbon-design-system/carbon-components-svelte",
-      "html_url": "https://github.com/carbon-design-system/carbon-components-svelte",
-      "description": "Svelte implementation of the Carbon Design System",
-      "topics": [
-        "carbon",
-        "carbon-design-system",
-        "component-library",
-        "design-system",
-        "svelte",
-        "svelte-components",
-        "typescript",
-        "ui-components",
-        "ui-library"
-      ],
-      "language": "TypeScript",
-      "stars": 2918,
-      "forks": 268,
-      "open_issues": 154,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-10-24T01:55:55Z",
-      "updated_at": "2026-10-23T22:29:20Z",
-      "source": "search:topic:design-system stars:>200 archived:false",
-      "collected_at": "2026-10-24T02:15:15.664484+00:00"
     },
     {
       "full_name": "reshaped-ui/reshaped",
@@ -1617,7 +1484,7 @@
       "pushed_at": "2026-10-23T23:40:18Z",
       "updated_at": "2026-10-23T23:40:22Z",
       "source": "search:topic:design-system stars:>200 archived:false",
-      "collected_at": "2026-10-24T02:15:15.664475+00:00"
+      "collected_at": "2026-10-24T05:53:18.394246+00:00"
     },
     {
       "full_name": "miguelgrinberg/microdot",
@@ -1639,7 +1506,7 @@
       "pushed_at": "2026-09-19T11:20:06Z",
       "updated_at": "2026-10-23T22:53:59Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741484+00:00",
+      "collected_at": "2026-10-24T05:53:16.140968+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -1668,7 +1535,7 @@
       "pushed_at": "2025-08-23T03:05:16Z",
       "updated_at": "2026-10-23T19:21:54Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741516+00:00",
+      "collected_at": "2026-10-24T05:53:16.140999+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -1687,7 +1554,7 @@
       "pushed_at": "2024-06-18T21:58:55Z",
       "updated_at": "2026-10-19T13:25:32Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741537+00:00",
+      "collected_at": "2026-10-24T05:53:16.141019+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -1721,13 +1588,13 @@
       "language": "Java",
       "stars": 1889,
       "forks": 434,
-      "open_issues": 287,
+      "open_issues": 289,
       "license": "NOASSERTION",
       "archived": false,
-      "pushed_at": "2026-10-24T00:46:20Z",
-      "updated_at": "2026-10-24T00:03:54Z",
+      "pushed_at": "2026-10-24T05:48:37Z",
+      "updated_at": "2026-10-24T03:25:41Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741385+00:00",
+      "collected_at": "2026-10-24T05:53:16.140866+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -1751,10 +1618,26 @@
       "pushed_at": "2026-07-20T04:42:59Z",
       "updated_at": "2026-10-21T02:47:27Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741502+00:00",
+      "collected_at": "2026-10-24T05:53:16.140987+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
+    },
+    {
+      "full_name": "wuyoscar/AISafetyHot",
+      "html_url": "https://github.com/wuyoscar/AISafetyHot",
+      "description": "Safety News & Research Monitor. https://aisafetyhot.com",
+      "topics": [],
+      "language": "TeX",
+      "stars": 1747,
+      "forks": 24,
+      "open_issues": 0,
+      "license": "NOASSERTION",
+      "archived": false,
+      "pushed_at": "2026-10-24T05:16:04Z",
+      "updated_at": "2026-10-24T05:49:23Z",
+      "source": "repository:wuyoscar/AISafetyHot-Hub",
+      "collected_at": "2026-10-24T05:53:11.830306+00:00"
     },
     {
       "full_name": "deepcoldy/botmux",
@@ -1770,34 +1653,18 @@
         "opencode"
       ],
       "language": "TypeScript",
-      "stars": 1745,
+      "stars": 1746,
       "forks": 384,
-      "open_issues": 178,
+      "open_issues": 187,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-24T01:54:03Z",
-      "updated_at": "2026-10-24T01:03:47Z",
+      "pushed_at": "2026-10-24T05:34:57Z",
+      "updated_at": "2026-10-24T04:39:30Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741361+00:00",
+      "collected_at": "2026-10-24T05:53:16.140887+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
-    },
-    {
-      "full_name": "wuyoscar/AISafetyHot",
-      "html_url": "https://github.com/wuyoscar/AISafetyHot",
-      "description": "Safety News & Research Monitor. https://aisafetyhot.com",
-      "topics": [],
-      "language": "TeX",
-      "stars": 1738,
-      "forks": 24,
-      "open_issues": 0,
-      "license": "NOASSERTION",
-      "archived": false,
-      "pushed_at": "2026-10-24T00:52:57Z",
-      "updated_at": "2026-10-24T01:33:27Z",
-      "source": "repository:wuyoscar/AISafetyHot-Hub",
-      "collected_at": "2026-10-24T02:14:53.579467+00:00"
     },
     {
       "full_name": "keep-starknet-strange/awesome-starknet",
@@ -1824,68 +1691,92 @@
       "pushed_at": "2025-01-06T14:19:12Z",
       "updated_at": "2026-10-17T11:29:47Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741526+00:00",
+      "collected_at": "2026-10-24T05:53:16.141010+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
     },
     {
-      "full_name": "Team-Commonly/commonly",
-      "html_url": "https://github.com/Team-Commonly/commonly",
-      "description": "Open-source room for humans + cross-vendor AI agents. Every agent gets its own name, memory, skills, and workstation. Any runtime, your infra — no per-agent fees.",
+      "full_name": "agentconnect-md/agentconnect",
+      "html_url": "https://github.com/agentconnect-md/agentconnect",
+      "description": "The open-source, multi-agent alternative to Claude Tag.  @ any agent, wherever work happens, they work alongside your team, learning as they go.",
       "topics": [
-        "agent-framework",
-        "agent-harness",
-        "agent-protocol",
-        "agentic",
-        "agentic-ai",
-        "agents",
-        "ai-agents",
-        "ai-orchestration",
-        "autonomous-agents",
-        "claude",
-        "codex",
+        "agent-client-protocol",
+        "agent-sandbox",
+        "ai-agent",
+        "claude-tag-alternative",
+        "codereview",
         "developer-tools",
-        "generative-ai",
-        "llm",
+        "github",
+        "jev",
+        "kubernetes",
         "multi-agent",
-        "open-source",
-        "openai",
-        "openclaw",
-        "self-hosted"
+        "slack",
+        "typescript"
       ],
       "language": "TypeScript",
-      "stars": 1370,
-      "forks": 189,
-      "open_issues": 210,
+      "stars": 1486,
+      "forks": 72,
+      "open_issues": 45,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-10-24T02:11:04Z",
-      "updated_at": "2026-10-24T02:10:00Z",
-      "source": "search:topic:developer-tools stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:17.256667+00:00"
+      "pushed_at": "2026-10-24T05:48:44Z",
+      "updated_at": "2026-10-24T05:48:18Z",
+      "source": "search:topic:ai-agent stars:>500 archived:false",
+      "collected_at": "2026-10-24T05:53:19.936452+00:00"
     },
     {
-      "full_name": "Dicklesworthstone/coding_agent_session_search",
-      "html_url": "https://github.com/Dicklesworthstone/coding_agent_session_search",
-      "description": "Unified TUI and CLI to index and search your local coding agent session history across 11+ providers (Codex, Claude, Gemini, Cursor, Aider, etc.)",
+      "full_name": "lerd-env/lerd",
+      "html_url": "https://github.com/lerd-env/lerd",
+      "description": "Open-source local PHP development environment for Linux, macOS and Windows (WSL2). Automatic .test domains, per-project PHP/Node isolation, one-command TLS. Podman-native, rootless.",
       "topics": [
-        "ai-agents",
         "developer-tools",
-        "rust",
-        "search",
-        "tui"
+        "development-environment",
+        "laravel",
+        "lemp",
+        "linux",
+        "local-development",
+        "nginx",
+        "php",
+        "php-development",
+        "podman",
+        "symfony",
+        "ubuntu",
+        "web-development"
       ],
-      "language": "Rust",
-      "stars": 1190,
-      "forks": 141,
-      "open_issues": 34,
+      "language": "Go",
+      "stars": 1439,
+      "forks": 90,
+      "open_issues": 11,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-10-24T05:53:11Z",
+      "updated_at": "2026-10-24T05:53:13Z",
+      "source": "search:topic:developer-tools stars:>500 archived:false",
+      "collected_at": "2026-10-24T05:53:19.123843+00:00"
+    },
+    {
+      "full_name": "okou-ai/okou",
+      "html_url": "https://github.com/okou-ai/okou",
+      "description": "Okou connects to the tools your team already uses and does the work — across marketing, sales, engineering, and operations, under your control.",
+      "topics": [
+        "agentic-workflow",
+        "ai-agent",
+        "ai-runtime",
+        "ai-sandbox",
+        "dev-tools",
+        "sandbox"
+      ],
+      "language": "TypeScript",
+      "stars": 1161,
+      "forks": 74,
+      "open_issues": 82,
       "license": "NOASSERTION",
       "archived": false,
-      "pushed_at": "2026-10-24T02:09:01Z",
-      "updated_at": "2026-10-24T02:09:03Z",
-      "source": "search:topic:developer-tools stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:17.256670+00:00"
+      "pushed_at": "2026-10-24T05:52:48Z",
+      "updated_at": "2026-10-24T05:51:37Z",
+      "source": "search:topic:ai-agent stars:>500 archived:false",
+      "collected_at": "2026-10-24T05:53:19.936440+00:00"
     },
     {
       "full_name": "asheshgoplani/agent-deck",
@@ -1912,151 +1803,49 @@
         "tui"
       ],
       "language": "Go",
-      "stars": 1152,
+      "stars": 1153,
       "forks": 208,
-      "open_issues": 27,
+      "open_issues": 23,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-24T02:14:05Z",
-      "updated_at": "2026-10-24T02:14:07Z",
+      "pushed_at": "2026-10-24T05:52:59Z",
+      "updated_at": "2026-10-24T05:53:02Z",
       "source": "search:topic:developer-tools stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:17.256619+00:00",
+      "collected_at": "2026-10-24T05:53:19.123848+00:00",
       "also_seen_in": [
         "search:topic:ai-agent stars:>500 archived:false"
       ],
       "relationships": []
     },
     {
-      "full_name": "ix-infrastructure/Ix",
-      "html_url": "https://github.com/ix-infrastructure/Ix",
-      "description": "Understand any codebase instantly. System intelligence for codebases, built for humans and AI.",
+      "full_name": "microscope-dev/microscope",
+      "html_url": "https://github.com/microscope-dev/microscope",
+      "description": "🔬 microscope 🔬",
       "topics": [
-        "ai",
-        "ai-memory",
-        "claude-code",
-        "cli",
-        "code-analysis",
-        "code-mapping",
-        "code-memory",
-        "codebase-understanding",
-        "codex",
+        "c",
+        "cpp",
+        "d",
+        "debugger",
         "developer-tools",
-        "llm",
-        "openclaw",
-        "persistent-memory",
-        "program-analysis",
-        "software-architecture",
-        "system-intelligence",
-        "system-mapping"
+        "fortran",
+        "introspection",
+        "linux",
+        "o11y",
+        "odin",
+        "profiler",
+        "rust",
+        "zig"
       ],
-      "language": "TypeScript",
-      "stars": 1097,
-      "forks": 82,
-      "open_issues": 11,
+      "language": "Rust",
+      "stars": 1045,
+      "forks": 25,
+      "open_issues": 1,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-10-24T02:10:40Z",
-      "updated_at": "2026-10-24T02:10:44Z",
+      "pushed_at": "2026-10-24T05:50:27Z",
+      "updated_at": "2026-10-24T05:50:32Z",
       "source": "search:topic:developer-tools stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:17.256664+00:00"
-    },
-    {
-      "full_name": "benbalter/wordpress-static-site-exporter",
-      "html_url": "https://github.com/benbalter/wordpress-static-site-exporter",
-      "description": "WordPress plugin to export posts, pages & metadata to Markdown + YAML for Jekyll, Hugo, or any static site generator",
-      "topics": [
-        "github-pages",
-        "hugo",
-        "jekyll",
-        "markdown",
-        "migration",
-        "php",
-        "static-site-generator",
-        "wordpress",
-        "wordpress-export",
-        "wordpress-plugin",
-        "wp-cli"
-      ],
-      "language": "PHP",
-      "stars": 1079,
-      "forks": 130,
-      "open_issues": 2,
-      "license": "GPL-3.0",
-      "archived": false,
-      "pushed_at": "2026-10-23T22:44:45Z",
-      "updated_at": "2026-10-23T22:44:48Z",
-      "source": "search:topic:github-pages stars:>100 archived:false",
-      "collected_at": "2026-10-24T02:15:13.995881+00:00"
-    },
-    {
-      "full_name": "microsoft/XStudio",
-      "html_url": "https://github.com/microsoft/XStudio",
-      "description": "Intelligent cloud testing made easy.",
-      "topics": [
-        "azure",
-        "chatgpt",
-        "cloud-testing",
-        "cross-platform",
-        "developer-tools",
-        "device-farm",
-        "e2e-testing",
-        "mobile-development",
-        "performance-testing",
-        "platform-engineering",
-        "spring-boot",
-        "test-automation",
-        "testgpt",
-        "testing",
-        "testing-framework",
-        "ui-testing"
-      ],
-      "language": "Java",
-      "stars": 1030,
-      "forks": 107,
-      "open_issues": 59,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-10-24T02:14:34Z",
-      "updated_at": "2026-10-24T02:09:57Z",
-      "source": "search:topic:developer-tools stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:17.256673+00:00"
-    },
-    {
-      "full_name": "kdlbs/kandev",
-      "html_url": "https://github.com/kdlbs/kandev",
-      "description": "AI Kanban & Development Environment. Orchestrate multiple agents, review changes, open PRs. Multi-provider, self-hostable, no telemetry.",
-      "topics": [
-        "acp",
-        "agent-orchestration",
-        "agentic-ai",
-        "agentic-development-environment",
-        "ai-agents",
-        "claude-code",
-        "code-review",
-        "coding-agents",
-        "developer-tools",
-        "github-copilot",
-        "golang",
-        "kanban",
-        "nextjs",
-        "open-source",
-        "self-hosted",
-        "task-manager",
-        "tui",
-        "vibe-coding",
-        "workflow-automation",
-        "worktrees"
-      ],
-      "language": "Go",
-      "stars": 999,
-      "forks": 162,
-      "open_issues": 189,
-      "license": "AGPL-3.0",
-      "archived": false,
-      "pushed_at": "2026-10-24T02:12:42Z",
-      "updated_at": "2026-10-24T02:14:07Z",
-      "source": "search:topic:developer-tools stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:17.256656+00:00"
+      "collected_at": "2026-10-24T05:53:19.123861+00:00"
     },
     {
       "full_name": "repoprompt/repoprompt-ce",
@@ -2076,13 +1865,13 @@
       "language": "Swift",
       "stars": 966,
       "forks": 131,
-      "open_issues": 219,
+      "open_issues": 201,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-10-24T02:08:41Z",
-      "updated_at": "2026-10-24T02:08:46Z",
+      "pushed_at": "2026-10-24T05:48:40Z",
+      "updated_at": "2026-10-24T05:48:45Z",
       "source": "search:topic:developer-tools stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:17.256676+00:00"
+      "collected_at": "2026-10-24T05:53:19.123869+00:00"
     },
     {
       "full_name": "rome-os/rome",
@@ -2104,15 +1893,41 @@
         "workflow-automation"
       ],
       "language": "TypeScript",
-      "stars": 849,
+      "stars": 851,
       "forks": 62,
       "open_issues": 180,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-24T02:14:21Z",
-      "updated_at": "2026-10-24T02:09:27Z",
+      "pushed_at": "2026-10-24T05:52:52Z",
+      "updated_at": "2026-10-24T05:52:55Z",
       "source": "search:topic:ai-agent stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:22.446735+00:00"
+      "collected_at": "2026-10-24T05:53:19.936430+00:00"
+    },
+    {
+      "full_name": "kitlangton/scrawl",
+      "html_url": "https://github.com/kitlangton/scrawl",
+      "description": "Show an agent a problem: mark up, record, send",
+      "topics": [
+        "ai-agents",
+        "claude-code",
+        "coding-agents",
+        "developer-tools",
+        "gpui",
+        "macos",
+        "opencode",
+        "rust",
+        "screen-recording"
+      ],
+      "language": "Rust",
+      "stars": 719,
+      "forks": 71,
+      "open_issues": 28,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-10-24T05:52:13Z",
+      "updated_at": "2026-10-24T05:52:16Z",
+      "source": "search:topic:developer-tools stars:>500 archived:false",
+      "collected_at": "2026-10-24T05:53:19.123855+00:00"
     },
     {
       "full_name": "AnxForever/stylekit",
@@ -2136,10 +1951,10 @@
       "open_issues": 2,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-24T02:13:17Z",
-      "updated_at": "2026-10-24T01:49:52Z",
+      "pushed_at": "2026-10-24T02:34:49Z",
+      "updated_at": "2026-10-24T02:34:56Z",
       "source": "search:topic:design-system stars:>200 archived:false",
-      "collected_at": "2026-10-24T02:15:15.664442+00:00"
+      "collected_at": "2026-10-24T05:53:18.394233+00:00"
     },
     {
       "full_name": "yindz/common-random",
@@ -2158,111 +1973,117 @@
       "pushed_at": "2026-07-23T22:56:16Z",
       "updated_at": "2026-10-23T07:46:13Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741498+00:00",
+      "collected_at": "2026-10-24T05:53:16.140984+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
     },
     {
-      "full_name": "agentty-org/agentty",
-      "html_url": "https://github.com/agentty-org/agentty",
-      "description": "AI pair programming in your terminal — one static binary, sub-ms startup, any model",
+      "full_name": "useLexora/Lexora",
+      "html_url": "https://github.com/useLexora/Lexora",
+      "description": "A self-evolved, sovereign desktop AI agent built for real-world action — beyond model wrappers and coding copilots. / 真实实践中自我演化的独立桌面 AI Agent。",
       "topics": [
-        "agentic-coding",
+        "agent-loop",
         "ai-agent",
+        "archlinux",
+        "autonomous-agents",
+        "desktop-agent",
+        "desktop-pet",
+        "linux-desktop",
+        "local-ai",
+        "mcp",
+        "multi-agent",
+        "pi",
+        "pi-agent",
+        "pi-desktop",
+        "rust",
+        "sandbox",
+        "skills",
+        "typescipt",
+        "wayland"
+      ],
+      "language": "TypeScript",
+      "stars": 599,
+      "forks": 26,
+      "open_issues": 22,
+      "license": "AGPL-3.0",
+      "archived": false,
+      "pushed_at": "2026-10-24T05:43:44Z",
+      "updated_at": "2026-10-24T05:40:02Z",
+      "source": "search:topic:ai-agent stars:>500 archived:false",
+      "collected_at": "2026-10-24T05:53:19.936461+00:00"
+    },
+    {
+      "full_name": "pulkitxm/claude-directory",
+      "html_url": "https://github.com/pulkitxm/claude-directory",
+      "description": "Open-source AI interfaces built with Claude (Fable 5) including hero sections, GLSL shaders, design systems, animations, 3D components  and and landing pages,  in React, Tailwind, and Three.js. Plug them into your AI agent and ship faster.",
+      "topics": [
+        "ai-generated",
         "anthropic",
         "claude",
-        "claude-code",
-        "claude-code-alternative",
+        "claude-ai",
+        "design-system",
+        "frontend",
+        "generative-ui",
+        "glsl-shaders",
+        "hero-section",
+        "landing-page",
+        "react",
+        "tailwindcss",
+        "templates",
+        "threejs",
+        "ui-components",
+        "ui-design",
+        "vibe-coding",
+        "webgl"
+      ],
+      "language": "HTML",
+      "stars": 598,
+      "forks": 143,
+      "open_issues": 64,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-10-24T02:46:06Z",
+      "updated_at": "2026-10-24T05:46:39Z",
+      "source": "search:topic:design-system stars:>200 archived:false",
+      "collected_at": "2026-10-24T05:53:18.394229+00:00"
+    },
+    {
+      "full_name": "qybaihe/mu",
+      "html_url": "https://github.com/qybaihe/mu",
+      "description": "mu (μ): a coding agent that thinks before it acts. A small, fast judge makes the routine calls, the big model does the work. Built on pi.",
+      "topics": [
+        "agent-harness",
+        "ai-agent",
+        "ai-coding",
         "cli",
         "coding-agent",
-        "cpp",
+        "context-engineering",
+        "desktop-app",
         "developer-tools",
+        "electron",
+        "jev",
         "llm",
-        "mcp",
-        "ollama",
-        "openai",
-        "rag",
-        "retrieval-augmented-generation",
-        "sandbox",
-        "static-binary",
-        "terminal",
-        "tui"
+        "multi-agent",
+        "pi-coding-agent",
+        "prompt-injection",
+        "typesafe",
+        "typescript"
       ],
-      "language": "C++",
-      "stars": 623,
-      "forks": 27,
+      "language": "TypeScript",
+      "stars": 540,
+      "forks": 62,
       "open_issues": 8,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-24T02:05:22Z",
-      "updated_at": "2026-10-24T02:05:26Z",
-      "source": "search:topic:ai-agent stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:22.446753+00:00"
-    },
-    {
-      "full_name": "gakonst/nanocode",
-      "html_url": "https://github.com/gakonst/nanocode",
-      "description": "SDK for Frontier Embedded Agents.",
-      "topics": [
-        "ai",
-        "ai-agent",
-        "ai-agents",
-        "anthropic",
-        "chatgpt",
-        "claude",
-        "claude-code",
-        "codex",
-        "hermes",
-        "hermes-agent",
-        "llm",
-        "openai"
+      "pushed_at": "2026-10-24T05:52:36Z",
+      "updated_at": "2026-10-24T05:50:08Z",
+      "source": "search:topic:developer-tools stars:>500 archived:false",
+      "collected_at": "2026-10-24T05:53:19.123863+00:00",
+      "also_seen_in": [
+        "search:topic:ai-agent stars:>500 archived:false"
       ],
-      "language": "Rust",
-      "stars": 588,
-      "forks": 87,
-      "open_issues": 2,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-10-24T02:02:13Z",
-      "updated_at": "2026-10-24T02:02:17Z",
-      "source": "search:topic:ai-agent stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:22.446769+00:00"
-    },
-    {
-      "full_name": "KitionAI/kition",
-      "html_url": "https://github.com/KitionAI/kition",
-      "description": "Kition brings Markdown, DataTable, WhiteBoard, a tool-using AI agent, browser research, and visual workflows into one desktop workspace. ",
-      "topics": [
-        "agent",
-        "ai",
-        "ai-agent",
-        "desktop-app",
-        "electron",
-        "kition",
-        "knowledge-base",
-        "local-first",
-        "markdown",
-        "mcp",
-        "note-taking",
-        "notion-alternative",
-        "obsidian-alternative",
-        "productivity",
-        "react",
-        "typescript",
-        "whiteboard",
-        "workflow"
-      ],
-      "language": "TypeScript",
-      "stars": 512,
-      "forks": 39,
-      "open_issues": 2,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-10-24T02:01:01Z",
-      "updated_at": "2026-10-24T02:01:04Z",
-      "source": "search:topic:ai-agent stars:>500 archived:false",
-      "collected_at": "2026-10-24T02:15:22.446774+00:00"
+      "relationships": []
     },
     {
       "full_name": "zordhalo/runs-on.dev",
@@ -2287,13 +2108,13 @@
       "language": "JavaScript",
       "stars": 487,
       "forks": 139,
-      "open_issues": 58,
+      "open_issues": 60,
       "license": "AGPL-3.0",
       "archived": false,
-      "pushed_at": "2026-10-24T02:02:42Z",
-      "updated_at": "2026-10-24T02:02:46Z",
+      "pushed_at": "2026-10-24T05:13:24Z",
+      "updated_at": "2026-10-24T05:13:28Z",
       "source": "search:topic:github-pages stars:>100 archived:false",
-      "collected_at": "2026-10-24T02:15:13.995861+00:00"
+      "collected_at": "2026-10-24T05:53:17.631080+00:00"
     },
     {
       "full_name": "ZutJoe/KoalaHackerNews",
@@ -2309,7 +2130,7 @@
       "pushed_at": "2026-10-19T19:41:06Z",
       "updated_at": "2026-10-21T06:56:47Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741451+00:00",
+      "collected_at": "2026-10-24T05:53:16.140941+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -2328,7 +2149,7 @@
       "pushed_at": "2022-03-09T04:29:43Z",
       "updated_at": "2026-08-31T13:56:45Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741575+00:00",
+      "collected_at": "2026-10-24T05:53:16.141044+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -2362,7 +2183,7 @@
       "pushed_at": "2026-10-24T00:27:05Z",
       "updated_at": "2026-10-24T00:27:08Z",
       "source": "search:topic:design-system stars:>200 archived:false",
-      "collected_at": "2026-10-24T02:15:15.664472+00:00"
+      "collected_at": "2026-10-24T05:53:18.394243+00:00"
     },
     {
       "full_name": "mshibanami/GitHubTrendingRSS",
@@ -2383,10 +2204,10 @@
       "open_issues": 1,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-23T05:54:04Z",
+      "pushed_at": "2026-10-24T05:39:47Z",
       "updated_at": "2026-10-20T23:24:24Z",
       "source": "repository:mshibanami/GitHubTrendingRSS",
-      "collected_at": "2026-10-24T02:14:57.241225+00:00"
+      "collected_at": "2026-10-24T05:53:12.825868+00:00"
     },
     {
       "full_name": "Cotal-AI/Cotal",
@@ -2415,48 +2236,149 @@
         "typescript"
       ],
       "language": "TypeScript",
-      "stars": 340,
+      "stars": 341,
       "forks": 44,
       "open_issues": 562,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-10-24T02:05:27Z",
-      "updated_at": "2026-10-24T02:03:38Z",
+      "pushed_at": "2026-10-24T05:52:55Z",
+      "updated_at": "2026-10-24T05:51:06Z",
       "source": "search:topic:agent-skills stars:>50 archived:false",
-      "collected_at": "2026-10-24T02:15:12.310824+00:00"
+      "collected_at": "2026-10-24T05:53:16.855648+00:00"
     },
     {
-      "full_name": "google/elephant-goldfish-model",
-      "html_url": "https://github.com/google/elephant-goldfish-model",
-      "description": "An open-source method and skill set created at Google for spec-driven development with LLMs",
+      "full_name": "aaryansamanta/aaryansamanta.github.io",
+      "html_url": "https://github.com/aaryansamanta/aaryansamanta.github.io",
+      "description": "Aaryan Samanta: machine learning for biology and medicine. First-author papers, mentored research, USACO Platinum, and AI Ethos, Inc.",
       "topics": [
+        "github-pages",
+        "html-css",
+        "machine-learning",
+        "personal-website",
+        "portfolio",
+        "resume",
+        "static-site"
+      ],
+      "language": "HTML",
+      "stars": 321,
+      "forks": 0,
+      "open_issues": 0,
+      "license": "NOASSERTION",
+      "archived": false,
+      "pushed_at": "2026-10-24T05:07:17Z",
+      "updated_at": "2026-10-24T05:07:21Z",
+      "source": "search:topic:github-pages stars:>100 archived:false",
+      "collected_at": "2026-10-24T05:53:17.631083+00:00"
+    },
+    {
+      "full_name": "squirrelscan/squirrelscan",
+      "html_url": "https://github.com/squirrelscan/squirrelscan",
+      "description": "The website QA tool for your coding agent. 300+ audit rules across SEO, performance, security, accessibility and agent experience.",
+      "topics": [
+        "accessibility",
+        "agent",
         "agent-skills",
         "ai-agents",
-        "antigravity",
+        "audit",
         "claude-code",
-        "claude-code-plugin",
-        "claude-skills",
+        "cli",
         "codex",
-        "codex-plugin",
-        "coding-agents",
-        "context-engineering",
-        "developer-tools",
-        "gemini",
+        "geo",
         "llm",
-        "multi-agent",
-        "prompt-engineering",
-        "spec-driven-development"
+        "llms-txt",
+        "mcp",
+        "mcp-server",
+        "performance",
+        "seo",
+        "seo-audit",
+        "technical-seo",
+        "web-performance",
+        "website",
+        "website-audit"
       ],
-      "language": "Python",
-      "stars": 320,
-      "forks": 27,
-      "open_issues": 25,
-      "license": "Apache-2.0",
+      "language": "TypeScript",
+      "stars": 296,
+      "forks": 32,
+      "open_issues": 89,
+      "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-24T02:06:25Z",
-      "updated_at": "2026-10-24T02:13:18Z",
+      "pushed_at": "2026-10-24T05:44:31Z",
+      "updated_at": "2026-10-24T05:43:33Z",
       "source": "search:topic:agent-skills stars:>50 archived:false",
-      "collected_at": "2026-10-24T02:15:12.310821+00:00"
+      "collected_at": "2026-10-24T05:53:16.855683+00:00"
+    },
+    {
+      "full_name": "bout2bus/thepiratebay-proxy-list",
+      "html_url": "https://github.com/bout2bus/thepiratebay-proxy-list",
+      "description": "Working The Pirate Bay proxy list 2026. Updated daily with fast, secure TPB mirrors. Unblock The Pirate Bay in UK, US, Australia & 30+ countries. 100% verified proxies.",
+      "topics": [
+        "2026",
+        "anonymous-browsing",
+        "bypass-isp",
+        "censorship-circumvention",
+        "github-pages",
+        "mirror-sites",
+        "open-source",
+        "p2p-proxy",
+        "piratebay-mirror",
+        "piratebay-proxy",
+        "privacy-tools",
+        "proxy-list",
+        "the-pirate-bay",
+        "torrent-proxy",
+        "torrent-sites",
+        "tpb-mirror",
+        "tpb-proxy",
+        "unblock-tpb",
+        "unblock-websites",
+        "web-proxy"
+      ],
+      "language": "HTML",
+      "stars": 290,
+      "forks": 14,
+      "open_issues": 2,
+      "license": null,
+      "archived": false,
+      "pushed_at": "2026-10-24T02:44:37Z",
+      "updated_at": "2026-10-24T03:17:52Z",
+      "source": "search:topic:github-pages stars:>100 archived:false",
+      "collected_at": "2026-10-24T05:53:17.631088+00:00"
+    },
+    {
+      "full_name": "public-ui/kolibri",
+      "html_url": "https://github.com/public-ui/kolibri",
+      "description": "The accessible HTML-Standard",
+      "topics": [
+        "a11y",
+        "accessibility",
+        "angular",
+        "barrierefreiheit",
+        "client-side-rendering",
+        "csr",
+        "design-system",
+        "react",
+        "service-side",
+        "service-side-generation",
+        "service-side-rendering",
+        "solid-js",
+        "ssg",
+        "ssr",
+        "styleguide",
+        "theming",
+        "ui",
+        "vuejs",
+        "webcomponents"
+      ],
+      "language": "TypeScript",
+      "stars": 288,
+      "forks": 56,
+      "open_issues": 275,
+      "license": "EUPL-1.2",
+      "archived": false,
+      "pushed_at": "2026-10-24T03:43:18Z",
+      "updated_at": "2026-10-24T03:37:07Z",
+      "source": "search:topic:design-system stars:>200 archived:false",
+      "collected_at": "2026-10-24T05:53:18.394225+00:00"
     },
     {
       "full_name": "once-ui-system/core",
@@ -2478,7 +2400,7 @@
       "pushed_at": "2026-10-23T23:42:22Z",
       "updated_at": "2026-10-23T23:39:57Z",
       "source": "search:topic:design-system stars:>200 archived:false",
-      "collected_at": "2026-10-24T02:15:15.664478+00:00"
+      "collected_at": "2026-10-24T05:53:18.394249+00:00"
     },
     {
       "full_name": "yujunhao8831/spring-boot-start-current",
@@ -2510,7 +2432,7 @@
       "pushed_at": "2019-03-22T09:32:43Z",
       "updated_at": "2026-09-24T02:23:00Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741582+00:00",
+      "collected_at": "2026-10-24T05:53:16.141050+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -2529,10 +2451,47 @@
       "pushed_at": "2025-02-14T13:39:00Z",
       "updated_at": "2026-09-24T09:53:06Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741523+00:00",
+      "collected_at": "2026-10-24T05:53:16.141007+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
+    },
+    {
+      "full_name": "jmagly/aiwg",
+      "html_url": "https://github.com/jmagly/aiwg",
+      "description": "Reusable project context and specialist workflows for the AI tools you already use. Agents, skills, rules and MCP tools for Claude Code, Codex, Copilot, Cursor and more, plus SDLC workflows, session memory, and Jev decision support that offloads bounded LLM decisions to save tokens.",
+      "topics": [
+        "agent-skills",
+        "agentic-ai",
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "coding-agents",
+        "context-engineering",
+        "copilot",
+        "cursor",
+        "decision-engine",
+        "decision-support",
+        "developer-tools",
+        "jev",
+        "llm",
+        "mcp",
+        "multi-agent",
+        "prompt-engineering",
+        "sdlc",
+        "token-optimization",
+        "workflow-automation"
+      ],
+      "language": "TypeScript",
+      "stars": 225,
+      "forks": 34,
+      "open_issues": 11,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-10-24T05:50:14Z",
+      "updated_at": "2026-10-24T05:50:17Z",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "collected_at": "2026-10-24T05:53:16.855669+00:00"
     },
     {
       "full_name": "melogabriel/tinfoil-shops-status",
@@ -2555,7 +2514,44 @@
       "pushed_at": "2026-10-24T01:17:35Z",
       "updated_at": "2026-10-24T01:17:39Z",
       "source": "search:topic:github-pages stars:>100 archived:false",
-      "collected_at": "2026-10-24T02:15:13.995868+00:00"
+      "collected_at": "2026-10-24T05:53:17.631094+00:00"
+    },
+    {
+      "full_name": "colonelpanic8/dotfiles",
+      "html_url": "https://github.com/colonelpanic8/dotfiles",
+      "description": "Configuration files for XMonad, Emacs, NixOS, Taffybar and more.",
+      "topics": [
+        "arch-linux",
+        "dotfiles",
+        "emacs",
+        "emacs-configuration",
+        "github-pages",
+        "haskell",
+        "linux",
+        "literate-programming",
+        "nix",
+        "nix-dotfiles",
+        "nixos",
+        "orgmode",
+        "python",
+        "shell",
+        "taffybar",
+        "tiling-window-manager",
+        "travis-ci",
+        "window-manager",
+        "xmonad",
+        "zsh"
+      ],
+      "language": "Nix",
+      "stars": 222,
+      "forks": 22,
+      "open_issues": 0,
+      "license": null,
+      "archived": false,
+      "pushed_at": "2026-10-24T05:38:46Z",
+      "updated_at": "2026-10-24T05:37:28Z",
+      "source": "search:topic:github-pages stars:>100 archived:false",
+      "collected_at": "2026-10-24T05:53:17.631072+00:00"
     },
     {
       "full_name": "mojimoon/wenku8",
@@ -2570,15 +2566,15 @@
         "wenku8"
       ],
       "language": "Python",
-      "stars": 211,
+      "stars": 212,
       "forks": 13,
       "open_issues": 0,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-10-24T00:58:52Z",
-      "updated_at": "2026-10-24T00:58:56Z",
+      "updated_at": "2026-10-24T05:31:17Z",
       "source": "search:topic:github-pages stars:>100 archived:false",
-      "collected_at": "2026-10-24T02:15:13.995871+00:00"
+      "collected_at": "2026-10-24T05:53:17.631096+00:00"
     },
     {
       "full_name": "szhsin/react-accordion",
@@ -2604,7 +2600,34 @@
       "pushed_at": "2026-10-24T01:00:00Z",
       "updated_at": "2026-10-24T01:00:02Z",
       "source": "search:topic:design-system stars:>200 archived:false",
-      "collected_at": "2026-10-24T02:15:15.664461+00:00"
+      "collected_at": "2026-10-24T05:53:18.394236+00:00"
+    },
+    {
+      "full_name": "Innei/Yohaku",
+      "html_url": "https://github.com/Innei/Yohaku",
+      "description": "余白 / Yohaku — A typographic design system for written content. One accent, three neutral tiers, the rest is whitespace.",
+      "topics": [
+        "ai",
+        "blog",
+        "cms",
+        "design",
+        "design-system",
+        "mx-space",
+        "paper",
+        "shiro",
+        "tailwindcss",
+        "typography"
+      ],
+      "language": "TypeScript",
+      "stars": 202,
+      "forks": 16,
+      "open_issues": 15,
+      "license": null,
+      "archived": false,
+      "pushed_at": "2026-10-24T04:08:21Z",
+      "updated_at": "2026-10-24T04:08:25Z",
+      "source": "search:topic:design-system stars:>200 archived:false",
+      "collected_at": "2026-10-24T05:53:18.394219+00:00"
     },
     {
       "full_name": "OpenNX/opennx.github.io",
@@ -2625,10 +2648,10 @@
       "open_issues": 0,
       "license": null,
       "archived": false,
-      "pushed_at": "2026-10-24T00:11:20Z",
-      "updated_at": "2026-10-24T00:11:24Z",
+      "pushed_at": "2026-10-24T05:18:24Z",
+      "updated_at": "2026-10-24T05:18:28Z",
       "source": "search:topic:github-pages stars:>100 archived:false",
-      "collected_at": "2026-10-24T02:15:13.995878+00:00"
+      "collected_at": "2026-10-24T05:53:17.631076+00:00"
     },
     {
       "full_name": "bifrost-proxy/bifrost",
@@ -2657,68 +2680,10 @@
       "pushed_at": "2026-10-21T02:20:13Z",
       "updated_at": "2026-10-22T05:07:10Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741436+00:00",
+      "collected_at": "2026-10-24T05:53:16.140928+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
-    },
-    {
-      "full_name": "Stintik-123/StintikVPN",
-      "html_url": "https://github.com/Stintik-123/StintikVPN",
-      "description": "Бесплатные VPN-подписки, Telegram-прокси и инструкции по обходу блокировок. Конфиги обновляются автоматически, ссылки проверяет CI.",
-      "topics": [
-        "bypass",
-        "censorship",
-        "configs",
-        "dpi",
-        "free-vpn",
-        "github-pages",
-        "mtproto",
-        "russia",
-        "shadowsocks",
-        "telegram",
-        "tor",
-        "trojan",
-        "v2ray",
-        "vless",
-        "vmess",
-        "vpn",
-        "vpn-configs",
-        "wireguard",
-        "xray"
-      ],
-      "language": "Python",
-      "stars": 161,
-      "forks": 4,
-      "open_issues": 0,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-10-23T18:21:12Z",
-      "updated_at": "2026-10-23T18:21:16Z",
-      "source": "search:topic:github-pages stars:>100 archived:false",
-      "collected_at": "2026-10-24T02:15:13.995884+00:00"
-    },
-    {
-      "full_name": "hibbitts-design/docsify-this",
-      "html_url": "https://github.com/hibbitts-design/docsify-this",
-      "description": "Turn your Markdown files into shareable web pages, embeddable content, and presentation-friendly displays instantly with Docsify-This. Finalist in the Open Infrastructure category for the 2024 Open Education Awards for Excellence. Mirror backup instance available at https://docsify-this.netlify.app.",
-      "topics": [
-        "docsify",
-        "github-pages",
-        "markdown",
-        "remote",
-        "web-app"
-      ],
-      "language": null,
-      "stars": 149,
-      "forks": 20,
-      "open_issues": 0,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-10-23T18:07:31Z",
-      "updated_at": "2026-10-23T18:07:35Z",
-      "source": "search:topic:github-pages stars:>100 archived:false",
-      "collected_at": "2026-10-24T02:15:13.995887+00:00"
     },
     {
       "full_name": "spotify/spotify.github.io",
@@ -2739,44 +2704,39 @@
       "pushed_at": "2026-10-24T02:07:04Z",
       "updated_at": "2026-10-24T02:07:07Z",
       "source": "search:topic:github-pages stars:>100 archived:false",
-      "collected_at": "2026-10-24T02:15:13.995839+00:00"
+      "collected_at": "2026-10-24T05:53:17.631091+00:00"
     },
     {
-      "full_name": "JasonColapietro/suede-creator-skills",
-      "html_url": "https://github.com/JasonColapietro/suede-creator-skills",
-      "description": "Open-source AI skills for SEO, AI search visibility, conversion copy, marketing strategy, and business operations. Reusable workflows for Claude Code and Codex, plus code review, app delivery, and creator tools.",
+      "full_name": "dhasap/dhanytv",
+      "html_url": "https://github.com/dhasap/dhanytv",
+      "description": "Playlist IPTV Indonesia gratis · 920+ channel · 27+ negara · EPG XMLTV (32.900+ programme) · auto-update harian · HLS + DASH/DRM · player: TiviMate/Kodi/VLC/OTT Navigator",
       "topics": [
-        "agent-orchestration",
-        "agent-skill",
-        "agent-skills",
-        "ai-agents",
-        "ai-coding",
-        "anthropic",
-        "claude-code",
-        "claude-code-plugin",
-        "claude-code-skills",
-        "claude-skills",
-        "code-review",
-        "codex",
-        "developer-tools",
-        "evals",
-        "llm-evaluation",
-        "mcp-server",
-        "multi-agent",
-        "openai-codex",
-        "plugin-marketplace",
-        "seo"
+        "android-tv",
+        "epg",
+        "free",
+        "github-actions",
+        "github-pages",
+        "indonesia",
+        "iptv",
+        "kodi",
+        "m3u",
+        "m3u8",
+        "playlist",
+        "smart-tv",
+        "streaming",
+        "tivimate",
+        "xmltv"
       ],
-      "language": "JavaScript",
-      "stars": 125,
-      "forks": 12,
-      "open_issues": 4,
-      "license": "MIT",
+      "language": "Python",
+      "stars": 122,
+      "forks": 18,
+      "open_issues": 13,
+      "license": "NOASSERTION",
       "archived": false,
-      "pushed_at": "2026-10-24T01:59:05Z",
-      "updated_at": "2026-10-24T01:59:06Z",
-      "source": "search:topic:agent-skills stars:>50 archived:false",
-      "collected_at": "2026-10-24T02:15:12.310838+00:00"
+      "pushed_at": "2026-10-24T02:57:06Z",
+      "updated_at": "2026-10-24T02:57:09Z",
+      "source": "search:topic:github-pages stars:>100 archived:false",
+      "collected_at": "2026-10-24T05:53:17.631086+00:00"
     },
     {
       "full_name": "ywz978020607/History",
@@ -2792,35 +2752,10 @@
       "pushed_at": "2024-10-10T12:36:38Z",
       "updated_at": "2025-05-16T14:32:15Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741530+00:00",
+      "collected_at": "2026-10-24T05:53:16.141012+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
-    },
-    {
-      "full_name": "Jackychen-12/AI-Search",
-      "html_url": "https://github.com/Jackychen-12/AI-Search",
-      "description": "AI industry news hub that auto-aggregates high quality sources daily — fully static, zero-cost, runs on GitHub Pages",
-      "topics": [
-        "ai",
-        "github-actions",
-        "github-pages",
-        "news-aggregator",
-        "nextjs",
-        "rss",
-        "static-site",
-        "typescript"
-      ],
-      "language": "TypeScript",
-      "stars": 117,
-      "forks": 4,
-      "open_issues": 2,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-10-24T00:46:16Z",
-      "updated_at": "2026-10-24T00:46:20Z",
-      "source": "search:topic:github-pages stars:>100 archived:false",
-      "collected_at": "2026-10-24T02:15:13.995875+00:00"
     },
     {
       "full_name": "sandermvanvliet/RoadCaptain",
@@ -2842,66 +2777,84 @@
       "pushed_at": "2026-08-22T09:00:53Z",
       "updated_at": "2026-10-02T00:41:22Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741492+00:00",
+      "collected_at": "2026-10-24T05:53:16.140978+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
     },
     {
-      "full_name": "SummerEngine/summer",
-      "html_url": "https://github.com/SummerEngine/summer",
-      "description": "The game engine built for AI. MCP server, CLI and skills that let any agent build, test and publish full games with Summer Engine.",
+      "full_name": "JKHeadley/instar",
+      "html_url": "https://github.com/JKHeadley/instar",
+      "description": "Persistent Claude Code agents with scheduling, sessions, memory, and Telegram.",
       "topics": [
+        "agent-framework",
+        "agent-identity",
+        "agent-infrastructure",
+        "agent-memory",
         "agent-skills",
-        "ai",
         "ai-agents",
-        "ai-game-development",
-        "ai-game-engine",
+        "ai-safety",
+        "autonomous-agents",
         "claude-code",
-        "claude-code-plugins",
-        "codex",
-        "cursor",
-        "game-development",
-        "game-engine",
-        "gamedev",
-        "gemini-cli-extension",
+        "cli",
+        "cron",
+        "job-scheduler",
+        "llm",
         "mcp",
-        "mcp-server",
-        "model-context-protocol",
-        "multiplayer"
+        "npm-package",
+        "open-source",
+        "persistency",
+        "telegram-bot",
+        "typescript",
+        "whatsapp"
       ],
       "language": "TypeScript",
-      "stars": 87,
-      "forks": 8,
-      "open_issues": 27,
+      "stars": 84,
+      "forks": 19,
+      "open_issues": 150,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-24T02:03:04Z",
-      "updated_at": "2026-10-24T02:03:08Z",
+      "pushed_at": "2026-10-24T05:51:55Z",
+      "updated_at": "2026-10-24T05:40:57Z",
       "source": "search:topic:agent-skills stars:>50 archived:false",
-      "collected_at": "2026-10-24T02:15:12.310829+00:00"
+      "collected_at": "2026-10-24T05:53:16.855693+00:00"
     },
     {
-      "full_name": "shivamthe-coder/roblox-luau-atelier",
-      "html_url": "https://github.com/shivamthe-coder/roblox-luau-atelier",
-      "description": "2026 Roblox Luau AI Agent Skill Suite for Production-Grade Scripts and Official Docs Guidance",
+      "full_name": "TserenTserenov/FMT-exocortex-template",
+      "html_url": "https://github.com/TserenTserenov/FMT-exocortex-template",
+      "description": "Exocortex template: fork & deploy your AI-powered personal knowledge system with Claude Code",
       "topics": [
         "agent-skills",
-        "game-development",
-        "luau",
-        "roblox",
-        "skills-sh"
+        "agentic-workflows",
+        "ai-agents",
+        "ai-second-brain",
+        "anthropic-claude",
+        "automation",
+        "claude-code",
+        "claude-plugin",
+        "developer-tools",
+        "exocortex",
+        "intellectual-work",
+        "knowledge-management",
+        "mcp",
+        "multi-agent",
+        "open-source",
+        "personal-knowledge-management",
+        "pkm",
+        "productivity-system",
+        "second-brain",
+        "self-improvement"
       ],
-      "language": "HTML",
-      "stars": 71,
-      "forks": 0,
-      "open_issues": 0,
-      "license": null,
+      "language": "Shell",
+      "stars": 63,
+      "forks": 161,
+      "open_issues": 25,
+      "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-24T02:07:59Z",
-      "updated_at": "2026-10-24T02:08:03Z",
+      "pushed_at": "2026-10-24T05:52:04Z",
+      "updated_at": "2026-10-24T05:42:07Z",
       "source": "search:topic:agent-skills stars:>50 archived:false",
-      "collected_at": "2026-10-24T02:15:12.310817+00:00"
+      "collected_at": "2026-10-24T05:53:16.855686+00:00"
     },
     {
       "full_name": "andipaetzold/zwiftmap",
@@ -2924,7 +2877,7 @@
       "pushed_at": "2026-10-20T20:09:28Z",
       "updated_at": "2026-10-15T23:56:37Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741440+00:00",
+      "collected_at": "2026-10-24T05:53:16.140931+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -2943,7 +2896,7 @@
       "pushed_at": "2024-04-27T03:16:42Z",
       "updated_at": "2026-07-26T08:21:47Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741556+00:00",
+      "collected_at": "2026-10-24T05:53:16.141027+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -2962,7 +2915,7 @@
       "pushed_at": "2022-06-18T13:07:20Z",
       "updated_at": "2025-03-09T05:22:47Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741572+00:00",
+      "collected_at": "2026-10-24T05:53:16.141041+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -2986,7 +2939,7 @@
       "pushed_at": "2024-03-20T04:37:27Z",
       "updated_at": "2026-01-31T13:07:53Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741562+00:00",
+      "collected_at": "2026-10-24T05:53:16.141033+00:00",
       "relationships": [
         "MengEn-Ink:starred"
       ]
@@ -3005,28 +2958,9 @@
       "pushed_at": "2021-07-24T23:31:34Z",
       "updated_at": "2023-01-10T14:39:10Z",
       "source": "profile:MengEn-Ink:starred",
-      "collected_at": "2026-10-24T02:15:10.741579+00:00",
+      "collected_at": "2026-10-24T05:53:16.141047+00:00",
       "relationships": [
         "MengEn-Ink:starred"
-      ]
-    },
-    {
-      "full_name": "MengEn-Ink/cili-cycling-miniapp",
-      "html_url": "https://github.com/MengEn-Ink/cili-cycling-miniapp",
-      "description": "此里：骑行活动报名、Strava 能力资料与管理员审批微信小程序",
-      "topics": [],
-      "language": "JavaScript",
-      "stars": 0,
-      "forks": 0,
-      "open_issues": 4,
-      "license": "NOASSERTION",
-      "archived": false,
-      "pushed_at": "2026-10-24T01:22:54Z",
-      "updated_at": "2026-10-24T01:22:57Z",
-      "source": "profile:MengEn-Ink:owned",
-      "collected_at": "2026-10-24T02:15:07.012383+00:00",
-      "relationships": [
-        "MengEn-Ink:owned"
       ]
     },
     {
@@ -3040,10 +2974,29 @@
       "open_issues": 0,
       "license": null,
       "archived": false,
-      "pushed_at": "2026-10-24T00:53:11Z",
-      "updated_at": "2026-10-24T00:53:15Z",
+      "pushed_at": "2026-10-24T05:34:55Z",
+      "updated_at": "2026-10-24T05:34:59Z",
       "source": "profile:MengEn-Ink:owned",
-      "collected_at": "2026-10-24T02:15:07.012404+00:00",
+      "collected_at": "2026-10-24T05:53:14.354418+00:00",
+      "relationships": [
+        "MengEn-Ink:owned"
+      ]
+    },
+    {
+      "full_name": "MengEn-Ink/cili-cycling-miniapp",
+      "html_url": "https://github.com/MengEn-Ink/cili-cycling-miniapp",
+      "description": "此里：骑行活动报名、Strava 能力资料与管理员审批微信小程序",
+      "topics": [],
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "open_issues": 3,
+      "license": "NOASSERTION",
+      "archived": false,
+      "pushed_at": "2026-10-24T03:39:12Z",
+      "updated_at": "2026-10-24T03:39:15Z",
+      "source": "profile:MengEn-Ink:owned",
+      "collected_at": "2026-10-24T05:53:14.354437+00:00",
       "relationships": [
         "MengEn-Ink:owned"
       ]
@@ -3062,7 +3015,7 @@
       "pushed_at": "2026-10-23T11:00:52Z",
       "updated_at": "2026-10-23T11:00:56Z",
       "source": "profile:MengEn-Ink:owned",
-      "collected_at": "2026-10-24T02:15:07.012417+00:00",
+      "collected_at": "2026-10-24T05:53:14.354442+00:00",
       "relationships": [
         "MengEn-Ink:owned"
       ]
@@ -3081,7 +3034,7 @@
       "pushed_at": "2026-10-23T10:32:16Z",
       "updated_at": "2026-10-23T10:32:20Z",
       "source": "profile:MengEn-Ink:owned",
-      "collected_at": "2026-10-24T02:15:07.012423+00:00",
+      "collected_at": "2026-10-24T05:53:14.354446+00:00",
       "relationships": [
         "MengEn-Ink:owned"
       ]
@@ -3100,7 +3053,7 @@
       "pushed_at": "2026-10-22T16:16:06Z",
       "updated_at": "2026-10-22T16:16:12Z",
       "source": "profile:MengEn-Ink:owned",
-      "collected_at": "2026-10-24T02:15:07.012427+00:00",
+      "collected_at": "2026-10-24T05:53:14.354448+00:00",
       "relationships": [
         "MengEn-Ink:owned"
       ]
@@ -3119,7 +3072,7 @@
       "pushed_at": "2026-10-22T13:44:49Z",
       "updated_at": "2026-10-22T13:57:27Z",
       "source": "profile:MengEn-Ink:owned",
-      "collected_at": "2026-10-24T02:15:07.012430+00:00",
+      "collected_at": "2026-10-24T05:53:14.354451+00:00",
       "relationships": [
         "MengEn-Ink:owned"
       ]
@@ -3138,7 +3091,7 @@
       "pushed_at": "2026-10-22T17:01:03Z",
       "updated_at": "2026-10-22T13:44:55Z",
       "source": "profile:MengEn-Ink:owned",
-      "collected_at": "2026-10-24T02:15:07.012435+00:00",
+      "collected_at": "2026-10-24T05:53:14.354455+00:00",
       "relationships": [
         "MengEn-Ink:owned"
       ]
@@ -3157,7 +3110,7 @@
       "pushed_at": "2026-10-23T17:39:57Z",
       "updated_at": "2026-10-21T17:27:00Z",
       "source": "profile:MengEn-Ink:owned",
-      "collected_at": "2026-10-24T02:15:07.012439+00:00",
+      "collected_at": "2026-10-24T05:53:14.354458+00:00",
       "relationships": [
         "MengEn-Ink:owned"
       ]
@@ -3176,7 +3129,7 @@
       "pushed_at": "2026-10-20T11:47:53Z",
       "updated_at": "2026-10-20T11:47:58Z",
       "source": "profile:MengEn-Ink:owned",
-      "collected_at": "2026-10-24T02:15:07.012442+00:00",
+      "collected_at": "2026-10-24T05:53:14.354461+00:00",
       "relationships": [
         "MengEn-Ink:owned"
       ]
@@ -3195,7 +3148,7 @@
       "pushed_at": "2026-10-20T11:43:49Z",
       "updated_at": "2026-10-20T11:43:54Z",
       "source": "profile:MengEn-Ink:owned",
-      "collected_at": "2026-10-24T02:15:07.012446+00:00",
+      "collected_at": "2026-10-24T05:53:14.354464+00:00",
       "relationships": [
         "MengEn-Ink:owned"
       ]
@@ -3228,7 +3181,7 @@
       "pushed_at": "2026-10-19T11:55:01Z",
       "updated_at": "2026-10-19T11:55:08Z",
       "source": "repository:CodeSigils/skill-discovery",
-      "collected_at": "2026-10-24T02:14:59.889092+00:00"
+      "collected_at": "2026-10-24T05:53:13.313193+00:00"
     },
     {
       "full_name": "MengEn-Ink/deliveryai-demo-wxsp97",
@@ -3244,7 +3197,7 @@
       "pushed_at": "2026-10-19T06:48:08Z",
       "updated_at": "2026-10-19T06:48:12Z",
       "source": "profile:MengEn-Ink:owned",
-      "collected_at": "2026-10-24T02:15:07.012449+00:00",
+      "collected_at": "2026-10-24T05:53:14.354466+00:00",
       "relationships": [
         "MengEn-Ink:owned"
       ]
@@ -3263,7 +3216,7 @@
       "pushed_at": "2026-09-29T08:07:30Z",
       "updated_at": "2026-10-17T06:07:09Z",
       "source": "profile:MengEn-Ink:owned",
-      "collected_at": "2026-10-24T02:15:07.012452+00:00",
+      "collected_at": "2026-10-24T05:53:14.354472+00:00",
       "relationships": [
         "MengEn-Ink:owned"
       ]
@@ -3282,7 +3235,7 @@
       "pushed_at": "2026-10-05T14:10:29Z",
       "updated_at": "2026-10-05T14:06:43Z",
       "source": "profile:MengEn-Ink:owned",
-      "collected_at": "2026-10-24T02:15:07.012455+00:00",
+      "collected_at": "2026-10-24T05:53:14.354475+00:00",
       "relationships": [
         "MengEn-Ink:owned"
       ]
@@ -3301,7 +3254,7 @@
       "pushed_at": "2026-09-20T11:32:47Z",
       "updated_at": "2026-09-20T11:32:51Z",
       "source": "profile:MengEn-Ink:owned",
-      "collected_at": "2026-10-24T02:15:07.012458+00:00",
+      "collected_at": "2026-10-24T05:53:14.354478+00:00",
       "relationships": [
         "MengEn-Ink:owned"
       ]
@@ -3320,7 +3273,7 @@
       "pushed_at": "2026-09-10T12:15:52Z",
       "updated_at": "2026-09-10T12:17:27Z",
       "source": "profile:MengEn-Ink:owned",
-      "collected_at": "2026-10-24T02:15:07.012462+00:00",
+      "collected_at": "2026-10-24T05:53:14.354481+00:00",
       "relationships": [
         "MengEn-Ink:owned"
       ]
@@ -3339,7 +3292,7 @@
       "pushed_at": "2021-09-29T01:43:38Z",
       "updated_at": "2021-09-29T01:43:41Z",
       "source": "profile:MengEn-Ink:owned",
-      "collected_at": "2026-10-24T02:15:07.012466+00:00",
+      "collected_at": "2026-10-24T05:53:14.354484+00:00",
       "relationships": [
         "MengEn-Ink:owned"
       ]
