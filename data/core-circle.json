@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-24T14:41:00+08:00",
+  "generated_at": "2026-10-25T01:36:00+08:00",
   "source": "GitHub public REST API and public repository pages",
   "people": [
     {
@@ -8,7 +8,7 @@
       "profile_url": "https://github.com/alchaincyf",
       "tier": "seed",
       "tier_reason": "用户指定研究对象；不等同于质量认证",
-      "public_evidence": {"public_repos": 92, "followers": 11848, "following": 1, "profile_checked_at": "2026-10-24T14:41:00+08:00"},
+      "public_evidence": {"public_repos": 92, "followers": 11860, "following": 1, "profile_checked_at": "2026-10-25T01:36:00+08:00", "evidence_url": "https://api.github.com/users/alchaincyf"},
       "quality_note": "followers 仅为弱流行度信号，不计作背书或核心资格"
     }
   ],
