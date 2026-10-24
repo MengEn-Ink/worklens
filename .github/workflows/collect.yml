@@ -24,14 +24,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/collect_github.py
+      - name: 同步 Skill 待审队列（只入队，不流转、不安装）
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/skill_review.py sync
       - name: 提交数据变化
         run: |
-          if git diff --quiet -- data/discoveries.json; then
+          if git diff --quiet -- data/discoveries.json data/skill-review-queue.json; then
             echo '没有新的数据变化'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/discoveries.json
-          git commit -m '数据：更新开源项目候选'
+          git add data/discoveries.json data/skill-review-queue.json
+          git commit -m '数据：更新开源项目候选与 Skill 待审队列'
           git push

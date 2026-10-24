@@ -1,0 +1,384 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-24T05:11:42.406204+00:00",
+  "policy": {
+    "auto_install": false,
+    "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
+    "blocking_checks": [
+      "license_declared",
+      "license_compatible",
+      "secret_clean",
+      "install_safe",
+      "network_declared",
+      "write_scope_declared",
+      "injection_surface_reviewed"
+    ],
+    "states": [
+      "candidate",
+      "screening",
+      "needs_changes",
+      "trial",
+      "adopted",
+      "rejected",
+      "quarantined"
+    ]
+  },
+  "queue": [
+    {
+      "id": "SR-0001",
+      "subject": "morluto/rea",
+      "html_url": "https://github.com/morluto/rea",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [
+        "search:topic:developer-tools stars:>500 archived:false"
+      ],
+      "enqueued_at": "2026-10-24T04:55:16.586362+00:00",
+      "metadata_synced_at": "2026-10-24T04:55:16.586362+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 373475,
+      "pushed_at": "2026-10-24T02:13:42Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-10-24T04:55:16.586362+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-24T04:55:16.586362+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0002",
+      "subject": "paperclipai/paperclip",
+      "html_url": "https://github.com/paperclipai/paperclip",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-24T04:55:16.586479+00:00",
+      "metadata_synced_at": "2026-10-24T04:55:16.586479+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 106613,
+      "pushed_at": "2026-10-24T02:14:17Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-10-24T04:55:16.586479+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-24T04:55:16.586479+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0003",
+      "subject": "jeecgboot/JeecgBoot",
+      "html_url": "https://github.com/jeecgboot/JeecgBoot",
+      "source": "profile:MengEn-Ink:starred",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-24T04:55:16.587131+00:00",
+      "metadata_synced_at": "2026-10-24T04:55:16.587131+00:00",
+      "state": "candidate",
+      "license": "Apache-2.0",
+      "archived": false,
+      "stars": 48269,
+      "pushed_at": "2026-10-23T05:49:36Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=Apache-2.0",
+          "checked_at": "2026-10-24T04:55:16.587131+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-24T04:55:16.587131+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0004",
+      "subject": "VoltAgent/awesome-agent-skills",
+      "html_url": "https://github.com/VoltAgent/awesome-agent-skills",
+      "source": "repository:VoltAgent/awesome-agent-skills",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-24T04:55:16.587321+00:00",
+      "metadata_synced_at": "2026-10-24T04:55:16.587321+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 36238,
+      "pushed_at": "2026-10-23T08:16:35Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-10-24T04:55:16.587321+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-24T04:55:16.587321+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0005",
+      "subject": "Gentleman-Programming/gentle-ai",
+      "html_url": "https://github.com/Gentleman-Programming/gentle-ai",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-24T04:55:16.588029+00:00",
+      "metadata_synced_at": "2026-10-24T04:55:16.588029+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 7967,
+      "pushed_at": "2026-10-24T02:05:54Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-10-24T04:55:16.588029+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-24T04:55:16.588029+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0006",
+      "subject": "Devin-AXIS/iPolloWork",
+      "html_url": "https://github.com/Devin-AXIS/iPolloWork",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-24T04:55:16.588109+00:00",
+      "metadata_synced_at": "2026-10-24T04:55:16.588109+00:00",
+      "state": "candidate",
+      "license": "NOASSERTION",
+      "archived": false,
+      "stars": 7223,
+      "pushed_at": "2026-10-24T02:10:02Z",
+      "checks": {
+        "license_declared": {
+          "status": "fail",
+          "evidence": "GitHub API：license.spdx_id=NOASSERTION",
+          "checked_at": "2026-10-24T04:55:16.588109+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [
+        "license_unrecognized"
+      ],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-24T04:55:16.588109+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0007",
+      "subject": "Team-Commonly/commonly",
+      "html_url": "https://github.com/Team-Commonly/commonly",
+      "source": "search:topic:developer-tools stars:>500 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-24T04:55:16.588645+00:00",
+      "metadata_synced_at": "2026-10-24T04:55:16.588645+00:00",
+      "state": "candidate",
+      "license": "Apache-2.0",
+      "archived": false,
+      "stars": 1370,
+      "pushed_at": "2026-10-24T02:11:04Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=Apache-2.0",
+          "checked_at": "2026-10-24T04:55:16.588645+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-24T04:55:16.588645+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0008",
+      "subject": "Cotal-AI/Cotal",
+      "html_url": "https://github.com/Cotal-AI/Cotal",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-24T04:55:16.589192+00:00",
+      "metadata_synced_at": "2026-10-24T04:55:16.589192+00:00",
+      "state": "candidate",
+      "license": "Apache-2.0",
+      "archived": false,
+      "stars": 340,
+      "pushed_at": "2026-10-24T02:05:27Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=Apache-2.0",
+          "checked_at": "2026-10-24T04:55:16.589192+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-24T04:55:16.589192+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0009",
+      "subject": "google/elephant-goldfish-model",
+      "html_url": "https://github.com/google/elephant-goldfish-model",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-24T04:55:16.589248+00:00",
+      "metadata_synced_at": "2026-10-24T04:55:16.589248+00:00",
+      "state": "candidate",
+      "license": "Apache-2.0",
+      "archived": false,
+      "stars": 320,
+      "pushed_at": "2026-10-24T02:06:25Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=Apache-2.0",
+          "checked_at": "2026-10-24T04:55:16.589248+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-24T04:55:16.589248+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0010",
+      "subject": "JasonColapietro/suede-creator-skills",
+      "html_url": "https://github.com/JasonColapietro/suede-creator-skills",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-24T04:55:16.589673+00:00",
+      "metadata_synced_at": "2026-10-24T04:55:16.589673+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 125,
+      "pushed_at": "2026-10-24T01:59:05Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-10-24T04:55:16.589673+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-24T04:55:16.589673+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0011",
+      "subject": "CodeSigils/skill-discovery",
+      "html_url": "https://github.com/CodeSigils/skill-discovery",
+      "source": "repository:CodeSigils/skill-discovery",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-24T04:55:16.590112+00:00",
+      "metadata_synced_at": "2026-10-24T04:55:16.590112+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 0,
+      "pushed_at": "2026-10-19T11:55:01Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-10-24T04:55:16.590112+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-24T04:55:16.590112+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    }
+  ]
+}

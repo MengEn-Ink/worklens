@@ -47,6 +47,19 @@ PC 与移动端页面在启动后读取发布产物中的 `data/discoveries.json
 - OPML 导入时会先去掉订阅 URL 的账号、查询参数和 fragment，再散列保存，避免把私有参数带进仓库。
 - `source_type` 当前支持 `meeting | lark_doc | podcast | article | repository | rss`。
 
+## skill-review-queue.json
+
+Skill 候选的安全评测待审队列，由 `scripts/skill_review.py sync` 从 `discoveries.json` 自动入队、由真人通过 `transition` / `check-update` 推进。完整状态机、评测项与命令见 [skill-review.md](skill-review.md)。
+
+契约要点：
+
+- `policy.auto_install` 必须恒为 `false`；自动化只能追加 `candidate` 和刷新公开元数据。
+- `queue[].state` 取值：`candidate | screening | needs_changes | trial | adopted | rejected | quarantined`，非法流转由 `validate` 拒绝。
+- 进入 `trial` 前 7 项阻断评测（许可证、凭证、安装脚本、外发声明、写范围声明、注入面审查等）必须全部 `pass`，且必须声明试用 `scope`。
+- 进入 `adopted` 必须有完成且 `result=pass` 的试用记录。
+- `history` 首条必须是 `worklens-bot` 的 `enqueued`；之后每个事件都必须是真人并附理由，状态回放必须与当前 `state` 一致。
+- 队列只保存公开 GitHub 元数据与评测记录，不保存 Skill 源码、原文或任何凭证。
+
 ## 喜好反馈
 
 推荐使用以下事件结构：

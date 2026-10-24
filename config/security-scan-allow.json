@@ -1,0 +1,20 @@
+[
+  {
+    "path": "tests/test_import_profile_signals.py",
+    "rule": "url_credential_param",
+    "contains": "example.com/feed.xml?token=secret",
+    "reason": "OPML 脱敏逻辑的公开测试夹具，example.com 为保留示例域名"
+  },
+  {
+    "path": "tests/test_security_scan.py",
+    "rule": "internal_host",
+    "contains": "wiki.bytedance.net",
+    "reason": "扫描器自身的负向命中测试夹具，并非真实内网地址引用"
+  },
+  {
+    "path": "tests/test_security_scan.py",
+    "rule": "url_credential_param",
+    "contains": "example.com/feed.xml?token=secret",
+    "reason": "扫描器自身的凭证参数命中与白名单测试夹具，example.com 为保留示例域名"
+  }
+]

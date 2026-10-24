@@ -1,0 +1,28 @@
+name: 质量与安全门禁
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 单元测试
+        run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - name: Skill 待审队列契约校验
+        run: python3 scripts/skill_review.py validate
+      - name: 敏感信息扫描
+        run: python3 scripts/security_scan.py
