@@ -992,6 +992,27 @@ body::before {
   color: var(--forest);
   opacity: 0.5;
 }
+.proposal-card--review {
+  border-style: solid;
+  border-color: rgba(31,58,45,0.38);
+  background: linear-gradient(180deg, #faf5ea 0%, #f0e7d7 100%);
+}
+.proposal-card--review::before { content: 'REVIEW'; color: var(--cinnabar); }
+.proposal-card--quiet::before { content: 'EMPTY'; color: var(--ink-mute); }
+.mini-progress {
+  height: 6px;
+  overflow: hidden;
+  background: rgba(20,18,16,0.08);
+  border: 1px solid rgba(20,18,16,0.12);
+  border-radius: 999px;
+}
+.mini-progress span {
+  display: block;
+  height: 100%;
+  min-width: 6px;
+  background: linear-gradient(90deg, var(--cinnabar), var(--mustard));
+  border-radius: inherit;
+}
 
 /* ----- Studio · 推送行 ----- */
 .push-row {
@@ -1063,4 +1084,18 @@ body::before {
 @keyframes toast-in {
   from { opacity: 0; transform: translate(-50%, 6px); }
   to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.mini-progress {
+  position: relative;
+  height: 4px;
+  background: var(--paper-cool);
+  overflow: hidden;
+  border-radius: 999px;
+}
+.mini-progress span {
+  display: block;
+  height: 100%;
+  background: var(--cinnabar);
+  border-radius: inherit;
 }

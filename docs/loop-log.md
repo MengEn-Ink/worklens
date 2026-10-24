@@ -2,24 +2,43 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
-## 2026-10-25 · Skill 真实候选评测与页面只读接入
+## 2026-10-24（晚轮）· 移动端 Skill 待审袖珍对比器
+
+**成果**
+
+- 按上一轮最高优先级中可闭环的最小事项推进：补齐移动端技能工坊的「待审」Tab，将 Skill 待审队列浓缩为袖珍对比器。
+- 移动端顶部回礼横幅改为展示待审总量、评测/试用中数量和待补证数量，避免继续把未评测候选表现为可直接锻造的 Skill。
+- 袖珍对比器按阻断项通过率列出候选，展示状态、许可证、星标、通过项/总项和待补证标签；仍为只读展示，不安装、不执行、不写入用户级 Skill 目录。
+
+**验证证据**
+
+- 本地：`python3 -m unittest discover -s tests -p 'test_*.py'` 通过；`python3 scripts/skill_review.py validate` 通过；`python3 scripts/security_scan.py` 通过。
+- 前端：对本轮变更文件 `worklens-mobile_8a6r/v2/app.jsx` 执行 `standard-lint`，未出现 parsing/syntax error、`no-undef`、`react/jsx-no-undef`、`import/no-unresolved` 四类阻断问题。
+- 数据：继续读取 `data/skill-review-queue.json`，`auto_install=false` 安全边界不变。
+
+**下一轮唯一最高优先级**
+
+将 WorkLens PC v4（Pages Atelier）工程化接入当前 main；完成后再推进 Idea → 调研 → 方案 → 脚手架 → 验收流程。
+
+## 2026-10-25 · Skill 真实候选评测、页面只读接入与核心开源者圈层收口
 
 **成果**
 
 - 按上一轮最高优先级收口：选择公开、低风险候选 `CodeSigils/skill-discovery` 做首轮真实评测，完成 7 项阻断检查，进入 7 天只读限范围试用；仍未安装、未执行第三方脚本、未访问私有数据。
 - PC 与移动端页面读取 `data/skill-review-queue.json`，在技能工坊中展示队列状态计数、阻断项缺口、试用范围和 `auto_install=false` 安全边界。
+- 新增核心开源者圈层数据契约：`config/core-circle.json`、`data/core-circle.json`、`scripts/core_circle.py`、`docs/core-circle.md` 与单测，限定只使用公开 GitHub 事实、follow 仅弱信号、无许可证项目不得推荐。
 - 保留成熟方案取舍：继续沿用 Anthropic 分层授权、OpenSSF 固定检查项、gitleaks/密钥扫描和 Agent Skill 威胁分类，不把热度当作安全证据。
-- README 路线图更新：Skill 实跑与限范围试用已完成；下一轮切到 Idea → 调研 → 方案 → 脚手架 → 验收流程。
+- README 路线图更新：Skill 实跑与限范围试用已完成；当前最高优先级切到 WorkLens PC v4（Pages Atelier）工程化接入与移动端袖珍对比器。
 
 **验证证据**
 
-- 本地：23 个单元测试全部通过；`python3 scripts/skill_review.py validate` 通过；`python3 scripts/security_scan.py` 通过。
+- 本地：23 个单元测试全部通过；`python3 scripts/core_circle.py`、`python3 scripts/skill_review.py validate`、`python3 scripts/security_scan.py` 通过。
 - 前端：对本轮变更的 PC / 移动端 `app.jsx`、`views.jsx`、`data-adapter.js` 执行 `standard-lint`，未出现 parsing/syntax error、`no-undef`、`react/jsx-no-undef`、`import/no-unresolved` 四类阻断问题；剩余为既有风格类提示。
 - 数据：队列当前含 1 个 `trial` 候选与其余 `candidate` 候选，`auto_install=false` 保持不变，页面只读展示。
 
 **下一轮唯一最高优先级**
 
-建立 Idea → 调研 → 方案 → 脚手架 → 验收的项目化流程：从一个公开候选生成可追踪 idea 卡、调研证据、方案草稿、脚手架任务与验收清单，仍不得自动安装未经评测的 Skill。
+将 WorkLens PC v4（Pages Atelier）工程化接入当前 main，并补齐移动端袖珍对比器；完成后再推进 Idea → 调研 → 方案 → 脚手架 → 验收流程。
 
 ## 2026-10-24 · Skill 待审队列契约与评测状态机
 
