@@ -22,6 +22,8 @@ jobs:
           python-version: '3.12'
       - name: 单元测试
         run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - name: 核心开源者圈层契约校验
+        run: python3 scripts/core_circle.py
       - name: Skill 待审队列契约校验
         run: python3 scripts/skill_review.py validate
       - name: 敏感信息扫描

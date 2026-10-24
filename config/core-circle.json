@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "seeds": [
+    {"login": "alchaincyf", "tier": "seed", "reason": "用户指定研究对象；seed 仅表示优先研究，不构成质量背书"}
+  ],
+  "discovery": {
+    "topics": ["artificial-intelligence", "ai-agent", "llm", "machine-learning", "agent-skills"],
+    "max_seed_users": 20,
+    "max_repositories_per_seed": 50,
+    "max_contributors_per_repository": 20,
+    "max_follow_relations_per_seed": 20,
+    "max_discovered_users": 100,
+    "minimum_repository_stars": 20,
+    "require_non_archived": true,
+    "require_declared_license_for_recommendation": true
+  },
+  "privacy": {
+    "public_github_only": true,
+    "store_email": false,
+    "auto_follow": false,
+    "auto_message": false
+  }
+}

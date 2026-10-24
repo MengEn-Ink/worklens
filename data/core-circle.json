@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-24T14:41:00+08:00",
+  "source": "GitHub public REST API and public repository pages",
+  "people": [
+    {
+      "login": "alchaincyf",
+      "profile_url": "https://github.com/alchaincyf",
+      "tier": "seed",
+      "tier_reason": "用户指定研究对象；不等同于质量认证",
+      "public_evidence": {"public_repos": 92, "followers": 11848, "following": 1, "profile_checked_at": "2026-10-24T14:41:00+08:00"},
+      "quality_note": "followers 仅为弱流行度信号，不计作背书或核心资格"
+    }
+  ],
+  "relationships": [],
+  "projects": [
+    {
+      "full_name": "alchaincyf/nes-arcade",
+      "url": "https://github.com/alchaincyf/nes-arcade",
+      "category": "game-emulator-frontend",
+      "status": "watch",
+      "recommendation": false,
+      "reason": "确认是可运行的 FC 在线模拟器前端，但无 README、Topics、许可证和 Release；许可证门槛不满足，且 ROM/游戏资产来源需另行审查。",
+      "evidence": {
+        "description": "FC游戏厅 - 121款红白机经典游戏在线模拟器",
+        "readme": "missing",
+        "topics": [],
+        "languages": {"TypeScript": 86689, "CSS": 26333, "HTML": 597},
+        "license_spdx": null,
+        "updated_at": "2026-10-17T03:00:06Z",
+        "pushed_at": "2026-02-07T04:24:23Z",
+        "stars": 24,
+        "forks": 11,
+        "releases": 0,
+        "contributors": [{"login": "alchaincyf", "contributions": 7}],
+        "default_branch": "master",
+        "file_evidence": ["src/", "public/", "package.json", "vite.config.ts"]
+      }
+    },
+    {
+      "full_name": "alchaincyf/mistgarden-support",
+      "url": "https://github.com/alchaincyf/mistgarden-support",
+      "category": "game-support-site",
+      "status": "watch",
+      "recommendation": false,
+      "reason": "仓库只承载 Mac 游戏的支持与隐私页面，不含游戏源码；无 README、Topics、许可证和 Release，不能作为开源游戏项目推荐。",
+      "evidence": {
+        "description": "雾庭飞行Mac游戏：官方支持与隐私说明",
+        "readme": "missing",
+        "topics": [],
+        "languages": {"HTML": 7557},
+        "license_spdx": null,
+        "updated_at": "2026-09-09T12:10:11Z",
+        "pushed_at": "2026-09-08T05:39:09Z",
+        "stars": 2,
+        "forks": 0,
+        "releases": 0,
+        "contributors": [{"login": "alchaincyf", "contributions": 1}],
+        "file_evidence": ["index.html", "support.html", "privacy.html", "style.css"]
+      }
+    }
+  ],
+  "source_status": {
+    "profile:alchaincyf": {"ok": true},
+    "repositories:alchaincyf": {"ok": true, "count": 92},
+    "project:alchaincyf/nes-arcade": {"ok": true},
+    "project:alchaincyf/mistgarden-support": {"ok": true}
+  }
+}

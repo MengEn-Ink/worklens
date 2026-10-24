@@ -32,6 +32,10 @@ PC 与移动端页面在启动后读取发布产物中的 `data/discoveries.json
 - Skill 类候选只进入待审队列，页面不得自动安装、执行或推荐绕过安全评测。
 - 评分仅用于排序和解释：`fit`、`novelty`、`cost`、`risk` 由公开指标与 freshness 粗算，不能替代许可证、安全和人工审查。
 
+## core-circle.json
+
+公开 GitHub 开源者关系图。`people` 使用 `seed | core | candidate | watch` 分层；`relationships` 仅允许 following、follower、contributor、co_contributor、shared_topic，并必须附证据 URL 与观测时间。follow 类关系只能是弱信号。`projects` 保存分类、收录状态及 README、Topics、语言、SPDX 许可证、更新时间、Release、贡献者等核验证据；缺少声明许可证的项目不得标为推荐。配置与边界见 [core-circle.md](core-circle.md)。
+
 ## profile.json
 
 个人工作画像的最小结构。默认不保存原始文档、会议逐字稿、聊天内容或私有代码，只保存经用户允许的主题、权重、反馈和证据引用。
