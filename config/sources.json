@@ -13,6 +13,14 @@
     "CodeSigils/skill-discovery",
     "VoltAgent/awesome-agent-skills"
   ],
+  "github_profiles": [
+    {
+      "username": "MengEn-Ink",
+      "owned_public_repositories": true,
+      "starred_public_repositories": true,
+      "max_per_relation": 100
+    }
+  ],
   "rss": [],
   "policy": {
     "max_candidates_per_query": 10,

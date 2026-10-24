@@ -44,9 +44,9 @@ def open_json(path: str, headers: dict[str, str]):
         return json.load(response)
 
 
-def normalize(repo: dict, source: str) -> dict:
+def normalize(repo: dict, source: str, relationship: str | None = None) -> dict:
     license_info = repo.get("license") or {}
-    return {
+    item = {
         "full_name": repo["full_name"],
         "html_url": repo["html_url"],
         "description": repo.get("description") or "",
@@ -62,6 +62,23 @@ def normalize(repo: dict, source: str) -> dict:
         "source": source,
         "collected_at": dt.datetime.now(dt.timezone.utc).isoformat(),
     }
+    if relationship:
+        item["relationships"] = [relationship]
+    return item
+
+
+def merge_candidate(candidates: dict[str, dict], item: dict, source: str) -> None:
+    previous = candidates.get(item["full_name"])
+    if not previous:
+        candidates[item["full_name"]] = item
+        return
+    sources = previous.setdefault("also_seen_in", [])
+    if source != previous.get("source") and source not in sources:
+        sources.append(source)
+    relationships = previous.setdefault("relationships", [])
+    for relationship in item.get("relationships", []):
+        if relationship not in relationships:
+            relationships.append(relationship)
 
 
 def main() -> int:
@@ -74,11 +91,35 @@ def main() -> int:
         source = f"repository:{full_name}"
         try:
             repo = request_json(f"/repos/{full_name}")
-            candidates[repo["full_name"]] = normalize(repo, source)
+            merge_candidate(candidates, normalize(repo, source), source)
             status[source] = {"ok": True}
         except (urllib.error.URLError, urllib.error.HTTPError, KeyError) as error:
             status[source] = {"ok": False, "error": str(error)}
         time.sleep(0.2)
+
+    for profile in config.get("github_profiles", []):
+        username = profile["username"]
+        limit = min(int(profile.get("max_per_relation", 100)), 100)
+        relations = []
+        if profile.get("owned_public_repositories"):
+            relations.append(("owned", f"/users/{username}/repos?type=owner&sort=updated&per_page={limit}"))
+        if profile.get("starred_public_repositories"):
+            relations.append(("starred", f"/users/{username}/starred?sort=updated&per_page={limit}"))
+        for relationship, path in relations:
+            source = f"profile:{username}:{relationship}"
+            try:
+                repos = request_json(path)
+                public_repos = [repo for repo in repos if not repo.get("private", False)]
+                for repo in public_repos:
+                    merge_candidate(
+                        candidates,
+                        normalize(repo, source, f"{username}:{relationship}"),
+                        source,
+                    )
+                status[source] = {"ok": True, "count": len(public_repos)}
+            except (urllib.error.URLError, urllib.error.HTTPError, KeyError, TypeError) as error:
+                status[source] = {"ok": False, "error": str(error)}
+            time.sleep(0.2)
 
     for query in config.get("github_queries", []):
         source = f"search:{query}"
@@ -88,13 +129,7 @@ def main() -> int:
                 f"/search/repositories?q={encoded}&sort=updated&order=desc&per_page={max_results}"
             )
             for repo in payload.get("items", []):
-                item = normalize(repo, source)
-                previous = candidates.get(item["full_name"])
-                if previous:
-                    previous_sources = previous.setdefault("also_seen_in", [])
-                    previous_sources.append(source)
-                else:
-                    candidates[item["full_name"]] = item
+                merge_candidate(candidates, normalize(repo, source), source)
             status[source] = {"ok": True, "count": len(payload.get("items", []))}
         except (urllib.error.URLError, urllib.error.HTTPError, KeyError) as error:
             status[source] = {"ok": False, "error": str(error)}

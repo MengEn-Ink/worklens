@@ -10,6 +10,16 @@
 - `candidates`：去重后的仓库候选。
 - `source_status`：每个来源是否采集成功；失败不能解释为“没有项目”。
 - `source` / `also_seen_in`：候选的发现来源。
+- `relationships`：与公开 GitHub 画像的关系，例如 `MengEn-Ink:owned` 或 `MengEn-Ink:starred`；仅来自公开接口，不表示项目质量。
+
+### GitHub 公开画像
+
+`config/sources.json` 的 `github_profiles` 可以声明公开用户名，并分别开启：
+
+- `owned_public_repositories`：该用户公开拥有的仓库。
+- `starred_public_repositories`：该用户公开 Star 的仓库。
+
+采集器固定使用 `/users/{username}/repos` 与 `/users/{username}/starred` 公共接口，并再次过滤 `private=true` 的记录。不得改用 `/user/repos` 把私有仓库带入公开数据集；公开 Star 仅作为兴趣信号，不能直接视为推荐、采用或安全背书。
 
 ## 页面适配层
 
