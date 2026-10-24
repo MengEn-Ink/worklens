@@ -36,6 +36,17 @@ PC 与移动端页面在启动后读取发布产物中的 `data/discoveries.json
 
 个人工作画像的最小结构。默认不保存原始文档、会议逐字稿、聊天内容或私有代码，只保存经用户允许的主题、权重、反馈和证据引用。
 
+## profile-signals.json
+
+由本地导入器生成的脱敏聚合结果，用于把授权范围内的工作信号折叠成公开可提交的画像摘要。
+
+约束：
+
+- 输入可以是白名单 JSONL，或本地 RSS / 播客 OPML 订阅导出。
+- 输出只保留 `record_count`、来源计数、最近时间、粗粒度主题统计和加盐证据哈希。
+- OPML 导入时会先去掉订阅 URL 的账号、查询参数和 fragment，再散列保存，避免把私有参数带进仓库。
+- `source_type` 当前支持 `meeting | lark_doc | podcast | article | repository | rss`。
+
 ## 喜好反馈
 
 推荐使用以下事件结构：

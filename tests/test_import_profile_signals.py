@@ -44,6 +44,66 @@ class ProfileSignalImportTest(unittest.TestCase):
             module.evidence_hash("same-id", "salt-b"),
         )
 
+    def test_opml_records_strip_sensitive_url_parts(self):
+        opml = """<?xml version='1.0' encoding='UTF-8'?>
+        <opml version='2.0'>
+          <head>
+            <dateModified>Fri, 24 Oct 2026 08:00:00 +0800</dateModified>
+          </head>
+          <body>
+            <outline text='AI'>
+              <outline text='Latent Space' type='rss' xmlUrl='https://example.com/feed.xml?token=secret#frag' />
+            </outline>
+          </body>
+        </opml>
+        """
+        temp_path = Path(self.id().replace(".", "_") + ".opml")
+        try:
+            temp_path.write_text(opml, encoding="utf-8")
+            records = module.parse_opml_records(temp_path, "salt", "rss")
+        finally:
+            temp_path.unlink(missing_ok=True)
+        self.assertEqual(records[0]["source_type"], "rss")
+        self.assertIn("rss", records[0]["topics"])
+        self.assertIn("subscription", records[0]["topics"])
+        self.assertEqual(
+            records[0]["evidence_hash"],
+            module.evidence_hash("https://example.com/feed.xml", "salt"),
+        )
+
+    def test_opml_auto_detects_podcast_and_topics(self):
+        opml = """<?xml version='1.0' encoding='UTF-8'?>
+        <opml version='2.0'>
+          <body>
+            <outline text='Podcasts'>
+              <outline text='AI Podcast Weekly' category='/AI/Automation' xmlUrl='https://feeds.megaphone.fm/demo' />
+            </outline>
+          </body>
+        </opml>
+        """
+        temp_path = Path(self.id().replace(".", "_") + ".opml")
+        try:
+            temp_path.write_text(opml, encoding="utf-8")
+            records = module.parse_opml_records(temp_path, "salt", "auto")
+        finally:
+            temp_path.unlink(missing_ok=True)
+        self.assertEqual(records[0]["source_type"], "podcast")
+        self.assertIn("agent", records[0]["topics"])
+        self.assertIn("automation", records[0]["topics"])
+        self.assertIn("podcast", records[0]["topics"])
+
+    def test_rejects_opml_without_subscription_nodes(self):
+        opml = """<?xml version='1.0' encoding='UTF-8'?>
+        <opml version='2.0'><body><outline text='Empty folder' /></body></opml>
+        """
+        temp_path = Path(self.id().replace(".", "_") + ".opml")
+        try:
+            temp_path.write_text(opml, encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "未找到任何订阅节点"):
+                module.parse_opml_records(temp_path, "salt", "auto")
+        finally:
+            temp_path.unlink(missing_ok=True)
+
 
 if __name__ == "__main__":
     unittest.main()
