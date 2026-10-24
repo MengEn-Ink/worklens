@@ -1146,15 +1146,21 @@ function RoutesView() {
    把喜好 → Agent 的回礼：已服役能力、建议、订阅、推送
    ---------------------------------------------------------------- */
 function StudioView() {
-  const [sub, setSub] = useState('skills'); // skills | proposals | subs | push
+  const [sub, setSub] = useState('skills'); // skills | proposals | queue | subs | push
   const ctx = useTaste();
   const subs = DATA.subscriptions;
-  const skillQueue = DATA.skillQueue || { total: 0, by_state: {}, blocking_open: 0 };
-  const activeReviews = (skillQueue.by_state.screening || 0) + (skillQueue.by_state.trial || 0);
+  const skillQueue = DATA.skillQueue || { total: 0, byState: {}, entries: [], blockingTotal: 0, autoInstall: false };
+  const activeReviews = (skillQueue.byState.screening || 0) + (skillQueue.byState.trial || 0);
+  const openBlockingCount = (skillQueue.entries || []).reduce((sum, entry) => sum + (entry.pendingLabels || []).length, 0);
+  const compareEntries = (skillQueue.entries || [])
+    .slice()
+    .sort((a, b) => (b.passed / Math.max(b.total, 1)) - (a.passed / Math.max(a.total, 1)))
+    .slice(0, 3);
 
   const tabs = [
     { id: 'skills',    label: '已服役 · ' + DATA.aiSkills.length },
     { id: 'proposals', label: 'Agent 建议 · ' + DATA.proposals.length },
+    { id: 'queue',     label: '待审 · ' + (skillQueue.total || 0) },
     { id: 'subs',      label: '订阅主题 · ' + subs.length },
     { id: 'push',      label: '推送 · ' + DATA.pushes.filter(p=>!p.read).length },
   ];
@@ -1193,7 +1199,7 @@ function StudioView() {
             <div className="banner-stat__lab">评测/试用</div>
           </div>
           <div className="banner-stat">
-            <div className="banner-stat__num">{skillQueue.blocking_open || 0}</div>
+            <div className="banner-stat__num">{openBlockingCount}</div>
             <div className="banner-stat__lab">待补证</div>
           </div>
         </div>
@@ -1257,6 +1263,46 @@ function StudioView() {
               </div>
             </div>
           ))}
+        </div>
+      )}
+
+      {sub === 'queue' && (
+        <div className="hero-stack anim-in">
+          <div className="proposal-card">
+            <div className="flex items-baseline justify-between">
+              <div className="ff-mono text-[9.5px] uppercase tracking-widest" style={{color: 'var(--cinnabar)'}}>
+                POCKET COMPARATOR
+              </div>
+              <span className="ff-mono text-[9px]" style={{color: 'var(--ink-mute)'}}>auto_install={String(skillQueue.autoInstall)}</span>
+            </div>
+            <h3 className="ff-serif font-semibold text-[18px] mt-1" style={{letterSpacing: '-0.015em'}}>袖珍对比器 · 谁可以进入试用？</h3>
+            <p className="ff-serif italic text-[12.5px] mt-1" style={{color: 'var(--ink-mute)'}}>
+              只读展示状态与证据，不安装、不执行、不写入用户级 Skill 目录。
+            </p>
+          </div>
+          {compareEntries.map(entry => {
+            const ratio = Math.round((entry.passed / Math.max(entry.total, 1)) * 100);
+            return (
+              <div key={entry.id} className="proposal-card">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <div className="ff-mono text-[9.5px] uppercase tracking-widest" style={{color: entry.pendingLabels.length ? 'var(--mustard)' : 'var(--forest)'}}>
+                      {entry.id} · {entry.stateLabel}
+                    </div>
+                    <h3 className="ff-serif font-semibold text-[18px] mt-1" style={{letterSpacing: '-0.015em'}}>{entry.repo}</h3>
+                    <p className="ff-mono text-[9px] mt-0.5" style={{color: 'var(--ink-mute)'}}>{entry.owner} · {entry.license} · ★ {entry.stars}</p>
+                  </div>
+                  <div className="ff-serif font-semibold text-[22px]" style={{color: entry.pendingLabels.length ? 'var(--mustard)' : 'var(--forest)'}}>{entry.passed}/{entry.total}</div>
+                </div>
+                <div className="mini-progress mt-2"><span style={{width: `${ratio}%`}} /></div>
+                <div className="flex gap-1.5 mt-2 flex-wrap">
+                  {(entry.pendingLabels.length ? entry.pendingLabels.slice(0, 3) : ['阻断项已通过']).map(label => (
+                    <span key={label} className="chip" style={{color: entry.pendingLabels.length ? 'var(--cinnabar)' : 'var(--forest)'}}>{label}</span>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       )}
 
