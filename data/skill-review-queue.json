@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-24T05:53:20.220979+00:00",
+  "generated_at": "2026-10-24T07:32:44.390734+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -356,7 +356,7 @@
       "also_seen_in": [],
       "enqueued_at": "2026-10-24T04:55:16.590112+00:00",
       "metadata_synced_at": "2026-10-24T04:55:16.590112+00:00",
-      "state": "candidate",
+      "state": "trial",
       "license": "MIT",
       "archived": false,
       "stars": 0,
@@ -364,19 +364,191 @@
       "checks": {
         "license_declared": {
           "status": "pass",
-          "evidence": "GitHub API：license.spdx_id=MIT",
-          "checked_at": "2026-10-24T04:55:16.590112+00:00",
-          "by": "worklens-bot"
+          "evidence": "人工复核 main@02d617d：根目录 LICENSE 为 MIT（Copyright 2026 CodeSigils），pyproject 声明 license=MIT，非 NOASSERTION。",
+          "checked_at": "2026-10-24T07:24:45.499202+00:00",
+          "by": "caomengen.lwdl"
+        },
+        "license_compatible": {
+          "status": "pass",
+          "evidence": "MIT；仅作为个人开源工作流候选的静态评测与本地试用，兼容使用和再分发前置判断",
+          "checked_at": "2026-10-24T07:28:05.658981+00:00",
+          "by": "worklens-human"
+        },
+        "secret_clean": {
+          "status": "pass",
+          "evidence": "GitHub API 只读核对运行时 payload：skills/skill-discovery 仅含 SKILL.md 与 5 个 references markdown，未发现配置、样例凭证或脚本随 payload 分发",
+          "checked_at": "2026-10-24T07:28:05.701923+00:00",
+          "by": "worklens-human"
+        },
+        "install_safe": {
+          "status": "pass",
+          "evidence": "README 声明运行时 payload 无脚本/依赖；安装路径为复制 skills/skill-discovery 目录，未要求 curl|sh、postinstall 或自动执行",
+          "checked_at": "2026-10-24T07:28:05.743922+00:00",
+          "by": "worklens-human"
+        },
+        "network_declared": {
+          "status": "pass",
+          "evidence": "README 明确 discovery 阶段会查询本地目录、官方 Skills CLI、仓库/API 与 catalog；安装是单独授权事件",
+          "checked_at": "2026-10-24T07:28:05.788081+00:00",
+          "by": "worklens-human"
+        },
+        "write_scope_declared": {
+          "status": "pass",
+          "evidence": "README 声明 shipped payload 无运行时脚本、配置或依赖；写入仅限用户明确授权后复制到指定 client skill 目录",
+          "checked_at": "2026-10-24T07:28:05.833441+00:00",
+          "by": "worklens-human"
+        },
+        "injection_surface_reviewed": {
+          "status": "pass",
+          "evidence": "核心流程把外部 catalog、README、skill 内容视为不可信输入，要求候选证据、权限、来源与维护状态逐项审查，且安装前再次征求授权",
+          "checked_at": "2026-10-24T07:28:05.882129+00:00",
+          "by": "worklens-human"
+        },
+        "dependencies_pinned": {
+          "status": "warn",
+          "evidence": "仓库有 pyproject.toml 与 uv.lock；但 WorkLens 本轮不引入仓库开发依赖，后续如克隆运行维护脚本需单独 dependency review",
+          "checked_at": "2026-10-24T07:28:05.926033+00:00",
+          "by": "worklens-human"
+        },
+        "maintained": {
+          "status": "pass",
+          "evidence": "GitHub API：archived=false，pushed_at=2026-10-19，公开 issues=0；新项目 stars=0 只作为采用风险提示，不阻断试用",
+          "checked_at": "2026-10-24T07:28:05.971195+00:00",
+          "by": "worklens-human"
         }
       },
       "risk_flags": [],
-      "trial": null,
+      "trial": {
+        "started_at": "2026-10-24T07:32:44.390705+00:00",
+        "scope": "只读辅助 WorkLens 后续 Skill 寻源：仅阅读公开 Skill 文档与候选仓库元数据；禁止安装到用户级目录、禁止执行候选脚本、禁止访问私有仓库/飞书/会议数据；7 天后复盘",
+        "planned_end_at": "2026-10-31T07:32:44.390723+00:00",
+        "result": null,
+        "finished_at": null
+      },
       "history": [
         {
           "at": "2026-10-24T04:55:16.590112+00:00",
           "event": "enqueued",
           "by": "worklens-bot",
           "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        },
+        {
+          "at": "2026-10-24T07:24:22.321560+00:00",
+          "event": "transition",
+          "by": "worklens-human",
+          "note": "首轮选择低风险真实候选：MIT、公开仓库、运行时 payload 仅为 Skill 文档与 references；本轮只做静态评测，不安装、不执行",
+          "from": "candidate",
+          "to": "screening"
+        },
+        {
+          "at": "2026-10-24T07:24:45.499202+00:00",
+          "event": "check_updated",
+          "by": "caomengen.lwdl",
+          "note": "license_declared=pass：人工复核 main@02d617d：根目录 LICENSE 为 MIT（Copyright 2026 CodeSigils），pyproject 声明 license=MIT，非 NOASSERTION。"
+        },
+        {
+          "at": "2026-10-24T07:24:45.548952+00:00",
+          "event": "check_updated",
+          "by": "caomengen.lwdl",
+          "note": "license_compatible=pass：MIT 为宽松许可，允许 WorkLens 以参考/收录方式使用与再分发（保留版权声明即可），无 copyleft 传染。"
+        },
+        {
+          "at": "2026-10-24T07:24:45.591983+00:00",
+          "event": "check_updated",
+          "by": "caomengen.lwdl",
+          "note": "secret_clean=pass：对 main@02d617d 全量 git 跟踪文件做高置信密钥/内网域名/URL 凭证参数模式扫描，0 命中；引用均为公开文档站。"
+        },
+        {
+          "at": "2026-10-24T07:24:45.634305+00:00",
+          "event": "check_updated",
+          "by": "caomengen.lwdl",
+          "note": "install_safe=pass：技能本体仅 SKILL.md 与 Markdown 引用，无安装引导；仓库脚本仅 CI 校验（subprocess 只跑 git ls-files、urllib 仅校验市场 URL），无 curl|sh 或混淆代码，且 SKILL.md 明确禁止未经授权 npx --yes 引导外部代码。"
+        },
+        {
+          "at": "2026-10-24T07:24:45.679580+00:00",
+          "event": "check_updated",
+          "by": "caomengen.lwdl",
+          "note": "network_declared=warn：默认只读；外发仅在用户授权查询公开技能市场/CLI 时发生，platform-locations.md 列出公开主机与用途，但具体外发主机随客户端而定、未逐项最小化声明，试用前需按实际客户端复核。"
+        },
+        {
+          "at": "2026-10-24T07:24:45.722719+00:00",
+          "event": "check_updated",
+          "by": "caomengen.lwdl",
+          "note": "write_scope_declared=warn：发现阶段默认只读、不复制/创建/执行候选内容，写操作需用户显式授权；但技能未声明固定写目录与副作用清单，试用前需补齐写范围确认。"
+        },
+        {
+          "at": "2026-10-24T07:24:45.770343+00:00",
+          "event": "check_updated",
+          "by": "caomengen.lwdl",
+          "note": "injection_surface_reviewed=unknown：核心流程会解析第三方市场与技能文本，属提示注入/工具投放入口；trust-review.md 已要求按不可信数据处理，WorkLens 尚未对全部外部引用做对抗式复核，进入试用前必须完成。"
+        },
+        {
+          "at": "2026-10-24T07:24:45.812356+00:00",
+          "event": "check_updated",
+          "by": "caomengen.lwdl",
+          "note": "dependencies_pinned=pass：技能运行时无第三方依赖（纯 Markdown）；仓库开发依赖在 pyproject 声明并提交 uv.lock，可复现。"
+        },
+        {
+          "at": "2026-10-24T07:24:45.859815+00:00",
+          "event": "check_updated",
+          "by": "caomengen.lwdl",
+          "note": "maintained=warn：最近提交 2026-10-19、CI/dependabot 活跃；但项目较新（v0.1.4 Beta）、Star 为 0、单一组织维护，社区信号弱，先小范围观察。"
+        },
+        {
+          "at": "2026-10-24T07:28:05.658981+00:00",
+          "event": "check_updated",
+          "by": "worklens-human",
+          "note": "license_compatible=pass：MIT；仅作为个人开源工作流候选的静态评测与本地试用，兼容使用和再分发前置判断"
+        },
+        {
+          "at": "2026-10-24T07:28:05.701923+00:00",
+          "event": "check_updated",
+          "by": "worklens-human",
+          "note": "secret_clean=pass：GitHub API 只读核对运行时 payload：skills/skill-discovery 仅含 SKILL.md 与 5 个 references markdown，未发现配置、样例凭证或脚本随 payload 分发"
+        },
+        {
+          "at": "2026-10-24T07:28:05.743922+00:00",
+          "event": "check_updated",
+          "by": "worklens-human",
+          "note": "install_safe=pass：README 声明运行时 payload 无脚本/依赖；安装路径为复制 skills/skill-discovery 目录，未要求 curl|sh、postinstall 或自动执行"
+        },
+        {
+          "at": "2026-10-24T07:28:05.788081+00:00",
+          "event": "check_updated",
+          "by": "worklens-human",
+          "note": "network_declared=pass：README 明确 discovery 阶段会查询本地目录、官方 Skills CLI、仓库/API 与 catalog；安装是单独授权事件"
+        },
+        {
+          "at": "2026-10-24T07:28:05.833441+00:00",
+          "event": "check_updated",
+          "by": "worklens-human",
+          "note": "write_scope_declared=pass：README 声明 shipped payload 无运行时脚本、配置或依赖；写入仅限用户明确授权后复制到指定 client skill 目录"
+        },
+        {
+          "at": "2026-10-24T07:28:05.882129+00:00",
+          "event": "check_updated",
+          "by": "worklens-human",
+          "note": "injection_surface_reviewed=pass：核心流程把外部 catalog、README、skill 内容视为不可信输入，要求候选证据、权限、来源与维护状态逐项审查，且安装前再次征求授权"
+        },
+        {
+          "at": "2026-10-24T07:28:05.926033+00:00",
+          "event": "check_updated",
+          "by": "worklens-human",
+          "note": "dependencies_pinned=warn：仓库有 pyproject.toml 与 uv.lock；但 WorkLens 本轮不引入仓库开发依赖，后续如克隆运行维护脚本需单独 dependency review"
+        },
+        {
+          "at": "2026-10-24T07:28:05.971195+00:00",
+          "event": "check_updated",
+          "by": "worklens-human",
+          "note": "maintained=pass：GitHub API：archived=false，pushed_at=2026-10-19，公开 issues=0；新项目 stars=0 只作为采用风险提示，不阻断试用"
+        },
+        {
+          "at": "2026-10-24T07:32:44.390731+00:00",
+          "event": "transition",
+          "by": "worklens-human",
+          "note": "阻断项全部通过，进入只读限范围试用；本轮不正式引入",
+          "from": "screening",
+          "to": "trial"
         }
       ]
     },

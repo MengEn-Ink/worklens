@@ -10,6 +10,28 @@
     reading: { shelf: '理论 · 读物', code: '410', kind: '读物' },
   };
 
+  const CHECK_LABELS = {
+    license_declared: '许可证声明',
+    license_compatible: '许可证兼容',
+    secret_clean: '凭证与私有地址',
+    install_safe: '安装脚本透明',
+    network_declared: '外发网络声明',
+    write_scope_declared: '写入范围声明',
+    injection_surface_reviewed: '注入面审查',
+    dependencies_pinned: '依赖可追溯',
+    maintained: '维护活跃度',
+  };
+
+  const STATE_LABELS = {
+    candidate: '待审',
+    screening: '评测中',
+    needs_changes: '待整改',
+    trial: '限范围试用',
+    adopted: '已引入',
+    rejected: '已拒绝',
+    quarantined: '已隔离',
+  };
+
   function safeList(value) {
     return Array.isArray(value) ? value : [];
   }
@@ -169,6 +191,76 @@
     }));
   }
 
+  function summarizeSkillReviewQueue(queue) {
+    const entries = safeList(queue && queue.queue);
+    const blockingChecks = safeList(queue && queue.policy && queue.policy.blocking_checks);
+    const counts = entries.reduce((acc, entry) => {
+      const state = entry.state || 'candidate';
+      acc[state] = (acc[state] || 0) + 1;
+      return acc;
+    }, {});
+    const reviewed = entries.filter(entry => entry.state !== 'candidate' || Object.keys(entry.checks || {}).length > 1);
+    const missing = entries
+      .filter(entry => ['candidate', 'screening', 'needs_changes', 'trial'].includes(entry.state))
+      .map(entry => {
+        const checks = entry.checks || {};
+        const missingChecks = blockingChecks.filter(key => (checks[key] || {}).status !== 'pass');
+        return {
+          subject: entry.subject,
+          state: entry.state,
+          missing_checks: missingChecks,
+          missing_labels: missingChecks.map(key => CHECK_LABELS[key] || key),
+        };
+      })
+      .filter(item => item.missing_checks.length > 0);
+    const trialing = entries.filter(entry => entry.state === 'trial');
+    const adopted = entries.filter(entry => entry.state === 'adopted');
+
+    return {
+      generated_at: queue && queue.generated_at,
+      total: entries.length,
+      counts,
+      reviewed_count: reviewed.length,
+      blocking_checks: blockingChecks,
+      auto_install: queue && queue.policy ? queue.policy.auto_install : false,
+      human_gate: queue && queue.policy ? queue.policy.human_gate : 'candidate 之后必须人工流转',
+      missing,
+      trialing,
+      adopted,
+      entries,
+    };
+  }
+
+  function queueProposal(entry, index, sourceEntry) {
+    const checks = entry.checks || {};
+    const blocking = Object.keys(CHECK_LABELS).filter(key => key !== 'dependencies_pinned' && key !== 'maintained');
+    const missing = blocking.filter(key => (checks[key] || {}).status !== 'pass');
+    const passed = blocking.length - missing.length;
+    const stateLabel = STATE_LABELS[entry.state] || entry.state || '待审';
+    const subjectName = repoName(entry.subject);
+    const riskFlags = safeList(entry.risk_flags);
+    const trialScope = entry.trial && entry.trial.scope;
+    const evidence = [
+      `状态：${stateLabel}；阻断项 ${passed}/${blocking.length} 通过`,
+      `许可证：${entry.license || '未声明'}；风险标记：${riskFlags.length ? riskFlags.join('、') : '无'}`,
+      missing.length ? `待补：${missing.map(key => CHECK_LABELS[key] || key).join('、')}` : '阻断项已全部通过，仍需限范围试用结论后才能正式引入',
+      trialScope ? `试用范围：${trialScope}` : `来源：${entry.source || '未知'}`,
+    ];
+    return {
+      id: `sr-${entry.id.replace(/^SR-/, '')}`,
+      name: `review-${subjectName}`,
+      family: `Skill 待审 · ${stateLabel}`,
+      why: `${entry.subject} 已进入 WorkLens 人工评测队列；页面仅展示状态与证据，不安装、不执行。`,
+      evidence,
+      cost_est: sourceEntry ? `Fit ${sourceEntry.scores.fit} · Risk ${sourceEntry.scores.risk}` : '约 0.5 天',
+      confidence: missing.length ? 0.58 : 0.76,
+      preview_dsl: `candidate: ${entry.subject}\nstate: ${entry.state}\nauto_install: false\nblocking_passed: ${passed}/${blocking.length}`,
+      review_state: entry.state,
+      missing_checks: missing,
+      sort_index: entry.state === 'trial' ? -2 : entry.state === 'screening' ? -1 : index,
+    };
+  }
+
   function buildShelves(entries) {
     const order = [CATEGORY.source, CATEGORY.skill, CATEGORY.ui, CATEGORY.reading, CATEGORY.workflow, CATEGORY.infra];
     return order.map(category => ({
@@ -209,13 +301,20 @@
     };
   }
 
-  function buildPcData(seed, discoveries) {
+  function buildPcData(seed, discoveries, skillQueue) {
     const candidates = safeList(discoveries.candidates).filter(item => item && item.full_name);
     if (candidates.length === 0) return seed;
     const entries = candidates.slice(0, 36).map(entryFromCandidate);
     linkRelated(entries);
     const top = entries[0];
     const skillCandidates = entries.filter(entry => entry.kind === 'Skill').slice(0, 3);
+    const reviewSummary = summarizeSkillReviewQueue(skillQueue);
+    const entryBySubject = new Map(entries.map(entry => [`${entry.author}/${entry.title}`, entry]));
+    const reviewProposals = reviewSummary.entries
+      .map((entry, index) => queueProposal(entry, index, entryBySubject.get(entry.subject)))
+      .sort((a, b) => a.sort_index - b.sort_index)
+      .slice(0, 8);
+    const fallbackProposals = skillCandidates.map((entry, index) => ({ id: `pr-${String(index + 1).padStart(2, '0')}`, name: `review-${entry.title}`, family: 'Skill 待审', why: `${entry.author}/${entry.title} 命中 Skill 相关主题，但必须先做安全评测。`, evidence: entry.notes, cost_est: '约 0.5 天', confidence: Math.min(0.9, entry.scores.fit / 100), preview_dsl: `candidate: ${entry.author}/${entry.title}\nstatus: review-only\naction: audit license, scripts, network and write permissions` }));
 
     return Object.assign({}, seed, {
       ISSUE: buildIssue(discoveries, entries),
@@ -269,7 +368,8 @@
       TASTE_SUMMARY: { week_likes: 0, week_loves: 0, week_skips: 0, week_saves: 0, week_subscriptions: 0, total_likes: 0, top_topics: Array.from(new Set(entries.flatMap(entry => entry.tags))).slice(0, 6).map(tag => ({ topic: tag, count: entries.filter(entry => entry.tags.includes(tag)).length, trend: 'up', weight: Math.min(0.95, entries.filter(entry => entry.tags.includes(tag)).length / Math.max(entries.length, 1) + 0.35) })), trend_7d: [0, 0, 0, 0, 0, 0, 0] },
       TASTE_SUBSCRIPTIONS: [],
       AI_SKILLS: [],
-      SKILL_PROPOSALS: skillCandidates.map((entry, index) => ({ id: `pr-${String(index + 1).padStart(2, '0')}`, name: `review-${entry.title}`, family: 'Skill 待审', why: `${entry.author}/${entry.title} 命中 Skill 相关主题，但必须先做安全评测。`, evidence: entry.notes, cost_est: '约 0.5 天', confidence: Math.min(0.9, entry.scores.fit / 100), preview_dsl: `candidate: ${entry.author}/${entry.title}\nstatus: review-only\naction: audit license, scripts, network and write permissions` })),
+      SKILL_QUEUE: buildSkillQueue(skillQueue),
+      SKILL_PROPOSALS: reviewProposals.length > 0 ? reviewProposals : fallbackProposals,
       PUSHES: entries.slice(0, 5).map((entry, index) => ({ id: `pu-${String(index + 1).padStart(2, '0')}`, time: index === 0 ? '刚刚' : `${index * 3 + 2} 分钟前`, topic: entry.kind, title: `${entry.author}/${entry.title}`, from: 'GitHub API', reason: entry.why, verdict: entry.verdict, score: entry.scores.fit, read: index > 1 })),
       EVOLUTION_LOG: [
         { time: '刚刚', trigger: 'discoveries_loaded', action: '页面接入真实 discoveries.json', delta: 'live', axis: 'data-adapter' },
@@ -278,8 +378,8 @@
     });
   }
 
-  function buildMobileData(seed, discoveries) {
-    const pcData = buildPcData({}, discoveries);
+  function buildMobileData(seed, discoveries, skillQueue) {
+    const pcData = buildPcData({}, discoveries, skillQueue);
     const entries = pcData.ENTRIES.slice(0, 12).map(entry => ({
       id: entry.id,
       dewey: entry.dewey,
@@ -321,9 +421,98 @@
       subscriptions: [],
       aiSkills: [],
       proposals: pcData.SKILL_PROPOSALS.map(item => ({ id: item.id, name: item.name, family: item.family, cost: item.cost_est, confidence: Math.round(item.confidence * 100), why: item.why, evidence: item.evidence, dsl: item.preview_dsl })),
+      skillQueue: pcData.SKILL_QUEUE,
       pushes: pcData.PUSHES.map(item => ({ id: item.id, time: item.time, topic: item.topic, title: item.title, from: item.from, reason: item.reason, score: item.score, read: item.read })),
     });
   }
 
-  window.WL_DISCOVERY_ADAPTER = { buildPcData, buildMobileData };
+  const QUEUE_STATE_LABELS = {
+    candidate: '待审',
+    screening: '评测中',
+    needs_changes: '待整改',
+    trial: '限范围试用',
+    adopted: '已引入',
+    rejected: '已拒绝',
+    quarantined: '已隔离',
+  };
+
+  const QUEUE_RISK_LABELS = {
+    no_license: '无许可证',
+    license_unrecognized: '许可证无法识别',
+    archived: '上游已归档',
+    stale_upstream: '上游半年未更新',
+  };
+
+  const QUEUE_CHECK_LABELS = {
+    license_declared: '许可证声明',
+    license_compatible: '许可证兼容',
+    secret_clean: '无密钥与内网信息',
+    install_safe: '安装脚本安全',
+    network_declared: '外发行为已声明',
+    write_scope_declared: '写范围已声明',
+    injection_surface_reviewed: '注入面已审查',
+    dependencies_pinned: '依赖已锁定',
+    maintained: '上游维护活跃',
+  };
+
+  /* Skill 待审队列只读视图模型：只做状态计数与阻断项进度，不提供任何流转/安装动作。 */
+  function buildSkillQueue(payload) {
+    const policy = payload && typeof payload === 'object' && payload.policy ? payload.policy : {};
+    const rawEntries = safeList(payload && payload.queue);
+    const blockingChecks = safeList(policy.blocking_checks);
+    const states = safeList(policy.states);
+
+    const byState = {};
+    states.forEach(state => { byState[state] = 0; });
+    let riskCount = 0;
+
+    const entries = rawEntries.map((entry) => {
+      const state = QUEUE_STATE_LABELS[entry.state] ? entry.state : 'candidate';
+      byState[state] = (byState[state] || 0) + 1;
+      const checks = entry.checks && typeof entry.checks === 'object' ? entry.checks : {};
+      const passedKeys = blockingChecks.filter(key => checks[key] && checks[key].status === 'pass');
+      const pendingLabels = blockingChecks
+        .filter(key => !(checks[key] && checks[key].status === 'pass'))
+        .map(key => QUEUE_CHECK_LABELS[key] || key);
+      const riskFlags = safeList(entry.risk_flags).map(flag => QUEUE_RISK_LABELS[flag] || flag);
+      if (riskFlags.length > 0) riskCount += 1;
+      const slashIndex = String(entry.subject || '').indexOf('/');
+      return {
+        id: entry.id,
+        subject: entry.subject,
+        owner: slashIndex > 0 ? entry.subject.slice(0, slashIndex) : '',
+        repo: slashIndex > 0 ? entry.subject.slice(slashIndex + 1) : entry.subject,
+        url: entry.html_url,
+        state,
+        stateLabel: QUEUE_STATE_LABELS[state] || state,
+        license: entry.license || '未声明',
+        stars: typeof entry.stars === 'number' ? entry.stars : 0,
+        archived: entry.archived === true,
+        pushedAt: shortDate(entry.pushed_at),
+        riskFlags,
+        passed: passedKeys.length,
+        total: blockingChecks.length,
+        pendingLabels,
+      };
+    });
+
+    return {
+      available: true,
+      total: entries.length,
+      riskCount,
+      byState,
+      blockingTotal: blockingChecks.length,
+      checklist: blockingChecks.map(key => ({ key, label: QUEUE_CHECK_LABELS[key] || key })),
+      entries,
+      autoInstall: policy.auto_install === true,
+      humanGate: policy.human_gate || '',
+      updatedAt: shortDate(payload && payload.generated_at),
+    };
+  }
+
+  window.WL_DISCOVERY_ADAPTER = { buildPcData, buildMobileData, buildSkillQueue };
+
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { buildPcData, buildMobileData, buildSkillQueue };
+  }
 })();

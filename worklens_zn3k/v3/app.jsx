@@ -32,30 +32,38 @@ function App() {
   useEffect(() => {
     let alive = true;
     const candidateUrls = ['../data/discoveries.json', './data/discoveries.json', '../../data/discoveries.json'];
+    const skillQueueUrls = ['../data/skill-review-queue.json', './data/skill-review-queue.json', '../../data/skill-review-queue.json'];
 
-    async function loadDiscoveries() {
-      if (!window.WL_DISCOVERY_ADAPTER) return;
-      for (const url of candidateUrls) {
+    async function loadFirstJson(urls, isValid) {
+      for (const url of urls) {
         try {
           const response = await fetch(url, { cache: 'no-cache' });
           if (!response.ok) continue;
-          const discoveries = await response.json();
-          if (!alive || !discoveries || !Array.isArray(discoveries.candidates)) return;
-          const nextData = window.WL_DISCOVERY_ADAPTER.buildPcData(D, discoveries);
-          Object.assign(D, nextData);
-          const nextTaste = {};
-          D.ENTRIES.forEach(entry => {
-            if (entry.taste) nextTaste[entry.id] = { taste: entry.taste, subscribed: false };
-          });
-          setTaste(nextTaste);
-          setSubscriptions(D.TASTE_SUBSCRIPTIONS || []);
-          setAcceptedProposals([]);
-          setDataRevision(revision => revision + 1);
-          return;
+          const payload = await response.json();
+          if (isValid(payload)) return payload;
         } catch {
-          // 保留种子数据，继续尝试下一个相对路径。
+          // 本地 file:// 预览或相对路径缺失时继续尝试下一个路径。
         }
       }
+      return null;
+    }
+
+    async function loadDiscoveries() {
+      if (!window.WL_DISCOVERY_ADAPTER) return;
+      const discoveries = await loadFirstJson(candidateUrls, payload => payload && Array.isArray(payload.candidates));
+      if (!alive || !discoveries) return;
+      const skillQueue = await loadFirstJson(skillQueueUrls, payload => payload && Array.isArray(payload.queue));
+      if (!alive) return;
+      const nextData = window.WL_DISCOVERY_ADAPTER.buildPcData(D, discoveries, skillQueue);
+      Object.assign(D, nextData);
+      const nextTaste = {};
+      D.ENTRIES.forEach(entry => {
+        if (entry.taste) nextTaste[entry.id] = { taste: entry.taste, subscribed: false };
+      });
+      setTaste(nextTaste);
+      setSubscriptions(D.TASTE_SUBSCRIPTIONS || []);
+      setAcceptedProposals([]);
+      setDataRevision(revision => revision + 1);
     }
 
     loadDiscoveries();

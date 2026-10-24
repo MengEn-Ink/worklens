@@ -977,7 +977,23 @@ derived_from: ${entry.url}`}
 
   /* ==================== 08 STUDIO · 技能工坊（v3 新增） ==================== */
   function StudioView({ subscriptions, onToggleSub, onAcceptProposal, acceptedProposals }) {
-    const [tab, setTab] = useState('skills');  /* skills | proposals | subscriptions */
+    const [tab, setTab] = useState('skills');  /* skills | proposals | queue | subscriptions */
+    const skillQueue = D.SKILL_QUEUE || { total: 0, byState: {}, entries: [], checklist: [], blockingTotal: 0, autoInstall: false };
+    const activeReviews = (skillQueue.byState.screening || 0) + (skillQueue.byState.trial || 0);
+    const openBlockingCount = (skillQueue.entries || []).reduce((sum, entry) => sum + (entry.pendingLabels || []).length, 0);
+    const queueStates = [
+      ['candidate', '待审'],
+      ['screening', '评测中'],
+      ['trial', '限范围试用'],
+      ['needs_changes', '待整改'],
+      ['adopted', '已引入'],
+      ['rejected', '已拒绝'],
+      ['quarantined', '已隔离'],
+    ];
+    const focusQueueEntries = (skillQueue.entries || [])
+      .slice()
+      .sort((a, b) => (b.passed / Math.max(b.total, 1)) - (a.passed / Math.max(a.total, 1)))
+      .slice(0, 4);
 
     return (
       <div className="anim-in">
@@ -991,9 +1007,8 @@ derived_from: ${entry.url}`}
         <section className="grid grid-cols-4 gap-6 py-6 border-y mb-8" style={{borderColor: 'var(--rule)'}}>
           <C.Stat num={D.AI_SKILLS.filter(s => s.status==='live').length} label="服役中 Skill" />
           <C.Stat num={D.AI_SKILLS.reduce((s, x) => s + x.runs_7d, 0)} label="近 7 天运行次数" />
-          <C.Stat num={D.SKILL_PROPOSALS.length} label="新建议" accent sub="来自你的 ❤ · 待处理" />
-          <C.Stat num={subscriptions.filter(s => !s.muted).length + ' / ' + subscriptions.length}
-                  label="订阅主题 · 活跃/总数" />
+          <C.Stat num={skillQueue.total || D.SKILL_PROPOSALS.length} label="待审队列" accent sub={`${activeReviews} 个评测/试用中`} />
+          <C.Stat num={openBlockingCount} label="阻断项待补证" sub="试用前必须清零" />
         </section>
 
         {/* Tab */}
@@ -1001,6 +1016,7 @@ derived_from: ${entry.url}`}
           {[
             { id: 'skills',        label: '已服役能力', count: D.AI_SKILLS.length },
             { id: 'proposals',     label: 'Agent 建议', count: D.SKILL_PROPOSALS.length },
+            { id: 'queue',         label: '待审队列',    count: skillQueue.total || 0 },
             { id: 'subscriptions', label: '订阅主题',    count: subscriptions.length },
             { id: 'evolution',     label: '演化日志',    count: D.EVOLUTION_LOG.length },
           ].map(t => (
@@ -1029,6 +1045,27 @@ derived_from: ${entry.url}`}
         {/* ---- Tab: Agent 建议 ---- */}
         {tab === 'proposals' && (
           <div className="space-y-4">
+            <article className="lib-card p-5" style={{borderColor: 'rgba(161, 62, 45, .36)'}}>
+              <div className="flex items-center gap-3 mb-3">
+                <span className="skill-ribbon">REVIEW QUEUE</span>
+                <span className="ff-mono text-[11px]" style={{color: 'var(--ink-mute)'}}>
+                  自动化只入队，candidate 之后必须人工记录 decided_by、时间与证据
+                </span>
+              </div>
+              <div className="grid gap-4" style={{gridTemplateColumns: 'repeat(4, 1fr)'}}>
+                {[
+                  ['待审', skillQueue.byState.candidate || 0],
+                  ['评测中', skillQueue.byState.screening || 0],
+                  ['限范围试用', skillQueue.byState.trial || 0],
+                  ['待补证', openBlockingCount],
+                ].map(([label, value]) => (
+                  <div key={label} className="hair-card p-3">
+                    <div className="stat-num text-[30px]">{value}</div>
+                    <div className="stat-label">{label}</div>
+                  </div>
+                ))}
+              </div>
+            </article>
             {D.SKILL_PROPOSALS.map(p => {
               const accepted = acceptedProposals.includes(p.id);
               return (
@@ -1081,6 +1118,64 @@ derived_from: ${entry.url}`}
                 </article>
               );
             })}
+          </div>
+        )}
+
+        {/* ---- Tab: 待审队列 ---- */}
+        {tab === 'queue' && (
+          <div className="space-y-5">
+            <section className="lib-card p-5">
+              <div className="flex items-start justify-between gap-6 mb-4">
+                <div>
+                  <div className="ff-mono text-[10px] uppercase tracking-widest mb-2" style={{color: 'var(--cinnabar)'}}>
+                    Review-only queue · auto_install={String(skillQueue.autoInstall)}
+                  </div>
+                  <h3 className="ff-serif text-[26px] font-semibold leading-tight" style={{letterSpacing: '-0.02em'}}>
+                    Skill 候选只读评测台
+                  </h3>
+                  <p className="sidenote mt-2 max-w-[720px]">
+                    {skillQueue.humanGate || '候选进入评测、试用和引入前必须由真人记录证据；页面不提供安装或流转按钮。'}
+                  </p>
+                </div>
+                <div className="ff-mono text-[11px] text-right" style={{color: 'var(--ink-mute)'}}>
+                  更新 {skillQueue.updatedAt || '未知'}<br />阻断清单 {skillQueue.blockingTotal || 0} 项
+                </div>
+              </div>
+              <div className="grid grid-cols-7 gap-2">
+                {queueStates.map(([state, label]) => (
+                  <div key={state} className="p-3 border" style={{borderColor: 'var(--rule)', background: state === 'trial' ? 'var(--paper-warm)' : 'transparent'}}>
+                    <div className="ff-serif text-[24px] font-semibold">{skillQueue.byState[state] || 0}</div>
+                    <div className="ff-mono text-[9px] uppercase tracking-widest" style={{color: 'var(--ink-mute)'}}>{label}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="grid gap-4" style={{gridTemplateColumns: 'repeat(2, minmax(0, 1fr))'}}>
+              {focusQueueEntries.map(entry => (
+                <article key={entry.id} className="lib-card p-5">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <span className="skill-ribbon">{entry.id} · {entry.stateLabel}</span>
+                      <h4 className="ff-serif text-[24px] font-semibold mt-2 leading-tight" style={{letterSpacing: '-0.02em'}}>{entry.repo}</h4>
+                      <p className="ff-mono text-[10px] mt-1" style={{color: 'var(--ink-mute)'}}>{entry.owner} · {entry.license} · ★ {entry.stars}</p>
+                    </div>
+                    <div className="ff-serif text-[22px] font-semibold" style={{color: entry.pendingLabels.length ? 'var(--mustard)' : 'var(--forest)'}}>
+                      {entry.passed}/{entry.total}
+                    </div>
+                  </div>
+                  <div className="score-bar mt-4"><div className="score-bar__fill" style={{width: `${Math.round((entry.passed / Math.max(entry.total, 1)) * 100)}%`}} /></div>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {(entry.pendingLabels.length ? entry.pendingLabels.slice(0, 4) : ['阻断项已通过']).map(label => (
+                      <span key={label} className="tag-pill" style={{color: entry.pendingLabels.length ? 'var(--cinnabar)' : 'var(--forest)'}}>{label}</span>
+                    ))}
+                  </div>
+                  <p className="sidenote mt-4">
+                    {entry.riskFlags.length ? `风险提示：${entry.riskFlags.join('、')}` : '当前无风险标记；仍需限范围试用结果后才能正式引入。'}
+                  </p>
+                </article>
+              ))}
+            </section>
           </div>
         )}
 

@@ -212,6 +212,14 @@ const DATA = {
       evidence: ['周三 14-18 均 5.2 场', '周三文档产出 ×0.3'],
       dsl: 'skill: wl.cal.depth-block\nscan:   {weekday: Wed, slot:14-18}\naction: {propose: 2*90min, label:"Deep Work"}' },
   ],
+  skillQueue: {
+    total: 0,
+    byState: {},
+    entries: [],
+    blockingTotal: 0,
+    autoInstall: false,
+    humanGate: 'Skill 候选必须人工评测后才允许试用。',
+  },
   pushes: [
     { id: 'pu-01', time: '00:52', topic: '编辑型 UI', title: 'Rauno 新发布 editorial-grid 组件',
       from: 'rauno.me', reason: '因你 ❤ shadcn/tweakcn 两次', score: 84, read: false },
@@ -1141,6 +1149,8 @@ function StudioView() {
   const [sub, setSub] = useState('skills'); // skills | proposals | subs | push
   const ctx = useTaste();
   const subs = DATA.subscriptions;
+  const skillQueue = DATA.skillQueue || { total: 0, by_state: {}, blocking_open: 0 };
+  const activeReviews = (skillQueue.by_state.screening || 0) + (skillQueue.by_state.trial || 0);
 
   const tabs = [
     { id: 'skills',    label: '已服役 · ' + DATA.aiSkills.length },
@@ -1175,16 +1185,16 @@ function StudioView() {
         </div>
         <div className="grid grid-cols-3 gap-2 mt-3">
           <div className="banner-stat">
-            <div className="banner-stat__num">{DATA.proposals.length}</div>
-            <div className="banner-stat__lab">新 Skill 建议</div>
+            <div className="banner-stat__num">{skillQueue.total || DATA.proposals.length}</div>
+            <div className="banner-stat__lab">待审队列</div>
           </div>
           <div className="banner-stat">
-            <div className="banner-stat__num">{DATA.pushes.filter(p=>!p.read).length}</div>
-            <div className="banner-stat__lab">定向推送</div>
+            <div className="banner-stat__num">{activeReviews}</div>
+            <div className="banner-stat__lab">评测/试用</div>
           </div>
           <div className="banner-stat">
-            <div className="banner-stat__num">{subs.length}</div>
-            <div className="banner-stat__lab">活跃订阅</div>
+            <div className="banner-stat__num">{skillQueue.blocking_open || 0}</div>
+            <div className="banner-stat__lab">待补证</div>
           </div>
         </div>
       </div>
@@ -1238,9 +1248,9 @@ function StudioView() {
               </div>
               <h3 className="ff-serif font-semibold text-[18px] mt-1" style={{letterSpacing: '-0.015em'}}>{p.name}</h3>
               <p className="ff-serif italic text-[13px] mt-1" style={{color: 'var(--ink-mute)'}}>
-                触发：{p.because}
+                触发：{p.why || p.because}
               </p>
-              <p className="ff-serif text-[13.5px] mt-1.5">{p.oneLine}</p>
+              <p className="ff-serif text-[13.5px] mt-1.5">{p.evidence || p.oneLine}</p>
               <div className="flex gap-2 mt-2">
                 <button className="btn btn--ghost text-[11px]">拒绝</button>
                 <button className="btn btn--cinnabar text-[11px] flex-1 justify-center">锻造为 Skill</button>
@@ -1393,23 +1403,31 @@ function App() {
   useEffect(() => {
     let alive = true;
     const candidateUrls = ['./data/discoveries.json', '../data/discoveries.json', '../../data/discoveries.json'];
+    const skillQueueUrls = ['./data/skill-review-queue.json', '../data/skill-review-queue.json', '../../data/skill-review-queue.json'];
 
-    async function loadDiscoveries() {
-      if (!window.WL_DISCOVERY_ADAPTER) return;
-      for (const url of candidateUrls) {
+    async function loadFirstJson(urls, isValid) {
+      for (const url of urls) {
         try {
           const response = await fetch(url, { cache: 'no-cache' });
           if (!response.ok) continue;
-          const discoveries = await response.json();
-          if (!alive || !discoveries || !Array.isArray(discoveries.candidates)) return;
-          Object.assign(DATA, window.WL_DISCOVERY_ADAPTER.buildMobileData(DATA, discoveries));
-          setTasteState({});
-          setDataRevision(revision => revision + 1);
-          return;
+          const payload = await response.json();
+          if (isValid(payload)) return payload;
         } catch {
-          // 本地 file:// 预览或相对路径缺失时保留内置种子数据。
+          // 本地 file:// 预览或相对路径缺失时继续尝试下一个路径。
         }
       }
+      return null;
+    }
+
+    async function loadDiscoveries() {
+      if (!window.WL_DISCOVERY_ADAPTER) return;
+      const discoveries = await loadFirstJson(candidateUrls, payload => payload && Array.isArray(payload.candidates));
+      if (!alive || !discoveries) return;
+      const skillQueue = await loadFirstJson(skillQueueUrls, payload => payload && Array.isArray(payload.queue));
+      if (!alive) return;
+      Object.assign(DATA, window.WL_DISCOVERY_ADAPTER.buildMobileData(DATA, discoveries, skillQueue));
+      setTasteState({});
+      setDataRevision(revision => revision + 1);
     }
 
     loadDiscoveries();
