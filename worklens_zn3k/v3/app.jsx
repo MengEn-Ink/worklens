@@ -1,5 +1,5 @@
 /* @jsxRuntime classic */
-/* global React, ReactDOM */
+/* global React, ReactDOM, fetch */
 /* ================================================================
    WorkLens v3 · 入口
    新增：喜好态管理 · §08 技能工坊 · §09 推送中心 · 点击 ❤ 的落点动画
@@ -13,6 +13,7 @@ function App() {
 
   const [route, setRoute] = useState({ view: 'hero', entryId: null });
   const [cmdOpen, setCmdOpen] = useState(false);
+  const [dataRevision, setDataRevision] = useState(0);
 
   /* ---- Taste 全局态：{ [entryId]: { taste, subscribed } } ---- */
   const initialTaste = useMemo(() => {
@@ -21,12 +22,45 @@ function App() {
       if (e.taste) m[e.id] = { taste: e.taste, subscribed: false };
     });
     return m;
-  }, [D]);
+  }, [D.ENTRIES]);
   const [taste, setTaste] = useState(initialTaste);
 
   /* ---- 订阅主题（可本地切换 muted） ---- */
   const [subscriptions, setSubscriptions] = useState(D.TASTE_SUBSCRIPTIONS);
   const [acceptedProposals, setAcceptedProposals] = useState([]);
+
+  useEffect(() => {
+    let alive = true;
+    const candidateUrls = ['../data/discoveries.json', './data/discoveries.json', '../../data/discoveries.json'];
+
+    async function loadDiscoveries() {
+      if (!window.WL_DISCOVERY_ADAPTER) return;
+      for (const url of candidateUrls) {
+        try {
+          const response = await fetch(url, { cache: 'no-cache' });
+          if (!response.ok) continue;
+          const discoveries = await response.json();
+          if (!alive || !discoveries || !Array.isArray(discoveries.candidates)) return;
+          const nextData = window.WL_DISCOVERY_ADAPTER.buildPcData(D, discoveries);
+          Object.assign(D, nextData);
+          const nextTaste = {};
+          D.ENTRIES.forEach(entry => {
+            if (entry.taste) nextTaste[entry.id] = { taste: entry.taste, subscribed: false };
+          });
+          setTaste(nextTaste);
+          setSubscriptions(D.TASTE_SUBSCRIPTIONS || []);
+          setAcceptedProposals([]);
+          setDataRevision(revision => revision + 1);
+          return;
+        } catch {
+          // 保留种子数据，继续尝试下一个相对路径。
+        }
+      }
+    }
+
+    loadDiscoveries();
+    return () => { alive = false; };
+  }, [D]);
 
   /* ---- Toast 浮层：显示 "+Δweight" ---- */
   const [toasts, setToasts] = useState([]);  // {id, x, y, text}
@@ -97,11 +131,12 @@ function App() {
   }, []);
 
   const Current = useMemo(() => {
+    void dataRevision;
     switch (route.view) {
       case 'hero':     return <V.HeroView     goto={goto} openEntry={openEntry} taste={taste} onTaste={onTaste} />;
       case 'pipeline': return <V.PipelineView taste={taste} onTaste={onTaste} />;
       case 'shelf':    return <V.ShelfView    openEntry={openEntry} taste={taste} onTaste={onTaste} />;
-      case 'reader':   return <V.ReaderView   entryId={route.entryId || 'WL-240-017'} openEntry={openEntry} goto={goto} taste={taste} onTaste={onTaste} />;
+      case 'reader':   return <V.ReaderView   entryId={route.entryId || (D.ENTRIES[0] && D.ENTRIES[0].id)} openEntry={openEntry} goto={goto} taste={taste} onTaste={onTaste} />;
       case 'routes':   return <V.RoutesView   openEntry={openEntry} />;
       case 'loop':     return <V.LoopView />;
       case 'profile':  return <V.ProfileView />;
@@ -110,10 +145,10 @@ function App() {
       case 'push':     return <V.PushView     goto={goto} openEntry={openEntry} />;
       default:         return <V.HeroView     goto={goto} openEntry={openEntry} taste={taste} onTaste={onTaste} />;
     }
-  }, [route, V, goto, openEntry, taste, onTaste, subscriptions, acceptedProposals, onToggleSub, onAcceptProposal]);
+  }, [route, V, goto, openEntry, taste, onTaste, subscriptions, acceptedProposals, onToggleSub, onAcceptProposal, dataRevision, D.ENTRIES]);
 
   return (
-    <div className="w-full min-h-screen flex" style={{background: 'var(--paper)'}}>
+    <div className="w-full min-h-screen flex" data-data-revision={dataRevision} style={{background: 'var(--paper)'}}>
 
       {/* 左侧目录 */}
       <aside className="flex-shrink-0 flex flex-col"
@@ -216,8 +251,8 @@ function App() {
               </div>
               <div>
                 <div className="ff-mono text-[9.5px] uppercase tracking-widest mb-1" style={{color: 'var(--ink)'}}>信息源</div>
-                本期从本周扫描的 1,427 条候选中手工挑选 ——
-                GitHub、Hacker News、25 位作者 RSS、arXiv、X list，以及你自己的收藏夹与 ❤ 账本。
+                本期从 `data/discoveries.json` 读取 {D.ISSUE.stats.scanned.toLocaleString()} 条公开 GitHub 候选，
+                当前展示 {D.ISSUE.stats.curated} 条；来源成功与失败都会保留为状态证据。
               </div>
               <div>
                 <div className="ff-mono text-[9.5px] uppercase tracking-widest mb-1" style={{color: 'var(--ink)'}}>节奏</div>

@@ -14,10 +14,10 @@
 
   /* ==================== 01 HERO · 本期策展头版 ==================== */
   function HeroView({ goto, openEntry, taste, onTaste }) {
-    const headline = enrich(D.ENTRIES.find(e => e.id === 'WL-240-017'), taste);
-    const secondary = D.ENTRIES
-      .filter(e => ['WL-310-021', 'WL-240-012', 'WL-410-005'].includes(e.id))
-      .map(e => enrich(e, taste));
+    const headline = enrich(D.ENTRIES[0], taste);
+    const secondary = D.ENTRIES.slice(1, 4).map(e => enrich(e, taste));
+    const sourceOkCount = D.SOURCES.filter(source => source.health >= 0.8).length;
+    const sourceTotalCount = D.SOURCES.length;
 
     const newProposals = D.SKILL_PROPOSALS.length;
     const newPushes = D.PUSHES.filter(p => !p.read).length;
@@ -128,10 +128,9 @@
                   <span className="ff-serif font-semibold">为什么它值得本期头条？</span> {headline.why}
                 </p>
                 <p className="ff-serif text-[15px] leading-[1.7]" style={{color: 'var(--ink-soft)'}}>
-                  Agent 把它与 <span className="ulink" onClick={() => openEntry('WL-240-012')}>Simon Willison 的每日 LLM 笔记</span> 以及
-                  <span className="ulink" onClick={() => openEntry('WL-240-004')}> Trending-GitHub-Agent</span> 组合，形成了 WorkLens 首个「信息三角」：
-                  一个负责广度（Trending）、一个负责深度（Willison）、一个负责语义聚合（AISafetyHot-Hub）。
-                  三者互为校准，Hero 的信噪比预计提升 2.3 倍。
+                  可信边界：这张卡片只使用公开 GitHub 元数据、采集来源、许可证、更新时间与仓库描述；
+                  WorkLens 不根据仓库名编造摘要，不写入私有会议、飞书原文、个人信息、凭证或内部地址。
+                  当前来源状态为 {sourceOkCount}/{sourceTotalCount} 可用，失败来源会保留在「发现管道」里作为状态证据。
                 </p>
                 <div className="mt-5 flex gap-2">
                   <button className="btn btn--primary" onClick={() => openEntry(headline.id)}>
@@ -151,9 +150,10 @@
                   Agent 建议动作
                 </div>
                 <ol className="space-y-2 ff-serif text-[13px]" style={{color: 'var(--ink)'}}>
-                  <li className="flex gap-2"><span className="circ-num">1</span>Fork 其 Actions scraper，接入第 8 条信息源</li>
-                  <li className="flex gap-2"><span className="circ-num">2</span>借鉴其日历视图做月度 WorkLens 回顾</li>
-                  <li className="flex gap-2"><span className="circ-num">3</span>联系作者，交换编辑型风格 UI 建议</li>
+                  <li className="flex gap-2"><span className="circ-num">1</span>{headline.action}</li>
+                  {headline.notes.slice(0, 2).map((note, index) => (
+                    <li key={note} className="flex gap-2"><span className="circ-num">{index + 2}</span>{note}</li>
+                  ))}
                 </ol>
                 <div className="mt-5 sidenote">
                   "最有价值的开源项目往往不是最热门的，而是最适配你当前问题的。" <br/>— Agent, 00:21
@@ -203,12 +203,12 @@
         <ViewHeader
           num="02"
           title="发现管道"
-          sub="从 1,427 条候选到 24 条策展的漏斗；点击任一节点查看该阶段的入站与规则。"
+          sub={`从 ${D.ISSUE.stats.scanned.toLocaleString()} 条真实候选到 ${D.ISSUE.stats.curated} 条页面展示；每个来源保留成功/失败、更新时间与队列规模。`}
         />
 
         <section className="mb-10">
           <div className="flex items-center justify-between mb-3">
-            <h3 className="ff-serif text-[18px] font-semibold">活跃信息源 · 7</h3>
+            <h3 className="ff-serif text-[18px] font-semibold">来源状态 · {D.SOURCES.length}</h3>
             <button className="btn btn--ghost"><C.I.plus /> 添加信息源</button>
           </div>
           <div className="grid gap-3" style={{gridTemplateColumns: 'repeat(4, 1fr)'}}>
@@ -927,7 +927,7 @@ derived_from: ${entry.url}`}
               </div>
             </div>
             <div className="mt-3 sidenote">
-              你的黄金时段：周二 10:00、周四 14:00；周三下午被会议塞满——建议为深度写作预留两段。
+              时间地图仍为本地演示占位；真实页面当前不接入会议、日历或飞书原文，避免把私有工作信号写入公开仓库。
             </div>
           </div>
         </section>

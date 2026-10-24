@@ -1,5 +1,5 @@
 /* @jsxRuntime classic */
-/* global React, ReactDOM */
+/* global React, ReactDOM, fetch */
 /* ================================================================
    WorkLens Mobile · 入口（H5 · 9:19.5）
    —— 口袋里的工作智库月刊
@@ -816,7 +816,7 @@ function ProfileSources() {
   return (
     <div className="hero-stack anim-in">
       <div className="flex items-baseline justify-between mb-2">
-        <h3 className="ff-serif text-[17px] font-semibold" style={{letterSpacing: '-0.015em'}}>9 条信号 · 权重分布</h3>
+        <h3 className="ff-serif text-[17px] font-semibold" style={{letterSpacing: '-0.015em'}}>{extended.length} 条信号 · 权重分布</h3>
         <button className="ff-mono text-[10px] flex items-center gap-1" style={{color: 'var(--cinnabar)'}}>
           <Icon.plus /> 添加
         </button>
@@ -975,7 +975,7 @@ function ProfileTime() {
         </div>
       </div>
       <div className="sidenote mt-3">
-        你的黄金时段：周二 10:00、周四 14:00；周三下午被会议塞满 —— 建议为深度写作预留两段。
+        时间地图仍为本地演示占位；真实页面当前不接入会议、日历或飞书原文，避免把私有工作信号写入公开仓库。
       </div>
     </div>
   );
@@ -1387,7 +1387,34 @@ function App() {
   const [opened, setOpened] = useState(null);
   const [taste, setTasteState] = useState({});
   const [toast, setToast] = useState(null);
+  const [dataRevision, setDataRevision] = useState(0);
   const toastTimer = useRef(null);
+
+  useEffect(() => {
+    let alive = true;
+    const candidateUrls = ['./data/discoveries.json', '../data/discoveries.json', '../../data/discoveries.json'];
+
+    async function loadDiscoveries() {
+      if (!window.WL_DISCOVERY_ADAPTER) return;
+      for (const url of candidateUrls) {
+        try {
+          const response = await fetch(url, { cache: 'no-cache' });
+          if (!response.ok) continue;
+          const discoveries = await response.json();
+          if (!alive || !discoveries || !Array.isArray(discoveries.candidates)) return;
+          Object.assign(DATA, window.WL_DISCOVERY_ADAPTER.buildMobileData(DATA, discoveries));
+          setTasteState({});
+          setDataRevision(revision => revision + 1);
+          return;
+        } catch {
+          // 本地 file:// 预览或相对路径缺失时保留内置种子数据。
+        }
+      }
+    }
+
+    loadDiscoveries();
+    return () => { alive = false; };
+  }, []);
 
   const openEntry = useCallback((e) => setOpened(e), []);
   const goto = useCallback((id) => setTab(id), []);
@@ -1428,7 +1455,7 @@ function App() {
 
   return (
     <TasteCtx.Provider value={{ taste, setTaste }}>
-      <div className="phone-frame flex flex-col">
+      <div className="phone-frame flex flex-col" data-data-revision={dataRevision}>
         <StatusBar />
         {tab === 'home'     && <HomeView openEntry={openEntry} goto={goto} />}
         {tab === 'discover' && <DiscoverView openEntry={openEntry} />}

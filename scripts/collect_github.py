@@ -27,6 +27,18 @@ def request_json(path: str):
     token = os.getenv("GITHUB_TOKEN")
     if token:
         headers["Authorization"] = f"Bearer {token}"
+
+    try:
+        return open_json(path, headers)
+    except urllib.error.HTTPError as error:
+        if error.code != 401 or "Authorization" not in headers:
+            raise
+        public_headers = dict(headers)
+        public_headers.pop("Authorization", None)
+        return open_json(path, public_headers)
+
+
+def open_json(path: str, headers: dict[str, str]):
     request = urllib.request.Request(f"{API}{path}", headers=headers)
     with urllib.request.urlopen(request, timeout=30) as response:
         return json.load(response)
