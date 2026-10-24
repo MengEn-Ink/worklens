@@ -1280,23 +1280,32 @@ function StudioView() {
               只读展示状态与证据，不安装、不执行、不写入用户级 Skill 目录。
             </p>
           </div>
+          {compareEntries.length === 0 && (
+            <div className="proposal-card proposal-card--quiet">
+              <h3 className="ff-serif font-semibold text-[18px]" style={{letterSpacing: '-0.015em'}}>暂无待审候选</h3>
+              <p className="ff-serif italic text-[12.5px] mt-1" style={{color: 'var(--ink-mute)'}}>
+                采集器会先把公开 Skill 候选放入队列；这里仅展示只读评测进度。
+              </p>
+            </div>
+          )}
           {compareEntries.map(entry => {
             const ratio = Math.round((entry.passed / Math.max(entry.total, 1)) * 100);
+            const labels = entry.pendingLabels.length ? entry.pendingLabels.slice(0, 3) : ['阻断项已通过'];
             return (
-              <div key={entry.id} className="proposal-card">
+              <div key={entry.id} className="proposal-card proposal-card--review">
                 <div className="flex items-start justify-between gap-3">
-                  <div>
+                  <div className="min-w-0">
                     <div className="ff-mono text-[9.5px] uppercase tracking-widest" style={{color: entry.pendingLabels.length ? 'var(--mustard)' : 'var(--forest)'}}>
                       {entry.id} · {entry.stateLabel}
                     </div>
-                    <h3 className="ff-serif font-semibold text-[18px] mt-1" style={{letterSpacing: '-0.015em'}}>{entry.repo}</h3>
-                    <p className="ff-mono text-[9px] mt-0.5" style={{color: 'var(--ink-mute)'}}>{entry.owner} · {entry.license} · ★ {entry.stars}</p>
+                    <h3 className="ff-serif font-semibold text-[18px] mt-1 truncate" style={{letterSpacing: '-0.015em'}}>{entry.repo}</h3>
+                    <p className="ff-mono text-[9px] mt-0.5 truncate" style={{color: 'var(--ink-mute)'}}>{entry.owner} · {entry.license} · ★ {entry.stars}</p>
                   </div>
-                  <div className="ff-serif font-semibold text-[22px]" style={{color: entry.pendingLabels.length ? 'var(--mustard)' : 'var(--forest)'}}>{entry.passed}/{entry.total}</div>
+                  <div className="ff-serif font-semibold text-[22px] flex-shrink-0" style={{color: entry.pendingLabels.length ? 'var(--mustard)' : 'var(--forest)'}}>{entry.passed}/{entry.total}</div>
                 </div>
-                <div className="mini-progress mt-2"><span style={{width: `${ratio}%`}} /></div>
+                <div className="mini-progress mt-2" aria-label={`阻断项通过率 ${ratio}%`}><span style={{width: `${ratio}%`}} /></div>
                 <div className="flex gap-1.5 mt-2 flex-wrap">
-                  {(entry.pendingLabels.length ? entry.pendingLabels.slice(0, 3) : ['阻断项已通过']).map(label => (
+                  {labels.map(label => (
                     <span key={label} className="chip" style={{color: entry.pendingLabels.length ? 'var(--cinnabar)' : 'var(--forest)'}}>{label}</span>
                   ))}
                 </div>

@@ -23,7 +23,7 @@
 
 ## 页面适配层
 
-PC 与移动端页面在启动后读取发布产物中的 `data/discoveries.json`，再通过 `data-adapter.js` 转为页面视图模型。
+PC 与移动端页面在启动后读取发布产物中的 `data/discoveries.json` 与 `data/skill-review-queue.json`，再通过 `data-adapter.js` 转为页面视图模型。
 
 适配规则：
 
@@ -59,6 +59,7 @@ Skill 候选的安全评测待审队列，由 `scripts/skill_review.py sync` 从
 
 - `policy.auto_install` 必须恒为 `false`；自动化只能追加 `candidate` 和刷新公开元数据。
 - `queue[].state` 取值：`candidate | screening | needs_changes | trial | adopted | rejected | quarantined`，非法流转由 `validate` 拒绝。
+- 页面适配层只能把队列转换为状态计数、阻断项进度和袖珍对比器；不得提供安装、流转、执行脚本或写入用户 Skill 目录的入口。
 - 进入 `trial` 前 7 项阻断评测（许可证、凭证、安装脚本、外发声明、写范围声明、注入面审查等）必须全部 `pass`，且必须声明试用 `scope`。
 - 进入 `adopted` 必须有完成且 `result=pass` 的试用记录。
 - `history` 首条必须是 `worklens-bot` 的 `enqueued`；之后每个事件都必须是真人并附理由，状态回放必须与当前 `state` 一致。
