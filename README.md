@@ -16,7 +16,7 @@ WorkLens 是围绕个人日常工作持续生长的开源能力雷达：发现�
 - 质量与安全门禁纳入 CI：单元测试、队列契约校验、密钥与内网信息扫描
 - GitHub Pages 由 `scripts/build_pages.py` 统一组装，移动端、PC 端和 PC v4 Atelier 入口共享可测试发布契约
 - PC v4 Atelier 已接入 `/atelier/`：只读展示 Skill 待审队列、alchaincyf 开源游戏项目证据台与 Pages 发布契约，不触发安装或外部写操作
-- Idea 项目化流程已有最小公开数据契约：`data/idea-pipeline.json` + `scripts/idea_pipeline.py validate`，自动化最多推进到 research，不创建脚手架、不自动安装 Skill
+- Idea 项目化流程已有最小公开数据契约与 Atelier 只读面板：`data/idea-pipeline.json` + `scripts/idea_pipeline.py validate`，自动化最多推进到 research，不创建脚手架、不自动安装 Skill
 
 ## 页面入口
 
@@ -74,5 +74,5 @@ Pages 产物可用 `python3 scripts/build_pages.py` 生成；当 `worklens_zn3k/
 - [x] Skill 评测清单实跑与限范围试用记录：首个真实候选已完成阻断项评测并进入只读试用，队列状态已只读接入 PC / 移动端页面
 - [x] 移动端 Skill 待审袖珍对比器：按通过率、状态和待补证项做只读比较，不自动安装
 - [x] WorkLens PC v4（Pages Atelier）工程化接入当前 main
-- [ ] Idea → 调研 → 方案 → 脚手架 → 验收的项目化流程
+- [x] Idea → 调研 → 方案 → 脚手架 → 验收的项目化流程最小数据契约与 Atelier 只读接入
 - [ ] 工作画像与推荐闭环完善

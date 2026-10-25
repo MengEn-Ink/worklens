@@ -251,6 +251,52 @@
     };
   }
 
+  const IDEA_STAGE_LABELS = {
+    idea: 'Idea',
+    research: '调研',
+    plan: '方案',
+    scaffold: '脚手架',
+    accepted: '验收通过',
+    archived: '已归档',
+  };
+
+  const IDEA_STAGE_ORDER = ['idea', 'research', 'plan', 'scaffold', 'accepted'];
+
+  function normalizeIdea(idea) {
+    const stage = IDEA_STAGE_LABELS[idea.stage] ? idea.stage : 'idea';
+    const stageIndex = Math.max(0, IDEA_STAGE_ORDER.indexOf(stage));
+    return {
+      id: idea.id || '',
+      title: idea.title || '',
+      summary: idea.summary || '',
+      stage,
+      stageLabel: IDEA_STAGE_LABELS[stage] || stage,
+      progress: stage === 'archived' ? 0 : Math.round(((stageIndex + 1) / IDEA_STAGE_ORDER.length) * 100),
+      evidenceCount: safeList(idea.evidence).length,
+      researchNotes: idea.research_notes || '',
+      historyCount: safeList(idea.history).length,
+    };
+  }
+
+  function buildIdeaPipelineBoard(pipeline) {
+    const policy = safeObject(pipeline && pipeline.policy);
+    const ideas = safeList(pipeline && pipeline.ideas).map(normalizeIdea);
+    return {
+      available: true,
+      generatedAt: pipeline && pipeline.generated_at ? pipeline.generated_at : null,
+      generatedLabel: formatGenerated(pipeline && pipeline.generated_at),
+      publicOnly: policy.public_only === true,
+      autoScaffold: policy.auto_scaffold === true,
+      automationMaxStage: policy.automation_max_stage || '',
+      ideas,
+      totals: {
+        total: ideas.length,
+        research: ideas.filter((item) => item.stage === 'research').length,
+        accepted: ideas.filter((item) => item.stage === 'accepted').length,
+      },
+    };
+  }
+
   function buildEmptyQueueBoard(reason) {
     return {
       available: false,
@@ -278,14 +324,29 @@
     };
   }
 
+  function buildEmptyIdeaPipelineBoard(reason) {
+    return {
+      available: false,
+      reason: reason || 'data_absent',
+      generatedLabel: '未加载',
+      publicOnly: false,
+      autoScaffold: false,
+      automationMaxStage: '',
+      ideas: [],
+      totals: { total: 0, research: 0, accepted: 0 },
+    };
+  }
+
   const api = {
     CHECK_LABELS,
     STATE_LABELS,
     STATE_ORDER,
     buildQueueBoard,
     buildCircleBoard,
+    buildIdeaPipelineBoard,
     buildEmptyQueueBoard,
     buildEmptyCircleBoard,
+    buildEmptyIdeaPipelineBoard,
     formatGenerated,
     shortDate,
     compactNumber,

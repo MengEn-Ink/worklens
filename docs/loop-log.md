@@ -2,6 +2,25 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-26（整点轮）· Idea 项目化流程 Atelier 只读接入
+
+**成果**
+
+- 收口最高优先级 Issue #2：基于 main 已上线的 `idea-pipeline.json` 契约，把项目化流程只读接入 PC v4 Atelier。
+- Atelier 新增「Idea 项目化闭环」区块，读取 `/data/idea-pipeline.json`，展示项目总数、research 数、自动脚手架为 0、自动化上限、当前阶段、进度、证据数、历史数与调研笔记。
+- 视图模型新增 `buildIdeaPipelineBoard` / `buildEmptyIdeaPipelineBoard` 纯函数与契约测试，继续保持只读：不创建外部任务、不流转阶段、不生成脚手架、不安装 Skill。
+- README 路线图更新为「最小数据契约与 Atelier 只读接入」完成。
+
+**验证证据**
+
+- 本地：`python3 -m unittest discover -s tests -p 'test_*.py'` 33 项通过；`node --test tests/*.js` 15 项通过；`idea_pipeline.py validate`、`core_circle.py`、`skill_review.py validate`、`security_scan.py` 通过；`build_pages.py` 输出 `routes=/, /desktop/, /atelier/; skipped=none`。
+- 前端：对 `worklens_zn3k/v4/app.jsx`、`worklens_zn3k/v4/atelier-model.js` 执行 `standard-lint`，未出现 parsing/syntax error、`no-undef`、`react/jsx-no-undef`、`import/no-unresolved` 四类阻断问题。
+- CI / Pages：待推送后补充 GitHub Actions 与线上 URL 验收。
+
+**下一轮唯一最高优先级**
+
+推进移动端对 Idea 项目化流程的袖珍只读摘要，并为 `scorecard-skill-metrics` 是否进入 `plan` 准备真人确认项；仍不得自动创建外部任务、脚手架或安装 Skill。
+
 ## 2026-10-26（凌晨轮）· Idea 项目化流程最小数据契约与首个真实样例
 
 **成果**

@@ -74,13 +74,48 @@ test('Atelier 核心圈模型保留公开证据并标记无许可证项目', () 
   assert.equal(board.noLicenseCount, 1);
 });
 
+test('Atelier Idea 项目化模型保持只读边界与调研进度', () => {
+  const board = model.buildIdeaPipelineBoard({
+    generated_at: '2026-10-25T22:42:00+08:00',
+    policy: {
+      public_only: true,
+      auto_scaffold: false,
+      automation_max_stage: 'research',
+    },
+    ideas: [
+      {
+        id: 'worklens-weekly-picks',
+        title: 'WorkLens 每周精选项目化',
+        summary: '把 discoveries 候选从列表沉淀为每周精选',
+        stage: 'research',
+        evidence: [{}, {}],
+        research_notes: '已核对公开证据',
+        history: [{}, {}],
+      },
+    ],
+  });
+
+  assert.equal(board.available, true);
+  assert.equal(board.publicOnly, true);
+  assert.equal(board.autoScaffold, false);
+  assert.equal(board.automationMaxStage, 'research');
+  assert.equal(board.totals.total, 1);
+  assert.equal(board.totals.research, 1);
+  assert.equal(board.ideas[0].stageLabel, '调研');
+  assert.equal(board.ideas[0].progress, 40);
+  assert.equal(board.ideas[0].evidenceCount, 2);
+});
+
 test('Atelier 空模型不抛错且显式说明未加载', () => {
   const queue = model.buildEmptyQueueBoard('not_found');
   const circle = model.buildEmptyCircleBoard('not_found');
+  const ideas = model.buildEmptyIdeaPipelineBoard('not_found');
 
   assert.equal(queue.available, false);
   assert.equal(queue.reason, 'not_found');
   assert.equal(queue.groups.length, model.STATE_ORDER.length);
   assert.equal(circle.available, false);
   assert.equal(circle.projects.length, 0);
+  assert.equal(ideas.available, false);
+  assert.equal(ideas.ideas.length, 0);
 });
