@@ -2,6 +2,27 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-25（整点轮）· Pages Atelier 发布契约工程化
+
+**成果**
+
+- 将 GitHub Pages 组装逻辑从 workflow 中的散落 `cp/mv` 收敛到 `scripts/build_pages.py`，统一发布移动端 `/`、PC 端 `/desktop/`，并为未来 `worklens_zn3k/v4/` 自动映射 `/atelier/`。
+- 新增 `pages-manifest.json` 发布清单：当 PC v4 Atelier 源目录不存在时显式标记 `skipped`，避免误发布陈旧页面；源目录出现后自动纳入 Pages artifact。
+- 补齐构建器单测 `tests/test_build_pages.py`，覆盖移动/桌面入口重命名、数据 JSON 复制、`.nojekyll`、Atelier 缺源跳过与有源发布。
+- 顺手清理待审队列记录中的占位作者字段为公开中性身份，并移除移动端一个未使用变量，避免继续携带个人占位信息。
+
+**验证证据**
+
+- 本地：`python3 -m unittest discover -s tests -p 'test_*.py'` 通过（25 个测试）。
+- Pages 构建：`python3 scripts/build_pages.py` 通过，输出 `routes=/, /desktop/; skipped=atelier`。
+- 门禁：`python3 scripts/core_circle.py`、`python3 scripts/skill_review.py validate`、`python3 scripts/security_scan.py` 通过。
+- 前端：对 `worklens-mobile_8a6r/v2/app.jsx` 执行 `standard-lint`，未出现 parsing/syntax error、`no-undef`、`react/jsx-no-undef`、`import/no-unresolved` 四类阻断问题；剩余为既有风格类提示。
+
+**下一轮唯一最高优先级**
+
+把真实 PC v4（Pages Atelier）源目录接入 `worklens_zn3k/v4/`，让 `/atelier/` 从 manifest skipped 变为 published；完成后推进 Idea → 调研 → 方案 → 脚手架 → 验收流程。
+
+
 ## 2026-10-24（晚轮）· 移动端 Skill 待审袖珍对比器
 
 **成果**

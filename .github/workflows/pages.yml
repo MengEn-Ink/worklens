@@ -19,15 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: 组装移动端与桌面端页面
-        run: |
-          mkdir -p _site/desktop _site/data
-          cp worklens-mobile_8a6r/v2/* _site/
-          mv _site/worklens-mobile_8a6r_h5.html _site/index.html
-          cp worklens_zn3k/v3/* _site/desktop/
-          mv _site/desktop/worklens_zn3k_pc.html _site/desktop/index.html
-          cp data/*.json _site/data/
-          touch _site/.nojekyll
+      - name: 组装移动端、桌面端与 Atelier 页面
+        run: python3 scripts/build_pages.py
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
