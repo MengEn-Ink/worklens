@@ -15,11 +15,11 @@
 
 - 本地：`python3 -m unittest discover -s tests -p 'test_*.py'` 33 项通过；`node --test tests/*.js` 15 项通过；`idea_pipeline.py validate`、`core_circle.py`、`skill_review.py validate`、`security_scan.py` 通过；`build_pages.py` 输出 `routes=/, /desktop/, /atelier/; skipped=none`。
 - 前端：对 `worklens_zn3k/v4/app.jsx`、`worklens_zn3k/v4/atelier-model.js` 执行 `standard-lint`，未出现 parsing/syntax error、`no-undef`、`react/jsx-no-undef`、`import/no-unresolved` 四类阻断问题。
-- CI / Pages：待推送后补充 GitHub Actions 与线上 URL 验收。
+- CI / Pages：main 合并提交 `8ffc669` 的质量与安全门禁通过（https://github.com/MengEn-Ink/worklens/actions/runs/40238592111），Pages 发布通过（https://github.com/MengEn-Ink/worklens/actions/runs/40238592098）；线上 `pages-manifest.json` 已显示 `/atelier/` published 且包含 `data/idea-pipeline.json`，`/data/idea-pipeline.json` 可访问。
 
 **下一轮唯一最高优先级**
 
-推进移动端对 Idea 项目化流程的袖珍只读摘要，并为 `scorecard-skill-metrics` 是否进入 `plan` 准备真人确认项；仍不得自动创建外部任务、脚手架或安装 Skill。
+推进 Issue #5：移动端对 Idea 项目化流程的袖珍只读摘要，并为 `scorecard-skill-metrics` 是否进入 `plan` 准备真人确认项；仍不得自动创建外部任务、脚手架或安装 Skill。
 
 ## 2026-10-26（凌晨轮）· Idea 项目化流程最小数据契约与首个真实样例
 
