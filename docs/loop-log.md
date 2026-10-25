@@ -15,7 +15,7 @@
 
 - 本地：`python3 -m unittest discover -s tests -p 'test_*.py'` 33 个测试全部通过；`idea_pipeline.py validate` 通过；`security_scan.py` 通过；`build_pages.py` 产物含 `data/idea-pipeline.json`；node 适配器语法检查与 `node --test tests/*.js` 14 项通过。
 - CI：`质量与安全门禁`、`发布 GitHub Pages` 在 `e0f893b` 均 success。
-- 线上：`https://mengen-ink.github.io/worklens/data/idea-pipeline.json` HTTP 200，内容与 main 一致（1 个 research 阶段样例、2 条公开证据、策略常量不变）。
+- 线上：`https://mengen-ink.github.io/worklens/data/idea-pipeline.json` HTTP 200，内容与 main 一致（1 个 research 阶段样例、2 条公开证据、策略常量不变）；Issue #1 由本轮收口提交关闭，下一轮继续处理只读页面接入。
 
 **下一轮唯一最高优先级**
 
