@@ -149,7 +149,9 @@ test('真实数据：队列与 discoveries 全链路不崩溃且计数一致', (
     assert.equal(vm.total, queue.queue.length, `${label} 条目数一致`);
     let trialCount = 0;
     for (const entry of vm.entries) {
-      if (entry.state === 'trial') trialCount += 1;
+      if (entry.state === 'trial') {
+        trialCount += 1;
+      }
       assert.equal(entry.passed + entry.pendingLabels.length, entry.total, `${label} ${entry.id} 进度闭合`);
       assert.ok(entry.total <= 7);
     }
