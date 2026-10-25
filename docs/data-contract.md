@@ -65,6 +65,19 @@ Skill 候选的安全评测待审队列，由 `scripts/skill_review.py sync` 从
 - `history` 首条必须是 `worklens-bot` 的 `enqueued`；之后每个事件都必须是真人并附理由，状态回放必须与当前 `state` 一致。
 - 队列只保存公开 GitHub 元数据与评测记录，不保存 Skill 源码、原文或任何凭证。
 
+## idea-pipeline.json
+
+Idea → 调研 → 方案 → 脚手架 → 验收的项目化流程记录，由 `scripts/idea_pipeline.py validate`
+校验。完整阶段定义与命令见 [idea-pipeline.md](idea-pipeline.md)。
+
+契约要点：
+
+- 阶段按 `idea → research → plan → scaffold → accepted` 单向逐格推进，任何阶段可带理由转 `archived`；`history` 回放必须与当前 `stage` 一致。
+- 进入 `research` 需 ≥2 条公开证据与调研笔记；`plan` 需可验收标准；`scaffold` 需仓库内产物路径；`accepted` 需 `result=pass` 的验收记录与证据。
+- `worklens-bot` 最多推进到 `research`，之后的流转必须由真人记录。
+- 策略常量恒为 `public_only=true`、`auto_scaffold=false`、`require_evidence=true`；证据必须是 HTTPS 公开链接，拒绝内网域名与凭证参数。
+- 页面适配层只能只读展示流程状态，不得提供创建、流转、脚手架或安装入口。
+
 ## 喜好反馈
 
 推荐使用以下事件结构：

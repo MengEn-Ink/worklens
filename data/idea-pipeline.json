@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-26T01:50:00+08:00",
+  "source": "WorkLens idea pipeline; public sources only",
+  "policy": {
+    "public_only": true,
+    "auto_scaffold": false,
+    "require_evidence": true,
+    "automation_actor": "worklens-bot",
+    "automation_max_stage": "research"
+  },
+  "stages": [
+    "idea",
+    "research",
+    "plan",
+    "scaffold",
+    "accepted"
+  ],
+  "ideas": []
+}

@@ -16,5 +16,17 @@
     "rule": "url_credential_param",
     "contains": "example.com/feed.xml?token=secret",
     "reason": "扫描器自身的凭证参数命中与白名单测试夹具，example.com 为保留示例域名"
+  },
+  {
+    "path": "tests/test_idea_pipeline.py",
+    "rule": "internal_host",
+    "contains": "wiki.bytedance.net",
+    "reason": "Idea 流程契约的内网证据拒绝用负向测试夹具，并非真实内网地址引用"
+  },
+  {
+    "path": "tests/test_idea_pipeline.py",
+    "rule": "url_credential_param",
+    "contains": "example.com/a?token=abcsecret",
+    "reason": "Idea 流程契约的凭证参数拒绝用负向测试夹具，example.com 为保留示例域名"
   }
 ]
