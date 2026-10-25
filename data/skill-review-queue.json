@@ -366,7 +366,7 @@
           "status": "pass",
           "evidence": "人工复核 main@02d617d：根目录 LICENSE 为 MIT（Copyright 2026 CodeSigils），pyproject 声明 license=MIT，非 NOASSERTION。",
           "checked_at": "2026-10-24T07:24:45.499202+00:00",
-          "by": "caomengen.lwdl"
+          "by": "worklens-human"
         },
         "license_compatible": {
           "status": "pass",
@@ -443,55 +443,55 @@
         {
           "at": "2026-10-24T07:24:45.499202+00:00",
           "event": "check_updated",
-          "by": "caomengen.lwdl",
+          "by": "worklens-human",
           "note": "license_declared=pass：人工复核 main@02d617d：根目录 LICENSE 为 MIT（Copyright 2026 CodeSigils），pyproject 声明 license=MIT，非 NOASSERTION。"
         },
         {
           "at": "2026-10-24T07:24:45.548952+00:00",
           "event": "check_updated",
-          "by": "caomengen.lwdl",
+          "by": "worklens-human",
           "note": "license_compatible=pass：MIT 为宽松许可，允许 WorkLens 以参考/收录方式使用与再分发（保留版权声明即可），无 copyleft 传染。"
         },
         {
           "at": "2026-10-24T07:24:45.591983+00:00",
           "event": "check_updated",
-          "by": "caomengen.lwdl",
+          "by": "worklens-human",
           "note": "secret_clean=pass：对 main@02d617d 全量 git 跟踪文件做高置信密钥/内网域名/URL 凭证参数模式扫描，0 命中；引用均为公开文档站。"
         },
         {
           "at": "2026-10-24T07:24:45.634305+00:00",
           "event": "check_updated",
-          "by": "caomengen.lwdl",
+          "by": "worklens-human",
           "note": "install_safe=pass：技能本体仅 SKILL.md 与 Markdown 引用，无安装引导；仓库脚本仅 CI 校验（subprocess 只跑 git ls-files、urllib 仅校验市场 URL），无 curl|sh 或混淆代码，且 SKILL.md 明确禁止未经授权 npx --yes 引导外部代码。"
         },
         {
           "at": "2026-10-24T07:24:45.679580+00:00",
           "event": "check_updated",
-          "by": "caomengen.lwdl",
+          "by": "worklens-human",
           "note": "network_declared=warn：默认只读；外发仅在用户授权查询公开技能市场/CLI 时发生，platform-locations.md 列出公开主机与用途，但具体外发主机随客户端而定、未逐项最小化声明，试用前需按实际客户端复核。"
         },
         {
           "at": "2026-10-24T07:24:45.722719+00:00",
           "event": "check_updated",
-          "by": "caomengen.lwdl",
+          "by": "worklens-human",
           "note": "write_scope_declared=warn：发现阶段默认只读、不复制/创建/执行候选内容，写操作需用户显式授权；但技能未声明固定写目录与副作用清单，试用前需补齐写范围确认。"
         },
         {
           "at": "2026-10-24T07:24:45.770343+00:00",
           "event": "check_updated",
-          "by": "caomengen.lwdl",
+          "by": "worklens-human",
           "note": "injection_surface_reviewed=unknown：核心流程会解析第三方市场与技能文本，属提示注入/工具投放入口；trust-review.md 已要求按不可信数据处理，WorkLens 尚未对全部外部引用做对抗式复核，进入试用前必须完成。"
         },
         {
           "at": "2026-10-24T07:24:45.812356+00:00",
           "event": "check_updated",
-          "by": "caomengen.lwdl",
+          "by": "worklens-human",
           "note": "dependencies_pinned=pass：技能运行时无第三方依赖（纯 Markdown）；仓库开发依赖在 pyproject 声明并提交 uv.lock，可复现。"
         },
         {
           "at": "2026-10-24T07:24:45.859815+00:00",
           "event": "check_updated",
-          "by": "caomengen.lwdl",
+          "by": "worklens-human",
           "note": "maintained=warn：最近提交 2026-10-19、CI/dependabot 活跃；但项目较新（v0.1.4 Beta）、Star 为 0、单一组织维护，社区信号弱，先小范围观察。"
         },
         {

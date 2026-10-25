@@ -1147,7 +1147,6 @@ function RoutesView() {
    ---------------------------------------------------------------- */
 function StudioView() {
   const [sub, setSub] = useState('skills'); // skills | proposals | queue | subs | push
-  const ctx = useTaste();
   const subs = DATA.subscriptions;
   const skillQueue = DATA.skillQueue || { total: 0, byState: {}, entries: [], blockingTotal: 0, autoInstall: false };
   const activeReviews = (skillQueue.byState.screening || 0) + (skillQueue.byState.trial || 0);
