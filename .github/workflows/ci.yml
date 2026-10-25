@@ -20,8 +20,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
       - name: 单元测试
         run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - name: 前端适配器语法检查
+        run: |
+          node --check worklens_zn3k/v3/data-adapter.js
+          node --check worklens-mobile_8a6r/v2/data-adapter.js
+      - name: 前端只读视图模型契约测试
+        run: node --test tests/test_data_adapter.js
       - name: 核心开源者圈层契约校验
         run: python3 scripts/core_circle.py
       - name: Skill 待审队列契约校验
