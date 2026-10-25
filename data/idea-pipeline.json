@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-26T01:50:00+08:00",
+  "generated_at": "2026-10-26T02:55:00+08:00",
   "source": "WorkLens idea pipeline; public sources only",
   "policy": {
     "public_only": true,
@@ -16,5 +16,41 @@
     "scaffold",
     "accepted"
   ],
-  "ideas": []
+  "ideas": [
+    {
+      "id": "scorecard-skill-metrics",
+      "title": "为 Skill 待审队列补充 OpenSSF Scorecard 公开安全指标",
+      "summary": "在现有 7 项阻断检查之外，评估把 OpenSSF Scorecard 的公开检查结果作为 Skill 候选的辅助弱信号，并在队列页只读展示。",
+      "stage": "research",
+      "evidence": [
+        {
+          "url": "https://github.com/ossf/scorecard",
+          "title": "ossf/scorecard 官方公开仓库（Apache-2.0，2026-10 仍活跃维护）",
+          "observed_at": "2026-10-26T02:55:00+08:00"
+        },
+        {
+          "url": "https://api.github.com/repos/ossf/scorecard",
+          "title": "GitHub 公开仓库元数据：许可证 Apache-2.0、约 5.8k stars、最近推送 2026-10-24",
+          "observed_at": "2026-10-26T02:55:00+08:00"
+        }
+      ],
+      "research_notes": "已核对公开事实：Scorecard 是 OpenSSF 官方项目，Apache-2.0 许可证，仓库持续活跃（2026-10-26 观测约 5.8k stars，最近推送 2026-10-24）。它提供 Maintained、License、Branch-Protection、Dangerous-Workflow、Token-Permissions、Pinned-Dependencies 等可机器读取的公开检查项，理论上可作为 Skill 待审队列 7 项人工阻断检查之外的辅助弱信号，并在队列页只读展示。边界：评分与星标只是公开事实，不构成采用背书，不能替代真人阻断评测与限范围试用；自动化最多停在 research，不安装、不执行第三方代码；进入 plan 前需真人确认只读取公开结果、不引入额外凭证。",
+      "history": [
+        {
+          "from_stage": null,
+          "to_stage": "idea",
+          "actor": "worklens-bot",
+          "note": "从 Skill 评测体系公开增强方向登记灵感，仅记录公开来源线索",
+          "at": "2026-10-26T02:50:00+08:00"
+        },
+        {
+          "from_stage": "idea",
+          "to_stage": "research",
+          "actor": "worklens-bot",
+          "note": "补充 2 条公开证据与调研结论，停在 research 等待真人决定是否进入 plan",
+          "at": "2026-10-26T02:55:00+08:00"
+        }
+      ]
+    }
+  ]
 }
