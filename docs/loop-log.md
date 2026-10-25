@@ -2,6 +2,25 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-26（凌晨轮）· Idea 项目化流程最小数据契约与首个真实样例
+
+**成果**
+
+- 收口最高优先级 Issue #1：分两个独立提交上线 Idea → research → plan → scaffold → accepted 的最小机器可读契约。
+- `d9c46fa`：`data/idea-pipeline.json`（schema、策略常量、五阶段定义）、`scripts/idea_pipeline.py validate`（阶段逐格推进、history 回放一致、research 需 ≥2 条 HTTPS 公开证据与调研笔记、plan/scaffold/accepted 准入材料、`worklens-bot` 最多推进到 research、拒绝内网域名与凭证参数）、`tests/test_idea_pipeline.py` 负向用例、CI 门禁步骤、`docs/idea-pipeline.md` 与 `docs/data-contract.md` 契约章节。
+- `e0f893b`：登记首个真实 Idea 样例 `scorecard-skill-metrics`，证据来自仓库外部公开来源（ossf/scorecard 官方仓库与 GitHub 公开元数据接口，均实测 200，Apache-2.0、活跃维护），停在 research，只作弱信号调研，不安装、不执行第三方内容。
+- 本轮不改任何前端页面；只读页面接入另立 Issue，并行 WIP 已保留在远端分支 `wip/idea-readonly-view`（需基于当前契约重整后才能合入）。
+
+**验证证据**
+
+- 本地：`python3 -m unittest discover -s tests -p 'test_*.py'` 33 个测试全部通过；`idea_pipeline.py validate` 通过；`security_scan.py` 通过；`build_pages.py` 产物含 `data/idea-pipeline.json`；node 适配器语法检查与 `node --test tests/*.js` 14 项通过。
+- CI：`质量与安全门禁`、`发布 GitHub Pages` 在 `e0f893b` 均 success。
+- 线上：`https://mengen-ink.github.io/worklens/data/idea-pipeline.json` HTTP 200，内容与 main 一致（1 个 research 阶段样例、2 条公开证据、策略常量不变）。
+
+**下一轮唯一最高优先级**
+
+把 `idea-pipeline.json` 的阶段、证据计数与下一步以只读方式接入 Atelier（及移动端）页面，展示自动化边界（`auto_scaffold=false`、bot 最多到 research），不得提供创建、流转、脚手架或安装入口；可复用 `wip/idea-readonly-view` 分支上的前端实现，但必须基于 main 当前契约重整并补齐契约测试。
+
 ## 2026-10-25（晚轮）· PC v4 Atelier 只读工坊上线
 
 **成果**
