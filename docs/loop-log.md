@@ -6,7 +6,7 @@
 
 **成果**
 
-- 收口最高优先级 Issue #2：基于 main 已上线的 `idea-pipeline.json` 契约，把项目化流程只读接入 PC v4 Atelier。
+- 收口最高优先级 Issue #3：基于 main 已上线的 `idea-pipeline.json` 契约，把项目化流程只读接入 PC v4 Atelier。
 - Atelier 新增「Idea 项目化闭环」区块，读取 `/data/idea-pipeline.json`，展示项目总数、research 数、自动脚手架为 0、自动化上限、当前阶段、进度、证据数、历史数与调研笔记。
 - 视图模型新增 `buildIdeaPipelineBoard` / `buildEmptyIdeaPipelineBoard` 纯函数与契约测试，继续保持只读：不创建外部任务、不流转阶段、不生成脚手架、不安装 Skill。
 - README 路线图更新为「最小数据契约与 Atelier 只读接入」完成。
@@ -15,7 +15,7 @@
 
 - 本地：`python3 -m unittest discover -s tests -p 'test_*.py'` 33 项通过；`node --test tests/*.js` 15 项通过；`idea_pipeline.py validate`、`core_circle.py`、`skill_review.py validate`、`security_scan.py` 通过；`build_pages.py` 输出 `routes=/, /desktop/, /atelier/; skipped=none`。
 - 前端：对 `worklens_zn3k/v4/app.jsx`、`worklens_zn3k/v4/atelier-model.js` 执行 `standard-lint`，未出现 parsing/syntax error、`no-undef`、`react/jsx-no-undef`、`import/no-unresolved` 四类阻断问题。
-- CI / Pages：main 合并提交 `8ffc669` 的质量与安全门禁通过（https://github.com/MengEn-Ink/worklens/actions/runs/40238592111），Pages 发布通过（https://github.com/MengEn-Ink/worklens/actions/runs/40238592098）；线上 `pages-manifest.json` 已显示 `/atelier/` published 且包含 `data/idea-pipeline.json`，`/data/idea-pipeline.json` 可访问。
+- CI / Pages：main `8ffc669` 的「质量与安全门禁」与「发布 GitHub Pages」均 success（Actions runs 40238592111 / 40238592098）；线上 `https://mengen-ink.github.io/worklens/atelier/` 已发布，`/data/idea-pipeline.json` HTTP 200，包含 1 个 research 阶段样例、2 条公开 HTTPS 证据，策略边界仍为 `public_only=true`、`auto_scaffold=false`、`automation_max_stage=research`。
 
 **下一轮唯一最高优先级**
 
