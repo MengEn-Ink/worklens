@@ -1,0 +1,86 @@
+'use strict';
+
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const model = require('../worklens_zn3k/v4/atelier-model.js');
+
+test('Atelier 队列模型只读聚合待审状态与阻断项', () => {
+  const board = model.buildQueueBoard({
+    generated_at: '2026-10-25T00:00:00Z',
+    policy: {
+      auto_install: false,
+      human_gate: '人工流转',
+      blocking_checks: ['license_declared', 'secret_clean'],
+      states: ['candidate', 'trial'],
+    },
+    queue: [
+      {
+        id: 'SR-1',
+        subject: 'owner/toolkit',
+        html_url: 'https://github.com/owner/toolkit',
+        state: 'trial',
+        license: 'MIT',
+        stars: 1250,
+        pushed_at: '2026-10-24T00:00:00Z',
+        checks: {
+          license_declared: { status: 'pass' },
+          secret_clean: { status: 'fail' },
+        },
+        trial: { scope: '本地只读试用', started_at: '2026-10-20T00:00:00Z' },
+      },
+    ],
+  });
+
+  assert.equal(board.available, true);
+  assert.equal(board.autoInstall, false);
+  assert.equal(board.totals.total, 1);
+  assert.equal(board.totals.trial, 1);
+  assert.equal(board.entries[0].repo, 'toolkit');
+  assert.equal(board.entries[0].starsCompact, '1.3k');
+  assert.deepEqual(board.entries[0].pendingLabels, ['凭证与私有地址']);
+  assert.equal(board.entries[0].trialScope, '本地只读试用');
+});
+
+test('Atelier 核心圈模型保留公开证据并标记无许可证项目', () => {
+  const board = model.buildCircleBoard({
+    generated_at: '2026-10-25T00:00:00+08:00',
+    people: [
+      {
+        login: 'alchaincyf',
+        profile_url: 'https://github.com/alchaincyf',
+        tier: 'seed',
+        tier_reason: '用户指定研究对象',
+        public_evidence: { public_repos: 92, followers: 11860 },
+        quality_note: 'followers 仅为弱流行度信号',
+      },
+    ],
+    projects: [
+      {
+        full_name: 'alchaincyf/nes-arcade',
+        url: 'https://github.com/alchaincyf/nes-arcade',
+        category: 'game-emulator-frontend',
+        status: 'watch',
+        recommendation: false,
+        reason: '许可证门槛不满足',
+        evidence: { stars: 24, forks: 11, license_spdx: null, readme: 'missing' },
+      },
+    ],
+  });
+
+  assert.equal(board.available, true);
+  assert.equal(board.people[0].followersCompact, '11.9k');
+  assert.equal(board.projects[0].licenseLabel, '未声明');
+  assert.equal(board.projects[0].recommendation, false);
+  assert.equal(board.noLicenseCount, 1);
+});
+
+test('Atelier 空模型不抛错且显式说明未加载', () => {
+  const queue = model.buildEmptyQueueBoard('not_found');
+  const circle = model.buildEmptyCircleBoard('not_found');
+
+  assert.equal(queue.available, false);
+  assert.equal(queue.reason, 'not_found');
+  assert.equal(queue.groups.length, model.STATE_ORDER.length);
+  assert.equal(circle.available, false);
+  assert.equal(circle.projects.length, 0);
+});

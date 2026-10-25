@@ -14,12 +14,14 @@ WorkLens 是围绕个人日常工作持续生长的开源能力雷达：发现�
 - 支持本地 RSS / 播客 OPML 脱敏导入，订阅 URL 会先去敏再散列，避免把私有参数带入仓库
 - Skill 候选进入独立待审队列：固定阻断评测项 + 人工状态机（待审→评测→试用→引入/拒绝/隔离），自动化只入队不流转，永不自动安装
 - 质量与安全门禁纳入 CI：单元测试、队列契约校验、密钥与内网信息扫描
-- GitHub Pages 由 `scripts/build_pages.py` 统一组装，移动端、PC 端和未来 PC v4 Atelier 入口共享可测试发布契约
+- GitHub Pages 由 `scripts/build_pages.py` 统一组装，移动端、PC 端和 PC v4 Atelier 入口共享可测试发布契约
+- PC v4 Atelier 已接入 `/atelier/`：只读展示 Skill 待审队列、alchaincyf 开源游戏项目证据台与 Pages 发布契约，不触发安装或外部写操作
 
 ## 页面入口
 
 - 移动端：GitHub Pages 默认入口
 - PC 端：`/desktop/`
+- PC v4 Atelier：`/atelier/`
 
 ## 数据与隐私原则
 
@@ -39,7 +41,8 @@ WorkLens 是围绕个人日常工作持续生长的开源能力雷达：发现�
 
 ```text
 worklens-mobile_8a6r/v2/  移动端当前设计
-worklens_zn3k/v3/         PC 当前设计
+worklens_zn3k/v3/         PC v3 当前设计
+worklens_zn3k/v4/         PC v4 Pages Atelier 只读工坊
 config/                   信息源配置
 data/                     机器可读候选与画像数据
 scripts/                  采集和归纳脚本
@@ -52,6 +55,7 @@ scripts/                  采集和归纳脚本
 
 - `worklens-mobile_8a6r/v2/worklens-mobile_8a6r_h5.html`
 - `worklens_zn3k/v3/worklens_zn3k_pc.html`
+- `worklens_zn3k/v4/index.html`
 
 Pages 产物可用 `python3 scripts/build_pages.py` 生成；当 `worklens_zn3k/v4/` 存在时会自动发布到 `/atelier/`，当前缺源时只在 manifest 中标记 skipped。
 
@@ -68,6 +72,6 @@ Pages 产物可用 `python3 scripts/build_pages.py` 生成；当 `worklens_zn3k/
 - [x] 建立核心开源者圈层数据模型与公开 GitHub 证据契约（seed/core 分层、协作/主题/follow 关系、数量上限与隐私边界）
 - [x] Skill 评测清单实跑与限范围试用记录：首个真实候选已完成阻断项评测并进入只读试用，队列状态已只读接入 PC / 移动端页面
 - [x] 移动端 Skill 待审袖珍对比器：按通过率、状态和待补证项做只读比较，不自动安装
-- [ ] WorkLens PC v4（Pages Atelier）工程化接入当前 main
+- [x] WorkLens PC v4（Pages Atelier）工程化接入当前 main
 - [ ] Idea → 调研 → 方案 → 脚手架 → 验收的项目化流程
 - [ ] 工作画像与推荐闭环完善

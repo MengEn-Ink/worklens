@@ -28,9 +28,10 @@ jobs:
       - name: 前端适配器语法检查
         run: |
           node --check worklens_zn3k/v3/data-adapter.js
+          node --check worklens_zn3k/v4/atelier-model.js
           node --check worklens-mobile_8a6r/v2/data-adapter.js
       - name: 前端只读视图模型契约测试
-        run: node --test tests/test_data_adapter.js
+        run: node --test tests/*.js
       - name: 核心开源者圈层契约校验
         run: python3 scripts/core_circle.py
       - name: Skill 待审队列契约校验
