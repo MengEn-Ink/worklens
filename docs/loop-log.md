@@ -2,6 +2,26 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-25（晚轮）· PC v4 Atelier 只读工坊上线
+
+**成果**
+
+- 收口上一轮最高优先级：新增 `worklens_zn3k/v4/`（index.html / atelier-model.js / app.jsx / styles.css），严格延续 v3 田野杂志设计语言（同款字体、纸墨配色与刊物质感），Pages 发布到 `/atelier/`，manifest 由 skipped 变为 published。
+- 页面三块只读内容：刊头与安全边界（auto_install=false、不安装/不执行/不流转）、Skill 待审队列看板（按状态分组、试用候选置顶、7 项阻断检查矩阵、待补证标签、试用范围）、核心开源者圈层（alchaincyf 公开证据、followers 弱信号标注、无许可证不推荐规则、项目证据台）。
+- `atelier-model.js` 为纯函数视图模型（window/module.exports 双守卫），新增零依赖 `tests/test_atelier_model.js` 3 个契约测试；CI 增加 v4 模型 `node --check`，前端契约测试步骤改为 `node --test tests/*.js`，Python 门禁不变。
+- README 更新 Atelier 入口与路线图勾选；清理已合入的远端临时验证分支。
+
+**验证证据**
+
+- 本地：Python `unittest discover` 25 个测试通过；`node --test tests/*.js` 14 个通过；`node --check` v3/v4/移动端模型通过；`core_circle.py`、`skill_review.py validate`、`security_scan.py` 通过；`build_pages.py` 输出 `routes=/, /desktop/, /atelier/; skipped=none`。
+- 渲染：对 Pages 产物结构（`_site/atelier/`）做 Playwright 无头冒烟，标题、安全边界、队列分组、试用置顶、圈层、弱信号、skill-discovery、alchaincyf、许可证规则 9 项内容断言全过，无应用层 console error；standard-lint 无 parsing/no-undef/jsx-no-undef/import-no-unresolved 四类阻断，剩余 curly 等风格 warning。
+- CI：提交 `96d9067` 上「质量与安全门禁」「发布 GitHub Pages」均 success。
+- 线上：`https://mengen-ink.github.io/worklens/atelier/` 及其 app.jsx/atelier-model.js/styles.css 均 200；`pages-manifest.json` 中 atelier 为 published、entry=atelier/index.html；`/`、`/desktop/` 与数据接口保持 200。
+
+**下一轮唯一最高优先级**
+
+启动 Idea → 调研 → 方案 → 脚手架 → 验收的项目化流程：先落最小数据契约与一个真实 Idea 样例（只使用公开来源），再把流程状态只读接入现有页面。
+
 ## 2026-10-25（整点轮）· Pages Atelier 发布契约工程化
 
 **成果**
