@@ -1,4 +1,4 @@
-/* global React, ReactDOM, WL_ATELIER_MODEL */
+/* global React, ReactDOM */
 /*
  * WorkLens v4 · Atelier（只读工坊）
  * 顶部：刊头 + 安全边界条
@@ -16,6 +16,7 @@ const MODEL = window.WL_ATELIER_MODEL;
 const DATA_SOURCES = {
   queue: '../data/skill-review-queue.json',
   circle: '../data/core-circle.json',
+  ideas: '../data/idea-pipeline.json',
   discoveries: '../data/discoveries.json',
 };
 
@@ -95,8 +96,8 @@ function Masthead({ queueUpdated, circleUpdated, queueTotal, circleTotal, loadEr
       <hr className="hr-thick mt-6 mb-5" />
 
       <div className="flex items-center flex-wrap gap-x-10 gap-y-3">
-        <StatBlock num={queueTotal != null ? queueTotal : '—'} label="待审 Skill" hint="全部进入人工评测队列" />
-        <StatBlock num={circleTotal != null ? circleTotal : '—'} label="核心人物" hint="外部弱信号，不计背书" />
+        <StatBlock num={queueTotal !== null && queueTotal !== undefined ? queueTotal : '—'} label="待审 Skill" hint="全部进入人工评测队列" />
+        <StatBlock num={circleTotal !== null && circleTotal !== undefined ? circleTotal : '—'} label="核心人物" hint="外部弱信号，不计背书" />
         <StatBlock num="0" label="自动安装" hint="Policy · auto_install = false" />
         <StatBlock num="0" label="自动流转" hint="candidate 之后必须人工" />
         <div className="ml-auto text-right">
@@ -503,6 +504,80 @@ function CircleBoard({ board }) {
   );
 }
 
+// ---------- Idea 项目化流程 ----------
+
+function IdeaPipelineBoard({ board }) {
+  if (!board.available) {
+    return (
+      <div className="empty-slot">
+        未能加载 Idea 项目化流程数据 ({board.reason}). {PREVIEW_HINT}
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <div className="grid grid-cols-4 gap-4 mb-6">
+        <div className="lib-card p-4">
+          <div className="stat-num">{board.totals.total}</div>
+          <div className="stat-label">项目化 Idea</div>
+        </div>
+        <div className="lib-card p-4">
+          <div className="stat-num">{board.totals.research}</div>
+          <div className="stat-label">调研中</div>
+        </div>
+        <div className="lib-card p-4">
+          <div className="stat-num">{board.autoScaffold ? '1' : '0'}</div>
+          <div className="stat-label">自动脚手架</div>
+          <div className="ff-serif italic text-xs text-[color:var(--cinnabar-ink)] mt-1">必须保持 0</div>
+        </div>
+        <div className="lib-card p-4">
+          <div className="stat-num">{board.automationMaxStage || '—'}</div>
+          <div className="stat-label">自动化上限</div>
+        </div>
+      </div>
+
+      {board.ideas.length === 0 ? (
+        <div className="empty-slot">当前没有项目化 Idea。</div>
+      ) : (
+        <div className="space-y-4">
+          {board.ideas.map((idea) => (
+            <article key={idea.id} className="lib-card p-5 anim-in">
+              <div className="flex items-start justify-between gap-4 mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <span className="dewey-chip">{idea.id}</span>
+                    <span className="tag-pill tag-pill--filled">当前 · {idea.stageLabel}</span>
+                    <span className="tag-pill">证据 · {idea.evidenceCount}</span>
+                    <span className="tag-pill">历史 · {idea.historyCount}</span>
+                  </div>
+                  <h3 className="ff-serif font-semibold text-2xl leading-tight">{idea.title}</h3>
+                  <p className="ff-serif italic text-sm text-[color:var(--ink-soft)] mt-2 max-w-3xl">{idea.summary}</p>
+                </div>
+                <div className="text-right shrink-0 min-w-[120px]">
+                  <div className="ff-mono text-[10px] uppercase tracking-[0.1em] text-[color:var(--ink-mute)]">流程进度</div>
+                  <div className="ff-serif text-3xl font-semibold leading-none mt-1">{idea.progress}%</div>
+                  <div className="progress-rail mt-2">
+                    <div className="progress-rail__fill progress-rail__fill--partial" style={{ width: `${idea.progress}%` }} />
+                  </div>
+                </div>
+              </div>
+              {idea.researchNotes ? (
+                <div className="trial-scope mt-3">
+                  <div className="ff-mono text-[10px] uppercase tracking-[0.12em] text-[color:var(--forest-ink)] mb-1">
+                    Research Notes
+                  </div>
+                  {idea.researchNotes}
+                </div>
+              ) : null}
+            </article>
+          ))}
+        </div>
+      )}
+    </>
+  );
+}
+
 // ---------- 根组件 ----------
 
 function App() {
@@ -510,6 +585,7 @@ function App() {
     loading: true,
     queue: null,
     circle: null,
+    ideas: null,
     discoveries: null,
     error: '',
   });
@@ -528,9 +604,10 @@ function App() {
     }
 
     (async () => {
-      const [queueRaw, circleRaw, discoveriesRaw] = await Promise.all([
+      const [queueRaw, circleRaw, ideasRaw, discoveriesRaw] = await Promise.all([
         loadJson(DATA_SOURCES.queue),
         loadJson(DATA_SOURCES.circle),
+        loadJson(DATA_SOURCES.ideas),
         loadJson(DATA_SOURCES.discoveries),
       ]);
       if (cancelled) return;
@@ -538,13 +615,16 @@ function App() {
       const problems = [];
       const queueOk = queueRaw && !queueRaw.__error;
       const circleOk = circleRaw && !circleRaw.__error;
+      const ideasOk = ideasRaw && !ideasRaw.__error;
       if (!queueOk) problems.push(`${DATA_SOURCES.queue} 加载失败：${queueRaw && queueRaw.__error}`);
       if (!circleOk) problems.push(`${DATA_SOURCES.circle} 加载失败：${circleRaw && circleRaw.__error}`);
+      if (!ideasOk) problems.push(`${DATA_SOURCES.ideas} 加载失败：${ideasRaw && ideasRaw.__error}`);
 
       setState({
         loading: false,
         queue: queueOk ? queueRaw : null,
         circle: circleOk ? circleRaw : null,
+        ideas: ideasOk ? ideasRaw : null,
         discoveries: discoveriesRaw && !discoveriesRaw.__error ? discoveriesRaw : null,
         error: problems.length ? problems.join(' ｜ ') + ' ｜ ' + PREVIEW_HINT : '',
       });
@@ -562,6 +642,11 @@ function App() {
     if (!state.circle) return MODEL.buildEmptyCircleBoard(state.error ? 'load_failed' : (state.loading ? 'loading' : 'data_absent'));
     return MODEL.buildCircleBoard(state.circle);
   }, [state.circle, state.loading, state.error]);
+
+  const ideaPipelineBoard = useMemo(() => {
+    if (!state.ideas) return MODEL.buildEmptyIdeaPipelineBoard(state.error ? 'load_failed' : (state.loading ? 'loading' : 'data_absent'));
+    return MODEL.buildIdeaPipelineBoard(state.ideas);
+  }, [state.ideas, state.loading, state.error]);
 
   return (
     <div className="min-h-screen">
@@ -590,6 +675,15 @@ function App() {
           trailing={circleBoard.available ? `${circleBoard.people.length} 人 · ${circleBoard.projects.length} 项目 · updated ${circleBoard.generatedLabel}` : ''}
         >
           <CircleBoard board={circleBoard} />
+        </Section>
+
+        <Section
+          eyebrow="C · Idea Project Pipeline"
+          title="Idea 项目化闭环"
+          sub="每个 Idea 只能沿 idea、research、plan、scaffold、accepted 单向推进；自动化最多停在调研阶段，方案、脚手架和验收都必须由真人记录。本面板只读展示，不创建外部任务、不生成脚手架、不安装 Skill。"
+          trailing={ideaPipelineBoard.available ? `${ideaPipelineBoard.totals.total} 项 · updated ${ideaPipelineBoard.generatedLabel}` : ''}
+        >
+          <IdeaPipelineBoard board={ideaPipelineBoard} />
         </Section>
 
         <footer className="py-10 border-t border-[color:var(--rule)] mt-6">
