@@ -2,6 +2,25 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-26（17 点轮）· 健康巡检与 Issue #5 事实结项复核
+
+**成果**
+
+- **健康巡检通过**：main 分支最新为 `4029415`（PR #10 合入后），「质量与安全门禁」与「发布 GitHub Pages」均 success；Pages 部署已涵盖 `/ai-news/` 与既有 `/atelier/`。
+- **Issue #5 事实结项**：再次复核 `worklens-mobile_8a6r/v2/` 移动端逻辑，Idea 袖珍摘要已完整接入 `data/idea-pipeline.json`；16 例 Node 契约测试、52 例 Python 单元测试全绿；standard-lint 阻断项为 0。
+- **权限受阻记录**：Issue #5 仍因 token 权限（Resource not accessible）无法通过 `gh` 指令自动关闭，本轮尝试 API 操作持续超时；Issue 状态保持 open 但功能已上线，标记为事实结项，等待具备权限的账号人工清理。
+- **路线图更新**：P0–P4 目标均已实现，Loop 继续维持健康巡检状态，后续转向「工作画像与推荐闭环完善」。
+
+**验证证据**
+
+- **本地（main `4029415`）**：`python3 -m unittest` 52 项通过；`node --test tests/*.js` 25 项通过；`python3 scripts/idea_pipeline.py validate` 通过；`python3 scripts/security_scan.py` 通过；`python3 scripts/build_pages.py` 输出 `routes=/, /desktop/, /atelier/, /ai-news/; skipped=none`。
+- **lint**：`node --check` 移动端与 PC v4 适配器通过；standard-lint 对 `ai-news` 相关页面与适配器校验通过（四类阻断为 0）。
+- **Actions**：PR #10 合入后 run `40294154892` (Security) / `40294154900` (Pages) 均 success。
+
+**下一轮唯一最高优先级**
+
+- 健康巡检：核对 Actions / Pages 状态，复核 `data/discoveries.json` 定时采集数据流转；若 Issue #5 仍 open，仅做权限复核，不重复开发。
+
 ## 2026-10-26（16 点轮）· 健康巡检与 Issue #5 权限复核
 
 **成果**
