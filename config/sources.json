@@ -30,6 +30,24 @@
     }
   ],
   "rss": [],
+  "ai_news": {
+    "enabled": true,
+    "url": "https://suyxh.github.io/ai-news-aggregator/data/latest-24h.json",
+    "keywords": [
+      "agent",
+      "llm",
+      "rag",
+      "workflow",
+      "automation",
+      "ai",
+      "model",
+      "智能体",
+      "大模型",
+      "提示词",
+      "prompt"
+    ],
+    "max_items": 50
+  },
   "policy": {
     "max_candidates_per_query": 10,
     "curated_feed_max_stale_hours": 24,
