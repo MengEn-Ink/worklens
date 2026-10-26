@@ -2,6 +2,23 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-26（13 点轮）· PR #7 合入后复核 Issue #5（Issue 写权限仍受阻）
+
+**成果**
+
+- 在最新 main `33a04ae`（PR #7「优化：优先复用已整理采集数据」合入后）对最高优先级 Issue #5 做独立复核：袖珍只读摘要功能与验收标准全部满足，无需新代码改动。
+- 再次尝试 Issue 写操作：REST 评论（`POST /issues/5/comments`）与关闭（`PATCH /issues/5`）均稳定返回 `403 Resource not accessible by personal access token`（各重试 3 次，含 1 次代理超时），当前沙箱 token 确认无 Issues 写权限；Issue #5 继续保持 open，等待具备权限的账号人工关闭，验收证据以本日志为准。
+
+**验证证据**
+
+- 本地（main `33a04ae`）：Python 39 项、Node 20 项全部通过；三个适配器 `node --check` 通过；`core_circle.py`、`skill_review.py validate`、`idea_pipeline.py validate`、`security_scan.py` 通过；`build_pages.py` 输出 `routes=/, /desktop/, /atelier/; skipped=none`。
+- 线上（部署 SHA `33a04ae`，质量门禁与 Pages 均 success）：`/data/idea-pipeline.json` 200（1 个 research 项，`public_only=true · auto_scaffold=false · automation_max_stage=research`）；线上 `app.jsx`、`data-adapter.js` 与 main 字节一致。
+- Playwright 移动视口（390×844）双路径：正常路径四事实齐全、research 项 `scorecard-skill-metrics` 与只读脚注渲染、面板 0 按钮 0 链接 0 页面错误；阻断全部 JSON 的降级路径展示只读占位，0 按钮 0 页面错误。
+
+**下一轮唯一最高优先级**
+
+Issue #6：P4 推荐复盘最小闭环（`data/recommendation-reviews.json` 首条公开复盘记录 + 只读校验器/契约测试 + 页面只读展示，验收标准见 Issue #6）。
+
 ## 2026-10-26（午间轮）· 移动端 Idea 袖珍只读摘要
 
 **成果**
