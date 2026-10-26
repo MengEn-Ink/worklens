@@ -16,12 +16,14 @@ class BuildPagesTest(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.root = Path(self.temp.name)
-        self.write("worklens-mobile_8a6r/v2/worklens-mobile_8a6r_h5.html", "mobile")
+        self.write("worklens-mobile_8a6r/v2/worklens-mobile_8a6r_h5.html", '<link href="../../shared/worklens-shell.css"><script src="../../shared/worklens-shell.js" data-current="field"></script>')
         self.write("worklens-mobile_8a6r/v2/app.jsx", "mobile-app")
-        self.write("worklens_zn3k/v3/worklens_zn3k_pc.html", "desktop")
+        self.write("worklens_zn3k/v3/worklens_zn3k_pc.html", '<link href="../../shared/worklens-shell.css"><script src="../../shared/worklens-shell.js" data-current="desktop"></script>')
         self.write("worklens_zn3k/v3/views.jsx", "desktop-views")
-        self.write("worklens-ai-news/v2/index.html", "ai-news")
+        self.write("worklens-ai-news/v2/index.html", '<script src="../../shared/worklens-shell.js" data-current="ai-news"></script>')
         self.write("worklens-ai-news/v2/app.jsx", "ai-news-app")
+        self.write("shared/worklens-shell.css", ":root { --wl-paper: #f3ede1; }")
+        self.write("shared/worklens-shell.js", "const routes = ['desktop/', 'atelier/', 'ai-news/']")
         self.write("data/discoveries.json", '{"candidates": []}')
         self.write("data/skill-review-queue.json", '{"queue": []}')
         self.write("data/idea-pipeline.json", '{"ideas": []}')
@@ -38,10 +40,16 @@ class BuildPagesTest(unittest.TestCase):
         manifest = build_pages.assemble(self.root)
         site = self.root / "_site"
 
-        self.assertEqual((site / "index.html").read_text(encoding="utf-8"), "mobile")
+        root_html = (site / "index.html").read_text(encoding="utf-8")
+        desktop_html = (site / "desktop/index.html").read_text(encoding="utf-8")
+        self.assertIn('./shared/worklens-shell.js', root_html)
+        self.assertIn('data-current="field"', root_html)
+        self.assertIn('../shared/worklens-shell.js', desktop_html)
+        self.assertIn('data-current="desktop"', desktop_html)
         self.assertFalse((site / "worklens-mobile_8a6r_h5.html").exists())
-        self.assertEqual((site / "desktop/index.html").read_text(encoding="utf-8"), "desktop")
-        self.assertEqual((site / "ai-news/index.html").read_text(encoding="utf-8"), "ai-news")
+        self.assertIn('data-current="ai-news"', (site / "ai-news/index.html").read_text(encoding="utf-8"))
+        self.assertTrue((site / "shared/worklens-shell.css").is_file())
+        self.assertTrue((site / "shared/worklens-shell.js").is_file())
         self.assertEqual((site / "data/discoveries.json").read_text(encoding="utf-8"), '{"candidates": []}')
         self.assertEqual((site / "data/idea-pipeline.json").read_text(encoding="utf-8"), '{"ideas": []}')
         self.assertTrue((site / ".nojekyll").exists())
@@ -55,17 +63,42 @@ class BuildPagesTest(unittest.TestCase):
         self.assertEqual(persisted["targets"], manifest["targets"])
 
     def test_publishes_atelier_when_v4_source_exists(self):
-        self.write("worklens_zn3k/v4/index.html", "atelier")
+        self.write("worklens_zn3k/v4/index.html", '<script src="../../shared/worklens-shell.js" data-current="atelier"></script>')
         self.write("worklens_zn3k/v4/app.jsx", "atelier-app")
 
         manifest = build_pages.assemble(self.root)
         site = self.root / "_site"
         targets = {target["name"]: target for target in manifest["targets"]}
+        shell = (site / "shared/worklens-shell.js").read_text(encoding="utf-8")
 
-        self.assertEqual((site / "atelier/index.html").read_text(encoding="utf-8"), "atelier")
+        self.assertIn('data-current="atelier"', (site / "atelier/index.html").read_text(encoding="utf-8"))
         self.assertEqual((site / "atelier/app.jsx").read_text(encoding="utf-8"), "atelier-app")
         self.assertEqual(targets["atelier"]["status"], "published")
         self.assertEqual(targets["atelier"]["route"], "/atelier/")
+        for route in ("desktop/", "atelier/", "ai-news/"):
+            self.assertIn(route, shell)
+        self.assertEqual(
+            manifest["shared_files"],
+            ["shared/worklens-shell.css", "shared/worklens-shell.js"],
+        )
+
+    def test_shared_shell_accessibility_and_source_preview_contracts(self):
+        repository = MODULE.parents[1]
+        css = (repository / "shared/worklens-shell.css").read_text(encoding="utf-8")
+        script = (repository / "shared/worklens-shell.js").read_text(encoding="utf-8")
+        self.assertIn(".wl-shell__menu, .wl-shell__scrim, .wl-bottom { display: none; }", css)
+        self.assertNotIn("!important", css)
+        for marker in ("previousFocus", "event.key !== 'Tab'", "event.key === 'Escape'", "aria-hidden"):
+            self.assertIn(marker, script)
+        for source in (
+            "worklens-mobile_8a6r/v2/worklens-mobile_8a6r_h5.html",
+            "worklens_zn3k/v3/worklens_zn3k_pc.html",
+            "worklens_zn3k/v4/index.html",
+            "worklens-ai-news/v2/index.html",
+        ):
+            html = (repository / source).read_text(encoding="utf-8")
+            self.assertIn("../../shared/worklens-shell.css", html)
+            self.assertIn("../../shared/worklens-shell.js", html)
 
 
 if __name__ == "__main__":

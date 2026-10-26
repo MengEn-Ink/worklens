@@ -92,6 +92,12 @@ def copy_target(root: Path, site_dir: Path, target: PageTarget) -> dict:
             output_entry.unlink()
         copied_entry.rename(output_entry)
 
+    # Source HTML remains directly previewable from its versioned directory;
+    # published routes are shallower, so only the shared asset prefix is rebased.
+    shared_prefix = "./shared/" if target.output_dir == "." else "../shared/"
+    html = output_entry.read_text(encoding="utf-8")
+    output_entry.write_text(html.replace("../../shared/", shared_prefix), encoding="utf-8")
+
     return {
         "name": target.name,
         "route": "/" if target.output_dir == "." else f"/{target.output_dir}/",
@@ -112,6 +118,15 @@ def copy_data(root: Path, site_dir: Path) -> list[str]:
     return copied
 
 
+def copy_shared(root: Path, site_dir: Path) -> list[str]:
+    source = root / "shared"
+    if not source.is_dir():
+        raise FileNotFoundError("共享页面壳目录不存在：shared")
+    destination = site_dir / "shared"
+    shutil.copytree(source, destination)
+    return [str(path.relative_to(site_dir)) for path in sorted(destination.iterdir()) if path.is_file()]
+
+
 def assemble(root: Path = ROOT, site_dir: Path | None = None) -> dict:
     root = root.resolve()
     site_dir = (site_dir or root / "_site").resolve()
@@ -119,12 +134,14 @@ def assemble(root: Path = ROOT, site_dir: Path | None = None) -> dict:
 
     target_results = [copy_target(root, site_dir, target) for target in TARGETS]
     data_files = copy_data(root, site_dir)
+    shared_files = copy_shared(root, site_dir)
     (site_dir / ".nojekyll").write_text("", encoding="utf-8")
 
     manifest = {
         "schema_version": 1,
         "targets": target_results,
         "data_files": data_files,
+        "shared_files": shared_files,
     }
     (site_dir / "pages-manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return manifest
