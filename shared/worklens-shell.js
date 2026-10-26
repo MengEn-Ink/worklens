@@ -28,9 +28,12 @@
   scrim.setAttribute('aria-hidden', 'true')
   scrim.innerHTML = `<div class="wl-drawer" id="wl-drawer" role="dialog" aria-modal="true" aria-label="WorkLens 总目"><div class="wl-drawer__head"><span>WorkLens · 总目</span><button class="wl-drawer__close" type="button" aria-label="关闭总目菜单">×</button></div>${pages.map(page => link(page, '')).join('')}</div>`
 
+  const layer = document.createElement('div')
+  layer.className = 'wl-shell-layer'
+  layer.setAttribute('data-worklens-shell', '')
+  layer.append(header, bottom, scrim)
   document.body.classList.add('wl-shell-mounted')
-  document.body.prepend(header)
-  document.body.append(bottom, scrim)
+  document.body.append(layer)
   const button = header.querySelector('.wl-shell__menu')
   const closeButton = scrim.querySelector('.wl-drawer__close')
   let previousFocus = null

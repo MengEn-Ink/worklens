@@ -87,8 +87,11 @@ class BuildPagesTest(unittest.TestCase):
         css = (repository / "shared/worklens-shell.css").read_text(encoding="utf-8")
         script = (repository / "shared/worklens-shell.js").read_text(encoding="utf-8")
         self.assertIn(".wl-shell__menu, .wl-shell__scrim, .wl-bottom { display: none; }", css)
+        self.assertIn(".wl-shell-layer { position: fixed; inset: 0; z-index: 2147483000;", css)
+        self.assertIn(".wl-bottom { position: fixed;", css)
+        self.assertIn("display: grid; grid-template-columns: repeat(4, 1fr);", css)
         self.assertNotIn("!important", css)
-        for marker in ("previousFocus", "event.key !== 'Tab'", "event.key === 'Escape'", "aria-hidden"):
+        for marker in ("wl-shell-layer", "layer.append(header, bottom, scrim)", "previousFocus", "event.key !== 'Tab'", "event.key === 'Escape'", "aria-hidden"):
             self.assertIn(marker, script)
         for source in (
             "worklens-mobile_8a6r/v2/worklens-mobile_8a6r_h5.html",
