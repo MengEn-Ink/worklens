@@ -387,6 +387,21 @@ body::before {
 .rec-chip--yes { background: #d9e5db; color: var(--forest-ink); }
 .rec-chip--no  { background: var(--paper-cool); color: var(--ink-soft); border: 1px dashed var(--rule-strong); }
 
+/* --- 推荐复盘结论徽章（只读） --- */
+.verdict-chip {
+  display: inline-flex; align-items: center;
+  padding: 3px 10px;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--paper);
+}
+.verdict-chip--keep      { background: var(--forest); }
+.verdict-chip--downgrade { background: var(--cinnabar); }
+.verdict-chip--remove    { background: #5c514a; }
+.verdict-chip--unknown   { background: var(--paper-cool); color: var(--ink-mute); border: 1px dashed var(--rule-strong); }
+
 /* --- 淡入动画 --- */
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(6px); }

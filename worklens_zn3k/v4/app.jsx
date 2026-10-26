@@ -10,6 +10,7 @@
 
 const { useState, useEffect, useMemo } = React;
 const MODEL = window.WL_ATELIER_MODEL;
+const REVIEW_MODEL = window.WL_REVIEW_MODEL;
 
 // ---------- 顶级常量 ----------
 
@@ -17,6 +18,7 @@ const DATA_SOURCES = {
   queue: '../data/skill-review-queue.json',
   circle: '../data/core-circle.json',
   ideas: '../data/idea-pipeline.json',
+  reviews: '../data/recommendation-reviews.json',
   discoveries: '../data/discoveries.json',
 };
 
@@ -578,6 +580,125 @@ function IdeaPipelineBoard({ board }) {
   );
 }
 
+// ---------- 推荐复盘（只读） ----------
+
+function ReviewCard({ entry }) {
+  const verdictClass = ['keep', 'downgrade', 'remove'].includes(entry.conclusion)
+    ? `verdict-chip--${entry.conclusion}`
+    : 'verdict-chip--unknown';
+  return (
+    <article className="lib-card p-5 anim-in">
+      <div className="flex items-start justify-between gap-4 mb-3">
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-2 mb-2">
+            <span className="dewey-chip">{entry.id}</span>
+            <span className={`verdict-chip ${verdictClass}`}>结论 · {entry.conclusionLabel}</span>
+            <span className="tag-pill">{entry.authorityLabel}</span>
+            <span className="tag-pill">渠道 · {entry.channelLabel}</span>
+          </div>
+          <h3 className="ff-serif font-semibold text-2xl leading-tight break-all">
+            {entry.subject.url ? (
+              <a className="ulink" href={entry.subject.url} target="_blank" rel="noopener noreferrer">
+                {entry.subject.owner}<span className="text-[color:var(--ink-mute)]">/</span>{entry.subject.repo}
+              </a>
+            ) : entry.subject.fullName}
+          </h3>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-xs text-[color:var(--ink-mute)] ff-mono">
+            <span>推荐 · {entry.recommendedAtLabel}</span>
+            <span>观察窗口 · {entry.window.fromLabel} → {entry.window.toLabel}</span>
+            <span>快照 ★ {entry.snapshot.starsLabel}</span>
+            <span>许可证 · {entry.snapshot.licenseLabel}</span>
+            <span>最近推送 · {entry.snapshot.pushedAtLabel}</span>
+            {entry.snapshot.archived ? <span className="text-[color:var(--cinnabar)]">已归档</span> : null}
+          </div>
+        </div>
+        <div className="text-right shrink-0 min-w-[120px]">
+          <div className="ff-mono text-[10px] uppercase tracking-[0.1em] text-[color:var(--ink-mute)]">复盘时间</div>
+          <div className="ff-serif text-xl font-semibold leading-none mt-1">{entry.reviewedAtLabel}</div>
+          <div className="ff-mono text-[10px] text-[color:var(--ink-mute)] mt-2">by {entry.reviewedBy}</div>
+        </div>
+      </div>
+
+      <div className="trial-scope mb-3">
+        <div className="ff-mono text-[10px] uppercase tracking-[0.12em] text-[color:var(--forest-ink)] mb-1">
+          当时推荐理由 · 信号 {entry.signalSource}
+        </div>
+        {entry.reason}
+      </div>
+
+      <div className="space-y-2 mb-3">
+        {entry.facts.map((fact, index) => (
+          <div key={`${fact.observedAtLabel}-${fact.sourceUrl}-${fact.text.slice(0, 16)}`} className="flex gap-3 text-sm ff-serif text-[color:var(--ink)]">
+            <span className="ff-mono text-[10px] text-[color:var(--ink-mute)] shrink-0 pt-1">{String(index + 1).padStart(2, '0')}</span>
+            <div>
+              {fact.text}
+              {fact.sourceUrl ? (
+                <span className="ml-2 ff-mono text-[10px]">
+                  [
+                  <a className="ulink" href={fact.sourceUrl} target="_blank" rel="noopener noreferrer">
+                    公开证据 · {fact.observedAtLabel}
+                  </a>
+                  ]
+                </span>
+              ) : null}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="border-l-4 border-[color:var(--cinnabar)] pl-3 py-1 ff-serif text-sm text-[color:var(--cinnabar-ink)]">
+        <span className="ff-mono not-italic text-[10px] uppercase tracking-[0.12em] mr-2">画像 / 推荐调整（人工说明）</span>
+        {entry.adjustment}
+      </div>
+      {entry.policyRef ? (
+        <div className="ff-serif italic text-xs text-[color:var(--ink-mute)] mt-2">策略依据：{entry.policyRef}</div>
+      ) : null}
+    </article>
+  );
+}
+
+function ReviewBoard({ board }) {
+  if (!board.available) {
+    return (
+      <div className="empty-slot">
+        未能加载推荐复盘数据 ({board.reason}). {PREVIEW_HINT}
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <div className="grid grid-cols-4 gap-4 mb-6">
+        <div className="lib-card p-4">
+          <div className="stat-num">{board.totals.total}</div>
+          <div className="stat-label">复盘记录</div>
+        </div>
+        <div className="lib-card p-4">
+          <div className="stat-num">{board.totals.keep}</div>
+          <div className="stat-label">保留</div>
+        </div>
+        <div className="lib-card p-4">
+          <div className="stat-num">{board.totals.downgrade}</div>
+          <div className="stat-label">降权</div>
+        </div>
+        <div className="lib-card p-4">
+          <div className="stat-num">{board.autoAdjustProfile ? '1' : '0'}</div>
+          <div className="stat-label">自动调整画像</div>
+          <div className="ff-serif italic text-xs text-[color:var(--cinnabar-ink)] mt-1">必须保持 0</div>
+        </div>
+      </div>
+
+      {board.reviews.length === 0 ? (
+        <div className="empty-slot">当前没有推荐复盘记录。</div>
+      ) : (
+        <div className="space-y-4">
+          {board.reviews.map((entry) => <ReviewCard key={entry.id} entry={entry} />)}
+        </div>
+      )}
+    </>
+  );
+}
+
 // ---------- 根组件 ----------
 
 function App() {
@@ -586,6 +707,7 @@ function App() {
     queue: null,
     circle: null,
     ideas: null,
+    reviews: null,
     discoveries: null,
     error: '',
   });
@@ -604,10 +726,11 @@ function App() {
     }
 
     (async () => {
-      const [queueRaw, circleRaw, ideasRaw, discoveriesRaw] = await Promise.all([
+      const [queueRaw, circleRaw, ideasRaw, reviewsRaw, discoveriesRaw] = await Promise.all([
         loadJson(DATA_SOURCES.queue),
         loadJson(DATA_SOURCES.circle),
         loadJson(DATA_SOURCES.ideas),
+        loadJson(DATA_SOURCES.reviews),
         loadJson(DATA_SOURCES.discoveries),
       ]);
       if (cancelled) return;
@@ -616,15 +739,18 @@ function App() {
       const queueOk = queueRaw && !queueRaw.__error;
       const circleOk = circleRaw && !circleRaw.__error;
       const ideasOk = ideasRaw && !ideasRaw.__error;
+      const reviewsOk = reviewsRaw && !reviewsRaw.__error;
       if (!queueOk) problems.push(`${DATA_SOURCES.queue} 加载失败：${queueRaw && queueRaw.__error}`);
       if (!circleOk) problems.push(`${DATA_SOURCES.circle} 加载失败：${circleRaw && circleRaw.__error}`);
       if (!ideasOk) problems.push(`${DATA_SOURCES.ideas} 加载失败：${ideasRaw && ideasRaw.__error}`);
+      if (!reviewsOk) problems.push(`${DATA_SOURCES.reviews} 加载失败：${reviewsRaw && reviewsRaw.__error}`);
 
       setState({
         loading: false,
         queue: queueOk ? queueRaw : null,
         circle: circleOk ? circleRaw : null,
         ideas: ideasOk ? ideasRaw : null,
+        reviews: reviewsOk ? reviewsRaw : null,
         discoveries: discoveriesRaw && !discoveriesRaw.__error ? discoveriesRaw : null,
         error: problems.length ? problems.join(' ｜ ') + ' ｜ ' + PREVIEW_HINT : '',
       });
@@ -647,6 +773,11 @@ function App() {
     if (!state.ideas) return MODEL.buildEmptyIdeaPipelineBoard(state.error ? 'load_failed' : (state.loading ? 'loading' : 'data_absent'));
     return MODEL.buildIdeaPipelineBoard(state.ideas);
   }, [state.ideas, state.loading, state.error]);
+
+  const reviewBoard = useMemo(() => {
+    if (!state.reviews) return REVIEW_MODEL.buildEmptyReviewBoard(state.error ? 'load_failed' : (state.loading ? 'loading' : 'data_absent'));
+    return REVIEW_MODEL.buildReviewBoard(state.reviews);
+  }, [state.reviews, state.loading, state.error]);
 
   return (
     <div className="min-h-screen">
@@ -684,6 +815,15 @@ function App() {
           trailing={ideaPipelineBoard.available ? `${ideaPipelineBoard.totals.total} 项 · updated ${ideaPipelineBoard.generatedLabel}` : ''}
         >
           <IdeaPipelineBoard board={ideaPipelineBoard} />
+        </Section>
+
+        <Section
+          eyebrow="D · Recommendation Review"
+          title="推荐复盘"
+          sub="为「发现 → 推荐」留下公开复盘：对象必须来自 discoveries 公开候选，事实只引用公开链接。自动化在真人策略下最多记录降权，移除与画像规则固化必须由真人完成；本面板只读，不自动调整画像、不改写推荐。"
+          trailing={reviewBoard.available ? `${reviewBoard.totals.total} 条 · updated ${reviewBoard.generatedLabel}` : ''}
+        >
+          <ReviewBoard board={reviewBoard} />
         </Section>
 
         <footer className="py-10 border-t border-[color:var(--rule)] mt-6">
