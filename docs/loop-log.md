@@ -9,16 +9,18 @@
 - 收口并关闭最高优先级 Issue #5：移动端 `Studio / 灵感` 子页读取公开发布的 `data/idea-pipeline.json`，展示项目总数、当前 research 项、自动化上限和下一步。
 - 页面保持严格只读：不提供创建外部任务、阶段流转、脚手架生成或 Skill 安装入口；进入 plan 仍显示需要真人确认。
 - Pages 构建器测试补齐 `idea-pipeline.json` 数据复制断言，README 路线图同步标记移动端袖珍摘要完成。
+- 线上浏览器验收发现并修复一个既有空数据缺陷：公开 JSON 不可达时回退种子数据，种子 `aiSkills` 无 `tags` 字段，工坊页 `s.tags.map` 抛错导致整个 StudioView 白屏、袖珍摘要降级态不可达；提交 `843c5b9` 改为 `(s.tags || []).map`，恢复只读降级路径。
 
 **验证证据**
 
-- 本地：`python3 -m unittest discover -s tests -p 'test_*.py'` 33 项通过；`node --test tests/*.js` 20 项通过；`idea_pipeline.py validate`、`security_scan.py` 通过；`build_pages.py` 输出 `routes=/, /desktop/, /atelier/; skipped=none`。
-- 前端：对 `worklens-mobile_8a6r/v2/app.jsx`、`worklens-mobile_8a6r/v2/data-adapter.js` 执行 `standard-lint`，未出现 parsing/syntax error、`no-undef`、`react/jsx-no-undef`、`import/no-unresolved` 四类阻断问题；剩余为既有风格类提示。
-- CI / Pages：main `fd768b5` 的「质量与安全门禁」与「发布 GitHub Pages」均 success（Actions runs 40268406222 / 40268406236）；线上 `https://mengen-ink.github.io/worklens/` HTTP 200，`/data/idea-pipeline.json` HTTP 200，公开数据仍为 1 个 research 阶段样例、`public_only=true`、`auto_scaffold=false`、`automation_max_stage=research`。
+- 本地：`python3 -m unittest discover -s tests -p 'test_*.py'` 33 项通过；`node --test tests/*.js` 20 项通过（含本轮新增 5 项移动端袖珍模型契约：事实映射、只读边界、空数据降级、装配接线、真实数据一致）；`idea_pipeline.py validate`、`security_scan.py` 通过；`build_pages.py` 输出 `routes=/, /desktop/, /atelier/; skipped=none`。
+- 前端：对 `worklens-mobile_8a6r/v2/app.jsx`、`worklens-mobile_8a6r/v2/data-adapter.js` 执行 `standard-lint`，未出现 parsing/syntax error、`no-undef`、`react/jsx-no-undef`、`import/no-unresolved` 四类阻断问题；本轮改动相对 HEAD 基线零新增 lint 项，剩余为既有风格类提示。
+- CI / Pages：main 各提交的「质量与安全门禁」与「发布 GitHub Pages」均 success；修复提交 `843c5b9` 的 Actions runs 40270540993 / 40270540999；线上 `https://mengen-ink.github.io/worklens/`、`/app.jsx`、`/data-adapter.js`、`/data/idea-pipeline.json`、`/pages-manifest.json` 均为已部署新版本（HTTP 200）。
+- 线上 Playwright 双路径验收（移动视口 390×844）：①正常路径——工坊「灵感 · 1」子页四事实（项目总数 1、调研中 1、自动化上限「调研（research）」、下一步「1 项停在调研，等待真人确认后进入方案」）、当前 research 项 id/标题、`public_only=true · auto_scaffold=false · read_only=true` 均渲染，面板内 0 按钮 0 链接，0 页面错误；②降级路径——阻断全部 JSON 后工坊 6 个子 Tab 正常，袖珍摘要显示公开数据未加载的只读占位，面板 0 按钮、0 页面错误。
 
 **下一轮唯一最高优先级**
 
-若本轮 CI 与 Pages 全绿，下一轮进入 P4 推荐复盘最小闭环：为推荐结果补充一条可公开复盘记录，仍只使用公开数据，不接入私有信号。
+P4 推荐复盘最小闭环：为推荐结果补充一条可公开复盘记录（仍只使用公开数据，不接入私有信号）；已新建 Issue #6 并写明验收标准。
 
 ## 2026-10-26（整点轮）· Idea 项目化流程 Atelier 只读接入
 
