@@ -41,7 +41,6 @@ class BuildPagesTest(unittest.TestCase):
         self.assertEqual((site / "desktop/index.html").read_text(encoding="utf-8"), "desktop")
         self.assertEqual((site / "data/discoveries.json").read_text(encoding="utf-8"), '{"candidates": []}')
         self.assertEqual((site / "data/idea-pipeline.json").read_text(encoding="utf-8"), '{"ideas": []}')
-        self.assertEqual((site / "data/idea-pipeline.json").read_text(encoding="utf-8"), '{"ideas": []}')
         self.assertTrue((site / ".nojekyll").exists())
 
         targets = {target["name"]: target for target in manifest["targets"]}
