@@ -44,6 +44,12 @@ TARGETS = (
         output_dir="atelier",
         required=False,
     ),
+    PageTarget(
+        name="ai-news",
+        source_dir=Path("worklens-ai-news/v2"),
+        entry_file="index.html",
+        output_dir="ai-news",
+    ),
 )
 
 

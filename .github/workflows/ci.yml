@@ -30,6 +30,7 @@ jobs:
           node --check worklens_zn3k/v3/data-adapter.js
           node --check worklens_zn3k/v4/atelier-model.js
           node --check worklens_zn3k/v4/review-model.js
+          node --check worklens-ai-news/v2/data-adapter.js
           node --check worklens-mobile_8a6r/v2/data-adapter.js
       - name: 前端只读视图模型契约测试
         run: node --test tests/*.js
