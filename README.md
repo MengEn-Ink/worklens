@@ -60,6 +60,9 @@ scripts/                  采集和归纳脚本
 - `worklens-mobile_8a6r/v2/worklens-mobile_8a6r_h5.html`
 - `worklens_zn3k/v3/worklens_zn3k_pc.html`
 - `worklens_zn3k/v4/index.html`
+- `worklens-ai-news/v2/index.html`
+
+这些源码入口使用 `../../shared/` 加载共用页面壳；Pages 构建会按发布层级重写为 `./shared/` 或 `../shared/`，不要在源码中改用站点绝对路径。
 
 Pages 产物可用 `python3 scripts/build_pages.py` 生成；当 `worklens_zn3k/v4/` 存在时会自动发布到 `/atelier/`，当前缺源时只在 manifest 中标记 skipped。
 
