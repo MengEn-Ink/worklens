@@ -2,6 +2,33 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-26（19 点轮）· Issue #5 正式关闭：移动端 Idea 袖珍只读摘要验收通过
+
+**成果**
+
+- 本轮使用具备 Issues 写权限的短期 OAuth 凭证（仅本轮内存使用，未写入仓库或日志），在最新 main `f9dad90`（已含 PR #11「统一 Pages 工作区」、PR #12/#13 移动端导航可见性与阅读布局修复）上对唯一开放 Issue #5 的五条验收标准逐条复核，全部满足并完成线上渲染验收，随后在 Issue 上留言并正式关闭。
+- **本轮无代码改动**：功能在 10-26 午间轮已上线，本轮只补轮次记录（纯文档提交），不重复开发。
+- P0–P4 路线图最小目标已全部交付，Loop 继续维持**健康巡检**；下一项唯一观察项为 SR-0011（CodeSigils/skill-discovery）限范围试用的真人结论——P2「Skill 正式引入记录」必须由真人把试用结论流转为 adopted/rejected，自动化不得自行安装或流转。
+
+**Issue #5 验收标准逐条证据（main `f9dad90`）**
+
+1. **移动端读取公开发布的 `data/idea-pipeline.json`**：`worklens-mobile_8a6r/v2/app.jsx` 以多相对路径 `loadFirstJson(['./data/idea-pipeline.json','../data/...','../../data/...'])` 拉取，并作为第四参数传入 `buildMobileData`；线上 `https://mengen-ink.github.io/worklens/data/idea-pipeline.json` 200，schema v1、1 个 idea、`automation_max_stage=research`、`auto_scaffold=false`、`public_only=true`。
+2. **只展示四事实、无任何写入口**：`data-adapter.js` 的 `buildIdeaPocket` 只输出项目总数、当前 research 项、自动化上限、下一步与只读标记；用 Aime 本地浏览器（aime-builtin）打开线上站点，底部「2 工坊」→「灵感 · 1」实际渲染：项目总数 1、调研中 · research 1、自动化上限「调研（research）」、下一步「1 项停在调研，等待真人确认后进入方案 · 进入「方案（plan）」需真人确认」、research 项 `scorecard-skill-metrics` 标题与 `public_only=true · auto_scaffold=false · read_only=true`；面板 DOM 子树内 `button/a/input/select/[onclick]` 计数为 **0**，无创建任务、阶段流转、脚手架生成、Skill 安装入口。
+3. **契约测试覆盖空数据降级与只读边界**：`tests/test_data_adapter.js` 含 5 组 Issue #5 用例（四事实映射、严格只读不含任何动作键、`null/undefined/{}/{ideas:null}/{ideas:'x'}/'invalid'` 与空 ideas 安全降级、`buildMobileData` 第四参数缺省即降级且 `readOnly=true`、与真实 `data/idea-pipeline.json` 一致）。
+4. **测试 / standard-lint / 敏感信息扫描**：见下方验证证据；standard-lint（one-site 规则集）对 `data-adapter.js` 0 项，`app.jsx` 无 `parsing/syntax error`、`no-undef`、`react/jsx-no-undef`、`import/no-unresolved` 四类阻断，25 条均为既有风格类提示（array index key、未使用变量、leaked render 等），`IdeaPocketPanel` 区段零新增。
+5. **README / loop-log**：README「当前能力」「路线图」已记录（第 20、78–80 行），本轮补本日志与 Issue 关闭留言。
+
+**验证证据**
+
+- 本地（main `f9dad90`）：`python3 -m unittest discover -s tests -p 'test_*.py'` → Ran 53 tests OK；5 个适配器 `node --check` 全过；`node --test tests/*.js` → tests 28 / pass 28 / fail 0；`core_circle.py` → `1 people, 2 projects`；`skill_review.py validate`、`idea_pipeline.py validate`（`1 ideas`）、`recommendation_review.py validate`（`1 reviews`）、`security_scan.py`（敏感信息扫描通过）均 exit 0。
+- 线上：`pages-manifest.json` 四路由（mobile `/`、desktop、atelier、ai-news）全部 published，`data_files` 含 `data/idea-pipeline.json`；线上 `/app.jsx`、`/data-adapter.js` 与 main `f9dad90` 逐字节一致（diff 为空）。
+- Aime 本地浏览器实测线上 `/`：页面无 JS 错误（仅 Tailwind CDN、in-browser Babel 两条既有 warning）；运行时 `window.DATA.ideaPocket = {available:true, total:1, researchCount:1, automationMaxStageLabel:'调研（research）', nextStep:'1 项停在调研，等待真人确认后进入方案', readOnly:true, researchItems:[scorecard-skill-metrics …]}`；数据缺失分支由 5 组契约测试锚定（本地浏览器本轮未重复断网造障）。
+- Actions：`f9dad90` 的「质量与安全门禁」run #52 与「发布 GitHub Pages」run #53 均 success；本轮纯文档提交只等待质量门禁，不重复无价值部署验证。
+
+**下一轮唯一最高优先级**
+
+- 健康巡检：核对 main / 运行中 Actions / Pages / 每日采集链路与四个线上只读入口；唯一观察项为 SR-0011 试用真人结论（P2 正式引入记录），在真人给出结论前自动化不得推进 adopted、不得安装；不重复开发已上线事项。
+
 ## 2026-10-26（18 点轮）· 健康巡检通过，Issue #5 写权限仍受阻
 
 **成果**
