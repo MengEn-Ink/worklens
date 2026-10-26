@@ -114,6 +114,7 @@ Idea → 调研 → 方案 → 脚手架 → 验收的项目化流程记录，�
 - `observation_window` 为 RFC3339 区间且 from ≤ to；`observed_facts` 至少 1 条，每条事实的 `observed_at` 必须落在观察窗口内，`source_url` 必须是 HTTPS 公开链接，拒绝内网域名与凭证查询参数。
 - 自动化执行者（`worklens-bot` / `worklens-loop`）只能在既有真人策略（`authority=human-policy` + `policy_ref`）下记录到 `downgrade`；`remove`、画像权重固化与任何自动算法调整必须由真人（`authority=human`）记录。
 - 页面适配层只能只读展示复盘记录与调整说明，不得提供修改画像、改写推荐或删除记录的入口。
+- `python3 scripts/recommendation_review.py summarize` 可输出只读画像调整待办摘要：仅统计 `keep | downgrade | remove`，并把 `authority=human-policy` 的降权 / 移除记录列为待真人确认事项；该命令不访问网络、不写 `profile.json`、不改变画像权重。
 
 ## 喜好反馈
 

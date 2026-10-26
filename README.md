@@ -18,7 +18,7 @@ WorkLens 是围绕个人日常工作持续生长的开源能力雷达：发现�
 - GitHub Pages 由 `scripts/build_pages.py` 统一组装，移动端、PC 端和 PC v4 Atelier 入口共享可测试发布契约
 - PC v4 Atelier 已接入 `/atelier/`：只读展示 Skill 待审队列、alchaincyf 开源游戏项目证据台与 Pages 发布契约，不触发安装或外部写操作
 - Idea 项目化流程已有最小公开数据契约、Atelier 只读面板与移动端袖珍摘要：`data/idea-pipeline.json` + `scripts/idea_pipeline.py validate`，自动化最多推进到 research，不创建脚手架、不自动安装 Skill
-- 推荐复盘最小闭环已建立：`data/recommendation-reviews.json` + `scripts/recommendation_review.py validate`，复盘对象必须命中 discoveries 公开候选；Atelier「推荐复盘」面板只读展示，自动化在真人策略下最多标记降权，不自动调整画像或推荐
+- 推荐复盘最小闭环已建立：`data/recommendation-reviews.json` + `scripts/recommendation_review.py validate|summarize`，复盘对象必须命中 discoveries 公开候选；Atelier「推荐复盘」面板只读展示，CLI 只输出待真人确认的画像调整摘要，自动化在真人策略下最多标记降权，不自动调整画像或推荐
 
 ## 页面入口
 
