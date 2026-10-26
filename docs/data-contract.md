@@ -2,7 +2,20 @@
 
 ## discoveries.json
 
-由每日采集工作流生成，仅保存 GitHub 官方 API 返回的事实字段。摘要、推荐和工作匹配判断不应覆盖这些字段。
+由每日采集工作流生成，保存 GitHub 官方 API 或配置的已整理公开数据源中的事实字段。摘要、推荐和工作匹配判断不应覆盖这些字段。
+
+### 已整理数据源与缓存
+
+`config/sources.json` 的 `curated_feeds` 在 GitHub API 之前导入。每项可配置仓库内相对 `path`，或公开 `https://` 的 `url`；支持顶层数组，以及顶层 `candidates`、`items`、`repositories` 数组。候选必须包含 `full_name`，或可从 `https://github.com/{owner}/{repo}` 形式的 `html_url` 推导。采集器会规范化 GitHub API 计数字段与已整理的 `stars`、`forks`、`open_issues`、字符串许可证等字段。
+
+默认配置提供禁用的 `data/curated-repositories.json` 本地路径示例，不放置未经确认的远程链接。接入上游时，将其 JSON 同步到该路径后启用，或配置已验证的公开 HTTPS 原始 JSON URL。
+
+- 导入顺序固定为 `curated_feeds → repositories → github_profiles → github_queries`。
+- feed 的 `generated_at`（缺失时按本次读取时间）在 `max_stale_hours` / `policy.curated_feed_max_stale_hours` 内时，显式仓库复用其数据并跳过 repo API；过期后自动回源刷新。
+- profile/search 是列表发现请求，可在 `policy.discovery_cache_hours` 内按 source 复用已有 `data/discoveries.json`。每个成功请求在 `source_status` 记录真实 `fetched_at`；缓存命中沿用该时间而不会续期，超过 TTL 后自动重新请求。旧数据首次可回退顶层 `generated_at`，并将该时间写入 `fetched_at`。缓存候选继续保留 `source`、`also_seen_in` 和 `relationships`。
+- 过期 feed 与 GitHub 刷新结果重复时，以新 API 事实字段替换旧字段，同时将 curated 来源保留在 `also_seen_in`。
+- feed 读取或解析失败只在 `source_status` 留痕，不阻断 GitHub 抓取。缓存状态也通过 `cached`、`cache_source` 或 `fetched_at` 明示。
+- 输出继续保持 `schema_version: 1`，候选字段兼容 `skill_review.py` 等下游。
 
 关键字段：
 
