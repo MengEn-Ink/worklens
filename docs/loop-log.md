@@ -2,6 +2,31 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-26（14 点轮）· P4 推荐复盘最小闭环上线（Issue #6，Issue 写权限仍受阻）
+
+**成果**
+
+- 完成路线图最后一项 P4：「发现 → 推荐 → 复盘 → 画像调整」回路补齐公开复盘段，分 3 个可独立验证提交落地 main，无大提交：
+  1. `2de4a9f` 数据契约：新增 `data/recommendation-reviews.json`（1 条真实复盘）、只读离线校验器 `scripts/recommendation_review.py validate`、Python 契约测试 10 例、CI「推荐复盘契约校验」步骤、`docs/data-contract.md` 契约小节；负向夹具按既有规则精确登记安全扫描白名单。
+  2. `3720048` 页面：Atelier 新增 Section D「推荐复盘」——纯函数 `worklens_zn3k/v4/review-model.js`（只读模型，输出无任何函数/动作键）、`app.jsx` 面板（0 按钮/0 表单/0 输入框，事实只链公开证据）、5 组 JS 契约测试、CI 增加 `node --check`。
+  3. 文档提交（见本日志与 README）。
+- 首条复盘对象 `fighting41love/funNLP` 命中 `discoveries.json` 当日公开候选（移动端按「Agent 推荐候选」呈现）：观察窗口 2026-10-25→10-26 复查到「无 SPDX 许可证（license=null）、默认分支 2024-05 后无推送、星标仍小涨」三个公开事实，结论 `downgrade`（降权）；调整动作仅为人工策略说明（profile-star 弱信号不得单独成推荐，须叠加许可证与近 12 个月推送门槛），`auto_adjust_profile=false`，自动化在 `authority=human-policy` + `policy_ref` 下最高只能 downgrade，`remove` 必须真人记录。
+- Issue 写操作再次确认受阻：fine-grained token 响应头 `X-Accepted-Github-Permissions: issues=read`，评论/关闭返回 `403 Resource not accessible by personal access token`；经典 token 已 401 失效。Issue #5/#6 保持 open，等待具备 Issues 写权限的账号关闭，验收证据以本日志为准。
+- 旁注：本轮期间 PR #8「AI 资讯采集链路」（`af1324a`）由他人合入 main，已 rebase 到其之上，无冲突；定时采集工作流期间还产生 `876c2d9` 自动提交，rebase 后重新全量验证通过。
+
+**验证证据**
+
+- 本地（main `3720048`）：`python3 -m unittest` 49 项全绿（含新增 `test_recommendation_review.py` 10 例：真实数据有效、策略常量、候选必须命中 discoveries、重复/非法 id、结论枚举、内网地址与凭证参数拒绝、观察窗口边界、自动化不可 remove/不可自称 human、复盘时间不得早于推荐时间）；`node --test tests/*.js` 25 项全绿（含新增 `test_review_model.js` 5 例：真实数据映射、结论计数、空数据降级、只读边界递归无函数/无动作键、owner/repo 与数字压缩边界）；`recommendation_review.py validate` 输出 `recommendation-reviews valid: 1 reviews`；`core_circle / skill_review / idea_pipeline / security_scan` 均通过；`build_pages.py` 输出 `routes=/, /desktop/, /atelier/; skipped=none`，产物含 `_site/atelier/review-model.js` 与 `_site/data/recommendation-reviews.json`。
+- standard-lint（one-site 规则集）对本轮变更的 `review-model.js / app.jsx / index.html / test_review_model.js` 校验：四类阻断（parsing/syntax error、no-undef、react/jsx-no-undef、import/no-unresolved）为 0；修复了 1 项 `react/jsx-no-array-index-key`（facts 列表 key 改为「日期+证据 URL+事实前缀」复合键）。
+- CI / Pages：提交 `2de4a9f` 的「质量与安全门禁」run `40281121625`、「发布 GitHub Pages」run `40281121705` success；提交 `3720048` 的 run `40283901700`（门禁 13s）/ `40283901668`（Pages 25s）success。
+- 线上字节一致：`https://mengen-ink.github.io/worklens/atelier/review-model.js` sha256 `868f2087aa10085aa5dd5cad985d887432de3390dba42b113550a35b872ac717`，与 main 同文件完全一致；`/data/recommendation-reviews.json` HTTP 200，1 条记录、subject=`fighting41love/funNLP`、conclusion=`downgrade`。
+- 线上 Playwright（Chromium 1440 宽，经沙箱代理）双路径验收 `https://mengen-ink.github.io/worklens/atelier/`：①正常路径——Section D 可见，徽标「结论 · 降权」、funNLP 链接、三条公开事实、人工调整说明与「数据与隐私原则」策略依据均渲染，复盘 Section 内 button/form/input 计数均为 0，0 页面错误，A/B/C 三个既有板块不受影响；②断 JSON 降级（route 拦截 `recommendation-reviews.json` 失败）——Section D 显示「未能加载推荐复盘数据 (load_failed)」只读占位，不渲染任何复盘内容，0 页面错误、0 写控件，其余板块正常，无白屏。
+
+**下一轮唯一最高优先级**
+
+- P0–P4 路线图目标（PC v4 Atelier 合入、移动端袖珍对比器、核心开源者圈与 AI 开源者发现、Skill 引入记录、Idea 项目化闭环、推荐复盘）均已上线，Loop 按约定**降级为健康巡检**：每轮仅核对 main/Actions/Pages/采集链路与线上只读入口是否健康，不新增大功能。
+- 待用户侧处理（非代码阻塞）：为沙箱 token 补 Issues 写权限（fine-grained PAT 勾选 Issues read/write）后关闭 Issue #5、#6；或由用户人工关闭。在此之前两 Issue 保持 open 属已知状态，不得声称已关闭。
+
 ## 2026-10-26（13 点轮）· PR #7 合入后复核 Issue #5（Issue 写权限仍受阻）
 
 **成果**
