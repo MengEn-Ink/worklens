@@ -14,7 +14,7 @@
 
 - 本地：`python3 -m unittest discover -s tests -p 'test_*.py'` 33 项通过；`node --test tests/*.js` 20 项通过；`idea_pipeline.py validate`、`security_scan.py` 通过；`build_pages.py` 输出 `routes=/, /desktop/, /atelier/; skipped=none`。
 - 前端：对 `worklens-mobile_8a6r/v2/app.jsx`、`worklens-mobile_8a6r/v2/data-adapter.js` 执行 `standard-lint`，未出现 parsing/syntax error、`no-undef`、`react/jsx-no-undef`、`import/no-unresolved` 四类阻断问题；剩余为既有风格类提示。
-- CI / Pages：待本提交推送后记录 Actions 与线上 URL 结果。
+- CI / Pages：main `fd768b5` 的「质量与安全门禁」与「发布 GitHub Pages」均 success（Actions runs 40268406222 / 40268406236）；线上 `https://mengen-ink.github.io/worklens/` HTTP 200，`/data/idea-pipeline.json` HTTP 200，公开数据仍为 1 个 research 阶段样例、`public_only=true`、`auto_scaffold=false`、`automation_max_stage=research`。
 
 **下一轮唯一最高优先级**
 
