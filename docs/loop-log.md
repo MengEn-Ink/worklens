@@ -2,7 +2,7 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
-## 2026-10-26（22 点轮）· Issue #14 健康巡检通过：main / Actions / Pages / 采集链路正常
+## 2026-10-26（22 点轮）· Issue #14 健康巡检通过，关闭权限受阻
 
 **成果**
 
@@ -15,7 +15,7 @@
 - 本地质量门禁：`python3 -m unittest discover -s tests -p 'test_*.py'` → Ran 53 tests OK；5 个前端适配器 `node --check` 全过；`node --test tests/*.js` → tests 28 / pass 28 / fail 0。
 - 契约与安全：`core_circle.py` → `1 people, 2 projects`；`skill_review.py validate`、`idea_pipeline.py validate`（`1 ideas`）、`recommendation_review.py validate`（`1 reviews`）、`security_scan.py` 均通过；`build_pages.py` 输出 `routes=/, /desktop/, /atelier/, /ai-news/; skipped=none`。
 - 线上 Pages：`pages-manifest.json`、根路径 `/`、`/desktop/`、`/atelier/`、`/ai-news/`、`/data/discoveries.json`、`/data/idea-pipeline.json`、`/data/recommendation-reviews.json` 均返回 200；首批请求中 `/desktop/` 遇一次沙箱网络 timeout，逐项重试后 200，判定为代理瞬态非站点问题。
-- Issue 状态：Issue #14 已创建并写入本轮验收标准；本日志提交、PR 质量门禁通过并合入后，将在 Issue 中留言并关闭。
+- Issue 状态：Issue #14 已创建并写入本轮验收标准；PR #15 已合入 main，但当前 token 对 Issue 评论/关闭返回 `403 Resource not accessible by personal access token`，Issue 暂保持 open，等待具备 Issues write 权限的账号关闭。
 
 **下一轮唯一最高优先级**
 
