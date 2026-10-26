@@ -1328,7 +1328,7 @@ function StudioView() {
                 <span>源 · {s.sourcedFrom}</span>
               </div>
               <div className="flex gap-1.5 mt-2 flex-wrap">
-                {s.tags.map(t => <span key={t} className="chip">{t}</span>)}
+                {(s.tags || []).map(t => <span key={t} className="chip">{t}</span>)}
               </div>
             </div>
           ))}
