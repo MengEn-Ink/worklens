@@ -378,7 +378,7 @@
     });
   }
 
-  function buildMobileData(seed, discoveries, skillQueue) {
+  function buildMobileData(seed, discoveries, skillQueue, ideaPipeline) {
     const pcData = buildPcData({}, discoveries, skillQueue);
     const entries = pcData.ENTRIES.slice(0, 12).map(entry => ({
       id: entry.id,
@@ -421,6 +421,7 @@
       subscriptions: [],
       aiSkills: [],
       skillQueue: pcData.SKILL_QUEUE,
+      ideaPocket: buildIdeaPocket(ideaPipeline),
       proposals: pcData.SKILL_PROPOSALS.map(item => ({ id: item.id, name: item.name, family: item.family, cost: item.cost_est, confidence: Math.round(item.confidence * 100), why: item.why, evidence: item.evidence, dsl: item.preview_dsl })),
       pushes: pcData.PUSHES.map(item => ({ id: item.id, time: item.time, topic: item.topic, title: item.title, from: item.from, reason: item.reason, score: item.score, read: item.read })),
     });
@@ -510,9 +511,65 @@
     };
   }
 
-  window.WL_DISCOVERY_ADAPTER = { buildPcData, buildMobileData, buildSkillQueue };
+  const POCKET_IDEA_STAGE_LABELS = {
+    idea: '灵感',
+    research: '调研',
+    plan: '方案',
+    scaffold: '脚手架',
+    accepted: '验收通过',
+  };
+
+  /* Idea 项目化流程「袖珍只读摘要」：只暴露项目总数、当前 research 项、自动化上限、下一步四个事实，
+     不提供创建任务、阶段流转、脚手架生成或 Skill 安装动作。 */
+  function buildEmptyIdeaPocket(reason) {
+    return {
+      available: false,
+      reason: reason || 'data_absent',
+      updatedAt: '未加载',
+      publicOnly: false,
+      autoScaffold: false,
+      automationMaxStage: '',
+      automationMaxStageLabel: '',
+      total: 0,
+      researchCount: 0,
+      researchItems: [],
+      nextStage: '',
+      nextStageLabel: '',
+      nextStep: '',
+      readOnly: true,
+    };
+  }
+
+  function buildIdeaPocket(payload) {
+    if (!payload || typeof payload !== 'object' || !Array.isArray(payload.ideas)) {
+      return buildEmptyIdeaPocket();
+    }
+    const policy = payload.policy && typeof payload.policy === 'object' ? payload.policy : {};
+    const maxStage = POCKET_IDEA_STAGE_LABELS[policy.automation_max_stage] ? policy.automation_max_stage : '';
+    const researchItems = payload.ideas
+      .filter(idea => idea && typeof idea === 'object' && idea.stage === 'research')
+      .map(idea => ({ id: String(idea.id || ''), title: String(idea.title || '未命名灵感') }));
+    const hasNext = researchItems.length > 0;
+    return {
+      available: true,
+      updatedAt: shortDate(payload.generated_at),
+      publicOnly: policy.public_only === true,
+      autoScaffold: policy.auto_scaffold === true,
+      automationMaxStage: maxStage,
+      automationMaxStageLabel: maxStage ? `${POCKET_IDEA_STAGE_LABELS[maxStage]}（${maxStage}）` : '',
+      total: payload.ideas.length,
+      researchCount: researchItems.length,
+      researchItems,
+      nextStage: hasNext ? 'plan' : '',
+      nextStageLabel: hasNext ? POCKET_IDEA_STAGE_LABELS.plan : '',
+      nextStep: hasNext ? `${researchItems.length} 项停在调研，等待真人确认后进入方案` : '',
+      readOnly: true,
+    };
+  }
+
+  window.WL_DISCOVERY_ADAPTER = { buildPcData, buildMobileData, buildSkillQueue, buildIdeaPocket, buildEmptyIdeaPocket };
 
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { buildPcData, buildMobileData, buildSkillQueue };
+    module.exports = { buildPcData, buildMobileData, buildSkillQueue, buildIdeaPocket, buildEmptyIdeaPocket };
   }
 })();

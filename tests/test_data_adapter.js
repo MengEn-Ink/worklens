@@ -160,3 +160,107 @@ test('真实数据：队列与 discoveries 全链路不崩溃且计数一致', (
     assert.equal(mobile.skillQueue.total, queue.queue.length);
   }
 });
+
+/* Issue #5：移动端 Idea 项目化「袖珍只读摘要」契约（仅锚定移动端 v2 适配器）。 */
+const MOBILE_ADAPTER_PATH = path.join(ROOT, 'worklens-mobile_8a6r', 'v2', 'data-adapter.js');
+
+function makeIdeaPipeline() {
+  return {
+    schema_version: 1,
+    generated_at: '2026-10-26T12:00:00Z',
+    policy: { public_only: true, auto_scaffold: false, automation_max_stage: 'research' },
+    ideas: [
+      {
+        id: 'scorecard-skill-metrics',
+        title: '为 Skill 待审队列补充 OpenSSF Scorecard 公开安全指标',
+        stage: 'research',
+        evidence: [{ url: 'https://github.com/ossf/scorecard' }, { url: 'https://api.github.com/repos/ossf/scorecard' }],
+      },
+      { id: 'fresh-idea', title: '刚登记的灵感', stage: 'idea', evidence: [] },
+    ],
+  };
+}
+
+test('移动端 Idea 袖珍模型：只暴露总数/research 项/自动化上限/下一步四个事实', () => {
+  const adapter = require(MOBILE_ADAPTER_PATH);
+  const pocket = adapter.buildIdeaPocket(makeIdeaPipeline());
+  assert.equal(pocket.available, true);
+  assert.equal(pocket.total, 2);
+  assert.equal(pocket.researchCount, 1);
+  assert.deepEqual(pocket.researchItems, [
+    { id: 'scorecard-skill-metrics', title: '为 Skill 待审队列补充 OpenSSF Scorecard 公开安全指标' },
+  ]);
+  assert.equal(pocket.automationMaxStage, 'research');
+  assert.equal(pocket.automationMaxStageLabel, '调研（research）');
+  assert.equal(pocket.nextStage, 'plan');
+  assert.equal(pocket.nextStageLabel, '方案');
+  assert.match(pocket.nextStep, /等待真人确认后进入方案/);
+  assert.equal(pocket.publicOnly, true);
+  assert.equal(pocket.autoScaffold, false);
+  assert.equal(pocket.updatedAt, '2026-10-26');
+});
+
+test('移动端 Idea 袖珍模型：严格只读，不含任何可执行动作或写入口', () => {
+  const adapter = require(MOBILE_ADAPTER_PATH);
+  const pocket = adapter.buildIdeaPocket(makeIdeaPipeline());
+  assert.equal(pocket.readOnly, true);
+  const forbiddenKeys = ['install', 'transition', 'advance', 'create', 'createTask', 'scaffold', 'start', 'move', 'actions'];
+  for (const key of forbiddenKeys) {
+    assert.equal(pocket[key], undefined, `袖珍模型不得暴露 ${key}`);
+  }
+  const walk = (node, prefix) => {
+    if (node === null || typeof node !== 'object') return;
+    for (const [key, value] of Object.entries(node)) {
+      assert.notEqual(typeof value, 'function', `${prefix}.${key} 只读模型不得包含函数`);
+      walk(value, `${prefix}.${key}`);
+    }
+  };
+  walk(pocket, 'pocket');
+});
+
+test('移动端 Idea 袖珍模型：缺数据/空数据安全降级且不越界', () => {
+  const adapter = require(MOBILE_ADAPTER_PATH);
+  for (const broken of [null, undefined, {}, { ideas: null }, { ideas: 'x' }, 'invalid']) {
+    const degraded = adapter.buildIdeaPocket(broken);
+    assert.equal(degraded.available, false);
+    assert.equal(degraded.total, 0);
+    assert.equal(degraded.researchCount, 0);
+    assert.deepEqual(degraded.researchItems, []);
+    assert.equal(degraded.automationMaxStage, '');
+    assert.equal(degraded.nextStep, '');
+    assert.equal(degraded.autoScaffold, false);
+    assert.equal(degraded.readOnly, true);
+  }
+  const emptyButValid = adapter.buildIdeaPocket({ ideas: [], policy: { automation_max_stage: 'research' } });
+  assert.equal(emptyButValid.available, true);
+  assert.equal(emptyButValid.total, 0);
+  assert.equal(emptyButValid.researchCount, 0);
+  assert.equal(emptyButValid.nextStage, '');
+  assert.equal(emptyButValid.nextStep, '');
+});
+
+test('移动端 buildMobileData 第四参数接入 Idea 袖珍模型，缺省即降级', () => {
+  const adapter = require(MOBILE_ADAPTER_PATH);
+  const discoveries = makeDiscoveries();
+  const queue = makeQueue();
+  const withPocket = adapter.buildMobileData({}, discoveries, queue, makeIdeaPipeline());
+  assert.equal(withPocket.ideaPocket.available, true);
+  assert.equal(withPocket.ideaPocket.total, 2);
+  const legacyCall = adapter.buildMobileData({}, discoveries, queue);
+  assert.equal(legacyCall.ideaPocket.available, false);
+  assert.equal(legacyCall.ideaPocket.readOnly, true);
+});
+
+test('真实数据：移动端 Idea 袖珍模型与 data/idea-pipeline.json 一致且只读', () => {
+  const adapter = require(MOBILE_ADAPTER_PATH);
+  const pipeline = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'idea-pipeline.json'), 'utf8'));
+  const pocket = adapter.buildIdeaPocket(pipeline);
+  assert.equal(pocket.available, true);
+  assert.equal(pocket.total, pipeline.ideas.length);
+  assert.equal(pocket.researchCount, pipeline.ideas.filter(i => i.stage === 'research').length);
+  assert.equal(pocket.automationMaxStage, pipeline.policy.automation_max_stage);
+  assert.equal(pocket.autoScaffold, pipeline.policy.auto_scaffold);
+  assert.equal(pocket.autoScaffold, false);
+  assert.equal(pocket.readOnly, true);
+  if (pocket.researchCount > 0) assert.equal(pocket.nextStage, 'plan');
+});
