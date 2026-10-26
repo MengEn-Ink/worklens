@@ -23,6 +23,8 @@ CONCLUSIONS = ["keep", "downgrade", "remove"]
 AUTOMATION_ACTORS = {"worklens-bot", "worklens-loop"}
 AUTOMATION_MAX_CONCLUSION = "downgrade"
 AUTHORITIES = ["human", "human-policy"]
+PROFILE_ACTION_CONCLUSIONS = {"downgrade", "remove"}
+
 
 ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9-]{3,63}$")
 TIMESTAMP_PATTERN = re.compile(
@@ -188,6 +190,54 @@ def load_candidates(discoveries_path: Path, errors: list[str]) -> dict[str, str]
     return candidates
 
 
+def build_profile_action_summary(data: dict) -> dict:
+    """生成推荐复盘到画像调整的只读待办摘要。
+
+    摘要只把 human-policy 授权下的 downgrade/remove 结论暴露为“待真人确认”事项，
+    不写 profile.json、不改变权重，也不把真人已经直接确认的记录重复列为待办。
+    """
+    policy = data.get("policy", {}) if isinstance(data, dict) else {}
+    reviews = data.get("reviews", []) if isinstance(data, dict) else []
+    if not isinstance(reviews, list):
+        reviews = []
+
+    totals = {conclusion: 0 for conclusion in CONCLUSIONS}
+    pending_actions = []
+    for review in reviews:
+        if not isinstance(review, dict):
+            continue
+        conclusion = review.get("conclusion")
+        if conclusion in totals:
+            totals[conclusion] += 1
+        if conclusion not in PROFILE_ACTION_CONCLUSIONS or review.get("authority") != "human-policy":
+            continue
+        subject = review.get("subject") if isinstance(review.get("subject"), dict) else {}
+        pending_actions.append(
+            {
+                "review_id": review.get("id", ""),
+                "subject": subject.get("full_name", ""),
+                "conclusion": conclusion,
+                "adjustment": review.get("adjustment", ""),
+                "policy_ref": review.get("policy_ref", ""),
+                "reviewed_by": review.get("reviewed_by", ""),
+                "reviewed_at": review.get("reviewed_at", ""),
+                "requires_human_confirmation": True,
+            }
+        )
+
+    return {
+        "schema_version": 1,
+        "generated_at": data.get("generated_at") if isinstance(data, dict) else None,
+        "review_count": len(reviews),
+        "totals": totals,
+        "public_only": policy.get("public_only") is True,
+        "auto_adjust_profile": policy.get("auto_adjust_profile") is True,
+        "profile_write_allowed": False,
+        "pending_human_confirmations": len(pending_actions),
+        "pending_profile_actions": pending_actions,
+    }
+
+
 def validate(data: dict, discoveries: dict | None = None) -> list[str]:
     errors: list[str] = []
     if data.get("schema_version") != 1:
@@ -235,14 +285,16 @@ def validate(data: dict, discoveries: dict | None = None) -> list[str]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["validate"], help="校验数据契约")
+    parser.add_argument("command", choices=["validate", "summarize"], help="校验数据契约或输出画像调整待办摘要")
     args = parser.parse_args()
-    del args
     data = json.loads(DATA.read_text(encoding="utf-8"))
     errors = validate(data)
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
+    if args.command == "summarize":
+        print(json.dumps(build_profile_action_summary(data), ensure_ascii=False, indent=2))
+        return 0
     print(f"recommendation-reviews valid: {len(data.get('reviews', []))} reviews")
     return 0
 

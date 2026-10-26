@@ -167,6 +167,29 @@ class RecommendationReviewTest(unittest.TestCase):
         item.pop("policy_ref")
         self.assertEqual(recommendation_review.validate(base_data() | {"reviews": [item]}, DISCOVERIES), [])
 
+    def test_profile_action_summary_is_read_only_and_human_gated(self):
+        base = review()
+        human_remove = review(
+            id="rr-human-remove",
+            reviewed_by="MengEn-Ink",
+            authority="human",
+            conclusion="remove",
+            policy_ref="",
+        )
+        keep = review(id="rr-keep-0001", conclusion="keep")
+        summary = recommendation_review.build_profile_action_summary(
+            base_data() | {"reviews": [base, human_remove, keep]}
+        )
+
+        self.assertEqual(summary["schema_version"], 1)
+        self.assertEqual(summary["review_count"], 3)
+        self.assertEqual(summary["totals"], {"keep": 1, "downgrade": 1, "remove": 1})
+        self.assertFalse(summary["auto_adjust_profile"])
+        self.assertFalse(summary["profile_write_allowed"])
+        self.assertEqual(summary["pending_human_confirmations"], 1)
+        self.assertEqual(summary["pending_profile_actions"][0]["review_id"], "rr-20261026-01")
+        self.assertTrue(summary["pending_profile_actions"][0]["requires_human_confirmation"])
+
     def test_reviewed_before_recommended_rejected(self):
         item = review(reviewed_at="2026-10-24T00:00:00Z")
         errors = recommendation_review.validate(base_data() | {"reviews": [item]}, DISCOVERIES)
