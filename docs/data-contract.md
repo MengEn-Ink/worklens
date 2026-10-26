@@ -54,6 +54,8 @@ PC 与移动端页面在启动后读取发布产物中的 `data/discoveries.json
 - `candidates` 为空或请求失败时，页面保留内置种子数据，避免 Pages 白屏。
 - Skill 类候选只进入待审队列，页面不得自动安装、执行或推荐绕过安全评测。
 - 评分仅用于排序和解释：`fit`、`novelty`、`cost`、`risk` 由公开指标与 freshness 粗算，不能替代许可证、安全和人工审查。
+- AI 工作情报页面通过独立 `data-adapter.js` 读取 `data/ai-news.json`，仅使用标题、公开 URL、发布时间和来源。字段缺失会转为安全占位；空数据、加载失败与浏览器本地存储异常均不得导致白屏。
+- 收藏与阅读历史仅保存在浏览器 `localStorage`；写入失败时退化为当前会话状态，不回写公开数据。外链仅接受 HTTP(S)，并使用 `noopener,noreferrer` 新标签打开。
 
 ## core-circle.json
 

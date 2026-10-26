@@ -25,6 +25,7 @@ WorkLens 是围绕个人日常工作持续生长的开源能力雷达：发现�
 - 移动端：GitHub Pages 默认入口
 - PC 端：`/desktop/`
 - PC v4 Atelier：`/atelier/`
+- AI 工作情报（PC/H5 响应式）：`/ai-news/`
 
 ## 数据与隐私原则
 
