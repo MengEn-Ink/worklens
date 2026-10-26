@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap");
 
 .wl-shell-mounted { --wl-shell-height: 58px; padding-top: var(--wl-shell-height); }
+.wl-shell-layer { position: fixed; inset: 0; z-index: 2147483000; overflow: visible; pointer-events: none; isolation: isolate; }
 .wl-shell, .wl-bottom, .wl-shell__scrim {
   --wl-paper-raised: #faf5ea; --wl-paper-muted: #e9e0cf; --wl-ink: #181512;
   --wl-muted: #6b6258; --wl-rule: #c9bda7; --wl-accent: #a83d29;
-  color: var(--wl-ink); font-family: "Noto Sans SC", "PingFang SC", system-ui, sans-serif;
+  color: var(--wl-ink); font-family: "Noto Sans SC", "PingFang SC", system-ui, sans-serif; pointer-events: auto;
 }
 .wl-shell { position: fixed; inset: 0 0 auto; z-index: 1000; height: var(--wl-shell-height); background: color-mix(in srgb, var(--wl-paper-raised) 96%, transparent); border-bottom: 1px solid var(--wl-ink); backdrop-filter: blur(12px); }
 .wl-shell__inner { height: 100%; max-width: 1600px; margin: auto; padding: 0 24px; display: flex; align-items: stretch; }
