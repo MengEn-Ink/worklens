@@ -9,13 +9,14 @@
 - 同步公开仓库 main 到最新 `5ac2d5f`；本轮开始时 GitHub Issues 无未关闭事项，因此按 Loop 约定创建健康巡检 Issue #21 作为唯一最小可交付事项，不启动新功能。
 - Actions 巡检通过：最新 main `5ac2d5f` 的「质量与安全门禁」run #40367988599 与「发布 GitHub Pages」run #40367988587 均 success；最近 10 条 Actions 无 running / queued。
 - P0–P4 路线图最小目标继续保持全部已上线，Loop 维持健康巡检降级态；本轮无业务代码改动，仅记录巡检证据与下一项。
-- Issue 写权限本轮可创建 Issue #21；后续通过 PR 描述使用 `Closes #21` 收口，避免依赖不稳定的 Issue 评论接口。
+- Issue 写权限本轮可创建 Issue #21；PR #22 已合入 main（squash 提交 `30d1ebe`），但服务端未自动关闭 Issue，随后 `gh issue close 21 --comment ...` 返回 `403 Resource not accessible by personal access token`，因此 Issue #21 暂保持 open，证据落在 PR 描述、本日志和最终交付记录中。
 
 **验证证据**
 
 - 本地质量门禁（main `5ac2d5f`）：`python3 -m unittest discover -s tests -p 'test_*.py'` → Ran 53 tests OK；5 个前端适配器与 4 个 JS 测试文件 `node --check` 全过；`node --test tests/*.js` → tests 28 / pass 28 / fail 0。
 - 契约与安全：`core_circle.py` → `1 people, 2 projects`；`skill_review.py validate`、`idea_pipeline.py validate`（`1 ideas`）、`recommendation_review.py validate`（`1 reviews`）、`security_scan.py` 均 exit 0；`build_pages.py` 输出 `routes=/, /desktop/, /atelier/, /ai-news/; skipped=none`。
 - 线上 Pages：`pages-manifest.json` 200 且四入口均为 `published`；`/desktop/`、`/atelier/`、`/ai-news/` 均可读取页面内容；根路径 `/` 返回客户端应用壳（需浏览器渲染）；`data/ai-news.json`、`data/core-circle.json`、`data/discoveries.json`、`data/idea-pipeline.json`、`data/recommendation-reviews.json`、`data/skill-review-queue.json` 均可读取。
+- PR #22 合入 main 后，「质量与安全门禁」run #40376072817 与「发布 GitHub Pages」run #40376072680 均 success；纯文档提交未引入页面源码变化。
 - 本轮未推进 SR-0011：仍保持 `trial`，`result=null`，未安装、未执行、未流转；真人试用结论出现前不得推进 adopted。
 
 **下一轮唯一最高优先级**
