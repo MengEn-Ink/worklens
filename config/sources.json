@@ -1,4 +1,12 @@
 {
+  "curated_feeds": [
+    {
+      "name": "local-curated-example",
+      "path": "data/curated-repositories.json",
+      "enabled": false,
+      "max_stale_hours": 24
+    }
+  ],
   "github_queries": [
     "topic:agent-skills stars:>50 archived:false",
     "topic:github-pages stars:>100 archived:false",
@@ -24,6 +32,8 @@
   "rss": [],
   "policy": {
     "max_candidates_per_query": 10,
+    "curated_feed_max_stale_hours": 24,
+    "discovery_cache_hours": 24,
     "minimum_stars": 20,
     "exclude_archived": true,
     "require_license_for_adoption": true
