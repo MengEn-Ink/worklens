@@ -9,13 +9,14 @@
 - 同步公开仓库 main 到最新 `b2dfc1b`；本轮开始时 GitHub Issues 无未关闭事项，因此按 Loop 约定创建健康巡检 Issue #19 作为唯一最小可交付事项，不启动新功能。
 - Actions 巡检通过：最新 main `b2dfc1b` 的「质量与安全门禁」run #40361004317 与「发布 GitHub Pages」run #40361004283 均 success；最近 8 条 Actions 无 running / queued。
 - P0–P4 路线图最小目标继续保持全部已上线，Loop 维持健康巡检降级态；本轮无业务代码改动，仅记录巡检证据与下一项。
-- Issue 写权限本轮可创建 Issue；验收证据将同步写入 Issue #19，并在门禁确认后关闭，不声称任何未上线事项已完成。
+- Issue 写权限本轮可创建 Issue #19；PR #20 以 `Closes #19` 合入后服务端自动关闭 Issue。评论接口仍返回 `403 Resource not accessible by personal access token`，因此逐条证据落在 PR 描述、本日志和最终交付记录中，不声称任何未上线事项已完成。
 
 **验证证据**
 
 - 本地质量门禁（main `b2dfc1b`）：`python3 -m unittest discover -s tests -p 'test_*.py'` → Ran 53 tests OK；5 个前端适配器 `node --check` 全过；`node --test tests/*.js` → tests 28 / pass 28 / fail 0。
 - 契约与安全：`core_circle.py` → `1 people, 2 projects`；`skill_review.py validate`、`idea_pipeline.py validate`（`1 ideas`）、`recommendation_review.py validate`（`1 reviews`）、`security_scan.py` 均 exit 0；`build_pages.py` 输出 `routes=/, /desktop/, /atelier/, /ai-news/; skipped=none`。
 - 线上 Pages：`pages-manifest.json`、根路径 `/`、`/desktop/`、`/atelier/`、`/ai-news/` 均 200；`data/ai-news.json`、`data/core-circle.json`、`data/discoveries.json`、`data/idea-pipeline.json`、`data/recommendation-reviews.json`、`data/skill-review-queue.json` 均 200。
+- PR #20 分支「质量与安全门禁」run #40367071176 success；合入 main（squash 提交 `4fb620f`）后「质量与安全门禁」run #40367240814 与「发布 GitHub Pages」run #40367240679 均 success，Issue #19 状态为 CLOSED。
 
 **下一轮唯一最高优先级**
 
