@@ -34,6 +34,16 @@
 
 采集器固定使用 `/users/{username}/repos` 与 `/users/{username}/starred` 公共接口，并再次过滤 `private=true` 的记录。不得改用 `/user/repos` 把私有仓库带入公开数据集；公开 Star 仅作为兴趣信号，不能直接视为推荐、采用或安全背书。
 
+## ai-news.json
+
+由 `scripts/collect_ai_news.py` 采集，汇聚外部 AI 资讯源。
+
+契约要点：
+- 数据源：默认为 `ai-news-aggregator` 提供的公开 JSON。
+- 过滤：按 `config/sources.json` 中的关键词精选。
+- 隐私：仅保留标题、URL、发布时间和来源站点名；不保存摘要或正文。
+- 排序：按发布时间倒序排列，条数受 `max_items` 限制。
+
 ## 页面适配层
 
 PC 与移动端页面在启动后读取发布产物中的 `data/discoveries.json` 与 `data/skill-review-queue.json`，再通过 `data-adapter.js` 转为页面视图模型。
