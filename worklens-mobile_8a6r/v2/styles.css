@@ -1099,3 +1099,54 @@ body::before {
   background: var(--cinnabar);
   border-radius: inherit;
 }
+
+/* Shared-shell mobile composition: keep reading in one column and move the
+   five in-page sections above the article instead of stacking two bottom bars. */
+@media (max-width: 720px) {
+  body.wl-shell-mounted #root {
+    width: 100%;
+    height: calc(100dvh - var(--wl-shell-height) - var(--wl-bottom-height) - env(safe-area-inset-bottom, 0px));
+    min-height: 0;
+    overflow: hidden;
+  }
+  body.wl-shell-mounted .phone-frame {
+    width: 100%;
+    max-width: 430px;
+    height: 100%;
+    min-height: 0;
+    padding-top: 52px;
+    overflow: hidden;
+  }
+  body.wl-shell-mounted .tabbar {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 30;
+    height: 52px;
+    padding: 4px 4px 3px;
+    border-top: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  body.wl-shell-mounted .tab-btn {
+    min-width: 0;
+    padding: 4px 2px 3px;
+  }
+  body.wl-shell-mounted .scroll-y {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+    padding-bottom: 20px;
+  }
+  body.wl-shell-mounted .scroll-y > *,
+  body.wl-shell-mounted article,
+  body.wl-shell-mounted section {
+    max-width: 100%;
+    min-width: 0;
+  }
+  body.wl-shell-mounted p,
+  body.wl-shell-mounted li,
+  body.wl-shell-mounted h1,
+  body.wl-shell-mounted h2,
+  body.wl-shell-mounted h3 {
+    overflow-wrap: anywhere;
+  }
+}
