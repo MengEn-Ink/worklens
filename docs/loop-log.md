@@ -6,7 +6,8 @@
 
 **成果**
 
-- 收口并关闭最高优先级 Issue #5：移动端 `Studio / 灵感` 子页读取公开发布的 `data/idea-pipeline.json`，展示项目总数、当前 research 项、自动化上限和下一步。
+- 收口最高优先级 Issue #5（功能已上线并完成线上双路径验收）：移动端 `Studio / 灵感` 子页读取公开发布的 `data/idea-pipeline.json`，展示项目总数、当前 research 项、自动化上限和下一步。
+- 说明：本轮沙箱 GitHub token 仅有 Contents 写权限，Issue 评论/关闭（REST 与 GraphQL 均返回 `Resource not accessible by personal access token`）与提交关键字自动关单均不可用；Issue #5 状态保持 open，等待具备 Issues 写权限的账号人工关闭，验收证据以本日志为准。
 - 页面保持严格只读：不提供创建外部任务、阶段流转、脚手架生成或 Skill 安装入口；进入 plan 仍显示需要真人确认。
 - Pages 构建器测试补齐 `idea-pipeline.json` 数据复制断言，README 路线图同步标记移动端袖珍摘要完成。
 - 线上浏览器验收发现并修复一个既有空数据缺陷：公开 JSON 不可达时回退种子数据，种子 `aiSkills` 无 `tags` 字段，工坊页 `s.tags.map` 抛错导致整个 StudioView 白屏、袖珍摘要降级态不可达；提交 `843c5b9` 改为 `(s.tags || []).map`，恢复只读降级路径。
