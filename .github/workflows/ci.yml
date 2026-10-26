@@ -38,5 +38,7 @@ jobs:
         run: python3 scripts/skill_review.py validate
       - name: Idea 项目化流程契约校验
         run: python3 scripts/idea_pipeline.py validate
+      - name: 推荐复盘契约校验
+        run: python3 scripts/recommendation_review.py validate
       - name: 敏感信息扫描
         run: python3 scripts/security_scan.py

@@ -91,6 +91,18 @@ Idea → 调研 → 方案 → 脚手架 → 验收的项目化流程记录，�
 - 策略常量恒为 `public_only=true`、`auto_scaffold=false`、`require_evidence=true`；证据必须是 HTTPS 公开链接，拒绝内网域名与凭证参数。
 - 页面适配层只能只读展示流程状态，不得提供创建、流转、脚手架或安装入口。
 
+## recommendation-reviews.json
+
+「发现 → 推荐 → 复盘 → 画像调整」回路的推荐复盘记录，由 `scripts/recommendation_review.py validate` 校验（只读、不联网、不写数据）。
+
+契约要点：
+
+- 策略常量恒为 `policy.public_only=true`、`auto_adjust_profile=false`、`require_human_policy_ref=true`、`automation_max_conclusion="downgrade"`；结论枚举固定为 `keep | downgrade | remove`。
+- 每条复盘必须引用一次真实推荐（`recommendation.id/recommended_at/channel/signal_source/reason`），复盘对象 `subject.full_name + html_url` 必须命中 `discoveries.json` 的公开候选，禁止凭空记录仓库外对象。
+- `observation_window` 为 RFC3339 区间且 from ≤ to；`observed_facts` 至少 1 条，每条事实的 `observed_at` 必须落在观察窗口内，`source_url` 必须是 HTTPS 公开链接，拒绝内网域名与凭证查询参数。
+- 自动化执行者（`worklens-bot` / `worklens-loop`）只能在既有真人策略（`authority=human-policy` + `policy_ref`）下记录到 `downgrade`；`remove`、画像权重固化与任何自动算法调整必须由真人（`authority=human`）记录。
+- 页面适配层只能只读展示复盘记录与调整说明，不得提供修改画像、改写推荐或删除记录的入口。
+
 ## 喜好反馈
 
 推荐使用以下事件结构：

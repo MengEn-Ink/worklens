@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-26T06:26:00Z",
+  "policy": {
+    "public_only": true,
+    "auto_adjust_profile": false,
+    "require_human_policy_ref": true,
+    "automation_max_conclusion": "downgrade",
+    "conclusions": ["keep", "downgrade", "remove"]
+  },
+  "reviews": [
+    {
+      "id": "rr-20261026-01",
+      "recommendation": {
+        "id": "rec-20261025-01",
+        "recommended_at": "2026-10-25T06:07:53Z",
+        "channel": "daily_discovery",
+        "signal_source": "profile:MengEn-Ink:starred",
+        "reason": "经公开 Star 关系进入每日发现批次；候选自述为中英文 NLP 语料与实体抽取资源合集，星标 84k，移动端按「Agent 推荐候选」呈现。Star 仅为公开弱信号。"
+      },
+      "subject": {
+        "full_name": "fighting41love/funNLP",
+        "html_url": "https://github.com/fighting41love/funNLP"
+      },
+      "subject_snapshot": {
+        "collected_at": "2026-10-25T06:07:49Z",
+        "stars": 84133,
+        "license": null,
+        "archived": false,
+        "pushed_at": "2024-05-10T07:38:24Z"
+      },
+      "observation_window": {
+        "from": "2026-10-25T06:07:53Z",
+        "to": "2026-10-26T06:20:00Z"
+      },
+      "observed_facts": [
+        {
+          "fact": "复查 GitHub 仓库元数据：仍未声明 SPDX 许可证（license=null），仓库未归档；按既定规则无许可证不推荐研读与再分发。",
+          "source_url": "https://api.github.com/repos/fighting41love/funNLP",
+          "observed_at": "2026-10-26T06:20:00Z"
+        },
+        {
+          "fact": "默认分支最近推送停留在 2024-05-10，观察窗口内无新提交，距今超过两年，维护活跃度信号持续走弱。",
+          "source_url": "https://github.com/fighting41love/funNLP/commits/master",
+          "observed_at": "2026-10-26T06:20:00Z"
+        },
+        {
+          "fact": "星标由推荐快照 84133 变为 84150，热度仍在小幅增长，说明流行度信号与许可证/维护度信号背离，热度不能替代安全与合规审查。",
+          "source_url": "https://api.github.com/repos/fighting41love/funNLP",
+          "observed_at": "2026-10-26T06:20:00Z"
+        }
+      ],
+      "conclusion": "downgrade",
+      "adjustment": "人工策略说明（不自动改算法、不写画像权重）：profile-star 弱信号不得单独把候选呈现为推荐；必须叠加「已声明许可证」与「近 12 个月有推送」两个硬门槛，未满足时只保留在 discoveries 数据集并标注暂不推荐。待每月真人复查确认后再固化进画像规则。",
+      "reviewed_by": "worklens-loop",
+      "authority": "human-policy",
+      "policy_ref": "README「数据与隐私原则」第 4 条：喜好是辅助信号，不替代项目安全、质量与许可证审查",
+      "reviewed_at": "2026-10-26T06:26:00Z"
+    }
+  ]
+}
