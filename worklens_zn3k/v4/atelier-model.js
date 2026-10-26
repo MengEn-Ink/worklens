@@ -262,6 +262,12 @@
 
   const IDEA_STAGE_ORDER = ['idea', 'research', 'plan', 'scaffold', 'accepted'];
 
+  const REVIEW_CONCLUSION_LABELS = {
+    keep: '保留推荐',
+    downgrade: '降级观察',
+    remove: '移出推荐',
+  };
+
   function normalizeIdea(idea) {
     const stage = IDEA_STAGE_LABELS[idea.stage] ? idea.stage : 'idea';
     const stageIndex = Math.max(0, IDEA_STAGE_ORDER.indexOf(stage));
@@ -293,6 +299,82 @@
         total: ideas.length,
         research: ideas.filter((item) => item.stage === 'research').length,
         accepted: ideas.filter((item) => item.stage === 'accepted').length,
+      },
+    };
+  }
+
+  function normalizeRecommendationReview(review) {
+    const subject = safeObject(review && review.subject);
+    const recommendation = safeObject(review && review.recommendation);
+    const snapshot = safeObject(review && review.subject_snapshot);
+    const observationWindow = safeObject(review && review.observation_window);
+    const subjectName = subject.full_name || '';
+    const subjectParts = splitSubject(subjectName);
+    const facts = safeList(review && review.observed_facts).map((fact) => {
+      const sourceUrl = fact && fact.source_url ? fact.source_url : '';
+      let sourceHost = '';
+      try {
+        sourceHost = sourceUrl ? new URL(sourceUrl).host : '';
+      } catch {
+        sourceHost = '';
+      }
+      return {
+        fact: fact && fact.fact ? fact.fact : '',
+        sourceUrl,
+        sourceHost,
+        observedAt: shortDate(fact && fact.observed_at),
+      };
+    });
+
+    return {
+      id: review && review.id ? review.id : '',
+      recommendationId: recommendation.id || '',
+      subject: subjectName,
+      owner: subjectParts.owner,
+      repo: subjectParts.repo,
+      subjectUrl: subject.html_url || '',
+      channel: recommendation.channel || '',
+      signalSource: recommendation.signal_source || '',
+      recommendedReason: recommendation.reason || '',
+      recommendedAt: shortDate(recommendation.recommended_at),
+      reviewedAt: shortDate(review && review.reviewed_at),
+      reviewedBy: review && review.reviewed_by ? review.reviewed_by : '',
+      authority: review && review.authority ? review.authority : '',
+      policyRef: review && review.policy_ref ? review.policy_ref : '',
+      conclusion: review && review.conclusion ? review.conclusion : '',
+      conclusionLabel: REVIEW_CONCLUSION_LABELS[review && review.conclusion] || review.conclusion || '未知',
+      adjustment: review && review.adjustment ? review.adjustment : '',
+      observationWindowLabel: `${shortDate(observationWindow.from)} → ${shortDate(observationWindow.to)}`,
+      facts,
+      factCount: facts.length,
+      snapshot: {
+        stars: Number(snapshot.stars || 0),
+        starsCompact: compactNumber(snapshot.stars),
+        license: snapshot.license || '未声明',
+        archived: snapshot.archived === true,
+        pushedAt: shortDate(snapshot.pushed_at),
+      },
+    };
+  }
+
+  function buildRecommendationReviewBoard(reviewData) {
+    const policy = safeObject(reviewData && reviewData.policy);
+    const reviews = safeList(reviewData && reviewData.reviews).map(normalizeRecommendationReview);
+    return {
+      available: true,
+      generatedAt: reviewData && reviewData.generated_at ? reviewData.generated_at : null,
+      generatedLabel: formatGenerated(reviewData && reviewData.generated_at),
+      publicOnly: policy.public_only === true,
+      autoAdjustProfile: policy.auto_adjust_profile === true,
+      requireHumanPolicyRef: policy.require_human_policy_ref === true,
+      automationMaxConclusion: policy.automation_max_conclusion || '',
+      conclusions: safeList(policy.conclusions),
+      reviews,
+      totals: {
+        total: reviews.length,
+        keep: reviews.filter((item) => item.conclusion === 'keep').length,
+        downgrade: reviews.filter((item) => item.conclusion === 'downgrade').length,
+        remove: reviews.filter((item) => item.conclusion === 'remove').length,
       },
     };
   }
@@ -337,6 +419,21 @@
     };
   }
 
+  function buildEmptyRecommendationReviewBoard(reason) {
+    return {
+      available: false,
+      reason: reason || 'data_absent',
+      generatedLabel: '未加载',
+      publicOnly: false,
+      autoAdjustProfile: false,
+      requireHumanPolicyRef: false,
+      automationMaxConclusion: '',
+      conclusions: [],
+      reviews: [],
+      totals: { total: 0, keep: 0, downgrade: 0, remove: 0 },
+    };
+  }
+
   const api = {
     CHECK_LABELS,
     STATE_LABELS,
@@ -344,9 +441,11 @@
     buildQueueBoard,
     buildCircleBoard,
     buildIdeaPipelineBoard,
+    buildRecommendationReviewBoard,
     buildEmptyQueueBoard,
     buildEmptyCircleBoard,
     buildEmptyIdeaPipelineBoard,
+    buildEmptyRecommendationReviewBoard,
     formatGenerated,
     shortDate,
     compactNumber,

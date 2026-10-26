@@ -387,6 +387,52 @@ body::before {
 .rec-chip--yes { background: #d9e5db; color: var(--forest-ink); }
 .rec-chip--no  { background: var(--paper-cool); color: var(--ink-soft); border: 1px dashed var(--rule-strong); }
 
+/* --- 推荐复盘区块 --- */
+.review-result {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.review-result--keep {
+  background: #d9e5db;
+  color: var(--forest-ink);
+}
+.review-result--downgrade {
+  background: #f1e5c6;
+  color: #684f17;
+}
+.review-result--remove,
+.review-result--unknown {
+  background: #ecd0c7;
+  color: var(--cinnabar-ink);
+}
+.review-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.review-facts {
+  padding-top: 2px;
+}
+.fact-row {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+.fact-row__bullet {
+  width: 8px;
+  height: 8px;
+  margin-top: 8px;
+  background: var(--cinnabar);
+}
+
 /* --- 淡入动画 --- */
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(6px); }

@@ -106,10 +106,73 @@ test('Atelier Idea 项目化模型保持只读边界与调研进度', () => {
   assert.equal(board.ideas[0].evidenceCount, 2);
 });
 
+test('Atelier 推荐复盘模型只读展示公开事实与人工结论', () => {
+  const board = model.buildRecommendationReviewBoard({
+    generated_at: '2026-10-26T06:26:00Z',
+    policy: {
+      public_only: true,
+      auto_adjust_profile: false,
+      require_human_policy_ref: true,
+      automation_max_conclusion: 'downgrade',
+      conclusions: ['keep', 'downgrade', 'remove'],
+    },
+    reviews: [
+      {
+        id: 'rr-20261026-01',
+        recommendation: {
+          id: 'rec-20261025-01',
+          recommended_at: '2026-10-25T06:07:53Z',
+          channel: 'daily_discovery',
+          signal_source: 'profile:MengEn-Ink:starred',
+          reason: '公开弱信号进入每日发现批次。',
+        },
+        subject: {
+          full_name: 'fighting41love/funNLP',
+          html_url: 'https://github.com/fighting41love/funNLP',
+        },
+        subject_snapshot: {
+          stars: 84133,
+          license: null,
+          archived: false,
+          pushed_at: '2024-05-10T07:38:24Z',
+        },
+        observation_window: {
+          from: '2026-10-25T06:07:53Z',
+          to: '2026-10-26T06:20:00Z',
+        },
+        observed_facts: [
+          {
+            fact: '仍未声明 SPDX 许可证。',
+            source_url: 'https://api.github.com/repos/fighting41love/funNLP',
+            observed_at: '2026-10-26T06:20:00Z',
+          },
+        ],
+        conclusion: 'downgrade',
+        adjustment: 'profile-star 弱信号不得单独触发推荐。',
+        reviewed_by: 'worklens-loop',
+        authority: 'human-policy',
+        policy_ref: 'README 数据与隐私原则第 4 条',
+        reviewed_at: '2026-10-26T06:26:00Z',
+      },
+    ],
+  });
+
+  assert.equal(board.available, true);
+  assert.equal(board.publicOnly, true);
+  assert.equal(board.autoAdjustProfile, false);
+  assert.equal(board.automationMaxConclusion, 'downgrade');
+  assert.equal(board.totals.downgrade, 1);
+  assert.equal(board.reviews[0].conclusionLabel, '降级观察');
+  assert.equal(board.reviews[0].snapshot.license, '未声明');
+  assert.equal(board.reviews[0].facts[0].sourceHost, 'api.github.com');
+  assert.equal(board.reviews[0].factCount, 1);
+});
+
 test('Atelier 空模型不抛错且显式说明未加载', () => {
   const queue = model.buildEmptyQueueBoard('not_found');
   const circle = model.buildEmptyCircleBoard('not_found');
   const ideas = model.buildEmptyIdeaPipelineBoard('not_found');
+  const reviews = model.buildEmptyRecommendationReviewBoard('not_found');
 
   assert.equal(queue.available, false);
   assert.equal(queue.reason, 'not_found');
@@ -118,4 +181,7 @@ test('Atelier 空模型不抛错且显式说明未加载', () => {
   assert.equal(circle.projects.length, 0);
   assert.equal(ideas.available, false);
   assert.equal(ideas.ideas.length, 0);
+  assert.equal(reviews.available, false);
+  assert.equal(reviews.reviews.length, 0);
+  assert.equal(reviews.totals.downgrade, 0);
 });
