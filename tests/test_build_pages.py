@@ -93,6 +93,13 @@ class BuildPagesTest(unittest.TestCase):
         self.assertNotIn("!important", css)
         for marker in ("wl-shell-layer", "layer.append(header, bottom, scrim)", "previousFocus", "event.key !== 'Tab'", "event.key === 'Escape'", "aria-hidden"):
             self.assertIn(marker, script)
+        mobile_css = (repository / "worklens-mobile_8a6r/v2/styles.css").read_text(encoding="utf-8")
+        self.assertIn("body.wl-shell-mounted #root", mobile_css)
+        self.assertIn("height: calc(100dvh - var(--wl-shell-height) - var(--wl-bottom-height)", mobile_css)
+        self.assertIn("body.wl-shell-mounted .tabbar", mobile_css)
+        self.assertIn("position: absolute;", mobile_css)
+        self.assertIn("body.wl-shell-mounted .scroll-y", mobile_css)
+        self.assertIn("overflow-x: hidden;", mobile_css)
         for source in (
             "worklens-mobile_8a6r/v2/worklens-mobile_8a6r_h5.html",
             "worklens_zn3k/v3/worklens_zn3k_pc.html",
