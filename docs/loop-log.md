@@ -2,6 +2,24 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-26（午间轮）· 移动端 Idea 袖珍只读摘要
+
+**成果**
+
+- 收口最高优先级 Issue #5：移动端 `Studio / 灵感` 子页读取公开发布的 `data/idea-pipeline.json`，展示项目总数、当前 research 项、自动化上限和下一步。
+- 页面保持严格只读：不提供创建外部任务、阶段流转、脚手架生成或 Skill 安装入口；进入 plan 仍显示需要真人确认。
+- Pages 构建器测试补齐 `idea-pipeline.json` 数据复制断言，README 路线图同步标记移动端袖珍摘要完成。
+
+**验证证据**
+
+- 本地：`python3 -m unittest discover -s tests -p 'test_*.py'` 33 项通过；`node --test tests/*.js` 20 项通过；`idea_pipeline.py validate`、`security_scan.py` 通过；`build_pages.py` 输出 `routes=/, /desktop/, /atelier/; skipped=none`。
+- 前端：对 `worklens-mobile_8a6r/v2/app.jsx`、`worklens-mobile_8a6r/v2/data-adapter.js` 执行 `standard-lint`，未出现 parsing/syntax error、`no-undef`、`react/jsx-no-undef`、`import/no-unresolved` 四类阻断问题；剩余为既有风格类提示。
+- CI / Pages：待本提交推送后记录 Actions 与线上 URL 结果。
+
+**下一轮唯一最高优先级**
+
+若本轮 CI 与 Pages 全绿，下一轮进入 P4 推荐复盘最小闭环：为推荐结果补充一条可公开复盘记录，仍只使用公开数据，不接入私有信号。
+
 ## 2026-10-26（整点轮）· Idea 项目化流程 Atelier 只读接入
 
 **成果**

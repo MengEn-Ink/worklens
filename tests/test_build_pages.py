@@ -22,6 +22,7 @@ class BuildPagesTest(unittest.TestCase):
         self.write("worklens_zn3k/v3/views.jsx", "desktop-views")
         self.write("data/discoveries.json", '{"candidates": []}')
         self.write("data/skill-review-queue.json", '{"queue": []}')
+        self.write("data/idea-pipeline.json", '{"ideas": []}')
 
     def tearDown(self):
         self.temp.cleanup()
@@ -39,6 +40,8 @@ class BuildPagesTest(unittest.TestCase):
         self.assertFalse((site / "worklens-mobile_8a6r_h5.html").exists())
         self.assertEqual((site / "desktop/index.html").read_text(encoding="utf-8"), "desktop")
         self.assertEqual((site / "data/discoveries.json").read_text(encoding="utf-8"), '{"candidates": []}')
+        self.assertEqual((site / "data/idea-pipeline.json").read_text(encoding="utf-8"), '{"ideas": []}')
+        self.assertEqual((site / "data/idea-pipeline.json").read_text(encoding="utf-8"), '{"ideas": []}')
         self.assertTrue((site / ".nojekyll").exists())
 
         targets = {target["name"]: target for target in manifest["targets"]}

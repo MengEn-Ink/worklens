@@ -1142,11 +1142,104 @@ function RoutesView() {
 }
 
 /* ================================================================
+   v2 新增：IdeaPocketPanel —— Idea 项目化流程袖珍只读摘要（Issue #5）
+   只展示四个事实：项目总数 / 当前 research 项 / 自动化上限 / 下一步。
+   只读：不创建外部任务、不流转阶段、不生成脚手架、不安装 Skill。
+   ---------------------------------------------------------------- */
+function IdeaPocketPanel() {
+  const emptyPocket = {
+    available: false, total: 0, researchCount: 0, researchItems: [],
+    automationMaxStageLabel: '', nextStageLabel: '', nextStep: '',
+    publicOnly: false, autoScaffold: false, updatedAt: '未加载',
+  };
+  const pocket = DATA.ideaPocket
+    || (window.WL_DISCOVERY_ADAPTER && window.WL_DISCOVERY_ADAPTER.buildEmptyIdeaPocket && window.WL_DISCOVERY_ADAPTER.buildEmptyIdeaPocket())
+    || emptyPocket;
+
+  if (!pocket.available) {
+    return (
+      <div className="hero-stack anim-in">
+        <div className="lib-card">
+          <div className="ff-mono text-[9.5px] uppercase tracking-widest" style={{color: 'var(--cinnabar)'}}>
+            POCKET IDEA PIPELINE · READ-ONLY
+          </div>
+          <h3 className="ff-serif font-semibold text-[17px] mt-1" style={{letterSpacing: '-0.015em'}}>灵感流水线 · 袖珍摘要</h3>
+          <p className="ff-serif text-[13px] mt-2 leading-[1.6]" style={{color: 'var(--ink-mute)'}}>
+            公开数据 <span className="ulink">data/idea-pipeline.json</span> 尚未加载（本地预览或文件缺失时会出现）。
+            这里始终是只读占位，不提供创建任务、阶段流转、脚手架生成或 Skill 安装入口。
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="hero-stack anim-in">
+      <div className="lib-card">
+        <div className="flex items-baseline justify-between">
+          <div className="ff-mono text-[9.5px] uppercase tracking-widest" style={{color: 'var(--cinnabar)'}}>
+            POCKET IDEA PIPELINE · READ-ONLY
+          </div>
+          <span className="ff-mono text-[9px]" style={{color: 'var(--ink-mute)'}}>{pocket.updatedAt}</span>
+        </div>
+        <h3 className="ff-serif font-semibold text-[17px] mt-1" style={{letterSpacing: '-0.015em'}}>灵感流水线 · 袖珍摘要</h3>
+
+        <div className="grid grid-cols-2 gap-2 mt-3">
+          <div className="banner-stat">
+            <div className="banner-stat__num">{pocket.total}</div>
+            <div className="banner-stat__lab">项目总数</div>
+          </div>
+          <div className="banner-stat">
+            <div className="banner-stat__num">{pocket.researchCount}</div>
+            <div className="banner-stat__lab">调研中 · research</div>
+          </div>
+        </div>
+
+        <div className="mt-3 space-y-2">
+          <div className="flex items-baseline justify-between gap-2">
+            <span className="ff-mono text-[9.5px] uppercase tracking-widest" style={{color: 'var(--ink-mute)'}}>自动化上限</span>
+            <span className="ff-serif text-[13px] font-semibold">{pocket.automationMaxStageLabel || '—'}</span>
+          </div>
+          <div className="flex items-start justify-between gap-2">
+            <span className="ff-mono text-[9.5px] uppercase tracking-widest mt-0.5" style={{color: 'var(--ink-mute)'}}>下一步</span>
+            <span className="ff-serif text-[13px] leading-[1.5] text-right" style={{color: pocket.nextStep ? 'var(--ink)' : 'var(--ink-mute)'}}>
+              {pocket.nextStep || '暂无在途项'}
+              {pocket.nextStageLabel
+                ? <em className="not-italic" style={{color: 'var(--cinnabar)'}}> · 进入「{pocket.nextStageLabel}（plan）」需真人确认</em>
+                : null}
+            </span>
+          </div>
+        </div>
+
+        {pocket.researchItems.length > 0 && (
+          <div className="mt-3">
+            <div className="ff-mono text-[9px] uppercase tracking-[0.25em] mb-1" style={{color: 'var(--cinnabar)'}}>§ 当前 research 项</div>
+            {pocket.researchItems.slice(0, 3).map(item => (
+              <div key={item.id} className="flex items-baseline gap-2 py-1.5 border-b" style={{borderColor: 'var(--rule)'}}>
+                <span className="ff-mono text-[9px] flex-shrink-0" style={{color: 'var(--ink-mute)'}}>{item.id}</span>
+                <span className="ff-serif text-[13px] flex-1" style={{letterSpacing: '-0.01em'}}>{item.title}</span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <div className="ff-mono text-[9px] mt-3" style={{color: 'var(--ink-mute)'}}>
+          public_only={String(pocket.publicOnly)} · auto_scaffold={String(pocket.autoScaffold)} · read_only=true
+        </div>
+      </div>
+      <div className="sidenote">
+        只读面板：只展示公开的 data/idea-pipeline.json 四个事实，不创建外部任务、不流转阶段、不生成脚手架、不安装 Skill；进入方案阶段必须由真人确认。
+      </div>
+    </div>
+  );
+}
+
+/* ================================================================
    v2 新增：StudioView —— 技能工坊 / 推送中心
    把喜好 → Agent 的回礼：已服役能力、建议、订阅、推送
    ---------------------------------------------------------------- */
 function StudioView() {
-  const [sub, setSub] = useState('skills'); // skills | proposals | queue | subs | push
+  const [sub, setSub] = useState('skills'); // skills | proposals | queue | idea | subs | push
   const subs = DATA.subscriptions;
   const skillQueue = DATA.skillQueue || { total: 0, byState: {}, entries: [], blockingTotal: 0, autoInstall: false };
   const activeReviews = (skillQueue.byState.screening || 0) + (skillQueue.byState.trial || 0);
@@ -1159,6 +1252,7 @@ function StudioView() {
   const tabs = [
     { id: 'skills',    label: '已服役 · ' + DATA.aiSkills.length },
     { id: 'proposals', label: 'Agent 建议 · ' + DATA.proposals.length },
+    { id: 'idea',      label: '灵感 · ' + (DATA.ideaPocket ? DATA.ideaPocket.total : 0) },
     { id: 'queue',     label: '待审 · ' + (skillQueue.total || 0) },
     { id: 'subs',      label: '订阅主题 · ' + subs.length },
     { id: 'push',      label: '推送 · ' + DATA.pushes.filter(p=>!p.read).length },
@@ -1314,6 +1408,10 @@ function StudioView() {
         </div>
       )}
 
+      {sub === 'idea' && (
+        <IdeaPocketPanel />
+      )}
+
       {sub === 'subs' && (
         <div className="hero-stack anim-in">
           {subs.map(s => (
@@ -1458,6 +1556,7 @@ function App() {
     let alive = true;
     const candidateUrls = ['./data/discoveries.json', '../data/discoveries.json', '../../data/discoveries.json'];
     const skillQueueUrls = ['./data/skill-review-queue.json', '../data/skill-review-queue.json', '../../data/skill-review-queue.json'];
+    const ideaPipelineUrls = ['./data/idea-pipeline.json', '../data/idea-pipeline.json', '../../data/idea-pipeline.json'];
 
     async function loadFirstJson(urls, isValid) {
       for (const url of urls) {
@@ -1478,8 +1577,9 @@ function App() {
       const discoveries = await loadFirstJson(candidateUrls, payload => payload && Array.isArray(payload.candidates));
       if (!alive || !discoveries) return;
       const skillQueue = await loadFirstJson(skillQueueUrls, payload => payload && Array.isArray(payload.queue));
+      const ideaPipeline = await loadFirstJson(ideaPipelineUrls, payload => payload && Array.isArray(payload.ideas));
       if (!alive) return;
-      Object.assign(DATA, window.WL_DISCOVERY_ADAPTER.buildMobileData(DATA, discoveries, skillQueue));
+      Object.assign(DATA, window.WL_DISCOVERY_ADAPTER.buildMobileData(DATA, discoveries, skillQueue, ideaPipeline));
       setTasteState({});
       setDataRevision(revision => revision + 1);
     }
