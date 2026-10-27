@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-26T06:13:19.207561+00:00",
+  "generated_at": "2026-10-27T06:17:02.802144+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -33,12 +33,12 @@
         "search:topic:developer-tools stars:>500 archived:false"
       ],
       "enqueued_at": "2026-10-24T04:55:16.586362+00:00",
-      "metadata_synced_at": "2026-10-26T06:13:19.205792+00:00",
+      "metadata_synced_at": "2026-10-27T06:17:02.800344+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 386158,
-      "pushed_at": "2026-10-26T06:09:37Z",
+      "stars": 393072,
+      "pushed_at": "2026-10-27T06:15:36Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -65,12 +65,12 @@
       "source": "search:topic:agent-skills stars:>50 archived:false",
       "also_seen_in": [],
       "enqueued_at": "2026-10-24T04:55:16.586479+00:00",
-      "metadata_synced_at": "2026-10-25T06:07:53.832435+00:00",
+      "metadata_synced_at": "2026-10-27T06:17:02.800418+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 107042,
-      "pushed_at": "2026-10-25T06:05:47Z",
+      "stars": 107750,
+      "pushed_at": "2026-10-27T06:08:01Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -97,11 +97,11 @@
       "source": "profile:MengEn-Ink:starred",
       "also_seen_in": [],
       "enqueued_at": "2026-10-24T04:55:16.587131+00:00",
-      "metadata_synced_at": "2026-10-26T06:13:19.206208+00:00",
+      "metadata_synced_at": "2026-10-27T06:17:02.800734+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 48284,
+      "stars": 48291,
       "pushed_at": "2026-10-24T09:42:32Z",
       "checks": {
         "license_declared": {
@@ -129,11 +129,11 @@
       "source": "repository:VoltAgent/awesome-agent-skills",
       "also_seen_in": [],
       "enqueued_at": "2026-10-24T04:55:16.587321+00:00",
-      "metadata_synced_at": "2026-10-26T06:13:19.206292+00:00",
+      "metadata_synced_at": "2026-10-27T06:17:02.800822+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 36367,
+      "stars": 36418,
       "pushed_at": "2026-10-25T13:18:51Z",
       "checks": {
         "license_declared": {
@@ -259,12 +259,12 @@
       "source": "search:topic:agent-skills stars:>50 archived:false",
       "also_seen_in": [],
       "enqueued_at": "2026-10-24T04:55:16.589192+00:00",
-      "metadata_synced_at": "2026-10-26T06:13:19.207134+00:00",
+      "metadata_synced_at": "2026-10-27T06:17:02.801779+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 359,
-      "pushed_at": "2026-10-26T06:04:40Z",
+      "stars": 361,
+      "pushed_at": "2026-10-27T06:16:51Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -627,12 +627,12 @@
         "search:topic:ai-agent stars:>500 archived:false"
       ],
       "enqueued_at": "2026-10-24T05:53:20.219084+00:00",
-      "metadata_synced_at": "2026-10-24T05:53:20.219084+00:00",
+      "metadata_synced_at": "2026-10-27T06:17:02.801300+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 5355,
-      "pushed_at": "2026-10-24T05:51:40Z",
+      "stars": 5379,
+      "pushed_at": "2026-10-27T06:13:45Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -757,11 +757,11 @@
       "source": "profile:MengEn-Ink:starred",
       "also_seen_in": [],
       "enqueued_at": "2026-10-25T06:07:53.833009+00:00",
-      "metadata_synced_at": "2026-10-26T06:13:19.206421+00:00",
+      "metadata_synced_at": "2026-10-27T06:17:02.800955+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 26345,
+      "stars": 27230,
       "pushed_at": "2026-10-23T15:32:08Z",
       "checks": {
         "license_declared": {
@@ -821,12 +821,12 @@
       "source": "profile:MengEn-Ink:starred",
       "also_seen_in": [],
       "enqueued_at": "2026-10-25T06:07:53.833221+00:00",
-      "metadata_synced_at": "2026-10-26T06:13:19.206657+00:00",
+      "metadata_synced_at": "2026-10-27T06:17:02.801205+00:00",
       "state": "candidate",
       "license": "NOASSERTION",
       "archived": false,
-      "stars": 6259,
-      "pushed_at": "2026-10-25T15:28:34Z",
+      "stars": 6333,
+      "pushed_at": "2026-10-26T14:04:30Z",
       "checks": {
         "license_declared": {
           "status": "fail",
@@ -1102,6 +1102,72 @@
       "history": [
         {
           "at": "2026-10-26T06:13:19.207289+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0029",
+      "subject": "NVIDIA/SkillSpector",
+      "html_url": "https://github.com/NVIDIA/SkillSpector",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-27T06:17:02.801000+00:00",
+      "metadata_synced_at": "2026-10-27T06:17:02.801000+00:00",
+      "state": "candidate",
+      "license": "Apache-2.0",
+      "archived": false,
+      "stars": 22419,
+      "pushed_at": "2026-10-27T06:10:43Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=Apache-2.0",
+          "checked_at": "2026-10-27T06:17:02.801000+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-27T06:17:02.801000+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0030",
+      "subject": "mex-memory/mex",
+      "html_url": "https://github.com/mex-memory/mex",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [
+        "search:topic:developer-tools stars:>500 archived:false"
+      ],
+      "enqueued_at": "2026-10-27T06:17:02.801524+00:00",
+      "metadata_synced_at": "2026-10-27T06:17:02.801524+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 1779,
+      "pushed_at": "2026-10-27T06:12:49Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-10-27T06:17:02.801524+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-27T06:17:02.801524+00:00",
           "event": "enqueued",
           "by": "worklens-bot",
           "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
