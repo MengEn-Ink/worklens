@@ -222,7 +222,7 @@ function App() {
           </div>
           <div className="px-5 py-2 space-y-1.5">
             {D.SHELVES.map(sh => (
-              <div key={sh.code} className="flex items-baseline gap-2 cursor-pointer group" onClick={() => goto('shelf')}>
+              <div key={`${sh.code}-${sh.name}`} className="flex items-baseline gap-2 cursor-pointer group" onClick={() => goto('shelf')}>
                 <span className="ff-mono text-[10px]" style={{color: 'var(--cinnabar)'}}>{sh.code}</span>
                 <span className="ff-serif text-[13px] flex-1 group-hover:text-[var(--cinnabar)]" style={{letterSpacing: '-0.01em'}}>
                   {sh.name}

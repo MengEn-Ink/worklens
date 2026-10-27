@@ -110,6 +110,24 @@ class BuildPagesTest(unittest.TestCase):
             self.assertIn("../../shared/worklens-shell.css", html)
             self.assertIn("../../shared/worklens-shell.js", html)
 
+    def test_mobile_workbench_navigation_contracts(self):
+        repository = MODULE.parents[1]
+        script = (repository / "worklens_zn3k/v3/mobile-workbench.jsx").read_text(encoding="utf-8")
+        for marker in (
+            "readLocation()",
+            "locationHash(next, safeChapter, entry)",
+            "addEventListener('hashchange', syncFromLocation)",
+            "addEventListener('popstate', syncFromLocation)",
+            "history.replaceState(null, '', locationHash('cover'))",
+            "data-entry-id={entry.id}",
+            "mwb-entry-${encodeURIComponent(entry.id)}",
+            "scrollIntoView({ block: 'start' })",
+            "go('issue', 'all', entry.id)",
+            "onPick={pickChapter}",
+            "scroller.current.scrollTop = 0",
+        ):
+            self.assertIn(marker, script)
+
 
 if __name__ == "__main__":
     unittest.main()

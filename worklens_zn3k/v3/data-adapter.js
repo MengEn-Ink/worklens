@@ -106,6 +106,16 @@
     return 'shelf';
   }
 
+  function editorialPriority(entry) {
+    const scores = entry && entry.scores ? entry.scores : {};
+    const fit = Number(scores.fit || 0);
+    const novelty = Number(scores.novelty || 0);
+    if (entry && entry.verdict === 'adopt' && fit >= 98) return 'P0';
+    if (entry && entry.verdict === 'adopt') return 'P1';
+    if (entry && entry.verdict === 'evaluate' && (fit >= 75 || novelty >= 80)) return 'P2';
+    return null;
+  }
+
   function actionText(candidate, category, scores) {
     if (category.kind === 'Skill') {
       return `进入 Skill 待审队列：先做 README、脚本权限、依赖与许可证检查，通过后再考虑试用；当前 Fit ${scores.fit}。`;
@@ -122,6 +132,7 @@
   function entryFromCandidate(candidate, index) {
     const category = classify(candidate);
     const scores = scoreCandidate(candidate);
+    const candidateVerdict = verdict(candidate, scores);
     const id = `WL-GH-${String(index + 1).padStart(3, '0')}`;
     const topics = safeList(candidate.topics).slice(0, 4);
     const tags = topics.length > 0 ? topics : [String(candidate.language || 'github').toLowerCase()].filter(Boolean);
@@ -138,7 +149,8 @@
       kind: category.kind,
       tags,
       scores,
-      verdict: verdict(candidate, scores),
+      verdict: candidateVerdict,
+      priority: editorialPriority({ verdict: candidateVerdict, scores }),
       taste: null,
       why: `自动采集命中 ${candidate.source || 'GitHub 来源'}；公开指标为 ${Number(candidate.stars || 0).toLocaleString()} stars、${Number(candidate.forks || 0).toLocaleString()} forks、${Number(candidate.open_issues || 0).toLocaleString()} open issues。`,
       action: actionText(candidate, category, scores),
@@ -510,9 +522,9 @@
     };
   }
 
-  window.WL_DISCOVERY_ADAPTER = { buildPcData, buildMobileData, buildSkillQueue };
+  window.WL_DISCOVERY_ADAPTER = { buildPcData, buildMobileData, buildSkillQueue, editorialPriority };
 
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { buildPcData, buildMobileData, buildSkillQueue };
+    module.exports = { buildPcData, buildMobileData, buildSkillQueue, editorialPriority };
   }
 })();
