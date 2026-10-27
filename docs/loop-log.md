@@ -2,6 +2,25 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-27（13 点轮）· GitHub Issue 写路径恢复，健康巡检通过（Issue #42）
+
+**成果**
+
+- 同步公开仓库 `main` 到最新 `c974608`；开始时 0 个未关闭 Issue、0 个开放 PR，最新 main 上「质量与安全门禁」run #40448972925 与「发布 GitHub Pages」run #40448972934 均为 success，列表无 running / queued。P0–P4 最小目标保持全部上线，Loop 继续维持健康巡检降级态。
+- **GitHub Issue 写路径已恢复**：12 点轮环境凭证调 Issues REST 报 `401 Bad credentials`。本轮核实环境内 fine-grained PAT 实际有效——`gh` 2.23 CLI 对 fine-grained token 的 `/user` 探测会误判为 “no longer valid”，但直接带 Bearer 调用 REST 时 issues 读 `200`、`POST /issues` 返回 `201`（响应头 `x-accepted-github-permissions: issues=write`），成功创建 Issue #42 承载本轮验收。前两次 POST 因沙箱代理瞬态返回 `000`（未到达 GitHub），第三次成功；随后 `GET /issues/42` 复核 `state=open`，未产生重复单。
+- 只读边界在线上数据逐项核对保持不变：待审队列 28 条（27 个 `candidate`，SR-0011 CodeSigils/skill-discovery 为 `trial`），`policy.auto_install=false`；`idea-pipeline` 为 `public_only=true / auto_scaffold=false / automation_max_stage=research`；`recommendation-reviews` policy 为 `public_only=true / auto_adjust_profile=false / automation_max_conclusion=downgrade`。
+
+**验证证据**
+
+- 本地质量门禁（main `c974608` 重跑）：`python3 -m unittest discover -s tests -p 'test_*.py'` → Ran 55 tests OK；`node --test tests/*.js` → tests 29 / pass 29 / fail 0；仓库内 7 个非测试 JS（`shared/worklens-shell.js`、3 个 data-adapter、`v3/data.js`、`v4/atelier-model.js`、`v4/review-model.js`）`node --check` 全过。
+- 契约与安全：`core_circle.py` → `1 people, 2 projects`；`skill_review.py validate`、`idea_pipeline.py validate`（`1 ideas`）、`recommendation_review.py validate`（`1 reviews`）、`security_scan.py` 均 exit 0；`build_pages.py` 输出 `routes=/, /desktop/, /atelier/, /ai-news/; skipped=none`，构建后工作树无改动。
+- 线上 Pages：`pages-manifest.json` 中 mobile / desktop / atelier / ai-news 四个 targets 均为 `published`；根路径 `/`、`/desktop/`、`/atelier/`、`/ai-news/` 与 `data/ai-news.json`、`data/core-circle.json`、`data/discoveries.json`、`data/idea-pipeline.json`、`data/recommendation-reviews.json`、`data/skill-review-queue.json` 本轮均 HTTP 200。
+- 本轮为纯文档提交：按约定只等待「质量与安全门禁」，不重复做无价值 Pages 部署；未新增功能、未改变只读边界。
+
+**下一轮唯一最高优先级**
+
+- 继续健康巡检：核对 main、运行中 / 失败 Actions（含每日采集 `collect.yml`）、Pages 四入口与公开数据文件；若 Issue 列表为空，继续按最小可交付事项新建巡检 Issue 并写明验收标准。SR-0011 维持 `trial`，2026-10-31 真人试用复盘出结论前不推进 adopted、不安装 Skill；推荐复盘画像调整未获真人确认前不得写入 profile 或改变推荐权重；不重复开发已上线事项。
+
 ## 2026-10-27（12 点轮）· 健康巡检通过，但 GitHub Issue 创建权限受阻
 
 **成果**
