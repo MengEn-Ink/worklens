@@ -264,15 +264,15 @@
               {stage} 阶段评估准则
             </h4>
             <ol className="space-y-2.5 ff-serif text-[13.5px]" style={{color: 'var(--ink)'}}>
-              <li className="flex gap-2.5"><span className="circ-num">1</span>Fit ≥ 70 · Novelty ≥ 60</li>
+              <li className="flex gap-2.5"><span className="circ-num">1</span>匹配度 ≥ 70 · 新颖度 ≥ 60</li>
               <li className="flex gap-2.5"><span className="circ-num">2</span>有活跃维护者（30 天 ≥ 10 次提交）</li>
               <li className="flex gap-2.5"><span className="circ-num">3</span>可被 Skill 化或可直接集成</li>
               <li className="flex gap-2.5"><span className="circ-num">4</span>与现有 Skill 覆盖重合度 ≤ 60%</li>
-              <li className="flex gap-2.5"><span className="circ-num">5</span>命中你本月订阅主题 → Fit 自动 +12</li>
+              <li className="flex gap-2.5"><span className="circ-num">5</span>命中你本月订阅主题 → 匹配度自动 +12</li>
             </ol>
             <hr className="hr-thin my-4" />
             <div className="sidenote">
-              规则由 Agent 自动演化：Taste 账本每日注入权重；下架条目反向喂回 Fit 模型。
+              规则由 Agent 自动演化：喜好账本每日注入权重；下架条目反向喂回匹配度模型。
             </div>
             <div className="mt-4 flex gap-2">
               <button className="btn">编辑规则</button>
@@ -377,7 +377,7 @@
             显示 {list.length} / {D.ENTRIES.length} 条
           </span>
           <div className="flex items-center gap-2">
-            <button className="btn btn--ghost">按 Fit ↓</button>
+            <button className="btn btn--ghost">按匹配度 ↓</button>
             <button className="btn btn--ghost">导出清单</button>
           </div>
         </div>
@@ -436,7 +436,7 @@
             <div className="mt-4 flex items-center gap-3">
               <C.TasteBar entry={entry} onChange={onTaste} />
               <span className="ff-serif italic text-[12.5px]" style={{color: 'var(--ink-mute)'}}>
-                你的一次 ❤ 会被写入 Taste 账本，影响下一期 Fit 排序。
+                你的一次 ❤ 会被写入喜好账本，影响下一期匹配度排序。
               </span>
             </div>
           </div>
@@ -1005,7 +1005,7 @@ derived_from: ${entry.url}`}
 
         {/* 概览数字 */}
         <section className="grid grid-cols-4 gap-6 py-6 border-y mb-8" style={{borderColor: 'var(--rule)'}}>
-          <C.Stat num={D.AI_SKILLS.filter(s => s.status==='live').length} label="服役中 Skill" />
+          <C.Stat num={D.AI_SKILLS.filter(s => s.status==='live').length} label="服役中技能" />
           <C.Stat num={D.AI_SKILLS.reduce((s, x) => s + x.runs_7d, 0)} label="近 7 天运行次数" />
           <C.Stat num={skillQueue.total || D.SKILL_PROPOSALS.length} label="待审队列" accent sub={`${activeReviews} 个评测/试用中`} />
           <C.Stat num={openBlockingCount} label="阻断项待补证" sub="试用前必须清零" />
@@ -1047,9 +1047,9 @@ derived_from: ${entry.url}`}
           <div className="space-y-4">
             <article className="lib-card p-5" style={{borderColor: 'rgba(161, 62, 45, .36)'}}>
               <div className="flex items-center gap-3 mb-3">
-                <span className="skill-ribbon">REVIEW QUEUE</span>
+                <span className="skill-ribbon">待审队列</span>
                 <span className="ff-mono text-[11px]" style={{color: 'var(--ink-mute)'}}>
-                  自动化只入队，candidate 之后必须人工记录 decided_by、时间与证据
+                  自动化只负责加入待审队列，后续必须人工记录决策人、时间与证据
                 </span>
               </div>
               <div className="grid gap-4" style={{gridTemplateColumns: 'repeat(4, 1fr)'}}>
@@ -1107,7 +1107,7 @@ derived_from: ${entry.url}`}
 
                     <aside>
                       <div className="ff-mono text-[9.5px] uppercase tracking-widest mb-2" style={{color: 'var(--ink-mute)'}}>
-                        Skill DSL 预览
+                        技能配置预览
                       </div>
                       <pre className="ff-mono text-[11px] leading-[1.65] p-3 whitespace-pre-wrap"
                            style={{background: 'var(--ink)', color: 'var(--parchment)', borderRadius: 1}}>
@@ -1293,7 +1293,7 @@ derived_from: ${entry.url}`}
             </h3>
             <ul className="space-y-2 ff-serif text-[14px]">
               <li className="py-2 border-b flex justify-between" style={{borderColor: 'var(--rule)'}}>
-                <span>紧急号外（Fit ≥ 90 且订阅命中）</span>
+                <span>紧急号外（匹配度 ≥ 90 且订阅命中）</span>
                 <span className="ff-mono text-[11px]" style={{color: 'var(--forest)'}}>即时</span>
               </li>
               <li className="py-2 border-b flex justify-between" style={{borderColor: 'var(--rule)'}}>
@@ -1347,7 +1347,7 @@ derived_from: ${entry.url}`}
           <div className="flex items-baseline justify-between gap-2 mb-0.5">
             <h4 className="ff-serif text-[16px] font-semibold truncate" style={{letterSpacing: '-0.01em'}}>
               {s.kind}
-              {s.isTaste && <span className="ff-mono text-[9px] ml-2 px-1.5 py-0.5" style={{background: 'var(--cinnabar)', color: 'var(--parchment)'}}>NEW</span>}
+              {s.isTaste && <span className="ff-mono text-[9px] ml-2 px-1.5 py-0.5" style={{background: 'var(--cinnabar)', color: 'var(--parchment)'}}>新增</span>}
             </h4>
             <div className="flex items-center gap-1.5 ff-mono text-[10px]" style={{color: 'var(--ink-mute)'}}>
               <span className={s.status === 'live' ? 'pulse pulse--live' : 'pulse pulse--paused'} />
