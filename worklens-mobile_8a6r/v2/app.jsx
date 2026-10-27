@@ -251,6 +251,9 @@ const Icon = {
   plus: (p) => <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="1.6" {...p}><path d="M8 3v10M3 8h10" strokeLinecap="round"/></svg>,
   spark: (p) => <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="1.3" {...p}><path d="M8 1v4M8 11v4M1 8h4M11 8h4M3.5 3.5l2 2M10.5 10.5l2 2M3.5 12.5l2-2M10.5 5.5l2-2" strokeLinecap="round"/></svg>,
   gh: (p) => <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" {...p}><path d="M8 .2a8 8 0 0 0-2.5 15.6c.4.07.5-.2.5-.4v-1.5c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.06-.5.06-.5.8.06 1.2.8 1.2.8.7 1.2 1.9.9 2.4.7.07-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.08-.2-.4-1 .08-2.1 0 0 .7-.2 2.2.8a7.6 7.6 0 0 1 4 0C11 3 11.8 3.2 11.8 3.2c.5 1.1.2 2 .1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.8-3.7 4 .3.3.6.8.6 1.6v2.3c0 .2.1.5.5.4A8 8 0 0 0 8 .2z"/></svg>,
+  star: (p) => <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" {...p}><path d="M8 1l2 4.6 5 .4-3.8 3.3 1.2 4.8L8 11.5l-4.4 2.6 1.2-4.8L1 6l5-.4z"/></svg>,
+  fork: (p) => <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="1.3" {...p}><circle cx="4" cy="3" r="1.5"/><circle cx="12" cy="3" r="1.5"/><circle cx="8" cy="13" r="1.5"/><path d="M4 4.5v2A2.5 2.5 0 0 0 6.5 9h3A2.5 2.5 0 0 0 12 6.5v-2M8 9v2.5"/></svg>,
+  issue: (p) => <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="1.3" {...p}><circle cx="8" cy="8" r="6"/><path d="M8 4.5v4"/><circle cx="8" cy="11.5" r=".7" fill="currentColor"/></svg>,
   cal: (p) => <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.3" {...p}><rect x="2" y="3" width="12" height="11"/><path d="M2 6h12M5 1v3M11 1v3" strokeLinecap="round"/></svg>,
   doc: (p) => <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.3" {...p}><path d="M3 1h7l3 3v11H3z"/><path d="M10 1v3h3M6 7h5M6 10h5M6 13h3" strokeLinecap="round"/></svg>,
   chat: (p) => <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.3" {...p}><path d="M2 3h12v8H6l-3 3V3z" strokeLinejoin="round"/></svg>,
@@ -362,6 +365,73 @@ function VerdictPill({ v }) {
   return <span className={`verdict-pill ${cls}`}><span className="w-1 h-1 rounded-full inline-block" style={{background:'currentColor'}} />{label}</span>;
 }
 
+function CountUp({ value }) {
+  const [display, setDisplay] = useState(0);
+  useEffect(() => {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setDisplay(value);
+      return undefined;
+    }
+    const startedAt = performance.now();
+    let frame;
+    const tick = (now) => {
+      const progress = Math.min(1, (now - startedAt) / 700);
+      setDisplay(Math.round(value * (1 - Math.pow(1 - progress, 3))));
+      if (progress < 1) frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [value]);
+  return <>{display.toLocaleString()}</>;
+}
+
+function RepoSparkline({ data }) {
+  const width = 118;
+  const height = 20;
+  const min = Math.min(...data);
+  const range = Math.max(1, Math.max(...data) - min);
+  const points = data.map((value, index) => {
+    const x = index * width / Math.max(1, data.length - 1);
+    const y = height - 1 - ((value - min) / range) * (height - 3);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+  return (
+    <svg className="repo-sparkline" width="118" height="20" viewBox="0 0 118 20" role="img" aria-label="Stars 趋势">
+      <polyline points={points} fill="none" stroke="currentColor" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round" pathLength="1" />
+      <circle cx="117" cy={points.split(' ').at(-1).split(',')[1]} r="1.8" fill="var(--cinnabar)" />
+    </svg>
+  );
+}
+
+function RepoMetrics({ metrics, compact = false }) {
+  if (!metrics) return null;
+  const items = [
+    { label: 'STARS', value: metrics.stars, Icon: Icon.star },
+    { label: 'FORKS', value: metrics.forks, Icon: Icon.fork },
+    { label: 'ISSUES', value: metrics.issues, Icon: Icon.issue },
+  ];
+  return (
+    <div className={`repo-viz ${compact ? 'repo-viz--compact' : ''}`}>
+      <div className="repo-viz__trend">
+        <div className="repo-viz__trend-head"><span>STARS · TREND</span><span>12P</span></div>
+        <RepoSparkline data={metrics.starTrend} />
+      </div>
+      <div className="repo-viz__metrics">
+        {items.map(({ label, value, Icon: MetricIcon }) => (
+          <div className="repo-metric" key={label}>
+            <MetricIcon />
+            <span className="repo-metric__value"><CountUp value={value} /></span>
+            <span className="repo-metric__label">{label}</span>
+          </div>
+        ))}
+      </div>
+      <div className="repo-heat" aria-label="活跃度">
+        {metrics.activityHeat.map((level, index) => <span key={index} data-l={level} style={{animationDelay: `${index * 70}ms`}} />)}
+      </div>
+    </div>
+  );
+}
+
 function MiniCard({ e, onOpen }) {
   const ctx = useTaste();
   const t = ctx && ctx.taste[e.id] || {};
@@ -377,6 +447,7 @@ function MiniCard({ e, onOpen }) {
       <div className="flex flex-wrap gap-1 mb-2">
         {e.tags.map(t => <span key={t} className="tag-pill">#{t}</span>)}
       </div>
+      <RepoMetrics metrics={e.repoMetrics} compact />
       <div className="flex items-center gap-3">
         <div className="flex-1">
           <div className="flex justify-between items-baseline mb-0.5">
@@ -1485,6 +1556,8 @@ function ReaderSheet({ entry, onClose }) {
           <div className="flex items-center gap-2 mt-3 ff-mono text-[10.5px]" style={{color: 'var(--ink-mute)'}}>
             <Icon.gh /> {entry.author} · {entry.source} · <span className="ulink">{entry.url}</span>
           </div>
+
+          <RepoMetrics metrics={entry.repoMetrics} />
 
           <div className="grid grid-cols-4 gap-3 mt-4 py-3 border-y" style={{borderColor: 'var(--rule)'}}>
             {['fit','novelty','cost','risk'].map(k => (

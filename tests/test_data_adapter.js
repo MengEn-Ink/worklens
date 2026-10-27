@@ -69,7 +69,7 @@ function makeDiscoveries() {
   return {
     generated_at: '2026-10-25T00:00:00+00:00',
     candidates: [
-      { full_name: 'org/trial-skill', html_url: 'u', description: 'd', language: 'Python', stargazers_count: 5, license: { spdx_id: 'MIT' }, archived: false, pushed_at: '2026-10-01T00:00:00Z', topics: [], collected_at: '2026-10-25T00:00:00Z', scores: { fit: 80, risk: 20 }, notes: ['n'], category: 'skill' },
+      { full_name: 'org/trial-skill', html_url: 'u', description: 'd', language: 'Python', stars: 5, forks: 2, open_issues: 1, stargazers_count: 5, license: { spdx_id: 'MIT' }, archived: false, pushed_at: '2026-10-01T00:00:00Z', topics: [], collected_at: '2026-10-25T00:00:00Z', scores: { fit: 80, risk: 20 }, notes: ['n'], category: 'skill' },
       { full_name: 'zzz/other', html_url: 'u', description: 'd2', language: 'Go', stargazers_count: 1, license: { spdx_id: 'MIT' }, archived: false, pushed_at: '2026-10-01T00:00:00Z', topics: [], collected_at: '2026-10-25T00:00:00Z', scores: { fit: 10, risk: 90 }, notes: ['n'], category: 'infra' },
     ],
   };
@@ -159,6 +159,20 @@ test('真实数据：队列与 discoveries 全链路不崩溃且计数一致', (
     const mobile = current.buildMobileData({}, discoveries, queue);
     assert.equal(mobile.skillQueue.total, queue.queue.length);
   }
+});
+
+test('移动端仓库卡片指标由 discoveries 真实字段驱动并保持趋势契约', () => {
+  const adapter = require(MOBILE_ADAPTER_PATH);
+  const discoveries = makeDiscoveries();
+  const mobile = adapter.buildMobileData({}, discoveries, makeQueue());
+  const metrics = mobile.entries[0].repoMetrics;
+  assert.equal(metrics.stars, discoveries.candidates[0].stars);
+  assert.equal(metrics.forks, discoveries.candidates[0].forks);
+  assert.equal(metrics.issues, discoveries.candidates[0].open_issues);
+  assert.equal(metrics.starTrend.length, 12);
+  assert.equal(metrics.starTrend.at(-1), metrics.stars);
+  assert.equal(metrics.activityHeat.length, 7);
+  assert.ok(metrics.activityHeat.every(value => value >= 1 && value <= 5));
 });
 
 /* Issue #5：移动端 Idea 项目化「袖珍只读摘要」契约（仅锚定移动端 v2 适配器）。 */

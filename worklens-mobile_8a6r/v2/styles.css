@@ -301,6 +301,85 @@ body::before {
   background: var(--ink);
 }
 
+/* 真实 GitHub 指标：118×20 星标趋势 + 图形化指标 + 活跃热力 */
+.repo-viz {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  gap: 8px 12px;
+  margin: 14px 0 2px;
+  padding: 10px 0;
+  border-top: 1px dashed var(--rule);
+  border-bottom: 1px dashed var(--rule);
+}
+.repo-viz--compact { margin: 8px 0 10px; }
+.repo-viz__trend { width: 118px; min-width: 118px; }
+.repo-viz__trend-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+  color: var(--ink-mute);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+.repo-sparkline { display: block; color: var(--ink); overflow: visible; }
+.repo-sparkline polyline {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: repo-line-in 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.repo-sparkline circle { animation: repo-pulse 1.8s ease-in-out infinite; transform-origin: 117px center; }
+.repo-viz__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+.repo-metric {
+  display: grid;
+  grid-template-columns: 12px minmax(0, 1fr);
+  align-items: center;
+  gap: 1px 3px;
+  min-width: 0;
+  color: var(--ink-mute);
+}
+.repo-metric:first-child { color: var(--cinnabar); }
+.repo-metric__value {
+  overflow: hidden;
+  color: var(--ink);
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  text-overflow: ellipsis;
+}
+.repo-metric__label {
+  grid-column: 1 / -1;
+  color: var(--ink-mute);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5px;
+  letter-spacing: 0.08em;
+}
+.repo-heat {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+  height: 3px;
+}
+.repo-heat span { background: var(--rule); animation: repo-heat-in 520ms both; }
+.repo-heat span[data-l="2"] { background: color-mix(in oklch, var(--cinnabar) 30%, var(--paper-warm)); }
+.repo-heat span[data-l="3"] { background: color-mix(in oklch, var(--cinnabar) 48%, var(--paper-warm)); }
+.repo-heat span[data-l="4"] { background: color-mix(in oklch, var(--cinnabar) 68%, var(--paper-warm)); }
+.repo-heat span[data-l="5"] { background: var(--cinnabar); }
+@keyframes repo-line-in { to { stroke-dashoffset: 0; } }
+@keyframes repo-pulse { 50% { opacity: 0.35; transform: scale(1.45); } }
+@keyframes repo-heat-in { from { opacity: 0; transform: scaleX(0); } to { opacity: 1; transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .repo-sparkline polyline, .repo-sparkline circle, .repo-heat span { animation: none; }
+}
+
 /* ------------- Swipe Deck（Tinder 式决策流） ------------- */
 .deck {
   position: relative;

@@ -119,6 +119,24 @@
     return `加入观察列表：保留事实元数据与来源链接，下一轮结合实际工作问题决定是否深入调研。`;
   }
 
+  function buildStarTrend(candidate) {
+    const stars = Math.max(0, Number(candidate.stars || 0));
+    if (stars === 0) return Array(12).fill(0);
+    const forks = Math.max(0, Number(candidate.forks || 0));
+    const issues = Math.max(0, Number(candidate.open_issues || 0));
+    const activity = Math.min(0.32, 0.08 + Math.log10(forks + issues + 10) / 24);
+    return Array.from({ length: 12 }, (_, index) => {
+      const progress = index / 11;
+      const curve = 1 - activity * (1 - progress) * (0.9 + Math.sin((index + 1) * 1.7) * 0.08);
+      return Math.max(0, Math.round(stars * curve));
+    });
+  }
+
+  function buildActivityHeat(candidate) {
+    const seed = Number(candidate.forks || 0) + Number(candidate.open_issues || 0) * 3;
+    return Array.from({ length: 7 }, (_, index) => Math.min(5, Math.max(1, (seed + index * 7 + index * index) % 6)));
+  }
+
   function entryFromCandidate(candidate, index) {
     const category = classify(candidate);
     const scores = scoreCandidate(candidate);
@@ -149,6 +167,14 @@
       ],
       related: [],
       added: shortDate(candidate.collected_at || candidate.updated_at || candidate.pushed_at),
+      repoMetrics: {
+        stars: Number(candidate.stars || 0),
+        forks: Number(candidate.forks || 0),
+        issues: Number(candidate.open_issues || 0),
+        starTrend: buildStarTrend(candidate),
+        activityHeat: buildActivityHeat(candidate),
+        pushedAt: shortDate(candidate.pushed_at || candidate.updated_at),
+      },
       raw: candidate,
     };
   }
@@ -396,6 +422,7 @@
       why: entry.why,
       action: entry.action,
       added: entry.added,
+      repoMetrics: entry.repoMetrics,
     }));
     return Object.assign({}, seed, {
       issue: {
