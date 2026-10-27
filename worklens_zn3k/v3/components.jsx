@@ -188,31 +188,41 @@
     const taste = entry._taste !== undefined ? entry._taste : entry.taste;
     return (
       <article
-        className={`lib-card p-4 relative ${active ? 'lib-card--active' : ''} ${taste ? 'lib-card--tasted lib-card--tasted-' + taste : ''}`}
+        className={`lib-card lib-card--project p-4 relative ${active ? 'lib-card--active' : ''} ${taste ? 'lib-card--tasted lib-card--tasted-' + taste : ''}`}
         onClick={() => onOpen && onOpen(entry.id)}
       >
-        <div className="flex items-center justify-between mb-2.5">
+        <div
+          className={`lib-card__project-cover lib-card__project-cover--${entry.brandBand || 'ink'}`}
+          style={entry.ogImageUrl ? {backgroundImage: `linear-gradient(90deg, rgba(20,18,16,.82), rgba(20,18,16,.3)), url("${entry.ogImageUrl}")`} : undefined}
+          aria-hidden="true"
+        />
+        <div className="flex items-center justify-between mb-2.5 relative">
           <span className="dewey-chip">{entry.dewey}</span>
           <VerdictPill v={entry.verdict} />
         </div>
 
-        <h3 className="ff-serif text-[20px] leading-[1.1] font-semibold mb-1" style={{letterSpacing: '-0.015em'}}>
-          {entry.title}
-        </h3>
-        <p className="ff-serif italic text-[13px] mb-3" style={{color: 'var(--ink-mute)'}}>
+        <div className="lib-card__project-identity">
+          {entry.avatarUrl ? <img className="lib-card__project-avatar" src={entry.avatarUrl} alt="" loading="lazy" /> : null}
+          <div className="min-w-0">
+            <h3 className="ff-serif text-[20px] leading-[1.1] font-semibold mb-1" style={{letterSpacing: '-0.015em'}}>
+              {entry.title}
+            </h3>
+            <div className="flex items-center gap-2 ff-mono text-[10.5px]" style={{color: 'var(--ink-mute)'}}>
+              <I.gh /> <span>{entry.author}</span>
+              <span className="opacity-50">·</span>
+              <span>{entry.source}</span>
+            </div>
+          </div>
+        </div>
+
+        <p className="lib-card__project-summary">
           {entry.sub}
         </p>
 
-        <div className="flex items-center gap-2 mb-3 ff-mono text-[10.5px]" style={{color: 'var(--ink-mute)'}}>
-          <I.gh /> <span>{entry.author}</span>
-          <span className="opacity-50">·</span>
-          <span>{entry.source}</span>
-          <span className="opacity-50">·</span>
-          <span>{entry.added}</span>
-        </div>
-
-        <div className="flex flex-wrap gap-1 mb-3">
-          {entry.tags.map((t) => <span key={t} className="tag-pill">#{t}</span>)}
+        <div className="lib-card__project-signals">
+          {entry.language && <span className="project-signal project-signal--language"><i />{entry.language}</span>}
+          {entry.tags.slice(0, 3).map((t) => <span key={t} className="project-signal">#{t}</span>)}
+          <span className="project-signal project-signal--activity">● {entry.activityLabel || '活跃度未知'}</span>
         </div>
 
         <hr className="hr-thin my-2.5" />
