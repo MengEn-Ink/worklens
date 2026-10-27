@@ -88,6 +88,38 @@ body::before {
   border-color: var(--ink);
   box-shadow: 0 0 0 1px var(--ink), var(--sh-md);
 }
+.lib-card--project { overflow: hidden; padding-top: 70px !important; }
+.lib-card__project-cover {
+  position: absolute; inset: 0 0 auto; height: 58px;
+  background-color: var(--ink); background-position: center; background-size: cover;
+  opacity: .94;
+}
+.lib-card__project-cover--forest { background-color: var(--forest); }
+.lib-card__project-cover--ocean { background-color: var(--ocean); }
+.lib-card__project-cover--mustard { background-color: var(--mustard); }
+.lib-card__project-identity {
+  display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: center;
+  gap: 11px; margin: 10px 0 12px;
+}
+.lib-card__project-avatar {
+  width: 44px; height: 44px; object-fit: cover; background: var(--paper-cool);
+  border: 2px solid var(--parchment); outline: 1px solid var(--rule);
+}
+.lib-card__project-summary {
+  margin: 0 0 12px; color: var(--ink-soft);
+  font: 500 13px/1.75 'Inter', 'PingFang SC', sans-serif;
+}
+.lib-card__project-signals { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+.project-signal {
+  padding: 3px 7px; border: 1px solid var(--rule); border-radius: 999px;
+  color: var(--ink-mute); background: rgba(250,245,234,.76);
+  font: 500 9px/1.2 'JetBrains Mono', monospace;
+}
+.project-signal--language i {
+  display: inline-block; width: 6px; height: 6px; margin-right: 5px;
+  border-radius: 50%; background: var(--ocean);
+}
+.project-signal--activity { border-color: rgba(31,58,45,.35); color: var(--forest); background: #e6edda; }
 /* 被标记过喜好的卡片留下微妙视觉痕迹 */
 .lib-card--tasted-love::before,
 .lib-card--tasted-like::before {
