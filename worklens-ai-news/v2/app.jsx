@@ -29,7 +29,14 @@ function safeOpen(item) {
   return true;
 }
 function App() {
-  const [model, setModel] = useState({ items: [], sources: [], categories: [], status: 'loading', generatedAt: '' });
+  const [model, setModel] = useState({
+    items: [],
+    sources: [],
+    categories: [],
+    status: 'loading',
+    generatedAt: '',
+    sourceStatus: { ok: true, cached: false, degraded: false, sources: [] },
+  });
   const [loadError, setLoadError] = useState('');
   const [query, setQuery] = useState('');
   const [source, setSource] = useState('all');
@@ -46,7 +53,19 @@ function App() {
     fetch('../data/ai-news.json', { cache: 'no-cache' })
       .then(response => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
       .then(payload => { if (active) setModel(WL_AI_NEWS_ADAPTER.normalize(payload)); })
-      .catch(() => { if (active) { setLoadError('资讯暂时未能加载，请稍后重试。'); setModel({ items: [], sources: [], categories: [], status: 'error', generatedAt: '' }); } });
+      .catch(() => {
+        if (active) {
+          setLoadError('资讯暂时未能加载，请稍后重试。');
+          setModel({
+            items: [],
+            sources: [],
+            categories: [],
+            status: 'error',
+            generatedAt: '',
+            sourceStatus: { ok: false, cached: false, degraded: true, sources: [] },
+          });
+        }
+      });
     return () => { active = false; };
   }, []);
 
@@ -71,7 +90,13 @@ function App() {
   const toggleExpanded = id => setExpanded(previous => {
     const next = new Set(previous); next.has(id) ? next.delete(id) : next.add(id); return next;
   });
-  const generated = model.generatedAt ? new Date(model.generatedAt).toLocaleString('zh-CN', { month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : '等待更新';
+  const generated = model.generatedAt
+    ? new Date(model.generatedAt).toLocaleString('zh-CN', { month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+    : '等待更新';
+  const generatedUtc = model.generatedAt
+    ? new Date(model.generatedAt).toISOString().slice(0, 16).replace('T', ' ')
+    : '';
+  const showBadges = model.sourceStatus && (model.sourceStatus.cached || model.sourceStatus.degraded);
   const hero = filtered[0];
   const rest = filtered.slice(1);
   const panelItems = panel === 'favs' ? model.items.filter(item => favs.has(item.id)) : model.items.filter(item => reads.has(item.id));
@@ -80,7 +105,16 @@ function App() {
     <header className="masthead">
       <a className="brand" href="../" aria-label="返回 WorkLens 首页"><b>W</b><span>AI 工作情报</span><small>· WorkLens Dispatch</small></a>
       <nav className="top-nav" aria-label="WorkLens 导航"><a href="../">首页</a><a href="../desktop/">知识雷达</a><a href="../atelier/">Atelier</a><strong>AI 情报</strong></nav>
-      <div className="updated">更新于 {generated}</div>
+      <div className="updated">
+        更新于 {generated}
+        {generatedUtc ? <span className="utc">· UTC {generatedUtc}</span> : null}
+        {showBadges ? (
+          <span className="data-badges">
+            {model.sourceStatus.cached ? <span className="data-badge cached" title="部分来源复用了缓存（可能未请求到最新数据）">缓存</span> : null}
+            {model.sourceStatus.degraded ? <span className="data-badge degraded" title="部分来源采集失败或降级回退">降级</span> : null}
+          </span>
+        ) : null}
+      </div>
     </header>
 
     <div className="toolbar">

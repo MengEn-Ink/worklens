@@ -9,6 +9,7 @@
   const KIND_LABELS = { signal: '工作信号', trend: '产业趋势', tool: '工具 & 产品', research: '学术 & 研究', risk: '风险 & 合规' };
 
   function list(value) { return Array.isArray(value) ? value : []; }
+  function safeObject(value) { return value && typeof value === 'object' && !Array.isArray(value) ? value : {}; }
   function text(value, fallback) { return typeof value === 'string' && value.trim() ? value.trim() : fallback; }
   function decode(value) {
     const map = { '&#8217;': '’', '&#8220;': '“', '&#8221;': '”', '&#038;': '&', '&amp;': '&', '&quot;': '"' };
@@ -92,10 +93,41 @@
     const sourceNames = Array.from(new Set(items.flatMap(item => item.sourceList.length ? item.sourceList : [item.source])));
     const sources = sourceNames.map(name => ({ name, count: items.filter(item => item.sourceList.includes(name) || item.source === name).length }));
     const categories = Object.entries(KIND_LABELS).map(([id, name]) => ({ id, name, count: items.filter(item => item.kind === id).length }));
+
     const generated = new Date(payload && payload.generated_at);
+    const generatedAt = Number.isNaN(generated.getTime()) ? '' : generated.toISOString();
+
+    const rawStatus = safeObject(payload && payload.source_status);
+    const statusSources = Object.entries(rawStatus).map(([name, info]) => {
+      const obj = safeObject(info);
+      const ok = obj.ok !== false;
+      const cached = obj.cached === true;
+      const degraded = obj.degraded === true || obj.ok === false;
+      return {
+        name: text(name, '未知源'),
+        ok,
+        cached,
+        degraded,
+        count: Number(obj.count || 0),
+        fetchedAt: text(obj.fetched_at, ''),
+        checkedAt: text(obj.checked_at, ''),
+        error: text(obj.error, ''),
+      };
+    });
+
+    const sourceStatus = {
+      ok: statusSources.length ? statusSources.every((s) => s.ok) : true,
+      cached: statusSources.some((s) => s.cached),
+      degraded: statusSources.some((s) => s.degraded),
+      sources: statusSources,
+    };
+
     return {
-      items, sources, categories,
-      generatedAt: Number.isNaN(generated.getTime()) ? '' : generated.toISOString(),
+      items,
+      sources,
+      categories,
+      generatedAt,
+      sourceStatus,
       status: items.length ? 'ready' : 'empty',
     };
   }

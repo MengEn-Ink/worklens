@@ -14,6 +14,8 @@ test('AI 情报适配器读取真实数据并生成筛选维度', () => {
   assert.ok(vm.sources.length > 0);
   assert.equal(vm.categories.reduce((sum, item) => sum + item.count, 0), vm.items.length);
   assert.ok(vm.items.every(item => item.id && item.title && item.source && item.lens));
+  assert.ok(vm.sourceStatus);
+  assert.ok(Array.isArray(vm.sourceStatus.sources));
 });
 
 test('AI 情报适配器对空数据和缺字段安全降级', () => {
@@ -53,4 +55,21 @@ test('公开源字段兼容并按 P0/P1/P2/无级与时间排序', () => {
   assert.deepEqual(vm.items[2].sourceList, ['official', 'mirror']);
   assert.equal(vm.sources.find(source => source.name === 'official').count, 2);
   assert.deepEqual(vm.items[2].tags, ['sdk']);
+});
+
+test('AI 情报适配器映射 source_status 缓存与降级标识', () => {
+  const payload = {
+    generated_at: '2026-10-27T12:00:00Z',
+    items: [],
+    source_status: {
+      'upstream-a': { ok: true, cached: true, count: 1, fetched_at: '2026-10-27T11:00:00Z' },
+      'upstream-b': { ok: false, degraded: true, cached: true, count: 2, error: 'network error', fetched_at: '2026-10-27T10:00:00Z' },
+    },
+  };
+  const vm = adapter.normalize(payload);
+  assert.equal(vm.status, 'empty');
+  assert.equal(vm.sourceStatus.cached, true);
+  assert.equal(vm.sourceStatus.degraded, true);
+  assert.equal(vm.sourceStatus.ok, false);
+  assert.equal(vm.sourceStatus.sources.length, 2);
 });
