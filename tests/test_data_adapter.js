@@ -266,6 +266,36 @@ test('真实数据：移动端 Idea 袖珍模型与 data/idea-pipeline.json 一�
 });
 
 
+test('PC 编辑精选为 GitHub 候选补充中文速览、图标、标签与活跃度信号', () => {
+  const adapter = require(path.join(ROOT, 'worklens_zn3k', 'v3', 'data-adapter.js'));
+  const pc = adapter.buildPcData({}, {
+    generated_at: '2026-10-27T00:00:00Z',
+    candidates: [{
+      full_name: 'org/project',
+      html_url: 'https://github.com/org/project',
+      description: 'Build useful developer tools.',
+      language: 'TypeScript',
+      stars: 1200,
+      forks: 100,
+      open_issues: 8,
+      license: 'MIT',
+      archived: false,
+      pushed_at: new Date().toISOString(),
+      topics: ['developer-tools', 'productivity'],
+      source: 'test',
+    }],
+  }, null);
+  const entry = pc.ENTRIES[0];
+  assert.match(entry.sub, /GitHub 项目|开源项目|界面组件|信息来源/);
+  assert.match(entry.sub, /建议/);
+  assert.equal(entry.avatarUrl, 'https://github.com/org.png?size=96');
+  assert.equal(entry.ogImageUrl, 'https://opengraph.githubassets.com/worklens/org/project');
+  assert.equal(entry.language, 'TypeScript');
+  assert.deepEqual(entry.tags, ['developer-tools', 'productivity']);
+  assert.equal(entry.activityLabel, '近 7 天活跃');
+  assert.ok(['forest', 'ocean', 'mustard', 'ink'].includes(entry.brandBand));
+});
+
 test('PC 编辑重点映射只依赖既有 verdict 与 scores 字段', () => {
   const adapter = require(path.join(ROOT, 'worklens_zn3k', 'v3', 'data-adapter.js'));
   assert.equal(adapter.editorialPriority({ verdict: 'adopt', scores: { fit: 99, novelty: 20 } }), 'P0');
