@@ -105,7 +105,7 @@ function App() {
     <header className="masthead">
       <a className="brand" href="../" aria-label="返回 WorkLens 首页"><b>W</b><span>AI 工作情报</span><small>· WorkLens Dispatch</small></a>
       <div className="updated">
-        更新于 {generated}
+        数据更新时间 {generated}
         {generatedUtc ? <span className="utc">· UTC {generatedUtc}</span> : null}
         {showBadges ? (
           <span className="data-badges">

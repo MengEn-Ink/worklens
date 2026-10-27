@@ -24,3 +24,11 @@ test('桌面导航与评分说明优先使用简体中文', () => {
   assert.ok(!app.includes("sub: 'This Issue'"));
   assert.ok(!views.includes('REVIEW QUEUE'));
 });
+
+test('AI 情报页显式展示数据新鲜度与缓存降级徽标文案', () => {
+  const app = read('worklens-ai-news/v2/app.jsx');
+  assert.ok(app.includes('数据更新时间'), 'AI 情报页应展示数据更新时间文案');
+  assert.ok(app.includes('UTC {generatedUtc}'), 'AI 情报页应展示 UTC 更新时间');
+  assert.ok(app.includes('>缓存<'), 'AI 情报页应保留缓存徽标文案');
+  assert.ok(app.includes('>降级<'), 'AI 情报页应保留降级徽标文案');
+});
