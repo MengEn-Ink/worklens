@@ -124,7 +124,11 @@ def copy_shared(root: Path, site_dir: Path) -> list[str]:
         raise FileNotFoundError("共享页面壳目录不存在：shared")
     destination = site_dir / "shared"
     shutil.copytree(source, destination)
-    return [str(path.relative_to(site_dir)) for path in sorted(destination.iterdir()) if path.is_file()]
+    return [
+        str(path.relative_to(site_dir))
+        for path in sorted(destination.rglob("*"))
+        if path.is_file()
+    ]
 
 
 def assemble(root: Path = ROOT, site_dir: Path | None = None) -> dict:
