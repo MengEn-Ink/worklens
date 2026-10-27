@@ -16,7 +16,7 @@
 - 本地质量门禁（main `b1ad4d8`）：`python3 -m unittest discover -s tests -p 'test_*.py'` → Ran 54 tests OK；仓库内 7 个非测试 JS（`shared/worklens-shell.js`、3 个 data-adapter、`v3/data.js`、`v4/atelier-model.js`、`v4/review-model.js`）`node --check` 全过；`node --test tests/*.js` → tests 28 / pass 28 / fail 0。
 - 契约与安全：`core_circle.py` → `1 people, 2 projects`；`skill_review.py validate`、`idea_pipeline.py validate`（`1 ideas`）、`recommendation_review.py validate`（`1 reviews`）、`security_scan.py` 均 exit 0；`build_pages.py` 输出 `routes=/, /desktop/, /atelier/, /ai-news/; skipped=none`。
 - 线上 Pages：`pages-manifest.json`、根路径 `/`、`/desktop/`、`/ai-news/` 及 `data/ai-news.json`、`data/core-circle.json`、`data/discoveries.json`、`data/idea-pipeline.json` 均 HTTP 200；首轮 `/atelier/`、`data/recommendation-reviews.json`、`data/skill-review-queue.json` 因代理超时，重试后均 HTTP 200，判定为代理瞬态非站点故障。
-- 本轮为纯文档提交：PR 分支只等待「质量与安全门禁」全绿即合入；线上 Pages 已在巡检中确认健康，不重复做无价值部署验证；合入后以关闭关键词自动收口 Issue #35。
+- 本轮为纯文档提交：PR #36 已合入 main，main 上「质量与安全门禁」run #40431065055 与「发布 GitHub Pages」run #40431065056 均 success；Issue 评论 / 关闭接口仍返回 403，因此使用默认分支关闭关键词提交收口 Issue #35。
 
 **下一轮唯一最高优先级**
 
