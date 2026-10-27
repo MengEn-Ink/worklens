@@ -264,3 +264,13 @@ test('真实数据：移动端 Idea 袖珍模型与 data/idea-pipeline.json 一�
   assert.equal(pocket.readOnly, true);
   if (pocket.researchCount > 0) assert.equal(pocket.nextStage, 'plan');
 });
+
+
+test('PC 编辑重点映射只依赖既有 verdict 与 scores 字段', () => {
+  const adapter = require(path.join(ROOT, 'worklens_zn3k', 'v3', 'data-adapter.js'));
+  assert.equal(adapter.editorialPriority({ verdict: 'adopt', scores: { fit: 99, novelty: 20 } }), 'P0');
+  assert.equal(adapter.editorialPriority({ verdict: 'adopt', scores: { fit: 92, novelty: 20 } }), 'P1');
+  assert.equal(adapter.editorialPriority({ verdict: 'evaluate', scores: { fit: 76, novelty: 20 } }), 'P2');
+  assert.equal(adapter.editorialPriority({ verdict: 'evaluate', scores: { fit: 60, novelty: 81 } }), 'P2');
+  assert.equal(adapter.editorialPriority({ verdict: 'shelf', scores: { fit: 60, novelty: 20 } }), null);
+});
