@@ -16,7 +16,8 @@
 
   const header = document.createElement('header')
   header.className = 'wl-shell'
-  header.innerHTML = `<div class="wl-shell__inner"><a class="wl-shell__brand" href="${base.href}"><span class="wl-shell__brand-mark"></span>WorkLens <small>FIELD NOTES</small></a><nav class="wl-shell__nav" aria-label="主要导航">${pages.map(page => link(page, 'wl-shell__link')).join('')}</nav><span class="wl-shell__edition">E-Ink Workspace</span><button class="wl-shell__menu" type="button" aria-label="打开总目菜单" aria-expanded="false" aria-controls="wl-drawer">☰</button></div>`
+  const logo = new URL('shared/assets/worklens-mark.svg', base)
+  header.innerHTML = `<div class="wl-shell__inner"><a class="wl-shell__brand" href="${base.href}"><img class="wl-shell__brand-mark" src="${logo.href}" alt="" width="32" height="32" />WorkLens <small>FIELD NOTES</small></a><nav class="wl-shell__nav" aria-label="主要导航">${pages.map(page => link(page, 'wl-shell__link')).join('')}</nav><span class="wl-shell__edition">E-Ink Workspace</span><button class="wl-shell__menu" type="button" aria-label="打开总目菜单" aria-expanded="false" aria-controls="wl-drawer">☰</button></div>`
 
   const bottom = document.createElement('nav')
   bottom.className = 'wl-bottom'

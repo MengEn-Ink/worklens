@@ -24,6 +24,7 @@ class BuildPagesTest(unittest.TestCase):
         self.write("worklens-ai-news/v2/app.jsx", "ai-news-app")
         self.write("shared/worklens-shell.css", ":root { --wl-paper: #f3ede1; }")
         self.write("shared/worklens-shell.js", "const routes = ['desktop/', 'atelier/', 'ai-news/']")
+        self.write("shared/assets/favicon.svg", '<svg xmlns="http://www.w3.org/2000/svg"/>')
         self.write("data/discoveries.json", '{"candidates": []}')
         self.write("data/skill-review-queue.json", '{"queue": []}')
         self.write("data/idea-pipeline.json", '{"ideas": []}')
@@ -50,6 +51,7 @@ class BuildPagesTest(unittest.TestCase):
         self.assertIn('data-current="ai-news"', (site / "ai-news/index.html").read_text(encoding="utf-8"))
         self.assertTrue((site / "shared/worklens-shell.css").is_file())
         self.assertTrue((site / "shared/worklens-shell.js").is_file())
+        self.assertTrue((site / "shared/assets/favicon.svg").is_file())
         self.assertEqual((site / "data/discoveries.json").read_text(encoding="utf-8"), '{"candidates": []}')
         self.assertEqual((site / "data/idea-pipeline.json").read_text(encoding="utf-8"), '{"ideas": []}')
         self.assertTrue((site / ".nojekyll").exists())
@@ -79,7 +81,11 @@ class BuildPagesTest(unittest.TestCase):
             self.assertIn(route, shell)
         self.assertEqual(
             manifest["shared_files"],
-            ["shared/worklens-shell.css", "shared/worklens-shell.js"],
+            [
+                "shared/assets/favicon.svg",
+                "shared/worklens-shell.css",
+                "shared/worklens-shell.js",
+            ],
         )
 
     def test_shared_shell_accessibility_and_source_preview_contracts(self):
@@ -91,7 +97,7 @@ class BuildPagesTest(unittest.TestCase):
         self.assertIn(".wl-bottom { position: fixed;", css)
         self.assertIn("display: grid; grid-template-columns: repeat(4, 1fr);", css)
         self.assertNotIn("!important", css)
-        for marker in ("wl-shell-layer", "layer.append(header, bottom, scrim)", "previousFocus", "event.key !== 'Tab'", "event.key === 'Escape'", "aria-hidden"):
+        for marker in ("wl-shell-layer", "layer.append(header, bottom, scrim)", "shared/assets/worklens-mark.svg", "previousFocus", "event.key !== 'Tab'", "event.key === 'Escape'", "aria-hidden"):
             self.assertIn(marker, script)
         mobile_css = (repository / "worklens-mobile_8a6r/v2/styles.css").read_text(encoding="utf-8")
         self.assertIn("body.wl-shell-mounted #root", mobile_css)
