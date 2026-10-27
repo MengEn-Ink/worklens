@@ -24,8 +24,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/collect_github.py
-      - name: 采集 AI 资讯
-        run: python3 scripts/collect_ai_news.py
+      - name: 采集并合并公开资讯源
+        run: python3 scripts/collect_public_feeds.py
       - name: 同步 Skill 待审队列（只入队，不流转、不安装）
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

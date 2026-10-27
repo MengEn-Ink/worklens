@@ -36,13 +36,19 @@
 
 ## ai-news.json
 
-由 `scripts/collect_ai_news.py` 采集，汇聚外部 AI 资讯源。
+由 `scripts/collect_public_feeds.py` 采集，在原有 AI 聚合数据契约上合并公开资讯源；旧的 `scripts/collect_ai_news.py` 仍可单独兼容历史任务。
 
 契约要点：
-- 数据源：默认为 `ai-news-aggregator` 提供的公开 JSON。
-- 过滤：按 `config/sources.json` 中的关键词精选。
-- 隐私：仅保留标题、URL、发布时间和来源站点名；不保存摘要或正文。
-- 排序：按发布时间倒序排列，条数受 `max_items` 限制。
+
+- 数据源：GitHub Releases Atom、Hacker News API、Lobsters RSS、OpenAI / Google Developers / AWS ML / NVIDIA / Cloudflare AI / GitHub Blog / Stack Overflow Blog 官方 RSS，以及 OSV.dev querybatch、CISA KEV 静态 JSON和原有 AI News Aggregator。
+- 基础字段继续为 `title/url/published_at/site_name/source`；`source` 在 schema v2 为来源名数组。扩展字段为 `category`、`priority`（`P0 | P1 | P2`）、`tags`、`metadata`、`also_seen_in`。旧的字符串 `source` 与缺失扩展字段仍受页面适配器支持。
+- 排序固定为 `P0 > P1 > P2 > 无级`，同级按 `published_at` 倒序。安全公告为 P0、官方发布与工程源通常为 P1、社区及聚合信号为 P2。
+- 去重先规范化 canonical URL（移除 fragment、`utm_*` 等跟踪参数），再按 GitHub `repository + release/tag`、OSV/GHSA/CVE aliases 做实体合并；合并后保留最高优先级、全部 `source`、次要来源 `also_seen_in` 及标签。
+- OSV 只查询 `config/sources.json` 的小型 ecosystem/package 监控清单；CISA KEV 只输出命中配置关键词或最近新增的条目；HN 先取 top/new ID，再以有限并发读取详情并执行关键词与最低热度过滤。RSS/Atom 使用 stdlib XML，不抓 HTML、不调用 LLM、不引入第三方依赖。
+- 每个 source 在 `source_cache` 独立保存条目、真实 `fetched_at`、`checked_at`、配置指纹及可用的 ETag/Last-Modified。24 小时 TTL 内直接复用；配置变化会使旧缓存失效；过期后使用条件请求；429、5xx 和网络瞬断有限指数退避。单源失败仅将对应 `source_status` 标为 `degraded/cached` 并回退该源缓存，不延长成功抓取时间，也不阻断其他源。
+- `public_feeds.source_max_items` 为所有来源提供严格全局单源上限，单源 `max_items` 只能进一步收紧，实际值取两者最小值；合并结果再由顶层 `public_feeds.max_items` 截断。当前 OSV/CISA 分别最多保留 30/40 条，避免安全源淹没页面。
+- 成功响应若解析为空且该源存在非空旧缓存，默认标记 `degraded/cached` 并保留旧数据，防止上游异常空响应清库；只有来源显式配置 `allow_empty: true` 才接受清空。合法空列表也会记录在逐源缓存中，并可在 TTL 内正常复用。
+- `source_cache` 是采集器的逐源降级存储，页面只消费顶层 `items`；采集器合并时会保留现有 `ai-news.json` 中无法归属到逐源缓存的历史聚合条目。
 
 ## 页面适配层
 
