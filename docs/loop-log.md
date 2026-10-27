@@ -9,7 +9,7 @@
 - 同步公开仓库 `main` 到最新 `7eb3f60`；开始时 GitHub Issues `Open 0`，因此按 Loop 约定创建 Issue #44 承载本轮验收标准。
 - Actions 巡检通过：`in_progress=0 / queued=0`；最新 `质量与安全门禁`（ci.yml）run #40457042551 success，`发布 GitHub Pages`（pages.yml）run #40457042473 success；每日采集 `collect.yml` 最新 run #40278520603（2026-10-26 06:13 UTC）success。
 - Pages 线上入口与公开数据均健康：`/`、`/desktop/`、`/atelier/`、`/ai-news/`、`pages-manifest.json` 以及 6 个公开数据文件本轮均 HTTP 200。
-- 本轮为纯文档收口：仅更新本日志记录证据，并通过提交信息 `Closes #44` 关闭 Issue；不重复做无价值的 Pages 变更或新功能开发。
+- 本轮为纯文档收口：仅更新本日志记录证据；由于 token 对 Issue 关闭接口返回 403，本轮采用 PR 描述里的关闭关键词收口，合入默认分支后由 GitHub 自动关闭 Issue #44；不重复做无价值的 Pages 变更或新功能开发。
 
 **验证证据**
 
