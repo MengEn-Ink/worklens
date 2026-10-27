@@ -138,6 +138,27 @@ function App() {
     return () => window.removeEventListener('keydown', h);
   }, []);
 
+  /* 下次合刊：每周三 09:00（本地时区），每 30 秒刷新倒计时文本。 */
+  const computeNextIssue = useCallback(() => {
+    const now = new Date();
+    const target = new Date(now);
+    target.setHours(9, 0, 0, 0);
+    const delta = (3 - target.getDay() + 7) % 7;
+    target.setDate(target.getDate() + delta);
+    if (target <= now) target.setDate(target.getDate() + 7);
+    const totalMin = Math.max(0, Math.floor((target - now) / 60000));
+    const d = Math.floor(totalMin / 1440);
+    const h = Math.floor((totalMin % 1440) / 60);
+    const m = totalMin % 60;
+    const pad = (n) => String(n).padStart(2, '0');
+    return d > 0 ? `${d} 天 ${pad(h)}:${pad(m)}` : `${pad(h)}:${pad(m)}`;
+  }, []);
+  const [nextIssueCountdown, setNextIssueCountdown] = useState(computeNextIssue);
+  useEffect(() => {
+    const timer = setInterval(() => setNextIssueCountdown(computeNextIssue()), 30000);
+    return () => clearInterval(timer);
+  }, [computeNextIssue]);
+
   const Current = useMemo(() => {
     void dataRevision;
     switch (route.view) {
@@ -239,7 +260,7 @@ function App() {
             Agent 在线 · Taste 账本 {Object.values(taste).filter(t => t.taste === 'love' || t.taste === 'like').length} 条
           </div>
           <div className="ff-serif italic text-[11.5px] mt-0.5" style={{color: 'var(--ink-mute)'}}>
-            下次合刊 03:47:12
+            下次合刊 {nextIssueCountdown}
           </div>
         </div>
       </aside>
@@ -254,7 +275,7 @@ function App() {
             <div className="grid grid-cols-3 gap-10 mt-6 ff-serif text-[12.5px]" style={{color: 'var(--ink-mute)'}}>
               <div>
                 <div className="ff-mono text-[9.5px] uppercase tracking-widest mb-1" style={{color: 'var(--ink)'}}>编辑部</div>
-                WorkLens 是为单一读者私人出版的季刊；由其研究 Agent 策展编辑。
+                WorkLens 是为单一读者私人出版的周刊；由其研究 Agent 策展编辑。
                 字体选用 Fraunces、Inter、JetBrains Mono。印在没有纸的地方。
               </div>
               <div>

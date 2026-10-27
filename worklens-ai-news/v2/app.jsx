@@ -104,7 +104,6 @@ function App() {
   return <div className="app-shell">
     <header className="masthead">
       <a className="brand" href="../" aria-label="返回 WorkLens 首页"><b>W</b><span>AI 工作情报</span><small>· WorkLens Dispatch</small></a>
-      <nav className="top-nav" aria-label="WorkLens 导航"><a href="../">首页</a><a href="../desktop/">知识雷达</a><a href="../atelier/">Atelier</a><strong>AI 情报</strong></nav>
       <div className="updated">
         更新于 {generated}
         {generatedUtc ? <span className="utc">· UTC {generatedUtc}</span> : null}
@@ -121,6 +120,7 @@ function App() {
       <label className="search"><Icon name="search"/><span className="sr-only">搜索资讯</span><input value={query} onChange={event => setQuery(event.target.value)} placeholder="检索标题、来源或工作信号…" /></label>
       <select aria-label="时间范围" value={range} onChange={event => setRange(event.target.value)}>{Object.entries(RANGE_LABELS).map(([id, label]) => <option value={id} key={id}>{label}</option>)}</select>
       <button className="mobile-filter" onClick={() => setPanel('filters')}>筛选</button>
+      <div className="ai-news-mobile-quick" aria-label="AI 情报快捷导航"><button onClick={() => setPanel('favs')}>收藏 <b>{favs.size || 0}</b></button><button onClick={() => setPanel('history')}>历史 <b>{reads.size || 0}</b></button><button onClick={() => setPanel('filters')}>来源 / 分类</button></div>
     </div>
 
     <main className="layout">
