@@ -16,6 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "config" / "sources.json"
 OUTPUT_PATH = ROOT / "data" / "discoveries.json"
 API = "https://api.github.com"
+RETRY_ATTEMPTS = 3
+RETRY_BACKOFF_SECONDS = 1.0
 
 
 def utcnow() -> dt.datetime:
@@ -39,6 +41,26 @@ def is_fresh(value: object, max_stale_hours: float, now: dt.datetime) -> bool:
     return timestamp is not None and now - timestamp <= dt.timedelta(hours=max_stale_hours)
 
 
+def is_retryable(error: BaseException) -> bool:
+    return (
+        not isinstance(error, urllib.error.HTTPError)
+        or error.code == 429
+        or 500 <= error.code < 600
+    )
+
+
+def with_retry(operation, attempts: int | None = None, backoff: float | None = None):
+    attempts = max(1, attempts if attempts is not None else RETRY_ATTEMPTS)
+    backoff = RETRY_BACKOFF_SECONDS if backoff is None else backoff
+    for attempt in range(attempts):
+        try:
+            return operation()
+        except (urllib.error.URLError, urllib.error.HTTPError) as error:
+            if attempt + 1 >= attempts or not is_retryable(error):
+                raise
+            time.sleep(backoff * (2**attempt))
+
+
 def request_json(path: str):
     headers = {
         "Accept": "application/vnd.github+json",
@@ -48,14 +70,18 @@ def request_json(path: str):
     token = os.getenv("GITHUB_TOKEN")
     if token:
         headers["Authorization"] = f"Bearer {token}"
-    try:
-        return open_json(path, headers)
-    except urllib.error.HTTPError as error:
-        if error.code != 401 or "Authorization" not in headers:
-            raise
-        public_headers = dict(headers)
-        public_headers.pop("Authorization", None)
-        return open_json(path, public_headers)
+
+    def request():
+        try:
+            return open_json(path, headers)
+        except urllib.error.HTTPError as error:
+            if error.code != 401 or "Authorization" not in headers:
+                raise
+            public_headers = dict(headers)
+            public_headers.pop("Authorization", None)
+            return open_json(path, public_headers)
+
+    return with_retry(request)
 
 
 def open_json(path: str, headers: dict[str, str]):
@@ -155,8 +181,12 @@ def load_feed(feed: dict) -> object:
         if parsed.scheme != "https" or not parsed.netloc:
             raise ValueError("curated feed URL must be public HTTPS")
         request = urllib.request.Request(location, headers={"Accept": "application/json", "User-Agent": "worklens-collector/1.0"})
-        with urllib.request.urlopen(request, timeout=30) as response:
-            return json.load(response)
+
+        def fetch():
+            with urllib.request.urlopen(request, timeout=30) as response:
+                return json.load(response)
+
+        return with_retry(fetch)
     path = Path(location)
     if not path.is_absolute():
         path = ROOT / path
@@ -168,11 +198,15 @@ def cached_source_items(previous: dict, source: str) -> list[dict]:
 
 
 def main() -> int:
+    global RETRY_ATTEMPTS, RETRY_BACKOFF_SECONDS
+
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     policy = config.get("policy", {})
     max_results = int(policy.get("max_candidates_per_query", 10))
     feed_ttl = float(policy.get("curated_feed_max_stale_hours", 24))
     discovery_ttl = float(policy.get("discovery_cache_hours", 24))
+    RETRY_ATTEMPTS = int(policy.get("retry_attempts", 3))
+    RETRY_BACKOFF_SECONDS = float(policy.get("retry_backoff_seconds", 1))
     now = utcnow()
     candidates: dict[str, dict] = {}
     status: dict[str, dict] = {}
@@ -183,6 +217,42 @@ def main() -> int:
         previous = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         pass
+
+    def restore_source(source: str) -> list[dict]:
+        cached = cached_source_items(previous, source)
+        for repo in cached:
+            merge_candidate(candidates, normalize(repo, source, collected_at=repo.get("collected_at")), source)
+        return cached
+
+    def reuse_discovery(source: str) -> bool:
+        previous_status = previous.get("source_status", {}).get(source, {})
+        cached = cached_source_items(previous, source)
+        source_was_collected = bool(cached) or previous_status.get("ok") is True
+        fetched_at = previous_status.get("fetched_at") or previous.get("generated_at")
+        if not source_was_collected or not is_fresh(fetched_at, discovery_ttl, now):
+            return False
+        restore_source(source)
+        status[source] = {
+            "ok": True,
+            "count": len(cached),
+            "cached": True,
+            "fetched_at": fetched_at,
+        }
+        return True
+
+    def degrade_source(source: str, error: Exception) -> None:
+        cached = restore_source(source)
+        previous_status = previous.get("source_status", {}).get(source, {})
+        fetched_at = previous_status.get("fetched_at") or previous.get("generated_at")
+        status[source] = {
+            "ok": False,
+            "degraded": True,
+            "cached": bool(cached),
+            "count": len(cached),
+            "error": str(error),
+        }
+        if fetched_at:
+            status[source]["fetched_at"] = fetched_at
 
     for index, feed in enumerate(config.get("curated_feeds", [])):
         if not feed.get("enabled", True):
@@ -203,7 +273,7 @@ def main() -> int:
                     feed_fresh.add(item["full_name"])
             status[source] = {"ok": True, "count": imported, "fresh": fresh, "generated_at": generated_at}
         except (OSError, ValueError, TypeError, KeyError, json.JSONDecodeError, urllib.error.URLError, urllib.error.HTTPError) as error:
-            status[source] = {"ok": False, "error": str(error)}
+            degrade_source(source, error)
 
     for full_name in config.get("repositories", []):
         source = f"repository:{full_name}"
@@ -211,30 +281,15 @@ def main() -> int:
             merge_candidate(candidates, normalize({"full_name": full_name}, source), source)
             status[source] = {"ok": True, "cached": True, "cache_source": candidates[full_name]["source"]}
             continue
+        if reuse_discovery(source):
+            continue
         try:
             repo = request_json(f"/repos/{full_name}")
             merge_candidate(candidates, normalize(repo, source), source, replace_facts=True)
             status[source] = {"ok": True, "fetched_at": now.isoformat()}
         except (urllib.error.URLError, urllib.error.HTTPError, KeyError) as error:
-            status[source] = {"ok": False, "error": str(error)}
+            degrade_source(source, error)
         time.sleep(0.2)
-
-    def reuse_discovery(source: str) -> bool:
-        previous_status = previous.get("source_status", {}).get(source, {})
-        cached = cached_source_items(previous, source)
-        source_was_collected = bool(cached) or previous_status.get("ok") is True
-        fetched_at = previous_status.get("fetched_at") or previous.get("generated_at")
-        if not source_was_collected or not is_fresh(fetched_at, discovery_ttl, now):
-            return False
-        for repo in cached:
-            merge_candidate(candidates, normalize(repo, source, collected_at=repo.get("collected_at")), source)
-        status[source] = {
-            "ok": True,
-            "count": len(cached),
-            "cached": True,
-            "fetched_at": fetched_at,
-        }
-        return True
 
     for profile in config.get("github_profiles", []):
         username = profile["username"]
@@ -255,7 +310,7 @@ def main() -> int:
                     merge_candidate(candidates, normalize(repo, source, f"{username}:{relationship}"), source)
                 status[source] = {"ok": True, "count": len(public_repos), "fetched_at": now.isoformat()}
             except (urllib.error.URLError, urllib.error.HTTPError, KeyError, TypeError) as error:
-                status[source] = {"ok": False, "error": str(error)}
+                degrade_source(source, error)
             time.sleep(0.2)
 
     for query in config.get("github_queries", []):
@@ -269,7 +324,7 @@ def main() -> int:
                 merge_candidate(candidates, normalize(repo, source), source)
             status[source] = {"ok": True, "count": len(payload.get("items", [])), "fetched_at": now.isoformat()}
         except (urllib.error.URLError, urllib.error.HTTPError, KeyError) as error:
-            status[source] = {"ok": False, "error": str(error)}
+            degrade_source(source, error)
         time.sleep(0.2)
 
     output = {

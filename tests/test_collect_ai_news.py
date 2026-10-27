@@ -3,6 +3,7 @@ import importlib.util
 import json
 import tempfile
 import unittest
+import urllib.error
 from pathlib import Path
 from unittest import mock
 
@@ -124,6 +125,71 @@ class AiNewsCollectorTest(unittest.TestCase):
         output = json.loads(self.output_path.read_text(encoding="utf-8"))
         self.assertEqual(output["items"][0]["title"], "Old news")
         self.assertFalse(output["source_status"]["fail"]["ok"])
+    def test_fresh_cache_skips_request(self):
+        now = collect_ai_news.utcnow().isoformat()
+        self.config_path.write_text(json.dumps({"ai_news": {"enabled": True, "url": "news", "cache_hours": 24}}), encoding="utf-8")
+        self.output_path.write_text(json.dumps({"generated_at": now, "items": [{"title": "cached", "url": "old"}]}), encoding="utf-8")
+        with mock.patch.object(collect_ai_news, "fetch_json") as fetch:
+            self.assertEqual(collect_ai_news.main(), 0)
+        fetch.assert_not_called()
+        output = json.loads(self.output_path.read_text(encoding="utf-8"))
+        self.assertTrue(output["source_status"]["news"]["cached"])
+
+    def test_failure_return_codes_depend_on_cache(self):
+        self.config_path.write_text(json.dumps({"ai_news": {"enabled": True, "url": "fail", "cache_hours": 0}}), encoding="utf-8")
+        with mock.patch.object(collect_ai_news, "fetch_json", side_effect=Exception("offline")):
+            self.assertEqual(collect_ai_news.main(), 1)
+        self.output_path.write_text(json.dumps({"generated_at": "2020-01-01T00:00:00Z", "items": [{"title": "old", "url": "old"}]}), encoding="utf-8")
+        with mock.patch.object(collect_ai_news, "fetch_json", side_effect=Exception("offline")):
+            self.assertEqual(collect_ai_news.main(), 0)
+        output = json.loads(self.output_path.read_text(encoding="utf-8"))
+        self.assertTrue(output["source_status"]["fail"]["degraded"])
+
+    def test_repeated_failures_do_not_extend_ttl_or_look_fresh(self):
+        fetched_at = dt.datetime(2026, 10, 25, tzinfo=dt.timezone.utc)
+        first_failure = fetched_at + dt.timedelta(hours=25)
+        second_failure = first_failure + dt.timedelta(hours=1)
+        self.config_path.write_text(json.dumps({
+            "ai_news": {"enabled": True, "url": "fail", "cache_hours": 24}
+        }), encoding="utf-8")
+        self.output_path.write_text(json.dumps({
+            "generated_at": fetched_at.isoformat(),
+            "items": [{"title": "old", "url": "old"}],
+            "source_status": {"fail": {"ok": True, "fetched_at": fetched_at.isoformat()}},
+        }), encoding="utf-8")
+
+        fetch = mock.Mock(side_effect=Exception("offline"))
+        with mock.patch.object(collect_ai_news, "fetch_json", fetch), mock.patch.object(
+            collect_ai_news, "utcnow", return_value=first_failure
+        ):
+            self.assertEqual(collect_ai_news.main(), 0)
+        first = json.loads(self.output_path.read_text(encoding="utf-8"))
+        self.assertEqual(first["source_status"]["fail"]["fetched_at"], fetched_at.isoformat())
+        self.assertFalse(first["source_status"]["fail"]["ok"])
+
+        with mock.patch.object(collect_ai_news, "fetch_json", fetch), mock.patch.object(
+            collect_ai_news, "utcnow", return_value=second_failure
+        ):
+            self.assertEqual(collect_ai_news.main(), 0)
+        second = json.loads(self.output_path.read_text(encoding="utf-8"))
+        self.assertEqual(fetch.call_count, 2)
+        self.assertEqual(second["source_status"]["fail"]["fetched_at"], fetched_at.isoformat())
+        self.assertFalse(second["source_status"]["fail"]["ok"])
+        self.assertTrue(second["source_status"]["fail"]["degraded"])
+
+    def test_fetch_retry_policy(self):
+        response = mock.MagicMock()
+        response.__enter__.return_value = response
+        response.__exit__.return_value = False
+        with mock.patch.object(collect_ai_news.json, "load", return_value={"items": []}), mock.patch.object(
+            collect_ai_news.urllib.request, "urlopen", side_effect=[urllib.error.HTTPError("url", 429, "limited", {}, None), response]
+        ) as urlopen, mock.patch.object(collect_ai_news.time, "sleep"):
+            self.assertEqual(collect_ai_news.fetch_json("https://example.com", attempts=3, backoff_seconds=0), {"items": []})
+            self.assertEqual(urlopen.call_count, 2)
+        with mock.patch.object(collect_ai_news.urllib.request, "urlopen", side_effect=urllib.error.HTTPError("url", 404, "missing", {}, None)) as urlopen:
+            with self.assertRaises(urllib.error.HTTPError):
+                collect_ai_news.fetch_json("https://example.com", attempts=3, backoff_seconds=0)
+            urlopen.assert_called_once()
 
 
 if __name__ == "__main__":

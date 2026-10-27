@@ -171,6 +171,63 @@ class CollectorTest(unittest.TestCase):
         self.assertEqual(len(output["candidates"]), 1)
         self.assertEqual(output["candidates"][0]["source"], "curated:array")
         self.assertIn("search:test", output["candidates"][0]["also_seen_in"])
+    def test_repository_uses_discovery_ttl(self):
+        now = collect_github.utcnow().isoformat()
+        source = "repository:owner/repo"
+        previous = {"generated_at": now, "candidates": [collect_github.normalize(repo(), source, collected_at=now)], "source_status": {source: {"ok": True, "fetched_at": now}}}
+        output, request = self.run_collector({"repositories": ["owner/repo"], "policy": {"discovery_cache_hours": 24}}, previous=previous)
+        request.assert_not_called()
+        self.assertTrue(output["source_status"][source]["cached"])
+
+    def test_failed_feed_restores_cache_but_repository_fallback_still_runs(self):
+        source = "curated:missing"
+        previous = {"generated_at": collect_github.utcnow().isoformat(), "candidates": [collect_github.normalize(repo(stars=3), source)]}
+        request = mock.Mock(return_value=repo(stars=8))
+        output, _ = self.run_collector({"curated_feeds": [{"name": "missing", "path": "missing.json"}], "repositories": ["owner/repo"]}, request=request, previous=previous)
+        request.assert_called_once_with("/repos/owner/repo")
+        self.assertTrue(output["source_status"][source]["degraded"])
+        self.assertEqual(output["candidates"][0]["stars"], 8)
+
+    def test_failed_refresh_preserves_stale_search_candidates(self):
+        source = "search:test"
+        old = "2020-01-01T00:00:00+00:00"
+        previous = {"generated_at": old, "candidates": [collect_github.normalize(repo("old/result"), source, collected_at=old)]}
+        request = mock.Mock(side_effect=urllib.error.URLError("offline"))
+        output, _ = self.run_collector({"github_queries": ["test"], "policy": {"discovery_cache_hours": 1}}, request=request, previous=previous)
+        self.assertEqual(output["candidates"][0]["full_name"], "old/result")
+        self.assertTrue(output["source_status"][source]["degraded"])
+
+    def test_failed_repository_and_profile_refresh_preserve_stale_candidates(self):
+        old = "2020-01-01T00:00:00+00:00"
+        repository_source = "repository:owner/repo"
+        profile_source = "profile:user:owned"
+        previous = {
+            "generated_at": old,
+            "candidates": [
+                collect_github.normalize(repo(), repository_source, collected_at=old),
+                collect_github.normalize(repo("user/old"), profile_source, "user:owned", old),
+            ],
+        }
+        request = mock.Mock(side_effect=urllib.error.URLError("offline"))
+        output, _ = self.run_collector({
+            "repositories": ["owner/repo"],
+            "github_profiles": [{"username": "user", "owned_public_repositories": True}],
+            "policy": {"discovery_cache_hours": 1},
+        }, request=request, previous=previous)
+        names = {item["full_name"] for item in output["candidates"]}
+        self.assertEqual(names, {"owner/repo", "user/old"})
+        self.assertTrue(output["source_status"][repository_source]["degraded"])
+        self.assertTrue(output["source_status"][profile_source]["degraded"])
+
+    def test_retry_retries_5xx_but_not_other_4xx(self):
+        server_error = urllib.error.HTTPError("url", 503, "busy", {}, None)
+        operation = mock.Mock(side_effect=[server_error, {"ok": True}])
+        self.assertEqual(collect_github.with_retry(operation, attempts=3, backoff=0), {"ok": True})
+        self.assertEqual(operation.call_count, 2)
+        bad_request = mock.Mock(side_effect=urllib.error.HTTPError("url", 400, "bad", {}, None))
+        with self.assertRaises(urllib.error.HTTPError):
+            collect_github.with_retry(bad_request, attempts=3, backoff=0)
+        bad_request.assert_called_once()
 
 
 if __name__ == "__main__":
