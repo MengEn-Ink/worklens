@@ -81,4 +81,4 @@ Pages 产物可用 `python3 scripts/build_pages.py` 生成；当 `worklens_zn3k/
 - [x] 移动端 Skill 待审袖珍对比器：按通过率、状态和待补证项做只读比较，不自动安装
 - [x] WorkLens PC v4（Pages Atelier）工程化接入当前 main
 - [x] Idea → 调研 → 方案 → 脚手架 → 验收的项目化流程最小数据契约、Atelier 只读接入与移动端袖珍摘要
-- [ ] 工作画像与推荐闭环完善
+- [x] 工作画像与推荐闭环完善
