@@ -649,7 +649,11 @@ body::before {
   .mwb-stats b { display: block; font: 700 26px/1 'Fraunces', serif; }
   .mwb-stats span { display: block; margin-top: 5px; font: 9px/1.3 'JetBrains Mono', monospace; color: var(--ink-mute); text-transform: uppercase; overflow-wrap: anywhere; }
   .mwb-primary { padding: 11px 14px; border: 1px solid var(--ink); background: var(--ink); color: var(--parchment); font-weight: 700; }
-  .mwb-card { position: relative; margin: 14px 0; padding: 15px; background: var(--parchment); border: 1px solid var(--rule); overflow: hidden; }
+  .mwb-card { position: relative; margin: 14px 0; padding: 57px 15px 15px; background: var(--parchment); border: 1px solid var(--rule); overflow: hidden; }
+  .mwb-card__band { position: absolute; inset: 0 0 auto; height: 52px; background-color: var(--ink); background-position: center; background-size: cover; opacity: .92; }
+  .mwb-card__band--forest { background-color: var(--forest); }
+  .mwb-card__band--ocean { background-color: var(--ocean); }
+  .mwb-card__band--mustard { background-color: var(--mustard); }
   .mwb-card--p0 { border-left: 3px solid var(--cinnabar); }
   .mwb-card--p0::before { content: ''; position: absolute; inset: 0 auto 0 7px; width: 1px; background: rgba(184,64,42,.35); }
   .mwb-card--p2 { background: #f5ead0; }
@@ -657,10 +661,16 @@ body::before {
   .mwb-priority { flex: 0 0 auto; padding: 3px 6px; border: 1px solid currentColor; font: 700 9px/1 'JetBrains Mono', monospace; letter-spacing: .05em; }
   .mwb-priority--p0, .mwb-priority--p1 { color: var(--cinnabar); }
   .mwb-priority--p2 { color: #8a5b10; background: #f0dfb9; }
-  .mwb-card h2 { margin: 9px 0 4px; font: 700 20px/1.25 'Fraunces', 'PingFang SC', serif; overflow-wrap: anywhere; }
+  .mwb-card h2 { margin: 0 0 4px; font: 700 20px/1.25 'Fraunces', 'PingFang SC', serif; overflow-wrap: anywhere; }
+  .mwb-card__identity { display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: center; gap: 11px; margin-top: 10px; }
+  .mwb-card__avatar { width: 44px; height: 44px; border: 2px solid var(--parchment); outline: 1px solid var(--rule); background: var(--paper-cool); object-fit: cover; }
   .mwb-title-mark { display: inline-block; width: 7px; height: 7px; margin: 0 7px 2px 0; background: var(--cinnabar); transform: rotate(45deg); }
-  .mwb-card__sub, .mwb-card__why { font-size: 13px; line-height: 1.75; color: var(--ink-soft); }
-  .mwb-card__why { padding-top: 10px; border-top: 1px dashed var(--rule); }
+  .mwb-card__summary { margin: 11px 0 9px; font: 500 13px/1.75 'Inter', 'PingFang SC', sans-serif; color: var(--ink-soft); }
+  .mwb-card__signals { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+  .mwb-signal { padding: 3px 7px; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink-mute); background: rgba(250,245,234,.7); font: 500 9px/1.2 'JetBrains Mono', monospace; }
+  .mwb-signal--language i { display: inline-block; width: 6px; height: 6px; margin-right: 5px; border-radius: 50%; background: var(--ocean); }
+  .mwb-signal--activity { border-color: rgba(31,58,45,.35); color: var(--forest); background: #e6edda; }
+  .mwb-card__why { font-size: 12px; line-height: 1.7; color: var(--ink-mute); padding-top: 9px; border-top: 1px dashed var(--rule); }
   .mwb-repo-link { display: inline-block; max-width: 100%; margin: 5px 0 10px; color: var(--ocean); font: 600 12px/1.5 'JetBrains Mono', monospace; overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: 3px; }
   .mwb-repo-link:focus-visible, .mwb-tabs button:focus-visible, .mwb-ribbon button:focus-visible, .mwb-locator:focus-visible, .mwb-index-row:focus-visible { outline: 3px solid var(--cinnabar); outline-offset: 2px; }
   .mwb-source { display: block; margin: 5px 0 10px; color: var(--ink-mute); font: 11px/1.4 'JetBrains Mono', monospace; }

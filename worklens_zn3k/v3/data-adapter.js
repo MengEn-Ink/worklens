@@ -116,6 +116,30 @@
     return null;
   }
 
+  function localizedSummary(candidate, category) {
+    const subject = candidate.full_name || '这个项目';
+    if (category.kind === 'Skill') {
+      return `${subject} 是一个用于扩展 Agent 专项能力的开源项目，可作为自动化工作流的候选工具。引入前建议先检查脚本权限、依赖与许可证，再进行限范围试用。`;
+    }
+    if (category.kind === 'UI 组件') {
+      return `${subject} 聚焦界面组件与设计方法，可用于参考交互模式、视觉规范和工程实现。建议先研读组件结构与可访问性，再决定是否引入依赖。`;
+    }
+    if (category.kind === '信息源') {
+      return `${subject} 可作为持续跟踪行业动态与开源项目的信息来源。建议先观察更新频率和内容质量，连续命中有效信息后再加入正式采集。`;
+    }
+    return `${subject} 是一个值得关注的公开 GitHub 项目，可结合当前工作问题判断它的实际价值。建议先阅读 README 与近期变更，再决定深入调研或加入工具链。`;
+  }
+
+  function activityLabel(candidate) {
+    const value = candidate.pushed_at || candidate.updated_at;
+    if (!value) return '活跃度未知';
+    const days = Math.max(0, Math.floor((Date.now() - new Date(value).getTime()) / 86400000));
+    if (days <= 7) return '近 7 天活跃';
+    if (days <= 30) return '近 30 天有更新';
+    if (days <= 90) return '近 90 天有更新';
+    return '近期更新较少';
+  }
+
   function actionText(candidate, category, scores) {
     if (category.kind === 'Skill') {
       return `进入 Skill 待审队列：先做 README、脚本权限、依赖与许可证检查，通过后再考虑试用；当前 Fit ${scores.fit}。`;
@@ -142,8 +166,14 @@
       dewey: `${category.code}.${String(index + 1).padStart(3, '0')}`,
       shelf: category.shelf,
       title: repoName(candidate.full_name),
-      sub: candidate.description || `${candidate.full_name} 的公开 GitHub 仓库元数据`,
+      sub: localizedSummary(candidate, category),
+      originalDescription: candidate.description || '',
       author: ownerName(candidate.full_name),
+      avatarUrl: `https://github.com/${ownerName(candidate.full_name)}.png?size=96`,
+      ogImageUrl: `https://opengraph.githubassets.com/worklens/${candidate.full_name}`,
+      language: candidate.language || '',
+      activityLabel: activityLabel(candidate),
+      brandBand: category.kind === 'Skill' ? 'forest' : category.kind === 'UI 组件' ? 'ocean' : category.kind === '信息源' ? 'mustard' : 'ink',
       source: 'GitHub API',
       url: candidate.html_url || `https://github.com/${candidate.full_name}`,
       kind: category.kind,

@@ -55,12 +55,28 @@
 
   function EntryCard({ entry }) {
     const priority = priorityOf(entry)
+    const tags = (entry.tags || []).slice(0, 3)
     return (
       <article id={`mwb-entry-${encodeURIComponent(entry.id)}`} className={`mwb-card ${priority ? `mwb-card--${priority.toLowerCase()}` : ''}`} data-entry-id={entry.id} data-priority={priority || undefined}>
+        <div
+          className={`mwb-card__band mwb-card__band--${entry.brandBand || 'ink'}`}
+          style={entry.ogImageUrl ? { backgroundImage: `linear-gradient(90deg, rgba(20,18,16,.78), rgba(20,18,16,.28)), url("${entry.ogImageUrl}")` } : undefined}
+          aria-hidden="true"
+        />
         <div className="mwb-card__meta"><span>{entry.dewey}</span><Priority level={priority} /></div>
-        <h2>{priority === 'P1' && <span className="mwb-title-mark" aria-hidden="true" />}{entry.title}</h2>
-        <p className="mwb-card__sub">{entry.sub}</p>
-        <RepoLink entry={entry} />
+        <div className="mwb-card__identity">
+          {entry.avatarUrl ? <img className="mwb-card__avatar" src={entry.avatarUrl} alt="" loading="lazy" /> : null}
+          <div>
+            <h2>{priority === 'P1' && <span className="mwb-title-mark" aria-hidden="true" />}{entry.title}</h2>
+            <RepoLink entry={entry} />
+          </div>
+        </div>
+        <p className="mwb-card__summary">{entry.sub}</p>
+        <div className="mwb-card__signals">
+          {entry.language ? <span className="mwb-signal mwb-signal--language"><i />{entry.language}</span> : null}
+          {tags.map(tag => <span className="mwb-signal" key={tag}>{tag}</span>)}
+          <span className="mwb-signal mwb-signal--activity">● {entry.activityLabel || '活跃度未知'}</span>
+        </div>
         <p className="mwb-card__why">{entry.why}</p>
         <div className="mwb-card__facts"><span>FIT {entry.scores?.fit || '—'}</span><span>{entry.verdict === 'adopt' ? '建议引入' : entry.verdict === 'evaluate' ? '需要评测' : '进入书架'}</span></div>
       </article>
