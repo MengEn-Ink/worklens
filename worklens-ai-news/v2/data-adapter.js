@@ -49,25 +49,48 @@
       { name: '近期行动价值', value: Math.max(30, base - 28) },
     ];
   }
+  const PRIORITY_ORDER = { P0: 0, P1: 1, P2: 2 };
+  const CATEGORY_KIND = { security: 'risk', release: 'tool', engineering: 'tool', community: 'trend' };
+
+  function normalizeSources(raw) {
+    const configured = raw && raw.source;
+    const values = Array.isArray(configured) && configured.length ? configured : [raw && (raw.site_name || configured)];
+    return Array.from(new Set(values.map(value => text(value, '')).filter(Boolean)));
+  }
+  function priority(value) { return Object.prototype.hasOwnProperty.call(PRIORITY_ORDER, value) ? value : ''; }
+  function sortItems(items) {
+    return items.sort((left, right) => {
+      const priorityDelta = (PRIORITY_ORDER[left.priority] ?? 3) - (PRIORITY_ORDER[right.priority] ?? 3);
+      if (priorityDelta) return priorityDelta;
+      const leftTime = new Date(left.publishedAt).getTime();
+      const rightTime = new Date(right.publishedAt).getTime();
+      return (Number.isNaN(rightTime) ? -Infinity : rightTime) - (Number.isNaN(leftTime) ? -Infinity : leftTime);
+    });
+  }
   function normalize(payload, options) {
     const now = options && options.now ? new Date(options.now).getTime() : Date.now();
     const rawItems = list(payload && payload.items);
-    const items = rawItems.map((raw, index) => {
+    const items = sortItems(rawItems.map((raw, index) => {
       const title = decode(raw && raw.title) || '未命名资讯';
-      const source = text(raw && (raw.site_name || raw.source), '未知来源');
+      const sourceList = normalizeSources(raw);
+      const source = sourceList[0] || '未知来源';
       const publishedAt = text(raw && raw.published_at, '');
-      const kind = classify(title);
+      const category = text(raw && raw.category, '');
+      const kind = CATEGORY_KIND[category] || classify(title);
       const item = {
         id: `ai-${index + 1}-${publishedAt.slice(0, 10) || 'unknown'}`,
-        title, source, publishedAt, kind,
+        title, source, sourceList, publishedAt, kind, category,
+        priority: priority(raw && raw.priority),
+        tags: list(raw && raw.tags).filter(tag => typeof tag === 'string'),
         url: safeUrl(raw && raw.url),
         timeLabel: relativeTime(publishedAt, now),
       };
       item.lens = lensFor(item);
       item.signals = signalsFor(item);
       return item;
-    });
-    const sources = Array.from(new Set(items.map(item => item.source))).map(name => ({ name, count: items.filter(item => item.source === name).length }));
+    }));
+    const sourceNames = Array.from(new Set(items.flatMap(item => item.sourceList.length ? item.sourceList : [item.source])));
+    const sources = sourceNames.map(name => ({ name, count: items.filter(item => item.sourceList.includes(name) || item.source === name).length }));
     const categories = Object.entries(KIND_LABELS).map(([id, name]) => ({ id, name, count: items.filter(item => item.kind === id).length }));
     const generated = new Date(payload && payload.generated_at);
     return {

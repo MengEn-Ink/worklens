@@ -7,7 +7,7 @@ WorkLens 是围绕个人日常工作持续生长的开源能力雷达：发现�
 - 中文优先的 PC 与移动端编辑型知识库原型
 - GitHub Search、Trending、RSS 与专题 Hub 的候选源框架
 - 发现 → 去重 → 工作匹配 → 收录 → 引入 → 复盘的处理管道
-- 集成实时 AI 资讯聚合，支持关键词自动精选与去重流转
+- 集成实时公开资讯：GitHub Releases、HN、Lobsters、AI 官方博客、OSV、CISA KEV 与既有 AI 聚合器统一写入 `data/ai-news.json`，支持跨源实体去重及 P0/P1/P2 优先级
 - 代码仓库、会议、飞书文档、播客文章等工作画像信号模型
 - `❤❤ / ❤ / ✕ / 订阅` 喜好反馈，持续调整画像与推荐
 - 技能工坊：将高频需求转化为 Skill 候选
@@ -38,8 +38,9 @@ WorkLens 是围绕个人日常工作持续生长的开源能力雷达：发现�
 ## 自动化节奏
 
 - 每日：采集、去重、补充仓库元数据（GitHub Actions 实际在每日 01:17 UTC 执行）。
-- GitHub discovery（含固定仓库）与 AI 资讯默认使用 24 小时 TTL；刷新失败会保留旧候选并标记 degraded/cached，避免中断后续链路。
-- 采集仅调用公开 JSON/REST 数据源，零 LLM token 消耗；瞬时网络错误、429 与 5xx 使用有限指数退避重试。
+- GitHub discovery 与每个公开资讯源默认使用独立 24 小时 TTL；支持 ETag/Last-Modified 条件请求，刷新失败会按源保留旧候选并标记 degraded/cached，避免中断后续链路。
+- 公开资讯按 P0 > P1 > P2 > 无级、同级按时间倒序展示；canonical URL、GitHub release 实体与 CVE/OSV aliases 会跨源去重并保留来源列表。
+- 采集仅调用公开 RSS/Atom/JSON/REST 数据源，不抓 HTML、不调用 LLM、零第三方 Python 依赖；瞬时网络错误、429 与 5xx 使用有限指数退避重试。
 - 每周：生成精选、学习路线和待试用队列。
 - 每月：复查已引入能力、信息源质量与画像规则。
 
