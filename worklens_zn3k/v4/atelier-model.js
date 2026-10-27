@@ -398,6 +398,77 @@
     };
   }
 
+  // ---------- Skill 正式引入账本（adoptions）----------
+
+  function normalizeAdoption(row) {
+    const history = safeList(row && row.history).map((event) => ({
+      at: shortDate(event && event.at),
+      event: (event && event.event) || '',
+      by: (event && event.by) || '',
+      note: (event && event.note) || '',
+    }));
+    const subject = splitSubject(row && row.subject);
+    return {
+      adoptionId: (row && row.adoption_id) || '',
+      skillReviewId: (row && row.skill_review_id) || '',
+      subject: (row && row.subject) || '',
+      owner: subject.owner,
+      repo: subject.repo,
+      htmlUrl: (row && row.html_url) || '',
+      decidedBy: (row && row.decided_by) || '',
+      decidedAt: shortDate(row && row.decided_at),
+      decisionReason: (row && row.decision_reason) || '',
+      trialReportUrl: (row && row.trial_report_url) || '',
+      importScope: (row && row.import_scope) || '',
+      rollbackPlan: (row && row.rollback_plan) || '',
+      revertCommand: (row && row.revert_command) || '',
+      humanAccepted: row && row.human_accepted === true,
+      history,
+      historyCount: history.length,
+    };
+  }
+
+  function buildAdoptionsBoard(doc) {
+    const policy = safeObject(doc && doc.policy);
+    const adoptions = safeList(doc && doc.adoptions).map(normalizeAdoption);
+    return {
+      available: true,
+      generatedAt: doc && doc.generated_at ? doc.generated_at : null,
+      generatedLabel: formatGenerated(doc && doc.generated_at),
+      source: (doc && doc.source) || '',
+      policy: {
+        autoInstall: policy.auto_install === true,
+        autoExecute: policy.auto_execute === true,
+        humanDecisionRequired: policy.human_decision_required !== false,
+        publicGithubOnly: policy.public_github_only !== false,
+        maxAutomationStage: policy.max_automation_stage || '',
+      },
+      totals: {
+        total: adoptions.length,
+        humanAccepted: adoptions.filter((item) => item.humanAccepted).length,
+      },
+      adoptions,
+    };
+  }
+
+  function buildEmptyAdoptionsBoard(reason) {
+    return {
+      available: false,
+      reason: reason || 'data_absent',
+      generatedLabel: '未加载',
+      source: '',
+      policy: {
+        autoInstall: false,
+        autoExecute: false,
+        humanDecisionRequired: true,
+        publicGithubOnly: true,
+        maxAutomationStage: 'candidate',
+      },
+      totals: { total: 0, humanAccepted: 0 },
+      adoptions: [],
+    };
+  }
+
   const api = {
     CHECK_LABELS,
     STATE_LABELS,
@@ -406,10 +477,12 @@
     buildCircleBoard,
     buildCircleCandidatesBoard,
     buildIdeaPipelineBoard,
+    buildAdoptionsBoard,
     buildEmptyQueueBoard,
     buildEmptyCircleBoard,
     buildEmptyCircleCandidatesBoard,
     buildEmptyIdeaPipelineBoard,
+    buildEmptyAdoptionsBoard,
     formatGenerated,
     shortDate,
     compactNumber,

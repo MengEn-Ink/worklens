@@ -96,6 +96,19 @@ Skill 候选的安全评测待审队列，由 `scripts/skill_review.py sync` 从
 - `history` 首条必须是 `worklens-bot` 的 `enqueued`；之后每个事件都必须是真人并附理由，状态回放必须与当前 `state` 一致。
 - 队列只保存公开 GitHub 元数据与评测记录，不保存 Skill 源码、原文或任何凭证。
 
+## skill-adoptions.json
+
+正式引入账本，与 `skill-review-queue.json` 一对一关联。由真人直接编辑 JSON、通过 PR 评审入账，由 `scripts/skill_adoptions.py validate` 校验契约与跨文件一致性。完整定义与字段说明见 [skill-adoptions.md](skill-adoptions.md)。
+
+契约要点：
+
+- `policy.auto_install`、`policy.auto_execute` 必须恒为 `false`；`policy.human_decision_required=true`；`policy.public_github_only=true`；`policy.max_automation_stage="candidate"`。
+- 每条 adoption 必须含 `decision_reason`、`import_scope`、`rollback_plan`、`revert_command` 四段工程描述，且 `human_accepted=true`。
+- `decided_by` 禁止 bot；`history` 首条必须是 `event=adopted` 的真人事件。
+- 账本中的 `skill_review_id` 必须指向队列中真实存在且 `state=adopted` 的条目；队列中每一个 `state=adopted` 条目必须在账本中有对应 adoption。
+- 账本为空（空数组）是合法最小值；本仓库当前队列无 `adopted` 条目，账本为空。
+- 页面适配层只做只读展示，不提供安装、执行、流转或登记入口。
+
 ## idea-pipeline.json
 
 Idea → 调研 → 方案 → 脚手架 → 验收的项目化流程记录，由 `scripts/idea_pipeline.py validate`

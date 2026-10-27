@@ -190,3 +190,101 @@ test('Atelier 候选观察池空态保持安全默认', () => {
   assert.equal(empty.policy.humanPromoteRequired, true);
   assert.equal(empty.policy.autoFollow, false);
 });
+
+test('Atelier 正式引入账本：空账本保留政策位且 adoptions 为空', () => {
+  const board = model.buildAdoptionsBoard({
+    generated_at: '2026-10-27T16:00:00+00:00',
+    source: 'test',
+    policy: {
+      auto_install: false,
+      auto_execute: false,
+      human_decision_required: true,
+      public_github_only: true,
+      max_automation_stage: 'candidate',
+    },
+    adoptions: [],
+  });
+  assert.equal(board.available, true);
+  assert.equal(board.totals.total, 0);
+  assert.equal(board.totals.humanAccepted, 0);
+  assert.equal(board.policy.autoInstall, false);
+  assert.equal(board.policy.autoExecute, false);
+  assert.equal(board.policy.humanDecisionRequired, true);
+  assert.equal(board.policy.publicGithubOnly, true);
+  assert.equal(board.policy.maxAutomationStage, 'candidate');
+  assert.deepEqual(board.adoptions, []);
+});
+
+test('Atelier 正式引入账本：有记录时聚合决定人、范围与回滚', () => {
+  const board = model.buildAdoptionsBoard({
+    generated_at: '2026-10-27T16:00:00+00:00',
+    source: 'test',
+    policy: {
+      auto_install: false,
+      auto_execute: false,
+      human_decision_required: true,
+      public_github_only: true,
+      max_automation_stage: 'candidate',
+    },
+    adoptions: [
+      {
+        adoption_id: 'ADOPT-0001',
+        skill_review_id: 'SR-0011',
+        subject: 'demo/skill',
+        html_url: 'https://github.com/demo/skill',
+        decided_by: 'MengEn-Ink',
+        decided_at: '2026-10-27T16:30:00+00:00',
+        decision_reason: '试用通过并记录结论',
+        trial_report_url: 'https://example.com/trial-report',
+        import_scope: '仅文档引用，不随 Pages 分发脚本',
+        rollback_plan: '删除本条记录即可',
+        revert_command: 'git revert <sha>',
+        human_accepted: true,
+        history: [
+          {
+            at: '2026-10-27T16:30:00+00:00',
+            event: 'adopted',
+            by: 'MengEn-Ink',
+            note: '试用通过，正式登记引入',
+          },
+        ],
+      },
+    ],
+  });
+  assert.equal(board.available, true);
+  assert.equal(board.totals.total, 1);
+  assert.equal(board.totals.humanAccepted, 1);
+  assert.equal(board.adoptions[0].owner, 'demo');
+  assert.equal(board.adoptions[0].repo, 'skill');
+  assert.equal(board.adoptions[0].humanAccepted, true);
+  assert.equal(board.adoptions[0].importScope, '仅文档引用，不随 Pages 分发脚本');
+  assert.equal(board.adoptions[0].revertCommand, 'git revert <sha>');
+  assert.equal(board.adoptions[0].historyCount, 1);
+  assert.equal(board.adoptions[0].history[0].event, 'adopted');
+});
+
+test('Atelier 正式引入账本：缺省政策位默认全部安全', () => {
+  const empty = model.buildEmptyAdoptionsBoard('data_absent');
+  assert.equal(empty.available, false);
+  assert.equal(empty.totals.total, 0);
+  assert.equal(empty.policy.autoInstall, false);
+  assert.equal(empty.policy.autoExecute, false);
+  assert.equal(empty.policy.humanDecisionRequired, true);
+  assert.equal(empty.policy.publicGithubOnly, true);
+  assert.equal(empty.policy.maxAutomationStage, 'candidate');
+  assert.deepEqual(empty.adoptions, []);
+});
+
+test('真实数据：skill-adoptions.json 与 skill-review-queue.json 保持一致（本轮无 adopted）', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const ROOT = path.resolve(__dirname, '..');
+  const doc = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'skill-adoptions.json'), 'utf8'));
+  const queue = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'skill-review-queue.json'), 'utf8'));
+  const board = model.buildAdoptionsBoard(doc);
+  assert.equal(board.available, true);
+  assert.equal(board.policy.autoInstall, false);
+  assert.equal(board.policy.autoExecute, false);
+  const adoptedInQueue = (queue.queue || []).filter((e) => e.state === 'adopted');
+  assert.equal(board.totals.total, adoptedInQueue.length);
+});

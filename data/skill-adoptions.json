@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-27T16:00:00+00:00",
+  "source": "WorkLens 人工决定的正式引入账本；关联 data/skill-review-queue.json 中 state=adopted 的条目",
+  "policy": {
+    "auto_install": false,
+    "auto_execute": false,
+    "human_decision_required": true,
+    "public_github_only": true,
+    "max_automation_stage": "candidate",
+    "notes": "本账本只记录「正式引入」这个决定本身（谁、何时、因何、以何范围、如何回滚）；不含安装动作、不含私有凭证、不改写用户环境"
+  },
+  "fields": {
+    "adoption_id": "ADOPT-#### 稳定编号，入账顺序分配，不复用",
+    "skill_review_id": "必须对应 data/skill-review-queue.json 中 state=adopted 的 id",
+    "subject": "owner/repo，必须与 queue 条目一致",
+    "html_url": "公开仓库 URL",
+    "decided_by": "真人决定者标识，禁止 bot",
+    "decided_at": "RFC3339 决定时间",
+    "decision_reason": "正式引入的书面理由（非空）",
+    "trial_report_url": "试用报告的公开或仓库内链接（queue history 片段 / Pages 快照 / Issue 等）",
+    "import_scope": "正式引入的使用范围（仅文档引用 / 本地只读执行 / 构建期静态产物 等）",
+    "rollback_plan": "逆向操作描述（删除哪条配置、停用哪个入口、回退哪个 commit）",
+    "revert_command": "可直接执行的回滚指令，便于审计复现",
+    "human_accepted": "必须为 true；缺失或 false 视为未真人确认",
+    "history": "首条必须是真人 adopted 事件；后续允许 scope_tightened / rolled_back / quarantined"
+  },
+  "adoptions": []
+}

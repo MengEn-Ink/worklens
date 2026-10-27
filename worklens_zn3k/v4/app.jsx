@@ -21,6 +21,7 @@ const DATA_SOURCES = {
   ideas: '../data/idea-pipeline.json',
   reviews: '../data/recommendation-reviews.json',
   discoveries: '../data/discoveries.json',
+  adoptions: '../data/skill-adoptions.json',
 };
 
 const PREVIEW_HINT =
@@ -593,6 +594,96 @@ function CandidatesBoard({ board }) {
   );
 }
 
+function AdoptionsBoard({ board }) {
+  if (!board.available) {
+    return (
+      <div className="empty-slot">
+        正式引入账本未加载 ({board.reason}). 账本文件：{DATA_SOURCES.adoptions}
+      </div>
+    );
+  }
+  const policyFlags = [
+    { ok: !board.policy.autoInstall, label: '不自动安装' },
+    { ok: !board.policy.autoExecute, label: '不自动执行' },
+    { ok: board.policy.humanDecisionRequired, label: '决定需真人' },
+    { ok: board.policy.publicGithubOnly, label: '仅公开 GitHub' },
+    { ok: board.policy.maxAutomationStage === 'candidate', label: '自动化止于候选' },
+  ];
+  return (
+    <div className="lib-card p-5 anim-in">
+      <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+        <div>
+          <div className="ff-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--ink-mute)] mb-1">
+            A · 正式引入记录 · Adoptions Ledger
+          </div>
+          <h3 className="ff-serif font-semibold text-xl leading-tight">
+            {board.totals.total} 条正式引入 · {board.totals.humanAccepted} 条真人确认
+          </h3>
+          <p className="ff-serif italic text-xs text-[color:var(--ink-soft)] mt-1 max-w-2xl">
+            「正式引入」只记录决定本身：谁、何时、因何引入、使用范围与回滚方案。
+            本账本不触发任何安装或执行；每条记录必须对应待审队列中 state=adopted 的条目。
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-1.5 justify-end">
+          {policyFlags.map((flag) => (
+            <span key={flag.label} className={`tag-pill ${flag.ok ? '' : 'tag-pill--filled'}`}>
+              {flag.ok ? '✓' : '!'} {flag.label}
+            </span>
+          ))}
+        </div>
+      </div>
+      {board.adoptions.length === 0 ? (
+        <div className="empty-slot">
+          当前没有正式引入记录。空账本是合法最小值 —— 没有 Skill 被安装或执行。
+          正式引入需要先在队列中流转到 adopted，再在本账本登记 decided_by / 决定理由 / 使用范围 / 回滚指令。
+        </div>
+      ) : (
+        <ul className="divide-y divide-[color:var(--rule)]">
+          {board.adoptions.map((item) => (
+            <li key={item.adoptionId} className="py-4 space-y-2">
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <span className="ff-mono text-[11px] text-[color:var(--ink-mute)]">{item.adoptionId}</span>
+                <span className="ff-mono text-[11px] text-[color:var(--ink-mute)]">←</span>
+                <span className="ff-mono text-[11px] text-[color:var(--ink-mute)]">{item.skillReviewId}</span>
+                <a
+                  href={item.htmlUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ff-serif font-semibold text-[color:var(--ink)] hover:text-[color:var(--cinnabar-ink)]"
+                >
+                  {item.owner}/<span className="font-bold">{item.repo}</span>
+                </a>
+                <span className="ml-auto ff-mono text-[10px] text-[color:var(--ink-mute)]">
+                  decided_by {item.decidedBy} · {item.decidedAt}
+                </span>
+              </div>
+              <p className="ff-serif text-[13px] text-[color:var(--ink-soft)]">{item.decisionReason}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1 ff-mono text-[11px] text-[color:var(--ink-soft)]">
+                <div><span className="text-[color:var(--ink-mute)]">scope · </span>{item.importScope}</div>
+                <div><span className="text-[color:var(--ink-mute)]">rollback · </span>{item.rollbackPlan}</div>
+                <div className="md:col-span-2"><span className="text-[color:var(--ink-mute)]">revert · </span><code>{item.revertCommand}</code></div>
+                {item.trialReportUrl ? (
+                  <div className="md:col-span-2">
+                    <span className="text-[color:var(--ink-mute)]">trial report · </span>
+                    <a
+                      href={item.trialReportUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-2 decoration-[color:var(--rule)] hover:decoration-[color:var(--cinnabar-ink)]"
+                    >
+                      {item.trialReportUrl}
+                    </a>
+                  </div>
+                ) : null}
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 function IdeaPipelineBoard({ board }) {
   if (!board.available) {
     return (
@@ -795,6 +886,7 @@ function App() {
     ideas: null,
     reviews: null,
     discoveries: null,
+    adoptions: null,
     error: '',
   });
 
@@ -812,13 +904,14 @@ function App() {
     }
 
     (async () => {
-      const [queueRaw, circleRaw, candidatesRaw, ideasRaw, reviewsRaw, discoveriesRaw] = await Promise.all([
+      const [queueRaw, circleRaw, candidatesRaw, ideasRaw, reviewsRaw, discoveriesRaw, adoptionsRaw] = await Promise.all([
         loadJson(DATA_SOURCES.queue),
         loadJson(DATA_SOURCES.circle),
         loadJson(DATA_SOURCES.candidates),
         loadJson(DATA_SOURCES.ideas),
         loadJson(DATA_SOURCES.reviews),
         loadJson(DATA_SOURCES.discoveries),
+        loadJson(DATA_SOURCES.adoptions),
       ]);
       if (cancelled) return;
 
@@ -828,11 +921,13 @@ function App() {
       const candidatesOk = candidatesRaw && !candidatesRaw.__error;
       const ideasOk = ideasRaw && !ideasRaw.__error;
       const reviewsOk = reviewsRaw && !reviewsRaw.__error;
+      const adoptionsOk = adoptionsRaw && !adoptionsRaw.__error;
       if (!queueOk) problems.push(`${DATA_SOURCES.queue} 加载失败：${queueRaw && queueRaw.__error}`);
       if (!circleOk) problems.push(`${DATA_SOURCES.circle} 加载失败：${circleRaw && circleRaw.__error}`);
       if (!ideasOk) problems.push(`${DATA_SOURCES.ideas} 加载失败：${ideasRaw && ideasRaw.__error}`);
       if (!reviewsOk) problems.push(`${DATA_SOURCES.reviews} 加载失败：${reviewsRaw && reviewsRaw.__error}`);
       // candidates 为可选产物（本地未生成也不视为错误）
+      // adoptions 为可选产物（本地未生成不视为错误；UI 会显式提示 empty_slot）
 
       setState({
         loading: false,
@@ -842,6 +937,7 @@ function App() {
         ideas: ideasOk ? ideasRaw : null,
         reviews: reviewsOk ? reviewsRaw : null,
         discoveries: discoveriesRaw && !discoveriesRaw.__error ? discoveriesRaw : null,
+        adoptions: adoptionsOk ? adoptionsRaw : null,
         error: problems.length ? problems.join(' ｜ ') + ' ｜ ' + PREVIEW_HINT : '',
       });
     })();
@@ -863,6 +959,11 @@ function App() {
     if (!state.candidates) return MODEL.buildEmptyCircleCandidatesBoard(state.loading ? 'loading' : 'data_absent');
     return MODEL.buildCircleCandidatesBoard(state.candidates);
   }, [state.candidates, state.loading]);
+
+  const adoptionsBoard = useMemo(() => {
+    if (!state.adoptions) return MODEL.buildEmptyAdoptionsBoard(state.loading ? 'loading' : 'data_absent');
+    return MODEL.buildAdoptionsBoard(state.adoptions);
+  }, [state.adoptions, state.loading]);
 
   const ideaPipelineBoard = useMemo(() => {
     if (!state.ideas) return MODEL.buildEmptyIdeaPipelineBoard(state.error ? 'load_failed' : (state.loading ? 'loading' : 'data_absent'));
@@ -892,6 +993,9 @@ function App() {
           trailing={queueBoard.available ? `${queueBoard.totals.total} 条 · updated ${queueBoard.generatedLabel}` : ''}
         >
           <QueueBoard board={queueBoard} />
+          <div className="mt-6">
+            <AdoptionsBoard board={adoptionsBoard} />
+          </div>
         </Section>
 
         <Section
