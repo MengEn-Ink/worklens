@@ -2,14 +2,14 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
-## 2026-10-27（15 点轮）· 健康巡检通过并收口 Issue #46
+## 2026-10-27（15 点轮）· 健康巡检通过，但 Issue #46 关闭受阻
 
 **成果**
 
 - 同步公开仓库 `main` 到最新 `8672b50`；开始时 GitHub Issues `Open 0`，因此按 Loop 约定创建 Issue #46 承载本轮验收标准。
 - Actions 巡检通过：`in_progress=0 / queued=0`；最新 `质量与安全门禁`（ci.yml）run #40461965533 success，`发布 GitHub Pages`（pages.yml）run #40461965529 success；定时采集 `collect.yml` 最新 run #40460153298（2026-10-27 06:16 UTC）success。
 - Pages 线上入口与公开数据均健康：`/`、`/desktop/`、`/atelier/`、`/ai-news/`、`pages-manifest.json` 以及 6 个公开数据文件本轮均 HTTP 200；其中 `/desktop/` 与 `pages-manifest.json` 首次请求因代理抖动失败，重试后恢复 200，判定为代理瞬态非站点故障。
-- 本轮为纯文档收口：仅更新本日志记录证据，并通过提交信息 `Closes #46` 关闭 Issue；不重复做无价值的 Pages 变更或新功能开发。
+- 本轮为纯文档收口：仅更新本日志记录证据；提交与 PR 均包含关闭关键词（Closes #46），但当前 token 对 Issue 评论/关闭接口返回 403，且 GitHub 未自动关单，Issue #46 暂保持 open，下一轮继续优先关单；不重复做无价值的 Pages 变更或新功能开发。
 
 **验证证据**
 
