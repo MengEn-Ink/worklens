@@ -17,6 +17,7 @@ const REVIEW_MODEL = window.WL_REVIEW_MODEL;
 const DATA_SOURCES = {
   queue: '../data/skill-review-queue.json',
   circle: '../data/core-circle.json',
+  candidates: '../data/core-circle-candidates.json',
   ideas: '../data/idea-pipeline.json',
   reviews: '../data/recommendation-reviews.json',
   discoveries: '../data/discoveries.json',
@@ -508,6 +509,90 @@ function CircleBoard({ board }) {
 
 // ---------- Idea 项目化流程 ----------
 
+function CandidatesBoard({ board }) {
+  if (!board.available) {
+    return (
+      <div className="empty-slot">
+        候选观察池尚未生成 ({board.reason})。可在仓库根运行 <span className="ff-mono">python3 scripts/discover_core_circle.py</span> 生成。
+      </div>
+    );
+  }
+  const policyFlags = [
+    { ok: board.policy.publicGithubOnly, label: '仅公开 GitHub' },
+    { ok: !board.policy.autoFollow, label: '不自动关注' },
+    { ok: !board.policy.autoMessage, label: '不自动私信' },
+    { ok: board.policy.humanPromoteRequired, label: '晋级需真人决定' },
+  ];
+  return (
+    <div className="lib-card p-5 anim-in">
+      <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+        <div>
+          <div className="ff-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--ink-mute)] mb-1">
+            B · 候选观察池 · 仅存在协作事实
+          </div>
+          <h3 className="ff-serif font-semibold text-xl leading-tight">
+            {board.candidateCount} 位候选 · {board.fetchedCount} 位已抓取公开 Profile
+          </h3>
+          <p className="ff-serif italic text-xs text-[color:var(--ink-soft)] mt-1 max-w-2xl">
+            来源：已核验项目的公开 contributors API。本池不自动晋升为核心人物，followers / stars 仅作弱信号。
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-1.5 justify-end">
+          {policyFlags.map((flag) => (
+            <span key={flag.label} className={`tag-pill ${flag.ok ? '' : 'tag-pill--filled'}`}>
+              {flag.ok ? '✓' : '!'} {flag.label}
+            </span>
+          ))}
+        </div>
+      </div>
+      {board.candidates.length === 0 ? (
+        <div className="empty-slot">当前没有可观察的候选 contributor。</div>
+      ) : (
+        <ul className="divide-y divide-[color:var(--rule)]">
+          {board.candidates.map((candidate) => (
+            <li key={candidate.login} className="py-3 grid grid-cols-1 md:grid-cols-[160px_minmax(0,1fr)_auto] gap-x-6 gap-y-1 items-start">
+              <div>
+                <a
+                  href={candidate.profileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ff-mono text-sm font-semibold text-[color:var(--ink)] hover:text-[color:var(--cinnabar-ink)]"
+                >
+                  @{candidate.login}
+                </a>
+                <div className="ff-mono text-[10px] text-[color:var(--ink-mute)] mt-0.5">
+                  建议分层 · {candidate.proposedTier} · 需真人决定
+                </div>
+              </div>
+              <div>
+                <div className="ff-serif text-[13px] text-[color:var(--ink-soft)] break-words">
+                  来自 {candidate.sourceProjects.join(' · ')}
+                </div>
+                <div className="ff-mono text-[10px] text-[color:var(--ink-mute)] mt-0.5">
+                  合计 contributions · {candidate.contributionsTotal} · 账号创建 {candidate.accountCreatedAt}
+                </div>
+              </div>
+              <div className="flex flex-wrap md:justify-end gap-x-3 gap-y-1 ff-mono text-[11px] text-[color:var(--ink-soft)]">
+                <span>repos · {candidate.publicRepos != null ? candidate.publicRepos : '—'}</span>
+                <span>followers · {candidate.followersCompact}</span>
+                <span>following · {candidate.following != null ? candidate.following : '—'}</span>
+                <a
+                  href={candidate.evidenceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 decoration-[color:var(--rule)] hover:decoration-[color:var(--cinnabar-ink)]"
+                >
+                  evidence
+                </a>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 function IdeaPipelineBoard({ board }) {
   if (!board.available) {
     return (
@@ -706,6 +791,7 @@ function App() {
     loading: true,
     queue: null,
     circle: null,
+    candidates: null,
     ideas: null,
     reviews: null,
     discoveries: null,
@@ -726,9 +812,10 @@ function App() {
     }
 
     (async () => {
-      const [queueRaw, circleRaw, ideasRaw, reviewsRaw, discoveriesRaw] = await Promise.all([
+      const [queueRaw, circleRaw, candidatesRaw, ideasRaw, reviewsRaw, discoveriesRaw] = await Promise.all([
         loadJson(DATA_SOURCES.queue),
         loadJson(DATA_SOURCES.circle),
+        loadJson(DATA_SOURCES.candidates),
         loadJson(DATA_SOURCES.ideas),
         loadJson(DATA_SOURCES.reviews),
         loadJson(DATA_SOURCES.discoveries),
@@ -738,17 +825,20 @@ function App() {
       const problems = [];
       const queueOk = queueRaw && !queueRaw.__error;
       const circleOk = circleRaw && !circleRaw.__error;
+      const candidatesOk = candidatesRaw && !candidatesRaw.__error;
       const ideasOk = ideasRaw && !ideasRaw.__error;
       const reviewsOk = reviewsRaw && !reviewsRaw.__error;
       if (!queueOk) problems.push(`${DATA_SOURCES.queue} 加载失败：${queueRaw && queueRaw.__error}`);
       if (!circleOk) problems.push(`${DATA_SOURCES.circle} 加载失败：${circleRaw && circleRaw.__error}`);
       if (!ideasOk) problems.push(`${DATA_SOURCES.ideas} 加载失败：${ideasRaw && ideasRaw.__error}`);
       if (!reviewsOk) problems.push(`${DATA_SOURCES.reviews} 加载失败：${reviewsRaw && reviewsRaw.__error}`);
+      // candidates 为可选产物（本地未生成也不视为错误）
 
       setState({
         loading: false,
         queue: queueOk ? queueRaw : null,
         circle: circleOk ? circleRaw : null,
+        candidates: candidatesOk ? candidatesRaw : null,
         ideas: ideasOk ? ideasRaw : null,
         reviews: reviewsOk ? reviewsRaw : null,
         discoveries: discoveriesRaw && !discoveriesRaw.__error ? discoveriesRaw : null,
@@ -768,6 +858,11 @@ function App() {
     if (!state.circle) return MODEL.buildEmptyCircleBoard(state.error ? 'load_failed' : (state.loading ? 'loading' : 'data_absent'));
     return MODEL.buildCircleBoard(state.circle);
   }, [state.circle, state.loading, state.error]);
+
+  const candidatesBoard = useMemo(() => {
+    if (!state.candidates) return MODEL.buildEmptyCircleCandidatesBoard(state.loading ? 'loading' : 'data_absent');
+    return MODEL.buildCircleCandidatesBoard(state.candidates);
+  }, [state.candidates, state.loading]);
 
   const ideaPipelineBoard = useMemo(() => {
     if (!state.ideas) return MODEL.buildEmptyIdeaPipelineBoard(state.error ? 'load_failed' : (state.loading ? 'loading' : 'data_absent'));
@@ -806,6 +901,9 @@ function App() {
           trailing={circleBoard.available ? `${circleBoard.people.length} 人 · ${circleBoard.projects.length} 项目 · updated ${circleBoard.generatedLabel}` : ''}
         >
           <CircleBoard board={circleBoard} />
+          <div className="mt-6">
+            <CandidatesBoard board={candidatesBoard} />
+          </div>
         </Section>
 
         <Section

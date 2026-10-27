@@ -251,6 +251,67 @@
     };
   }
 
+  function normalizeCandidate(row) {
+    const evidence = safeObject(row && row.public_evidence);
+    const promotion = safeObject(row && row.promotion_hint);
+    return {
+      login: (row && row.login) || '',
+      profileUrl: (row && row.profile_url) || (row && row.login ? `https://github.com/${row.login}` : ''),
+      evidenceUrl: (row && row.evidence_url) || '',
+      sourceProjects: safeList(row && row.source_projects),
+      contributionsTotal: Number((row && row.contributions_total) || 0),
+      profileFetched: Boolean(row && row.profile_fetched),
+      profileCheckedAt: shortDate(row && row.profile_checked_at),
+      publicRepos: evidence.public_repos != null ? Number(evidence.public_repos) : null,
+      followers: evidence.followers != null ? Number(evidence.followers) : null,
+      followersCompact: evidence.followers != null ? compactNumber(evidence.followers) : '—',
+      following: evidence.following != null ? Number(evidence.following) : null,
+      accountCreatedAt: shortDate(evidence.created_at),
+      proposedTier: promotion.proposed_tier || 'watch',
+      humanDecisionRequired: promotion.human_decision_required !== false,
+      note: promotion.notes || '',
+    };
+  }
+
+  function buildCircleCandidatesBoard(doc) {
+    const candidates = safeList(doc && doc.candidates).map(normalizeCandidate);
+    const policy = safeObject(doc && doc.policy);
+    const summary = safeObject(doc && doc.summary);
+    return {
+      available: true,
+      generatedAt: doc && doc.generated_at ? doc.generated_at : null,
+      generatedLabel: formatGenerated(doc && doc.generated_at),
+      source: (doc && doc.source) || '',
+      policy: {
+        publicGithubOnly: policy.public_github_only !== false,
+        autoFollow: policy.auto_follow === true,
+        autoMessage: policy.auto_message === true,
+        humanPromoteRequired: policy.human_promote_required !== false,
+      },
+      candidateCount: Number(summary.candidate_count != null ? summary.candidate_count : candidates.length),
+      fetchedCount: Number(summary.fetched_count != null ? summary.fetched_count : candidates.filter((c) => c.profileFetched).length),
+      candidates,
+    };
+  }
+
+  function buildEmptyCircleCandidatesBoard(reason) {
+    return {
+      available: false,
+      reason: reason || 'data_absent',
+      generatedLabel: '未加载',
+      source: '',
+      policy: {
+        publicGithubOnly: true,
+        autoFollow: false,
+        autoMessage: false,
+        humanPromoteRequired: true,
+      },
+      candidateCount: 0,
+      fetchedCount: 0,
+      candidates: [],
+    };
+  }
+
   const IDEA_STAGE_LABELS = {
     idea: 'Idea',
     research: '调研',
@@ -343,9 +404,11 @@
     STATE_ORDER,
     buildQueueBoard,
     buildCircleBoard,
+    buildCircleCandidatesBoard,
     buildIdeaPipelineBoard,
     buildEmptyQueueBoard,
     buildEmptyCircleBoard,
+    buildEmptyCircleCandidatesBoard,
     buildEmptyIdeaPipelineBoard,
     formatGenerated,
     shortDate,
