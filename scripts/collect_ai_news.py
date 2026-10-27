@@ -6,6 +6,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 import re
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -32,11 +33,39 @@ def parse_time(value: str | None) -> dt.datetime | None:
         return None
 
 
-def fetch_json(url: str) -> dict:
+def is_fresh(value: str | None, hours: float, now: dt.datetime) -> bool:
+    timestamp = parse_time(value)
+    return timestamp is not None and now - timestamp <= dt.timedelta(hours=hours)
+
+
+def is_retryable(error: BaseException) -> bool:
+    return (
+        not isinstance(error, urllib.error.HTTPError)
+        or error.code == 429
+        or 500 <= error.code < 600
+    )
+
+
+def fetch_json(url: str, attempts: int = 3, backoff_seconds: float = 1.0) -> dict:
     headers = {"Accept": "application/json", "User-Agent": "worklens-collector/1.0"}
     request = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(request, timeout=30) as response:
-        return json.load(response)
+    attempts = max(1, attempts)
+    for attempt in range(attempts):
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                return json.load(response)
+        except (urllib.error.URLError, urllib.error.HTTPError) as error:
+            if attempt + 1 >= attempts or not is_retryable(error):
+                raise
+            time.sleep(backoff_seconds * (2**attempt))
+    raise RuntimeError("unreachable")
+
+
+def read_previous() -> dict:
+    try:
+        return json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
 
 
 def main() -> int:
@@ -56,12 +85,34 @@ def main() -> int:
         print("AI news URL not configured.")
         return 1
 
+    now = utcnow()
+    previous = read_previous()
+    previous_status = previous.get("source_status", {}).get(url, {})
+    fetched_at = previous_status.get("fetched_at") or previous.get("generated_at")
+    cache_hours = float(news_config.get("cache_hours", 24))
+    if previous.get("items") and is_fresh(fetched_at, cache_hours, now):
+        previous["source_status"] = {
+            url: {
+                "ok": True,
+                "cached": True,
+                "count": len(previous["items"]),
+                "fetched_at": fetched_at,
+            }
+        }
+        OUTPUT_PATH.write_text(
+            json.dumps(previous, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        )
+        print(f"Reused {len(previous['items'])} cached AI news items.")
+        return 0
+
     keywords = [k.lower() for k in news_config.get("keywords", [])]
     max_items = news_config.get("max_items", 50)
+    attempts = int(news_config.get("retry_attempts", config.get("policy", {}).get("retry_attempts", 3)))
+    backoff = float(news_config.get("retry_backoff_seconds", config.get("policy", {}).get("retry_backoff_seconds", 1)))
 
     status = {"ok": True, "source": url}
     try:
-        payload = fetch_json(url)
+        payload = fetch_json(url, attempts=attempts, backoff_seconds=backoff)
         raw_items = payload.get("items", [])
 
         filtered_items = []
@@ -108,9 +159,15 @@ def main() -> int:
         final_items = filtered_items[:max_items]
 
         output = {
-            "generated_at": utcnow().isoformat(),
+            "generated_at": now.isoformat(),
             "items": final_items,
-            "source_status": {url: {"ok": True, "count": len(final_items)}},
+            "source_status": {
+                url: {
+                    "ok": True,
+                    "count": len(final_items),
+                    "fetched_at": now.isoformat(),
+                }
+            },
             "schema_version": 1,
         }
 
@@ -121,27 +178,27 @@ def main() -> int:
 
     except Exception as e:
         print(f"Failed to collect AI news: {e}")
-        # Preserve old file if possible but update status
-        previous = {}
-        if OUTPUT_PATH.exists():
-            try:
-                previous = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
-            except (OSError, json.JSONDecodeError):
-                pass
-
+        # Preserve old file if possible but update status. Keep the last real
+        # successful fetch time so repeated failures never extend the TTL.
+        old_items = previous.get("items", [])
         status["ok"] = False
+        status["degraded"] = bool(old_items)
+        status["cached"] = bool(old_items)
+        status["count"] = len(old_items)
         status["error"] = str(e)
+        if fetched_at:
+            status["fetched_at"] = fetched_at
 
         output = {
-            "generated_at": utcnow().isoformat(),
-            "items": previous.get("items", []),
+            "generated_at": now.isoformat(),
+            "items": old_items,
             "source_status": {url: status},
             "schema_version": 1,
         }
         OUTPUT_PATH.write_text(
             json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
         )
-        return 1
+        return 0 if old_items else 1
 
     return 0
 

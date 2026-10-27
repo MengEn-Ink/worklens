@@ -46,12 +46,17 @@
       "提示词",
       "prompt"
     ],
-    "max_items": 50
+    "max_items": 50,
+    "cache_hours": 24,
+    "retry_attempts": 3,
+    "retry_backoff_seconds": 1
   },
   "policy": {
     "max_candidates_per_query": 10,
     "curated_feed_max_stale_hours": 24,
     "discovery_cache_hours": 24,
+    "retry_attempts": 3,
+    "retry_backoff_seconds": 1,
     "minimum_stars": 20,
     "exclude_archived": true,
     "require_license_for_adoption": true
