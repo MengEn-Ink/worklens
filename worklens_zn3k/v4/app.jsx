@@ -74,12 +74,12 @@ function StatBlock({ num, label, hint }) {
 function Masthead({ queueUpdated, circleUpdated, queueTotal, circleTotal, loadError }) {
   return (
     <header className="pt-10 pb-6">
-      <div className="grid grid-cols-[1fr_auto] gap-10 items-end">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-10 items-end">
         <div>
           <div className="ff-mono text-[11px] tracking-[0.4em] uppercase text-[color:var(--ink-mute)] mb-3">
             WorkLens · Atelier · Volume 04 · Read Only
           </div>
-          <h1 className="masthead-title text-[76px]">
+          <h1 className="masthead-title text-[48px] md:text-[76px]">
             工坊<span className="text-[color:var(--cinnabar)]">·</span>只读
           </h1>
           <div className="flex items-center gap-3 mt-3">
@@ -92,7 +92,7 @@ function Masthead({ queueUpdated, circleUpdated, queueTotal, circleTotal, loadEr
             </span>
           </div>
         </div>
-        <div className="vertical-rl pb-2">GITHUB · PUBLIC EVIDENCE ONLY</div>
+        <div className="vertical-rl pb-2 hidden md:block">GITHUB · PUBLIC EVIDENCE ONLY</div>
       </div>
 
       <hr className="hr-thick mt-6 mb-5" />
@@ -781,7 +781,7 @@ function App() {
 
   return (
     <div className="min-h-screen">
-      <div className="max-w-[1400px] mx-auto px-10">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-10 atelier-shell">
         <Masthead
           queueUpdated={queueBoard.available ? queueBoard.generatedLabel : (state.loading ? '加载中…' : '未加载')}
           circleUpdated={circleBoard.available ? circleBoard.generatedLabel : (state.loading ? '加载中…' : '未加载')}
@@ -828,7 +828,7 @@ function App() {
 
         <footer className="py-10 border-t border-[color:var(--rule)] mt-6">
           <div className="ornament mb-4">WorkLens · Atelier</div>
-          <div className="grid grid-cols-[1fr_auto] gap-6 items-end">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-end">
             <p className="ff-serif italic text-sm text-[color:var(--ink-soft)] max-w-2xl">
               本页为 WorkLens 的只读工坊：数据来自 <span className="ff-mono not-italic">data/*.json</span>，
               由仓库 Actions 定期采集；不含私有工作内容、不含凭证、不展示会议 / IM / 浏览历史等私有信号。

@@ -408,3 +408,22 @@ body::before {
   to   { opacity: 1; transform: translateY(0); }
 }
 .anim-in { animation: slideUp 320ms cubic-bezier(0.2, 0.7, 0, 1) both; }
+
+/* --- Atelier · 响应式兜底（H5 仅做基础自适应，不改 PC 信息架构） --- */
+.atelier-shell { overflow-x: hidden; }
+
+@media (max-width: 767px) {
+  .masthead-title { font-size: 44px; }
+  .check-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
+  .check-cell { padding: 6px 6px 8px; min-height: 60px; }
+  .check-cell__label { font-size: 11px; }
+  .check-cell__status { font-size: 9px; }
+  .stat-num { font-size: 28px; }
+  .issue-num { font-size: 56px; }
+  .group-head__count { font-size: 22px; }
+  .group-head__label { font-size: 15px; }
+  .safety-banner { padding: 10px 12px; gap: 8px 14px; }
+  .safety-banner__item { font-size: 12px; }
+  .safety-banner__sep { display: none; }
+}
+
