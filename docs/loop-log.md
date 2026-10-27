@@ -8,6 +8,7 @@
 
 - 同步公开仓库 `main` 到最新 `c974608`；开始时 0 个未关闭 Issue、0 个开放 PR，最新 main 上「质量与安全门禁」run #40448972925 与「发布 GitHub Pages」run #40448972934 均为 success，列表无 running / queued。P0–P4 最小目标保持全部上线，Loop 继续维持健康巡检降级态。
 - **GitHub Issue 写路径已恢复**：12 点轮环境凭证调 Issues REST 报 `401 Bad credentials`。本轮核实环境内 fine-grained PAT 实际有效——`gh` 2.23 CLI 对 fine-grained token 的 `/user` 探测会误判为 “no longer valid”，但直接带 Bearer 调用 REST 时 issues 读 `200`、`POST /issues` 返回 `201`（响应头 `x-accepted-github-permissions: issues=write`），成功创建 Issue #42 承载本轮验收。前两次 POST 因沙箱代理瞬态返回 `000`（未到达 GitHub），第三次成功；随后 `GET /issues/42` 复核 `state=open`，未产生重复单。
+- 写权限边界更精确地厘清：当前 fine-grained PAT **可新建 Issue**（`POST /issues` 201），但 **Issue 评论（`POST /issues/42/comments`）与直接关闭（`PATCH /issues/42`）仍稳定返回 `403 Resource not accessible by personal access token`**（各重试多次，期间夹杂代理瞬态 `000`）。与历史 #35「直接 push 到默认分支的 `Closes #` 未自动关单」一致，因此本轮不依赖 API 关闭，而以带 `Closes #42` 的收口 PR 合入默认分支由服务端关单；逐条验收证据承载在本日志与 PR 描述中。
 - 只读边界在线上数据逐项核对保持不变：待审队列 28 条（27 个 `candidate`，SR-0011 CodeSigils/skill-discovery 为 `trial`），`policy.auto_install=false`；`idea-pipeline` 为 `public_only=true / auto_scaffold=false / automation_max_stage=research`；`recommendation-reviews` policy 为 `public_only=true / auto_adjust_profile=false / automation_max_conclusion=downgrade`。
 
 **验证证据**
