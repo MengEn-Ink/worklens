@@ -2,6 +2,26 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-27（12 点轮）· 健康巡检通过，但 GitHub Issue 创建权限受阻
+
+**成果**
+
+- 同步公开仓库 `main` 到最新 `da507de`；README 路线图与当前能力仍显示 P0–P4 最小目标均已上线/收口，公开 Issues 列表保持 `0` 个 open，Loop 继续维持健康巡检降级态。
+- Actions 巡检通过：公开 Actions 页面最新 main 上的「质量与安全门禁」run #91 与「发布 GitHub Pages」run #74 均为 success，列表中未见 running / queued 任务。
+- 线上公开入口与数据仍健康：`pages-manifest.json` 中 mobile / desktop / atelier / ai-news 四个 targets 均为 `published`；根路径 `/`、`/desktop/`、`/atelier/`、`/ai-news/` 以及 `data/idea-pipeline.json`、`data/recommendation-reviews.json`、`data/skill-review-queue.json` 本轮均可访问。
+- 阻塞按事实记录：按 Loop 约定，本轮本应先创建新的健康巡检 Issue 作为唯一最小可交付事项，但当前自动化对 GitHub Issues API 的写入路径回退受阻——`gh auth status` 提示环境内 `GH_TOKEN` 已失效，环境变量与 `~/.git-credentials` 中的凭证调用 REST `/issues` 均返回 `401 Bad credentials`；因此本轮无法创建新 Issue，也不能把验收标准落到 Issue 上。
+
+**验证证据**
+
+- README 公开口径：`当前能力` 已写明 `/atelier/`、`idea-pipeline.json` 与 `recommendation-reviews.json` 的只读闭环；`路线图` 第 71–84 行全部为 `[x]`，与最近 11 点轮收口后的 main 一致。
+- 公开 GitHub 页面：Issues 页面显示 `Open 0 (0)`；Actions 页面最近 main 的 2 条 push 工作流均为 `completed successfully`，未见待运行队列。
+- Pages 验收：`pages-manifest.json` 返回 4 个 `published` targets；`/desktop/` 与 `/ai-news/` 首轮 `curl` 曾出现代理瞬态 `000`，重试后均为 `200`，判定为代理抖动而非站点故障。
+- 本轮为纯文档提交：仍按约定只等待「质量与安全门禁」，不重复做无价值的 Pages 部署验收；未新增任何功能、未改变只读边界。
+
+**下一轮唯一最高优先级**
+
+- 先恢复 GitHub Issues / PR API 的可写路径（至少恢复新建 Issue），然后继续健康巡检并把验收标准落到新 Issue；在权限恢复前不重复开发任何已上线事项。
+
 ## 2026-10-27（11 点轮）· 收口 README 最后一项路线图并切换到健康巡检（Issue #40）
 
 **成果**
