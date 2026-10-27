@@ -412,6 +412,11 @@ body::before {
 /* --- Atelier · 响应式兜底（H5 仅做基础自适应，不改 PC 信息架构） --- */
 .atelier-shell { overflow-x: hidden; }
 
+/* 统计数字在小卡片内允许折行，避免单词如 "research" 撑爆单元格 */
+.stat-num { overflow-wrap: anywhere; word-break: break-word; }
+/* 当统计位是文字（如 automationMaxStage="research"）时，H5 下进一步缩小 */
+.stat-num--word { font-size: 22px; letter-spacing: 0; }
+
 @media (max-width: 767px) {
   .masthead-title { font-size: 44px; }
   .check-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
@@ -419,11 +424,21 @@ body::before {
   .check-cell__label { font-size: 11px; }
   .check-cell__status { font-size: 9px; }
   .stat-num { font-size: 28px; }
+  .stat-num--word { font-size: 16px; line-height: 1.15; }
   .issue-num { font-size: 56px; }
   .group-head__count { font-size: 22px; }
   .group-head__label { font-size: 15px; }
   .safety-banner { padding: 10px 12px; gap: 8px 14px; }
   .safety-banner__item { font-size: 12px; }
   .safety-banner__sep { display: none; }
+
+  /* 四联统计头：H5 下重排为 2×2，并给卡片内文更松的留白 */
+  .atelier-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
+  .atelier-stat-grid .lib-card { padding: 12px; min-width: 0; }
+  .atelier-stat-grid .stat-label { font-size: 9.5px; letter-spacing: 0.08em; }
+
+  /* 人物卡内的 3 联：Followers 使用 compact 数字（11.9k），字号与小卡匹配 */
+  .lib-card .grid.grid-cols-3 .stat-num { font-size: 22px; }
+  .lib-card .grid.grid-cols-3 .stat-label { font-size: 9px; letter-spacing: 0.06em; }
 }
 

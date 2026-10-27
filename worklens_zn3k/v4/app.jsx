@@ -279,7 +279,7 @@ function QueueBoard({ board }) {
 
   return (
     <>
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-4 gap-4 mb-6 atelier-stat-grid">
         <div className="lib-card p-4">
           <div className="stat-num">{board.totals.trial}</div>
           <div className="stat-label">限范围试用</div>
@@ -450,7 +450,7 @@ function CircleBoard({ board }) {
 
   return (
     <>
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-4 gap-4 mb-6 atelier-stat-grid">
         <div className="lib-card p-4">
           <div className="stat-num">{board.people.length}</div>
           <div className="stat-label">核心人物</div>
@@ -519,7 +519,7 @@ function IdeaPipelineBoard({ board }) {
 
   return (
     <>
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-4 gap-4 mb-6 atelier-stat-grid">
         <div className="lib-card p-4">
           <div className="stat-num">{board.totals.total}</div>
           <div className="stat-label">项目化 Idea</div>
@@ -534,7 +534,7 @@ function IdeaPipelineBoard({ board }) {
           <div className="ff-serif italic text-xs text-[color:var(--cinnabar-ink)] mt-1">必须保持 0</div>
         </div>
         <div className="lib-card p-4">
-          <div className="stat-num">{board.automationMaxStage || '—'}</div>
+          <div className="stat-num stat-num--word">{board.automationMaxStage || '—'}</div>
           <div className="stat-label">自动化上限</div>
         </div>
       </div>
@@ -668,7 +668,7 @@ function ReviewBoard({ board }) {
 
   return (
     <>
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-4 gap-4 mb-6 atelier-stat-grid">
         <div className="lib-card p-4">
           <div className="stat-num">{board.totals.total}</div>
           <div className="stat-label">复盘记录</div>
