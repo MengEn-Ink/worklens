@@ -98,12 +98,21 @@
   }
 
   /* ---------- Score Bar ---------- */
+  const SCORE_LABELS = {
+    Fit: { zh: '匹配度', hint: '与当前工作目标和个人偏好的相关程度' },
+    Novelty: { zh: '新颖度', hint: '相对现有工具与知识的新信息比例' },
+    Cost: { zh: '引入成本', hint: '学习、集成和持续维护所需投入' },
+    Risk: { zh: '风险', hint: '许可证、安全性和维护状态等不确定性' },
+  };
+
   function ScoreBar({ label, value, max = 100, invert = false }) {
     const pct = Math.min(100, Math.round((value / max) * 100));
+    const labelMeta = SCORE_LABELS[label];
+    const displayLabel = labelMeta ? labelMeta.zh : label;
     return (
-      <div>
+      <div title={labelMeta ? labelMeta.hint : undefined}>
         <div className="flex justify-between items-baseline mb-1">
-          <span className="ff-mono text-[10px] uppercase tracking-wider" style={{color: 'var(--ink-mute)'}}>{label}</span>
+          <span className="ff-mono text-[10px] tracking-wider" style={{color: 'var(--ink-mute)'}}>{displayLabel}</span>
           <span className="ff-mono text-[11px]" style={{color: invert ? 'var(--cinnabar-ink)' : 'var(--ink)'}}>{value}</span>
         </div>
         <div className="score-bar">
@@ -210,7 +219,7 @@
             <div className="flex items-center gap-2 ff-mono text-[10.5px]" style={{color: 'var(--ink-mute)'}}>
               <I.gh /> <span>{entry.author}</span>
               <span className="opacity-50">·</span>
-              <span>{entry.source}</span>
+              <span>{entry.source === 'GitHub API' ? 'GitHub 数据' : entry.source}</span>
             </div>
           </div>
         </div>
@@ -227,6 +236,7 @@
 
         <hr className="hr-thin my-2.5" />
 
+        <div className="project-score-note">评分说明：匹配度、新颖度越高越好；引入成本、风险越低越好。</div>
         <div className="grid grid-cols-4 gap-2 mb-2">
           <ScoreBar label="Fit"     value={entry.scores.fit} />
           <ScoreBar label="Novelty" value={entry.scores.novelty} />
@@ -320,9 +330,9 @@
   /* ---------- Skill Card（AI 工程能力） ---------- */
   function SkillCard({ s, onInspect }) {
     const statusMap = {
-      live:    { label: 'live',    tone: 'var(--forest)' },
-      preview: { label: 'preview', tone: 'var(--mustard)' },
-      draft:   { label: 'draft',   tone: 'var(--ink-mute)' },
+      live:    { label: '已启用', tone: 'var(--forest)' },
+      preview: { label: '预览中', tone: 'var(--mustard)' },
+      draft:   { label: '草稿',   tone: 'var(--ink-mute)' },
     };
     const st = statusMap[s.status] || statusMap.draft;
     return (

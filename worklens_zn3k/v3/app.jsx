@@ -109,15 +109,15 @@ function App() {
   }, []);
 
   const nav = [
-    { id: 'hero',     no: '01', label: '本期策展',  sub: 'This Issue' },
-    { id: 'pipeline', no: '02', label: '发现管道',  sub: 'Pipeline' },
-    { id: 'shelf',    no: '03', label: '藏书架',    sub: 'The Shelf' },
-    { id: 'reader',   no: '04', label: '深度阅读',  sub: 'Reader' },
-    { id: 'routes',   no: '05', label: '学习路径',  sub: 'Routes' },
-    { id: 'loop',     no: '06', label: '引入复盘',  sub: 'Loop' },
-    { id: 'profile',  no: '07', label: '工作画像',  sub: 'Profile' },
-    { id: 'studio',   no: '08', label: '技能工坊',  sub: 'Skill Studio · NEW', badge: D.SKILL_PROPOSALS.length },
-    { id: 'push',     no: '09', label: '推送中心',  sub: 'Pushes · NEW', badge: D.PUSHES.filter(p => !p.read).length },
+    { id: 'hero',     no: '01', label: '本期策展',  sub: '本期精选' },
+    { id: 'pipeline', no: '02', label: '发现管道',  sub: '筛选过程' },
+    { id: 'shelf',    no: '03', label: '藏书架',    sub: '项目资料库' },
+    { id: 'reader',   no: '04', label: '深度阅读',  sub: '项目详解' },
+    { id: 'routes',   no: '05', label: '学习路径',  sub: '行动路线' },
+    { id: 'loop',     no: '06', label: '引入复盘',  sub: '使用复盘' },
+    { id: 'profile',  no: '07', label: '工作画像',  sub: '偏好画像' },
+    { id: 'studio',   no: '08', label: '技能工坊',  sub: '技能工坊 · 新', badge: D.SKILL_PROPOSALS.length },
+    { id: 'push',     no: '09', label: '推送中心',  sub: '主动推荐 · 新', badge: D.PUSHES.filter(p => !p.read).length },
   ];
 
   const goto = useCallback((view, entryId) => {

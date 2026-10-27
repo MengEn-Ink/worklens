@@ -120,6 +120,7 @@ body::before {
   border-radius: 50%; background: var(--ocean);
 }
 .project-signal--activity { border-color: rgba(31,58,45,.35); color: var(--forest); background: #e6edda; }
+.project-score-note { margin-bottom: 8px; color: var(--ink-mute); font: 11px/1.5 'Inter', 'PingFang SC', sans-serif; }
 /* 被标记过喜好的卡片留下微妙视觉痕迹 */
 .lib-card--tasted-love::before,
 .lib-card--tasted-like::before {
