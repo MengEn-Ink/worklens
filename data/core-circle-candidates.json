@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-27T15:10:43.666099Z",
+  "source": "GitHub public REST API; contributors already recorded in data/core-circle.json",
+  "policy": {
+    "public_github_only": true,
+    "auto_follow": false,
+    "auto_message": false,
+    "human_promote_required": true,
+    "store_email": false
+  },
+  "bounds": {
+    "max_contributors_per_repository": 20,
+    "max_discovered_users": 100
+  },
+  "summary": {
+    "candidate_count": 6,
+    "fetched_count": 6
+  },
+  "candidates": [
+    {
+      "login": "jiezeng2004-design",
+      "source_projects": [
+        "alchaincyf/darwin-skill"
+      ],
+      "contributions_total": 1,
+      "profile_url": "https://github.com/jiezeng2004-design",
+      "evidence_url": "https://api.github.com/users/jiezeng2004-design",
+      "profile_checked_at": "2026-10-27T15:10:43.666099Z",
+      "profile_fetched": true,
+      "promotion_hint": {
+        "proposed_tier": "watch",
+        "human_decision_required": true,
+        "notes": "contributor 事实只代表存在协作；followers/stars 仅为弱信号，不构成背书"
+      },
+      "public_evidence": {
+        "public_repos": 47,
+        "followers": 7,
+        "following": 2,
+        "created_at": "2026-02-02T08:25:14Z",
+        "html_url": "https://github.com/jiezeng2004-design",
+        "type": "User"
+      }
+    },
+    {
+      "login": "jupiterx0910",
+      "source_projects": [
+        "alchaincyf/darwin-skill"
+      ],
+      "contributions_total": 1,
+      "profile_url": "https://github.com/jupiterx0910",
+      "evidence_url": "https://api.github.com/users/jupiterx0910",
+      "profile_checked_at": "2026-10-27T15:10:43.666099Z",
+      "profile_fetched": true,
+      "promotion_hint": {
+        "proposed_tier": "watch",
+        "human_decision_required": true,
+        "notes": "contributor 事实只代表存在协作；followers/stars 仅为弱信号，不构成背书"
+      },
+      "public_evidence": {
+        "public_repos": 11,
+        "followers": 2,
+        "following": 0,
+        "created_at": "2025-11-08T08:28:04Z",
+        "html_url": "https://github.com/jupiterx0910",
+        "type": "User"
+      }
+    },
+    {
+      "login": "leiluoseu-spec",
+      "source_projects": [
+        "alchaincyf/darwin-skill"
+      ],
+      "contributions_total": 1,
+      "profile_url": "https://github.com/leiluoseu-spec",
+      "evidence_url": "https://api.github.com/users/leiluoseu-spec",
+      "profile_checked_at": "2026-10-27T15:10:43.666099Z",
+      "profile_fetched": true,
+      "promotion_hint": {
+        "proposed_tier": "watch",
+        "human_decision_required": true,
+        "notes": "contributor 事实只代表存在协作；followers/stars 仅为弱信号，不构成背书"
+      },
+      "public_evidence": {
+        "public_repos": 1,
+        "followers": 0,
+        "following": 0,
+        "created_at": "2026-06-02T08:58:55Z",
+        "html_url": "https://github.com/leiluoseu-spec",
+        "type": "User"
+      }
+    },
+    {
+      "login": "oppenheimor",
+      "source_projects": [
+        "alchaincyf/nuwa-skill"
+      ],
+      "contributions_total": 1,
+      "profile_url": "https://github.com/oppenheimor",
+      "evidence_url": "https://api.github.com/users/oppenheimor",
+      "profile_checked_at": "2026-10-27T15:10:43.666099Z",
+      "profile_fetched": true,
+      "promotion_hint": {
+        "proposed_tier": "watch",
+        "human_decision_required": true,
+        "notes": "contributor 事实只代表存在协作；followers/stars 仅为弱信号，不构成背书"
+      },
+      "public_evidence": {
+        "public_repos": 66,
+        "followers": 15,
+        "following": 56,
+        "created_at": "2025-01-15T03:12:12Z",
+        "html_url": "https://github.com/oppenheimor",
+        "type": "User"
+      }
+    },
+    {
+      "login": "tens1x",
+      "source_projects": [
+        "alchaincyf/nuwa-skill"
+      ],
+      "contributions_total": 1,
+      "profile_url": "https://github.com/tens1x",
+      "evidence_url": "https://api.github.com/users/tens1x",
+      "profile_checked_at": "2026-10-27T15:10:43.666099Z",
+      "profile_fetched": true,
+      "promotion_hint": {
+        "proposed_tier": "watch",
+        "human_decision_required": true,
+        "notes": "contributor 事实只代表存在协作；followers/stars 仅为弱信号，不构成背书"
+      },
+      "public_evidence": {
+        "public_repos": 8,
+        "followers": 8,
+        "following": 3,
+        "created_at": "2018-12-16T11:28:26Z",
+        "html_url": "https://github.com/tens1x",
+        "type": "User"
+      }
+    },
+    {
+      "login": "zz02846584zz",
+      "source_projects": [
+        "alchaincyf/darwin-skill"
+      ],
+      "contributions_total": 1,
+      "profile_url": "https://github.com/zz02846584zz",
+      "evidence_url": "https://api.github.com/users/zz02846584zz",
+      "profile_checked_at": "2026-10-27T15:10:43.666099Z",
+      "profile_fetched": true,
+      "promotion_hint": {
+        "proposed_tier": "watch",
+        "human_decision_required": true,
+        "notes": "contributor 事实只代表存在协作；followers/stars 仅为弱信号，不构成背书"
+      },
+      "public_evidence": {
+        "public_repos": 9,
+        "followers": 4,
+        "following": 12,
+        "created_at": "2017-06-21T11:03:43Z",
+        "html_url": "https://github.com/zz02846584zz",
+        "type": "User"
+      }
+    }
+  ],
+  "source_status": [
+    {
+      "login": "jiezeng2004-design",
+      "ok": true,
+      "fetched": true
+    },
+    {
+      "login": "jupiterx0910",
+      "ok": true,
+      "fetched": true
+    },
+    {
+      "login": "leiluoseu-spec",
+      "ok": true,
+      "fetched": true
+    },
+    {
+      "login": "oppenheimor",
+      "ok": true,
+      "fetched": true
+    },
+    {
+      "login": "tens1x",
+      "ok": true,
+      "fetched": true
+    },
+    {
+      "login": "zz02846584zz",
+      "ok": true,
+      "fetched": true
+    }
+  ]
+}

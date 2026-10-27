@@ -119,3 +119,74 @@ test('Atelier 空模型不抛错且显式说明未加载', () => {
   assert.equal(ideas.available, false);
   assert.equal(ideas.ideas.length, 0);
 });
+
+test('Atelier 候选观察池模型只读聚合候选并保留政策回显', () => {
+  const board = model.buildCircleCandidatesBoard({
+    generated_at: '2026-10-27T00:00:00Z',
+    source: 'GitHub public REST API',
+    policy: {
+      public_github_only: true,
+      auto_follow: false,
+      auto_message: false,
+      human_promote_required: true,
+      store_email: false,
+    },
+    summary: { candidate_count: 2, fetched_count: 1 },
+    candidates: [
+      {
+        login: 'alice',
+        profile_url: 'https://github.com/alice',
+        evidence_url: 'https://api.github.com/users/alice',
+        source_projects: ['owner/skill-a', 'owner/skill-b'],
+        contributions_total: 3,
+        profile_fetched: true,
+        profile_checked_at: '2026-10-27T00:00:00Z',
+        public_evidence: {
+          public_repos: 42,
+          followers: 1250,
+          following: 5,
+          created_at: '2020-01-01T00:00:00Z',
+          html_url: 'https://github.com/alice',
+          type: 'User',
+        },
+        promotion_hint: {
+          proposed_tier: 'watch',
+          human_decision_required: true,
+          notes: '仅存在协作事实',
+        },
+      },
+      {
+        login: 'bob',
+        source_projects: ['owner/skill-c'],
+        contributions_total: 1,
+        profile_fetched: false,
+        profile_checked_at: '2026-10-27T00:00:00Z',
+        public_evidence: null,
+      },
+    ],
+  });
+
+  assert.equal(board.available, true);
+  assert.equal(board.candidateCount, 2);
+  assert.equal(board.fetchedCount, 1);
+  assert.equal(board.policy.publicGithubOnly, true);
+  assert.equal(board.policy.autoFollow, false);
+  assert.equal(board.policy.humanPromoteRequired, true);
+  assert.equal(board.candidates[0].login, 'alice');
+  assert.equal(board.candidates[0].followersCompact, '1.3k');
+  assert.equal(board.candidates[0].proposedTier, 'watch');
+  assert.equal(board.candidates[0].humanDecisionRequired, true);
+  assert.deepEqual(board.candidates[0].sourceProjects, ['owner/skill-a', 'owner/skill-b']);
+  assert.equal(board.candidates[1].profileFetched, false);
+  assert.equal(board.candidates[1].followersCompact, '—');
+  assert.equal(board.candidates[1].publicRepos, null);
+});
+
+test('Atelier 候选观察池空态保持安全默认', () => {
+  const empty = model.buildEmptyCircleCandidatesBoard('data_absent');
+  assert.equal(empty.available, false);
+  assert.equal(empty.candidateCount, 0);
+  assert.equal(empty.candidates.length, 0);
+  assert.equal(empty.policy.humanPromoteRequired, true);
+  assert.equal(empty.policy.autoFollow, false);
+});
