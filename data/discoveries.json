@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T06:16:52.847092+00:00",
+  "generated_at": "2026-10-27T12:12:38.360360+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -3356,57 +3356,74 @@
   "source_status": {
     "repository:wuyoscar/AISafetyHot-Hub": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-10-27T06:16:52.847092+00:00"
     },
     "repository:DIYgod/RSSHub": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-10-27T06:16:52.847092+00:00"
     },
     "repository:mshibanami/GitHubTrendingRSS": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-10-27T06:16:52.847092+00:00"
     },
     "repository:CodeSigils/skill-discovery": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-10-27T06:16:52.847092+00:00"
     },
     "repository:VoltAgent/awesome-agent-skills": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-10-27T06:16:52.847092+00:00"
     },
     "profile:MengEn-Ink:owned": {
       "ok": true,
       "count": 16,
+      "cached": true,
       "fetched_at": "2026-10-27T06:16:52.847092+00:00"
     },
     "profile:MengEn-Ink:starred": {
       "ok": true,
       "count": 56,
+      "cached": true,
       "fetched_at": "2026-10-27T06:16:52.847092+00:00"
     },
     "search:topic:agent-skills stars:>50 archived:false": {
       "ok": true,
       "count": 10,
+      "cached": true,
       "fetched_at": "2026-10-27T06:16:52.847092+00:00"
     },
     "search:topic:github-pages stars:>100 archived:false": {
       "ok": true,
       "count": 10,
+      "cached": true,
       "fetched_at": "2026-10-27T06:16:52.847092+00:00"
     },
     "search:topic:design-system stars:>200 archived:false": {
       "ok": true,
       "count": 10,
+      "cached": true,
       "fetched_at": "2026-10-27T06:16:52.847092+00:00"
     },
     "search:topic:developer-tools stars:>500 archived:false": {
       "ok": true,
       "count": 10,
+      "cached": true,
       "fetched_at": "2026-10-27T06:16:52.847092+00:00"
     },
     "search:topic:ai-agent stars:>500 archived:false": {
       "ok": true,
       "count": 10,
+      "cached": true,
       "fetched_at": "2026-10-27T06:16:52.847092+00:00"
     }
   },
