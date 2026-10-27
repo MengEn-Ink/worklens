@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-25T01:36:00+08:00",
+  "generated_at": "2026-10-27T22:55:32+08:00",
   "source": "GitHub public REST API and public repository pages",
   "people": [
     {
@@ -8,12 +8,135 @@
       "profile_url": "https://github.com/alchaincyf",
       "tier": "seed",
       "tier_reason": "用户指定研究对象；不等同于质量认证",
-      "public_evidence": {"public_repos": 92, "followers": 11860, "following": 1, "profile_checked_at": "2026-10-25T01:36:00+08:00", "evidence_url": "https://api.github.com/users/alchaincyf"},
+      "public_evidence": {
+        "public_repos": 92,
+        "followers": 12255,
+        "following": 1,
+        "profile_checked_at": "2026-10-27T22:55:32+08:00",
+        "evidence_url": "https://api.github.com/users/alchaincyf"
+      },
       "quality_note": "followers 仅为弱流行度信号，不计作背书或核心资格"
+    },
+    {
+      "login": "Jiandong7",
+      "profile_url": "https://github.com/Jiandong7",
+      "tier": "candidate",
+      "tier_reason": "作为 alchaincyf/huashu-design 的公开 contributor 出现，contributions=2；仅代表存在协作事实，不构成质量背书",
+      "public_evidence": {
+        "public_repos": 74,
+        "followers": 0,
+        "following": 0,
+        "profile_checked_at": "2026-10-27T22:55:32+08:00",
+        "evidence_url": "https://api.github.com/users/Jiandong7"
+      },
+      "quality_note": "仅从公开 contributors API 可见，未做人物背景验证"
     }
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "from": "Jiandong7",
+      "to": "alchaincyf/huashu-design",
+      "type": "contributor",
+      "evidence_url": "https://api.github.com/repos/alchaincyf/huashu-design/contributors",
+      "observed_at": "2026-10-27T22:55:32+08:00"
+    }
+  ],
   "projects": [
+    {
+      "full_name": "alchaincyf/nuwa-skill",
+      "url": "https://github.com/alchaincyf/nuwa-skill",
+      "category": "agent-skill-toolkit",
+      "status": "recommended",
+      "recommendation": true,
+      "reason": "seed 本人 bio 明示 author；MIT 许可证、non-archived、README/CONTRIBUTING/COMMUNITY/SKILL.md 齐全，具备可复用的 Skill 描述与贡献指引，满足推荐门槛。",
+      "evidence": {
+        "description": "你想蒸馏的下一个员工，何必是同事。蒸馏任何人的思维方式——心智模型、决策启发式、表达DNA。Distill how anyone thinks.",
+        "readme": "present",
+        "topics": [],
+        "languages": {"Python": 14401, "Shell": 1806},
+        "license_spdx": "MIT",
+        "updated_at": "2026-10-27T14:53:01Z",
+        "pushed_at": "2026-10-24T16:12:03Z",
+        "stars": 36363,
+        "forks": 4737,
+        "releases": 0,
+        "contributors": [
+          {"login": "alchaincyf", "contributions": 59},
+          {"login": "github-actions[bot]", "contributions": 1},
+          {"login": "oppenheimor", "contributions": 1},
+          {"login": "tens1x", "contributions": 1}
+        ],
+        "default_branch": "main",
+        "file_evidence": ["LICENSE", "README.md", "SKILL.md", "COMMUNITY.md", "CONTRIBUTING.md", "examples/", "scripts/"]
+      }
+    },
+    {
+      "full_name": "alchaincyf/huashu-design",
+      "url": "https://github.com/alchaincyf/huashu-design",
+      "category": "agent-design-skill",
+      "status": "recommended",
+      "recommendation": true,
+      "reason": "seed 本人 bio 明示 author；MIT 许可证、non-archived、具备 topics（agent-skills/ai-design/claude-code/cursor 等）、SKILL.md 与 v3.0.0 Release，证据链完整，满足推荐门槛。",
+      "evidence": {
+        "description": "Huashu Design 3.0 · 在 agent 里打一句话，拿回能交付的设计：网页 / App 原型 / 可编辑 PPTX / 动画 / 信息图；HTML-native design skill for Claude Code, Codex, Cursor & any agent.",
+        "readme": "present",
+        "topics": [
+          "agent-skills",
+          "ai-design",
+          "claude-code",
+          "claude-skills",
+          "codex",
+          "cursor",
+          "design",
+          "html",
+          "pptx",
+          "prototype"
+        ],
+        "languages": {"HTML": 748627, "JavaScript": 172303, "Python": 125801, "Shell": 27119},
+        "license_spdx": "MIT",
+        "updated_at": "2026-10-27T14:45:40Z",
+        "pushed_at": "2026-10-23T15:32:08Z",
+        "stars": 27655,
+        "forks": 3009,
+        "releases": 1,
+        "latest_release": {"tag": "v3.0.0", "published_at": "2026-10-17T11:40:41Z"},
+        "contributors": [
+          {"login": "alchaincyf", "contributions": 98},
+          {"login": "Jiandong7", "contributions": 2}
+        ],
+        "default_branch": "master",
+        "file_evidence": ["LICENSE", "README.md", "README.en.md", "SKILL.md", "SECURITY.md", "demos/", "scripts/", "package.json"]
+      }
+    },
+    {
+      "full_name": "alchaincyf/darwin-skill",
+      "url": "https://github.com/alchaincyf/darwin-skill",
+      "category": "skill-evolution-framework",
+      "status": "recommended",
+      "recommendation": true,
+      "reason": "seed 本人 bio 明示 author；MIT 许可证、non-archived、README/SKILL.md/templates/docs 齐全，面向 Claude Code 的自主 Skill 优化框架，满足推荐门槛。",
+      "evidence": {
+        "description": "达尔文.skill —— 一个让你的 Skill 无限进化的系统：评估→改进→测试→保留或回滚。Autoresearch-inspired autonomous skill optimization for Claude Code.",
+        "readme": "present",
+        "topics": [],
+        "languages": {"HTML": 133115, "JavaScript": 3262},
+        "license_spdx": "MIT",
+        "updated_at": "2026-10-27T14:39:23Z",
+        "pushed_at": "2026-09-18T13:16:41Z",
+        "stars": 6650,
+        "forks": 686,
+        "releases": 0,
+        "contributors": [
+          {"login": "alchaincyf", "contributions": 40},
+          {"login": "jiezeng2004-design", "contributions": 1},
+          {"login": "jupiterx0910", "contributions": 1},
+          {"login": "leiluoseu-spec", "contributions": 1},
+          {"login": "zz02846584zz", "contributions": 1}
+        ],
+        "default_branch": "master",
+        "file_evidence": ["LICENSE", "README.md", "README_EN.md", "SKILL.md", "templates/", "docs/", "showcase.html", "test-prompts.json"]
+      }
+    },
     {
       "full_name": "alchaincyf/nes-arcade",
       "url": "https://github.com/alchaincyf/nes-arcade",
@@ -62,7 +185,11 @@
   ],
   "source_status": {
     "profile:alchaincyf": {"ok": true},
+    "profile:Jiandong7": {"ok": true},
     "repositories:alchaincyf": {"ok": true, "count": 92},
+    "project:alchaincyf/nuwa-skill": {"ok": true},
+    "project:alchaincyf/huashu-design": {"ok": true},
+    "project:alchaincyf/darwin-skill": {"ok": true},
     "project:alchaincyf/nes-arcade": {"ok": true},
     "project:alchaincyf/mistgarden-support": {"ok": true}
   }
