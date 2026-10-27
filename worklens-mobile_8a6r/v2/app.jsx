@@ -433,8 +433,8 @@ function HomeView({ openEntry, goto }) {
       <div className="hero-stack anim-in">
         <div className="hero-section-label">§ 本期速览</div>
         <div className="grid grid-cols-4 gap-2 mt-3 pb-3 border-b" style={{borderColor: 'var(--rule)'}}>
-          <div><div className="stat-num">{DATA.issue.stats.scanned.toLocaleString()}</div><div className="stat-label">扫描</div></div>
-          <div><div className="stat-num">{DATA.issue.stats.curated}</div><div className="stat-label">收录</div></div>
+          <div><div className="stat-num">{DATA.issue.stats.scanned.toLocaleString()}</div><div className="stat-label">扫描源</div></div>
+          <div><div className="stat-num">{DATA.issue.stats.curated}</div><div className="stat-label">本期</div></div>
           <div><div className="stat-num" style={{color: 'var(--cinnabar)'}}>{DATA.tasteSummary.week_likes}</div><div className="stat-label">本周 ❤</div></div>
           <div><div className="stat-num">{DATA.issue.stats.saved}<span className="ff-mono text-[10px] ml-0.5" style={{color: 'var(--ink-mute)'}}>min</span></div><div className="stat-label">节省</div></div>
         </div>
@@ -682,10 +682,10 @@ function DiscoverView({ openEntry }) {
       {/* 书架速览 */}
       <div className="section-head">
         <span className="section-head__title">书架速览</span>
-        <span className="section-head__link">共 44 条</span>
+        <span className="section-head__link">共 {DATA.shelves.reduce((sum, sh) => sum + (sh.count || 0), 0)} 条</span>
       </div>
       {DATA.shelves.map(sh => (
-        <div key={sh.code} className="shelf-row">
+        <div key={`${sh.code}-${sh.name}`} className="shelf-row">
           <span className="shelf-row__code">{sh.code}</span>
           <span className="shelf-row__name">{sh.name}</span>
           <span className="shelf-row__count">{sh.count}</span>
@@ -1628,7 +1628,7 @@ function App() {
   return (
     <TasteCtx.Provider value={{ taste, setTaste }}>
       <div className="phone-frame flex flex-col" data-data-revision={dataRevision}>
-        <StatusBar />
+        {!document.body.classList.contains('wl-shell-mounted') && <StatusBar />}
         {tab === 'home'     && <HomeView openEntry={openEntry} goto={goto} />}
         {tab === 'discover' && <DiscoverView openEntry={openEntry} />}
         {tab === 'studio'   && <StudioView />}

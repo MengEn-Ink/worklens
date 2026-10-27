@@ -403,7 +403,12 @@
         issue: `GitHub 候选 · ${entries.length} 条`,
         date: pcData.ISSUE.date,
         note: '已接入真实 discoveries.json；仅展示公开 GitHub 仓库元数据，Skill 候选进入待审队列。',
-        stats: { scanned: pcData.ISSUE.stats.scanned, curated: pcData.ISSUE.stats.curated, adopted: pcData.ISSUE.stats.adopted_this_week, saved: 0 },
+        stats: {
+          scanned: pcData.ISSUE.stats.scanned,
+          curated: entries.length,
+          adopted: entries.filter(entry => entry.verdict === 'adopt').length,
+          saved: 0,
+        },
       },
       entries,
       pipeline: pcData.PIPELINE.map(item => ({ stage: item.stage, count: item.count, hint: item.hint })),
