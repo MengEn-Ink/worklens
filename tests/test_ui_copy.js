@@ -7,22 +7,48 @@ const path = require('node:path');
 
 const ROOT = path.resolve(__dirname, '..');
 const read = (file) => fs.readFileSync(path.join(ROOT, file), 'utf8');
+const HUB = 'worklens-hub_9bx8/v1';
 
-test('桌面导航与评分说明优先使用简体中文', () => {
-  const app = read('worklens_zn3k/v3/app.jsx');
-  const components = read('worklens_zn3k/v3/components.jsx');
-  const views = read('worklens_zn3k/v3/views.jsx');
+test('IA 收敛：一级导航只剩 本期 / 情报 / 待审 / 我的', () => {
+  const shell = read('shared/worklens-shell.js');
+  const labels = Array.from(shell.matchAll(/label: '([^']+)'/g)).map(match => match[1]);
+  assert.deepEqual(labels, ['本期', '情报', '待审', '我的']);
+});
 
-  for (const copy of ['本期精选', '筛选过程', '项目资料库', '项目详解', '行动路线', '使用复盘', '偏好画像']) {
-    assert.ok(app.includes(copy), `缺少中文导航：${copy}`);
+test('IA 收敛：已砍掉的板块不再出现在页面源码中', () => {
+  const source = ['app.jsx', 'views.jsx', 'components.jsx', 'data-adapter.js'].map(file => read(`${HUB}/${file}`)).join('\n');
+  for (const removed of ['推送中心', '学习路径', '引入复盘', '时间地图', '能力雷达', '你的词汇表', '已服役', '订阅主题', '下次重算']) {
+    assert.ok(!source.includes(removed), `已收敛的板块不应再出现：${removed}`);
   }
-  for (const copy of ['匹配度', '新颖度', '引入成本', '风险', '评分说明']) {
-    assert.ok(components.includes(copy), `缺少中文评分解释：${copy}`);
+  assert.ok(!/§ 第 \d+ 章/.test(source), '章节编号装饰应移除');
+});
+
+test('Hub 三个视图与关键中文文案齐备', () => {
+  const app = read(`${HUB}/app.jsx`);
+  const views = read(`${HUB}/views.jsx`);
+  for (const copy of ['喜好账本', '信号源与隐私', '实验室', '核心开源者圈层', 'Idea 项目化', '推荐复盘', '四小时健康巡检']) {
+    assert.ok(app.includes(copy), `「我的」缺少：${copy}`);
   }
-  assert.ok(views.includes('待审队列'));
-  assert.ok(views.includes('喜好账本'));
-  assert.ok(!app.includes("sub: 'This Issue'"));
-  assert.ok(!views.includes('REVIEW QUEUE'));
+  for (const copy of ['全部候选', '30 秒速读', '匹配度', '新颖度', '引入成本', '风险', 'Skill 待审', '阻断项', '正式引入']) {
+    assert.ok(views.includes(copy), `视图缺少：${copy}`);
+  }
+});
+
+test('只读声明收敛为页脚一处，页面不提供安装入口', () => {
+  const app = read(`${HUB}/app.jsx`);
+  const views = read(`${HUB}/views.jsx`);
+  assert.equal((app.match(/不安装、不执行任何 Skill/g) || []).length, 1);
+  assert.ok(!/onInstall|install\(/.test(app + views));
+});
+
+test('Hub 入口 HTML 是薄骨架：只含空 #root 与外部脚本', () => {
+  const html = read(`${HUB}/worklens-hub_9bx8_pc.html`);
+  assert.ok(html.includes('<div id="root"></div>'));
+  assert.ok(!/<style/.test(html));
+  assert.ok(!/<script>(?!<\/script>)/.test(html), '不得有 inline script');
+  for (const file of ['./styles.css', './data-adapter.js', './atelier-model.js', './review-model.js', './components.jsx', './views.jsx', './app.jsx']) {
+    assert.ok(html.includes(file), `缺少依赖 ${file}`);
+  }
 });
 
 test('AI 情报页显式展示数据新鲜度与缓存降级徽标文案', () => {
@@ -31,13 +57,4 @@ test('AI 情报页显式展示数据新鲜度与缓存降级徽标文案', () =>
   assert.ok(app.includes('UTC {generatedUtc}'), 'AI 情报页应展示 UTC 更新时间');
   assert.ok(app.includes('>缓存<'), 'AI 情报页应保留缓存徽标文案');
   assert.ok(app.includes('>降级<'), 'AI 情报页应保留降级徽标文案');
-});
-
-test('移动端仓库趋势与活跃热力显式标注「示意」，与实测计数区分（Issue #68）', () => {
-  const app = read('worklens-mobile_8a6r/v2/app.jsx');
-  assert.ok(app.includes('STARS · 示意'), '趋势区头部必须标注「STARS · 示意」');
-  assert.ok(app.includes('活跃度 · 示意'), '活跃热力必须有可见的「活跃度 · 示意」标注');
-  assert.ok(app.includes('非真实历史数据'), '趋势必须说明非真实历史数据');
-  assert.ok(app.includes('非真实事件统计'), '活跃度必须说明非真实事件统计');
-  assert.ok(!app.includes('STARS · TREND'), '旧的无标注「STARS · TREND」文案应移除');
 });

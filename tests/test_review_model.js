@@ -4,7 +4,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const model = require('../worklens_zn3k/v4/review-model.js');
+const model = require('../worklens-hub_9bx8/v1/review-model.js');
 
 const DATA_PATH = path.join(__dirname, '..', 'data', 'recommendation-reviews.json');
 

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Build the GitHub Pages artifact from versioned WorkLens surfaces.
 
-The builder keeps Pages assembly deterministic and prepares an optional Atelier
-route for the next PC v4 surface. If the v4 source directory is absent, the
-route is recorded as skipped rather than silently publishing stale files.
+After the IA convergence there are exactly two published surfaces: the
+responsive Hub at ``/`` (本期 / 待审 / 我的) and AI 情报 at ``/ai-news/``.
+Optional targets whose source directory is absent are recorded as skipped
+rather than silently publishing stale files.
 """
 from __future__ import annotations
 
@@ -25,24 +26,12 @@ class PageTarget:
 
 
 TARGETS = (
+    # 收敛后的唯一主站：本期 / 待审 / 我的（同一套响应式页面，PC 与 H5 共用）。
     PageTarget(
-        name="mobile",
-        source_dir=Path("worklens-mobile_8a6r/v2"),
-        entry_file="worklens-mobile_8a6r_h5.html",
+        name="hub",
+        source_dir=Path("worklens-hub_9bx8/v1"),
+        entry_file="worklens-hub_9bx8_pc.html",
         output_dir=".",
-    ),
-    PageTarget(
-        name="desktop",
-        source_dir=Path("worklens_zn3k/v3"),
-        entry_file="worklens_zn3k_pc.html",
-        output_dir="desktop",
-    ),
-    PageTarget(
-        name="atelier",
-        source_dir=Path("worklens_zn3k/v4"),
-        entry_file="index.html",
-        output_dir="atelier",
-        required=False,
     ),
     PageTarget(
         name="ai-news",
@@ -51,6 +40,37 @@ TARGETS = (
         output_dir="ai-news",
     ),
 )
+
+
+# 收敛前的旧入口：保留一个静态跳转页，避免书签和外链 404。
+LEGACY_REDIRECTS = {
+    "desktop": "../",
+    "atelier": "../#review",
+}
+
+REDIRECT_TEMPLATE = """<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url={target}" />
+    <link rel="canonical" href="{target}" />
+    <title>WorkLens 已合并入口</title>
+  </head>
+  <body>
+    <p>该入口已合并到 WorkLens 主站，正在跳转：<a href="{target}">{target}</a></p>
+  </body>
+</html>
+"""
+
+
+def write_legacy_redirects(site_dir: Path) -> list[dict]:
+    written = []
+    for route, target in LEGACY_REDIRECTS.items():
+        destination = site_dir / route
+        destination.mkdir(parents=True, exist_ok=True)
+        (destination / "index.html").write_text(REDIRECT_TEMPLATE.format(target=target), encoding="utf-8")
+        written.append({"route": f"/{route}/", "target": target})
+    return written
 
 
 def reset_dir(path: Path) -> None:
@@ -137,6 +157,7 @@ def assemble(root: Path = ROOT, site_dir: Path | None = None) -> dict:
     reset_dir(site_dir)
 
     target_results = [copy_target(root, site_dir, target) for target in TARGETS]
+    redirects = write_legacy_redirects(site_dir)
     data_files = copy_data(root, site_dir)
     shared_files = copy_shared(root, site_dir)
     (site_dir / ".nojekyll").write_text("", encoding="utf-8")
@@ -144,6 +165,7 @@ def assemble(root: Path = ROOT, site_dir: Path | None = None) -> dict:
     manifest = {
         "schema_version": 1,
         "targets": target_results,
+        "redirects": redirects,
         "data_files": data_files,
         "shared_files": shared_files,
     }
