@@ -38,6 +38,7 @@ WorkLens 是围绕个人日常工作持续生长的开源能力雷达：发现�
 
 ## 自动化节奏
 
+- 每四小时：健康巡检与数据刷新，核验公开数据新鲜度、Actions 与未关闭 Issue，结果写入公开账本 `data/health-checks.json`（`scripts/health_check.py validate`，CI 强制校验）。
 - 每日：采集、去重、补充仓库元数据（GitHub Actions 实际在每日 01:17 UTC 执行）。
 - GitHub discovery 与每个公开资讯源默认使用独立 24 小时 TTL；支持 ETag/Last-Modified 条件请求，刷新失败会按源保留旧候选并标记 degraded/cached，避免中断后续链路。
 - 公开资讯按 P0 > P1 > P2 > 无级、同级按时间倒序展示；canonical URL、GitHub release 实体与 CVE/OSV aliases 会跨源去重并保留来源列表。
