@@ -177,10 +177,10 @@ function App() {
   }, [route, V, goto, openEntry, taste, onTaste, subscriptions, acceptedProposals, onToggleSub, onAcceptProposal, dataRevision, D.ENTRIES]);
 
   return (
-    <div className="w-full min-h-screen flex" data-data-revision={dataRevision} style={{background: 'var(--paper)'}}>
+    <div className="w-full min-h-screen flex wl-desktop-shell" data-data-revision={dataRevision} style={{background: 'var(--paper)'}}>
 
       {/* 左侧目录 */}
-      <aside className="flex-shrink-0 flex flex-col"
+      <aside className="flex-shrink-0 flex flex-col wl-side"
              style={{width: '248px', background: 'var(--paper-warm)',
                      borderRight: '1px solid var(--rule)',
                      position: 'sticky', top: 0, height: '100vh'}}>
@@ -266,7 +266,7 @@ function App() {
       </aside>
 
       {/* 主内容 */}
-      <main className="flex-1 min-w-0 relative">
+      <main className="flex-1 min-w-0 relative wl-main">
         <div className="max-w-[1240px] mx-auto px-10 pb-16">
           {Current}
 

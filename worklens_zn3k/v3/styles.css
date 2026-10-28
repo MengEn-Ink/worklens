@@ -731,3 +731,170 @@ body::before {
   .mwb-tabs button > small { margin-top: 4px; font: 10px/1 'JetBrains Mono', monospace; }
   .mwb-tabs button.is-active { color: var(--cinnabar); box-shadow: inset 0 3px var(--cinnabar); }
 }
+
+
+/* ================================================================
+   v3 响应式修复（2026-10 feat/responsive-layout-refresh）
+   目标：
+   - ≤720px   走 mobile-workbench（既有策略，保持）
+   - 721-1023 桌面布局但侧栏折叠为 icon-only 72px，主内容收紧
+   - 1024-1279 侧栏 212px，主内容 padding 收紧
+   - ≥1280    现状
+   同时为所有宽度加入 overflow-x: hidden 兜底，杜绝 1411px 水平溢出。
+   ---------------------------------------------------------------- */
+
+html, body { overflow-x: hidden; max-width: 100vw; }
+.wl-desktop-shell { min-width: 0; }
+.wl-desktop-shell .wl-main > div { max-width: min(1240px, 100%); }
+
+/* 窄桌面 / 平板横屏：721-1023 侧栏缩成 icon-only */
+@media (min-width: 721px) and (max-width: 1023px) {
+  /* 侧栏收为 92px「目次轨」：编号在上、短标签在下，保留导航语义 */
+  .wl-desktop-shell .wl-side {
+    width: 92px !important;
+    min-width: 92px;
+  }
+  /* 隐藏品牌/搜索/底部状态等非核心块，只保留 nav */
+  .wl-desktop-shell .wl-side > div:first-child,
+  .wl-desktop-shell .wl-side > div:nth-child(2),
+  .wl-desktop-shell .wl-side > div:last-child { display: none; }
+  .wl-desktop-shell .wl-side > nav { padding-top: 6px; padding-bottom: 10px; }
+  .wl-desktop-shell .wl-side .nav-item {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    min-height: 56px;
+    padding: 9px 4px;
+    text-align: center;
+    border-left-width: 3px;
+  }
+  .wl-desktop-shell .wl-side .nav-item .flex-1 { flex: 0 0 auto; }
+  .wl-desktop-shell .wl-side .nav-item .flex-1 > div:last-child { display: none; }
+  .wl-desktop-shell .wl-side .nav-item__label {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+  .wl-desktop-shell .wl-side .nav-item__no {
+    font-size: 10px;
+    min-width: 0;
+    letter-spacing: .08em;
+  }
+  .wl-desktop-shell .wl-side .nav-item--active .nav-item__no { color: var(--cinnabar); font-weight: 700; }
+  /* 徽标数字悬浮到右上角，不再挤占文字 */
+  .wl-desktop-shell .wl-side .nav-item > span.ff-mono { position: absolute; top: 6px; right: 6px; }
+  .wl-desktop-shell .wl-side .nav-item svg { display: none; }
+  /* 侧栏内文字区块（搜索区 / 书架 / 版权） */
+  .wl-desktop-shell .wl-side .scroll-area > *:not(.nav-item):not(hr) { display: none; }
+  .wl-desktop-shell .wl-side .scroll-area > hr { margin: 10px 8px; }
+
+  /* 主内容多列 grid 自适应降级 */
+  .wl-desktop-shell .wl-main .grid.grid-cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .wl-desktop-shell .wl-main .grid.grid-cols-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .wl-desktop-shell .wl-main .grid.grid-cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .wl-desktop-shell .wl-main .grid.grid-cols-7 { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .wl-desktop-shell .wl-main .grid.grid-cols-2 { gap: 16px; }
+  /* 阅读器 reader-grid 变单列 */
+  .wl-desktop-shell .reader-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+  /* 刊头大字 */
+  .wl-desktop-shell .masthead-title { font-size: clamp(42px, 7vw, 72px) !important; }
+  .wl-desktop-shell .issue-num { font-size: clamp(42px, 7vw, 72px); }
+  /* 主内容整体 padding 收紧 */
+  .wl-desktop-shell .wl-main > div.max-w-\[1240px\] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+/* 中桌面：1024-1279 侧栏收紧、保留文本 */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .wl-desktop-shell .wl-side {
+    width: 212px !important;
+  }
+  .wl-desktop-shell .wl-main .grid.grid-cols-5 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .wl-desktop-shell .wl-main .grid.grid-cols-7 { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+  .wl-desktop-shell .wl-main > div.max-w-\[1240px\] {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+  .wl-desktop-shell .masthead-title { font-size: clamp(56px, 7.5vw, 96px); }
+}
+
+/* 卡片内部数值防溢出 */
+.wl-desktop-shell .stat-num,
+.wl-desktop-shell .pipe-node__count,
+.wl-desktop-shell .group-head__count { overflow-wrap: anywhere; word-break: break-word; }
+
+/* 搜索命令框弹窗在窄屏下不要溢出 */
+@media (max-width: 1023px) {
+  .wl-desktop-shell .lib-card.anim-in[class*="w-[560px]"] {
+    width: min(560px, 92vw);
+  }
+}
+
+/* ----------------------------------------------------------------
+   inline grid-template-columns 的响应式兜底
+   views.jsx 大量使用 inline style={{gridTemplateColumns: ...}}。
+   这里针对窄视口统一回退为单列或双列，避免溢出。
+   仅在 .wl-desktop-shell 作用域内生效，避免影响其它入口。
+   ---------------------------------------------------------------- */
+@media (min-width: 721px) and (max-width: 1023px) {
+  .wl-desktop-shell .wl-main [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  /* Heatmap 保留 24 列水平 */
+  .wl-desktop-shell .wl-main [style*="repeat(24"] {
+    grid-template-columns: 20px repeat(24, minmax(0, 1fr)) !important;
+    gap: 2px !important;
+  }
+  /* 工作室 6 列图表降为 3 列 */
+  .wl-desktop-shell .wl-main [style*="repeat(6"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  /* 显式的双栏文章 1fr+320 变为单列 */
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  /* 带固定 320/300 侧栏的三栏在窄桌面保留但压缩 */
+  .wl-desktop-shell .wl-hero-grid {
+    grid-template-columns: 1fr 1.6fr !important;
+  }
+  .wl-desktop-shell .wl-hero-grid > aside:last-child {
+    display: none;
+  }
+  /* 中桌面：主内容 inline grid 同样做兜底，避免 1fr 项内容过宽 */
+  .wl-desktop-shell .wl-main [style*="grid-template-columns"] > * { min-width: 0; }
+}
+
+/* 大桌面兜底：所有 inline grid 的子项允许收缩 */
+.wl-desktop-shell .wl-main [style*="grid-template-columns"] > * { min-width: 0; }
+
+
+/* --- 触控目标 ≥ 44px：平板/手机（≤1023）下按钮、输入、口味评分统一放大 --- */
+@media (max-width: 1023px) {
+  .wl-desktop-shell .btn,
+  .mwb-locator { min-height: 44px; }
+  .wl-desktop-shell .taste-btn { min-width: 44px; min-height: 44px; }
+  .wl-desktop-shell input[type="text"],
+  .wl-desktop-shell input[type="search"],
+  .wl-desktop-shell input:not([type]) { min-height: 44px; }
+}
+
+/* --- 本周头条：标题与副题分级 -----------------------------------
+   副题来自真实数据（常为 60+ 字的项目简介），原 42px 斜体会吞掉半屏。
+   改为与视口挂钩的阅读字号，最多 3 行，超出省略。 */
+.wl-headline { font-size: clamp(40px, 4.2vw, 58px); overflow-wrap: anywhere; }
+.wl-headline-sub {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  margin-top: 14px;
+  font-size: clamp(18px, 1.6vw, 24px);
+  line-height: 1.4;
+  letter-spacing: 0;
+}

@@ -85,7 +85,7 @@
         </div>
 
         {/* 策展人手记 + 头条 */}
-        <div className="grid gap-10 pt-8" style={{gridTemplateColumns: '280px 1fr 300px'}}>
+        <div className="grid gap-10 pt-8 wl-hero-grid" style={{gridTemplateColumns: '280px 1fr 300px'}}>
           <aside>
             <div className="ff-mono text-[10px] uppercase tracking-[0.25em] mb-2" style={{color: 'var(--cinnabar)'}}>
               策展人手记
@@ -107,10 +107,10 @@
               <span className="ff-mono text-[10px]" style={{color: 'var(--ink-mute)'}}>{headline.dewey}</span>
               <C.VerdictPill v={headline.verdict} />
             </div>
-            <h1 className="ff-serif font-bold leading-[0.95] mb-3"
-                style={{fontSize: '58px', letterSpacing: '-0.025em'}}>
+            <h1 className="ff-serif font-bold leading-[0.95] mb-3 wl-headline"
+                style={{letterSpacing: '-0.025em'}}>
               {headline.title}<br/>
-              <span className="ff-serif italic font-normal" style={{color: 'var(--ink-mute)', fontSize: '42px'}}>
+              <span className="ff-serif italic font-normal wl-headline-sub" style={{color: 'var(--ink-mute)'}}>
                 —— {headline.sub}
               </span>
             </h1>

@@ -8,33 +8,39 @@
   color: var(--wl-ink); font-family: "Noto Sans SC", "PingFang SC", system-ui, sans-serif; pointer-events: auto;
 }
 .wl-shell { position: fixed; inset: 0 0 auto; z-index: 1000; height: var(--wl-shell-height); background: color-mix(in srgb, var(--wl-paper-raised) 96%, transparent); border-bottom: 1px solid var(--wl-ink); backdrop-filter: blur(12px); }
-.wl-shell__inner { height: 100%; max-width: 1600px; margin: auto; padding: 0 24px; display: flex; align-items: stretch; }
-.wl-shell__brand { display: flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; margin-right: 42px; font-size: 20px; font-weight: 700; letter-spacing: -.04em; }
+.wl-shell__inner { height: 100%; max-width: 1600px; margin: auto; padding: 0 clamp(14px, 2.4vw, 24px); display: flex; align-items: stretch; gap: 12px; }
+.wl-shell__brand { display: flex; align-items: center; min-height: 44px; align-self: center; gap: 10px; color: inherit; text-decoration: none; margin-right: clamp(16px, 3vw, 42px); font-size: clamp(17px, 1.5vw, 20px); font-weight: 700; letter-spacing: -.04em; white-space: nowrap; min-width: 0; }
 .wl-shell__brand-mark { width: 32px; height: 32px; flex: 0 0 auto; display: block; }
 .wl-shell__brand small { color: var(--wl-muted); font: 500 9px/1 "Noto Sans SC", sans-serif; letter-spacing: .15em; }
-.wl-shell__nav { display: flex; align-items: stretch; gap: 6px; }
-.wl-shell__link { display: flex; align-items: center; padding: 0 16px; color: var(--wl-muted); border-bottom: 3px solid transparent; text-decoration: none; font-size: 13px; font-weight: 500; }
+.wl-shell__nav { display: flex; align-items: stretch; gap: clamp(2px, 0.4vw, 6px); min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.wl-shell__nav::-webkit-scrollbar { display: none; }
+.wl-shell__link { display: flex; align-items: center; padding: 0 clamp(10px, 1.4vw, 16px); color: var(--wl-muted); border-bottom: 3px solid transparent; text-decoration: none; font-size: clamp(12px, 1.1vw, 13px); font-weight: 500; white-space: nowrap; }
 .wl-shell__link:hover { color: var(--wl-ink); background: var(--wl-paper-muted); }
 .wl-shell__link[aria-current="page"] { color: var(--wl-ink); border-bottom-color: var(--wl-accent); font-weight: 700; }
-.wl-shell__edition { margin-left: auto; align-self: center; color: var(--wl-muted); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.wl-shell__edition { margin-left: auto; align-self: center; color: var(--wl-muted); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; }
 .wl-shell__menu, .wl-shell__scrim, .wl-bottom { display: none; }
 .wl-shell-mounted #root .masthead { top: var(--wl-shell-height); }
+/* 紧凑桌面：窄桌面与平板横屏下让顶栏不再塞 edition 徽标，避免挤压导航 */
+@media (max-width: 1023px) {
+  .wl-shell__brand small { display: none; }
+  .wl-shell__edition { display: none; }
+}
 @media (max-width: 720px) {
   .wl-shell-mounted { --wl-shell-height: 48px; --wl-bottom-height: 66px; padding-bottom: calc(var(--wl-bottom-height) + env(safe-area-inset-bottom)); }
   .wl-shell__inner { padding: 0 14px; align-items: center; }
   .wl-shell__brand { margin: 0; gap: 8px; font-size: 18px; }
   .wl-shell__brand-mark { width: 28px; height: 28px; }
   .wl-shell__brand small, .wl-shell__edition, .wl-shell__nav { display: none; }
-  .wl-shell__menu { display: grid; place-items: center; width: 34px; height: 30px; margin-left: auto; padding: 0; border: 1px solid var(--wl-ink); background: var(--wl-paper-raised); color: var(--wl-ink); font: 700 15px/1 sans-serif; }
+  .wl-shell__menu { display: grid; place-items: center; width: 44px; height: 44px; margin-left: auto; margin-right: -6px; padding: 0; border: 1px solid var(--wl-ink); background: var(--wl-paper-raised); color: var(--wl-ink); font: 700 15px/1 sans-serif; }
   .wl-bottom { position: fixed; z-index: 1001; inset: auto 0 0; height: calc(var(--wl-bottom-height) + env(safe-area-inset-bottom)); padding: 0 7px env(safe-area-inset-bottom); display: grid; grid-template-columns: repeat(4, 1fr); background: var(--wl-paper-raised); border-top: 1px solid var(--wl-ink); }
-  .wl-bottom__link { min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; color: var(--wl-muted); text-decoration: none; font: 500 10px/1.1 "Noto Sans SC", sans-serif; }
+  .wl-bottom__link { min-width: 0; min-height: 46px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; color: var(--wl-muted); text-decoration: none; font: 500 10px/1.1 "Noto Sans SC", sans-serif; }
   .wl-bottom__link::before { content: attr(data-index); font: 600 11px/1 monospace; }
   .wl-bottom__link[aria-current="page"] { color: var(--wl-accent); font-weight: 700; }
   .wl-shell__scrim { position: fixed; z-index: 1002; inset: 0; padding: 72px 16px 90px; background: rgba(24, 21, 18, .46); }
   .wl-shell__scrim.is-open { display: block; }
   .wl-drawer { max-width: 360px; margin-left: auto; padding: 22px; background: var(--wl-paper-raised); border: 1px solid var(--wl-ink); box-shadow: 8px 8px 0 rgba(24, 21, 18, .18); }
   .wl-drawer__head { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 2px solid var(--wl-ink); font-weight: 700; }
-  .wl-drawer__close { border: 0; background: none; color: inherit; font-size: 22px; }
+  .wl-drawer__close { min-width: 44px; min-height: 44px; margin: -10px -12px -10px 0; border: 0; background: none; color: inherit; font-size: 22px; }
   .wl-drawer a { display: block; padding: 15px 4px; color: var(--wl-ink); border-bottom: 1px solid var(--wl-rule); text-decoration: none; }
   .wl-drawer a[aria-current="page"] { color: var(--wl-accent); font-weight: 700; }
 }
