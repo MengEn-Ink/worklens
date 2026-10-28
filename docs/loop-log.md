@@ -2,6 +2,28 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-29（00 点轮）· 健康巡检通过并刷新公开数据（Issue #77）
+
+**成果**
+
+- 同步公开仓库 `main` 到最新 `1ef0cb1`，开始时 GitHub Issues `Open 0`，最近 main 的「质量与安全门禁」run #40717182754 与「发布 GitHub Pages」run #40717182769 均为 success，列表无 running / queued / failed。
+- 本轮按 Loop 约定创建 Issue #77 承载健康巡检验收标准；不启动新功能，P0–P4 目标继续保持全部上线，Loop 维持健康巡检降级态。
+- 数据刷新：开始时 `data/ai-news.json` 与 `data/discoveries.json` 的 `generated_at` 均为 `2026-10-28T08:12Z` 左右，距本轮约 7.8 小时，超过 4 小时阈值；已手动触发 `collect.yml` run #40722167788 并成功完成，机器人提交 `d23008c`，公开数据刷新到 `2026-10-28T16:03:32Z` 左右。
+- 采集结果：AI 资讯 200 条、14 个公开资讯源 `ok=true`；开源项目候选 124 条、12 个源 `ok=true`。本轮未引入私有数据、凭证、内部地址或未经评测自动安装 Skill。
+- 本巡检提交仅更新轮次日志，并通过 `Closes #77` 收口本轮 Issue。
+
+**验证证据**
+
+- 本地质量门禁（main `d23008c`）：`node --test tests/*.js` → tests 37 / pass 37 / fail 0；`python3 -m unittest discover -s tests -p 'test_*.py'` → Ran 112 tests OK。
+- 契约与安全：`core_circle.py` → `2 people, 5 projects`；`skill_review.py validate`、`skill_adoptions.py validate`、`idea_pipeline.py validate`（1 ideas）、`recommendation_review.py validate`（1 reviews）、`security_scan.py`、`health_check.py validate` 均 exit 0。
+- 前端语法与 Pages 组装：跟踪的 `.js` 适配/模型文件 `node --check` 通过；`python3 scripts/build_pages.py` 输出 `routes=/, /ai-news/; skipped=none`，构建后工作树无改动。
+- 远端采集：`collect.yml` run #40722167788 success，数据提交 `d23008c`；因数据刷新已改变公开数据，后续提交推送会触发质量门禁与 Pages 发布并完成线上入口核验。
+
+**下一轮唯一最高优先级**
+
+- 继续健康巡检：核对 main、运行中 / 失败 Actions（含每四小时 `collect.yml`）、Pages 四入口、公开数据文件新鲜度与采集链路；若 Issues 为空则继续创建新的巡检 Issue 承载验收标准。
+- SR-0011 在 2026-10-31 真人试用复盘出结论前不得推进 adopted、不得安装 Skill；推荐复盘画像调整未获真人确认前不得自动写入 profile 或改变推荐权重。
+
 ## 2026-10-28（08 点轮·续）· 移动端仓库图形「示意」标注收口（Issue #68）
 
 **成果**
