@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-27T06:17:02.802144+00:00",
+  "generated_at": "2026-10-28T06:51:53.668039+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -33,12 +33,12 @@
         "search:topic:developer-tools stars:>500 archived:false"
       ],
       "enqueued_at": "2026-10-24T04:55:16.586362+00:00",
-      "metadata_synced_at": "2026-10-27T06:17:02.800344+00:00",
+      "metadata_synced_at": "2026-10-28T06:51:53.665158+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 393072,
-      "pushed_at": "2026-10-27T06:15:36Z",
+      "stars": 398700,
+      "pushed_at": "2026-10-28T06:50:00Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -65,12 +65,12 @@
       "source": "search:topic:agent-skills stars:>50 archived:false",
       "also_seen_in": [],
       "enqueued_at": "2026-10-24T04:55:16.586479+00:00",
-      "metadata_synced_at": "2026-10-27T06:17:02.800418+00:00",
+      "metadata_synced_at": "2026-10-28T06:51:53.665298+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 107750,
-      "pushed_at": "2026-10-27T06:08:01Z",
+      "stars": 108095,
+      "pushed_at": "2026-10-28T06:49:46Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -97,12 +97,12 @@
       "source": "profile:MengEn-Ink:starred",
       "also_seen_in": [],
       "enqueued_at": "2026-10-24T04:55:16.587131+00:00",
-      "metadata_synced_at": "2026-10-27T06:17:02.800734+00:00",
+      "metadata_synced_at": "2026-10-28T06:51:53.665780+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 48291,
-      "pushed_at": "2026-10-24T09:42:32Z",
+      "stars": 48304,
+      "pushed_at": "2026-10-28T03:16:05Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -129,12 +129,12 @@
       "source": "repository:VoltAgent/awesome-agent-skills",
       "also_seen_in": [],
       "enqueued_at": "2026-10-24T04:55:16.587321+00:00",
-      "metadata_synced_at": "2026-10-27T06:17:02.800822+00:00",
+      "metadata_synced_at": "2026-10-28T06:51:53.666023+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 36418,
-      "pushed_at": "2026-10-25T13:18:51Z",
+      "stars": 36474,
+      "pushed_at": "2026-10-27T19:15:14Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -259,12 +259,12 @@
       "source": "search:topic:agent-skills stars:>50 archived:false",
       "also_seen_in": [],
       "enqueued_at": "2026-10-24T04:55:16.589192+00:00",
-      "metadata_synced_at": "2026-10-27T06:17:02.801779+00:00",
+      "metadata_synced_at": "2026-10-28T06:51:53.667416+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 361,
-      "pushed_at": "2026-10-27T06:16:51Z",
+      "stars": 362,
+      "pushed_at": "2026-10-28T06:49:56Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -757,11 +757,11 @@
       "source": "profile:MengEn-Ink:starred",
       "also_seen_in": [],
       "enqueued_at": "2026-10-25T06:07:53.833009+00:00",
-      "metadata_synced_at": "2026-10-27T06:17:02.800955+00:00",
+      "metadata_synced_at": "2026-10-28T06:51:53.666205+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 27230,
+      "stars": 27825,
       "pushed_at": "2026-10-23T15:32:08Z",
       "checks": {
         "license_declared": {
@@ -821,11 +821,11 @@
       "source": "profile:MengEn-Ink:starred",
       "also_seen_in": [],
       "enqueued_at": "2026-10-25T06:07:53.833221+00:00",
-      "metadata_synced_at": "2026-10-27T06:17:02.801205+00:00",
+      "metadata_synced_at": "2026-10-28T06:51:53.666588+00:00",
       "state": "candidate",
       "license": "NOASSERTION",
       "archived": false,
-      "stars": 6333,
+      "stars": 6396,
       "pushed_at": "2026-10-26T14:04:30Z",
       "checks": {
         "license_declared": {
@@ -855,12 +855,12 @@
       "source": "search:topic:ai-agent stars:>500 archived:false",
       "also_seen_in": [],
       "enqueued_at": "2026-10-25T06:07:53.833330+00:00",
-      "metadata_synced_at": "2026-10-25T06:07:53.833330+00:00",
+      "metadata_synced_at": "2026-10-28T06:51:53.666784+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 3999,
-      "pushed_at": "2026-10-25T05:59:35Z",
+      "stars": 4381,
+      "pushed_at": "2026-10-28T06:49:27Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -1168,6 +1168,134 @@
       "history": [
         {
           "at": "2026-10-27T06:17:02.801524+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0031",
+      "subject": "alibaba/skill-up",
+      "html_url": "https://github.com/alibaba/skill-up",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-28T06:51:53.666997+00:00",
+      "metadata_synced_at": "2026-10-28T06:51:53.666997+00:00",
+      "state": "candidate",
+      "license": "Apache-2.0",
+      "archived": false,
+      "stars": 1382,
+      "pushed_at": "2026-10-28T06:50:02Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=Apache-2.0",
+          "checked_at": "2026-10-28T06:51:53.666997+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-28T06:51:53.666997+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0032",
+      "subject": "mmalmi/nostr-vpn",
+      "html_url": "https://github.com/mmalmi/nostr-vpn",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-28T06:51:53.667085+00:00",
+      "metadata_synced_at": "2026-10-28T06:51:53.667085+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 1223,
+      "pushed_at": "2026-10-28T06:51:21Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-10-28T06:51:53.667085+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-28T06:51:53.667085+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0033",
+      "subject": "TencentCloudBase/CloudBase-AI-Toolkit",
+      "html_url": "https://github.com/TencentCloudBase/CloudBase-AI-Toolkit",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-28T06:51:53.667126+00:00",
+      "metadata_synced_at": "2026-10-28T06:51:53.667126+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 1152,
+      "pushed_at": "2026-10-28T06:47:30Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-10-28T06:51:53.667126+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-28T06:51:53.667126+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0034",
+      "subject": "xiaomoBoy/pi-bluebook",
+      "html_url": "https://github.com/xiaomoBoy/pi-bluebook",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-28T06:51:53.667454+00:00",
+      "metadata_synced_at": "2026-10-28T06:51:53.667454+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 336,
+      "pushed_at": "2026-10-28T06:48:35Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-10-28T06:51:53.667454+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-28T06:51:53.667454+00:00",
           "event": "enqueued",
           "by": "worklens-bot",
           "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
