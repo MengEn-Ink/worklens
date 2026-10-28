@@ -19,6 +19,7 @@ WorkLens 是围绕个人日常工作持续生长的开源能力雷达：发现�
 - PC v4 Atelier 已接入 `/atelier/`：只读展示 Skill 待审队列、alchaincyf 开源游戏项目证据台与 Pages 发布契约，不触发安装或外部写操作
 - Idea 项目化流程已有最小公开数据契约、Atelier 只读面板与移动端袖珍摘要：`data/idea-pipeline.json` + `scripts/idea_pipeline.py validate`，自动化最多推进到 research，不创建脚手架、不自动安装 Skill
 - 推荐复盘最小闭环已建立：`data/recommendation-reviews.json` + `scripts/recommendation_review.py validate|summarize`，复盘对象必须命中 discoveries 公开候选；Atelier「推荐复盘」面板只读展示，CLI 只输出待真人确认的画像调整摘要，自动化在真人策略下最多标记降权，不自动调整画像或推荐
+- 四小时 Loop 健康巡检账本已建立：`data/health-checks.json` + `scripts/health_check.py validate|summarize`，只记录公开数据新鲜度、公开 Issue 与下一项，不写入私有数据、凭证或内部地址
 
 ## 页面入口
 

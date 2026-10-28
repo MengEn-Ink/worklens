@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "policy": {
+    "public_only": true,
+    "no_private_data": true,
+    "stale_threshold_minutes": 240,
+    "automation_scope": "health-check-and-data-refresh"
+  },
+  "checks": [
+    {
+      "id": "loop-20261028-1204-cst",
+      "checked_at": "2026-10-28T04:09:00Z",
+      "actor": "worklens-loop",
+      "scope": "四小时健康巡检与数据刷新",
+      "result": "pass",
+      "issue_url": "https://github.com/MengEn-Ink/worklens/issues/71",
+      "actions": [
+        {
+          "name": "同步 main 与核对未关闭 Issue",
+          "result": "pass",
+          "evidence": "main 已同步；巡检前公开 Issue 列表为空，已创建 #71 承接本轮最小可交付。"
+        },
+        {
+          "name": "刷新 AI 资讯与开源项目候选",
+          "result": "pass",
+          "evidence": "本地执行 scripts/collect_github.py、scripts/collect_public_feeds.py、scripts/skill_review.py sync；未安装 Skill，待审队列无自动流转。"
+        }
+      ],
+      "data_freshness": [
+        {
+          "path": "data/ai-news.json",
+          "generated_at": "2026-10-28T04:07:06Z",
+          "age_minutes_at_check": 2,
+          "item_count": 200,
+          "status": "fresh"
+        },
+        {
+          "path": "data/discoveries.json",
+          "generated_at": "2026-10-28T04:07:06Z",
+          "age_minutes_at_check": 2,
+          "item_count": 123,
+          "status": "fresh"
+        }
+      ],
+      "next_action": "若后续仍无未关闭 Issue，继续执行健康巡检、公开数据刷新与只读契约补强；出现失败时优先修复当前 Issue。"
+    }
+  ]
+}
