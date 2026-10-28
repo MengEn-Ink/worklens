@@ -3,7 +3,10 @@
  * WorkLens Hub 数据适配层（收敛版，PC / H5 共用一套）
  * ------------------------------------------------------------
  * 只把 data/discoveries.json 的公开元数据转为页面模型：
- * - 不生成任何演示 / 示意数据（旧版的演示推送、演示路线、示意趋势已移除）；
+ * - 不生成演示推送 / 演示路线；
+ * - 仓库卡片的 Stars / Forks / Issues 为采集快照实测值；12 点星标曲线与 7 格活跃度
+ *   是由当前快照确定性推演的「示意」图形，模型里显式带 illustrative 标记，界面必须标注「示意」；
+ * - 「本机相关」只读浏览器 localStorage 里的喜好账本，在本机计算，不上传、不扫描设备；
  * - 不访问 DOM、不 fetch、不写外部状态，可在 Node 中直接测试。
  */
 (function () {
@@ -114,6 +117,128 @@
       .replace(/topic:/g, '#');
   }
 
+  /* ---------------- 仓库卡片指标：实测值 + 示意图形 ----------------
+   * GitHub 只给出「此刻」的 stars，没有历史序列。曲线的 12 个点里只有最后一个是真实值，
+   * 前 11 个由 forks / issues 推演出一条确定性的上升弧线，仅用于让卡片可扫读，非真实历史。 */
+  function buildStarTrend(candidate) {
+    const stars = Math.max(0, Number(candidate.stars || 0));
+    if (stars === 0) return Array(12).fill(0);
+    const forks = Math.max(0, Number(candidate.forks || 0));
+    const issues = Math.max(0, Number(candidate.open_issues || 0));
+    const activity = Math.min(0.32, 0.08 + Math.log10(forks + issues + 10) / 24);
+    const trend = Array.from({ length: 12 }, (_, index) => {
+      const progress = index / 11;
+      const curve = 1 - activity * (1 - progress) * (0.9 + Math.sin((index + 1) * 1.7) * 0.08);
+      return Math.max(0, Math.round(stars * curve));
+    });
+    trend[11] = stars;
+    return trend;
+  }
+
+  /* 7 格活跃度：按 forks / open_issues 确定性派生 1–5 级，非真实事件统计。 */
+  function buildActivityHeat(candidate) {
+    const seed = Number(candidate.forks || 0) + Number(candidate.open_issues || 0) * 3;
+    return Array.from({ length: 7 }, (_, index) => Math.min(5, Math.max(1, (seed + index * 7 + index * index) % 6)));
+  }
+
+  function buildRepoMetrics(candidate) {
+    return {
+      stars: Math.max(0, Number(candidate.stars || 0)),
+      forks: Math.max(0, Number(candidate.forks || 0)),
+      issues: Math.max(0, Number(candidate.open_issues || 0)),
+      starTrend: buildStarTrend(candidate),
+      activityHeat: buildActivityHeat(candidate),
+      starTrendIllustrative: true,
+      activityHeatIllustrative: true,
+    };
+  }
+
+  /* ---------------- 本机相关：只用本浏览器的喜好账本 ----------------
+   * taste: { [entryId]: 'love' | 'skip' }，来自 localStorage。
+   * 从「喜欢」里学习话题 / 类型 / 语言 / 作者的正向权重，从「跳过」里学习负向权重，
+   * 再给每个候选打 0–99 分并给出可读理由。没有任何喜好时返回 ready=false（冷启动）。 */
+  const LOCAL_WEIGHTS = { topic: 18, kind: 10, language: 8, owner: 22 };
+
+  function buildLocalProfile(entries, taste) {
+    const map = taste && typeof taste === 'object' ? taste : {};
+    const byId = new Map(safeList(entries).map(entry => [entry.id, entry]));
+    const profile = { loved: 0, skipped: 0, topic: {}, kind: {}, language: {}, owner: {} };
+    Object.keys(map).forEach(id => {
+      const entry = byId.get(id);
+      const value = map[id];
+      if (!entry || (value !== 'love' && value !== 'skip')) return;
+      const sign = value === 'love' ? 1 : -0.6;
+      if (value === 'love') profile.loved += 1; else profile.skipped += 1;
+      entry.tags.forEach(tag => { profile.topic[tag] = (profile.topic[tag] || 0) + sign; });
+      profile.kind[entry.kind] = (profile.kind[entry.kind] || 0) + sign;
+      if (entry.language) profile.language[entry.language] = (profile.language[entry.language] || 0) + sign;
+      profile.owner[entry.owner] = (profile.owner[entry.owner] || 0) + sign;
+    });
+    profile.ready = profile.loved > 0;
+    profile.topTopics = Object.entries(profile.topic).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1]).slice(0, 6);
+    return profile;
+  }
+
+  function localRelevance(entry, profile, taste) {
+    if (!entry || !profile || !profile.ready) return { ready: false, score: 0, level: 'none', reasons: [] };
+    const own = taste && taste[entry.id];
+    const reasons = [];
+    let raw = 0;
+    const add = (type, key, label) => {
+      const n = profile[type][key] || 0;
+      if (!n) return;
+      raw += n * LOCAL_WEIGHTS[type];
+      reasons.push({ tone: n > 0 ? 'good' : 'risk', type, text: n > 0 ? `${label}（你喜欢过 ${Math.round(n)} 个同类）` : `${label}（你跳过过同类）` });
+    };
+    entry.tags.forEach(tag => add('topic', tag, `话题 #${tag}`));
+    add('kind', entry.kind, `类型「${entry.kind}」`);
+    if (entry.language) add('language', entry.language, `语言 ${entry.language}`);
+    add('owner', entry.owner, `作者 ${entry.owner}`);
+    const score = own === 'love' ? 99 : own === 'skip' ? 1 : Math.max(0, Math.min(99, Math.round(raw)));
+    const level = own === 'love' ? 'loved' : own === 'skip' ? 'skipped' : score >= 40 ? 'high' : score >= 15 ? 'mid' : score > 0 ? 'low' : 'none';
+    reasons.sort((a, b) => (a.tone === b.tone ? 0 : a.tone === 'good' ? -1 : 1));
+    if (own === 'love') reasons.unshift({ tone: 'good', type: 'self', text: '你已在本机标记喜欢' });
+    if (own === 'skip') reasons.unshift({ tone: 'risk', type: 'self', text: '你已在本机标记跳过' });
+    return { ready: true, score, level, label: LOCAL_LEVEL_LABELS[level], reasons: reasons.slice(0, 4) };
+  }
+
+  /* ---------------- 解释说明：把每个分数 / 结论翻译成人话 ---------------- */
+  function explainScores(entry) {
+    const raw = (entry && entry.raw) || {};
+    const s = (entry && entry.scores) || {};
+    const stars = formatCompact(raw.stars);
+    const topics = safeList(raw.topics).length;
+    return [
+      { key: 'fit', label: '匹配度', value: s.fit, how: `看社区认可（${stars} stars，取对数避免头部项目碾压）+ 话题标注完整度（${topics} 个话题）。越高越像「已被验证、能直接拿来用」。` },
+      { key: 'novelty', label: '新颖度', value: s.novelty, how: 'Star 越少、话题越多，分越高。高新颖度意味着「早期、可能有新思路」，但也更不成熟。' },
+      { key: 'cost', label: '引入成本', value: s.cost, invert: true, how: `由 Fork 规模与未结议题估算改造与跟进成本${Number(raw.open_issues || 0) > 500 ? '；未结议题超过 500，额外加分' : ''}。越低越省事。` },
+      { key: 'risk', label: '风险', value: s.risk, invert: true, how: `${raw.license && raw.license !== 'NOASSERTION' ? `已声明 ${raw.license}` : '未声明许可证（+34）'}${raw.archived ? '、已归档（+35）' : ''}；超过 90 天没推送再 +18。越低越安全。` },
+    ];
+  }
+
+  function explainVerdict(entry) {
+    if (!entry) return '';
+    const s = entry.scores || {};
+    if (entry.verdict === 'adopt') return `匹配度 ${s.fit} ≥ 78 且引入成本 ${s.cost} ≤ 45，许可证清晰、未归档——可以直接安排试用。`;
+    if (entry.verdict === 'evaluate') {
+      const why = [];
+      if (!entry.license) why.push('没有声明许可证');
+      if (entry.archived) why.push('仓库已归档');
+      if (s.risk >= 70) why.push(`风险分 ${s.risk} ≥ 70`);
+      return `${why.join('、') || '存在风险信号'}，先确认能否合法、安全使用，再决定是否深入。`;
+    }
+    return `许可证清晰但还没达到「建议引入」线（匹配度 ≥ 78 且成本 ≤ 45），适合先读 README 了解思路。`;
+  }
+
+  function explainPriority(priority) {
+    if (priority === 'P0') return 'P0 · 建议引入且匹配度 ≥ 98，本期最该先看的一条';
+    if (priority === 'P1') return 'P1 · 建议引入，本周内值得安排时间';
+    if (priority === 'P2') return 'P2 · 需评估风险，但匹配度或新颖度足够高，值得留意';
+    return '';
+  }
+
+  const LOCAL_LEVEL_LABELS = { loved: '已喜欢', skipped: '已跳过', high: '高度相关', mid: '有些相关', low: '略相关', none: '暂无关联' };
+
   function entryFromCandidate(candidate, index, now) {
     const category = classify(candidate);
     const scores = scoreCandidate(candidate, now);
@@ -140,6 +265,7 @@
       action: actionText(category.kind),
       stars: Number(candidate.stars || 0),
       starsCompact: formatCompact(candidate.stars),
+      repoMetrics: buildRepoMetrics(candidate),
       license: candidate.license && candidate.license !== 'NOASSERTION' ? candidate.license : '',
       archived: candidate.archived === true,
       pushedAt: shortDate(candidate.pushed_at || candidate.updated_at),
@@ -342,6 +468,13 @@
     buildRepoBrief,
     buildSourceHealth,
     buildProfileSignals,
+    buildRepoMetrics,
+    buildLocalProfile,
+    localRelevance,
+    explainScores,
+    explainVerdict,
+    explainPriority,
+    LOCAL_LEVEL_LABELS,
     editorialPriority,
     formatCompact,
     relativeTime,

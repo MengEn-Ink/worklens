@@ -123,6 +123,79 @@ a, button { outline-offset: 3px; }
 .no-scrollbar { scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 
+/* ================= 仓库卡片指标 =================
+   数字 = 实测快照（CountUp 滚动）；曲线 / 活跃度 = 示意（虚线 + 「示意」标签）。
+   签名细节：推演段虚线，只有末点是朱砂实心点 + 呼吸光圈——「只有这一点是真的」。 */
+.spark { display: block; overflow: visible; clip-path: inset(-8px 100% -8px 0); }
+.spark.is-run { animation: spark-draw 1s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.spark__area { fill: var(--ink); opacity: 0.05; }
+.spark__line { stroke: var(--ink-mute); stroke-width: 1.4; stroke-dasharray: 3 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.spark__dot { fill: var(--cinnabar); }
+.spark__halo { fill: var(--cinnabar); opacity: 0; transform-box: fill-box; transform-origin: center; }
+.spark.is-run .spark__halo { animation: spark-halo 2.2s 1s ease-out infinite; }
+@keyframes spark-draw { to { clip-path: inset(-8px -10px -8px 0); } }
+@keyframes spark-halo { 0% { opacity: 0.35; transform: scale(0.5); } 100% { opacity: 0; transform: scale(1.8); } }
+
+.heat { display: inline-grid; grid-template-columns: repeat(7, 1fr); align-items: end; gap: 2px; height: 16px; }
+.heat i { display: block; width: 100%; background: var(--rule); transform-origin: bottom; transform: scaleY(0); }
+.heat.is-run i { animation: heat-up 0.5s cubic-bezier(0.2, 1.2, 0.4, 1) forwards; }
+.heat i[data-l='1'] { height: 20%; }
+.heat i[data-l='2'] { height: 40%; background: color-mix(in oklab, var(--cinnabar) 30%, var(--paper-sunk)); }
+.heat i[data-l='3'] { height: 60%; background: color-mix(in oklab, var(--cinnabar) 50%, var(--paper-sunk)); }
+.heat i[data-l='4'] { height: 80%; background: color-mix(in oklab, var(--cinnabar) 72%, var(--paper-sunk)); }
+.heat i[data-l='5'] { height: 100%; background: var(--cinnabar); }
+@keyframes heat-up { to { transform: scaleY(1); } }
+
+/* 台账行：一条细刻度带 */
+.repo-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--rule); color: var(--ink-mute); font-family: var(--font-mono); font-size: 11px; }
+.repo-row__spark { display: inline-flex; }
+.repo-row__num { display: inline-flex; align-items: center; gap: 4px; }
+.repo-row__num b { color: var(--ink); font-weight: 600; }
+.repo-row__num.is-hot { color: var(--cinnabar); }
+.repo-row__heat .heat { width: 46px; height: 12px; }
+
+/* 头条 / 速读：三栏指标板 */
+.repo-board { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px 22px; padding: 14px 0; border-top: 1px solid var(--ink); border-bottom: 1px dashed var(--rule); }
+.repo-board__head { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 6px; color: var(--ink-mute); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
+.repo-board__legend { display: flex; gap: 12px; margin-top: 4px; color: var(--ink-mute); font-family: var(--font-mono); font-size: 10px; }
+.repo-board__legend span { display: inline-flex; align-items: center; gap: 5px; }
+.lg-dash { display: inline-block; width: 14px; border-top: 1.5px dashed var(--ink-mute); }
+.lg-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--cinnabar); }
+.repo-board__nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; align-content: start; }
+.repo-num { min-width: 0; }
+.repo-num__label { display: inline-flex; align-items: center; gap: 4px; color: var(--ink-mute); font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.06em; }
+.repo-num.is-hot .repo-num__label { color: var(--cinnabar); }
+.repo-num__value { display: block; margin-top: 2px; font-family: var(--font-display); font-size: 26px; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; overflow: hidden; text-overflow: ellipsis; }
+.repo-num__help { display: block; margin-top: 4px; color: var(--ink-mute); font-size: 12px; line-height: 1.5; }
+.repo-board__heat { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr); }
+.repo-board__heat .heat { width: 100%; height: 18px; gap: 4px; }
+.repo-board__note { grid-column: 1 / -1; margin: 2px 0 0; padding: 10px 12px; background: var(--paper-sunk); color: var(--ink-soft); font-size: 12.5px; line-height: 1.7; }
+.repo-board__note b { font-weight: 600; color: var(--ink); }
+.tag-ill, .tag-real { display: inline-block; padding: 0 5px; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.04em; line-height: 16px; text-transform: none; }
+.tag-ill { color: var(--mustard); border: 1px dashed var(--mustard); }
+.tag-real { margin-left: 4px; color: var(--forest); background: var(--forest-wash); white-space: nowrap; }
+.repo-board--detail { grid-template-columns: minmax(0, 1fr); }
+.repo-board--detail .repo-board__nums { gap: 16px; }
+.repo-board--detail .spark { width: 100%; height: auto; }
+@media (max-width: 720px) {
+  .repo-board { grid-template-columns: minmax(0, 1fr); }
+  .repo-num__value { font-size: 22px; }
+}
+
+/* 本机相关徽标：一个小屏幕图标 + 等级 + 分数 */
+.local-badge { display: inline-flex; align-items: center; gap: 4px; padding: 0 6px; font-size: 11px; line-height: 18px; white-space: nowrap; border: 1px solid currentColor; }
+.local-badge b { margin-left: 2px; font-size: 10.5px; }
+.local-badge.is-high { color: var(--cinnabar); background: var(--cinnabar-wash); }
+.local-badge.is-mid { color: var(--forest); background: var(--forest-wash); }
+.local-badge.is-low { color: var(--ink-mute); border-color: var(--rule); }
+
+/* 可展开解释 */
+.explain__btn { display: inline-flex; align-items: center; gap: 5px; min-height: 28px; color: var(--ink-mute); font-size: 12.5px; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; }
+.explain__btn:hover, .explain[open] .explain__btn { color: var(--ink); }
+.explain__body { margin-top: 6px; padding: 12px 14px; border-left: 2px solid var(--cinnabar); background: var(--paper-raised); color: var(--ink-soft); font-size: 13.5px; line-height: 1.75; animation: rise 0.24s ease both; }
+.explain__body dt { font-weight: 600; color: var(--ink); }
+.explain__body dd { margin: 0 0 8px; }
+
 details > summary { list-style: none; cursor: pointer; }
 details > summary::-webkit-details-marker { display: none; }
 details[open] .chev { transform: rotate(90deg); }

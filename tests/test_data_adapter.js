@@ -2,7 +2,7 @@
  * WorkLens Hub 数据适配层契约测试（零依赖，Node 内置 test runner）。
  *
  * 收敛后 PC / H5 共用一套 worklens-hub_9bx8/v1/data-adapter.js：
- * - 只从 discoveries.json 的公开字段推导，不再生成演示/示意数据；
+ * - 只从 discoveries.json 的公开字段推导；示意图形必须带 illustrative 标记且末点等于实测值；
  * - 编辑优先级只依赖 verdict 与 scores；
  * - 缺数据时安全降级，不抛异常。
  */
@@ -69,17 +69,75 @@ test('buildHubData：按优先级排序，头条 + 三条精选，统计一行�
   assert.equal(noLicense.license, '');
 });
 
-test('条目只携带公开字段与真实链接，不再生成示意趋势或演示推送', () => {
+test('条目只携带公开字段与真实链接，不生成演示推送', () => {
   const hub = adapter.buildHubData({ candidates: [candidate('org/project')] }, NOW);
   const entry = hub.entries[0];
   assert.equal(entry.url, 'https://github.com/org/project');
   assert.equal(entry.avatarUrl, 'https://github.com/org.png?size=96');
   assert.equal(entry.description, 'Useful developer tool.');
   assert.equal(entry.raw.full_name, 'org/project');
-  for (const removed of ['repoMetrics', 'starTrend', 'activityHeat', 'pushes', 'routes']) {
+  for (const removed of ['pushes', 'routes']) {
     assert.equal(entry[removed], undefined, `不得再生成 ${removed}`);
     assert.equal(hub[removed], undefined, `不得再生成 ${removed}`);
   }
+});
+
+test('仓库卡片指标：数字为实测快照，曲线 / 活跃度显式标记为示意', () => {
+  const hub = adapter.buildHubData({ candidates: [candidate('org/project', { stars: 4321, forks: 210, open_issues: 17 })] }, NOW);
+  const m = hub.entries[0].repoMetrics;
+  assert.equal(m.stars, 4321);
+  assert.equal(m.forks, 210);
+  assert.equal(m.issues, 17);
+  assert.equal(m.starTrend.length, 12);
+  assert.equal(m.starTrend[11], 4321, '曲线末点必须等于真实 stars');
+  assert.ok(m.starTrend.every(value => value <= 4321 && value >= 0));
+  assert.equal(m.activityHeat.length, 7);
+  assert.ok(m.activityHeat.every(level => level >= 1 && level <= 5));
+  assert.equal(m.starTrendIllustrative, true);
+  assert.equal(m.activityHeatIllustrative, true);
+  assert.deepEqual(adapter.buildRepoMetrics({ stars: 4321, forks: 210, open_issues: 17 }), m, '同一快照推演结果必须确定');
+  assert.deepEqual(adapter.buildRepoMetrics({}).starTrend, Array(12).fill(0));
+});
+
+test('本机相关：冷启动不打分；喜欢后同话题/作者升权，跳过后降权', () => {
+  const hub = adapter.buildHubData({
+    candidates: [
+      candidate('alice/a', { topics: ['agent', 'mcp'] }),
+      candidate('alice/b', { topics: ['agent'] }),
+      candidate('bob/c', { topics: ['mcp'], language: 'Go' }),
+      candidate('carol/d', { topics: ['css'], language: 'CSS', description: 'design tokens ui' }),
+    ],
+  }, NOW);
+  const byName = Object.fromEntries(hub.entries.map(entry => [entry.fullName, entry]));
+  const cold = adapter.buildLocalProfile(hub.entries, {});
+  assert.equal(cold.ready, false);
+  assert.equal(adapter.localRelevance(byName['alice/b'], cold, {}).ready, false);
+
+  const taste = { [byName['alice/a'].id]: 'love', [byName['carol/d'].id]: 'skip' };
+  const profile = adapter.buildLocalProfile(hub.entries, taste);
+  assert.equal(profile.ready, true);
+  assert.equal(profile.loved, 1);
+  assert.equal(profile.skipped, 1);
+  const relB = adapter.localRelevance(byName['alice/b'], profile, taste);
+  const relC = adapter.localRelevance(byName['bob/c'], profile, taste);
+  assert.ok(relB.score > relC.score, '同作者 + 同话题应高于仅同话题');
+  assert.equal(relB.level, 'high');
+  assert.ok(relB.reasons.some(reason => reason.text.includes('作者 alice')));
+  assert.equal(adapter.localRelevance(byName['alice/a'], profile, taste).level, 'loved');
+  assert.equal(adapter.localRelevance(byName['carol/d'], profile, taste).level, 'skipped');
+  assert.equal(adapter.buildLocalProfile(null, null).ready, false);
+});
+
+test('解释说明：分数 / 结论 / 优先级都能翻译成人话', () => {
+  const hub = adapter.buildHubData({ candidates: [candidate('org/project'), candidate('org/no-license', { license: null })] }, NOW);
+  const entry = hub.entries.find(item => item.fullName === 'org/project');
+  const notes = adapter.explainScores(entry);
+  assert.deepEqual(notes.map(note => note.key), ['fit', 'novelty', 'cost', 'risk']);
+  assert.ok(notes.every(note => typeof note.how === 'string' && note.how.length > 10));
+  const noLicense = hub.entries.find(item => item.fullName === 'org/no-license');
+  assert.match(adapter.explainVerdict(noLicense), /没有声明许可证/);
+  assert.match(adapter.explainPriority('P0'), /P0/);
+  assert.equal(adapter.explainPriority(null), '');
 });
 
 test('相同话题的候选互相关联，最多 3 条且不含自身', () => {

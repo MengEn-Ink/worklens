@@ -42,33 +42,48 @@ function readTaste() {
 }
 
 /* ============================== 我的 ============================== */
-function TasteLedger({ hub, taste, onTaste, openEntry, onClear }) {
+/* 本机口味画像：把 buildLocalProfile 学到的权重摊开给用户看 */
+function LocalPortrait({ profile }) {
+  const top = (map, n) => Object.entries(map || {}).sort((a, b) => b[1] - a[1]).slice(0, n);
+  const rows = [
+    ['话题', top(profile.topic, 6).map(([k, v]) => [`#${k}`, v])],
+    ['类型', top(profile.kind, 3)],
+    ['语言', top(profile.language, 3)],
+    ['作者', top(profile.owner, 3)],
+  ].filter(([, items]) => items.length);
+  return (
+    <div className="mt-4 p-4 border border-[color:var(--rule)] bg-[color:var(--paper-raised)]">
+      <div className="flex items-center gap-2 text-[13px] font-medium"><Icon name="device" size={14} />本机口味画像{profile.ready ? '' : ' · 尚未启用'}</div>
+      {profile.ready ? (
+        <dl className="mt-2 grid grid-cols-[44px_1fr] gap-x-3 gap-y-1.5 text-[13px]">
+          {rows.map(([label, items]) => (
+            <React.Fragment key={label}>
+              <dt className="text-[color:var(--ink-mute)]">{label}</dt>
+              <dd className="flex flex-wrap gap-1.5">{items.map(([k, v]) => <span key={k} className={`ff-mono text-[11.5px] px-1.5 ${v > 0 ? 'bg-[color:var(--cinnabar-wash)] text-[color:var(--cinnabar)]' : 'bg-[color:var(--paper-sunk)] text-[color:var(--ink-mute)] line-through'}`}>{k} {v > 0 ? `+${Math.round(v * 10) / 10}` : Math.round(v * 10) / 10}</span>)}</dd>
+            </React.Fragment>
+          ))}
+        </dl>
+      ) : (
+        <p className="mt-1 text-[13px] text-[color:var(--ink-mute)]">在「本期」点 ♥ 后，这里会显示从你喜欢的项目里学到的话题、类型、语言与作者权重。</p>
+      )}
+      <p className="mt-3 text-[12px] leading-[1.6] text-[color:var(--ink-mute)]">「本机相关」= 用这份画像给本期每个候选在本机打分。只读写本浏览器的 localStorage（键名 worklens.taste.v1），不上传服务器、不读取设备文件；换设备或清空浏览器数据后从零开始。</p>
+    </div>
+  );
+}
+
+function TasteLedger({ hub, taste, onTaste, openEntry, onClear, localProfile }) {
   const [tab, setTab] = useState('love');
   const ids = Object.keys(taste).filter(id => taste[id] === tab);
   const entries = hub ? ids.map(id => hub.entries.find(entry => entry.id === id)).filter(Boolean) : [];
   const loved = Object.values(taste).filter(value => value === 'love').length;
   const skipped = Object.values(taste).filter(value => value === 'skip').length;
-  const topTopics = useMemo(() => {
-    if (!hub) return [];
-    const counts = {};
-    Object.keys(taste).filter(id => taste[id] === 'love').forEach(id => {
-      const entry = hub.entries.find(item => item.id === id);
-      if (entry) entry.tags.forEach(tag => { counts[tag] = (counts[tag] || 0) + 1; });
-    });
-    return Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 6);
-  }, [hub, taste]);
-
   return (
     <section>
       <div className="flex items-end justify-between gap-4">
         <div><Eyebrow>喜好账本 · 仅存于本浏览器</Eyebrow><h2 className="ff-cn text-[24px] font-semibold mt-1">你的口味</h2></div>
         {loved + skipped > 0 && <button onClick={onClear} className="h-9 text-[13px] text-[color:var(--ink-mute)] underline underline-offset-4 hover:text-[color:var(--cinnabar)]">清空本地喜好</button>}
       </div>
-      {topTopics.length > 0 && (
-        <div className="mt-4 flex flex-wrap gap-2">
-          {topTopics.map(([topic, count]) => <span key={topic} className="ff-mono text-[12px] px-2.5 py-1 bg-[color:var(--cinnabar-wash)] text-[color:var(--cinnabar)]">#{topic} ×{count}</span>)}
-        </div>
-      )}
+      {localProfile && <LocalPortrait profile={localProfile} />}
       <div role="tablist" aria-label="喜好分类" className="mt-5 flex gap-6 border-b border-[color:var(--rule)]">
         {[['love', `喜欢 ${loved}`], ['skip', `跳过 ${skipped}`]].map(([value, label]) => (
           <button key={value} role="tab" aria-selected={tab === value} onClick={() => setTab(value)}
@@ -195,7 +210,7 @@ function Lab({ circle, candidates, ideas, reviews, health }) {
   );
 }
 
-function MeView({ status, data, hub, taste, onTaste, openEntry, onClear }) {
+function MeView({ status, data, hub, taste, onTaste, openEntry, onClear, localProfile }) {
   if (status === 'loading') return <div className="max-w-[1080px] mx-auto px-5 md:px-10 py-10"><WL_UI.SkeletonRows rows={5} /></div>;
   const M = WL_ATELIER_MODEL;
   const circle = data.circle ? M.buildCircleBoard(data.circle) : M.buildEmptyCircleBoard();
@@ -210,7 +225,7 @@ function MeView({ status, data, hub, taste, onTaste, openEntry, onClear }) {
         <h1 className="ff-cn mt-3 text-[30px] md:text-[46px] font-black leading-[1.15]">推荐只听<span className="text-[color:var(--cinnabar)]">你</span>和公开数据的。</h1>
       </header>
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 pt-10">
-        <TasteLedger hub={hub} taste={taste} onTaste={onTaste} openEntry={openEntry} onClear={onClear} />
+        <TasteLedger hub={hub} taste={taste} onTaste={onTaste} openEntry={openEntry} onClear={onClear} localProfile={localProfile} />
         <SignalSources signals={signals} sources={hub ? hub.sources : null} />
       </div>
       <div className="pt-14"><Lab circle={circle} candidates={candidates} ideas={ideas} reviews={reviews} health={data.health} /></div>
@@ -254,6 +269,14 @@ function App() {
   }, [toast]);
 
   const hub = useMemo(() => (data.discoveries ? WL_HUB_ADAPTER.buildHubData(data.discoveries) : null), [data.discoveries]);
+  // 本机相关：只用本浏览器 localStorage 里的喜好账本，在本机计算
+  const localProfile = useMemo(() => WL_HUB_ADAPTER.buildLocalProfile(hub ? hub.entries : [], taste), [hub, taste]);
+  const relCache = useMemo(() => new Map(), [localProfile]);
+  const relOf = useCallback(item => {
+    if (!item) return { ready: false, score: 0, level: 'none', reasons: [] };
+    if (!relCache.has(item.id)) relCache.set(item.id, WL_HUB_ADAPTER.localRelevance(item, localProfile, taste));
+    return relCache.get(item.id);
+  }, [relCache, localProfile, taste]);
   const queueBoard = useMemo(() => (data.queue ? WL_ATELIER_MODEL.buildQueueBoard(data.queue) : WL_ATELIER_MODEL.buildEmptyQueueBoard()), [data.queue]);
   const adoptionsBoard = useMemo(() => (data.adoptions ? WL_ATELIER_MODEL.buildAdoptionsBoard(data.adoptions) : WL_ATELIER_MODEL.buildEmptyAdoptionsBoard()), [data.adoptions]);
   const queueBySubject = useMemo(() => new Map(queueBoard.entries.map(entry => [entry.subject, entry])), [queueBoard]);
@@ -291,11 +314,11 @@ function App() {
 
   return (
     <main className="min-h-[calc(100vh-58px)]">
-      {route.view === 'issue' && <IssueView status={status === 'ready' && !hub ? 'error' : status} hub={hub} taste={taste} onTaste={onTaste} openEntry={openEntry} queueSubjects={queueSubjects} onRetry={load} />}
+      {route.view === 'issue' && <IssueView status={status === 'ready' && !hub ? 'error' : status} hub={hub} taste={taste} onTaste={onTaste} openEntry={openEntry} queueSubjects={queueSubjects} onRetry={load} localProfile={localProfile} relOf={relOf} />}
       {route.view === 'review' && <ReviewView status={status} queueBoard={queueBoard} adoptionsBoard={adoptionsBoard} focusId={route.id} onFocus={onFocusQueue} onRetry={load} />}
       {route.view === 'me' && (status === 'error'
         ? <div className="max-w-[1080px] mx-auto px-5 md:px-10 py-10"><StateBlock tone="risk" title="数据没能加载" body="公开数据文件读取失败，请稍后重试。" action="重新加载" onAction={load} /></div>
-        : <MeView status={status} data={data} hub={hub} taste={taste} onTaste={onTaste} openEntry={openEntry} onClear={onClear} />)}
+        : <MeView status={status} data={data} hub={hub} taste={taste} onTaste={onTaste} openEntry={openEntry} onClear={onClear} localProfile={localProfile} />)}
 
       <footer className="max-w-[1240px] mx-auto px-5 md:px-10 py-8 border-t border-[color:var(--rule)] text-[12px] leading-relaxed text-[color:var(--ink-mute)]">
         <span className="inline-flex items-center gap-1.5 mr-2 text-[color:var(--ink-soft)]"><Icon name="shield" size={14} />只读</span>
@@ -303,7 +326,7 @@ function App() {
       </footer>
 
       <Sheet open={Boolean(entry)} onClose={closeEntry} label={entry ? `${entry.title} 速读` : '速读'}>
-        {entry && <EntryDetail entry={entry} hub={hub} taste={taste} onTaste={onTaste} onClose={closeEntry} openEntry={openEntry} queueEntry={queueBySubject.get(entry.fullName)} />}
+        {entry && <EntryDetail entry={entry} hub={hub} taste={taste} onTaste={onTaste} onClose={closeEntry} openEntry={openEntry} queueEntry={queueBySubject.get(entry.fullName)} rel={relOf(entry)} localProfile={localProfile} />}
       </Sheet>
 
       <div aria-live="polite" className={`fixed left-1/2 -translate-x-1/2 bottom-6 max-[720px]:bottom-[calc(80px+env(safe-area-inset-bottom))] z-[2147483200] px-4 py-2.5 bg-[color:var(--ink)] text-[color:var(--paper-raised)] text-[13px] transition-all duration-200 ${toast ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
