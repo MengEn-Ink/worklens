@@ -429,6 +429,9 @@
       action: entry.action,
       added: entry.added,
       repoMetrics: entry.repoMetrics,
+      related: safeList(entry.related),
+      // 仓库详情「速读」需要的公开元数据（语言 / 许可证 / 推送时间 / 全部主题 / 来源），只读。
+      raw: entry.raw,
     }));
     return Object.assign({}, seed, {
       issue: {
@@ -605,9 +608,131 @@
     };
   }
 
-  window.WL_DISCOVERY_ADAPTER = { buildPcData, buildMobileData, buildSkillQueue, buildIdeaPocket, buildEmptyIdeaPocket };
+  /* ------------------------------------------------------------
+     仓库速读（Repo Brief）：只用 discoveries.json 已有的公开元数据
+     推导「30 秒读懂」所需的事实、信号与下一步，不编造任何新数据。
+     ------------------------------------------------------------ */
+  const PERMISSIVE_LICENSES = /^(mit|apache-2\.0|bsd-2-clause|bsd-3-clause|isc|0bsd|unlicense|mpl-2\.0|cc0-1\.0|zlib)$/i;
+  const COPYLEFT_LICENSES = /gpl|agpl|lgpl|eupl|sspl|cc-by-sa/i;
+  const DAY_MS = 86400000;
+
+  function formatCompact(value) {
+    const n = Number(value || 0);
+    if (n >= 1e6) return `${(n / 1e6).toFixed(1).replace(/\.0$/, '')}M`;
+    if (n >= 1e3) return `${(n / 1e3).toFixed(1).replace(/\.0$/, '')}k`;
+    return String(n);
+  }
+
+  function licenseInfo(license) {
+    if (!license || license === 'NOASSERTION') {
+      return { label: '未声明', tone: 'risk', note: '未声明许可证，默认保留所有权利，暂不可直接引入' };
+    }
+    if (PERMISSIVE_LICENSES.test(license)) {
+      return { label: license, tone: 'good', note: `${license} 属宽松许可，可商用与二次分发` };
+    }
+    if (COPYLEFT_LICENSES.test(license)) {
+      return { label: license, tone: 'warn', note: `${license} 带传染性条款，引入前需法务评估` };
+    }
+    return { label: license, tone: 'warn', note: `${license} 需逐条核对使用范围` };
+  }
+
+  function freshnessInfo(pushedAt, now) {
+    const time = pushedAt ? new Date(pushedAt).getTime() : NaN;
+    if (Number.isNaN(time)) return { days: null, label: '推送时间未知', tone: 'warn' };
+    const days = Math.max(0, Math.floor((now - time) / DAY_MS));
+    const when = days === 0 ? '今天' : `${days} 天前`;
+    if (days <= 14) return { days, label: `${when}仍在推送 · 活跃`, tone: 'good' };
+    if (days <= 90) return { days, label: `${when}推送 · 稳定维护`, tone: 'good' };
+    if (days <= 365) return { days, label: `${when}推送 · 节奏放缓`, tone: 'warn' };
+    return { days, label: `${when}推送 · 可能已沉寂`, tone: 'risk' };
+  }
+
+  function heatInfo(stars) {
+    if (stars >= 50000) return { label: '头部热门', note: `${formatCompact(stars)} stars，属社区头部项目` };
+    if (stars >= 5000) return { label: '广受关注', note: `${formatCompact(stars)} stars，已有稳定用户群` };
+    if (stars >= 500) return { label: '成长中', note: `${formatCompact(stars)} stars，正在被更多人发现` };
+    return { label: '早期', note: `${formatCompact(stars)} stars，尚处早期，适合先观察` };
+  }
+
+  const KIND_CHECKLIST = {
+    Skill: ['通读 README 与 SKILL.md，确认触发条件与产出', '审查脚本权限、外发网络与写入范围', '核对依赖与许可证，进入待审队列', '在沙箱里小范围试用并记录效果'],
+    'UI 组件': ['浏览示例/Storybook，判断视觉语言是否契合', '抽取 token 与组件范式，避免整包引入', '检查可访问性（对比度、键盘、读屏）', '评估移动端体积与样式隔离成本'],
+    信息源: ['确认更新频率与主题覆盖面', '抽样 10 条内容判断信噪比', '连续两轮命中后再加入正式采集'],
+    工作流: ['画出它替代的现有步骤', '确认运行环境、凭证与失败回滚方式', '挑一个低风险场景做一周试点'],
+    基础设施: ['核对部署形态与运维成本', '检查安全边界、凭证管理与日志', '压测或对比现有方案的关键指标'],
+    读物: ['先读摘要与目录，标记与当前问题相关的章节', '摘录 3 条可落地观点到工作笔记'],
+  };
+
+  function buildRepoBrief(entry, nowValue) {
+    const now = typeof nowValue === 'number' ? nowValue : Date.now();
+    const raw = (entry && entry.raw) || {};
+    const metrics = (entry && entry.repoMetrics) || {};
+    const stars = Number(raw.stars != null ? raw.stars : metrics.stars || 0);
+    const forks = Number(raw.forks != null ? raw.forks : metrics.forks || 0);
+    const issues = Number(raw.open_issues != null ? raw.open_issues : metrics.issues || 0);
+    const topics = safeList(raw.topics).length ? safeList(raw.topics) : safeList(entry && entry.tags);
+    const language = raw.language || '未标注语言';
+    const kind = (entry && entry.kind) || '项目';
+    const license = licenseInfo(raw.license);
+    const fresh = freshnessInfo(raw.pushed_at || raw.updated_at, now);
+    const heat = heatInfo(stars);
+    const forkRatio = stars > 0 ? forks / stars : 0;
+    const issuePer1k = stars > 0 ? issues / (stars / 1000) : 0;
+    const sources = [raw.source, ...safeList(raw.also_seen_in)].filter(Boolean).map(sourceLabel);
+
+    const signals = [];
+    signals.push({ tone: license.tone, label: '许可证', text: license.note });
+    signals.push({ tone: fresh.tone, label: '维护', text: fresh.label });
+    if (raw.archived) signals.push({ tone: 'risk', label: '状态', text: '仓库已归档，不再接受更新' });
+    signals.push({
+      tone: forkRatio >= 0.15 ? 'good' : 'neutral',
+      label: '参与度',
+      text: forkRatio >= 0.15
+        ? `Fork/Star ${(forkRatio * 100).toFixed(0)}%，大量用户在动手改造`
+        : `Fork/Star ${(forkRatio * 100).toFixed(0)}%，以收藏围观为主`,
+    });
+    signals.push({
+      tone: issuePer1k > 20 ? 'warn' : 'neutral',
+      label: '议题压力',
+      text: issuePer1k > 20
+        ? `每千 Star 约 ${issuePer1k.toFixed(0)} 个未结议题，维护压力偏高`
+        : `每千 Star 约 ${issuePer1k.toFixed(1)} 个未结议题，处于可控区间`,
+    });
+    if (sources.length > 1) signals.push({ tone: 'good', label: '交叉命中', text: `同时出现在 ${sources.length} 个采集来源中` });
+
+    const desc = String((entry && entry.sub) || '').replace(/[。.\s]+$/, '');
+    const summary = `${entry ? entry.title : '该项目'} 是一个以 ${language} 为主的 ${kind} 项目${desc ? `：${desc}` : ''}。` +
+      `${heat.note}；${fresh.label}；${license.note}。`;
+
+    return {
+      summary,
+      facts: [
+        { key: '语言', value: language },
+        { key: '许可证', value: license.label, tone: license.tone },
+        { key: '最近推送', value: fresh.days == null ? '未知' : (fresh.days === 0 ? '今天' : `${fresh.days} 天前`), tone: fresh.tone },
+        { key: '热度', value: heat.label },
+        { key: '分类', value: (entry && entry.shelf) || kind },
+        { key: '收录', value: (entry && entry.added) || '未知' },
+        { key: '状态', value: raw.archived ? '已归档' : '维护中', tone: raw.archived ? 'risk' : 'good' },
+        { key: '来源命中', value: `${Math.max(1, sources.length)} 处` },
+      ],
+      topics,
+      signals,
+      sources,
+      checklist: KIND_CHECKLIST[kind] || KIND_CHECKLIST['读物'],
+      scoreNotes: {
+        fit: '与关注主题和社区热度的匹配度',
+        novelty: '相对你已有收藏的新鲜程度',
+        cost: '理解、接入与维护所需投入',
+        risk: '许可证、归档与维护停滞风险',
+      },
+      compact: { stars: formatCompact(stars), forks: formatCompact(forks), issues: formatCompact(issues) },
+    };
+  }
+
+  window.WL_DISCOVERY_ADAPTER = { buildPcData, buildMobileData, buildSkillQueue, buildIdeaPocket, buildEmptyIdeaPocket, buildRepoBrief };
 
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { buildPcData, buildMobileData, buildSkillQueue, buildIdeaPocket, buildEmptyIdeaPocket };
+    module.exports = { buildPcData, buildMobileData, buildSkillQueue, buildIdeaPocket, buildEmptyIdeaPocket, buildRepoBrief };
   }
 })();
