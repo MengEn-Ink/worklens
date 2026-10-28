@@ -1,5 +1,5 @@
 /* @jsxRuntime classic */
-/* global React, ReactDOM, fetch */
+/* global React, ReactDOM, fetch, window */
 /* ================================================================
    WorkLens Mobile · 入口（H5 · 9:19.5）
    —— 口袋里的工作智库月刊
@@ -493,8 +493,9 @@ function HomeView({ openEntry, goto }) {
       {/* 装饰尺 */}
       <div className="ruler" />
 
+      <div className="home-layout">
       {/* v2 新增：工坊横幅 —— 把 "你的喜好" 转为显性能力入口 */}
-      <div className="px-5 pt-3">
+      <div className="px-5 pt-3 home-a-banner">
         <button onClick={() => goto('studio')} className="studio-banner">
           <div className="studio-banner__spark"><Icon.spark /></div>
           <div className="flex-1 text-left">
@@ -510,7 +511,7 @@ function HomeView({ openEntry, goto }) {
       </div>
 
       {/* 本期数字 */}
-      <div className="hero-stack anim-in">
+      <div className="hero-stack anim-in home-a-stats">
         <div className="hero-section-label">§ 本期速览</div>
         <div className="grid grid-cols-4 gap-2 mt-3 pb-3 border-b" style={{borderColor: 'var(--rule)'}}>
           <div><div className="stat-num">{DATA.issue.stats.scanned.toLocaleString()}</div><div className="stat-label">扫描源</div></div>
@@ -521,13 +522,14 @@ function HomeView({ openEntry, goto }) {
       </div>
 
       {/* 头条 */}
-      <div className="hero-stack anim-in anim-in-d1">
+      <div className="hero-stack anim-in anim-in-d1 home-a-head">
         <div className="hero-section-label">本周头条</div>
         <div className="hero-title">{headline.title}</div>
         <div className="hero-sub">{headline.sub}</div>
-        <div className="flex items-center gap-2 mt-3 ff-mono text-[10.5px]" style={{color: 'var(--ink-mute)'}}>
+        <div className="flex items-center gap-2 mt-3 ff-mono text-[10.5px] flex-wrap" style={{color: 'var(--ink-mute)'}}>
           <Icon.gh/> {headline.author} · {headline.source} · <span className="ulink">{headline.url}</span>
         </div>
+        <div className="home-head-viz"><RepoMetrics metrics={headline.repoMetrics} /></div>
 
         <div className="lib-card mt-4 anim-in anim-in-d2" style={{background: 'var(--paper-warm)'}}>
           <div className="ff-mono text-[9px] uppercase tracking-[0.25em] mb-1.5" style={{color: 'var(--cinnabar)'}}>§ 策展人手记</div>
@@ -543,6 +545,7 @@ function HomeView({ openEntry, goto }) {
       </div>
 
       {/* 实时策展日志 */}
+      <div className="home-a-notes">
       <div className="ornament">—— 实时策展日志 ——</div>
       <div className="hero-stack">
         {DATA.fieldNotes.map((n, i) => (
@@ -556,14 +559,18 @@ function HomeView({ openEntry, goto }) {
           </div>
         ))}
       </div>
+      </div>
 
       {/* 本期其他 */}
+      <div className="home-a-others">
       <div className="section-head">
         <span className="section-head__title">本期其他收录</span>
         <span className="section-head__link" onClick={() => goto('discover')}>进入发现 →</span>
       </div>
-      <div className="hero-stack space-y-3">
+      <div className="hero-stack space-y-3 home-others-grid">
         {others.map(e => <MiniCard key={e.id} e={e} onOpen={openEntry} />)}
+      </div>
+      </div>
       </div>
 
       {/* 版权页 */}
@@ -1540,84 +1547,195 @@ function StudioView() {
 /* ================================================================
    Reader Sheet（从任何页点开卡片的详情抽屉）
    ---------------------------------------------------------------- */
-function ReaderSheet({ entry, onClose }) {
+function repoBriefOf(entry) {
+  const adapter = window.WL_DISCOVERY_ADAPTER;
+  if (adapter && adapter.buildRepoBrief) return adapter.buildRepoBrief(entry);
+  return null;
+}
+
+function repoHref(url) {
+  if (!url) return '#';
+  return /^https?:\/\//.test(url) ? url : `https://${url}`;
+}
+
+const SCORE_LABELS = { fit: '契合', novelty: '新鲜', cost: '成本', risk: '风险' };
+
+function ReaderSection({ index, title, children, className = '' }) {
+  return (
+    <section className={`rd-sec ${className}`}>
+      <h3 className="rd-sec__head"><span className="rd-sec__no">§ {index}</span>{title}</h3>
+      {children}
+    </section>
+  );
+}
+
+function ReaderSheet({ entry, onClose, onOpen }) {
+  const scrollRef = useRef(null);
+  useEffect(() => {
+    if (scrollRef.current) scrollRef.current.scrollTop = 0;
+    const onKey = (ev) => { if (ev.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [entry, onClose]);
   if (!entry) return null;
+  const brief = repoBriefOf(entry);
+  const related = (entry.related || [])
+    .map(id => DATA.entries.find(e => e.id === id))
+    .filter(Boolean);
+  const href = repoHref(entry.url);
+
   return (
     <>
       <div className="sheet-backdrop" onClick={onClose} />
-      <div className="sheet">
+      <div className="sheet reader" role="dialog" aria-modal="true" aria-label={`${entry.title} 仓库详情`}>
         <div className="sheet__handle" />
-        <div className="scroll-y" style={{paddingBottom: 0}}>
-          <div className="flex items-start justify-between gap-3 mb-2">
-            <div className="flex items-center gap-2">
-              <span className="dewey-chip">{entry.dewey}</span>
-              <VerdictPill v={entry.verdict} />
+        <div className="scroll-y reader__scroll" ref={scrollRef} style={{paddingBottom: 0}}>
+          <header className="reader__head">
+            <div className="reader__top">
+              <div className="reader__chips">
+                <span className="dewey-chip">{entry.dewey}</span>
+                <VerdictPill v={entry.verdict} />
+                {entry.kind && <span className="tag-pill">{entry.kind}</span>}
+              </div>
+              <button onClick={onClose} className="deck-btn reader__close" aria-label="关闭详情"><Icon.close /></button>
             </div>
-            <button onClick={onClose} className="deck-btn" style={{width: 36, height: 36}}><Icon.close /></button>
-          </div>
-          <h2 className="ff-serif font-bold leading-[1]"
-              style={{fontSize: '26px', letterSpacing: '-0.025em', marginBottom: 6}}>
-            {entry.title}
-          </h2>
-          <div className="ff-serif italic text-[14px]" style={{color: 'var(--ink-mute)'}}>
-            {entry.sub}
-          </div>
-          <div className="flex items-center gap-2 mt-3 ff-mono text-[10.5px]" style={{color: 'var(--ink-mute)'}}>
-            <Icon.gh /> {entry.author} · {entry.source} · <span className="ulink">{entry.url}</span>
-          </div>
+            <h2 className="reader__title">{entry.title}</h2>
+            <div className="reader__sub">{entry.sub}</div>
+            <div className="reader__byline">
+              <Icon.gh /> <span>{entry.author}</span><span aria-hidden="true">·</span><span>{entry.source}</span>
+              <a className="ulink reader__link" href={href} target="_blank" rel="noopener noreferrer">{entry.url.replace(/^https?:\/\//, '')} ↗</a>
+            </div>
+          </header>
 
-          <RepoMetrics metrics={entry.repoMetrics} />
+          <div className="reader__body">
+            <div className="reader__main">
+              {brief && (
+                <ReaderSection index="01" title="30 秒速读" className="rd-brief">
+                  <p className="rd-brief__text">{brief.summary}</p>
+                </ReaderSection>
+              )}
 
-          <div className="grid grid-cols-4 gap-3 mt-4 py-3 border-y" style={{borderColor: 'var(--rule)'}}>
-            {['fit','novelty','cost','risk'].map(k => (
-              <div key={k} className="text-center">
-                <div className="ff-mono text-[9px] uppercase tracking-wider" style={{color: 'var(--ink-mute)'}}>{k}</div>
-                <div className="ff-serif font-semibold text-[18px]"
-                     style={{letterSpacing: '-0.01em', color: (k==='cost'||k==='risk') ? 'var(--cinnabar-ink)' : 'var(--ink)'}}>
-                  {entry.scores[k]}
-                </div>
-              </div>
-            ))}
-          </div>
+              {brief && (
+                <ReaderSection index="02" title="关键信号">
+                  <ul className="rd-signals">
+                    {brief.signals.map(sig => (
+                      <li key={sig.label} className={`rd-signal rd-signal--${sig.tone}`}>
+                        <span className="rd-signal__dot" aria-hidden="true" />
+                        <span className="rd-signal__label">{sig.label}</span>
+                        <span className="rd-signal__text">{sig.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </ReaderSection>
+              )}
 
-          <div className="mt-4">
-            <div className="ff-mono text-[9px] uppercase tracking-[0.25em] mb-1.5" style={{color: 'var(--cinnabar)'}}>§ 理由</div>
-            <p className="ff-serif text-[14.5px] leading-[1.65]" style={{color: 'var(--ink)'}}>{entry.why}</p>
-          </div>
+              <ReaderSection index="03" title="为什么收录">
+                <p className="rd-prose">{entry.why}</p>
+              </ReaderSection>
 
-          <div className="mt-4">
-            <div className="ff-mono text-[9px] uppercase tracking-[0.25em] mb-1.5" style={{color: 'var(--cinnabar)'}}>§ 引入方案</div>
-            <p className="ff-serif text-[14.5px] leading-[1.65]" style={{color: 'var(--ink)'}}>{entry.action}</p>
-            <div className="lib-card mt-3" style={{background: 'var(--paper-warm)', padding: '12px'}}>
-              <div className="flex items-center gap-1.5 mb-1.5">
-                <Icon.spark style={{color: 'var(--cinnabar)'}} />
-                <span className="ff-mono text-[9.5px] uppercase tracking-widest">Agent 建议的 Skill 定义</span>
-              </div>
-              <pre className="ff-mono text-[10.5px] leading-[1.65] whitespace-pre-wrap" style={{color: 'var(--ink)'}}>
+              <ReaderSection index="04" title="引入方案">
+                <p className="rd-prose">{entry.action}</p>
+                {brief && (
+                  <ol className="rd-steps">
+                    {brief.checklist.map((step, i) => (
+                      <li key={step}><span className="circ-num">{i + 1}</span><span>{step}</span></li>
+                    ))}
+                  </ol>
+                )}
+              </ReaderSection>
+
+              <ReaderSection index="05" title="Agent 建议的 Skill 定义">
+                <pre className="rd-code">
 {`skill: wl.src.${entry.id.toLowerCase()}
 trigger: cron "0 */4 * * *"
 score:  fit=${(entry.scores.fit/100).toFixed(2)}
-         novelty=${(entry.scores.novelty/100).toFixed(2)}`}
-              </pre>
+        novelty=${(entry.scores.novelty/100).toFixed(2)}`}
+                </pre>
+              </ReaderSection>
+            </div>
+
+            <aside className="reader__aside">
+              <ReaderSection index="A" title="仓库档案">
+                <RepoMetrics metrics={entry.repoMetrics} />
+                {brief && (
+                  <dl className="rd-facts">
+                    {brief.facts.map(f => (
+                      <div key={f.key} className={`rd-fact ${f.tone ? `rd-fact--${f.tone}` : ''}`}>
+                        <dt>{f.key}</dt>
+                        <dd>{f.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                )}
+              </ReaderSection>
+
+              <ReaderSection index="B" title="评估打分">
+                <div className="rd-scores">
+                  {['fit','novelty','cost','risk'].map(k => {
+                    const inverse = k === 'cost' || k === 'risk';
+                    return (
+                      <div key={k} className={`rd-score ${inverse ? 'rd-score--inverse' : ''}`}>
+                        <div className="rd-score__top">
+                          <span className="rd-score__k">{k.toUpperCase()} · {SCORE_LABELS[k]}</span>
+                          <span className="rd-score__v">{entry.scores[k]}</span>
+                        </div>
+                        <div className="rd-score__bar"><span style={{width: `${entry.scores[k]}%`}} /></div>
+                        {brief && <div className="rd-score__note">{brief.scoreNotes[k]}{inverse ? '（越低越好）' : ''}</div>}
+                      </div>
+                    );
+                  })}
+                </div>
+              </ReaderSection>
+
+              {brief && brief.topics.length > 0 && (
+                <ReaderSection index="C" title={`主题标签 · ${brief.topics.length}`}>
+                  <div className="flex flex-wrap gap-1.5">
+                    {brief.topics.map(t => <span key={t} className="tag-pill rd-topic">#{t}</span>)}
+                  </div>
+                </ReaderSection>
+              )}
+
+              {related.length > 0 && (
+                <ReaderSection index="D" title="同主题延伸">
+                  <div className="rd-related">
+                    {related.map(r => (
+                      <button key={r.id} type="button" className="rd-related__item" onClick={() => onOpen && onOpen(r)}>
+                        <span className="rd-related__title">{r.title}</span>
+                        <span className="rd-related__sub">{r.sub}</span>
+                        <span className="rd-related__meta">{r.kind} · FIT {r.scores.fit}</span>
+                      </button>
+                    ))}
+                  </div>
+                </ReaderSection>
+              )}
+
+              {brief && brief.sources.length > 0 && (
+                <ReaderSection index="E" title="采集来源">
+                  <ul className="rd-sources">
+                    {brief.sources.map(src => <li key={src}>{src}</li>)}
+                  </ul>
+                </ReaderSection>
+              )}
+            </aside>
+          </div>
+
+          <div className="h-6" />
+        </div>
+
+        <footer className="reader__foot">
+          <div className="reader__taste">
+            <TasteBar entryId={entry.id} size="lg" />
+            <div className="ff-serif italic text-[11.5px] mt-1.5 text-center" style={{color: 'var(--ink-mute)'}}>
+              每一次 ❤ 都写入你的 Taste 账本，Agent 据此刷新画像与推送。
             </div>
           </div>
-
-          <div className="h-16" />
-        </div>
-
-        {/* v2：Sheet 底部的 taste 快捷栏 */}
-        <div className="pt-2">
-          <TasteBar entryId={entry.id} size="lg" />
-          <div className="ff-serif italic text-[11.5px] mt-1.5 text-center" style={{color: 'var(--ink-mute)'}}>
-            每一次 ❤ 都写入你的 Taste 账本，Agent 据此刷新画像与推送。
+          <div className="reader__actions">
+            <button className="btn btn--ghost" aria-label="收藏"><Icon.bookmark /></button>
+            <a className="btn flex-1 justify-center reader__gh" href={href} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <button className="btn flex-1 justify-center">加入路径</button>
+            <button className="btn btn--cinnabar flex-1 justify-center">引入工作流</button>
           </div>
-        </div>
-
-        <div className="flex gap-2 pt-3 border-t" style={{borderColor: 'var(--rule)'}}>
-          <button className="btn btn--ghost"><Icon.bookmark /></button>
-          <button className="btn flex-1 justify-center">加入路径</button>
-          <button className="btn btn--cinnabar flex-1 justify-center">引入工作流</button>
-        </div>
+        </footer>
       </div>
     </>
   );
@@ -1671,6 +1789,7 @@ function App() {
   }, []);
 
   const openEntry = useCallback((e) => setOpened(e), []);
+  const closeEntry = useCallback(() => setOpened(null), []);
   const goto = useCallback((id) => setTab(id), []);
 
   const setTaste = useCallback((entryId, patch, entry) => {
@@ -1730,7 +1849,7 @@ function App() {
           ))}
         </nav>
 
-        {opened && <ReaderSheet entry={opened} onClose={() => setOpened(null)} />}
+        {opened && <ReaderSheet entry={opened} onClose={closeEntry} onOpen={openEntry} />}
 
         {toast && (
           <div className={`taste-toast taste-toast--${toast.tone}`}>
