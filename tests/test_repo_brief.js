@@ -8,12 +8,12 @@ const assert = require('node:assert/strict');
 const path = require('node:path');
 
 global.window = {};
-const adapter = require(path.join(__dirname, '..', 'worklens-mobile_8a6r', 'v2', 'data-adapter.js'));
+const adapter = require(path.join(__dirname, '..', 'worklens-hub_9bx8', 'v1', 'data-adapter.js'));
 
 const NOW = Date.parse('2026-10-28T00:00:00Z');
 
 function entry(raw, extra = {}) {
-  return Object.assign({ title: 'demo', sub: 'A demo repo.', kind: 'Skill', shelf: '发现 · Skill', added: '2026-10-27', tags: ['x'], raw }, extra);
+  return Object.assign({ title: 'demo', description: 'A demo repo.', kind: 'Skill', tags: ['x'], raw }, extra);
 }
 
 test('健康仓库：许可证/维护/参与度均为正向信号', () => {
@@ -50,12 +50,13 @@ test('缺元数据时安全降级，不抛异常', () => {
   assert.equal(brief.facts.find(f => f.key === '最近推送').value, '未知');
 });
 
-test('移动端视图模型携带速读所需的 raw 与 related', () => {
+test('Hub 条目携带速读所需的 raw 与 related', () => {
   const discoveries = require(path.join(__dirname, '..', 'data', 'discoveries.json'));
-  const data = adapter.buildMobileData({}, discoveries, null, null);
-  assert.ok(data.entries.length > 0);
-  data.entries.forEach(e => {
+  const hub = adapter.buildHubData(discoveries);
+  assert.ok(hub.entries.length > 0);
+  hub.entries.forEach(e => {
     assert.ok(e.raw && e.raw.full_name, `${e.id} 缺少 raw`);
     assert.ok(Array.isArray(e.related));
+    assert.doesNotThrow(() => adapter.buildRepoBrief(e));
   });
 });

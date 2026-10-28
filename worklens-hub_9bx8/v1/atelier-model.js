@@ -1,10 +1,9 @@
 /* global window */
 /*
- * WorkLens v4 · Atelier（只读工坊）视图模型
+ * WorkLens Hub · 待审 / 实验室视图模型（原 v4 Atelier 模型，随 IA 收敛迁入 Hub）
  * ------------------------------------------------------------
  * 纯函数层：把 data/skill-review-queue.json、data/core-circle.json 转为
  * 页面可消费的只读模型，不访问 DOM、不 fetch、不写入任何外部状态。
- * 中文标签映射照抄 v3 data-adapter.js 的 CHECK_LABELS / STATE_LABELS。
  */
 (function () {
   const CHECK_LABELS = {

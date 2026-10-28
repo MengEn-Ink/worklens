@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: 组装移动端、桌面端与 Atelier 页面
+      - name: 组装 Hub 与 AI 情报页面
         run: python3 scripts/build_pages.py
       - uses: actions/upload-pages-artifact@v3
         with:

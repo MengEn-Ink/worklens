@@ -2,7 +2,7 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const model = require('../worklens_zn3k/v4/atelier-model.js');
+const model = require('../worklens-hub_9bx8/v1/atelier-model.js');
 
 test('Atelier 队列模型只读聚合待审状态与阻断项', () => {
   const board = model.buildQueueBoard({

@@ -27,11 +27,11 @@ jobs:
         run: python3 -m unittest discover -s tests -p 'test_*.py'
       - name: 前端适配器语法检查
         run: |
-          node --check worklens_zn3k/v3/data-adapter.js
-          node --check worklens_zn3k/v4/atelier-model.js
-          node --check worklens_zn3k/v4/review-model.js
+          node --check shared/worklens-shell.js
+          node --check worklens-hub_9bx8/v1/data-adapter.js
+          node --check worklens-hub_9bx8/v1/atelier-model.js
+          node --check worklens-hub_9bx8/v1/review-model.js
           node --check worklens-ai-news/v2/data-adapter.js
-          node --check worklens-mobile_8a6r/v2/data-adapter.js
       - name: 前端只读视图模型契约测试
         run: node --test tests/*.js
       - name: 核心开源者圈层契约校验

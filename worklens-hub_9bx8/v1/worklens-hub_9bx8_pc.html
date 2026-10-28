@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>WorkLens · 田野杂志（移动版 v2）</title>
+    <meta name="description" content="WorkLens：看本期开源候选、审 Skill、管理自己的信号与喜好。" />
+    <title>WorkLens · 工作能力雷达</title>
     <meta name="theme-color" content="#faf5ea" />
     <link rel="icon" href="../../shared/assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="../../shared/assets/worklens-mark.svg" />
@@ -29,8 +30,12 @@
   </head>
   <body>
     <div id="root"></div>
-    <script src="../../shared/worklens-shell.js" data-current="field"></script>
+    <script src="../../shared/worklens-shell.js" data-current="hub"></script>
     <script src="./data-adapter.js"></script>
+    <script src="./atelier-model.js"></script>
+    <script src="./review-model.js"></script>
+    <script type="text/babel" src="./components.jsx"></script>
+    <script type="text/babel" src="./views.jsx"></script>
     <script type="text/babel" src="./app.jsx"></script>
   </body>
 </html>
