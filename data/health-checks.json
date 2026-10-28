@@ -24,6 +24,11 @@
           "name": "刷新 AI 资讯与开源项目候选",
           "result": "pass",
           "evidence": "本地执行 scripts/collect_github.py、scripts/collect_public_feeds.py、scripts/skill_review.py sync；未安装 Skill，待审队列无自动流转。"
+        },
+        {
+          "name": "验收质量门禁与 Pages",
+          "result": "pass",
+          "evidence": "提交 a80a4b5 的质量与安全门禁 https://github.com/MengEn-Ink/worklens/actions/runs/40631057129 成功；Pages https://github.com/MengEn-Ink/worklens/actions/runs/40631057308 成功；账本已发布到 https://mengen-ink.github.io/worklens/data/health-checks.json。"
         }
       ],
       "data_freshness": [
