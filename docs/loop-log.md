@@ -17,7 +17,8 @@
 - 本地质量门禁（main `d23008c`）：`node --test tests/*.js` → tests 37 / pass 37 / fail 0；`python3 -m unittest discover -s tests -p 'test_*.py'` → Ran 112 tests OK。
 - 契约与安全：`core_circle.py` → `2 people, 5 projects`；`skill_review.py validate`、`skill_adoptions.py validate`、`idea_pipeline.py validate`（1 ideas）、`recommendation_review.py validate`（1 reviews）、`security_scan.py`、`health_check.py validate` 均 exit 0。
 - 前端语法与 Pages 组装：跟踪的 `.js` 适配/模型文件 `node --check` 通过；`python3 scripts/build_pages.py` 输出 `routes=/, /ai-news/; skipped=none`，构建后工作树无改动。
-- 远端采集：`collect.yml` run #40722167788 success，数据提交 `d23008c`；因数据刷新已改变公开数据，后续提交推送会触发质量门禁与 Pages 发布并完成线上入口核验。
+- 远端采集与发布：`collect.yml` run #40722167788 success，数据提交 `d23008c`；巡检日志提交 `de54343` 的「质量与安全门禁」run #40722498983 与「发布 GitHub Pages」run #40722499169 均 success。
+- 线上 Pages：`/`、`/desktop/`、`/atelier/`、`/ai-news/`、`pages-manifest.json` 与 6 个公开数据文件均 HTTP 200；线上 `data/ai-news.json` 与 `data/discoveries.json` 已发布为本轮 `2026-10-28T16:03:32Z` 数据。
 
 **下一轮唯一最高优先级**
 
