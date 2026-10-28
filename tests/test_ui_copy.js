@@ -34,6 +34,19 @@ test('Hub 三个视图与关键中文文案齐备', () => {
   }
 });
 
+test('仓库卡片指标动画与「本机相关」文案齐备，示意图形必须标注', () => {
+  const components = read(`${HUB}/components.jsx`);
+  const views = read(`${HUB}/views.jsx`);
+  const css = read(`${HUB}/styles.css`);
+  for (const copy of ['RepoSparkline', 'CountUp', 'IntersectionObserver', '示意 · 12 点', '示意 · 7 格', '实测', '非真实历史数据', '非真实事件统计']) {
+    assert.ok(components.includes(copy), `组件缺少：${copy}`);
+  }
+  for (const copy of ['本机相关', '怎么读这一期', '为什么是头条', '相关分怎么算']) {
+    assert.ok(views.includes(copy), `视图缺少：${copy}`);
+  }
+  assert.ok(/prefers-reduced-motion/.test(css), '动画需尊重减少动态偏好');
+});
+
 test('只读声明收敛为页脚一处，页面不提供安装入口', () => {
   const app = read(`${HUB}/app.jsx`);
   const views = read(`${HUB}/views.jsx`);
