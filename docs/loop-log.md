@@ -2,6 +2,24 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-28（08 点轮·续）· 移动端仓库图形「示意」标注收口（Issue #68）
+
+**成果**
+
+- 收口本轮自安排的最小体验事项 Issue #68：07:16 上线的移动端 STARS · TREND 折线（`buildStarTrend`）与 7 格活跃热力（`buildActivityHeat`）均由采集时刻单点 `stars/forks/open_issues` 推演，数据契约没有历史时间序列；旧文案「STARS · TREND / 活跃度」未作任何示意说明，容易被读者当成真实历史。
+- 最小修复（不改数值契约、不加外部请求、只读边界不变）：
+  - `data-adapter.js`：注释说明两函数为示意推演；`repoMetrics` 增加 `starTrendIllustrative / activityHeatIllustrative` 恒真标记，随既有投影透传。
+  - `app.jsx`：趋势头部改为「STARS · 示意」，趋势容器 `title` 与折线 `aria-label` 说明仅末点为真实值、非真实历史；活跃度外包 `repo-heat-wrap`，增加可见微标注「活跃度 · 示意」与 `title` / `aria-label`（由当前 forks 与 open issues 派生，非真实事件统计）；STARS / FORKS / ISSUES 实测计数保持原标签与版式。
+  - `styles.css`：新增 `.repo-heat-wrap`（全宽包裹）与 `.repo-heat__hint`，原 `.repo-heat` 定位规则上移到包裹层，视觉间距不变；同步修正区块注释。
+- 测试：`tests/test_data_adapter.js` 在既有趋势契约用例中断言两个 illustrative 标记恒真；`tests/test_ui_copy.js` 新增文案契约（必须含「STARS · 示意」「活跃度 · 示意」「非真实历史数据」「非真实事件统计」，且旧文案「STARS · TREND」不再出现），防止回归删除标注。
+
+**验证证据**
+
+- 本地：`node --test tests/*.js` → tests 42 / pass 42 / fail 0（新增 1 个 UI 文案用例）；`python3 -m unittest discover -s tests` Ran 108 tests OK；五个前端适配器 `node --check` 通过；`build_pages.py` 四路由 `routes=/, /desktop/, /atelier/, /ai-news/; skipped=none`。
+- standard-lint 对四个变更文件无 parsing/syntax error、`no-undef`、`react/jsx-no-undef`、`import/no-unresolved` 四类阻断；剩余 magic-numbers / curly 等均为全仓存量风格项（新增行无新增 finding）。
+- Playwright 无头烟测（390×844 移动视口、本地 `_site`）：本期 3 张 MiniCard 与藏书卡片详情均渲染「STARS · 示意 12P」「活跃度 · 示意」，`title` / `aria-label` 说明齐全，STARS / FORKS / ISSUES 实测计数不变，旧「STARS · TREND」消失，console 零错误，无横向溢出。
+- 真实星标历史时间序列不在本 Issue 范围；如后续需要真实趋势，另立数据管道 Issue。
+
 ## 2026-10-28（08 点轮）· 健康巡检通过、刷新公开数据并登记趋势示意图问题（Issue #67）
 
 **成果**

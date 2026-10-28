@@ -173,6 +173,9 @@ test('移动端仓库卡片指标由 discoveries 真实字段驱动并保持趋�
   assert.equal(metrics.starTrend.at(-1), metrics.stars);
   assert.equal(metrics.activityHeat.length, 7);
   assert.ok(metrics.activityHeat.every(value => value >= 1 && value <= 5));
+  // Issue #68：趋势与热力均为单点推演示意值，模型必须带 illustrative 标记供页面显式标注
+  assert.equal(metrics.starTrendIllustrative, true);
+  assert.equal(metrics.activityHeatIllustrative, true);
 });
 
 /* Issue #5：移动端 Idea 项目化「袖珍只读摘要」契约（仅锚定移动端 v2 适配器）。 */
