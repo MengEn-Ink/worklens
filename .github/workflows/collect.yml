@@ -3,7 +3,7 @@ name: 采集开源项目候选
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 1 * * *'
+    - cron: '0 */4 * * *'
 
 permissions:
   contents: write
