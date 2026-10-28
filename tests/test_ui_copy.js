@@ -32,3 +32,12 @@ test('AI 情报页显式展示数据新鲜度与缓存降级徽标文案', () =>
   assert.ok(app.includes('>缓存<'), 'AI 情报页应保留缓存徽标文案');
   assert.ok(app.includes('>降级<'), 'AI 情报页应保留降级徽标文案');
 });
+
+test('移动端仓库趋势与活跃热力显式标注「示意」，与实测计数区分（Issue #68）', () => {
+  const app = read('worklens-mobile_8a6r/v2/app.jsx');
+  assert.ok(app.includes('STARS · 示意'), '趋势区头部必须标注「STARS · 示意」');
+  assert.ok(app.includes('活跃度 · 示意'), '活跃热力必须有可见的「活跃度 · 示意」标注');
+  assert.ok(app.includes('非真实历史数据'), '趋势必须说明非真实历史数据');
+  assert.ok(app.includes('非真实事件统计'), '活跃度必须说明非真实事件统计');
+  assert.ok(!app.includes('STARS · TREND'), '旧的无标注「STARS · TREND」文案应移除');
+});

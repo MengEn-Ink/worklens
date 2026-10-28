@@ -119,6 +119,8 @@
     return `加入观察列表：保留事实元数据与来源链接，下一轮结合实际工作问题决定是否深入调研。`;
   }
 
+  // 示意图形：discoveries 只有采集时刻的单点快照，没有历史时间序列；
+  // 12 点「趋势」由当前 stars 单点反推（末点等于真实 stars），仅作视觉示意，非真实历史。
   function buildStarTrend(candidate) {
     const stars = Math.max(0, Number(candidate.stars || 0));
     if (stars === 0) return Array(12).fill(0);
@@ -132,6 +134,7 @@
     });
   }
 
+  // 示意图形：7 格活跃度由当前 forks / open_issues 确定性派生，非真实事件统计。
   function buildActivityHeat(candidate) {
     const seed = Number(candidate.forks || 0) + Number(candidate.open_issues || 0) * 3;
     return Array.from({ length: 7 }, (_, index) => Math.min(5, Math.max(1, (seed + index * 7 + index * index) % 6)));
@@ -173,6 +176,9 @@
         issues: Number(candidate.open_issues || 0),
         starTrend: buildStarTrend(candidate),
         activityHeat: buildActivityHeat(candidate),
+        // 趋势折线与活跃热力均由当前单点指标推演的示意值，页面必须显式标注「示意」。
+        starTrendIllustrative: true,
+        activityHeatIllustrative: true,
         pushedAt: shortDate(candidate.pushed_at || candidate.updated_at),
       },
       raw: candidate,

@@ -396,7 +396,7 @@ function RepoSparkline({ data }) {
     return `${x.toFixed(1)},${y.toFixed(1)}`;
   }).join(' ');
   return (
-    <svg className="repo-sparkline" width="118" height="20" viewBox="0 0 118 20" role="img" aria-label="Stars 趋势">
+    <svg className="repo-sparkline" width="118" height="20" viewBox="0 0 118 20" role="img" aria-label="Stars 趋势示意：仅末点为真实星标，历史点由当前值推演，非真实历史数据">
       <polyline points={points} fill="none" stroke="currentColor" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round" pathLength="1" />
       <circle cx="117" cy={points.split(' ').at(-1).split(',')[1]} r="1.8" fill="var(--cinnabar)" />
     </svg>
@@ -412,8 +412,11 @@ function RepoMetrics({ metrics, compact = false }) {
   ];
   return (
     <div className={`repo-viz ${compact ? 'repo-viz--compact' : ''}`}>
-      <div className="repo-viz__trend">
-        <div className="repo-viz__trend-head"><span>STARS · TREND</span><span>12P</span></div>
+      <div
+        className="repo-viz__trend"
+        title="示意曲线：当前只有星标单点快照，12 个历史点由当前值推演（仅末点为真实值），非真实历史数据"
+      >
+        <div className="repo-viz__trend-head"><span>STARS · 示意</span><span>12P</span></div>
         <RepoSparkline data={metrics.starTrend} />
       </div>
       <div className="repo-viz__metrics">
@@ -425,8 +428,14 @@ function RepoMetrics({ metrics, compact = false }) {
           </div>
         ))}
       </div>
-      <div className="repo-heat" aria-label="活跃度">
-        {metrics.activityHeat.map((level, index) => <span key={index} data-l={level} style={{animationDelay: `${index * 70}ms`}} />)}
+      <div
+        className="repo-heat-wrap"
+        title="示意值：7 格活跃度由当前 forks 与 open issues 派生，非真实事件统计"
+      >
+        <div className="repo-heat" role="img" aria-label="活跃度示意：由当前 forks 与 open issues 派生，非真实统计">
+          {metrics.activityHeat.map((level, index) => <span key={index} data-l={level} style={{animationDelay: `${index * 70}ms`}} />)}
+        </div>
+        <span className="repo-heat__hint">活跃度 · 示意</span>
       </div>
     </div>
   );

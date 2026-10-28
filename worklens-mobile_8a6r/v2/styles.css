@@ -301,7 +301,7 @@ body::before {
   background: var(--ink);
 }
 
-/* 真实 GitHub 指标：118×20 星标趋势 + 图形化指标 + 活跃热力 */
+/* GitHub 当前指标 + 示意图形：星标/分叉/议题为采集快照实测值，118×20 星标趋势与活跃热力为单点推演示意 */
 .repo-viz {
   display: grid;
   grid-template-columns: 118px minmax(0, 1fr);
@@ -361,12 +361,25 @@ body::before {
   font-size: 7.5px;
   letter-spacing: 0.08em;
 }
-.repo-heat {
+.repo-heat-wrap {
   grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+}
+.repo-heat {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 3px;
   height: 3px;
+}
+.repo-heat__hint {
+  color: var(--ink-mute);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5px;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 .repo-heat span { background: var(--rule); animation: repo-heat-in 520ms both; }
 .repo-heat span[data-l="2"] { background: color-mix(in oklch, var(--cinnabar) 30%, var(--paper-warm)); }
