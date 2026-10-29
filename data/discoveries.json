@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T12:08:00.708193+00:00",
+  "generated_at": "2026-10-29T15:07:28.283776+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -3119,11 +3119,12 @@
       "archived": false,
       "pushed_at": "2026-10-29T01:28:01Z",
       "updated_at": "2026-10-29T01:28:04Z",
-      "source": "trending:weekly/typescript",
+      "source": "trending:daily/typescript",
       "collected_at": "2026-10-29T01:28:22.772418+00:00",
       "also_seen_in": [
-        "trending:daily/typescript"
+        "trending:weekly/typescript"
       ],
+      "relationships": [],
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
@@ -14030,57 +14031,74 @@
   "source_status": {
     "repository:wuyoscar/AISafetyHot-Hub": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "repository:DIYgod/RSSHub": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "repository:mshibanami/GitHubTrendingRSS": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "repository:CodeSigils/skill-discovery": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "repository:VoltAgent/awesome-agent-skills": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "profile:MengEn-Ink:owned": {
       "ok": true,
       "count": 18,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "profile:MengEn-Ink:starred": {
       "ok": true,
       "count": 57,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "search:topic:agent-skills stars:>50 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "search:topic:github-pages stars:>100 archived:false": {
       "ok": true,
       "count": 14,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "search:topic:design-system stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "search:topic:developer-tools stars:>500 archived:false": {
       "ok": true,
       "count": 18,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "search:topic:ai-agent stars:>500 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "search:created:>{days_ago:30} stars:>300": {
@@ -14164,56 +14182,56 @@
     "trending:daily/all": {
       "ok": true,
       "count": 14,
-      "listed": 14,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
-      "count": 11,
-      "listed": 11,
+      "count": 12,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "trending:daily/python": {
       "ok": true,
-      "count": 10,
-      "listed": 10,
+      "count": 11,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
-      "count": 14,
-      "listed": 14,
+      "count": 15,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 14,
-      "listed": 14,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
       "count": 19,
-      "listed": 19,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
       "count": 19,
-      "listed": 19,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 15,
-      "listed": 15,
+      "cached": true,
       "fetched_at": "2026-10-29T12:08:00.708193+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-10-29T12:08:00.708193+00:00"
+      "fetched_at": "2026-10-29T15:07:28.283776+00:00"
     }
   },
   "schema_version": 1
