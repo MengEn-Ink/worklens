@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T20:07:31.736405+00:00",
+  "generated_at": "2026-10-29T20:59:04.004908+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -14178,56 +14178,56 @@
     "trending:daily/all": {
       "ok": true,
       "count": 14,
-      "listed": 14,
+      "cached": true,
       "fetched_at": "2026-10-29T20:07:31.736405+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
-      "count": 11,
-      "listed": 11,
+      "count": 12,
+      "cached": true,
       "fetched_at": "2026-10-29T20:07:31.736405+00:00"
     },
     "trending:daily/python": {
       "ok": true,
-      "count": 10,
-      "listed": 10,
+      "count": 11,
+      "cached": true,
       "fetched_at": "2026-10-29T20:07:31.736405+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
       "count": 14,
-      "listed": 14,
+      "cached": true,
       "fetched_at": "2026-10-29T20:07:31.736405+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 14,
-      "listed": 14,
+      "cached": true,
       "fetched_at": "2026-10-29T20:07:31.736405+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
       "count": 19,
-      "listed": 19,
+      "cached": true,
       "fetched_at": "2026-10-29T20:07:31.736405+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
       "count": 19,
-      "listed": 19,
+      "cached": true,
       "fetched_at": "2026-10-29T20:07:31.736405+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 15,
-      "listed": 15,
+      "cached": true,
       "fetched_at": "2026-10-29T20:07:31.736405+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-10-29T20:07:31.736405+00:00"
+      "fetched_at": "2026-10-29T20:59:04.004908+00:00"
     }
   },
   "schema_version": 1
