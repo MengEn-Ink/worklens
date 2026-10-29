@@ -2,6 +2,30 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-29（12 点轮）· 健康巡检降级态与公开数据新鲜度复核（Issue #85）
+
+**成果**
+
+- 同步公开仓库 `main` 到最新 `a36606e`；巡检前公开 Issues 与 open PR 均为空，最近 main 的「质量与安全门禁」run #40813221408 与「发布 GitHub Pages」run #40813221420 均 success，无 running / queued / failed；按 Loop 约定创建 Issue #85 承载本轮健康巡检验收标准。
+- README 路线图 P0–P4 目标保持全部上线，当前继续降级为健康巡检 + 数据刷新；本轮不启动新功能，不重复开发已上线事项。
+- 数据新鲜度：`data/ai-news.json` 生成于 `2026-10-29T00:58:25Z`（约 187 分钟）、`data/discoveries.json` 生成于 `2026-10-29T01:26:06Z`（约 160 分钟）、`data/repo-insights.json` 生成于 `2026-10-29T03:34:24Z`（约 31 分钟），均未超过 240 分钟阈值，因此不重复触发采集。
+- 采集链路现状：`collect.yml` 最新 run #40797479884 为 success；AI 资讯 200 条、开源候选 450 条、仓库深度解读 450 条，公开数据链路可用；Skill 待审 / 正式引入 / Idea / 推荐复盘继续保持只读边界，未自动安装 Skill、未写入画像权重。
+- 巡检事实追加到 `data/health-checks.json`（check `loop-20261029-1204-cst`），本轮仅更新公开巡检账本与轮次日志，未引入私有数据、凭证、内部地址。
+
+**验证证据**
+
+- 本地质量门禁（main `a36606e`）：`node --test tests/*.js` → tests 45 / pass 45 / fail 0；`python3 -m unittest discover -s tests -p 'test_*.py'` → Ran 128 tests OK。
+- 契约与安全：`core_circle.py` → `2 people, 5 projects`；`skill_review.py validate`、`skill_adoptions.py validate`、`idea_pipeline.py validate`、`recommendation_review.py validate`、`health_check.py validate` 均 exit 0；`security_scan.py --strict` 通过。
+- Pages 组装：`python3 scripts/build_pages.py` 输出 `routes=/, /ai-news/; skipped=none`，构建后 `_site/` 无需提交。
+- 本提交使用 `Closes #85` 收口本轮巡检 Issue；若 GitHub Issue 写接口继续受限，则以默认分支关闭关键词和 Actions / Pages 结果作为收口证据。
+
+**下一轮唯一最高优先级**
+
+- 继续健康巡检降级态：核对 main、运行中 / 失败 Actions（含每四小时 `collect.yml`）、Pages 四入口与公开数据新鲜度；数据超过 4 小时则先触发采集并复核 Pages 发布。
+- SR-0011 在 2026-10-31 真人试用复盘出结论前不得推进 adopted、不得安装 Skill；推荐复盘画像调整未获真人确认前不得自动写入 profile 或改变推荐权重。
+
+Closes #85
+
 ## 2026-10-29（08 点轮）· 健康巡检、数据刷新与 #80 线上复核（Issue #81）
 
 **成果**
