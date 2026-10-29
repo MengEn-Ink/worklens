@@ -203,3 +203,23 @@ details[open] .chev { transform: rotate(90deg); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* ---------------- 来源构成条：六类渠道一条线读完 ---------------- */
+.intake__bar { display: flex; gap: 2px; height: 34px; border: 1px solid var(--ink); padding: 2px; background: var(--paper-raised); }
+.intake__seg { position: relative; min-width: 10px; border: 0; cursor: pointer; overflow: hidden; transform-origin: left center;
+  animation: intake-grow 0.7s cubic-bezier(.2,.8,.2,1) both; transition: opacity .2s ease, filter .2s ease; }
+.intake__seg:hover { filter: brightness(1.08); }
+.intake__seg:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.intake__seg.is-dim { opacity: .28; }
+.intake__seg.is-active { box-shadow: inset 0 0 0 2px var(--paper-raised); }
+.intake__label { position: absolute; inset: 0; display: flex; align-items: center; padding: 0 8px; font: 600 11px/1 var(--font-mono); letter-spacing: .04em; color: var(--paper-raised); white-space: nowrap; }
+.intake__dot { display: inline-block; width: 8px; height: 8px; }
+[data-channel='trending'] { background: var(--cinnabar); }
+[data-channel='search'] { background: var(--ink); }
+[data-channel='starred'] { background: var(--forest); }
+[data-channel='owned'] { background: #5d7a66; }
+[data-channel='mention'] { background: var(--mustard); }
+[data-channel='pinned'] { background: var(--ink-mute); }
+@keyframes intake-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.fresh-card { box-shadow: 0 1px 0 var(--rule-soft); }
+@media (prefers-reduced-motion: reduce) { .intake__seg { animation: none; } }

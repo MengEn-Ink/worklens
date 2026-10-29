@@ -140,6 +140,43 @@ test('解释说明：分数 / 结论 / 优先级都能翻译成人话', () => {
   assert.equal(adapter.explainPriority(null), '');
 });
 
+test('来源构成与新上榜：全部候选都列出，渠道归并、多源命中、12 小时新上榜', () => {
+  const hub = adapter.buildHubData({
+    generated_at: '2026-10-29T01:00:00Z',
+    candidates: [
+      candidate('hot/trend', { stars: 300, source: 'trending:daily/all', also_seen_in: ['search:topic:mcp'], first_seen_at: '2026-10-29T01:00:00Z' }),
+      candidate('cold/new', { stars: 9000, source: 'search:created:>{days_ago:30} stars:>300', first_seen_at: '2026-10-28T20:00:00Z' }),
+      candidate('my/star', { source: 'profile:me:starred', first_seen_at: '2026-10-20T00:00:00Z' }),
+      candidate('risky/none', { license: null, archived: true, stars: 1, source: 'mention:ai-news' }),
+    ],
+    source_status: {
+      'trending:daily/all': { ok: true, count: 1 },
+      'search:topic:mcp': { ok: true, count: 1 },
+      'search:created:>{days_ago:30} stars:>300': { ok: true, count: 1 },
+      'profile:me:starred': { ok: true, count: 1 },
+      'mention:ai-news': { ok: true, count: 1 },
+    },
+  }, NOW);
+  assert.equal(hub.entries.length, 4, '高风险 / 低星候选也不能被丢弃');
+  assert.deepEqual(hub.intake, { feeds: 5, hits: 5, unique: 4, merged: 1 });
+  const byKey = Object.fromEntries(hub.channels.map(item => [item.key, item]));
+  assert.equal(byKey.trending.count, 1);
+  assert.equal(byKey.search.count, 2);
+  assert.equal(byKey.search.feeds, 2);
+  assert.equal(byKey.starred.count, 1);
+  assert.equal(byKey.mention.count, 1);
+  const hot = hub.entries.find(entry => entry.fullName === 'hot/trend');
+  assert.deepEqual(hot.channels, ['trending', 'search']);
+  assert.equal(hot.hits, 2);
+  assert.equal(hot.trending, true);
+  assert.equal(hub.stats.fresh, 2);
+  assert.deepEqual(hub.fresh.map(entry => entry.fullName), ['hot/trend', 'cold/new'], '新上榜热榜优先于 Stars');
+  assert.equal(hub.entries.find(entry => entry.fullName === 'my/star').fresh, false);
+  assert.equal(hub.entries.find(entry => entry.fullName === 'risky/none').fresh, false, '缺 first_seen_at 不算新上榜');
+  assert.equal(adapter.channelOf('repository:a/b'), 'pinned');
+  assert.equal(adapter.channelLabel('trending'), 'Trending 热榜');
+});
+
 test('相同话题的候选互相关联，最多 3 条且不含自身', () => {
   const hub = adapter.buildHubData({
     candidates: ['a/1', 'a/2', 'a/3', 'a/4', 'a/5'].map(name => candidate(name, { topics: ['shared'] })),

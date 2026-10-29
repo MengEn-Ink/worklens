@@ -6,7 +6,9 @@ from __future__ import annotations
 import datetime as dt
 import json
 import os
+import re
 import time
+import xml.etree.ElementTree as ET
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -193,6 +195,74 @@ def load_feed(feed: dict) -> object:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+RESERVED_OWNERS = {
+    "about", "apps", "blog", "collections", "contact", "customer-stories", "enterprise", "events", "explore",
+    "features", "login", "marketplace", "new", "notifications", "orgs", "pricing", "pulls", "readme",
+    "search", "security", "settings", "site", "sponsors", "topics", "trending", "users",
+}
+GITHUB_REPO_PATTERN = re.compile(r"github\.com/([A-Za-z0-9][A-Za-z0-9-]{0,38})/([A-Za-z0-9._-]{1,100})", re.I)
+DAYS_AGO_PATTERN = re.compile(r"\{days_ago:(\d+)\}")
+
+
+def render_query(query: str, now: dt.datetime) -> str:
+    """把 `{days_ago:30}` 渲染成 GitHub 搜索可用的日期，让查询始终只看近期活跃项目。"""
+    return DAYS_AGO_PATTERN.sub(lambda match: (now - dt.timedelta(days=int(match.group(1)))).date().isoformat(), query)
+
+
+def repo_names_in(text: object) -> list[str]:
+    names: list[str] = []
+    for owner, repo in GITHUB_REPO_PATTERN.findall(str(text or "")):
+        repo = repo.removesuffix(".git").rstrip(".")
+        if not repo or owner.lower() in RESERVED_OWNERS:
+            continue
+        name = f"{owner}/{repo}"
+        if name.lower() not in {item.lower() for item in names}:
+            names.append(name)
+    return names
+
+
+def fetch_text(url: str) -> str:
+    parsed = urllib.parse.urlparse(url)
+    if parsed.scheme != "https" or not parsed.netloc:
+        raise ValueError("trending feed URL must be public HTTPS")
+    request = urllib.request.Request(url, headers={"User-Agent": "worklens-collector/1.0"})
+
+    def fetch():
+        with urllib.request.urlopen(request, timeout=30) as response:
+            return response.read().decode("utf-8", "replace")
+
+    return with_retry(fetch)
+
+
+def trending_names(xml_text: str) -> list[str]:
+    """GitHub Trending RSS：每个 <item><link> 都是一个仓库地址。"""
+    root = ET.fromstring(xml_text)
+    names: list[str] = []
+    for item in root.iter("item"):
+        link = item.findtext("link") or ""
+        for name in repo_names_in(link)[:1]:
+            if name not in names:
+                names.append(name)
+    return names
+
+
+def mention_names(payload: object, max_items: int) -> list[str]:
+    """从已采集的 AI 资讯里找出被文章 / 公告提到的 GitHub 仓库。"""
+    items = payload.get("items", []) if isinstance(payload, dict) else []
+    names: list[str] = []
+    seen: set[str] = set()
+    for item in items if isinstance(items, list) else []:
+        if not isinstance(item, dict):
+            continue
+        metadata = item.get("metadata") if isinstance(item.get("metadata"), dict) else {}
+        text = " ".join(str(value) for value in (item.get("url"), item.get("summary"), item.get("description"), metadata.get("repository") and f"github.com/{metadata.get('repository')}") if value)
+        for name in repo_names_in(text):
+            if name.lower() not in seen:
+                seen.add(name.lower())
+                names.append(name)
+    return names[:max_items]
+
+
 def cached_source_items(previous: dict, source: str) -> list[dict]:
     return [item for item in previous.get("candidates", []) if item.get("source") == source or source in item.get("also_seen_in", [])]
 
@@ -207,6 +277,8 @@ def main() -> int:
     discovery_ttl = float(policy.get("discovery_cache_hours", 24))
     RETRY_ATTEMPTS = int(policy.get("retry_attempts", 3))
     RETRY_BACKOFF_SECONDS = float(policy.get("retry_backoff_seconds", 1))
+    search_sort = policy.get("search_sort", "updated")
+    search_interval = float(policy.get("search_interval_seconds", 0.2))
     now = utcnow()
     candidates: dict[str, dict] = {}
     status: dict[str, dict] = {}
@@ -313,19 +385,99 @@ def main() -> int:
                 degrade_source(source, error)
             time.sleep(0.2)
 
-    for query in config.get("github_queries", []):
+    for entry in config.get("github_queries", []):
+        spec = entry if isinstance(entry, dict) else {"q": entry}
+        query = spec["q"]
         source = f"search:{query}"
         if reuse_discovery(source):
             continue
-        encoded = urllib.parse.quote(query)
+        encoded = urllib.parse.quote(render_query(query, now))
+        per_page = min(int(spec.get("per_page", max_results)), 100)
         try:
-            payload = request_json(f"/search/repositories?q={encoded}&sort=updated&order=desc&per_page={max_results}")
+            payload = request_json(f"/search/repositories?q={encoded}&sort={spec.get('sort', search_sort)}&order=desc&per_page={per_page}")
             for repo in payload.get("items", []):
                 merge_candidate(candidates, normalize(repo, source), source)
             status[source] = {"ok": True, "count": len(payload.get("items", [])), "fetched_at": now.isoformat()}
         except (urllib.error.URLError, urllib.error.HTTPError, KeyError) as error:
             degrade_source(source, error)
-        time.sleep(0.2)
+        time.sleep(search_interval)
+
+    previous_by_name = {item.get("full_name"): item for item in previous.get("candidates", []) if item.get("full_name")}
+    enrich_budget = {"left": int(policy.get("max_enrich_requests", 150))}
+
+    def enrich(full_name: str, source: str) -> str:
+        """仓库名 → 完整事实。优先复用本轮 / 上一轮已有的元数据，避免重复打 GitHub API。"""
+        if full_name in candidates:
+            merge_candidate(candidates, normalize(candidates[full_name], source), source)
+            return "merged"
+        cached = previous_by_name.get(full_name)
+        if cached and is_fresh(cached.get("collected_at"), discovery_ttl, now):
+            merge_candidate(candidates, normalize(cached, source, collected_at=cached.get("collected_at")), source)
+            return "cached"
+        if enrich_budget["left"] <= 0:
+            return "skipped"
+        enrich_budget["left"] -= 1
+        try:
+            repo = request_json(f"/repos/{full_name}")
+            if repo.get("private", False):
+                return "skipped"
+            merge_candidate(candidates, normalize(repo, source), source)
+            time.sleep(0.1)
+            return "fetched"
+        except (urllib.error.URLError, urllib.error.HTTPError, KeyError, TypeError, AttributeError):
+            if cached:
+                merge_candidate(candidates, normalize(cached, source, collected_at=cached.get("collected_at")), source)
+                return "cached"
+            return "skipped"
+
+    def collect_named(source: str, names: list[str], ttl: float) -> None:
+        previous_status = previous.get("source_status", {}).get(source, {})
+        cached_items = cached_source_items(previous, source)
+        if cached_items and is_fresh(previous_status.get("fetched_at"), ttl, now):
+            restore_source(source)
+            status[source] = {"ok": True, "count": len(cached_items), "cached": True, "fetched_at": previous_status.get("fetched_at")}
+            return
+        results = [enrich(name, source) for name in names]
+        status[source] = {
+            "ok": True,
+            "count": sum(1 for result in results if result != "skipped"),
+            "listed": len(names),
+            "fetched_at": now.isoformat(),
+        }
+        skipped = results.count("skipped")
+        if skipped:
+            status[source]["skipped"] = skipped
+
+    for index, feed in enumerate(config.get("trending_feeds", [])):
+        if not feed.get("enabled", True):
+            continue
+        source = f"trending:{feed.get('name') or f'feed-{index + 1}'}"
+        ttl = float(feed.get("cache_hours", policy.get("trending_cache_hours", 4)))
+        previous_status = previous.get("source_status", {}).get(source, {})
+        if cached_source_items(previous, source) and is_fresh(previous_status.get("fetched_at"), ttl, now):
+            collect_named(source, [], ttl)
+            continue
+        try:
+            names = trending_names(fetch_text(feed["url"]))[: int(feed.get("max_items", 25))]
+            collect_named(source, names, ttl)
+        except (OSError, ValueError, KeyError, ET.ParseError, urllib.error.URLError, urllib.error.HTTPError) as error:
+            degrade_source(source, error)
+
+    mentions = config.get("feed_mentions") or {}
+    if mentions.get("enabled"):
+        source = f"mention:{mentions.get('name', 'ai-news')}"
+        try:
+            payload = load_feed({"path": mentions.get("path", "data/ai-news.json")})
+            names = mention_names(payload, int(mentions.get("max_items", 40)))
+            collect_named(source, names, float(mentions.get("cache_hours", 0)))
+        except (OSError, ValueError, json.JSONDecodeError) as error:
+            degrade_source(source, error)
+
+    for name, item in candidates.items():
+        first_seen = (previous_by_name.get(name) or {}).get("first_seen_at")
+        if not first_seen and name in previous_by_name:
+            first_seen = previous_by_name[name].get("collected_at") or previous.get("generated_at")
+        item["first_seen_at"] = first_seen or now.isoformat()
 
     output = {
         "generated_at": now.isoformat(),
