@@ -2,6 +2,30 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-29（08 点轮）· 健康巡检、数据刷新与 #80 线上复核（Issue #81）
+
+**成果**
+
+- 同步公开仓库 `main`：开始时最新为 `91ff361`（#80 仓库卡片指标动画、本机相关、30 秒速读抽屉已合入），公开 Issue 列表为空，最近「质量与安全门禁」「发布 GitHub Pages」「采集开源项目候选」均 success，无 running / queued / failed；按 Loop 约定创建 Issue #81 承载本轮验收标准。
+- P0–P4 目标继续保持全部上线，Loop 维持健康巡检 + 数据刷新降级态，本轮不启动新功能。
+- 数据刷新：开始时 `data/ai-news.json` 与 `data/discoveries.json` 的 `generated_at` 均为 `2026-10-28T20:55Z`，距 08:00 CST 约 3 小时 6 分，未超 240 分钟阈值；08 点定时采集在 4 小时窗口内一直未出现（该 workflow 近期定时触发延迟较大，如昨日 20 点轮延迟至 20:54），数据满 4 小时后于 `2026-10-29T00:58Z` 手动触发 `collect.yml` run #40797479884 success，机器人提交 `34f288f`，公开数据刷新到 `2026-10-29T00:58:25Z`。
+- 采集结果：AI 资讯 200 条、14 个公开资讯源全部 `ok=true`、0 降级；开源项目候选 124 条、12 个源全部 `ok=true`；Skill 待审队列保持 34 条，`policy.auto_install=false`，未自动流转、未安装 Skill。本轮未引入私有数据、凭证、内部地址。
+- #80 线上复核：Pages 根目录已发布 #80 资源，`app.jsx` / `views.jsx` / `data-adapter.js` 可检索到「本机相关」「速读」与 `starTrendIllustrative` / `activityHeatIllustrative` 示意标记；推演段虚线、仅末点实测值的标注在线上保持完整。
+- 巡检事实追加到 `data/health-checks.json`（check `loop-20261029-0900-cst`），通过 `health_check.py validate`（3 checks）。
+
+**验证证据**
+
+- 本地质量门禁（main `34f288f`）：`node --test tests/*.js` → tests 41 / pass 41 / fail 0；`python3 -m unittest discover -s tests -p 'test_*.py'` → Ran 112 tests OK。
+- 契约与安全：`core_circle.py` → `2 people, 5 projects`；`skill_review.py validate`、`skill_adoptions.py validate`、`idea_pipeline.py validate`、`recommendation_review.py validate`、`health_check.py validate` 均 exit 0；`security_scan.py --strict` 通过；已跟踪前端脚本 `node --check` 全部通过。
+- Pages 组装：`python3 scripts/build_pages.py` 输出 `routes=/, /ai-news/; skipped=none`。
+- 远端采集：`collect.yml` run #40797479884（workflow_dispatch）success，数据提交 `34f288f`。
+- 线上 Pages（验收前实测）：`/`、`/desktop/`、`/atelier/`、`/ai-news/`、`pages-manifest.json` 与 11 个公开数据文件均 HTTP 200。
+
+**下一轮唯一最高优先级**
+
+- 继续健康巡检降级态：核对 main、运行中 / 失败 Actions（含每四小时 `collect.yml`，定时触发延迟超窗时手动兜底）、Pages 四入口与公开数据新鲜度；Issues 为空时创建新巡检 Issue 承载验收标准。
+- SR-0011 在 2026-10-31 真人试用复盘出结论前不得推进 adopted、不得安装 Skill；推荐复盘画像调整未获真人确认前不得自动写入 profile 或改变推荐权重。
+
 ## 2026-10-29（04 点轮）· 复核并收口滞留健康巡检 Issue（Issue #77）
 
 **成果**
