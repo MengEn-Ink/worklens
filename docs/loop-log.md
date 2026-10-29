@@ -2,6 +2,29 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-29（16 点轮）· 上线 CI Issue 收口机制并关闭滞留 #85（Issue #88）
+
+**成果**
+
+- 同步公开仓库 `main`：开始时为 `44d333d`，open Issue 仅上一轮滞留的 #85，open PR 为空；最近「质量与安全门禁」「发布 GitHub Pages」「采集开源项目候选」均 success，无 running / queued / failed。
+- **根因确认与收口机制上线（PR #87，merge commit `e81b867`）**：复核当前 fine-grained PAT 对 Issue 评论与 `PATCH` 关闭仍返回 403，响应头要求 `issues=write; pull_requests=write`，解释了 12 点轮直接推送提交与 PR #86 合并均未自动关单的现象。本轮新增公开账本 `data/issue-close-requests.json`、脚本 `scripts/close_issues_ci.py`（`validate` 离线契约 / `apply` 仅 CI 执行，幂等跳过已关闭单，写失败整体非零）、工作流 `close-issues.yml`（仅授予 `issues: write`，账本变更触发，支持 `workflow_dispatch` 重放），CI 增加账本契约校验，README「自动化节奏」补充说明。
+- **#85 已关闭**：PR #87 正文携带 `Closes #85`，合并后 2 秒（`08:20:32Z`）服务端自动关闭，`state=closed`、`state_reason=completed`；随后触发的 close-issues run #40841437274 日志打印「跳过 #85：当前状态 closed」，新机制的幂等性同步得到验证。PR 关键词收口与 CI 账本收口两条路径此后互为兜底。
+- 数据新鲜度：`ai-news.json` / `discoveries.json` / `repo-insights.json` 均生成于 `2026-10-29T05:25:52Z`，距巡检约 178 分钟，未超 240 分钟阈值，不重复触发采集；AI 资讯 200 条、开源候选 450 条、仓库深度解读 450 条、Skill 待审 74 条且 `policy.auto_install=false`，Skill 待审 / 正式引入 / Idea / 推荐复盘保持只读边界。
+- 按 Loop 约定创建本轮承载 Issue #88，并把 #88 登记进收口账本，由本提交触发 CI 收口；P0–P4 目标保持全部上线，继续健康巡检 + 数据刷新降级态，不启动未经确认的新功能。
+
+**验证证据**
+
+- 本地质量门禁：`node --test tests/*.js` → tests 45 / pass 45 / fail 0；`python3 -m unittest discover -s tests -p 'test_*.py'` → Ran 141 tests OK（较上轮 +13，全部来自 `test_close_issues_ci.py`）。
+- 契约与安全：`core_circle / skill_review / skill_adoptions / idea_pipeline / recommendation_review / health_check / repo_insights / close_issues_ci` 各 `validate` 均 exit 0；`security_scan.py --strict` 通过（1 条内网负向测试夹具已精确登记白名单）；`build_pages.py` 输出 `routes=/, /ai-news/; skipped=none`。
+- 远端门禁：PR #87 的「质量与安全门禁」run #40841110515 success；合入 main 后「质量与安全门禁」run #40841436937、「发布 GitHub Pages」run #40841436950、「收口巡检 Issue」run #40841437274 均 success。
+- Pages 线上抽检：`/`、`/ai-news/`、`/desktop/`、`/atelier/`、`/pages-manifest.json` 与 data 下 9 个公开 JSON（含新上线的 `data/issue-close-requests.json`）共 14 个地址全部 HTTP 200。
+- Issue 事实：#85 timeline 关闭事件 `08:20:32Z` actor=MengEn-Ink、commit_id=null（PR 合并自动关闭）；#88 关闭结果由下一轮首先核验。
+
+**下一轮唯一最高优先级**
+
+- 健康巡检 + 数据刷新：先核验 #88 已由 `close-issues.yml` 按账本评论并关闭；若工作流失败则优先修复该机制，不开始新事项。随后核对 main、运行中 / 失败 Actions、Pages 公开地址与三份数据新鲜度，超过 240 分钟则触发 `collect.yml`。
+- SR-0011 在 2026-10-31 真人试用复盘出结论前不得推进 adopted、不得安装 Skill；推荐复盘画像调整未获真人确认前不得写入 profile 或改变推荐权重。
+
 ## 2026-10-29（12 点轮）· 健康巡检降级态与公开数据新鲜度复核（Issue #85）
 
 **成果**
