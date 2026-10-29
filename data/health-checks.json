@@ -155,7 +155,7 @@
       "checked_at": "2026-10-29T04:05:00Z",
       "actor": "worklens-loop",
       "scope": "四小时健康巡检与数据刷新；创建巡检 Issue #85 承载验收标准",
-      "result": "pass",
+      "result": "warn",
       "issue_url": "https://github.com/MengEn-Ink/worklens/issues/85",
       "actions": [
         {
@@ -172,6 +172,11 @@
           "name": "本地质量门禁",
           "result": "pass",
           "evidence": "node --test tests/*.js 45/45 通过；python3 -m unittest discover -s tests -p 'test_*.py' 128/128 通过；core_circle/skill_review/skill_adoptions/idea_pipeline/recommendation_review/health_check 各 validate exit 0；security_scan.py --strict 通过；build_pages.py 输出 routes=/, /ai-news/; skipped=none。"
+        },
+        {
+          "name": "Issue 状态更新",
+          "result": "blocked",
+          "evidence": "巡检账本提交 c503074、直接默认分支空提交 654f95b、PR #86 合并提交 9bb619c 均已携带 Closes #85 且质量门禁 / Pages 均 success；但 GitHub Issue #85 仍保持 open。尝试 gh issue comment/close 与 REST PATCH close 均返回 403 Resource not accessible by personal access token，当前令牌可创建 Issue 但不能评论或关闭 Issue。"
         }
       ],
       "data_freshness": [
@@ -190,7 +195,7 @@
           "status": "fresh"
         }
       ],
-      "next_action": "P0–P4 目标保持全部上线，Loop 维持健康巡检 + 数据刷新降级态；下一轮继续核对 main、Actions、Pages 四入口与公开数据 4 小时新鲜度，若 Issue 为空则创建新巡检 Issue。SR-0011 在 2026-10-31 真人试用复盘出结论前不得推进 adopted、不得安装 Skill；推荐复盘画像调整未获真人确认前不得写入 profile 或改变推荐权重。"
+      "next_action": "Issue #85 当前仍 open，下一轮必须继续优先收口 #85，不开始新事项；若仍无法通过 GitHub token 评论 / 关闭 Issue，需要更换具备 Issues write 权限的凭证或由维护者手动关闭。P0–P4 目标保持全部上线，Loop 维持健康巡检 + 数据刷新降级态；SR-0011 在 2026-10-31 真人试用复盘出结论前不得推进 adopted、不得安装 Skill；推荐复盘画像调整未获真人确认前不得写入 profile 或改变推荐权重。"
     }
   ]
 }
