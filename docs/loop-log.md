@@ -20,6 +20,7 @@
 - Pages 组装：`python3 scripts/build_pages.py` 输出 `routes=/, /ai-news/; skipped=none`。
 - 远端采集：`collect.yml` run #40797479884（workflow_dispatch）success，数据提交 `34f288f`。
 - 线上 Pages（验收前实测）：`/`、`/desktop/`、`/atelier/`、`/ai-news/`、`pages-manifest.json` 与 11 个公开数据文件均 HTTP 200。
+- 收口：账本提交 `1fc4647` 的「质量与安全门禁」run #40797992231 与「发布 GitHub Pages」run #40797992189 均 success；线上 `data/health-checks.json` 已发布 `loop-20261029-0900-cst`（pass），Issue #81 收口。
 
 **下一轮唯一最高优先级**
 

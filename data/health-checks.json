@@ -125,6 +125,11 @@
           "name": "验收 Pages 与 #80 线上复核",
           "result": "pass",
           "evidence": "线上 /、/desktop/、/atelier/、/ai-news/、pages-manifest.json 与 11 个公开数据文件均 HTTP 200；#80 已发布：根目录 app.jsx/views.jsx/data-adapter.js 可检索到「本机相关」「速读」与 starTrendIllustrative/activityHeatIllustrative 标记。"
+        },
+        {
+          "name": "收口提交门禁与线上账本复核",
+          "result": "pass",
+          "evidence": "账本提交 1fc4647 的质量与安全门禁 run 40797992231 success、发布 GitHub Pages run 40797992189 success；线上 data/health-checks.json 已为 loop-20261029-0900-cst（pass），/、/ai-news/、data/ai-news.json、data/discoveries.json 均 200。"
         }
       ],
       "data_freshness": [
