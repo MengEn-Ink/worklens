@@ -1,0 +1,28 @@
+name: 收口巡检 Issue
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/issue-close-requests.json'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+concurrency:
+  group: worklens-close-issues
+  cancel-in-progress: false
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 关闭账本中登记的 Issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/close_issues_ci.py apply

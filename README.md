@@ -42,6 +42,7 @@ PC 与 H5 共用一套响应式页面。旧地址 `/desktop/` 会跳到 `/`，`/
 ## 自动化节奏
 
 - 每四小时：健康巡检与数据刷新，结果写入 `data/health-checks.json`（`scripts/health_check.py validate`，CI 强制校验）。
+- Issue 收口：Loop 沙箱令牌没有 Issues 写权限时，把待关闭 Issue 与公开证据登记到 `data/issue-close-requests.json`（`scripts/close_issues_ci.py validate`，CI 强制校验），合入 main 后由 `close-issues.yml` 用内置 `GITHUB_TOKEN`（仅 `issues: write`）评论并关闭；脚本幂等，已关闭 Issue 自动跳过。
 - 每日：采集、去重、补充仓库元数据（GitHub Actions 每日 01:17 UTC）。
 - 每个公开源默认独立 24 小时 TTL，支持 ETag/Last-Modified；刷新失败按源保留旧数据并标记 degraded/cached。
 - 采集仅调用公开 RSS/Atom/JSON/REST，不抓 HTML、不调用 LLM、零第三方 Python 依赖。
