@@ -292,7 +292,7 @@
         {
           "name": "Issue 收口",
           "result": "pass",
-          "evidence": "本提交带 Closes #89，push main 后由 GitHub 自动关闭。"
+          "evidence": "fine-grained PAT 对 Issue comment/close 返回 403 Resource not accessible by personal access token；已登记 #89 到 data/issue-close-requests.json，触发 close-issues.yml 用内置 GITHUB_TOKEN（issues: write）评论并关闭。"
         }
       ],
       "data_freshness": [

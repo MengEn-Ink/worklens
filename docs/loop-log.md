@@ -9,6 +9,7 @@
 - 同步公开仓库 `main`：本轮开始时最新为采集机器人提交 `fb100b7`，公开 open PR / open Issue 均为空；按 Loop 约定创建巡检 Issue #89 承载本轮验收标准。
 - 数据刷新：开始时 `data/ai-news.json` 的 `generated_at=2026-10-29T05:25:52Z`（距本轮约 400 分钟），超过 240 分钟阈值；已手动触发 `collect.yml` run #40870761289（workflow_dispatch）success，机器人提交 `fb100b7`，公开数据刷新到 `2026-10-29T12:08–12:10Z`（AI 资讯 200 条、开源候选 474 条、Skill 待审队列 89 条，`policy.auto_install=false`，未自动流转、未安装 Skill）。
 - Pages 发布：由于 Actions 内置 `GITHUB_TOKEN` 推送不会触发下游 workflow，本轮手动触发 `pages.yml` run #40871601597（workflow_dispatch）success；线上 `/`、`/desktop/`、`/atelier/`、`/ai-news/`、`pages-manifest.json` 与 `data/` 下关键 JSON 均 HTTP 200，线上 `data/ai-news.json` 的 `generated_at` 已为 `2026-10-29T12:10:01Z`。
+- Issue 收口：当前 fine-grained PAT 对 Issue comment/close 返回 403（Resource not accessible by personal access token），已登记 `data/issue-close-requests.json`，等待 `close-issues.yml` 用内置 `GITHUB_TOKEN`（issues: write）评论并关闭 #89。
 - Loop 维持健康巡检 + 数据刷新降级态，本轮不启动新功能、不引入私有数据、凭证或内部地址。
 
 **验证证据**
