@@ -336,5 +336,14 @@
     "search_interval_seconds": 2.5,
     "trending_cache_hours": 4,
     "max_enrich_requests": 150
+  },
+  "insights": {
+    "max_new_per_run": 600,
+    "recheck_hours": 72,
+    "max_age_days": 21,
+    "prune_after_days": 45,
+    "max_llm_per_run": 20,
+    "digest_chars": 2400,
+    "request_interval_seconds": 0.05
   }
 }

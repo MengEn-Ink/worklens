@@ -225,3 +225,54 @@ test('真实数据：discoveries 全链路不崩溃且计数一致', () => {
   assert.equal(new Set(hub.entries.map(entry => entry.id)).size, hub.entries.length, 'id 必须唯一');
   assert.equal(hub.sources.total, Object.keys(discoveries.source_status || {}).length);
 });
+
+test('深度解读：缓存记录归一化、出处标签与降级', () => {
+  const discoveries = { generated_at: '2026-10-28T00:00:00Z', candidates: [candidate('acme/with'), candidate('acme/without')] };
+  const insights = {
+    generated_at: '2026-10-28T00:00:00Z',
+    summary: { last_run: { reused: 3, rechecked_same: 1, new: 2, regenerated: 0, shared: 1 } },
+    items: {
+      'acme/with': {
+        method: 'readme', tagline: '一句话定位', readme_sha: 'abcdef123456', generated_at: '2026-10-20T00:00:00Z', checked_at: '2026-10-27T00:00:00Z',
+        scenario: [{ text: '场景 A', from: 'inferred' }],
+        pain_points: [{ text: '痛点 A', from: 'readme' }],
+        strengths: [{ text: '优点 A', from: 'facts' }, { text: '', from: 'readme' }, { text: '坏出处', from: 'guess' }],
+        architecture: { stack: [{ lang: 'TypeScript', pct: 90 }, { lang: 'CSS', pct: 0 }], layout: ['多包 monorepo'], entry: ['Node.js 包'] },
+        quickstart: 'npx demo',
+      },
+    },
+  };
+  const hub = adapter.buildHubData(discoveries, NOW, insights);
+  const withEntry = hub.entries.find(entry => entry.fullName === 'acme/with');
+  const without = hub.entries.find(entry => entry.fullName === 'acme/without');
+  assert.equal(without.insight, null);
+  const insight = withEntry.insight;
+  assert.equal(insight.tagline, '一句话定位');
+  assert.deepEqual(insight.sections.map(section => section.key), ['scenario', 'pain_points', 'strengths']);
+  const strengths = insight.sections.find(section => section.key === 'strengths').items;
+  assert.equal(strengths.length, 2, '空文本被丢弃');
+  assert.equal(strengths[1].from, 'inferred', '未知出处降级为推断');
+  assert.equal(strengths[0].fromLabel, '实测');
+  assert.equal(insight.lead.text, '痛点 A', '列表一行摘要优先展示痛点');
+  assert.deepEqual(insight.stack, [{ lang: 'TypeScript', pct: 90 }]);
+  assert.equal(insight.cache.fingerprint, 'abcdef1');
+  assert.equal(hub.stats.insights, 1);
+  assert.equal(hub.insightCache.reused, 4);
+  assert.equal(hub.insightCache.fresh, 2);
+  assert.equal(adapter.normalizeInsight(null), null);
+  assert.equal(adapter.buildHubData(discoveries, NOW).insightCache, null, '没有缓存文件时安全降级');
+});
+
+test('真实数据：repo-insights 与 discoveries 合并后结构合法', () => {
+  const file = path.join(ROOT, 'data', 'repo-insights.json');
+  if (!fs.existsSync(file)) return;
+  const discoveries = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'discoveries.json'), 'utf8'));
+  const insights = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const hub = adapter.buildHubData(discoveries, NOW, insights);
+  const covered = hub.entries.filter(entry => entry.insight);
+  assert.ok(covered.length > 0);
+  covered.forEach(entry => {
+    assert.equal(typeof entry.insight.tagline, 'string');
+    entry.insight.sections.forEach(section => section.items.forEach(item => assert.ok(adapter.ORIGIN_LABELS[item.from])));
+  });
+});
