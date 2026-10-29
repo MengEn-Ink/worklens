@@ -398,7 +398,12 @@
         {
           "name": "Issue 状态更新",
           "result": "pass",
-          "evidence": "本轮创建 #91；提交将 #91 登记进 data/issue-close-requests.json，合入 main 后由 close-issues.yml 使用内置 GITHUB_TOKEN 评论并关闭，下一轮首先核验关闭结果。"
+          "evidence": "本轮创建 #91；提交将 #91 登记进 data/issue-close-requests.json，合入 main 后由 close-issues.yml 使用内置 GITHUB_TOKEN 评论并关闭，已复核 #91 于 2026-10-29T20:17:13Z 关闭。"
+        },
+        {
+          "name": "交付后质量门禁与 Pages 验收",
+          "result": "pass",
+          "evidence": "提交 2f51300 的质量与安全门禁 run 40947640734、收口巡检 Issue run 40947639500、发布 GitHub Pages run 40947639576 均 success；线上 /、/desktop/、/atelier/、/ai-news/、pages-manifest.json、data/health-checks.json、data/issue-close-requests.json、data/ai-news.json、data/discoveries.json 均 HTTP 200；线上 data/health-checks.json 最新条目为本轮 loop-20261030-0415-cst（pass），线上 data/ai-news.json generated_at=2026-10-29T20:07:32Z。"
         }
       ],
       "data_freshness": [
