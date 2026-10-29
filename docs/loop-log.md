@@ -2,6 +2,27 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-29（20 点轮）· 健康巡检与数据刷新（Issue #89）
+
+**成果**
+
+- 同步公开仓库 `main`：本轮开始时最新为采集机器人提交 `fb100b7`，公开 open PR / open Issue 均为空；按 Loop 约定创建巡检 Issue #89 承载本轮验收标准。
+- 数据刷新：开始时 `data/ai-news.json` 的 `generated_at=2026-10-29T05:25:52Z`（距本轮约 400 分钟），超过 240 分钟阈值；已手动触发 `collect.yml` run #40870761289（workflow_dispatch）success，机器人提交 `fb100b7`，公开数据刷新到 `2026-10-29T12:08–12:10Z`（AI 资讯 200 条、开源候选 474 条、Skill 待审队列 89 条，`policy.auto_install=false`，未自动流转、未安装 Skill）。
+- Pages 发布：由于 Actions 内置 `GITHUB_TOKEN` 推送不会触发下游 workflow，本轮手动触发 `pages.yml` run #40871601597（workflow_dispatch）success；线上 `/`、`/desktop/`、`/atelier/`、`/ai-news/`、`pages-manifest.json` 与 `data/` 下关键 JSON 均 HTTP 200，线上 `data/ai-news.json` 的 `generated_at` 已为 `2026-10-29T12:10:01Z`。
+- Loop 维持健康巡检 + 数据刷新降级态，本轮不启动新功能、不引入私有数据、凭证或内部地址。
+
+**验证证据**
+
+- 本地质量门禁（main `fb100b7`）：`node --test tests/*.js` → tests 45 / pass 45 / fail 0；`python3 -m unittest discover -s tests -p 'test_*.py'` → Ran 141 tests OK；`core_circle.py`、`skill_review.py validate`、`skill_adoptions.py validate`、`idea_pipeline.py validate`、`recommendation_review.py validate`、`health_check.py validate`、`close_issues_ci.py validate`、`repo_insights.py validate`、`security_scan.py --strict` 与 `build_pages.py` 均 exit 0。
+- 远端采集：`collect.yml` run #40870761289（workflow_dispatch）success，数据提交 `fb100b7`。
+- 远端 Pages：`pages.yml` run #40871601597（workflow_dispatch）success；线上 `/`、`/desktop/`、`/atelier/`、`/ai-news/`、`pages-manifest.json` 与 `data/` 下 `ai-news.json` / `discoveries.json` / `skill-review-queue.json` 均 HTTP 200。
+
+**下一轮唯一最高优先级**
+
+- 继续健康巡检降级态：核对 main、运行中 / 失败 Actions（含每四小时 `collect.yml`，定时触发延迟或超窗时手动兜底）、Pages 四入口与公开数据文件新鲜度；Issues 为空时创建新巡检 Issue 承载验收标准。
+
+Closes #89
+
 ## 2026-10-29（16 点轮）· 上线 CI Issue 收口机制并关闭滞留 #85（Issue #88）
 
 **成果**
