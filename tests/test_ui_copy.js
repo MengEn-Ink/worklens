@@ -41,7 +41,7 @@ test('仓库卡片指标动画与「本机相关」文案齐备，示意图形�
   for (const copy of ['RepoSparkline', 'CountUp', 'IntersectionObserver', '示意 · 12 点', '示意 · 7 格', '实测', '非真实历史数据', '非真实事件统计']) {
     assert.ok(components.includes(copy), `组件缺少：${copy}`);
   }
-  for (const copy of ['本机相关', '怎么读这一期', '为什么是头条', '相关分怎么算']) {
+  for (const copy of ['本机相关', '怎么读这一期', '为什么是头条', '相关分怎么算', '来源构成', '新上榜', '候选从哪来', '全部列出', '按来源筛选', '源命中']) {
     assert.ok(views.includes(copy), `视图缺少：${copy}`);
   }
   assert.ok(/prefers-reduced-motion/.test(css), '动画需尊重减少动态偏好');

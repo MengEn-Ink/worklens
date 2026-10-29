@@ -229,6 +229,62 @@ class CollectorTest(unittest.TestCase):
             collect_github.with_retry(bad_request, attempts=3, backoff=0)
         bad_request.assert_called_once()
 
+    def test_render_query_turns_days_ago_into_iso_date(self):
+        now = dt.datetime(2026, 10, 29, 12, tzinfo=dt.timezone.utc)
+        self.assertEqual(collect_github.render_query("created:>{days_ago:30} stars:>300", now), "created:>2026-09-29 stars:>300")
+        self.assertEqual(collect_github.render_query("topic:rss", now), "topic:rss")
+
+    def test_trending_and_mention_parsers_extract_repositories(self):
+        xml = "<rss><channel><item><title>a/b</title><link>https://github.com/a/b</link></item>" \
+              "<item><link>https://github.com/c/d.git</link></item><item><link>https://github.com/a/b</link></item></channel></rss>"
+        self.assertEqual(collect_github.trending_names(xml), ["a/b", "c/d"])
+        payload = {"items": [
+            {"url": "https://github.com/openai/openai-python/releases/tag/v1"},
+            {"url": "https://example.com", "summary": "see github.com/topics/ai and github.com/x/y."},
+            {"url": "https://osv.dev/x", "metadata": {"repository": "openai/openai-python"}},
+        ]}
+        self.assertEqual(collect_github.mention_names(payload, 10), ["openai/openai-python", "x/y"])
+
+    def test_trending_feed_enriches_new_repos_and_reuses_known_facts(self):
+        now = collect_github.utcnow().isoformat()
+        known = collect_github.normalize(repo("known/repo", stars=50), "search:test", collected_at=now)
+        previous = {"generated_at": now, "candidates": [known], "source_status": {}}
+        xml = "<rss><channel><item><link>https://github.com/known/repo</link></item><item><link>https://github.com/fresh/repo</link></item></channel></rss>"
+        request = mock.Mock(return_value=repo("fresh/repo", stars=7))
+        with mock.patch.object(collect_github, "fetch_text", return_value=xml):
+            output, request = self.run_collector({
+                "trending_feeds": [{"name": "daily/all", "url": "https://example.com/feed.xml"}],
+            }, request=request, previous=previous)
+        request.assert_called_once_with("/repos/fresh/repo")
+        names = {item["full_name"]: item for item in output["candidates"]}
+        self.assertEqual(set(names), {"known/repo", "fresh/repo"})
+        self.assertEqual(names["known/repo"]["source"], "trending:daily/all")
+        self.assertEqual(output["source_status"]["trending:daily/all"]["count"], 2)
+
+    def test_first_seen_at_is_kept_for_known_repos_and_stamped_for_new(self):
+        old = "2026-10-01T00:00:00+00:00"
+        known = collect_github.normalize(repo("known/repo"), "search:test", collected_at=old)
+        known["first_seen_at"] = old
+        previous = {"generated_at": old, "candidates": [known]}
+        request = mock.Mock(return_value={"items": [repo("known/repo"), repo("fresh/repo")]})
+        output, _ = self.run_collector({"github_queries": [{"q": "test", "sort": "stars", "per_page": 30}], "policy": {"discovery_cache_hours": 1}}, request=request, previous=previous)
+        self.assertIn("sort=stars", request.call_args[0][0])
+        self.assertIn("per_page=30", request.call_args[0][0])
+        names = {item["full_name"]: item for item in output["candidates"]}
+        self.assertEqual(names["known/repo"]["first_seen_at"], old)
+        self.assertNotEqual(names["fresh/repo"]["first_seen_at"], old)
+
+    def test_enrich_budget_skips_instead_of_exhausting_api(self):
+        xml = "<rss><channel>" + "".join(f"<item><link>https://github.com/o/r{i}</link></item>" for i in range(5)) + "</channel></rss>"
+        request = mock.Mock(side_effect=lambda path: repo(path.removeprefix("/repos/")))
+        with mock.patch.object(collect_github, "fetch_text", return_value=xml):
+            output, request = self.run_collector({
+                "trending_feeds": [{"name": "t", "url": "https://example.com/x.xml"}],
+                "policy": {"max_enrich_requests": 2},
+            }, request=request)
+        self.assertEqual(request.call_count, 2)
+        self.assertEqual(output["source_status"]["trending:t"]["skipped"], 3)
+
 
 if __name__ == "__main__":
     unittest.main()

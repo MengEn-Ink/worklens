@@ -20,7 +20,7 @@
   /* ============================== 本期 ============================== */
   function Funnel({ stats, loved }) {
     const steps = [
-      { n: stats.scanned, label: '今日扫描' },
+      { n: stats.scanned, label: '本期收录仓库' },
       { n: stats.readable, label: '许可清晰可读' },
       { n: stats.adopt, label: '建议引入', hot: true },
       { n: loved, label: '你已喜欢' },
@@ -50,10 +50,93 @@
           <dd><b>建议引入</b>：匹配度 ≥ 78、引入成本 ≤ 45、许可证清晰；<b>值得一读</b>：许可证清晰但未到引入线；<b>先评估风险</b>：无许可证、已归档或风险分 ≥ 70。</dd>
           <dt>实测 vs 示意</dt>
           <dd>卡片里的 Stars / Forks / Issues 数字是采集时从 GitHub API 取到的<b>实测快照</b>；虚线星标曲线与 7 格活跃度是由当前快照推演的<b>示意</b>图形，只有曲线末端的朱砂实心点是真实值。</dd>
+          <dt>候选从哪来</dt>
+          <dd>六类渠道：GitHub Trending 日榜 / 周榜（按语言）、主题搜索（含「近 30 天新建且已破 300 星」）、你的星标、你的仓库、AI 资讯里被提到的仓库、固定关注。同一仓库被多个源命中只算一条，并记下「多源命中」。<b>不按星数、类型或许可证丢弃任何候选</b>——风险高的照样列出，只是标「先评估风险」并排在后面。</dd>
+          <dt>新上榜</dt>
+          <dd>近 12 小时才第一次被采集到的仓库，约等于最近三轮采集的新增。按「热榜优先 → 多源命中 → Stars」排序。</dd>
           <dt>本机相关</dt>
           <dd>你在本页点的 ♥ / 跳过只存在这台设备的浏览器里（localStorage）。系统从你喜欢的项目里学习话题、类型、语言和作者，在本机给其它候选打 0–99 的相关分；不上传、不扫描设备文件，清空浏览器数据即重置。</dd>
         </dl>
       </Explain>
+    );
+  }
+
+  /* 来源构成：一条可点击的分段条，回答「数据源这么多，为什么只推这些」——全部列出，没有丢弃 */
+  function IntakeBar({ hub, channel, onPick }) {
+    const total = hub.channels.reduce((sum, item) => sum + item.count, 0) || 1;
+    return (
+      <section className="intake mt-6" aria-labelledby="intake-title">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+          <h2 id="intake-title" className="ff-mono text-[10.5px] uppercase tracking-[0.18em] text-[color:var(--ink-mute)]">来源构成 · 点一段只看该来源</h2>
+          <p className="ff-mono text-[12px] text-[color:var(--ink-soft)] tabular-nums">
+            {hub.intake.feeds} 个采集源 → {hub.intake.hits} 次命中 → 合并重复 {hub.intake.merged} → <b className="text-[color:var(--ink)]">{hub.intake.unique} 个仓库全部列出</b>
+          </p>
+        </div>
+        <div className="intake__bar mt-2" role="tablist" aria-label="按来源筛选">
+          {hub.channels.map((item, index) => {
+            const active = channel === item.key;
+            return (
+              <button key={item.key} role="tab" aria-selected={active} data-channel={item.key}
+                onClick={() => onPick(active ? 'all' : item.key)}
+                title={`${item.label}：${item.count} 个仓库，来自 ${item.feeds} 个采集源`}
+                style={{ flexGrow: item.count, flexBasis: 0, animationDelay: `${index * 70}ms` }}
+                className={`intake__seg ${active ? 'is-active' : ''} ${channel !== 'all' && !active ? 'is-dim' : ''}`}>
+                <span className="intake__label">{item.count / total > 0.07 ? item.short : ''}</span>
+              </button>
+            );
+          })}
+        </div>
+        <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[12px] text-[color:var(--ink-mute)]">
+          {hub.channels.map(item => (
+            <li key={item.key} className="inline-flex items-center gap-1.5">
+              <i className="intake__dot" data-channel={item.key} aria-hidden="true" />
+              {item.label} <b className="ff-mono text-[color:var(--ink)] tabular-nums">{item.count}</b>
+            </li>
+          ))}
+        </ul>
+      </section>
+    );
+  }
+
+  function FreshCard({ entry, index, openEntry }) {
+    return (
+      <button onClick={() => openEntry(entry.id)} style={{ animationDelay: `${index * 45}ms` }}
+        className="rise fresh-card group text-left flex flex-col justify-start shrink-0 w-[248px] md:w-auto snap-start p-4 bg-[color:var(--paper-raised)] border border-[color:var(--rule)] hover:border-[color:var(--ink)] transition-colors">
+        <span className="flex items-center gap-1.5">
+          {entry.trending ? <Pill tone="risk">Trending</Pill> : <Pill tone="warn">新</Pill>}
+          {entry.hits > 1 && <span className="ff-mono text-[10.5px] text-[color:var(--ink-mute)]">{entry.hits} 源命中</span>}
+          <span className="ml-auto ff-mono text-[11px] text-[color:var(--ink-mute)] inline-flex items-center gap-1"><Icon name="star" size={11} />{entry.starsCompact}</span>
+        </span>
+        <span className="block mt-2 text-[11.5px] text-[color:var(--ink-mute)] truncate">{entry.owner} /</span>
+        <span className="block ff-display text-[18px] font-bold leading-tight truncate group-hover:text-[color:var(--cinnabar)]">{entry.title}</span>
+        <span className="block mt-1.5 text-[12.5px] leading-[1.55] text-[color:var(--ink-soft)] line-clamp-2 min-h-[39px]">{entry.description || '该仓库没有填写描述。'}</span>
+        <span className="mt-2 flex items-center gap-2 text-[11px] text-[color:var(--ink-mute)]"><span>{entry.kind}</span>{entry.language && <span className="ff-mono">{entry.language}</span>}</span>
+      </button>
+    );
+  }
+
+  /* 新上榜：近 12 小时首次采集到的仓库，横向一屏扫完 */
+  function FreshStrip({ hub, openEntry, onAll }) {
+    if (!hub.fresh.length) return null;
+    const shown = hub.fresh.slice(0, 12);
+    return (
+      <section className="py-10 border-b border-[color:var(--ink)]" aria-labelledby="fresh-title">
+        <div className="flex flex-wrap items-end justify-between gap-3 mb-4">
+          <div>
+            <Eyebrow>近 12 小时 · 新上榜</Eyebrow>
+            <h2 id="fresh-title" className="ff-cn text-[22px] md:text-[26px] font-semibold mt-1">刚被采集到的 <span className="text-[color:var(--cinnabar)] tabular-nums">{hub.stats.fresh}</span> 个仓库</h2>
+            <p className="mt-1 text-[13px] text-[color:var(--ink-mute)]">热榜优先，其次看被几个来源同时命中，再看 Stars。这里先放 {shown.length} 个。</p>
+          </div>
+          {hub.fresh.length > shown.length && (
+            <button onClick={onAll} className="h-10 px-4 inline-flex items-center gap-2 border border-[color:var(--ink)] text-[13px] hover:bg-[color:var(--ink)] hover:text-[color:var(--paper-raised)] transition-colors">
+              在列表里看全部 {hub.stats.fresh} 个<Icon name="arrow" size={14} />
+            </button>
+          )}
+        </div>
+        <div className="no-scrollbar -mx-5 px-5 md:mx-0 md:px-0 flex md:grid md:grid-cols-3 lg:grid-cols-4 gap-3 overflow-x-auto snap-x snap-mandatory md:overflow-visible">
+          {shown.map((entry, index) => <FreshCard key={entry.id} entry={entry} index={index} openEntry={openEntry} />)}
+        </div>
+      </section>
     );
   }
 
@@ -112,6 +195,8 @@
             <span className="ff-display text-[18px] font-bold leading-tight group-hover:text-[color:var(--cinnabar)] [overflow-wrap:anywhere]">{entry.title}</span>
             <span className="text-[12px] text-[color:var(--ink-mute)]">{entry.owner}</span>
             <PriorityMark priority={entry.priority} />
+            {entry.trending && <Pill tone="risk">Trending</Pill>}
+            {entry.fresh && !entry.trending && <Pill tone="warn">新</Pill>}
             {inQueue && <Pill tone="warn">待审中</Pill>}
             <LocalBadge rel={rel} />
           </span>
@@ -121,6 +206,7 @@
             <span className="text-[11px] text-[color:var(--ink-mute)]">{entry.kind}</span>
             {entry.language && <span className="ff-mono text-[11px] text-[color:var(--ink-mute)]">{entry.language}</span>}
             {!entry.license && <span className="ff-mono text-[11px] text-[color:var(--cinnabar)]">无许可证</span>}
+            {entry.hits > 1 && <span className="ff-mono text-[11px] text-[color:var(--ink-mute)]">{entry.hits} 源命中</span>}
           </span>
           <RepoMetrics metrics={entry.repoMetrics} variant="row" />
         </button>
@@ -180,6 +266,7 @@
 
   function IssueView({ status, hub, taste, onTaste, openEntry, queueSubjects, onRetry, localProfile, relOf }) {
     const [kind, setKind] = useState('all');
+    const [channel, setChannel] = useState('all');
     const [sort, setSort] = useState('editor');
     const [query, setQuery] = useState('');
     const [showSkipped, setShowSkipped] = useState(false);
@@ -193,14 +280,17 @@
       const q = query.trim().toLowerCase();
       const list = hub.entries.filter(entry => {
         if (kind !== 'all' && entry.kind !== kind) return false;
+        if (channel === 'fresh' && !entry.fresh) return false;
+        if (channel !== 'all' && channel !== 'fresh' && !entry.channels.includes(channel)) return false;
         if (!showSkipped && taste[entry.id] === 'skip') return false;
         if (!q) return true;
         return [entry.fullName, entry.description, entry.language, ...entry.tags].join(' ').toLowerCase().includes(q);
       });
       if (sort === 'local' && localProfile.ready) return list.slice().sort((a, b) => relOf(b).score - relOf(a).score);
       if (sort === 'stars') return list.slice().sort((a, b) => b.stars - a.stars);
+      if (channel === 'fresh') return WL_HUB_ADAPTER.rankFresh(list);
       return list;
-    }, [hub, kind, query, showSkipped, taste, sort, localProfile, relOf]);
+    }, [hub, kind, channel, query, showSkipped, taste, sort, localProfile, relOf]);
 
     if (status === 'loading') return <div className="max-w-[1240px] mx-auto px-5 md:px-10 py-10"><SkeletonRows rows={6} /></div>;
     if (status === 'error' || !hub) {
@@ -212,6 +302,12 @@
 
     const kindOptions = [{ value: 'all', label: '全部', count: hub.entries.length }].concat(hub.kinds.map(item => ({ value: item.kind, label: item.kind, count: item.count })));
     const visible = filtered.slice(0, limit);
+    const channelOptions = [{ value: 'all', label: '全部来源', count: hub.entries.length }]
+      .concat(hub.stats.fresh ? [{ value: 'fresh', label: '新上榜', count: hub.stats.fresh }] : [])
+      .concat(hub.channels.map(item => ({ value: item.key, label: item.label, count: item.count })));
+    const jumpToLedger = () => { const node = document.getElementById('ledger-title'); if (node) node.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+    const pickChannel = value => { setChannel(value); setLimit(PAGE_SIZE); };
+    const channelName = channel === 'all' ? '' : channel === 'fresh' ? '新上榜' : WL_HUB_ADAPTER.channelLabel(channel);
 
     return (
       <div className="max-w-[1240px] mx-auto px-5 md:px-10 pb-20">
@@ -221,9 +317,10 @@
             这一期，<span className="text-[color:var(--cinnabar)]">{hub.stats.adopt}</span> 个值得动手。
           </h1>
           <p className="mt-3 max-w-2xl text-[15px] leading-[1.7] text-[color:var(--ink-soft)]">
-            采集器每四小时扫一遍 GitHub 上的 Skill、UI 组件、信息源和工作流项目。共收录 {hub.stats.scanned} 条，其中 {hub.stats.readable} 条许可证清晰可放心读，{hub.stats.adopt} 条达到「建议引入」线，{hub.stats.evaluate} 条需要先评估风险。
+            采集器每四小时扫一遍 GitHub Trending 热榜、{hub.channels.find(item => item.key === 'search') ? `${hub.channels.find(item => item.key === 'search').feeds} 组主题搜索` : '主题搜索'}、你的星标和 AI 资讯里提到的仓库。去重后共收录 {hub.stats.scanned} 条（近 12 小时新上榜 {hub.stats.fresh} 条），其中 {hub.stats.readable} 条许可证清晰可放心读，{hub.stats.adopt} 条达到「建议引入」线，{hub.stats.evaluate} 条需要先评估风险。
           </p>
           <ReadingGuide />
+          <IntakeBar hub={hub} channel={channel} onPick={value => { pickChannel(value); jumpToLedger(); }} />
         </header>
         <Funnel stats={hub.stats} loved={lovedCount} />
         <LocalStrip hub={hub} localProfile={localProfile} relOf={relOf} openEntry={openEntry} taste={taste} onSort={() => { setSort('local'); setLimit(PAGE_SIZE); const node = document.getElementById('ledger-title'); if (node) node.scrollIntoView({ behavior: 'smooth', block: 'start' }); }} />
@@ -236,11 +333,13 @@
           </div>
         </section>
 
+        <FreshStrip hub={hub} openEntry={openEntry} onAll={() => { pickChannel('fresh'); jumpToLedger(); }} />
+
         <section className="pt-10" aria-labelledby="ledger-title">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-5">
             <div>
               <Eyebrow>全部候选</Eyebrow>
-              <h2 id="ledger-title" className="ff-cn text-[24px] md:text-[28px] font-semibold mt-1 scroll-mt-20">{sort === 'local' && localProfile.ready ? '按本机相关排好' : sort === 'stars' ? '按 Stars 排好' : '按优先级排好'}的 {hub.entries.length} 条</h2>
+              <h2 id="ledger-title" className="ff-cn text-[24px] md:text-[28px] font-semibold mt-1 scroll-mt-20">{sort === 'local' && localProfile.ready ? '按本机相关排好' : sort === 'stars' ? '按 Stars 排好' : '按优先级排好'}的 {channelName ? `${channelName} · ${filtered.length}` : hub.entries.length} 条</h2>
             </div>
             <label className="relative flex items-center w-full md:w-[320px]">
               <span className="sr-only">搜索候选</span>
@@ -249,6 +348,7 @@
                 className="w-full h-11 pl-10 pr-3 bg-[color:var(--paper-raised)] border border-[color:var(--rule)] text-[15px] placeholder:text-[color:var(--ink-mute)] focus:outline-none focus:border-[color:var(--ink)]" />
             </label>
           </div>
+          <div className="mb-3"><Segmented label="按来源筛选" options={channelOptions} value={channel} onChange={pickChannel} /></div>
           <div className="flex flex-col md:flex-row md:items-center gap-3 md:justify-between">
             <Segmented label="按类型筛选" options={kindOptions} value={kind} onChange={value => { setKind(value); setLimit(PAGE_SIZE); }} />
             <div className="flex items-center gap-2 shrink-0">
@@ -266,7 +366,7 @@
             <p className="mt-3 px-3 py-2 bg-[color:var(--mustard-wash)] text-[13px]">本机还没有喜好记录，暂按编辑优先展示。给任意候选点 ♥ 后，这里会立刻按与你口味的相关度重排。</p>
           )}
           {filtered.length === 0 ? (
-            <div className="mt-6"><StateBlock title="没有匹配的候选" body="换个关键词，或者回到「全部」看看。" action="清空筛选" onAction={() => { setKind('all'); setQuery(''); }} /></div>
+            <div className="mt-6"><StateBlock title="没有匹配的候选" body="换个关键词，或者回到「全部」看看。" action="清空筛选" onAction={() => { setKind('all'); setChannel('all'); setQuery(''); }} /></div>
           ) : (
             <ol className="mt-4 border-t border-[color:var(--ink)]">
               {visible.map((entry, index) => (

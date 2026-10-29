@@ -108,8 +108,49 @@
     return '保留来源链接，结合手头的实际工作问题决定是否深入调研。';
   }
 
+  /* 采集渠道：把 source 键归并成用户看得懂的 6 类，用于「来源构成」与筛选 */
+  const CHANNELS = [
+    { key: 'trending', label: 'Trending 热榜', short: 'Trending', test: /^trending:/ },
+    { key: 'search', label: '主题搜索', short: '搜索', test: /^search:/ },
+    { key: 'starred', label: '我的星标', short: '星标', test: /^profile:[^:]+:starred$/ },
+    { key: 'owned', label: '我的仓库', short: '我的', test: /^profile:[^:]+:owned$/ },
+    { key: 'mention', label: '资讯提及', short: '提及', test: /^mention:/ },
+    { key: 'pinned', label: '固定关注', short: '关注', test: /^(repository|curated):/ },
+  ];
+  const CHANNEL_KEYS = CHANNELS.map(channel => channel.key);
+
+  function channelOf(source) {
+    const hit = CHANNELS.find(channel => channel.test.test(String(source || '')));
+    return hit ? hit.key : 'pinned';
+  }
+
+  function channelsOf(candidate) {
+    const keys = new Set([candidate.source, ...safeList(candidate.also_seen_in)].filter(Boolean).map(channelOf));
+    return CHANNEL_KEYS.filter(key => keys.has(key));
+  }
+
+  function channelLabel(key) {
+    const hit = CHANNELS.find(channel => channel.key === key);
+    return hit ? hit.label : key;
+  }
+
+  /* 新上榜：近 12 小时才第一次被采集到（first_seen_at 距本期生成 ≤ 12 小时，约等于最近三轮采集） */
+  const FRESH_WINDOW_MS = 12 * 3600000;
+  function isFreshCandidate(candidate, generatedAt) {
+    const first = new Date(candidate.first_seen_at || '').getTime();
+    const generated = new Date(generatedAt || '').getTime();
+    if (Number.isNaN(first) || Number.isNaN(generated)) return false;
+    return generated - first <= FRESH_WINDOW_MS;
+  }
+
   function sourceLabel(source) {
     return String(source || '')
+      .replace(/^trending:daily\//, 'Trending 日榜 · ')
+      .replace(/^trending:weekly\//, 'Trending 周榜 · ')
+      .replace(/^mention:/, '资讯提及 · ')
+      .replace(/^profile:([^:]+):starred$/, '$1 的星标')
+      .replace(/^profile:([^:]+):owned$/, '$1 的仓库')
+      .replace(/\{days_ago:(\d+)\}/g, '近 $1 天')
       .replace(/^repository:/, '仓库 ')
       .replace(/^search:/, '搜索 ')
       .replace(/ archived:false/g, '')
@@ -239,7 +280,7 @@
 
   const LOCAL_LEVEL_LABELS = { loved: '已喜欢', skipped: '已跳过', high: '高度相关', mid: '有些相关', low: '略相关', none: '暂无关联' };
 
-  function entryFromCandidate(candidate, index, now) {
+  function entryFromCandidate(candidate, index, now, generatedAt) {
     const category = classify(candidate);
     const scores = scoreCandidate(candidate, now);
     const verdict = verdictOf(candidate, scores);
@@ -271,8 +312,12 @@
       pushedAt: shortDate(candidate.pushed_at || candidate.updated_at),
       collectedAt: shortDate(candidate.collected_at || candidate.updated_at),
       related: [],
+      channels: channelsOf(candidate),
+      hits: new Set([candidate.source, ...safeList(candidate.also_seen_in)].filter(Boolean)).size,
+      fresh: isFreshCandidate(candidate, generatedAt),
       raw: candidate,
     };
+    entry.trending = entry.channels.includes('trending');
     entry.priority = editorialPriority(entry);
     return entry;
   }
@@ -296,6 +341,11 @@
       if (pa !== pb) return pa - pb;
       return b.scores.fit - a.scores.fit;
     });
+  }
+
+  /* 新上榜排序：热榜优先 → 多源交叉命中 → Stars */
+  function rankFresh(entries) {
+    return entries.slice().sort((a, b) => (Number(b.trending) - Number(a.trending)) || (b.hits - a.hits) || (b.stars - a.stars));
   }
 
   function buildSourceHealth(discoveries, now) {
@@ -322,12 +372,21 @@
   function buildHubData(discoveries, nowValue) {
     const now = typeof nowValue === 'number' ? nowValue : Date.now();
     const candidates = safeList(discoveries && discoveries.candidates).filter(item => item && item.full_name);
-    const entries = rankEntries(candidates.map((candidate, index) => entryFromCandidate(candidate, index, now)));
+    const generatedAt = discoveries && discoveries.generated_at;
+    const entries = rankEntries(candidates.map((candidate, index) => entryFromCandidate(candidate, index, now, generatedAt)));
     linkRelated(entries);
     const counts = entries.reduce((acc, entry) => {
       acc[entry.kind] = (acc[entry.kind] || 0) + 1;
       return acc;
     }, {});
+    const channelCounts = entries.reduce((acc, entry) => {
+      entry.channels.forEach(key => { acc[key] = (acc[key] || 0) + 1; });
+      return acc;
+    }, {});
+    const statuses = (discoveries && discoveries.source_status) || {};
+    const sourceKeys = Object.keys(statuses);
+    const totalHits = sourceKeys.reduce((sum, key) => sum + Number((statuses[key] && statuses[key].count) || 0), 0);
+    const fresh = rankFresh(entries.filter(entry => entry.fresh));
     return {
       available: entries.length > 0,
       generatedAt: (discoveries && discoveries.generated_at) || null,
@@ -335,13 +394,23 @@
       generatedDate: shortDate(discoveries && discoveries.generated_at),
       entries,
       lead: entries[0] || null,
-      picks: entries.slice(1, 4),
+      picks: entries.slice(1, 5),
+      fresh,
+      channels: CHANNELS.filter(channel => channelCounts[channel.key]).map(channel => ({
+        key: channel.key,
+        label: channel.label,
+        short: channel.short,
+        count: channelCounts[channel.key],
+        feeds: sourceKeys.filter(key => channelOf(key) === channel.key).length,
+      })),
+      intake: { feeds: sourceKeys.length, hits: totalHits, unique: entries.length, merged: Math.max(0, totalHits - entries.length) },
       kinds: KIND_ORDER.filter(kind => counts[kind]).map(kind => ({ kind, count: counts[kind] })),
       stats: {
         scanned: entries.length,
         readable: entries.filter(entry => entry.verdict !== 'evaluate').length,
         adopt: entries.filter(entry => entry.verdict === 'adopt').length,
         evaluate: entries.filter(entry => entry.verdict === 'evaluate').length,
+        fresh: fresh.length,
       },
       sources: buildSourceHealth(discoveries, now),
     };
@@ -468,6 +537,10 @@
     buildRepoBrief,
     buildSourceHealth,
     buildProfileSignals,
+    CHANNELS,
+    channelOf,
+    channelLabel,
+    rankFresh,
     buildRepoMetrics,
     buildLocalProfile,
     localRelevance,

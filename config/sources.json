@@ -12,8 +12,77 @@
     "topic:github-pages stars:>100 archived:false",
     "topic:design-system stars:>200 archived:false",
     "topic:developer-tools stars:>500 archived:false",
-    "topic:ai-agent stars:>500 archived:false"
+    "topic:ai-agent stars:>500 archived:false",
+    {
+      "q": "created:>{days_ago:30} stars:>300",
+      "sort": "stars",
+      "per_page": 30
+    },
+    {
+      "q": "created:>{days_ago:90} topic:ai-agent stars:>100",
+      "sort": "stars",
+      "per_page": 20
+    },
+    "topic:mcp stars:>100 archived:false pushed:>{days_ago:30}",
+    "topic:claude-code stars:>50 archived:false",
+    "topic:llm stars:>1000 archived:false pushed:>{days_ago:14}",
+    "topic:rag stars:>300 archived:false pushed:>{days_ago:30}",
+    "topic:prompt-engineering stars:>300 archived:false",
+    "topic:workflow-automation stars:>300 archived:false",
+    "topic:shadcn-ui stars:>200 archived:false",
+    "topic:react-components stars:>500 archived:false pushed:>{days_ago:60}",
+    "topic:rss stars:>200 archived:false",
+    "topic:self-hosted stars:>2000 archived:false pushed:>{days_ago:30}",
+    "topic:cli stars:>2000 archived:false pushed:>{days_ago:14}"
   ],
+  "trending_feeds": [
+    {
+      "name": "daily/all",
+      "url": "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml",
+      "max_items": 25
+    },
+    {
+      "name": "weekly/all",
+      "url": "https://mshibanami.github.io/GitHubTrendingRSS/weekly/all.xml",
+      "max_items": 25
+    },
+    {
+      "name": "daily/python",
+      "url": "https://mshibanami.github.io/GitHubTrendingRSS/daily/python.xml",
+      "max_items": 25
+    },
+    {
+      "name": "daily/typescript",
+      "url": "https://mshibanami.github.io/GitHubTrendingRSS/daily/typescript.xml",
+      "max_items": 25
+    },
+    {
+      "name": "weekly/python",
+      "url": "https://mshibanami.github.io/GitHubTrendingRSS/weekly/python.xml",
+      "max_items": 25
+    },
+    {
+      "name": "weekly/typescript",
+      "url": "https://mshibanami.github.io/GitHubTrendingRSS/weekly/typescript.xml",
+      "max_items": 25
+    },
+    {
+      "name": "weekly/go",
+      "url": "https://mshibanami.github.io/GitHubTrendingRSS/weekly/go.xml",
+      "max_items": 25
+    },
+    {
+      "name": "weekly/rust",
+      "url": "https://mshibanami.github.io/GitHubTrendingRSS/weekly/rust.xml",
+      "max_items": 25
+    }
+  ],
+  "feed_mentions": {
+    "enabled": true,
+    "name": "ai-news",
+    "path": "data/ai-news.json",
+    "max_items": 40
+  },
   "repositories": [
     "wuyoscar/AISafetyHot-Hub",
     "DIYgod/RSSHub",
@@ -67,7 +136,19 @@
         "category": "ai",
         "priority": "P2",
         "max_items": 50,
-        "keywords": ["agent", "llm", "rag", "workflow", "automation", "ai", "model", "智能体", "大模型", "提示词", "prompt"]
+        "keywords": [
+          "agent",
+          "llm",
+          "rag",
+          "workflow",
+          "automation",
+          "ai",
+          "model",
+          "智能体",
+          "大模型",
+          "提示词",
+          "prompt"
+        ]
       },
       {
         "name": "GitHub Releases · LangChain",
@@ -77,7 +158,10 @@
         "site_name": "GitHub Releases",
         "category": "release",
         "priority": "P1",
-        "tags": ["agent", "python"]
+        "tags": [
+          "agent",
+          "python"
+        ]
       },
       {
         "name": "GitHub Releases · OpenAI Python",
@@ -87,17 +171,34 @@
         "site_name": "GitHub Releases",
         "category": "release",
         "priority": "P1",
-        "tags": ["ai", "sdk", "python"]
+        "tags": [
+          "ai",
+          "sdk",
+          "python"
+        ]
       },
       {
         "name": "Hacker News",
         "type": "hacker_news",
         "url": "https://hacker-news.firebaseio.com/v0",
-        "lists": ["top", "new"],
+        "lists": [
+          "top",
+          "new"
+        ],
         "max_ids_per_list": 30,
         "concurrency": 4,
         "minimum_score": 20,
-        "keywords": ["agent", "llm", "openai", "anthropic", "gemini", "rag", "developer tool", "security", "vulnerability"],
+        "keywords": [
+          "agent",
+          "llm",
+          "openai",
+          "anthropic",
+          "gemini",
+          "rag",
+          "developer tool",
+          "security",
+          "vulnerability"
+        ],
         "site_name": "Hacker News",
         "category": "community",
         "priority": "P2"
@@ -176,11 +277,26 @@
         "priority": "P0",
         "max_items": 30,
         "queries": [
-          {"ecosystem": "PyPI", "package": "openai"},
-          {"ecosystem": "PyPI", "package": "langchain"},
-          {"ecosystem": "PyPI", "package": "fastapi"},
-          {"ecosystem": "npm", "package": "react"},
-          {"ecosystem": "npm", "package": "vite"}
+          {
+            "ecosystem": "PyPI",
+            "package": "openai"
+          },
+          {
+            "ecosystem": "PyPI",
+            "package": "langchain"
+          },
+          {
+            "ecosystem": "PyPI",
+            "package": "fastapi"
+          },
+          {
+            "ecosystem": "npm",
+            "package": "react"
+          },
+          {
+            "ecosystem": "npm",
+            "package": "vite"
+          }
         ]
       },
       {
@@ -192,18 +308,33 @@
         "priority": "P0",
         "max_items": 40,
         "recent_days": 14,
-        "keywords": ["GitHub Actions", "GitHub Enterprise Server", "Python", "Node.js", "React", "Vite", "FastAPI", "LangChain", "OpenAI", "Docker", "Kubernetes"]
+        "keywords": [
+          "GitHub Actions",
+          "GitHub Enterprise Server",
+          "Python",
+          "Node.js",
+          "React",
+          "Vite",
+          "FastAPI",
+          "LangChain",
+          "OpenAI",
+          "Docker",
+          "Kubernetes"
+        ]
       }
     ]
   },
   "policy": {
-    "max_candidates_per_query": 10,
+    "max_candidates_per_query": 20,
     "curated_feed_max_stale_hours": 24,
     "discovery_cache_hours": 24,
     "retry_attempts": 3,
     "retry_backoff_seconds": 1,
     "minimum_stars": 20,
     "exclude_archived": true,
-    "require_license_for_adoption": true
+    "require_license_for_adoption": true,
+    "search_interval_seconds": 2.5,
+    "trending_cache_hours": 4,
+    "max_enrich_requests": 150
   }
 }
