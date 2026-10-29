@@ -40,5 +40,11 @@
     "rule": "url_credential_param",
     "contains": "fighting41love/funNLP?token=abcsecret",
     "reason": "推荐复盘契约的凭证参数拒绝用负向测试夹具，公开仓库 URL 上附加的伪造参数仅用于断言拒绝"
+  },
+  {
+    "path": "tests/test_close_issues_ci.py",
+    "rule": "internal_host",
+    "contains": "http://x.byted.org/secret",
+    "reason": "Issue 收口请求账本的内网地址拒绝用负向测试夹具，并非真实内网地址引用"
   }
 ]

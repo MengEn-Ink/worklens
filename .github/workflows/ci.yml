@@ -46,6 +46,8 @@ jobs:
         run: python3 scripts/recommendation_review.py validate
       - name: 健康巡检账本契约校验
         run: python3 scripts/health_check.py validate
+      - name: Issue 收口请求账本契约校验
+        run: python3 scripts/close_issues_ci.py validate
       - name: 校验仓库深度解读缓存
         run: python3 scripts/repo_insights.py validate
       - name: 敏感信息扫描

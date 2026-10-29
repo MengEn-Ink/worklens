@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "policy": {
+    "public_only": true,
+    "close_via_ci_only": true,
+    "description": "仅登记 WorkLens Loop 在公开仓库内提出的 Issue 收口请求；由 GitHub Actions 内置 GITHUB_TOKEN（issues: write）执行，账本不存放任何凭证。"
+  },
+  "requests": [
+    {
+      "issue": 85,
+      "title": "健康巡检：2026-10-29 12 点 WorkLens Loop",
+      "reason": "12 点轮健康巡检验收标准已全部满足：main/Actions/Pages 与公开数据新鲜度均健康，P0–P4 目标保持上线并处于健康巡检降级态；沙箱 fine-grained PAT 对 Issue 评论/关闭返回 403，PR #86 合入也未自动关单，改由 CI 内置 GITHUB_TOKEN 收口。",
+      "evidence_ref": "docs/loop-log.md",
+      "requested_by": "worklens-loop",
+      "requested_at": "2026-10-29T08:15:00Z"
+    }
+  ]
+}
