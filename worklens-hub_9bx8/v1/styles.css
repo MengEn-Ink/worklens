@@ -223,3 +223,51 @@ details[open] .chev { transform: rotate(90deg); }
 @keyframes intake-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 .fresh-card { box-shadow: 0 1px 0 var(--rule-soft); }
 @media (prefers-reduced-motion: reduce) { .intake__seg { animation: none; } }
+
+/* ---------------- 深度解读 dossier ---------------- */
+.dossier { padding-top: 18px; border-top: 1px solid var(--ink); }
+.dossier--empty { padding: 14px 16px; border: 1px dashed var(--rule); background: var(--paper-raised); }
+.dossier__tagline { margin: 10px 0 0; padding-left: 14px; border-left: 3px solid var(--cinnabar); font-family: var(--font-cn-display); font-size: 17px; line-height: 1.6; color: var(--ink); }
+.dossier__index { display: flex; gap: 6px; margin: 14px 0 4px; overflow-x: auto; }
+.dossier__index a { flex: none; display: inline-flex; align-items: center; gap: 5px; height: 30px; padding: 0 10px; border: 1px solid var(--rule); font-size: 12.5px; color: var(--ink-soft); background: var(--paper-raised); transition: border-color .15s, color .15s; }
+.dossier__index a span { font-size: 10px; color: var(--ink-mute); }
+.dossier__index a:hover { border-color: var(--ink); color: var(--ink); }
+.dossier__sec { scroll-margin-top: 12px; padding: 14px 0 4px; border-bottom: 1px dashed var(--rule); animation: rise .32s ease both; }
+.dossier__sec:last-of-type { border-bottom: 0; }
+.dossier__sec h4 { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; margin: 0 0 6px; }
+.dossier__sec h4 span { font-size: 11px; color: var(--cinnabar); }
+.dossier__sec h4 b { font-size: 15px; font-weight: 600; }
+.dossier__sec h4 em { font-style: normal; font-size: 12px; color: var(--ink-mute); }
+.dossier__sec li { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: start; padding: 6px 0 6px 14px; position: relative; font-size: 14px; line-height: 1.7; color: var(--ink-soft); }
+.dossier__sec li::before { content: ''; position: absolute; left: 0; top: 15px; width: 6px; height: 1px; background: var(--ink); }
+.dossier__text { overflow-wrap: anywhere; }
+/* 出处标记：像校样上的批注章，一眼区分「原文 / 实测 / 推断」 */
+.prov { margin-top: 3px; padding: 0 5px; font-size: 10.5px; line-height: 18px; white-space: nowrap; letter-spacing: .04em; border: 1px solid currentColor; }
+.prov[data-from="readme"] { color: var(--ink); background: var(--paper-raised); }
+.prov[data-from="facts"] { color: var(--forest); background: var(--forest-wash); border-color: transparent; }
+.prov[data-from="inferred"] { color: var(--ink-mute); border-style: dashed; }
+.prov[data-from="editor"] { color: var(--cinnabar); background: var(--cinnabar-wash); border-color: transparent; }
+.prov[data-from="llm"] { color: var(--mustard); background: var(--mustard-wash); border-color: transparent; }
+.dossier__arch { margin: 6px 0 8px 14px; }
+.stackbar { display: flex; height: 8px; gap: 2px; }
+.stackbar i { flex-basis: 0; transform-origin: left; animation: stackgrow .7s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes stackgrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.stackbar__legend { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 6px; font-size: 11.5px; color: var(--ink-mute); }
+.stackbar__legend span { display: inline-flex; align-items: center; gap: 5px; }
+.stackbar__legend i { width: 8px; height: 8px; display: inline-block; }
+.stackbar__legend b { color: var(--ink); font-weight: 500; font-family: var(--font-mono); }
+.dossier__code { position: relative; margin: 4px 0 10px; background: var(--ink); color: var(--paper-raised); }
+.dossier__code pre { margin: 0; padding: 12px 70px 12px 14px; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+.dossier__code button { position: absolute; top: 8px; right: 8px; height: 26px; padding: 0 9px; font-size: 11.5px; color: var(--paper-raised); border: 1px solid rgba(250,245,234,.4); }
+.dossier__code button:hover { border-color: var(--paper-raised); }
+/* 缓存票根：带打孔撕线的存根，告诉你这份解读是缓存、0 次模型调用 */
+.ticket { display: flex; margin-top: 16px; background: var(--paper-sunk); position: relative; }
+.ticket__main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; padding: 12px 14px; color: var(--ink-soft); }
+.ticket__stub { flex: none; width: 92px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; color: var(--ink-mute); border-left: 2px dashed var(--paper); position: relative; }
+.ticket__stub b { font-size: 15px; color: var(--cinnabar); letter-spacing: .04em; }
+.ticket__stub::before, .ticket__stub::after { content: ''; position: absolute; left: -9px; width: 16px; height: 16px; border-radius: 50%; background: var(--paper-raised); }
+.ticket__stub::before { top: -8px; }
+.ticket__stub::after { bottom: -8px; }
+.row-insight { display: flex; gap: 8px; margin-top: 6px; font-size: 13px; line-height: 1.6; color: var(--ink-soft); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; }
+.row-insight b { font-weight: 600; color: var(--forest); margin-right: 6px; }
+@media (prefers-reduced-motion: reduce) { .stackbar i, .dossier__sec { animation: none; } }

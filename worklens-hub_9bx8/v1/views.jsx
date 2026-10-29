@@ -158,11 +158,12 @@
         <div className="mt-5 max-w-xl"><RepoMetrics metrics={entry.repoMetrics} variant="lead" /></div>
         <div className="mt-5 max-w-xl space-y-2 text-[14px] leading-[1.7] text-[color:var(--ink-soft)]">
           <p><b className="font-semibold text-[color:var(--ink)]">为什么是头条：</b>{WL_HUB_ADAPTER.explainPriority(entry.priority) || '本期按匹配度排第一'}。{WL_HUB_ADAPTER.explainVerdict(entry)}</p>
+          {entry.insight && entry.insight.lead && <p><b className="font-semibold text-[color:var(--ink)]">解决什么：</b>{entry.insight.lead.text}</p>}
           <p className="pl-4 border-l-2 border-[color:var(--ink)]"><b className="font-semibold text-[color:var(--ink)]">建议动作：</b>{entry.action}</p>
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <button onClick={() => openEntry(entry.id)} className="h-11 px-5 inline-flex items-center gap-2 bg-[color:var(--ink)] text-[color:var(--paper-raised)] text-[14px]">
-            30 秒速读<Icon name="arrow" />
+            深度解读<Icon name="arrow" />
           </button>
           <TasteButtons value={taste[entry.id]} onTaste={value => onTaste(entry.id, value)} />
         </div>
@@ -201,6 +202,7 @@
             <LocalBadge rel={rel} />
           </span>
           <span className="block mt-1 text-[13.5px] text-[color:var(--ink-soft)] line-clamp-2">{entry.description || '该仓库没有填写描述。'}</span>
+          {entry.insight && entry.insight.lead && <span className="row-insight"><b>解决</b>{entry.insight.lead.text}</span>}
           <span className="mt-2 flex flex-wrap items-center gap-2">
             <Pill tone={entry.verdict === 'adopt' ? 'good' : entry.verdict === 'evaluate' ? 'risk' : 'neutral'}>{entry.verdictLabel}</Pill>
             <span className="text-[11px] text-[color:var(--ink-mute)]">{entry.kind}</span>
@@ -414,6 +416,87 @@
     );
   }
 
+
+  /* 深度解读：只读 repo-insights.json 缓存；每条结论右侧标注出处（原文 / 实测 / 推断 / 精读 / 模型） */
+  const STACK_TONES = ['var(--ink)', 'var(--cinnabar)', 'var(--forest)', 'var(--mustard)', 'var(--rule)'];
+
+  function InsightDossier({ insight }) {
+    const [copied, setCopied] = useState(false);
+    if (!insight) {
+      return (
+        <section className="dossier dossier--empty mt-6" aria-label="深度解读">
+          <Eyebrow>深度解读 · 排队中</Eyebrow>
+          <p className="mt-1 text-[13.5px] leading-[1.7] text-[color:var(--ink-soft)]">这个仓库刚进入候选，解读会在下一轮采集时生成并缓存；之后除非 README 变化，不会重复解读。</p>
+        </section>
+      );
+    }
+    const copy = () => {
+      try { navigator.clipboard.writeText(insight.quickstart); setCopied(true); setTimeout(() => setCopied(false), 1600); } catch (error) { /* 剪贴板不可用时忽略 */ }
+    };
+    return (
+      <section className="dossier mt-6" aria-labelledby="dossier-title">
+        <div className="flex items-baseline justify-between gap-3">
+          <h3 id="dossier-title" className="ff-mono text-[10.5px] uppercase tracking-[0.18em] text-[color:var(--ink-mute)]">深度解读 · {insight.methodLabel}</h3>
+          <span className="ff-mono text-[10.5px] text-[color:var(--ink-mute)]">{insight.sections.length} 节</span>
+        </div>
+        {insight.tagline && <blockquote className="dossier__tagline">{insight.tagline}</blockquote>}
+        <nav className="dossier__index no-scrollbar" aria-label="解读目录">
+          {insight.sections.map((section, index) => (
+            <a key={section.key} href={`#ins-${section.key}`} onClick={event => { event.preventDefault(); const node = document.getElementById(`ins-${section.key}`); if (node) node.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
+              <span className="ff-mono">{String(index + 1).padStart(2, '0')}</span>{section.label}
+            </a>
+          ))}
+        </nav>
+        {insight.sections.map((section, index) => (
+          <div key={section.key} id={`ins-${section.key}`} className="dossier__sec" style={{ animationDelay: `${index * 60}ms` }}>
+            <h4><span className="ff-mono">{String(index + 1).padStart(2, '0')}</span><b>{section.label}</b><em>{section.q}</em></h4>
+            <ul>
+              {section.items.map(item => (
+                <li key={item.text}>
+                  <span className="dossier__text">{item.text}</span>
+                  <span className="prov" data-from={item.from} title={`出处：${item.fromLabel}`}>{item.fromLabel}</span>
+                </li>
+              ))}
+            </ul>
+            {section.key === 'design' && (insight.stack.length > 0 || insight.entry.length > 0) && (
+              <div className="dossier__arch">
+                {insight.stack.length > 0 && (
+                  <>
+                    <div className="stackbar" role="img" aria-label={`语言构成：${insight.stack.map(row => `${row.lang} ${row.pct}%`).join('，')}`}>
+                      {insight.stack.map((row, i) => <i key={row.lang} style={{ flexGrow: row.pct, background: STACK_TONES[i] || 'var(--rule)', animationDelay: `${i * 90}ms` }} />)}
+                    </div>
+                    <p className="stackbar__legend">{insight.stack.map((row, i) => <span key={row.lang}><i style={{ background: STACK_TONES[i] || 'var(--rule)' }} />{row.lang} <b className="tabular-nums">{row.pct}%</b></span>)}</p>
+                  </>
+                )}
+                {insight.entry.length > 0 && <p className="mt-1.5 text-[12px] text-[color:var(--ink-mute)]">工程形态：{insight.entry.join(' · ')}</p>}
+              </div>
+            )}
+          </div>
+        ))}
+        {insight.quickstart && (
+          <div className="dossier__sec">
+            <h4><span className="ff-mono">{String(insight.sections.length + 1).padStart(2, '0')}</span><b>快速上手</b><em>摘自 README，执行前请自行审阅</em></h4>
+            <div className="dossier__code">
+              <pre>{insight.quickstart}</pre>
+              <button onClick={copy} aria-label="复制命令">{copied ? '已复制' : '复制'}</button>
+            </div>
+          </div>
+        )}
+        <div className="ticket" aria-label="解读缓存凭据">
+          <div className="ticket__main">
+            <span className="ff-mono text-[10px] uppercase tracking-[0.16em]">解读缓存</span>
+            <span className="text-[12.5px]">生成于 {insight.cache.generatedAt} · 最近核对 {insight.cache.checkedAt}{insight.cache.sharedWith ? ` · 与 ${insight.cache.sharedWith} 共用（README 相同）` : ''}</span>
+            <span className="text-[11.5px] text-[color:var(--ink-mute)]">打开此页 0 次模型调用；README 指纹不变就一直复用{insight.cache.readmeChanged ? ' · README 已更新，精读待复核' : ''}</span>
+          </div>
+          <div className="ticket__stub">
+            <span className="text-[9.5px] uppercase tracking-[0.18em]">指纹</span>
+            <b className="ff-mono">{insight.cache.fingerprint || '—'}</b>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   function EntryDetail({ entry, hub, taste, onTaste, onClose, openEntry, queueEntry, rel, localProfile }) {
     const brief = useMemo(() => WL_HUB_ADAPTER.buildRepoBrief(entry), [entry]);
     const scoreNotes = useMemo(() => WL_HUB_ADAPTER.explainScores(entry), [entry]);
@@ -422,11 +505,11 @@
       <>
         <header className="flex items-start justify-between gap-4 px-6 pt-5 pb-4 border-b border-[color:var(--ink)]">
           <div className="min-w-0">
-            <div className="flex flex-wrap items-center gap-2"><PriorityMark priority={entry.priority} /><Eyebrow>{entry.kind} · 30 秒速读</Eyebrow><LocalBadge rel={rel} /></div>
+            <div className="flex flex-wrap items-center gap-2"><PriorityMark priority={entry.priority} /><Eyebrow>{entry.kind} · 深度解读</Eyebrow><LocalBadge rel={rel} /></div>
             <div className="mt-2 text-[13px] text-[color:var(--ink-mute)]">{entry.owner} /</div>
             <h2 className="ff-display text-[24px] md:text-[30px] font-extrabold leading-tight tracking-[-0.02em] [overflow-wrap:anywhere] [hyphens:auto]">{entry.title}</h2>
           </div>
-          <button onClick={onClose} aria-label="关闭速读" className="w-11 h-11 shrink-0 inline-flex items-center justify-center border border-[color:var(--rule)] hover:border-[color:var(--ink)]"><Icon name="close" /></button>
+          <button onClick={onClose} aria-label="关闭解读" className="w-11 h-11 shrink-0 inline-flex items-center justify-center border border-[color:var(--rule)] hover:border-[color:var(--ink)]"><Icon name="close" /></button>
         </header>
         <div className="flex-1 overflow-y-auto px-6 py-5">
           <div className="flex gap-4 items-start">
@@ -438,6 +521,8 @@
             <b className="font-semibold">结论：{entry.verdictLabel}。</b>{WL_HUB_ADAPTER.explainVerdict(entry)}
             {entry.priority && <span className="block mt-1 text-[12.5px] text-[color:var(--ink-mute)]">{WL_HUB_ADAPTER.explainPriority(entry.priority)}</span>}
           </div>
+
+          <InsightDossier insight={entry.insight} />
 
           <div className="mt-6"><RepoMetrics metrics={entry.repoMetrics} variant="detail" /></div>
 

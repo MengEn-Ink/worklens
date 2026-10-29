@@ -6,6 +6,7 @@
  * - 不生成演示推送 / 演示路线；
  * - 仓库卡片的 Stars / Forks / Issues 为采集快照实测值；12 点星标曲线与 7 格活跃度
  *   是由当前快照确定性推演的「示意」图形，模型里显式带 illustrative 标记，界面必须标注「示意」；
+ * - 「深度解读」只读 data/repo-insights.json 缓存（按 README 指纹复用，页面不触发任何模型调用）；
  * - 「本机相关」只读浏览器 localStorage 里的喜好账本，在本机计算，不上传、不扫描设备；
  * - 不访问 DOM、不 fetch、不写外部状态，可在 Node 中直接测试。
  */
@@ -278,9 +279,60 @@
     return '';
   }
 
+
+  /* ---------------- 深度解读：只消费 repo-insights.json 缓存 ---------------- */
+  const ORIGIN_LABELS = { readme: '原文', facts: '实测', inferred: '推断', editor: '精读', llm: '模型' };
+  const METHOD_LABELS = { editor: '人工精读', llm: '模型解读 · 基于压缩摘要', readme: 'README 结构化抽取' };
+  const INSIGHT_SECTIONS = [
+    { key: 'scenario', label: '设计场景', q: '它为谁、在什么场合设计' },
+    { key: 'pain_points', label: '解决的痛点', q: '没有它时哪里难受' },
+    { key: 'strengths', label: '优点', q: '凭什么选它' },
+    { key: 'helps_you', label: '能帮你做什么', q: '落到你的工作里' },
+    { key: 'design', label: '设计思路与架构', q: '它是怎么想、怎么搭的' },
+    { key: 'caveats', label: '注意事项', q: '引入前先想清楚' },
+  ];
+
+  function normalizeInsight(record) {
+    if (!record || typeof record !== 'object' || typeof record.tagline !== 'string') return null;
+    const rows = list => safeList(list)
+      .filter(item => item && typeof item.text === 'string' && item.text.trim())
+      .map(item => ({ text: item.text.trim(), from: ORIGIN_LABELS[item.from] ? item.from : 'inferred', fromLabel: ORIGIN_LABELS[item.from] || '推断' }));
+    const sections = INSIGHT_SECTIONS.map(section => Object.assign({}, section, { items: rows(record[section.key]) })).filter(section => section.items.length);
+    const arch = record.architecture && typeof record.architecture === 'object' ? record.architecture : {};
+    const stack = safeList(arch.stack).filter(row => row && row.lang && Number(row.pct) > 0).map(row => ({ lang: String(row.lang), pct: Number(row.pct) }));
+    const origins = sections.reduce((acc, section) => {
+      section.items.forEach(item => { acc[item.from] = (acc[item.from] || 0) + 1; });
+      return acc;
+    }, {});
+    return {
+      method: record.method || 'readme',
+      methodLabel: METHOD_LABELS[record.method] || METHOD_LABELS.readme,
+      tagline: record.tagline.trim(),
+      sections,
+      stack,
+      layout: safeList(arch.layout).map(String),
+      entry: safeList(arch.entry).map(String),
+      quickstart: typeof record.quickstart === 'string' ? record.quickstart : '',
+      facets: safeList(record.facets).map(String),
+      origins,
+      lead: (sections.find(section => section.key === 'pain_points') || sections[0] || { items: [] }).items[0] || null,
+      cache: {
+        fingerprint: String(record.readme_sha || '').slice(0, 7),
+        generatedAt: shortDate(record.generated_at),
+        checkedAt: shortDate(record.checked_at),
+        sharedWith: record.shared_with || '',
+        readmeChanged: record.readme_changed === true,
+      },
+    };
+  }
+
+  function insightItemsOf(insights) {
+    return insights && insights.items && typeof insights.items === 'object' ? insights.items : {};
+  }
+
   const LOCAL_LEVEL_LABELS = { loved: '已喜欢', skipped: '已跳过', high: '高度相关', mid: '有些相关', low: '略相关', none: '暂无关联' };
 
-  function entryFromCandidate(candidate, index, now, generatedAt) {
+  function entryFromCandidate(candidate, index, now, generatedAt, insightRecord) {
     const category = classify(candidate);
     const scores = scoreCandidate(candidate, now);
     const verdict = verdictOf(candidate, scores);
@@ -315,6 +367,7 @@
       channels: channelsOf(candidate),
       hits: new Set([candidate.source, ...safeList(candidate.also_seen_in)].filter(Boolean)).size,
       fresh: isFreshCandidate(candidate, generatedAt),
+      insight: normalizeInsight(insightRecord),
       raw: candidate,
     };
     entry.trending = entry.channels.includes('trending');
@@ -369,11 +422,12 @@
   }
 
   /* 主模型：本期 = 全部真实候选按编辑优先级排序；筛选统计只是一行事实，不再单独成页。 */
-  function buildHubData(discoveries, nowValue) {
+  function buildHubData(discoveries, nowValue, insights) {
     const now = typeof nowValue === 'number' ? nowValue : Date.now();
+    const insightItems = insightItemsOf(insights);
     const candidates = safeList(discoveries && discoveries.candidates).filter(item => item && item.full_name);
     const generatedAt = discoveries && discoveries.generated_at;
-    const entries = rankEntries(candidates.map((candidate, index) => entryFromCandidate(candidate, index, now, generatedAt)));
+    const entries = rankEntries(candidates.map((candidate, index) => entryFromCandidate(candidate, index, now, generatedAt, insightItems[candidate.full_name])));
     linkRelated(entries);
     const counts = entries.reduce((acc, entry) => {
       acc[entry.kind] = (acc[entry.kind] || 0) + 1;
@@ -411,7 +465,15 @@
         adopt: entries.filter(entry => entry.verdict === 'adopt').length,
         evaluate: entries.filter(entry => entry.verdict === 'evaluate').length,
         fresh: fresh.length,
+        insights: entries.filter(entry => entry.insight).length,
       },
+      insightCache: insights && insights.summary ? {
+        generatedLabel: relativeTime(insights.generated_at, now),
+        covered: entries.filter(entry => entry.insight).length,
+        reused: Number((insights.summary.last_run || {}).reused || 0) + Number((insights.summary.last_run || {}).rechecked_same || 0),
+        fresh: Number((insights.summary.last_run || {}).new || 0) + Number((insights.summary.last_run || {}).regenerated || 0),
+        shared: Number((insights.summary.last_run || {}).shared || 0),
+      } : null,
       sources: buildSourceHealth(discoveries, now),
     };
   }
@@ -535,6 +597,9 @@
     VERDICT_LABELS,
     buildHubData,
     buildRepoBrief,
+    normalizeInsight,
+    INSIGHT_SECTIONS,
+    ORIGIN_LABELS,
     buildSourceHealth,
     buildProfileSignals,
     CHANNELS,

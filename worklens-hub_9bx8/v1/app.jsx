@@ -9,6 +9,7 @@ const VIEWS = ['issue', 'review', 'me'];
 const TASTE_KEY = 'worklens.taste.v1';
 const DATA_FILES = {
   discoveries: 'discoveries.json',
+  insights: 'repo-insights.json',
   queue: 'skill-review-queue.json',
   adoptions: 'skill-adoptions.json',
   profile: 'profile.json',
@@ -268,7 +269,7 @@ function App() {
     return () => clearTimeout(timer);
   }, [toast]);
 
-  const hub = useMemo(() => (data.discoveries ? WL_HUB_ADAPTER.buildHubData(data.discoveries) : null), [data.discoveries]);
+  const hub = useMemo(() => (data.discoveries ? WL_HUB_ADAPTER.buildHubData(data.discoveries, undefined, data.insights) : null), [data.discoveries, data.insights]);
   // 本机相关：只用本浏览器 localStorage 里的喜好账本，在本机计算
   const localProfile = useMemo(() => WL_HUB_ADAPTER.buildLocalProfile(hub ? hub.entries : [], taste), [hub, taste]);
   const relCache = useMemo(() => new Map(), [localProfile]);
@@ -325,7 +326,7 @@ function App() {
         页面只展示公开数据（data/*.json，由 GitHub Actions 每四小时刷新），不安装、不执行任何 Skill，不含私有工作内容或凭证；喜好只存于你的浏览器。
       </footer>
 
-      <Sheet open={Boolean(entry)} onClose={closeEntry} label={entry ? `${entry.title} 速读` : '速读'}>
+      <Sheet open={Boolean(entry)} onClose={closeEntry} label={entry ? `${entry.title} 深度解读` : '深度解读'}>
         {entry && <EntryDetail entry={entry} hub={hub} taste={taste} onTaste={onTaste} onClose={closeEntry} openEntry={openEntry} queueEntry={queueBySubject.get(entry.fullName)} rel={relOf(entry)} localProfile={localProfile} />}
       </Sheet>
 
