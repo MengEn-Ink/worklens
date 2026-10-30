@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T04:05:03.566212+00:00",
+  "generated_at": "2026-10-30T05:25:22.051458+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -105,6 +105,7 @@
       "also_seen_in": [
         "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-10-28T06:51:52.570690+00:00"
     },
     {
@@ -250,6 +251,7 @@
       "also_seen_in": [
         "search:topic:prompt-engineering stars:>300 archived:false"
       ],
+      "relationships": [],
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
@@ -2790,6 +2792,7 @@
       "also_seen_in": [
         "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
@@ -3535,6 +3538,7 @@
       "also_seen_in": [
         "search:topic:workflow-automation stars:>300 archived:false"
       ],
+      "relationships": [],
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
@@ -14200,121 +14204,134 @@
     "search:created:>{days_ago:30} stars:>300": {
       "ok": true,
       "count": 30,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "search:created:>{days_ago:90} topic:ai-agent stars:>100": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "search:topic:claude-code stars:>50 archived:false": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
-      "count": 20,
+      "count": 22,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "search:topic:prompt-engineering stars:>300 archived:false": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "search:topic:workflow-automation stars:>300 archived:false": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "search:topic:shadcn-ui stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "search:topic:react-components stars:>500 archived:false pushed:>{days_ago:60}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "search:topic:rss stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "search:topic:self-hosted stars:>2000 archived:false pushed:>{days_ago:30}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
-      "count": 20,
+      "count": 22,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "trending:daily/all": {
       "ok": true,
       "count": 14,
-      "listed": 14,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
       "count": 11,
-      "listed": 11,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "trending:daily/python": {
       "ok": true,
-      "count": 10,
-      "listed": 10,
+      "count": 11,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
       "count": 14,
-      "listed": 14,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 14,
-      "listed": 14,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
       "count": 19,
-      "listed": 19,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
       "count": 19,
-      "listed": 19,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 15,
-      "listed": 15,
+      "cached": true,
       "fetched_at": "2026-10-30T04:05:03.566212+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-10-30T04:05:03.566212+00:00"
+      "fetched_at": "2026-10-30T05:25:22.051458+00:00"
     }
   },
   "schema_version": 1
