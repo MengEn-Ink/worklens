@@ -10,12 +10,12 @@
 - Actions 巡检：最近公开 main workflow runs 均 `completed/success`，最新为 00 点轮后续「质量与安全门禁」run #41094569315、「发布 GitHub Pages」run #41094569536 与「收口巡检 Issue」run #41094569381；巡检时列表无 running / queued / failed。
 - 数据刷新：巡检时 `data/ai-news.json` 生成于 `2026-10-30T14:59:26Z`、`data/discoveries.json` 生成于 `14:58:22Z`，距本轮约 303–305 分钟，超过 240 分钟阈值；已手动 `workflow_dispatch` 触发 `collect.yml` run #41120087964 并成功完成，随后快进到机器人提交 `86ebc02`。刷新后 AI 资讯 200 条（14/14 源 ok）、开源候选 488 条（34/34 源 ok）、仓库深度解读 706 条且覆盖 488/488 候选、Skill 待审 114 条，`policy.auto_install=false`。
 - 最小可交付：P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的「喜好账本反哺排序」；本轮继续健康巡检降级态，只更新公开巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。
-- Issue 收口：本次提交已把 #97 登记到 `data/issue-close-requests.json`；合入 main 后由 `close-issues.yml` 使用内置 `GITHUB_TOKEN`（`issues: write`）评论并关闭。
+- Issue 收口：提交 `99808e1` 已把 #97 登记到 `data/issue-close-requests.json`；`close-issues.yml` run #41120410039 使用内置 `GITHUB_TOKEN`（`issues: write`）评论并关闭，已复核 #97 于 `2026-10-30T20:04:51Z` 关闭。
 
 **验证证据**
 
 - 本地质量门禁：`node --test tests/*.js`（45 项全过）、`python3 -m unittest discover -s tests -p 'test_*.py'`（141 项全过）、`python3 scripts/health_check.py validate`（14 条巡检）、`python3 scripts/close_issues_ci.py validate`（11 条收口请求）、`python3 scripts/repo_insights.py validate`、`python3 scripts/skill_adoptions.py validate`、`python3 scripts/security_scan.py --strict`、`python3 scripts/build_pages.py` 全部通过。
-- 远端门禁与 Pages：待提交推送后补充质量门禁、收口巡检 Issue、发布 GitHub Pages run 与线上 URL 验收证据。
+- 远端门禁与 Pages：提交 `99808e1` 的「质量与安全门禁」run #41120410141、「收口巡检 Issue」run #41120410039、「发布 GitHub Pages」run #41120410066 均 success（Pages build/deploy success）；线上核验 `/` 标题为《WorkLens · 工作能力雷达》、`/ai-news/` 标题为《AI 工作情报 · WorkLens》且 `data/ai-news.json` 为 `2026-10-30T20:02:30Z` 的 200 条；`/desktop/` 与 `/atelier/` 重定向页均 HTTP 200；`pages-manifest.json`、`data/health-checks.json`（latest=`loop-20261031-0404-cst`）、`data/issue-close-requests.json`（last=#97）、`data/ai-news.json`、`data/discoveries.json` 均 HTTP 200 且为最新内容。
 
 **下一轮唯一最高优先级**
 

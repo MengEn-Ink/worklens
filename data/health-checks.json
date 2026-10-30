@@ -731,12 +731,12 @@
         {
           "name": "Issue 状态更新",
           "result": "pass",
-          "evidence": "本轮创建 #97，并已登记到 data/issue-close-requests.json；合入 main 后由 close-issues.yml 使用内置 GITHUB_TOKEN 评论并关闭。"
+          "evidence": "本轮创建 #97；提交 99808e1 登记账本，合入后由 close-issues.yml run 41120410039 使用内置 GITHUB_TOKEN 评论并关闭，已复核 #97 于 2026-10-30T20:04:51Z 关闭。"
         },
         {
           "name": "本地质量门禁",
           "result": "pass",
-          "evidence": "本地已完成 node --test（45 项全过）、python unittest（141 项全过）、health_check/close_issues_ci/repo_insights/skill_adoptions validate、security_scan.py --strict 与 build_pages.py，全部通过；远端质量门禁与 Pages 证据将在提交推送后补充。"
+          "evidence": "本地 node --test（45）、python unittest（141）、health_check/close_issues_ci/repo_insights/skill_adoptions validate、security_scan.py --strict、build_pages.py 全过；提交 99808e1 的质量与安全门禁 run 41120410141、收口巡检 Issue run 41120410039、发布 GitHub Pages run 41120410066 均 success（build/deploy success）；线上核验 https://mengen-ink.github.io/worklens/ 标题为《WorkLens · 工作能力雷达》、/ai-news/ 标题为《AI 工作情报 · WorkLens》且 data/ai-news.json 为 20:02:30Z 的 200 条；/desktop/ 与 /atelier/ 重定向页均 HTTP 200；pages-manifest.json、data/health-checks.json（latest=loop-20261031-0404-cst）、data/issue-close-requests.json（last=#97）、data/ai-news.json、data/discoveries.json 均 HTTP 200 且为最新内容。"
         }
       ],
       "data_freshness": [
