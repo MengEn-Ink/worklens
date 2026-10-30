@@ -10,12 +10,12 @@
 - Actions 巡检：最近公开 main workflow runs 均 `completed/success`，最新为定时 `采集开源项目候选` run #41076368390（约 1 小时前）与 20 点轮质量门禁 run #41054135508、发布 GitHub Pages run #41054135369；巡检时列表无 running / queued / failed。
 - 数据新鲜度：`data/ai-news.json`（`2026-10-30T14:59:26Z`，200 条，14/14 源 ok）、`data/discoveries.json`（`14:58:22Z`，488 条候选，34/34 源 ok）、`data/repo-insights.json`（`14:58:45Z`，706 条，覆盖 488/488，new 43 / reused 445）、`data/skill-review-queue.json`（`14:59:27Z`，114 条，`policy.auto_install=false`）距巡检约 90–91 分钟，均未超过 240 分钟阈值，定时采集刚成功，本轮不重复触发采集。
 - 最小可交付：P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的「喜好账本反哺排序」；本轮继续健康巡检降级态，只更新公开巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。
-- Issue 收口：本次提交已把 #96 登记到 `data/issue-close-requests.json`；合入 main 后由 `close-issues.yml` 使用内置 `GITHUB_TOKEN`（`issues: write`）评论并关闭，关闭时间与远端 run 编号在同轮证据补充提交中复核。
+- Issue 收口：本次提交已把 #96 登记到 `data/issue-close-requests.json`；合入 main 后由 `close-issues.yml` 使用内置 `GITHUB_TOKEN`（`issues: write`）评论并关闭，已复核 #96 于 2026-10-30T16:38:18Z 由 close-issues.yml run #41091676627 评论并关闭。
 
 **验证证据**
 
 - 本地质量门禁：`node --test tests/*.js`（45 项全过）、`python3 -m unittest discover -s tests -p 'test_*.py'`（141 项全过）、`python3 scripts/health_check.py validate`（13 条巡检）、`python3 scripts/close_issues_ci.py validate`（10 条收口请求）、`python3 scripts/repo_insights.py validate`、`python3 scripts/skill_adoptions.py validate`、`python3 scripts/security_scan.py --strict`、`python3 scripts/build_pages.py` 全部通过。
-- 远端门禁与 Pages：本次提交的「质量与安全门禁」「收口巡检 Issue」「发布 GitHub Pages」run 编号与结论，以及线上四入口和公开数据 URL 抽检结果，在同轮证据补充提交中记录。
+- 远端门禁与 Pages：本次提交的「质量与安全门禁」「收口巡检 Issue」「发布 GitHub Pages」run #41091676650、#41091676627、#41091676663 均 success（Pages build/deploy success）；线上核验 `/` 标题为《WorkLens · 工作能力雷达》、`/ai-news/` 标题为《AI 工作情报 · WorkLens》且 `data/ai-news.json` 为 `14:59:26Z` 的 200 条；`/desktop/` meta refresh 到 `/`、`/atelier/` 到 `/#review`；`pages-manifest.json`、`data/health-checks.json`（latest=`loop-20261031-0029-cst`）、`data/issue-close-requests.json`（last=#96）、`data/ai-news.json`、`data/discoveries.json` 均 HTTP 200 且为最新内容。
 
 **下一轮唯一最高优先级**
 
