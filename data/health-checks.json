@@ -450,7 +450,12 @@
         {
           "name": "Issue 状态更新",
           "result": "pass",
-          "evidence": "本轮创建 #92；提交将 #92 登记进 data/issue-close-requests.json，合入 main 后由 close-issues.yml 使用内置 GITHUB_TOKEN 评论并关闭，推送后继续复核远端门禁与 Pages。"
+          "evidence": "本轮创建 #92；提交 1e8b6ce 将 #92 登记进 data/issue-close-requests.json，合入 main 后 close-issues.yml run 40977754544 使用内置 GITHUB_TOKEN 评论并关闭，已复核 #92 于 2026-10-30T00:08:29Z 关闭。"
+        },
+        {
+          "name": "交付后质量门禁与 Pages 验收",
+          "result": "pass",
+          "evidence": "提交 1e8b6ce 的质量与安全门禁 run 40977754652、收口巡检 Issue run 40977754544、发布 GitHub Pages run 40977754587 均 success；线上 /、/desktop/、/atelier/、/ai-news/、pages-manifest.json、data/health-checks.json、data/issue-close-requests.json、data/ai-news.json、data/discoveries.json 均 HTTP 200。"
         }
       ],
       "data_freshness": [
