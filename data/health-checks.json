@@ -554,12 +554,12 @@
         {
           "name": "Issue 状态更新",
           "result": "pass",
-          "evidence": "本轮创建 #94；提交将 #94 登记进 data/issue-close-requests.json，合入 main 后由 close-issues.yml 使用内置 GITHUB_TOKEN 评论并关闭，下一轮首先核验关闭结果。"
+          "evidence": "本轮创建 #94；提交 3d957b2 将 #94 登记进 data/issue-close-requests.json，合入 main 后 close-issues.yml run 41024495146 使用内置 GITHUB_TOKEN 评论并关闭，已复核 #94 于 2026-10-30T08:08:59Z 关闭。"
         },
         {
           "name": "交付后质量门禁与 Pages 验收",
           "result": "pass",
-          "evidence": "本地已完成 node --test、python unittest、health_check/close_issues_ci/repo_insights/skill_adoptions validate、security_scan.py --strict 与 build_pages.py；待本提交推送后复核远端质量与安全门禁、收口巡检 Issue、发布 GitHub Pages 与公开 URL。"
+          "evidence": "本地已完成 node --test、python unittest、health_check/close_issues_ci/repo_insights/skill_adoptions validate、security_scan.py --strict 与 build_pages.py；提交 3d957b2 的质量与安全门禁 run 41024495168、收口巡检 Issue run 41024495146、发布 GitHub Pages run 41024495145 均 success；本地浏览器核验 https://mengen-ink.github.io/worklens/ 标题为《WorkLens · 工作能力雷达》，/ai-news/ 标题为《AI 工作情报 · WorkLens》且已请求 data/ai-news.json，/desktop/ 最终落到 /，/atelier/ 最终落到 /#review；线上 pages-manifest.json、data/health-checks.json、data/issue-close-requests.json、data/ai-news.json 均已发布。"
         }
       ],
       "data_freshness": [
@@ -585,7 +585,7 @@
           "status": "fresh"
         }
       ],
-      "next_action": "继续健康巡检降级态：下一轮先核验 #94 是否已由 close-issues.yml 按账本评论并关闭，并补记本轮远端质量门禁 / Pages / URL 验收证据；随后核对 main、运行中/失败 Actions、Pages 四入口和公开数据 4 小时新鲜度，定时采集延迟或超窗时手动 workflow_dispatch 兜底。若出现失败或滞留 Issue，优先修复当前 Issue；若 Issues 为空，继续创建新巡检 Issue 承载验收标准。"
+      "next_action": "继续健康巡检降级态：下一轮核对 main、运行中/失败 Actions、Pages 四入口和公开数据 4 小时新鲜度，定时采集延迟或超窗时手动 workflow_dispatch 兜底；Issues 为空时继续创建新巡检 Issue 承载验收标准。README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序，未获确认前不启动新功能。若出现失败或滞留 Issue，优先修复当前 Issue。"
     }
   ]
 }
