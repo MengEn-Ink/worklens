@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-30T04:07:08.485395+00:00",
+  "generated_at": "2026-10-30T12:04:33.706528+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -864,15 +864,15 @@
       "id": "SR-0021",
       "subject": "rlaope/oh-my-hermes",
       "html_url": "https://github.com/rlaope/oh-my-hermes",
-      "source": "search:topic:ai-agent stars:>500 archived:false",
+      "source": "trending:daily/python",
       "also_seen_in": [],
       "enqueued_at": "2026-10-25T06:07:53.833330+00:00",
-      "metadata_synced_at": "2026-10-28T06:51:53.666784+00:00",
+      "metadata_synced_at": "2026-10-30T12:04:33.699185+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 4381,
-      "pushed_at": "2026-10-28T06:49:27Z",
+      "stars": 4903,
+      "pushed_at": "2026-10-30T11:55:03Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -1124,12 +1124,12 @@
       "id": "SR-0029",
       "subject": "NVIDIA/SkillSpector",
       "html_url": "https://github.com/NVIDIA/SkillSpector",
-      "source": "trending:daily/python",
+      "source": "trending:weekly/python",
       "also_seen_in": [
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-27T06:17:02.801000+00:00",
-      "metadata_synced_at": "2026-10-30T04:07:08.473913+00:00",
+      "metadata_synced_at": "2026-10-30T12:04:33.695686+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
@@ -1321,9 +1321,11 @@
       "subject": "obra/superpowers",
       "html_url": "https://github.com/obra/superpowers",
       "source": "trending:daily/all",
-      "also_seen_in": [],
+      "also_seen_in": [
+        "trending:weekly/all"
+      ],
       "enqueued_at": "2026-10-29T05:25:53.600350+00:00",
-      "metadata_synced_at": "2026-10-30T04:07:08.469336+00:00",
+      "metadata_synced_at": "2026-10-30T12:04:33.691487+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
@@ -1453,12 +1455,12 @@
       "id": "SR-0039",
       "subject": "Graphify-Labs/graphify",
       "html_url": "https://github.com/Graphify-Labs/graphify",
-      "source": "trending:weekly/all",
+      "source": "trending:weekly/python",
       "also_seen_in": [
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600576+00:00",
-      "metadata_synced_at": "2026-10-30T04:07:08.469852+00:00",
+      "metadata_synced_at": "2026-10-30T12:04:33.691876+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
@@ -1487,12 +1489,12 @@
       "id": "SR-0040",
       "subject": "thedotmack/claude-mem",
       "html_url": "https://github.com/thedotmack/claude-mem",
-      "source": "trending:daily/typescript",
+      "source": "trending:daily/all",
       "also_seen_in": [
         "trending:daily/typescript"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600755+00:00",
-      "metadata_synced_at": "2026-10-30T04:07:08.470296+00:00",
+      "metadata_synced_at": "2026-10-30T12:04:33.692261+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
@@ -3410,6 +3412,102 @@
       "history": [
         {
           "at": "2026-10-30T04:07:08.484802+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0099",
+      "subject": "blader/humanizer",
+      "html_url": "https://github.com/blader/humanizer",
+      "source": "trending:weekly/python",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-30T12:04:33.693476+00:00",
+      "metadata_synced_at": "2026-10-30T12:04:33.693476+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 62559,
+      "pushed_at": "2026-10-28T07:17:33Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-10-30T12:04:33.693476+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-30T12:04:33.693476+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0100",
+      "subject": "volcengine/OpenViking",
+      "html_url": "https://github.com/volcengine/OpenViking",
+      "source": "trending:daily/python",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-30T12:04:33.694113+00:00",
+      "metadata_synced_at": "2026-10-30T12:04:33.694113+00:00",
+      "state": "candidate",
+      "license": "AGPL-3.0",
+      "archived": false,
+      "stars": 41191,
+      "pushed_at": "2026-10-30T11:33:21Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=AGPL-3.0",
+          "checked_at": "2026-10-30T12:04:33.694113+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-30T12:04:33.694113+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0101",
+      "subject": "Donchitos/Claude-Code-Game-Studios",
+      "html_url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "source": "trending:daily/all",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-30T12:04:33.695144+00:00",
+      "metadata_synced_at": "2026-10-30T12:04:33.695144+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 29958,
+      "pushed_at": "2026-10-19T02:43:42Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-10-30T12:04:33.695144+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-30T12:04:33.695144+00:00",
           "event": "enqueued",
           "by": "worklens-bot",
           "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
