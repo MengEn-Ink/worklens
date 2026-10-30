@@ -1,650 +1,709 @@
 {
-  "schema_version": 1,
-  "policy": {
-    "public_only": true,
-    "no_private_data": true,
-    "stale_threshold_minutes": 240,
-    "automation_scope": "health-check-and-data-refresh"
-  },
-  "checks": [
+ "schema_version": 1,
+ "policy": {
+  "public_only": true,
+  "no_private_data": true,
+  "stale_threshold_minutes": 240,
+  "automation_scope": "health-check-and-data-refresh"
+ },
+ "checks": [
+  {
+   "id": "loop-20261028-1204-cst",
+   "checked_at": "2026-10-28T04:09:00Z",
+   "actor": "worklens-loop",
+   "scope": "四小时健康巡检与数据刷新",
+   "result": "pass",
+   "issue_url": "https://github.com/MengEn-Ink/worklens/issues/71",
+   "actions": [
     {
-      "id": "loop-20261028-1204-cst",
-      "checked_at": "2026-10-28T04:09:00Z",
-      "actor": "worklens-loop",
-      "scope": "四小时健康巡检与数据刷新",
-      "result": "pass",
-      "issue_url": "https://github.com/MengEn-Ink/worklens/issues/71",
-      "actions": [
-        {
-          "name": "同步 main 与核对未关闭 Issue",
-          "result": "pass",
-          "evidence": "main 已同步；巡检前公开 Issue 列表为空，已创建 #71 承接本轮最小可交付。"
-        },
-        {
-          "name": "刷新 AI 资讯与开源项目候选",
-          "result": "pass",
-          "evidence": "本地执行 scripts/collect_github.py、scripts/collect_public_feeds.py、scripts/skill_review.py sync；未安装 Skill，待审队列无自动流转。"
-        },
-        {
-          "name": "验收质量门禁与 Pages",
-          "result": "pass",
-          "evidence": "提交 a80a4b5 的质量与安全门禁 https://github.com/MengEn-Ink/worklens/actions/runs/40631057129 成功；Pages https://github.com/MengEn-Ink/worklens/actions/runs/40631057308 成功；账本已发布到 https://mengen-ink.github.io/worklens/data/health-checks.json。"
-        }
-      ],
-      "data_freshness": [
-        {
-          "path": "data/ai-news.json",
-          "generated_at": "2026-10-28T04:07:06Z",
-          "age_minutes_at_check": 2,
-          "item_count": 200,
-          "status": "fresh"
-        },
-        {
-          "path": "data/discoveries.json",
-          "generated_at": "2026-10-28T04:07:06Z",
-          "age_minutes_at_check": 2,
-          "item_count": 123,
-          "status": "fresh"
-        }
-      ],
-      "next_action": "若后续仍无未关闭 Issue，继续执行健康巡检、公开数据刷新与只读契约补强；出现失败时优先修复当前 Issue。"
+     "name": "同步 main 与核对未关闭 Issue",
+     "result": "pass",
+     "evidence": "main 已同步；巡检前公开 Issue 列表为空，已创建 #71 承接本轮最小可交付。"
     },
     {
-      "id": "loop-20261028-1623-cst",
-      "checked_at": "2026-10-28T08:23:00Z",
-      "actor": "worklens-loop",
-      "scope": "四小时健康巡检与数据刷新；核验并关闭已上线的账本契约 Issue #71",
-      "result": "pass",
-      "issue_url": "https://github.com/MengEn-Ink/worklens/issues/71",
-      "actions": [
-        {
-          "name": "同步 main 与核对未关闭 Issue",
-          "result": "pass",
-          "evidence": "main 从 6365eed 同步至 f30a0b1；唯一未关闭 Issue 为 #71，其账本契约实现（a80a4b5 新增 data/health-checks.json、scripts/health_check.py、CI 校验与测试；6365eed 补验收证据）已在 main，本轮核验后关闭。"
-        },
-        {
-          "name": "刷新 AI 资讯与开源项目候选",
-          "result": "pass",
-          "evidence": "提交 f8dee5d：collect_public_feeds 聚合 14 个公开源 200 条、0 降级，collect_github 采集 124 个公开仓库候选；skill_review sync 队列保持 34 条，未自动流转、未安装 Skill。"
-        },
-        {
-          "name": "验收质量门禁与 Pages",
-          "result": "pass",
-          "evidence": "f8dee5d 质量与安全门禁 https://github.com/MengEn-Ink/worklens/actions/runs/40655650551 成功，Pages https://github.com/MengEn-Ink/worklens/actions/runs/40655650570 成功；线上核验 /、/desktop/、/atelier/、/ai-news/ 均 200，https://mengen-ink.github.io/worklens/data/ai-news.json 与 discoveries.json 为最新 generated_at。"
-        }
-      ],
-      "data_freshness": [
-        {
-          "path": "data/ai-news.json",
-          "generated_at": "2026-10-28T08:12:50Z",
-          "age_minutes_at_check": 10,
-          "item_count": 200,
-          "status": "fresh"
-        },
-        {
-          "path": "data/discoveries.json",
-          "generated_at": "2026-10-28T08:12:38Z",
-          "age_minutes_at_check": 10,
-          "item_count": 124,
-          "status": "fresh"
-        },
-        {
-          "path": "data/skill-review-queue.json",
-          "generated_at": "2026-10-28T06:51:53Z",
-          "age_minutes_at_check": 91,
-          "item_count": 34,
-          "status": "fresh"
-        }
-      ],
-      "next_action": "全部路线图目标已完成，继续按四小时节奏做健康巡检与公开数据刷新；新出现 Issue 时认领最高优先级一项并修复，失败时优先修复当前 Issue。"
+     "name": "刷新 AI 资讯与开源项目候选",
+     "result": "pass",
+     "evidence": "本地执行 scripts/collect_github.py、scripts/collect_public_feeds.py、scripts/skill_review.py sync；未安装 Skill，待审队列无自动流转。"
     },
     {
-      "id": "loop-20261029-0900-cst",
-      "checked_at": "2026-10-29T01:00:00Z",
-      "actor": "worklens-loop",
-      "scope": "四小时健康巡检与数据刷新；创建巡检 Issue #81 承载验收标准，并线上复核 #80 新合入功能",
-      "result": "pass",
-      "issue_url": "https://github.com/MengEn-Ink/worklens/issues/81",
-      "actions": [
-        {
-          "name": "同步 main 与核对未关闭 Issue",
-          "result": "pass",
-          "evidence": "开始时 main 最新 91ff361（含 #79、#80），公开 Issue 列表为空，最近 Actions 无 running/queued/failed；已创建 Issue #81 承载本轮健康巡检验收标准。"
-        },
-        {
-          "name": "刷新 AI 资讯与开源项目候选",
-          "result": "pass",
-          "evidence": "开始时数据 generated_at=2026-10-28T20:55Z，08 点定时采集在 4 小时窗口内未出现；按 Loop 规则于 2026-10-29T00:58Z 手动触发 collect.yml run 40797479884 success，机器人提交 34f288f，数据刷新到 2026-10-29T00:58:25Z：AI 资讯 200 条、14 个公开源全部 ok、0 降级；开源候选 124 条、12 个源全部 ok；Skill 待审队列保持 34 条，auto_install=false，未自动流转、未安装 Skill。"
-        },
-        {
-          "name": "本地质量门禁",
-          "result": "pass",
-          "evidence": "node --test tests/*.js 41/41 通过；python unittest 112/112 通过；core_circle/skill_review/skill_adoptions/idea_pipeline/recommendation_review/health_check 各 validate exit 0；security_scan.py --strict 通过；build_pages.py 输出 routes=/, /ai-news/; skipped=none；已跟踪前端脚本 node --check 全部通过。"
-        },
-        {
-          "name": "验收 Pages 与 #80 线上复核",
-          "result": "pass",
-          "evidence": "线上 /、/desktop/、/atelier/、/ai-news/、pages-manifest.json 与 11 个公开数据文件均 HTTP 200；#80 已发布：根目录 app.jsx/views.jsx/data-adapter.js 可检索到「本机相关」「速读」与 starTrendIllustrative/activityHeatIllustrative 标记。"
-        },
-        {
-          "name": "收口提交门禁与线上账本复核",
-          "result": "pass",
-          "evidence": "账本提交 1fc4647 的质量与安全门禁 run 40797992231 success、发布 GitHub Pages run 40797992189 success；线上 data/health-checks.json 已为 loop-20261029-0900-cst（pass），/、/ai-news/、data/ai-news.json、data/discoveries.json 均 200。"
-        }
-      ],
-      "data_freshness": [
-        {
-          "path": "data/ai-news.json",
-          "generated_at": "2026-10-29T00:58:25Z",
-          "age_minutes_at_check": 2,
-          "item_count": 200,
-          "status": "refreshed"
-        },
-        {
-          "path": "data/discoveries.json",
-          "generated_at": "2026-10-29T00:58:25Z",
-          "age_minutes_at_check": 2,
-          "item_count": 124,
-          "status": "refreshed"
-        }
-      ],
-      "next_action": "P0–P4 目标保持全部上线，Loop 维持健康巡检 + 数据刷新降级态；下一轮核对 main、Actions 与 Pages 四入口、公开数据 4 小时新鲜度，若 Issue 为空则创建新巡检 Issue。SR-0011 在 2026-10-31 真人试用复盘出结论前不得推进 adopted、不得安装 Skill；推荐复盘画像调整未获真人确认前不得写入 profile 或改变推荐权重。"
-    },
-    {
-      "id": "loop-20261029-1204-cst",
-      "checked_at": "2026-10-29T04:05:00Z",
-      "actor": "worklens-loop",
-      "scope": "四小时健康巡检与数据刷新；创建巡检 Issue #85 承载验收标准",
-      "result": "warn",
-      "issue_url": "https://github.com/MengEn-Ink/worklens/issues/85",
-      "actions": [
-        {
-          "name": "同步 main 与核对未关闭 Issue",
-          "result": "pass",
-          "evidence": "main 已同步到 a36606e；巡检前公开 Issue 与 PR 列表均为空，最近 main 的质量与安全门禁 run 40813221408 与发布 GitHub Pages run 40813221420 均 success，collect.yml 最新 run 40797479884 success；已创建 Issue #85 承载本轮健康巡检验收标准。"
-        },
-        {
-          "name": "核验公开数据新鲜度",
-          "result": "pass",
-          "evidence": "data/ai-news.json 距巡检约 187 分钟，data/discoveries.json 约 160 分钟，data/repo-insights.json 约 31 分钟，均未超过 240 分钟阈值，因此本轮不重复触发采集；14 个 AI 资讯源与开源候选源状态保持 ok，未引入私有数据、凭证、内部地址。"
-        },
-        {
-          "name": "本地质量门禁",
-          "result": "pass",
-          "evidence": "node --test tests/*.js 45/45 通过；python3 -m unittest discover -s tests -p 'test_*.py' 128/128 通过；core_circle/skill_review/skill_adoptions/idea_pipeline/recommendation_review/health_check 各 validate exit 0；security_scan.py --strict 通过；build_pages.py 输出 routes=/, /ai-news/; skipped=none。"
-        },
-        {
-          "name": "Issue 状态更新",
-          "result": "blocked",
-          "evidence": "巡检账本提交 c503074、直接默认分支空提交 654f95b、PR #86 合并提交 9bb619c 均已携带 Closes #85 且质量门禁 / Pages 均 success；但 GitHub Issue #85 仍保持 open。尝试 gh issue comment/close 与 REST PATCH close 均返回 403 Resource not accessible by personal access token，当前令牌可创建 Issue 但不能评论或关闭 Issue。"
-        }
-      ],
-      "data_freshness": [
-        {
-          "path": "data/ai-news.json",
-          "generated_at": "2026-10-29T00:58:25Z",
-          "age_minutes_at_check": 187,
-          "item_count": 200,
-          "status": "fresh"
-        },
-        {
-          "path": "data/discoveries.json",
-          "generated_at": "2026-10-29T01:26:06Z",
-          "age_minutes_at_check": 160,
-          "item_count": 450,
-          "status": "fresh"
-        }
-      ],
-      "next_action": "Issue #85 当前仍 open，下一轮必须继续优先收口 #85，不开始新事项；若仍无法通过 GitHub token 评论 / 关闭 Issue，需要更换具备 Issues write 权限的凭证或由维护者手动关闭。P0–P4 目标保持全部上线，Loop 维持健康巡检 + 数据刷新降级态；SR-0011 在 2026-10-31 真人试用复盘出结论前不得推进 adopted、不得安装 Skill；推荐复盘画像调整未获真人确认前不得写入 profile 或改变推荐权重。"
-    },
-    {
-      "id": "loop-20261029-1625-cst",
-      "checked_at": "2026-10-29T08:25:00Z",
-      "actor": "worklens-loop",
-      "scope": "四小时健康巡检与数据刷新；收口滞留 Issue #85 并上线 CI Issue 收口机制（PR #87）；创建巡检 Issue #88 承载本轮验收标准",
-      "result": "pass",
-      "issue_url": "https://github.com/MengEn-Ink/worklens/issues/88",
-      "actions": [
-        {
-          "name": "同步 main 与核对未关闭 Issue / PR / Actions",
-          "result": "pass",
-          "evidence": "main 由 cdf945b 快进到 e81b867（PR #87 merge commit）；open PR 为空；open Issue 仅本轮新建 #88；最近 main 的收口巡检 Issue run 40841437274、发布 GitHub Pages run 40841436950、质量与安全门禁 run 40841436937 均 success，采集 run 40823343829 success，无 running / queued / failed。"
-        },
-        {
-          "name": "收口滞留 Issue #85 与 CI 收口机制上线",
-          "result": "pass",
-          "evidence": "复核当前 fine-grained PAT 对 Issue 评论 / PATCH 仍返回 403（x-accepted-github-permissions: issues=write; pull_requests=write）。本轮以 PR #87 上线 data/issue-close-requests.json 账本 + scripts/close_issues_ci.py（validate/apply，幂等跳过已关闭单）+ close-issues.yml（仅 issues: write）+ CI 契约校验 + 13 个单测。#85 于 08:20:32Z（PR #87 合并后 2 秒）由服务端按 PR 正文 Closes #85 自动关闭、state=closed/state_reason=completed；close-issues 工作流在 runner 启动后打印『跳过 #85：当前状态 closed』，幂等性得到验证。"
-        },
-        {
-          "name": "核验公开数据新鲜度",
-          "result": "pass",
-          "evidence": "data/ai-news.json、data/discoveries.json、data/repo-insights.json 均生成于 2026-10-29T05:25:52Z，距巡检约 178 分钟，未超过 240 分钟阈值，不重复触发采集；AI 资讯 200 条、开源候选 450 条、仓库深度解读 450 条，Skill 待审 74 条且 policy.auto_install=false；未引入私有数据、凭证、内部地址。"
-        },
-        {
-          "name": "本地质量门禁",
-          "result": "pass",
-          "evidence": "node --test tests/*.js 45/45 通过；python3 -m unittest discover -s tests -p 'test_*.py' 141/141 通过（新增 close_issues_ci 13 个）；core_circle/skill_review/skill_adoptions/idea_pipeline/recommendation_review/health_check/repo_insights/close_issues_ci 各 validate exit 0；security_scan.py --strict 通过；build_pages.py 输出 routes=/, /ai-news/; skipped=none。"
-        },
-        {
-          "name": "线上 Pages 抽检",
-          "result": "pass",
-          "evidence": "https://mengen-ink.github.io/worklens/ 与 /ai-news/、/desktop/、/atelier/、/pages-manifest.json 以及 data/ 下 ai-news、discoveries、repo-insights、health-checks、issue-close-requests、skill-review-queue、idea-pipeline、recommendation-reviews 共 14 个公开地址 HTTP 全部 200。"
-        },
-        {
-          "name": "Issue 状态更新",
-          "result": "pass",
-          "evidence": "已创建本轮承载 Issue #88；本提交把 #88 登记进 data/issue-close-requests.json，合入 main 后由 close-issues.yml 用内置 GITHUB_TOKEN 评论并关闭，下一轮首先核验关闭结果。"
-        }
-      ],
-      "data_freshness": [
-        {
-          "path": "data/ai-news.json",
-          "generated_at": "2026-10-29T05:25:52Z",
-          "age_minutes_at_check": 178,
-          "item_count": 200,
-          "status": "fresh"
-        },
-        {
-          "path": "data/discoveries.json",
-          "generated_at": "2026-10-29T05:25:52Z",
-          "age_minutes_at_check": 178,
-          "item_count": 450,
-          "status": "fresh"
-        },
-        {
-          "path": "data/skill-review-queue.json",
-          "generated_at": "2026-10-29T05:25:53Z",
-          "age_minutes_at_check": 178,
-          "item_count": 74,
-          "status": "fresh"
-        }
-      ],
-      "next_action": "下一轮唯一最高优先级仍是健康巡检 + 数据刷新：先核验 #88 已由 close-issues.yml 按账本评论并关闭（本提交触发），若工作流失败则优先修复该机制，不开始新事项。P0–P4 目标保持全部上线，不启动未经确认的新功能；SR-0011 在 2026-10-31 真人试用复盘出结论前不得推进 adopted、不得安装 Skill；推荐复盘画像调整未获真人确认前不得写入 profile 或改变推荐权重。"
-    },
-    {
-      "id": "loop-20261029-2015-cst",
-      "checked_at": "2026-10-29T12:15:00Z",
-      "actor": "worklens-loop",
-      "scope": "四小时健康巡检与数据刷新；手动触发采集与 Pages 发布；创建巡检 Issue #89 承载验收标准",
-      "result": "pass",
-      "issue_url": "https://github.com/MengEn-Ink/worklens/issues/89",
-      "actions": [
-        {
-          "name": "同步 main 与核对未关闭 Issue / PR / Actions",
-          "result": "pass",
-          "evidence": "main 为 fb100b7（采集机器人提交）；open PR 为空、open Issue 在创建本轮 #89 前为 0；collect.yml run 40870761289 success、pages.yml run 40871601597 success，列表无 running / queued / failed。"
-        },
-        {
-          "name": "刷新公开数据（超 4h 兜底触发采集）",
-          "result": "pass",
-          "evidence": "开始时 data/ai-news.json generated_at=2026-10-29T05:25:52Z（约 400 分钟），超过 240 分钟阈值；已 workflow_dispatch 触发 collect.yml run 40870761289（https://github.com/MengEn-Ink/worklens/actions/runs/40870761289）success，机器人提交 fb100b7，公开数据刷新到 2026-10-29T12:08–12:10Z。"
-        },
-        {
-          "name": "发布并验收 GitHub Pages",
-          "result": "pass",
-          "evidence": "手动触发 pages.yml run 40871601597（https://github.com/MengEn-Ink/worklens/actions/runs/40871601597）success；线上 https://mengen-ink.github.io/worklens/、/desktop/、/atelier/、/ai-news/、pages-manifest.json 与 data/ 下 ai-news/discoveries/skill-review-queue 全部 HTTP 200；线上 data/ai-news.json generated_at=2026-10-29T12:10:01Z。"
-        },
-        {
-          "name": "本地质量门禁",
-          "result": "pass",
-          "evidence": "node --test tests/*.js → tests 45 / pass 45 / fail 0；python3 -m unittest discover -s tests -p 'test_*.py' → Ran 141 tests OK；core_circle/skill_review/skill_adoptions/idea_pipeline/recommendation_review/health_check/close_issues_ci/repo_insights 各 validate exit 0；security_scan.py --strict 通过；build_pages.py 输出 routes=/, /ai-news/; skipped=none。"
-        },
-        {
-          "name": "Issue 收口",
-          "result": "pass",
-          "evidence": "fine-grained PAT 对 Issue comment/close 返回 403 Resource not accessible by personal access token；已登记 #89 到 data/issue-close-requests.json，触发 close-issues.yml 用内置 GITHUB_TOKEN（issues: write）评论并关闭。"
-        }
-      ],
-      "data_freshness": [
-        {
-          "path": "data/ai-news.json",
-          "generated_at": "2026-10-29T12:10:01Z",
-          "age_minutes_at_check": 4,
-          "item_count": 200,
-          "status": "refreshed"
-        },
-        {
-          "path": "data/discoveries.json",
-          "generated_at": "2026-10-29T12:08:00Z",
-          "age_minutes_at_check": 6,
-          "item_count": 474,
-          "status": "refreshed"
-        },
-        {
-          "path": "data/skill-review-queue.json",
-          "generated_at": "2026-10-29T12:10:02Z",
-          "age_minutes_at_check": 4,
-          "item_count": 89,
-          "status": "refreshed"
-        }
-      ],
-      "next_action": "继续健康巡检降级态：下一轮先核对 main、运行中/失败 Actions（含每四小时 collect.yml，超窗则手动兜底）与 Pages 四入口；Issues 为空时创建新巡检 Issue 承载验收标准；出现失败时优先修复当前 Issue，不开始新事项。"
-    },
-    {
-      "id": "loop-20261030-0020-cst",
-      "checked_at": "2026-10-29T16:20:00Z",
-      "actor": "worklens-loop",
-      "scope": "四小时健康巡检与数据刷新；创建巡检 Issue #90 承载验收标准",
-      "result": "pass",
-      "issue_url": "https://github.com/MengEn-Ink/worklens/issues/90",
-      "actions": [
-        {
-          "name": "同步 main 与核对未关闭 Issue / PR / Actions",
-          "result": "pass",
-          "evidence": "main 已同步到 40e52d9；巡检前公开 Issue 列表为空，已创建 #90 承载本轮健康巡检验收标准；最近 collect.yml run 40898330139、close-issues.yml run 40872569053、质量与安全门禁 run 40872569021、Pages run 40872569146 均 success，列表无 running / queued / failed。"
-        },
-        {
-          "name": "核验公开数据新鲜度",
-          "result": "pass",
-          "evidence": "data/ai-news.json 与 data/discoveries.json 均生成于 2026-10-29T15:07:28Z，距巡检约 73 分钟，未超过 240 分钟阈值，因此本轮不重复触发采集；AI 资讯 200 条、开源候选 474 条，公开采集链路健康，未引入私有数据、凭证、内部地址。"
-        },
-        {
-          "name": "最小可交付事项",
-          "result": "pass",
-          "evidence": "P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序；本轮按降级态只更新健康巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。"
-        },
-        {
-          "name": "Issue 状态更新",
-          "result": "pass",
-          "evidence": "本轮创建 #90；提交将 #90 登记进 data/issue-close-requests.json，合入 main 后由 close-issues.yml 使用内置 GITHUB_TOKEN 评论并关闭，已复核 #90 于 2026-10-29T16:24:25Z 关闭。"
-        },
-        {
-          "name": "交付后质量门禁与 Pages 验收",
-          "result": "pass",
-          "evidence": "提交 c9a7bcf 的质量与安全门禁 run 40911226399、收口巡检 Issue run 40911226732、发布 GitHub Pages run 40911225953 均 success；线上 /、/desktop/、/atelier/、/ai-news/、pages-manifest.json、data/health-checks.json、data/issue-close-requests.json、data/ai-news.json、data/discoveries.json 均 HTTP 200。"
-        }
-      ],
-      "data_freshness": [
-        {
-          "path": "data/ai-news.json",
-          "generated_at": "2026-10-29T15:07:28Z",
-          "age_minutes_at_check": 73,
-          "item_count": 200,
-          "status": "fresh"
-        },
-        {
-          "path": "data/discoveries.json",
-          "generated_at": "2026-10-29T15:07:28Z",
-          "age_minutes_at_check": 73,
-          "item_count": 474,
-          "status": "fresh"
-        }
-      ],
-      "next_action": "继续健康巡检降级态：下一轮先核验 #90 是否已由 close-issues.yml 按账本评论并关闭；随后核对 main、运行中/失败 Actions、Pages 四入口和公开数据 4 小时新鲜度。若出现失败或滞留 Issue，优先修复当前 Issue；若 Issues 为空，继续创建新巡检 Issue 承载验收标准。"
-    },
-    {
-      "id": "loop-20261030-0415-cst",
-      "checked_at": "2026-10-29T20:15:00Z",
-      "actor": "worklens-loop",
-      "scope": "四小时健康巡检与数据刷新；公开数据超 240 分钟阈值，手动触发 collect.yml 兜底采集；创建巡检 Issue #91 承载验收标准",
-      "result": "pass",
-      "issue_url": "https://github.com/MengEn-Ink/worklens/issues/91",
-      "actions": [
-        {
-          "name": "同步 main 与核对未关闭 Issue / PR / Actions",
-          "result": "pass",
-          "evidence": "main 由 b7ec8a1 快进到采集机器人提交 cbfe3dc；创建本轮 Issue 前公开 open Issue / open PR 均为空，已创建 #91 承载本轮验收标准；本轮手动触发的 collect.yml run 40946186519 success，此前最近 close-issues、质量与安全门禁、Pages runs（2026-10-29 16:24–16:25 UTC）均 success，列表无 running / queued / failed。"
-        },
-        {
-          "name": "刷新公开数据（超 4 小时兜底触发采集）",
-          "result": "pass",
-          "evidence": "巡检开始时 data/ai-news.json 与 data/discoveries.json 生成于 2026-10-29T15:07:28Z，距今约 299 分钟，超过 240 分钟阈值，且 20:00 UTC 定时采集未在运行列表出现；已 workflow_dispatch 手动触发 collect.yml run 40946186519 success，机器人提交 cbfe3dc，公开数据刷新到 2026-10-29T20:07:31Z（AI 资讯 200 条、开源候选 474 条），采集仅调用公开源，无私有数据、凭证、内部地址。"
-        },
-        {
-          "name": "最小可交付事项",
-          "result": "pass",
-          "evidence": "P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序；本轮按降级态只更新健康巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。"
-        },
-        {
-          "name": "Issue 状态更新",
-          "result": "pass",
-          "evidence": "本轮创建 #91；提交将 #91 登记进 data/issue-close-requests.json，合入 main 后由 close-issues.yml 使用内置 GITHUB_TOKEN 评论并关闭，已复核 #91 于 2026-10-29T20:17:13Z 关闭。"
-        },
-        {
-          "name": "交付后质量门禁与 Pages 验收",
-          "result": "pass",
-          "evidence": "提交 2f51300 的质量与安全门禁 run 40947640734、收口巡检 Issue run 40947639500、发布 GitHub Pages run 40947639576 均 success；线上 /、/desktop/、/atelier/、/ai-news/、pages-manifest.json、data/health-checks.json、data/issue-close-requests.json、data/ai-news.json、data/discoveries.json 均 HTTP 200；线上 data/health-checks.json 最新条目为本轮 loop-20261030-0415-cst（pass），线上 data/ai-news.json generated_at=2026-10-29T20:07:32Z。"
-        }
-      ],
-      "data_freshness": [
-        {
-          "path": "data/ai-news.json",
-          "generated_at": "2026-10-29T20:07:32Z",
-          "age_minutes_at_check": 8,
-          "item_count": 200,
-          "status": "fresh"
-        },
-        {
-          "path": "data/discoveries.json",
-          "generated_at": "2026-10-29T20:07:31Z",
-          "age_minutes_at_check": 8,
-          "item_count": 474,
-          "status": "fresh"
-        }
-      ],
-      "next_action": "继续健康巡检降级态：下一轮先核验 #91 是否已由 close-issues.yml 按账本评论并关闭；随后核对 main、运行中/失败 Actions、Pages 四入口和公开数据 4 小时新鲜度，定时采集延迟或超窗时手动 workflow_dispatch 兜底。若出现失败或滞留 Issue，优先修复当前 Issue；若 Issues 为空，继续创建新巡检 Issue 承载验收标准。"
-    },
-    {
-      "id": "loop-20261030-0804-cst",
-      "checked_at": "2026-10-30T00:04:00Z",
-      "actor": "worklens-loop",
-      "scope": "四小时健康巡检与数据刷新；公开数据未超过 240 分钟阈值；创建巡检 Issue #92 承载验收标准",
-      "result": "pass",
-      "issue_url": "https://github.com/MengEn-Ink/worklens/issues/92",
-      "actions": [
-        {
-          "name": "同步 main 与核对未关闭 Issue / PR / Actions",
-          "result": "pass",
-          "evidence": "main 已同步到 57f007d；创建本轮 Issue 前公开 open Issue / open PR 均为空，已创建 #92 承载本轮验收标准；最近 30 个 workflow run 均 completed/success，包含 20:58 UTC 定时 collect.yml run 40953783852、20:22 UTC 质量门禁 run 40948405023 与 Pages run 40948404816，无 running / queued / failed。"
-        },
-        {
-          "name": "核验公开数据新鲜度",
-          "result": "pass",
-          "evidence": "data/ai-news.json、data/discoveries.json 与 data/repo-insights.json 均生成于 2026-10-29T20:59:04Z，距巡检约 185 分钟，未超过 240 分钟阈值，因此本轮不重复触发采集；AI 资讯 200 条、开源候选 474 条、仓库深度解读 537 条，采集链路最近定时 run success。"
-        },
-        {
-          "name": "最小可交付事项",
-          "result": "pass",
-          "evidence": "P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序；本轮按降级态只更新健康巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。"
-        },
-        {
-          "name": "Issue 状态更新",
-          "result": "pass",
-          "evidence": "本轮创建 #92；提交 1e8b6ce 将 #92 登记进 data/issue-close-requests.json，合入 main 后 close-issues.yml run 40977754544 使用内置 GITHUB_TOKEN 评论并关闭，已复核 #92 于 2026-10-30T00:08:29Z 关闭。"
-        },
-        {
-          "name": "交付后质量门禁与 Pages 验收",
-          "result": "pass",
-          "evidence": "提交 1e8b6ce 的质量与安全门禁 run 40977754652、收口巡检 Issue run 40977754544、发布 GitHub Pages run 40977754587 均 success；线上 /、/desktop/、/atelier/、/ai-news/、pages-manifest.json、data/health-checks.json、data/issue-close-requests.json、data/ai-news.json、data/discoveries.json 均 HTTP 200。"
-        }
-      ],
-      "data_freshness": [
-        {
-          "path": "data/ai-news.json",
-          "generated_at": "2026-10-29T20:59:04Z",
-          "age_minutes_at_check": 185,
-          "item_count": 200,
-          "status": "fresh"
-        },
-        {
-          "path": "data/discoveries.json",
-          "generated_at": "2026-10-29T20:59:04Z",
-          "age_minutes_at_check": 185,
-          "item_count": 474,
-          "status": "fresh"
-        }
-      ],
-      "next_action": "继续健康巡检降级态：下一轮先核验 #92 是否已由 close-issues.yml 按账本评论并关闭；随后核对 main、运行中/失败 Actions、Pages 四入口和公开数据 4 小时新鲜度，定时采集延迟或超窗时手动 workflow_dispatch 兜底。若出现失败或滞留 Issue，优先修复当前 Issue；若 Issues 为空，继续创建新巡检 Issue 承载验收标准。"
-    },
-    {
-      "id": "loop-20261030-1208-cst",
-      "checked_at": "2026-10-30T04:08:00Z",
-      "actor": "worklens-loop",
-      "scope": "四小时健康巡检与数据刷新；公开数据超过 240 分钟阈值，已手动触发 collect.yml 兜底采集；创建巡检 Issue #93 承载验收标准",
-      "result": "pass",
-      "issue_url": "https://github.com/MengEn-Ink/worklens/issues/93",
-      "actions": [
-        {
-          "name": "同步 main 与核对未关闭 Issue / PR / Actions",
-          "result": "pass",
-          "evidence": "main 先同步到 df9ee9c；创建本轮 Issue 前公开 open Issue / open PR 均为空，已创建 #93 承载本轮验收标准；因公开数据超窗手动 workflow_dispatch 触发 collect.yml run 41000877603 success，随后 fast-forward 到机器人提交 6dcf66a；当前最近公开 workflow runs 无 running / queued / failed。"
-        },
-        {
-          "name": "刷新公开数据",
-          "result": "pass",
-          "evidence": "本轮开始时 data/ai-news.json、data/discoveries.json 与 data/repo-insights.json 均约 425 分钟未刷新，超过 240 分钟阈值，因此手动触发 collect.yml 兜底；采集后公开数据刷新到 2026-10-30T04:05:03Z–2026-10-30T04:07:08Z，AI 资讯 200 条、开源候选 472 条、仓库深度解读 640 条、Skill 待审 98 条；AI 资讯 14/14 源与开源候选 34/34 源均 ok，且不自动安装 Skill。"
-        },
-        {
-          "name": "最小可交付事项",
-          "result": "pass",
-          "evidence": "P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序；本轮按降级态只更新健康巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。"
-        },
-        {
-          "name": "Issue 状态更新",
-          "result": "pass",
-          "evidence": "本轮创建 #93；提交 0663bfe 将 #93 登记进 data/issue-close-requests.json，合入 main 后 close-issues.yml run 41001458360 使用内置 GITHUB_TOKEN 评论并关闭，已复核 #93 于 2026-10-30T04:11:08Z 关闭。"
-        },
-        {
-          "name": "交付后质量门禁与 Pages 验收",
-          "result": "pass",
-          "evidence": "提交 0663bfe 的质量与安全门禁 run 41001458365、收口巡检 Issue run 41001458360、发布 GitHub Pages run 41001458371 均 success；线上 /、/desktop/、/atelier/、/ai-news/、pages-manifest.json、data/health-checks.json、data/issue-close-requests.json、data/ai-news.json、data/discoveries.json 均 HTTP 200。"
-        }
-      ],
-      "data_freshness": [
-        {
-          "path": "data/ai-news.json",
-          "generated_at": "2026-10-30T04:07:07Z",
-          "age_minutes_at_check": 1,
-          "item_count": 200,
-          "status": "fresh"
-        },
-        {
-          "path": "data/discoveries.json",
-          "generated_at": "2026-10-30T04:05:03Z",
-          "age_minutes_at_check": 3,
-          "item_count": 472,
-          "status": "fresh"
-        }
-      ],
-      "next_action": "继续健康巡检降级态：下一轮先核验 #93 是否已由 close-issues.yml 按账本评论并关闭；随后核对 main、运行中/失败 Actions、Pages 四入口和公开数据 4 小时新鲜度，定时采集延迟或超窗时手动 workflow_dispatch 兜底。若出现失败或滞留 Issue，优先修复当前 Issue；若 Issues 为空，继续创建新巡检 Issue 承载验收标准。"
-    },
-    {
-      "id": "loop-20261030-1606-cst",
-      "checked_at": "2026-10-30T08:06:04Z",
-      "actor": "worklens-loop",
-      "scope": "四小时健康巡检与数据刷新；公开数据未超过 240 分钟阈值；创建巡检 Issue #94 承载验收标准",
-      "result": "pass",
-      "issue_url": "https://github.com/MengEn-Ink/worklens/issues/94",
-      "actions": [
-        {
-          "name": "同步 main 与核对未关闭 Issue / PR / Actions",
-          "result": "pass",
-          "evidence": "main 已同步到 f43e533；已复核上一轮 #93 由 close-issues.yml run 41001458360 评论并关闭；创建本轮 Issue 前公开 open Issue / open PR 均为空，已创建 #94 承载本轮验收标准；最近 collect.yml run 41008346344、质量与安全门禁 run 41001587688、发布 GitHub Pages run 41001587700 均 success，列表无 running / queued / failed。"
-        },
-        {
-          "name": "核验公开数据新鲜度",
-          "result": "pass",
-          "evidence": "data/ai-news.json、data/discoveries.json 与 data/repo-insights.json 生成于 2026-10-30T05:25:22Z 左右，data/skill-review-queue.json 生成于 2026-10-30T04:07:08Z；距巡检约 160 / 160 / 160 / 238 分钟，均未超过 240 分钟阈值，因此本轮不重复触发采集；AI 资讯 200 条、开源候选 472 条、仓库深度解读 472 条、Skill 待审 98 条，policy.auto_install=false。"
-        },
-        {
-          "name": "最小可交付事项",
-          "result": "pass",
-          "evidence": "P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序；本轮按降级态只更新健康巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。"
-        },
-        {
-          "name": "Issue 状态更新",
-          "result": "pass",
-          "evidence": "本轮创建 #94；提交 3d957b2 将 #94 登记进 data/issue-close-requests.json，合入 main 后 close-issues.yml run 41024495146 使用内置 GITHUB_TOKEN 评论并关闭，已复核 #94 于 2026-10-30T08:08:59Z 关闭。"
-        },
-        {
-          "name": "交付后质量门禁与 Pages 验收",
-          "result": "pass",
-          "evidence": "本地已完成 node --test、python unittest、health_check/close_issues_ci/repo_insights/skill_adoptions validate、security_scan.py --strict 与 build_pages.py；提交 3d957b2 的质量与安全门禁 run 41024495168、收口巡检 Issue run 41024495146、发布 GitHub Pages run 41024495145 均 success；本地浏览器核验 https://mengen-ink.github.io/worklens/ 标题为《WorkLens · 工作能力雷达》，/ai-news/ 标题为《AI 工作情报 · WorkLens》且已请求 data/ai-news.json，/desktop/ 最终落到 /，/atelier/ 最终落到 /#review；线上 pages-manifest.json、data/health-checks.json、data/issue-close-requests.json、data/ai-news.json 均已发布。"
-        }
-      ],
-      "data_freshness": [
-        {
-          "path": "data/ai-news.json",
-          "generated_at": "2026-10-30T05:25:22Z",
-          "age_minutes_at_check": 160,
-          "item_count": 200,
-          "status": "fresh"
-        },
-        {
-          "path": "data/discoveries.json",
-          "generated_at": "2026-10-30T05:25:22Z",
-          "age_minutes_at_check": 160,
-          "item_count": 472,
-          "status": "fresh"
-        },
-        {
-          "path": "data/skill-review-queue.json",
-          "generated_at": "2026-10-30T04:07:08Z",
-          "age_minutes_at_check": 238,
-          "item_count": 98,
-          "status": "fresh"
-        }
-      ],
-      "next_action": "继续健康巡检降级态：下一轮核对 main、运行中/失败 Actions、Pages 四入口和公开数据 4 小时新鲜度，定时采集延迟或超窗时手动 workflow_dispatch 兜底；Issues 为空时继续创建新巡检 Issue 承载验收标准。README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序，未获确认前不启动新功能。若出现失败或滞留 Issue，优先修复当前 Issue。"
-    },
-    {
-      "id": "loop-20261030-2008-cst",
-      "checked_at": "2026-10-30T12:08:10Z",
-      "actor": "worklens-loop",
-      "scope": "四小时健康巡检与数据刷新；公开数据超过 240 分钟阈值，已手动 workflow_dispatch 兜底采集；创建巡检 Issue #95 承载验收标准",
-      "result": "pass",
-      "issue_url": "https://github.com/MengEn-Ink/worklens/issues/95",
-      "actions": [
-        {
-          "name": "同步 main 与核对未关闭 Issue / PR / Actions",
-          "result": "pass",
-          "evidence": "本轮开始时 main 为 f224a7d；已复核上一轮 #94 由 close-issues.yml run 41024495146 评论并关闭（2026-10-30T08:08:59Z）；创建本轮 Issue 前公开 open Issue / open PR 均为空，已创建 #95 承载本轮验收标准；最近 main workflow runs 均 completed/success，含 16 点轮质量门禁 run 41024927911、发布 GitHub Pages run 41024927914 与收口巡检 Issue run 41024495146，巡检时列表无 running / queued / failed。"
-        },
-        {
-          "name": "核验公开数据新鲜度",
-          "result": "pass",
-          "evidence": "巡检时 data/ai-news.json、data/discoveries.json、data/repo-insights.json 仍生成于 2026-10-30T05:25Z 左右，距今约 399 分钟，超过 240 分钟阈值，且定时 collect.yml（UTC 12:00）尚未触发，故手动 workflow_dispatch 触发 collect.yml run 41052571074，completed/success 后快进到机器人提交 b86fb9b；刷新后 ai-news 生成于 2026-10-30T12:04:32Z 共 200 条（14/14 源 ok），discoveries 生成于 2026-10-30T12:04:07Z 共 479 条候选（34/34 源 ok），repo-insights 663 条、覆盖 479/479 候选（new 23、reused 456），skill-review-queue 生成于 2026-10-30T12:04:33Z 共 101 条，policy.auto_install=false。"
-        },
-        {
-          "name": "最小可交付事项",
-          "result": "pass",
-          "evidence": "P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序；本轮按降级态只更新健康巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。"
-        },
-        {
-          "name": "Issue 状态更新",
-          "result": "pass",
-          "evidence": "本轮创建 #95；提交 af775f7 将 #95 登记进 data/issue-close-requests.json，合入 main 后 close-issues.yml run 41053619616 使用内置 GITHUB_TOKEN 评论并关闭，已复核 #95 于 2026-10-30T12:12:45Z 关闭。"
-        },
-        {
-          "name": "交付后质量门禁与 Pages 验收",
-          "result": "pass",
-          "evidence": "本地已完成 node --test（45）、python unittest（141）、health_check/close_issues_ci/repo_insights/skill_adoptions validate、security_scan.py --strict 与 build_pages.py；提交 af775f7 的质量与安全门禁 run 41053619491、收口巡检 Issue run 41053619616、发布 GitHub Pages run 41053619398 均 success（build/deploy 全 success）；线上核验 https://mengen-ink.github.io/worklens/ 标题为《WorkLens · 工作能力雷达》、/ai-news/ 标题为《AI 工作情报 · WorkLens》且 data/ai-news.json 为 12:04:32Z 的 200 条；/desktop/ meta refresh 到 /，/atelier/ 到 /#review；pages-manifest.json、data/health-checks.json（latest=loop-20261030-2008-cst）、data/issue-close-requests.json（last=#95）、data/ai-news.json、data/discoveries.json 均 HTTP 200 且为最新内容。"
-        }
-      ],
-      "data_freshness": [
-        {
-          "path": "data/ai-news.json",
-          "generated_at": "2026-10-30T12:04:32Z",
-          "age_minutes_at_check": 4,
-          "item_count": 200,
-          "status": "fresh"
-        },
-        {
-          "path": "data/discoveries.json",
-          "generated_at": "2026-10-30T12:04:07Z",
-          "age_minutes_at_check": 4,
-          "item_count": 479,
-          "status": "fresh"
-        },
-        {
-          "path": "data/skill-review-queue.json",
-          "generated_at": "2026-10-30T12:04:33Z",
-          "age_minutes_at_check": 4,
-          "item_count": 101,
-          "status": "fresh"
-        }
-      ],
-      "next_action": "继续健康巡检降级态：下一轮核对 main、运行中/失败 Actions、Pages 四入口和公开数据 4 小时新鲜度，定时采集延迟或超窗时手动 workflow_dispatch 兜底；Issues 为空时继续创建新巡检 Issue 承载验收标准。README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序，未获确认前不启动新功能。若出现失败或滞留 Issue，优先修复当前 Issue。"
+     "name": "验收质量门禁与 Pages",
+     "result": "pass",
+     "evidence": "提交 a80a4b5 的质量与安全门禁 https://github.com/MengEn-Ink/worklens/actions/runs/40631057129 成功；Pages https://github.com/MengEn-Ink/worklens/actions/runs/40631057308 成功；账本已发布到 https://mengen-ink.github.io/worklens/data/health-checks.json。"
     }
-  ]
+   ],
+   "data_freshness": [
+    {
+     "path": "data/ai-news.json",
+     "generated_at": "2026-10-28T04:07:06Z",
+     "age_minutes_at_check": 2,
+     "item_count": 200,
+     "status": "fresh"
+    },
+    {
+     "path": "data/discoveries.json",
+     "generated_at": "2026-10-28T04:07:06Z",
+     "age_minutes_at_check": 2,
+     "item_count": 123,
+     "status": "fresh"
+    }
+   ],
+   "next_action": "若后续仍无未关闭 Issue，继续执行健康巡检、公开数据刷新与只读契约补强；出现失败时优先修复当前 Issue。"
+  },
+  {
+   "id": "loop-20261028-1623-cst",
+   "checked_at": "2026-10-28T08:23:00Z",
+   "actor": "worklens-loop",
+   "scope": "四小时健康巡检与数据刷新；核验并关闭已上线的账本契约 Issue #71",
+   "result": "pass",
+   "issue_url": "https://github.com/MengEn-Ink/worklens/issues/71",
+   "actions": [
+    {
+     "name": "同步 main 与核对未关闭 Issue",
+     "result": "pass",
+     "evidence": "main 从 6365eed 同步至 f30a0b1；唯一未关闭 Issue 为 #71，其账本契约实现（a80a4b5 新增 data/health-checks.json、scripts/health_check.py、CI 校验与测试；6365eed 补验收证据）已在 main，本轮核验后关闭。"
+    },
+    {
+     "name": "刷新 AI 资讯与开源项目候选",
+     "result": "pass",
+     "evidence": "提交 f8dee5d：collect_public_feeds 聚合 14 个公开源 200 条、0 降级，collect_github 采集 124 个公开仓库候选；skill_review sync 队列保持 34 条，未自动流转、未安装 Skill。"
+    },
+    {
+     "name": "验收质量门禁与 Pages",
+     "result": "pass",
+     "evidence": "f8dee5d 质量与安全门禁 https://github.com/MengEn-Ink/worklens/actions/runs/40655650551 成功，Pages https://github.com/MengEn-Ink/worklens/actions/runs/40655650570 成功；线上核验 /、/desktop/、/atelier/、/ai-news/ 均 200，https://mengen-ink.github.io/worklens/data/ai-news.json 与 discoveries.json 为最新 generated_at。"
+    }
+   ],
+   "data_freshness": [
+    {
+     "path": "data/ai-news.json",
+     "generated_at": "2026-10-28T08:12:50Z",
+     "age_minutes_at_check": 10,
+     "item_count": 200,
+     "status": "fresh"
+    },
+    {
+     "path": "data/discoveries.json",
+     "generated_at": "2026-10-28T08:12:38Z",
+     "age_minutes_at_check": 10,
+     "item_count": 124,
+     "status": "fresh"
+    },
+    {
+     "path": "data/skill-review-queue.json",
+     "generated_at": "2026-10-28T06:51:53Z",
+     "age_minutes_at_check": 91,
+     "item_count": 34,
+     "status": "fresh"
+    }
+   ],
+   "next_action": "全部路线图目标已完成，继续按四小时节奏做健康巡检与公开数据刷新；新出现 Issue 时认领最高优先级一项并修复，失败时优先修复当前 Issue。"
+  },
+  {
+   "id": "loop-20261029-0900-cst",
+   "checked_at": "2026-10-29T01:00:00Z",
+   "actor": "worklens-loop",
+   "scope": "四小时健康巡检与数据刷新；创建巡检 Issue #81 承载验收标准，并线上复核 #80 新合入功能",
+   "result": "pass",
+   "issue_url": "https://github.com/MengEn-Ink/worklens/issues/81",
+   "actions": [
+    {
+     "name": "同步 main 与核对未关闭 Issue",
+     "result": "pass",
+     "evidence": "开始时 main 最新 91ff361（含 #79、#80），公开 Issue 列表为空，最近 Actions 无 running/queued/failed；已创建 Issue #81 承载本轮健康巡检验收标准。"
+    },
+    {
+     "name": "刷新 AI 资讯与开源项目候选",
+     "result": "pass",
+     "evidence": "开始时数据 generated_at=2026-10-28T20:55Z，08 点定时采集在 4 小时窗口内未出现；按 Loop 规则于 2026-10-29T00:58Z 手动触发 collect.yml run 40797479884 success，机器人提交 34f288f，数据刷新到 2026-10-29T00:58:25Z：AI 资讯 200 条、14 个公开源全部 ok、0 降级；开源候选 124 条、12 个源全部 ok；Skill 待审队列保持 34 条，auto_install=false，未自动流转、未安装 Skill。"
+    },
+    {
+     "name": "本地质量门禁",
+     "result": "pass",
+     "evidence": "node --test tests/*.js 41/41 通过；python unittest 112/112 通过；core_circle/skill_review/skill_adoptions/idea_pipeline/recommendation_review/health_check 各 validate exit 0；security_scan.py --strict 通过；build_pages.py 输出 routes=/, /ai-news/; skipped=none；已跟踪前端脚本 node --check 全部通过。"
+    },
+    {
+     "name": "验收 Pages 与 #80 线上复核",
+     "result": "pass",
+     "evidence": "线上 /、/desktop/、/atelier/、/ai-news/、pages-manifest.json 与 11 个公开数据文件均 HTTP 200；#80 已发布：根目录 app.jsx/views.jsx/data-adapter.js 可检索到「本机相关」「速读」与 starTrendIllustrative/activityHeatIllustrative 标记。"
+    },
+    {
+     "name": "收口提交门禁与线上账本复核",
+     "result": "pass",
+     "evidence": "账本提交 1fc4647 的质量与安全门禁 run 40797992231 success、发布 GitHub Pages run 40797992189 success；线上 data/health-checks.json 已为 loop-20261029-0900-cst（pass），/、/ai-news/、data/ai-news.json、data/discoveries.json 均 200。"
+    }
+   ],
+   "data_freshness": [
+    {
+     "path": "data/ai-news.json",
+     "generated_at": "2026-10-29T00:58:25Z",
+     "age_minutes_at_check": 2,
+     "item_count": 200,
+     "status": "refreshed"
+    },
+    {
+     "path": "data/discoveries.json",
+     "generated_at": "2026-10-29T00:58:25Z",
+     "age_minutes_at_check": 2,
+     "item_count": 124,
+     "status": "refreshed"
+    }
+   ],
+   "next_action": "P0–P4 目标保持全部上线，Loop 维持健康巡检 + 数据刷新降级态；下一轮核对 main、Actions 与 Pages 四入口、公开数据 4 小时新鲜度，若 Issue 为空则创建新巡检 Issue。SR-0011 在 2026-10-31 真人试用复盘出结论前不得推进 adopted、不得安装 Skill；推荐复盘画像调整未获真人确认前不得写入 profile 或改变推荐权重。"
+  },
+  {
+   "id": "loop-20261029-1204-cst",
+   "checked_at": "2026-10-29T04:05:00Z",
+   "actor": "worklens-loop",
+   "scope": "四小时健康巡检与数据刷新；创建巡检 Issue #85 承载验收标准",
+   "result": "warn",
+   "issue_url": "https://github.com/MengEn-Ink/worklens/issues/85",
+   "actions": [
+    {
+     "name": "同步 main 与核对未关闭 Issue",
+     "result": "pass",
+     "evidence": "main 已同步到 a36606e；巡检前公开 Issue 与 PR 列表均为空，最近 main 的质量与安全门禁 run 40813221408 与发布 GitHub Pages run 40813221420 均 success，collect.yml 最新 run 40797479884 success；已创建 Issue #85 承载本轮健康巡检验收标准。"
+    },
+    {
+     "name": "核验公开数据新鲜度",
+     "result": "pass",
+     "evidence": "data/ai-news.json 距巡检约 187 分钟，data/discoveries.json 约 160 分钟，data/repo-insights.json 约 31 分钟，均未超过 240 分钟阈值，因此本轮不重复触发采集；14 个 AI 资讯源与开源候选源状态保持 ok，未引入私有数据、凭证、内部地址。"
+    },
+    {
+     "name": "本地质量门禁",
+     "result": "pass",
+     "evidence": "node --test tests/*.js 45/45 通过；python3 -m unittest discover -s tests -p 'test_*.py' 128/128 通过；core_circle/skill_review/skill_adoptions/idea_pipeline/recommendation_review/health_check 各 validate exit 0；security_scan.py --strict 通过；build_pages.py 输出 routes=/, /ai-news/; skipped=none。"
+    },
+    {
+     "name": "Issue 状态更新",
+     "result": "blocked",
+     "evidence": "巡检账本提交 c503074、直接默认分支空提交 654f95b、PR #86 合并提交 9bb619c 均已携带 Closes #85 且质量门禁 / Pages 均 success；但 GitHub Issue #85 仍保持 open。尝试 gh issue comment/close 与 REST PATCH close 均返回 403 Resource not accessible by personal access token，当前令牌可创建 Issue 但不能评论或关闭 Issue。"
+    }
+   ],
+   "data_freshness": [
+    {
+     "path": "data/ai-news.json",
+     "generated_at": "2026-10-29T00:58:25Z",
+     "age_minutes_at_check": 187,
+     "item_count": 200,
+     "status": "fresh"
+    },
+    {
+     "path": "data/discoveries.json",
+     "generated_at": "2026-10-29T01:26:06Z",
+     "age_minutes_at_check": 160,
+     "item_count": 450,
+     "status": "fresh"
+    }
+   ],
+   "next_action": "Issue #85 当前仍 open，下一轮必须继续优先收口 #85，不开始新事项；若仍无法通过 GitHub token 评论 / 关闭 Issue，需要更换具备 Issues write 权限的凭证或由维护者手动关闭。P0–P4 目标保持全部上线，Loop 维持健康巡检 + 数据刷新降级态；SR-0011 在 2026-10-31 真人试用复盘出结论前不得推进 adopted、不得安装 Skill；推荐复盘画像调整未获真人确认前不得写入 profile 或改变推荐权重。"
+  },
+  {
+   "id": "loop-20261029-1625-cst",
+   "checked_at": "2026-10-29T08:25:00Z",
+   "actor": "worklens-loop",
+   "scope": "四小时健康巡检与数据刷新；收口滞留 Issue #85 并上线 CI Issue 收口机制（PR #87）；创建巡检 Issue #88 承载本轮验收标准",
+   "result": "pass",
+   "issue_url": "https://github.com/MengEn-Ink/worklens/issues/88",
+   "actions": [
+    {
+     "name": "同步 main 与核对未关闭 Issue / PR / Actions",
+     "result": "pass",
+     "evidence": "main 由 cdf945b 快进到 e81b867（PR #87 merge commit）；open PR 为空；open Issue 仅本轮新建 #88；最近 main 的收口巡检 Issue run 40841437274、发布 GitHub Pages run 40841436950、质量与安全门禁 run 40841436937 均 success，采集 run 40823343829 success，无 running / queued / failed。"
+    },
+    {
+     "name": "收口滞留 Issue #85 与 CI 收口机制上线",
+     "result": "pass",
+     "evidence": "复核当前 fine-grained PAT 对 Issue 评论 / PATCH 仍返回 403（x-accepted-github-permissions: issues=write; pull_requests=write）。本轮以 PR #87 上线 data/issue-close-requests.json 账本 + scripts/close_issues_ci.py（validate/apply，幂等跳过已关闭单）+ close-issues.yml（仅 issues: write）+ CI 契约校验 + 13 个单测。#85 于 08:20:32Z（PR #87 合并后 2 秒）由服务端按 PR 正文 Closes #85 自动关闭、state=closed/state_reason=completed；close-issues 工作流在 runner 启动后打印『跳过 #85：当前状态 closed』，幂等性得到验证。"
+    },
+    {
+     "name": "核验公开数据新鲜度",
+     "result": "pass",
+     "evidence": "data/ai-news.json、data/discoveries.json、data/repo-insights.json 均生成于 2026-10-29T05:25:52Z，距巡检约 178 分钟，未超过 240 分钟阈值，不重复触发采集；AI 资讯 200 条、开源候选 450 条、仓库深度解读 450 条，Skill 待审 74 条且 policy.auto_install=false；未引入私有数据、凭证、内部地址。"
+    },
+    {
+     "name": "本地质量门禁",
+     "result": "pass",
+     "evidence": "node --test tests/*.js 45/45 通过；python3 -m unittest discover -s tests -p 'test_*.py' 141/141 通过（新增 close_issues_ci 13 个）；core_circle/skill_review/skill_adoptions/idea_pipeline/recommendation_review/health_check/repo_insights/close_issues_ci 各 validate exit 0；security_scan.py --strict 通过；build_pages.py 输出 routes=/, /ai-news/; skipped=none。"
+    },
+    {
+     "name": "线上 Pages 抽检",
+     "result": "pass",
+     "evidence": "https://mengen-ink.github.io/worklens/ 与 /ai-news/、/desktop/、/atelier/、/pages-manifest.json 以及 data/ 下 ai-news、discoveries、repo-insights、health-checks、issue-close-requests、skill-review-queue、idea-pipeline、recommendation-reviews 共 14 个公开地址 HTTP 全部 200。"
+    },
+    {
+     "name": "Issue 状态更新",
+     "result": "pass",
+     "evidence": "已创建本轮承载 Issue #88；本提交把 #88 登记进 data/issue-close-requests.json，合入 main 后由 close-issues.yml 用内置 GITHUB_TOKEN 评论并关闭，下一轮首先核验关闭结果。"
+    }
+   ],
+   "data_freshness": [
+    {
+     "path": "data/ai-news.json",
+     "generated_at": "2026-10-29T05:25:52Z",
+     "age_minutes_at_check": 178,
+     "item_count": 200,
+     "status": "fresh"
+    },
+    {
+     "path": "data/discoveries.json",
+     "generated_at": "2026-10-29T05:25:52Z",
+     "age_minutes_at_check": 178,
+     "item_count": 450,
+     "status": "fresh"
+    },
+    {
+     "path": "data/skill-review-queue.json",
+     "generated_at": "2026-10-29T05:25:53Z",
+     "age_minutes_at_check": 178,
+     "item_count": 74,
+     "status": "fresh"
+    }
+   ],
+   "next_action": "下一轮唯一最高优先级仍是健康巡检 + 数据刷新：先核验 #88 已由 close-issues.yml 按账本评论并关闭（本提交触发），若工作流失败则优先修复该机制，不开始新事项。P0–P4 目标保持全部上线，不启动未经确认的新功能；SR-0011 在 2026-10-31 真人试用复盘出结论前不得推进 adopted、不得安装 Skill；推荐复盘画像调整未获真人确认前不得写入 profile 或改变推荐权重。"
+  },
+  {
+   "id": "loop-20261029-2015-cst",
+   "checked_at": "2026-10-29T12:15:00Z",
+   "actor": "worklens-loop",
+   "scope": "四小时健康巡检与数据刷新；手动触发采集与 Pages 发布；创建巡检 Issue #89 承载验收标准",
+   "result": "pass",
+   "issue_url": "https://github.com/MengEn-Ink/worklens/issues/89",
+   "actions": [
+    {
+     "name": "同步 main 与核对未关闭 Issue / PR / Actions",
+     "result": "pass",
+     "evidence": "main 为 fb100b7（采集机器人提交）；open PR 为空、open Issue 在创建本轮 #89 前为 0；collect.yml run 40870761289 success、pages.yml run 40871601597 success，列表无 running / queued / failed。"
+    },
+    {
+     "name": "刷新公开数据（超 4h 兜底触发采集）",
+     "result": "pass",
+     "evidence": "开始时 data/ai-news.json generated_at=2026-10-29T05:25:52Z（约 400 分钟），超过 240 分钟阈值；已 workflow_dispatch 触发 collect.yml run 40870761289（https://github.com/MengEn-Ink/worklens/actions/runs/40870761289）success，机器人提交 fb100b7，公开数据刷新到 2026-10-29T12:08–12:10Z。"
+    },
+    {
+     "name": "发布并验收 GitHub Pages",
+     "result": "pass",
+     "evidence": "手动触发 pages.yml run 40871601597（https://github.com/MengEn-Ink/worklens/actions/runs/40871601597）success；线上 https://mengen-ink.github.io/worklens/、/desktop/、/atelier/、/ai-news/、pages-manifest.json 与 data/ 下 ai-news/discoveries/skill-review-queue 全部 HTTP 200；线上 data/ai-news.json generated_at=2026-10-29T12:10:01Z。"
+    },
+    {
+     "name": "本地质量门禁",
+     "result": "pass",
+     "evidence": "node --test tests/*.js → tests 45 / pass 45 / fail 0；python3 -m unittest discover -s tests -p 'test_*.py' → Ran 141 tests OK；core_circle/skill_review/skill_adoptions/idea_pipeline/recommendation_review/health_check/close_issues_ci/repo_insights 各 validate exit 0；security_scan.py --strict 通过；build_pages.py 输出 routes=/, /ai-news/; skipped=none。"
+    },
+    {
+     "name": "Issue 收口",
+     "result": "pass",
+     "evidence": "fine-grained PAT 对 Issue comment/close 返回 403 Resource not accessible by personal access token；已登记 #89 到 data/issue-close-requests.json，触发 close-issues.yml 用内置 GITHUB_TOKEN（issues: write）评论并关闭。"
+    }
+   ],
+   "data_freshness": [
+    {
+     "path": "data/ai-news.json",
+     "generated_at": "2026-10-29T12:10:01Z",
+     "age_minutes_at_check": 4,
+     "item_count": 200,
+     "status": "refreshed"
+    },
+    {
+     "path": "data/discoveries.json",
+     "generated_at": "2026-10-29T12:08:00Z",
+     "age_minutes_at_check": 6,
+     "item_count": 474,
+     "status": "refreshed"
+    },
+    {
+     "path": "data/skill-review-queue.json",
+     "generated_at": "2026-10-29T12:10:02Z",
+     "age_minutes_at_check": 4,
+     "item_count": 89,
+     "status": "refreshed"
+    }
+   ],
+   "next_action": "继续健康巡检降级态：下一轮先核对 main、运行中/失败 Actions（含每四小时 collect.yml，超窗则手动兜底）与 Pages 四入口；Issues 为空时创建新巡检 Issue 承载验收标准；出现失败时优先修复当前 Issue，不开始新事项。"
+  },
+  {
+   "id": "loop-20261030-0020-cst",
+   "checked_at": "2026-10-29T16:20:00Z",
+   "actor": "worklens-loop",
+   "scope": "四小时健康巡检与数据刷新；创建巡检 Issue #90 承载验收标准",
+   "result": "pass",
+   "issue_url": "https://github.com/MengEn-Ink/worklens/issues/90",
+   "actions": [
+    {
+     "name": "同步 main 与核对未关闭 Issue / PR / Actions",
+     "result": "pass",
+     "evidence": "main 已同步到 40e52d9；巡检前公开 Issue 列表为空，已创建 #90 承载本轮健康巡检验收标准；最近 collect.yml run 40898330139、close-issues.yml run 40872569053、质量与安全门禁 run 40872569021、Pages run 40872569146 均 success，列表无 running / queued / failed。"
+    },
+    {
+     "name": "核验公开数据新鲜度",
+     "result": "pass",
+     "evidence": "data/ai-news.json 与 data/discoveries.json 均生成于 2026-10-29T15:07:28Z，距巡检约 73 分钟，未超过 240 分钟阈值，因此本轮不重复触发采集；AI 资讯 200 条、开源候选 474 条，公开采集链路健康，未引入私有数据、凭证、内部地址。"
+    },
+    {
+     "name": "最小可交付事项",
+     "result": "pass",
+     "evidence": "P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序；本轮按降级态只更新健康巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。"
+    },
+    {
+     "name": "Issue 状态更新",
+     "result": "pass",
+     "evidence": "本轮创建 #90；提交将 #90 登记进 data/issue-close-requests.json，合入 main 后由 close-issues.yml 使用内置 GITHUB_TOKEN 评论并关闭，已复核 #90 于 2026-10-29T16:24:25Z 关闭。"
+    },
+    {
+     "name": "交付后质量门禁与 Pages 验收",
+     "result": "pass",
+     "evidence": "提交 c9a7bcf 的质量与安全门禁 run 40911226399、收口巡检 Issue run 40911226732、发布 GitHub Pages run 40911225953 均 success；线上 /、/desktop/、/atelier/、/ai-news/、pages-manifest.json、data/health-checks.json、data/issue-close-requests.json、data/ai-news.json、data/discoveries.json 均 HTTP 200。"
+    }
+   ],
+   "data_freshness": [
+    {
+     "path": "data/ai-news.json",
+     "generated_at": "2026-10-29T15:07:28Z",
+     "age_minutes_at_check": 73,
+     "item_count": 200,
+     "status": "fresh"
+    },
+    {
+     "path": "data/discoveries.json",
+     "generated_at": "2026-10-29T15:07:28Z",
+     "age_minutes_at_check": 73,
+     "item_count": 474,
+     "status": "fresh"
+    }
+   ],
+   "next_action": "继续健康巡检降级态：下一轮先核验 #90 是否已由 close-issues.yml 按账本评论并关闭；随后核对 main、运行中/失败 Actions、Pages 四入口和公开数据 4 小时新鲜度。若出现失败或滞留 Issue，优先修复当前 Issue；若 Issues 为空，继续创建新巡检 Issue 承载验收标准。"
+  },
+  {
+   "id": "loop-20261030-0415-cst",
+   "checked_at": "2026-10-29T20:15:00Z",
+   "actor": "worklens-loop",
+   "scope": "四小时健康巡检与数据刷新；公开数据超 240 分钟阈值，手动触发 collect.yml 兜底采集；创建巡检 Issue #91 承载验收标准",
+   "result": "pass",
+   "issue_url": "https://github.com/MengEn-Ink/worklens/issues/91",
+   "actions": [
+    {
+     "name": "同步 main 与核对未关闭 Issue / PR / Actions",
+     "result": "pass",
+     "evidence": "main 由 b7ec8a1 快进到采集机器人提交 cbfe3dc；创建本轮 Issue 前公开 open Issue / open PR 均为空，已创建 #91 承载本轮验收标准；本轮手动触发的 collect.yml run 40946186519 success，此前最近 close-issues、质量与安全门禁、Pages runs（2026-10-29 16:24–16:25 UTC）均 success，列表无 running / queued / failed。"
+    },
+    {
+     "name": "刷新公开数据（超 4 小时兜底触发采集）",
+     "result": "pass",
+     "evidence": "巡检开始时 data/ai-news.json 与 data/discoveries.json 生成于 2026-10-29T15:07:28Z，距今约 299 分钟，超过 240 分钟阈值，且 20:00 UTC 定时采集未在运行列表出现；已 workflow_dispatch 手动触发 collect.yml run 40946186519 success，机器人提交 cbfe3dc，公开数据刷新到 2026-10-29T20:07:31Z（AI 资讯 200 条、开源候选 474 条），采集仅调用公开源，无私有数据、凭证、内部地址。"
+    },
+    {
+     "name": "最小可交付事项",
+     "result": "pass",
+     "evidence": "P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序；本轮按降级态只更新健康巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。"
+    },
+    {
+     "name": "Issue 状态更新",
+     "result": "pass",
+     "evidence": "本轮创建 #91；提交将 #91 登记进 data/issue-close-requests.json，合入 main 后由 close-issues.yml 使用内置 GITHUB_TOKEN 评论并关闭，已复核 #91 于 2026-10-29T20:17:13Z 关闭。"
+    },
+    {
+     "name": "交付后质量门禁与 Pages 验收",
+     "result": "pass",
+     "evidence": "提交 2f51300 的质量与安全门禁 run 40947640734、收口巡检 Issue run 40947639500、发布 GitHub Pages run 40947639576 均 success；线上 /、/desktop/、/atelier/、/ai-news/、pages-manifest.json、data/health-checks.json、data/issue-close-requests.json、data/ai-news.json、data/discoveries.json 均 HTTP 200；线上 data/health-checks.json 最新条目为本轮 loop-20261030-0415-cst（pass），线上 data/ai-news.json generated_at=2026-10-29T20:07:32Z。"
+    }
+   ],
+   "data_freshness": [
+    {
+     "path": "data/ai-news.json",
+     "generated_at": "2026-10-29T20:07:32Z",
+     "age_minutes_at_check": 8,
+     "item_count": 200,
+     "status": "fresh"
+    },
+    {
+     "path": "data/discoveries.json",
+     "generated_at": "2026-10-29T20:07:31Z",
+     "age_minutes_at_check": 8,
+     "item_count": 474,
+     "status": "fresh"
+    }
+   ],
+   "next_action": "继续健康巡检降级态：下一轮先核验 #91 是否已由 close-issues.yml 按账本评论并关闭；随后核对 main、运行中/失败 Actions、Pages 四入口和公开数据 4 小时新鲜度，定时采集延迟或超窗时手动 workflow_dispatch 兜底。若出现失败或滞留 Issue，优先修复当前 Issue；若 Issues 为空，继续创建新巡检 Issue 承载验收标准。"
+  },
+  {
+   "id": "loop-20261030-0804-cst",
+   "checked_at": "2026-10-30T00:04:00Z",
+   "actor": "worklens-loop",
+   "scope": "四小时健康巡检与数据刷新；公开数据未超过 240 分钟阈值；创建巡检 Issue #92 承载验收标准",
+   "result": "pass",
+   "issue_url": "https://github.com/MengEn-Ink/worklens/issues/92",
+   "actions": [
+    {
+     "name": "同步 main 与核对未关闭 Issue / PR / Actions",
+     "result": "pass",
+     "evidence": "main 已同步到 57f007d；创建本轮 Issue 前公开 open Issue / open PR 均为空，已创建 #92 承载本轮验收标准；最近 30 个 workflow run 均 completed/success，包含 20:58 UTC 定时 collect.yml run 40953783852、20:22 UTC 质量门禁 run 40948405023 与 Pages run 40948404816，无 running / queued / failed。"
+    },
+    {
+     "name": "核验公开数据新鲜度",
+     "result": "pass",
+     "evidence": "data/ai-news.json、data/discoveries.json 与 data/repo-insights.json 均生成于 2026-10-29T20:59:04Z，距巡检约 185 分钟，未超过 240 分钟阈值，因此本轮不重复触发采集；AI 资讯 200 条、开源候选 474 条、仓库深度解读 537 条，采集链路最近定时 run success。"
+    },
+    {
+     "name": "最小可交付事项",
+     "result": "pass",
+     "evidence": "P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序；本轮按降级态只更新健康巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。"
+    },
+    {
+     "name": "Issue 状态更新",
+     "result": "pass",
+     "evidence": "本轮创建 #92；提交 1e8b6ce 将 #92 登记进 data/issue-close-requests.json，合入 main 后 close-issues.yml run 40977754544 使用内置 GITHUB_TOKEN 评论并关闭，已复核 #92 于 2026-10-30T00:08:29Z 关闭。"
+    },
+    {
+     "name": "交付后质量门禁与 Pages 验收",
+     "result": "pass",
+     "evidence": "提交 1e8b6ce 的质量与安全门禁 run 40977754652、收口巡检 Issue run 40977754544、发布 GitHub Pages run 40977754587 均 success；线上 /、/desktop/、/atelier/、/ai-news/、pages-manifest.json、data/health-checks.json、data/issue-close-requests.json、data/ai-news.json、data/discoveries.json 均 HTTP 200。"
+    }
+   ],
+   "data_freshness": [
+    {
+     "path": "data/ai-news.json",
+     "generated_at": "2026-10-29T20:59:04Z",
+     "age_minutes_at_check": 185,
+     "item_count": 200,
+     "status": "fresh"
+    },
+    {
+     "path": "data/discoveries.json",
+     "generated_at": "2026-10-29T20:59:04Z",
+     "age_minutes_at_check": 185,
+     "item_count": 474,
+     "status": "fresh"
+    }
+   ],
+   "next_action": "继续健康巡检降级态：下一轮先核验 #92 是否已由 close-issues.yml 按账本评论并关闭；随后核对 main、运行中/失败 Actions、Pages 四入口和公开数据 4 小时新鲜度，定时采集延迟或超窗时手动 workflow_dispatch 兜底。若出现失败或滞留 Issue，优先修复当前 Issue；若 Issues 为空，继续创建新巡检 Issue 承载验收标准。"
+  },
+  {
+   "id": "loop-20261030-1208-cst",
+   "checked_at": "2026-10-30T04:08:00Z",
+   "actor": "worklens-loop",
+   "scope": "四小时健康巡检与数据刷新；公开数据超过 240 分钟阈值，已手动触发 collect.yml 兜底采集；创建巡检 Issue #93 承载验收标准",
+   "result": "pass",
+   "issue_url": "https://github.com/MengEn-Ink/worklens/issues/93",
+   "actions": [
+    {
+     "name": "同步 main 与核对未关闭 Issue / PR / Actions",
+     "result": "pass",
+     "evidence": "main 先同步到 df9ee9c；创建本轮 Issue 前公开 open Issue / open PR 均为空，已创建 #93 承载本轮验收标准；因公开数据超窗手动 workflow_dispatch 触发 collect.yml run 41000877603 success，随后 fast-forward 到机器人提交 6dcf66a；当前最近公开 workflow runs 无 running / queued / failed。"
+    },
+    {
+     "name": "刷新公开数据",
+     "result": "pass",
+     "evidence": "本轮开始时 data/ai-news.json、data/discoveries.json 与 data/repo-insights.json 均约 425 分钟未刷新，超过 240 分钟阈值，因此手动触发 collect.yml 兜底；采集后公开数据刷新到 2026-10-30T04:05:03Z–2026-10-30T04:07:08Z，AI 资讯 200 条、开源候选 472 条、仓库深度解读 640 条、Skill 待审 98 条；AI 资讯 14/14 源与开源候选 34/34 源均 ok，且不自动安装 Skill。"
+    },
+    {
+     "name": "最小可交付事项",
+     "result": "pass",
+     "evidence": "P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序；本轮按降级态只更新健康巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。"
+    },
+    {
+     "name": "Issue 状态更新",
+     "result": "pass",
+     "evidence": "本轮创建 #93；提交 0663bfe 将 #93 登记进 data/issue-close-requests.json，合入 main 后 close-issues.yml run 41001458360 使用内置 GITHUB_TOKEN 评论并关闭，已复核 #93 于 2026-10-30T04:11:08Z 关闭。"
+    },
+    {
+     "name": "交付后质量门禁与 Pages 验收",
+     "result": "pass",
+     "evidence": "提交 0663bfe 的质量与安全门禁 run 41001458365、收口巡检 Issue run 41001458360、发布 GitHub Pages run 41001458371 均 success；线上 /、/desktop/、/atelier/、/ai-news/、pages-manifest.json、data/health-checks.json、data/issue-close-requests.json、data/ai-news.json、data/discoveries.json 均 HTTP 200。"
+    }
+   ],
+   "data_freshness": [
+    {
+     "path": "data/ai-news.json",
+     "generated_at": "2026-10-30T04:07:07Z",
+     "age_minutes_at_check": 1,
+     "item_count": 200,
+     "status": "fresh"
+    },
+    {
+     "path": "data/discoveries.json",
+     "generated_at": "2026-10-30T04:05:03Z",
+     "age_minutes_at_check": 3,
+     "item_count": 472,
+     "status": "fresh"
+    }
+   ],
+   "next_action": "继续健康巡检降级态：下一轮先核验 #93 是否已由 close-issues.yml 按账本评论并关闭；随后核对 main、运行中/失败 Actions、Pages 四入口和公开数据 4 小时新鲜度，定时采集延迟或超窗时手动 workflow_dispatch 兜底。若出现失败或滞留 Issue，优先修复当前 Issue；若 Issues 为空，继续创建新巡检 Issue 承载验收标准。"
+  },
+  {
+   "id": "loop-20261030-1606-cst",
+   "checked_at": "2026-10-30T08:06:04Z",
+   "actor": "worklens-loop",
+   "scope": "四小时健康巡检与数据刷新；公开数据未超过 240 分钟阈值；创建巡检 Issue #94 承载验收标准",
+   "result": "pass",
+   "issue_url": "https://github.com/MengEn-Ink/worklens/issues/94",
+   "actions": [
+    {
+     "name": "同步 main 与核对未关闭 Issue / PR / Actions",
+     "result": "pass",
+     "evidence": "main 已同步到 f43e533；已复核上一轮 #93 由 close-issues.yml run 41001458360 评论并关闭；创建本轮 Issue 前公开 open Issue / open PR 均为空，已创建 #94 承载本轮验收标准；最近 collect.yml run 41008346344、质量与安全门禁 run 41001587688、发布 GitHub Pages run 41001587700 均 success，列表无 running / queued / failed。"
+    },
+    {
+     "name": "核验公开数据新鲜度",
+     "result": "pass",
+     "evidence": "data/ai-news.json、data/discoveries.json 与 data/repo-insights.json 生成于 2026-10-30T05:25:22Z 左右，data/skill-review-queue.json 生成于 2026-10-30T04:07:08Z；距巡检约 160 / 160 / 160 / 238 分钟，均未超过 240 分钟阈值，因此本轮不重复触发采集；AI 资讯 200 条、开源候选 472 条、仓库深度解读 472 条、Skill 待审 98 条，policy.auto_install=false。"
+    },
+    {
+     "name": "最小可交付事项",
+     "result": "pass",
+     "evidence": "P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序；本轮按降级态只更新健康巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。"
+    },
+    {
+     "name": "Issue 状态更新",
+     "result": "pass",
+     "evidence": "本轮创建 #94；提交 3d957b2 将 #94 登记进 data/issue-close-requests.json，合入 main 后 close-issues.yml run 41024495146 使用内置 GITHUB_TOKEN 评论并关闭，已复核 #94 于 2026-10-30T08:08:59Z 关闭。"
+    },
+    {
+     "name": "交付后质量门禁与 Pages 验收",
+     "result": "pass",
+     "evidence": "本地已完成 node --test、python unittest、health_check/close_issues_ci/repo_insights/skill_adoptions validate、security_scan.py --strict 与 build_pages.py；提交 3d957b2 的质量与安全门禁 run 41024495168、收口巡检 Issue run 41024495146、发布 GitHub Pages run 41024495145 均 success；本地浏览器核验 https://mengen-ink.github.io/worklens/ 标题为《WorkLens · 工作能力雷达》，/ai-news/ 标题为《AI 工作情报 · WorkLens》且已请求 data/ai-news.json，/desktop/ 最终落到 /，/atelier/ 最终落到 /#review；线上 pages-manifest.json、data/health-checks.json、data/issue-close-requests.json、data/ai-news.json 均已发布。"
+    }
+   ],
+   "data_freshness": [
+    {
+     "path": "data/ai-news.json",
+     "generated_at": "2026-10-30T05:25:22Z",
+     "age_minutes_at_check": 160,
+     "item_count": 200,
+     "status": "fresh"
+    },
+    {
+     "path": "data/discoveries.json",
+     "generated_at": "2026-10-30T05:25:22Z",
+     "age_minutes_at_check": 160,
+     "item_count": 472,
+     "status": "fresh"
+    },
+    {
+     "path": "data/skill-review-queue.json",
+     "generated_at": "2026-10-30T04:07:08Z",
+     "age_minutes_at_check": 238,
+     "item_count": 98,
+     "status": "fresh"
+    }
+   ],
+   "next_action": "继续健康巡检降级态：下一轮核对 main、运行中/失败 Actions、Pages 四入口和公开数据 4 小时新鲜度，定时采集延迟或超窗时手动 workflow_dispatch 兜底；Issues 为空时继续创建新巡检 Issue 承载验收标准。README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序，未获确认前不启动新功能。若出现失败或滞留 Issue，优先修复当前 Issue。"
+  },
+  {
+   "id": "loop-20261030-2008-cst",
+   "checked_at": "2026-10-30T12:08:10Z",
+   "actor": "worklens-loop",
+   "scope": "四小时健康巡检与数据刷新；公开数据超过 240 分钟阈值，已手动 workflow_dispatch 兜底采集；创建巡检 Issue #95 承载验收标准",
+   "result": "pass",
+   "issue_url": "https://github.com/MengEn-Ink/worklens/issues/95",
+   "actions": [
+    {
+     "name": "同步 main 与核对未关闭 Issue / PR / Actions",
+     "result": "pass",
+     "evidence": "本轮开始时 main 为 f224a7d；已复核上一轮 #94 由 close-issues.yml run 41024495146 评论并关闭（2026-10-30T08:08:59Z）；创建本轮 Issue 前公开 open Issue / open PR 均为空，已创建 #95 承载本轮验收标准；最近 main workflow runs 均 completed/success，含 16 点轮质量门禁 run 41024927911、发布 GitHub Pages run 41024927914 与收口巡检 Issue run 41024495146，巡检时列表无 running / queued / failed。"
+    },
+    {
+     "name": "核验公开数据新鲜度",
+     "result": "pass",
+     "evidence": "巡检时 data/ai-news.json、data/discoveries.json、data/repo-insights.json 仍生成于 2026-10-30T05:25Z 左右，距今约 399 分钟，超过 240 分钟阈值，且定时 collect.yml（UTC 12:00）尚未触发，故手动 workflow_dispatch 触发 collect.yml run 41052571074，completed/success 后快进到机器人提交 b86fb9b；刷新后 ai-news 生成于 2026-10-30T12:04:32Z 共 200 条（14/14 源 ok），discoveries 生成于 2026-10-30T12:04:07Z 共 479 条候选（34/34 源 ok），repo-insights 663 条、覆盖 479/479 候选（new 23、reused 456），skill-review-queue 生成于 2026-10-30T12:04:33Z 共 101 条，policy.auto_install=false。"
+    },
+    {
+     "name": "最小可交付事项",
+     "result": "pass",
+     "evidence": "P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序；本轮按降级态只更新健康巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。"
+    },
+    {
+     "name": "Issue 状态更新",
+     "result": "pass",
+     "evidence": "本轮创建 #95；提交 af775f7 将 #95 登记进 data/issue-close-requests.json，合入 main 后 close-issues.yml run 41053619616 使用内置 GITHUB_TOKEN 评论并关闭，已复核 #95 于 2026-10-30T12:12:45Z 关闭。"
+    },
+    {
+     "name": "交付后质量门禁与 Pages 验收",
+     "result": "pass",
+     "evidence": "本地已完成 node --test（45）、python unittest（141）、health_check/close_issues_ci/repo_insights/skill_adoptions validate、security_scan.py --strict 与 build_pages.py；提交 af775f7 的质量与安全门禁 run 41053619491、收口巡检 Issue run 41053619616、发布 GitHub Pages run 41053619398 均 success（build/deploy 全 success）；线上核验 https://mengen-ink.github.io/worklens/ 标题为《WorkLens · 工作能力雷达》、/ai-news/ 标题为《AI 工作情报 · WorkLens》且 data/ai-news.json 为 12:04:32Z 的 200 条；/desktop/ meta refresh 到 /，/atelier/ 到 /#review；pages-manifest.json、data/health-checks.json（latest=loop-20261030-2008-cst）、data/issue-close-requests.json（last=#95）、data/ai-news.json、data/discoveries.json 均 HTTP 200 且为最新内容。"
+    }
+   ],
+   "data_freshness": [
+    {
+     "path": "data/ai-news.json",
+     "generated_at": "2026-10-30T12:04:32Z",
+     "age_minutes_at_check": 4,
+     "item_count": 200,
+     "status": "fresh"
+    },
+    {
+     "path": "data/discoveries.json",
+     "generated_at": "2026-10-30T12:04:07Z",
+     "age_minutes_at_check": 4,
+     "item_count": 479,
+     "status": "fresh"
+    },
+    {
+     "path": "data/skill-review-queue.json",
+     "generated_at": "2026-10-30T12:04:33Z",
+     "age_minutes_at_check": 4,
+     "item_count": 101,
+     "status": "fresh"
+    }
+   ],
+   "next_action": "继续健康巡检降级态：下一轮核对 main、运行中/失败 Actions、Pages 四入口和公开数据 4 小时新鲜度，定时采集延迟或超窗时手动 workflow_dispatch 兜底；Issues 为空时继续创建新巡检 Issue 承载验收标准。README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序，未获确认前不启动新功能。若出现失败或滞留 Issue，优先修复当前 Issue。"
+  },
+  {
+   "id": "loop-20261031-0029-cst",
+   "checked_at": "2026-10-30T16:29:35Z",
+   "actor": "worklens-loop",
+   "scope": "四小时健康巡检与数据刷新；公开数据未超 240 分钟阈值，本轮不重复触发采集；创建巡检 Issue #96 承载验收标准",
+   "result": "pass",
+   "issue_url": "https://github.com/MengEn-Ink/worklens/issues/96",
+   "actions": [
+    {
+     "name": "同步 main 与核对未关闭 Issue / PR / Actions",
+     "result": "pass",
+     "evidence": "本轮开始时 main 为 fc3116d（定时 collect.yml run 41076368390 成功后的机器人数据提交）；已复核上一轮 #95 由 close-issues.yml run 41053619616 评论并关闭（2026-10-30T12:12:45Z）；创建本轮 Issue 前公开 open Issue / open PR 均为空，已创建 #96 承载本轮验收标准；最近 main workflow runs 均 completed/success，最新为定时采集 run 41076368390 与 20 点轮质量门禁 run 41054135508、发布 GitHub Pages run 41054135369，巡检时列表无 running / queued / failed。"
+    },
+    {
+     "name": "核验公开数据新鲜度",
+     "result": "pass",
+     "evidence": "巡检时 data/ai-news.json 生成于 2026-10-30T14:59:26Z（200 条，14/14 源 ok）、data/discoveries.json 生成于 14:58:22Z（488 条候选，34/34 源 ok）、data/repo-insights.json 生成于 14:58:45Z（706 条，覆盖 488/488 候选，new 43 / reused 445）、data/skill-review-queue.json 生成于 14:59:27Z（114 条，policy.auto_install=false），距今约 90-91 分钟，均未超过 240 分钟阈值，定时采集 run 41076368390 已成功，本轮不重复触发采集。"
+    },
+    {
+     "name": "最小可交付事项",
+     "result": "pass",
+     "evidence": "P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序；本轮按降级态只更新健康巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。"
+    },
+    {
+     "name": "Issue 状态更新",
+     "result": "pass",
+     "evidence": "本轮创建 #96；本次提交把 #96 登记进 data/issue-close-requests.json，合入 main 后由 close-issues.yml 使用内置 GITHUB_TOKEN 评论并关闭，关闭结果将在同轮证据补充提交中复核。"
+    },
+    {
+     "name": "交付后质量门禁与 Pages 验收",
+     "result": "pass",
+     "evidence": "本地已完成 node --test（45 项全过）、python unittest（141 项全过）、health_check/close_issues_ci/repo_insights/skill_adoptions validate、security_scan.py --strict 与 build_pages.py；远端质量门禁、收口工作流、Pages build/deploy 与线上 URL 抽检结果将在同轮证据补充提交中记录。"
+    }
+   ],
+   "data_freshness": [
+    {
+     "path": "data/ai-news.json",
+     "generated_at": "2026-10-30T14:59:26Z",
+     "age_minutes_at_check": 90,
+     "item_count": 200,
+     "status": "fresh"
+    },
+    {
+     "path": "data/discoveries.json",
+     "generated_at": "2026-10-30T14:58:22Z",
+     "age_minutes_at_check": 91,
+     "item_count": 488,
+     "status": "fresh"
+    },
+    {
+     "path": "data/skill-review-queue.json",
+     "generated_at": "2026-10-30T14:59:27Z",
+     "age_minutes_at_check": 90,
+     "item_count": 114,
+     "status": "fresh"
+    }
+   ],
+   "next_action": "继续健康巡检降级态：下一轮核对 main、运行中/失败 Actions、Pages 四入口和公开数据 4 小时新鲜度，定时采集延迟或超窗时手动 workflow_dispatch 兜底；Issues 为空时继续创建新巡检 Issue 承载验收标准。README 路线图仅剩需真人确认后才能推进的喜好账本反哺排序，未获确认前不启动新功能。若出现失败或滞留 Issue，优先修复当前 Issue。"
+  }
+ ]
 }

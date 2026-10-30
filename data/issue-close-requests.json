@@ -1,82 +1,90 @@
 {
-  "schema_version": 1,
-  "policy": {
-    "public_only": true,
-    "close_via_ci_only": true,
-    "description": "仅登记 WorkLens Loop 在公开仓库内提出的 Issue 收口请求；由 GitHub Actions 内置 GITHUB_TOKEN（issues: write）执行，账本不存放任何凭证。"
+ "schema_version": 1,
+ "policy": {
+  "public_only": true,
+  "close_via_ci_only": true,
+  "description": "仅登记 WorkLens Loop 在公开仓库内提出的 Issue 收口请求；由 GitHub Actions 内置 GITHUB_TOKEN（issues: write）执行，账本不存放任何凭证。"
+ },
+ "requests": [
+  {
+   "issue": 85,
+   "title": "健康巡检：2026-10-29 12 点 WorkLens Loop",
+   "reason": "12 点轮健康巡检验收标准已全部满足：main/Actions/Pages 与公开数据新鲜度均健康，P0–P4 目标保持上线并处于健康巡检降级态；沙箱 fine-grained PAT 对 Issue 评论/关闭返回 403，PR #86 合入也未自动关单，改由 CI 内置 GITHUB_TOKEN 收口。",
+   "evidence_ref": "docs/loop-log.md",
+   "requested_by": "worklens-loop",
+   "requested_at": "2026-10-29T08:15:00Z"
   },
-  "requests": [
-    {
-      "issue": 85,
-      "title": "健康巡检：2026-10-29 12 点 WorkLens Loop",
-      "reason": "12 点轮健康巡检验收标准已全部满足：main/Actions/Pages 与公开数据新鲜度均健康，P0–P4 目标保持上线并处于健康巡检降级态；沙箱 fine-grained PAT 对 Issue 评论/关闭返回 403，PR #86 合入也未自动关单，改由 CI 内置 GITHUB_TOKEN 收口。",
-      "evidence_ref": "docs/loop-log.md",
-      "requested_by": "worklens-loop",
-      "requested_at": "2026-10-29T08:15:00Z"
-    },
-    {
-      "issue": 88,
-      "title": "健康巡检：2026-10-29 16 点 WorkLens Loop",
-      "reason": "16 点轮健康巡检全部 pass：main/Actions/Pages 健康，三份公开数据 178 分钟内新鲜；滞留的 12 点轮 #85 已收口，CI Issue 收口机制（PR #87）已上线并验证幂等跳过；P0–P4 保持上线降级态。本轮承载 Issue 按账本机制收口。",
-      "evidence_ref": "data/health-checks.json",
-      "requested_by": "worklens-loop",
-      "requested_at": "2026-10-29T08:25:00Z"
-    },
-    {
-      "issue": 89,
-      "title": "健康巡检：2026-10-29 20 点 WorkLens Loop",
-      "reason": "20 点轮健康巡检与数据刷新全部完成：手动触发 collect.yml run 40870761289 success（机器人提交 fb100b7，公开数据刷新到 2026-10-29T12:08–12:10Z），并手动触发 pages.yml run 40871601597 success（线上四入口与关键 data JSON 均 200）；fine-grained PAT 对 Issue comment/close 返回 403，因此按既定账本机制由 CI 内置 GITHUB_TOKEN 收口。",
-      "evidence_ref": "data/health-checks.json",
-      "requested_by": "worklens-loop",
-      "requested_at": "2026-10-29T12:20:00Z"
-    },
-    {
-      "issue": 90,
-      "title": "健康巡检：2026-10-30 00 点 WorkLens Loop",
-      "reason": "00 点轮健康巡检完成：main 已同步到 40e52d9，巡检前 open Issue 为空；最近 collect、close-issues、质量门禁与 Pages workflows 均 success；data/ai-news.json 与 data/discoveries.json 距巡检约 73 分钟，未超过 240 分钟阈值，因此不重复触发采集。本轮按降级态只更新公开巡检账本与轮次日志，未引入私有数据、凭证、内部地址或未经评测自动安装 Skill。",
-      "evidence_ref": "data/health-checks.json",
-      "requested_by": "worklens-loop",
-      "requested_at": "2026-10-29T16:20:00Z"
-    },
-    {
-      "issue": 91,
-      "title": "健康巡检：2026-10-30 04 点 WorkLens Loop",
-      "reason": "04 点轮健康巡检与数据刷新全部完成：开始时公开数据生成于 2026-10-29T15:07Z（约 299 分钟）超过 240 分钟阈值，已手动触发 collect.yml run 40946186519 success，机器人提交 cbfe3dc，数据刷新到 2026-10-29T20:07Z（AI 资讯 200 条、开源候选 474 条）；main/Actions/Pages 无失败，P0–P4 保持上线降级态；未引入私有数据、凭证、内部地址或未经评测自动安装 Skill。本轮承载 Issue 按账本机制由 CI 内置 GITHUB_TOKEN 收口。",
-      "evidence_ref": "data/health-checks.json",
-      "requested_by": "worklens-loop",
-      "requested_at": "2026-10-29T20:15:00Z"
-    },
-    {
-      "issue": 92,
-      "title": "健康巡检：2026-10-30 08 点 WorkLens Loop",
-      "reason": "08 点轮健康巡检完成：main 已同步到 57f007d，巡检前 open Issue / open PR 均为空；最近 30 个 workflow run 均 completed/success，包含 20:58 UTC 定时 collect.yml run 40953783852；data/ai-news.json、data/discoveries.json 与 data/repo-insights.json 距巡检约 185 分钟，未超过 240 分钟阈值，因此不重复触发采集。本轮按降级态只更新公开巡检账本与轮次日志，未引入私有数据、凭证、内部地址或未经评测自动安装 Skill。",
-      "evidence_ref": "data/health-checks.json",
-      "requested_by": "worklens-loop",
-      "requested_at": "2026-10-30T00:04:00Z"
-    },
-    {
-      "issue": 93,
-      "title": "健康巡检：2026-10-30 12 点 WorkLens Loop",
-      "reason": "12 点轮健康巡检与数据刷新已完成：本轮开始时公开数据超过 240 分钟阈值，已手动触发 collect.yml run 41000877603 兜底采集并快进到机器人提交 6dcf66a；公开数据刷新到 2026-10-30T04:05:03Z–2026-10-30T04:07:08Z，AI 资讯 200 条、开源候选 472 条、仓库深度解读 640 条、Skill 待审 98 条，且不自动安装 Skill。P0–P4 目标继续保持上线并处于健康巡检降级态；本轮承载 Issue 继续通过账本 + CI 内置 GITHUB_TOKEN 收口。",
-      "evidence_ref": "data/health-checks.json",
-      "requested_by": "worklens-loop",
-      "requested_at": "2026-10-30T04:08:00Z"
-    },
-    {
-      "issue": 94,
-      "title": "健康巡检：2026-10-30 16 点 WorkLens Loop",
-      "reason": "16 点轮健康巡检完成：main 已同步到 f43e533，巡检前 open Issue / open PR 均为空；最近 collect.yml run 41008346344、质量门禁 run 41001587688、Pages run 41001587700 与收口工作流 run 41001458360 均 success。data/ai-news.json、data/discoveries.json、data/repo-insights.json 与 data/skill-review-queue.json 距巡检 160 / 160 / 160 / 238 分钟，未超过 240 分钟阈值，因此不重复触发采集；P0–P4 继续保持上线降级态，本轮承载 Issue 由账本 + CI 内置 GITHUB_TOKEN 收口。",
-      "evidence_ref": "docs/loop-log.md",
-      "requested_by": "worklens-loop",
-      "requested_at": "2026-10-30T08:06:04Z"
-    },
-    {
-      "issue": 95,
-      "title": "健康巡检：2026-10-30 20 点 WorkLens Loop",
-      "reason": "20 点轮健康巡检与数据刷新已完成：巡检时公开数据距上次采集约 399 分钟，超过 240 分钟阈值，已手动 workflow_dispatch 触发 collect.yml run 41052571074 兜底采集并快进到机器人提交 b86fb9b；公开数据刷新到 2026-10-30T12:04:07Z–2026-10-30T12:04:33Z，AI 资讯 200 条（14/14 源 ok）、开源候选 479 条（34/34 源 ok）、仓库深度解读 663 条（覆盖 479/479）、Skill 待审 101 条，且不自动安装 Skill。P0–P4 目标继续保持上线并处于健康巡检降级态；本轮承载 Issue 继续通过账本 + CI 内置 GITHUB_TOKEN 收口。",
-      "evidence_ref": "data/health-checks.json",
-      "requested_by": "worklens-loop",
-      "requested_at": "2026-10-30T12:08:10Z"
-    }
-  ]
+  {
+   "issue": 88,
+   "title": "健康巡检：2026-10-29 16 点 WorkLens Loop",
+   "reason": "16 点轮健康巡检全部 pass：main/Actions/Pages 健康，三份公开数据 178 分钟内新鲜；滞留的 12 点轮 #85 已收口，CI Issue 收口机制（PR #87）已上线并验证幂等跳过；P0–P4 保持上线降级态。本轮承载 Issue 按账本机制收口。",
+   "evidence_ref": "data/health-checks.json",
+   "requested_by": "worklens-loop",
+   "requested_at": "2026-10-29T08:25:00Z"
+  },
+  {
+   "issue": 89,
+   "title": "健康巡检：2026-10-29 20 点 WorkLens Loop",
+   "reason": "20 点轮健康巡检与数据刷新全部完成：手动触发 collect.yml run 40870761289 success（机器人提交 fb100b7，公开数据刷新到 2026-10-29T12:08–12:10Z），并手动触发 pages.yml run 40871601597 success（线上四入口与关键 data JSON 均 200）；fine-grained PAT 对 Issue comment/close 返回 403，因此按既定账本机制由 CI 内置 GITHUB_TOKEN 收口。",
+   "evidence_ref": "data/health-checks.json",
+   "requested_by": "worklens-loop",
+   "requested_at": "2026-10-29T12:20:00Z"
+  },
+  {
+   "issue": 90,
+   "title": "健康巡检：2026-10-30 00 点 WorkLens Loop",
+   "reason": "00 点轮健康巡检完成：main 已同步到 40e52d9，巡检前 open Issue 为空；最近 collect、close-issues、质量门禁与 Pages workflows 均 success；data/ai-news.json 与 data/discoveries.json 距巡检约 73 分钟，未超过 240 分钟阈值，因此不重复触发采集。本轮按降级态只更新公开巡检账本与轮次日志，未引入私有数据、凭证、内部地址或未经评测自动安装 Skill。",
+   "evidence_ref": "data/health-checks.json",
+   "requested_by": "worklens-loop",
+   "requested_at": "2026-10-29T16:20:00Z"
+  },
+  {
+   "issue": 91,
+   "title": "健康巡检：2026-10-30 04 点 WorkLens Loop",
+   "reason": "04 点轮健康巡检与数据刷新全部完成：开始时公开数据生成于 2026-10-29T15:07Z（约 299 分钟）超过 240 分钟阈值，已手动触发 collect.yml run 40946186519 success，机器人提交 cbfe3dc，数据刷新到 2026-10-29T20:07Z（AI 资讯 200 条、开源候选 474 条）；main/Actions/Pages 无失败，P0–P4 保持上线降级态；未引入私有数据、凭证、内部地址或未经评测自动安装 Skill。本轮承载 Issue 按账本机制由 CI 内置 GITHUB_TOKEN 收口。",
+   "evidence_ref": "data/health-checks.json",
+   "requested_by": "worklens-loop",
+   "requested_at": "2026-10-29T20:15:00Z"
+  },
+  {
+   "issue": 92,
+   "title": "健康巡检：2026-10-30 08 点 WorkLens Loop",
+   "reason": "08 点轮健康巡检完成：main 已同步到 57f007d，巡检前 open Issue / open PR 均为空；最近 30 个 workflow run 均 completed/success，包含 20:58 UTC 定时 collect.yml run 40953783852；data/ai-news.json、data/discoveries.json 与 data/repo-insights.json 距巡检约 185 分钟，未超过 240 分钟阈值，因此不重复触发采集。本轮按降级态只更新公开巡检账本与轮次日志，未引入私有数据、凭证、内部地址或未经评测自动安装 Skill。",
+   "evidence_ref": "data/health-checks.json",
+   "requested_by": "worklens-loop",
+   "requested_at": "2026-10-30T00:04:00Z"
+  },
+  {
+   "issue": 93,
+   "title": "健康巡检：2026-10-30 12 点 WorkLens Loop",
+   "reason": "12 点轮健康巡检与数据刷新已完成：本轮开始时公开数据超过 240 分钟阈值，已手动触发 collect.yml run 41000877603 兜底采集并快进到机器人提交 6dcf66a；公开数据刷新到 2026-10-30T04:05:03Z–2026-10-30T04:07:08Z，AI 资讯 200 条、开源候选 472 条、仓库深度解读 640 条、Skill 待审 98 条，且不自动安装 Skill。P0–P4 目标继续保持上线并处于健康巡检降级态；本轮承载 Issue 继续通过账本 + CI 内置 GITHUB_TOKEN 收口。",
+   "evidence_ref": "data/health-checks.json",
+   "requested_by": "worklens-loop",
+   "requested_at": "2026-10-30T04:08:00Z"
+  },
+  {
+   "issue": 94,
+   "title": "健康巡检：2026-10-30 16 点 WorkLens Loop",
+   "reason": "16 点轮健康巡检完成：main 已同步到 f43e533，巡检前 open Issue / open PR 均为空；最近 collect.yml run 41008346344、质量门禁 run 41001587688、Pages run 41001587700 与收口工作流 run 41001458360 均 success。data/ai-news.json、data/discoveries.json、data/repo-insights.json 与 data/skill-review-queue.json 距巡检 160 / 160 / 160 / 238 分钟，未超过 240 分钟阈值，因此不重复触发采集；P0–P4 继续保持上线降级态，本轮承载 Issue 由账本 + CI 内置 GITHUB_TOKEN 收口。",
+   "evidence_ref": "docs/loop-log.md",
+   "requested_by": "worklens-loop",
+   "requested_at": "2026-10-30T08:06:04Z"
+  },
+  {
+   "issue": 95,
+   "title": "健康巡检：2026-10-30 20 点 WorkLens Loop",
+   "reason": "20 点轮健康巡检与数据刷新已完成：巡检时公开数据距上次采集约 399 分钟，超过 240 分钟阈值，已手动 workflow_dispatch 触发 collect.yml run 41052571074 兜底采集并快进到机器人提交 b86fb9b；公开数据刷新到 2026-10-30T12:04:07Z–2026-10-30T12:04:33Z，AI 资讯 200 条（14/14 源 ok）、开源候选 479 条（34/34 源 ok）、仓库深度解读 663 条（覆盖 479/479）、Skill 待审 101 条，且不自动安装 Skill。P0–P4 目标继续保持上线并处于健康巡检降级态；本轮承载 Issue 继续通过账本 + CI 内置 GITHUB_TOKEN 收口。",
+   "evidence_ref": "data/health-checks.json",
+   "requested_by": "worklens-loop",
+   "requested_at": "2026-10-30T12:08:10Z"
+  },
+  {
+   "issue": 96,
+   "title": "健康巡检：2026-10-31 00 点 WorkLens Loop",
+   "reason": "00 点轮健康巡检与数据新鲜度复核完成：main 已同步到 fc3116d，巡检前 open Issue / open PR 均为空；定时 collect.yml run 41076368390、20 点轮质量门禁 run 41054135508、Pages run 41054135369 与收口工作流 run 41053619616 均 success。四份公开数据生成于 2026-10-30T14:58Z-14:59Z，距巡检约 90 分钟，未超 240 分钟阈值，本轮不重复触发采集；AI 资讯 200 条（14/14 源 ok）、开源候选 488 条（34/34 源 ok）、仓库深度解读 706 条（覆盖 488/488）、Skill 待审 114 条，不自动安装 Skill。P0-P4 保持上线降级态；本轮 Issue 由账本 + CI 内置 GITHUB_TOKEN 收口。",
+   "evidence_ref": "data/health-checks.json",
+   "requested_by": "worklens-loop",
+   "requested_at": "2026-10-30T16:29:35Z"
+  }
+ ]
 }
