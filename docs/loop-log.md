@@ -10,13 +10,13 @@
 - Actions 巡检：本轮先手动触发 `collect.yml` 的 workflow_dispatch run #41000877603，并已成功完成；检查最近公开 workflow runs，无 running / queued / failed。
 - 数据刷新：本轮开始时 `data/ai-news.json`、`data/discoveries.json` 与 `data/repo-insights.json` 距当前约 425 分钟，超过 240 分钟阈值，因此手动触发采集兜底；采集成功后刷新到 `2026-10-30T04:05:03Z`–`2026-10-30T04:07:08Z`，AI 资讯 200 条、开源候选 472 条、仓库深度解读 640 条、Skill 待审 98 条，AI 资讯 14/14 源与开源候选 34/34 源均 `ok`，未自动安装 Skill。
 - 最小可交付：P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的「喜好账本反哺排序」；本轮继续健康巡检降级态，只更新公开巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。
-- Issue 收口：已登记 #93 到 `data/issue-close-requests.json`，合入 main 后由 `close-issues.yml` 用内置 `GITHUB_TOKEN`（issues: write）评论并关闭。
+- Issue 收口：已登记 #93 到 `data/issue-close-requests.json`，合入 main 后 `close-issues.yml` run #41001458360 使用内置 `GITHUB_TOKEN`（issues: write）评论并关闭 #93，关闭时间 `2026-10-30T04:11:08Z`。
 
 **验证证据**
 
 - 本地质量门禁（main `6dcf66a`）：`node --test tests/*.js` 通过；`python3 -m unittest discover -s tests -p 'test_*.py'` 通过。
 - 契约与安全：`health_check.py validate`、`close_issues_ci.py validate`、`repo_insights.py validate`、`skill_adoptions.py validate`、`security_scan.py --strict` 与 `build_pages.py` 均通过。
-- 远端门禁与 Pages：待推送后复核 `ci.yml`、`close-issues.yml`、`pages.yml` 与线上 `/`、`/desktop/`、`/atelier/`、`/ai-news/`、公开 data JSON。
+- 远端门禁与 Pages：提交 `0663bfe` 的「质量与安全门禁」run #41001458365、「收口巡检 Issue」run #41001458360、「发布 GitHub Pages」run #41001458371 均 success；线上 `/`、`/desktop/`、`/atelier/`、`/ai-news/`、`pages-manifest.json`、`data/health-checks.json`、`data/issue-close-requests.json`、`data/ai-news.json`、`data/discoveries.json` 均 HTTP 200。
 
 **下一轮唯一最高优先级**
 
