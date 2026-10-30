@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-30T14:59:27.212738+00:00",
+  "generated_at": "2026-10-30T20:02:31.812416+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -2676,11 +2676,11 @@
       "source": "trending:weekly/python",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T12:10:02.308918+00:00",
-      "metadata_synced_at": "2026-10-29T12:10:02.308918+00:00",
+      "metadata_synced_at": "2026-10-30T20:02:31.799326+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 65833,
+      "stars": 65996,
       "pushed_at": "2026-10-28T16:30:58Z",
       "checks": {
         "license_declared": {
@@ -2708,11 +2708,11 @@
       "source": "trending:weekly/typescript",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T12:10:02.309952+00:00",
-      "metadata_synced_at": "2026-10-29T12:10:02.309952+00:00",
+      "metadata_synced_at": "2026-10-30T20:02:31.800350+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 37096,
+      "stars": 37269,
       "pushed_at": "2026-10-29T00:49:36Z",
       "checks": {
         "license_declared": {

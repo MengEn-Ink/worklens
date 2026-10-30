@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T14:58:22.918715+00:00",
+  "generated_at": "2026-10-30T20:02:25.364968+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -876,15 +876,15 @@
         "wifi-security"
       ],
       "language": "Rust",
-      "stars": 101458,
-      "forks": 13184,
-      "open_issues": 506,
+      "stars": 101738,
+      "forks": 13215,
+      "open_issues": 517,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-29T11:57:21Z",
-      "updated_at": "2026-10-29T12:07:55Z",
+      "pushed_at": "2026-10-30T18:11:36Z",
+      "updated_at": "2026-10-30T19:58:20Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-10-29T12:08:25.858098+00:00",
+      "collected_at": "2026-10-30T20:02:29.303280+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -1635,15 +1635,15 @@
         "youtube"
       ],
       "language": "Python",
-      "stars": 65833,
-      "forks": 5728,
-      "open_issues": 15,
+      "stars": 65996,
+      "forks": 5748,
+      "open_issues": 16,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-10-28T16:30:58Z",
-      "updated_at": "2026-10-29T11:49:50Z",
+      "updated_at": "2026-10-30T19:30:19Z",
       "source": "trending:weekly/python",
-      "collected_at": "2026-10-29T12:08:32.351995+00:00",
+      "collected_at": "2026-10-30T20:02:27.501295+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -1852,6 +1852,44 @@
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
+      "full_name": "KeygraphHQ/shannon",
+      "html_url": "https://github.com/KeygraphHQ/shannon",
+      "description": "Shannon is an AI pentester for web applications and APIs. It analyzes your source code, identifies attack vectors, and executes real exploits to prove vulnerabilities before they reach production.",
+      "topics": [
+        "ai-penetration-testing",
+        "ai-security",
+        "api-security",
+        "appsec",
+        "ci-cd",
+        "cybersecurity",
+        "devsecops",
+        "ethical-hacking",
+        "offensive-security",
+        "owasp",
+        "penetration-testing",
+        "pentesting",
+        "pentesting-tools",
+        "red-teaming",
+        "sarif",
+        "security",
+        "security-audit",
+        "security-automation",
+        "security-testing",
+        "security-tools"
+      ],
+      "language": "TypeScript",
+      "stars": 50575,
+      "forks": 5825,
+      "open_issues": 29,
+      "license": "AGPL-3.0",
+      "archived": false,
+      "pushed_at": "2026-10-27T06:17:04Z",
+      "updated_at": "2026-10-30T19:47:48Z",
+      "source": "trending:daily/typescript",
+      "collected_at": "2026-10-30T20:02:27.050569+00:00",
+      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
+    },
+    {
       "full_name": "HKUDS/DeepTutor",
       "html_url": "https://github.com/HKUDS/DeepTutor",
       "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
@@ -1882,44 +1920,6 @@
       ],
       "relationships": [],
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
-    },
-    {
-      "full_name": "KeygraphHQ/shannon",
-      "html_url": "https://github.com/KeygraphHQ/shannon",
-      "description": "Shannon is an AI pentester for web applications and APIs. It analyzes your source code, identifies attack vectors, and executes real exploits to prove vulnerabilities before they reach production.",
-      "topics": [
-        "ai-penetration-testing",
-        "ai-security",
-        "api-security",
-        "appsec",
-        "ci-cd",
-        "cybersecurity",
-        "devsecops",
-        "ethical-hacking",
-        "offensive-security",
-        "owasp",
-        "penetration-testing",
-        "pentesting",
-        "pentesting-tools",
-        "red-teaming",
-        "sarif",
-        "security",
-        "security-audit",
-        "security-automation",
-        "security-testing",
-        "security-tools"
-      ],
-      "language": "TypeScript",
-      "stars": 50291,
-      "forks": 5783,
-      "open_issues": 29,
-      "license": "AGPL-3.0",
-      "archived": false,
-      "pushed_at": "2026-10-27T06:17:04Z",
-      "updated_at": "2026-10-29T12:07:43Z",
-      "source": "trending:daily/typescript",
-      "collected_at": "2026-10-29T12:08:30.965837+00:00",
-      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
       "full_name": "mudler/LocalAI",
@@ -2406,11 +2406,12 @@
       "archived": false,
       "pushed_at": "2026-10-29T12:01:49Z",
       "updated_at": "2026-10-29T12:02:14Z",
-      "source": "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}",
+      "source": "search:topic:ai-agent stars:>500 archived:false",
       "collected_at": "2026-10-29T12:08:18.125888+00:00",
       "also_seen_in": [
-        "search:topic:ai-agent stars:>500 archived:false"
+        "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
@@ -2752,15 +2753,15 @@
         "wireguard"
       ],
       "language": "Go",
-      "stars": 38286,
-      "forks": 3380,
-      "open_issues": 4819,
+      "stars": 38362,
+      "forks": 3391,
+      "open_issues": 4816,
       "license": "BSD-3-Clause",
       "archived": false,
-      "pushed_at": "2026-10-29T12:04:18Z",
-      "updated_at": "2026-10-29T11:49:56Z",
+      "pushed_at": "2026-10-30T19:08:43Z",
+      "updated_at": "2026-10-30T19:40:47Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-10-29T12:08:33.572965+00:00",
+      "collected_at": "2026-10-30T20:02:28.860434+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -2830,6 +2831,44 @@
         "MengEn-Ink:starred"
       ],
       "first_seen_at": "2026-10-28T06:51:48.450207+00:00"
+    },
+    {
+      "full_name": "vercel-labs/skills",
+      "html_url": "https://github.com/vercel-labs/skills",
+      "description": "The open agent skills tool - npx skills",
+      "topics": [],
+      "language": "TypeScript",
+      "stars": 37269,
+      "forks": 3214,
+      "open_issues": 1211,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-10-29T00:49:36Z",
+      "updated_at": "2026-10-30T20:00:24Z",
+      "source": "trending:weekly/typescript",
+      "collected_at": "2026-10-30T20:02:28.003265+00:00",
+      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
+    },
+    {
+      "full_name": "p-e-w/heretic",
+      "html_url": "https://github.com/p-e-w/heretic",
+      "description": "Fully automatic censorship removal for language models",
+      "topics": [
+        "abliteration",
+        "llm",
+        "transformer"
+      ],
+      "language": "Python",
+      "stars": 37206,
+      "forks": 4242,
+      "open_issues": 66,
+      "license": "AGPL-3.0",
+      "archived": false,
+      "pushed_at": "2026-10-30T14:58:40Z",
+      "updated_at": "2026-10-30T19:32:46Z",
+      "source": "trending:daily/python",
+      "collected_at": "2026-10-30T20:02:26.584775+00:00",
+      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
       "full_name": "can1357/oh-my-pi",
@@ -2908,44 +2947,6 @@
       "first_seen_at": "2026-10-28T06:51:48.450200+00:00"
     },
     {
-      "full_name": "vercel-labs/skills",
-      "html_url": "https://github.com/vercel-labs/skills",
-      "description": "The open agent skills tool - npx skills",
-      "topics": [],
-      "language": "TypeScript",
-      "stars": 37096,
-      "forks": 3192,
-      "open_issues": 1205,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-10-29T00:49:36Z",
-      "updated_at": "2026-10-29T12:08:21Z",
-      "source": "trending:weekly/typescript",
-      "collected_at": "2026-10-29T12:08:32.990251+00:00",
-      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
-    },
-    {
-      "full_name": "p-e-w/heretic",
-      "html_url": "https://github.com/p-e-w/heretic",
-      "description": "Fully automatic censorship removal for language models",
-      "topics": [
-        "abliteration",
-        "llm",
-        "transformer"
-      ],
-      "language": "Python",
-      "stars": 37042,
-      "forks": 4210,
-      "open_issues": 65,
-      "license": "AGPL-3.0",
-      "archived": false,
-      "pushed_at": "2026-10-29T09:40:55Z",
-      "updated_at": "2026-10-29T12:07:31Z",
-      "source": "trending:daily/python",
-      "collected_at": "2026-10-29T12:08:27.437712+00:00",
-      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
-    },
-    {
       "full_name": "agentscope-ai/QwenPaw",
       "html_url": "https://github.com/agentscope-ai/QwenPaw",
       "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
@@ -2997,15 +2998,15 @@
         "windows"
       ],
       "language": "Go",
-      "stars": 36809,
-      "forks": 1914,
-      "open_issues": 355,
+      "stars": 36845,
+      "forks": 1916,
+      "open_issues": 365,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-29T00:20:44Z",
-      "updated_at": "2026-10-29T11:05:27Z",
+      "pushed_at": "2026-10-30T17:18:01Z",
+      "updated_at": "2026-10-30T19:43:50Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-10-29T12:08:34.030579+00:00",
+      "collected_at": "2026-10-30T20:02:28.451557+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -3098,11 +3099,12 @@
       "archived": false,
       "pushed_at": "2026-10-29T12:01:33Z",
       "updated_at": "2026-10-29T12:05:02Z",
-      "source": "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}",
+      "source": "search:topic:ai-agent stars:>500 archived:false",
       "collected_at": "2026-10-29T12:08:18.125893+00:00",
       "also_seen_in": [
-        "search:topic:ai-agent stars:>500 archived:false"
+        "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
@@ -3208,15 +3210,15 @@
       "description": "Algorithm powering the For You feed on X",
       "topics": [],
       "language": "Rust",
-      "stars": 33891,
-      "forks": 5480,
-      "open_issues": 156,
+      "stars": 33919,
+      "forks": 5484,
+      "open_issues": 158,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-10-29T02:57:56Z",
-      "updated_at": "2026-10-29T11:43:09Z",
+      "pushed_at": "2026-10-30T01:27:44Z",
+      "updated_at": "2026-10-30T19:42:10Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-10-29T12:08:35.740346+00:00",
+      "collected_at": "2026-10-30T20:02:29.703658+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -3484,15 +3486,15 @@
       "description": "Unlimited OCR Works: Welcome the Era of One-shot Long-horizon Parsing.",
       "topics": [],
       "language": "Python",
-      "stars": 29664,
-      "forks": 3164,
-      "open_issues": 94,
+      "stars": 29946,
+      "forks": 3194,
+      "open_issues": 93,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-10-29T09:15:34Z",
-      "updated_at": "2026-10-29T12:07:17Z",
+      "updated_at": "2026-10-30T20:01:05Z",
       "source": "trending:daily/python",
-      "collected_at": "2026-10-29T12:08:27.984749+00:00",
+      "collected_at": "2026-10-30T20:02:26.152261+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -4679,7 +4681,6 @@
       "also_seen_in": [
         "trending:daily/typescript"
       ],
-      "relationships": [],
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -5764,6 +5765,23 @@
       "first_seen_at": "2026-10-30T04:05:03.566212+00:00"
     },
     {
+      "full_name": "jakubkrehel/skills",
+      "html_url": "https://github.com/jakubkrehel/skills",
+      "description": "A collection of agent skills that help you build great interfaces.",
+      "topics": [],
+      "language": "Markdown",
+      "stars": 9319,
+      "forks": 356,
+      "open_issues": 10,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-10-25T13:26:17Z",
+      "updated_at": "2026-10-30T20:00:04Z",
+      "source": "trending:weekly/all",
+      "collected_at": "2026-10-30T20:02:25.742158+00:00",
+      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
+    },
+    {
       "full_name": "togg53192-cmd/jailbreaks",
       "html_url": "https://github.com/togg53192-cmd/jailbreaks",
       "description": "LIST OF ALL MY JAILBREAKS",
@@ -5807,23 +5825,6 @@
       "source": "search:topic:shadcn-ui stars:>200 archived:false",
       "collected_at": "2026-10-30T04:05:30.085667+00:00",
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
-    },
-    {
-      "full_name": "jakubkrehel/skills",
-      "html_url": "https://github.com/jakubkrehel/skills",
-      "description": "A collection of agent skills that help you build great interfaces.",
-      "topics": [],
-      "language": "Markdown",
-      "stars": 9100,
-      "forks": 347,
-      "open_issues": 9,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-10-25T13:26:17Z",
-      "updated_at": "2026-10-29T12:02:25Z",
-      "source": "trending:weekly/all",
-      "collected_at": "2026-10-29T12:08:26.795623+00:00",
-      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
       "full_name": "mfontanini/presenterm",
@@ -8396,6 +8397,31 @@
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
+      "full_name": "trymirai/uzu",
+      "html_url": "https://github.com/trymirai/uzu",
+      "description": "A high-performance inference engine for AI models",
+      "topics": [
+        "ai",
+        "high-performance",
+        "inference",
+        "llm",
+        "metal",
+        "rust",
+        "tts"
+      ],
+      "language": "Rust",
+      "stars": 3097,
+      "forks": 199,
+      "open_issues": 23,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-10-30T19:30:36Z",
+      "updated_at": "2026-10-30T19:46:32Z",
+      "source": "trending:weekly/rust",
+      "collected_at": "2026-10-30T20:02:30.078262+00:00",
+      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
+    },
+    {
       "full_name": "PurpleDoubleD/locally-uncensored",
       "html_url": "https://github.com/PurpleDoubleD/locally-uncensored",
       "description": "The all-in-one local AI studio for your desktop: chat, image and video generation and a coding agent in one free, open source app. Windows and Linux. No Docker, no terminal, no cloud required.",
@@ -8515,31 +8541,6 @@
       "source": "search:topic:self-hosted stars:>2000 archived:false pushed:>{days_ago:30}",
       "collected_at": "2026-10-30T04:05:39.689529+00:00",
       "first_seen_at": "2026-10-30T04:05:03.566212+00:00"
-    },
-    {
-      "full_name": "trymirai/uzu",
-      "html_url": "https://github.com/trymirai/uzu",
-      "description": "A high-performance inference engine for AI models",
-      "topics": [
-        "ai",
-        "high-performance",
-        "inference",
-        "llm",
-        "metal",
-        "rust",
-        "tts"
-      ],
-      "language": "Rust",
-      "stars": 3018,
-      "forks": 185,
-      "open_issues": 25,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-10-29T11:55:37Z",
-      "updated_at": "2026-10-29T11:02:15Z",
-      "source": "trending:weekly/rust",
-      "collected_at": "2026-10-29T12:08:36.203969+00:00",
-      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
       "full_name": "ChanceYu/front-end-rss",
@@ -14664,57 +14665,74 @@
   "source_status": {
     "repository:wuyoscar/AISafetyHot-Hub": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-10-30T14:58:22.918715+00:00"
     },
     "repository:DIYgod/RSSHub": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-10-30T14:58:22.918715+00:00"
     },
     "repository:mshibanami/GitHubTrendingRSS": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-10-30T14:58:22.918715+00:00"
     },
     "repository:CodeSigils/skill-discovery": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-10-30T14:58:22.918715+00:00"
     },
     "repository:VoltAgent/awesome-agent-skills": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-10-30T14:58:22.918715+00:00"
     },
     "profile:MengEn-Ink:owned": {
       "ok": true,
       "count": 19,
+      "cached": true,
       "fetched_at": "2026-10-30T14:58:22.918715+00:00"
     },
     "profile:MengEn-Ink:starred": {
       "ok": true,
       "count": 61,
+      "cached": true,
       "fetched_at": "2026-10-30T14:58:22.918715+00:00"
     },
     "search:topic:agent-skills stars:>50 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-10-30T14:58:22.918715+00:00"
     },
     "search:topic:github-pages stars:>100 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-10-30T14:58:22.918715+00:00"
     },
     "search:topic:design-system stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-10-30T14:58:22.918715+00:00"
     },
     "search:topic:developer-tools stars:>500 archived:false": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-10-30T14:58:22.918715+00:00"
     },
     "search:topic:ai-agent stars:>500 archived:false": {
       "ok": true,
-      "count": 20,
+      "count": 22,
+      "cached": true,
       "fetched_at": "2026-10-30T14:58:22.918715+00:00"
     },
     "search:created:>{days_ago:30} stars:>300": {
@@ -14797,57 +14815,57 @@
     },
     "trending:daily/all": {
       "ok": true,
-      "count": 12,
-      "cached": true,
-      "fetched_at": "2026-10-30T12:04:07.010396+00:00"
+      "count": 11,
+      "listed": 11,
+      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
       "count": 11,
-      "cached": true,
-      "fetched_at": "2026-10-30T12:04:07.010396+00:00"
+      "listed": 11,
+      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
     },
     "trending:daily/python": {
       "ok": true,
-      "count": 12,
-      "cached": true,
-      "fetched_at": "2026-10-30T12:04:07.010396+00:00"
+      "count": 10,
+      "listed": 10,
+      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
-      "count": 20,
-      "cached": true,
-      "fetched_at": "2026-10-30T12:04:07.010396+00:00"
+      "count": 17,
+      "listed": 17,
+      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 15,
-      "cached": true,
-      "fetched_at": "2026-10-30T12:04:07.010396+00:00"
+      "listed": 15,
+      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
       "count": 18,
-      "cached": true,
-      "fetched_at": "2026-10-30T12:04:07.010396+00:00"
+      "listed": 18,
+      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
       "count": 19,
-      "cached": true,
-      "fetched_at": "2026-10-30T12:04:07.010396+00:00"
+      "listed": 19,
+      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 17,
-      "cached": true,
-      "fetched_at": "2026-10-30T12:04:07.010396+00:00"
+      "listed": 17,
+      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-10-30T14:58:22.918715+00:00"
+      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
     }
   },
   "schema_version": 1
