@@ -2,6 +2,28 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-30（16 点轮）· 健康巡检与数据新鲜度复核（Issue #94）
+
+**成果**
+
+- 同步公开仓库 `main`：本轮最新为 `f43e533`；已复核上一轮 #93 已由 `close-issues.yml` 评论并关闭，创建本轮巡检 Issue #94 承载验收标准；当前公开 open PR 为空、创建前 open Issue 为空。
+- Actions 巡检：最近公开 main workflow runs 均 `completed/success`，最新为定时 `collect.yml` run #41008346344、12 点轮质量门禁 run #41001587688、Pages run #41001587700 与收口巡检 Issue run #41001458360；列表无 running / queued / failed。
+- 数据新鲜度：`data/ai-news.json`、`data/discoveries.json` 与 `data/repo-insights.json` 生成于 `2026-10-30T05:25:22Z` 左右，`data/skill-review-queue.json` 生成于 `2026-10-30T04:07:08Z`，距巡检分别约 160 / 160 / 160 / 238 分钟，均未超过 240 分钟阈值，因此本轮不重复触发采集；AI 资讯 200 条、开源候选 472 条、仓库深度解读 472 条、Skill 待审 98 条，且 `policy.auto_install=false`。
+- 最小可交付：P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的「喜好账本反哺排序」；本轮继续健康巡检降级态，只更新公开巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。
+- Issue 收口：已登记 #94 到 `data/issue-close-requests.json`，合入 `main` 后由 `close-issues.yml` 使用内置 `GITHUB_TOKEN`（`issues: write`）评论并关闭；本轮先提交健康巡检账本，再复核远端门禁与 Pages。
+
+**验证证据**
+
+- 本地质量门禁：待提交前执行 `node --test tests/*.js`、`python3 -m unittest discover -s tests -p 'test_*.py'`、`python3 scripts/health_check.py validate`、`python3 scripts/close_issues_ci.py validate`、`python3 scripts/repo_insights.py validate`、`python3 scripts/skill_adoptions.py validate`、`python3 scripts/security_scan.py --strict`、`python3 scripts/build_pages.py`。
+- 远端门禁与 Pages：待本提交推送后复核 `质量与安全门禁`、`收口巡检 Issue` 与 `发布 GitHub Pages` 结果，并验证 `/`、`/desktop/`、`/atelier/`、`/ai-news/`、`pages-manifest.json`、`data/health-checks.json`、`data/issue-close-requests.json`、`data/ai-news.json`、`data/discoveries.json`。
+
+**下一轮唯一最高优先级**
+
+- 先核验 #94 是否已由 `close-issues.yml` 按账本评论并关闭，并补记本轮远端质量门禁 / Pages / URL 验收证据；若 workflow 失败或 Issue 滞留，则优先修复当前 Issue，不开始新事项。
+- 随后继续健康巡检降级态：核对 `main`、运行中 / 失败 Actions（含每四小时 `collect.yml`，定时触发延迟或超窗时手动兜底）、Pages 四入口与公开数据新鲜度；Issues 为空时继续创建新巡检 Issue 承载验收标准。
+
+Closes #94
+
 ## 2026-10-30（12 点轮）· 健康巡检与数据刷新（Issue #93）
 
 **成果**
