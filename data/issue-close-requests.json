@@ -85,6 +85,14 @@
       "evidence_ref": "data/health-checks.json",
       "requested_by": "worklens-loop",
       "requested_at": "2026-10-30T16:29:35Z"
+    },
+    {
+      "issue": 97,
+      "title": "健康巡检：2026-10-31 04 点 WorkLens Loop",
+      "reason": "04 点轮健康巡检与数据刷新已完成：本轮开始时 main 为 3983790，巡检前 open Issue / open PR 均为空，最近 main workflow runs 均 success；公开数据距上次采集约 303-305 分钟，超过 240 分钟阈值，已手动触发 collect.yml run 41120087964 并快进到机器人提交 86ebc02。刷新后 AI 资讯 200 条、开源候选 488 条、仓库深度解读覆盖 488/488、Skill 待审 114 条，且 policy.auto_install=false；P0-P4 保持上线降级态，本轮 Issue 由账本 + CI 内置 GITHUB_TOKEN 收口。",
+      "evidence_ref": "data/health-checks.json",
+      "requested_by": "worklens-loop",
+      "requested_at": "2026-10-30T20:04:00Z"
     }
   ]
 }
