@@ -2,6 +2,30 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-10-31（16 点轮）· 健康巡检与数据刷新（Issue #100）
+
+**成果**
+
+- 同步公开仓库 `main`：本轮开始时最新为 `5935f49`；已复核上一轮 #99 由 `close-issues.yml` 在 `2026-10-31T04:05:46Z` 评论并关闭；创建本轮巡检 Issue #100 承载验收标准；当前公开 open PR 为空、创建前 open Issue 为空。
+- Actions 巡检：最近公开 main workflow runs 均 `completed/success`，最新为定时「采集开源项目候选」run #41171492686（schedule，约 2 小时前成功）及 12 点轮「质量与安全门禁」run #41167114162、「发布 GitHub Pages」run #41167114116、「收口巡检 Issue」run #41167114091；巡检时列表无 running / queued / failed。
+- 数据新鲜度：`data/ai-news.json` 生成于 `2026-10-31T05:11:48Z`（距巡检约 178 分钟）、`data/discoveries.json` 生成于 `05:10:08Z`（约 180 分钟），均未超过 240 分钟阈值，本轮不重复触发采集。AI 资讯 200 条（14/14 源 ok）、开源候选 483 条（34/34 源 ok）、仓库深度解读 785 条且覆盖 483/483 候选；Skill 待审队列 124 条，`policy.auto_install=false`。
+- 最小可交付：P0–P4 目标保持全部上线，README 路线图仅剩需真人确认后才能推进的「喜好账本反哺排序」；本轮继续健康巡检降级态，只更新公开巡检账本、轮次日志和 Issue 收口请求，不启动未经确认的新功能、不自动安装 Skill。
+- Issue 收口：本次提交已把 #100 登记到 `data/issue-close-requests.json`；合入 main 后由 `close-issues.yml` 使用内置 `GITHUB_TOKEN`（`issues: write`）评论并关闭。
+
+**验证证据**
+
+- 线上巡检（提交前）：`/`、`/desktop/`、`/ai-news/`、`pages-manifest.json`、`data/ai-news.json`、`data/discoveries.json`、`data/skill-review-queue.json`、`data/health-checks.json`、`data/issue-close-requests.json` 均 HTTP 200。
+- 公开数据边界：`data/health-checks.json` 与 `data/issue-close-requests.json` 仅记录公开巡检证据；未引入私有数据、凭证、内部地址，未自动安装 Skill。
+- 本地质量门禁与远端工作流结果见本 Issue 后续评论 / 本条目提交后的 CI runs。
+
+**下一轮唯一最高优先级**
+
+- 继续健康巡检降级态：先核验 #100 是否已由 `close-issues.yml` 按账本评论并关闭；若工作流失败或 Issue 滞留，则优先修复当前 Issue，不开始新事项。
+- 随后核对 `main`、运行中 / 失败 Actions（含每四小时 `collect.yml`，定时触发延迟或超窗时手动兜底）、Pages 四入口与公开数据新鲜度；Issues 为空时继续创建新巡检 Issue 承载验收标准。
+- README 路线图仅剩需真人确认后才能推进的「喜好账本反哺排序」；未获确认前不启动新功能。
+
+Closes #100
+
 ## 2026-10-31（12 点轮）· 健康巡检与数据刷新（Issue #99）
 
 **成果**
