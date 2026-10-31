@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T20:38:01.934077+00:00",
+  "generated_at": "2026-10-31T04:03:13.414670+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -4681,7 +4681,6 @@
       "also_seen_in": [
         "trending:daily/typescript"
       ],
-      "relationships": [],
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -14816,57 +14815,57 @@
     },
     "trending:daily/all": {
       "ok": true,
-      "count": 12,
-      "cached": true,
-      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
+      "count": 11,
+      "listed": 11,
+      "fetched_at": "2026-10-31T04:03:13.414670+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
       "count": 11,
-      "cached": true,
-      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
+      "listed": 11,
+      "fetched_at": "2026-10-31T04:03:13.414670+00:00"
     },
     "trending:daily/python": {
       "ok": true,
-      "count": 12,
-      "cached": true,
-      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
+      "count": 10,
+      "listed": 10,
+      "fetched_at": "2026-10-31T04:03:13.414670+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
-      "count": 20,
-      "cached": true,
-      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
+      "count": 17,
+      "listed": 17,
+      "fetched_at": "2026-10-31T04:03:13.414670+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 15,
-      "cached": true,
-      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
+      "listed": 15,
+      "fetched_at": "2026-10-31T04:03:13.414670+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
       "count": 18,
-      "cached": true,
-      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
+      "listed": 18,
+      "fetched_at": "2026-10-31T04:03:13.414670+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
       "count": 19,
-      "cached": true,
-      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
+      "listed": 19,
+      "fetched_at": "2026-10-31T04:03:13.414670+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 17,
-      "cached": true,
-      "fetched_at": "2026-10-30T20:02:25.364968+00:00"
+      "listed": 17,
+      "fetched_at": "2026-10-31T04:03:13.414670+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-10-30T20:38:01.934077+00:00"
+      "fetched_at": "2026-10-31T04:03:13.414670+00:00"
     }
   },
   "schema_version": 1
