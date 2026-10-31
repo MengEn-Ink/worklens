@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-31T05:11:50.023284+00:00",
+  "generated_at": "2026-10-31T12:08:54.871760+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -1131,12 +1131,12 @@
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-27T06:17:02.801000+00:00",
-      "metadata_synced_at": "2026-10-30T12:04:33.695686+00:00",
+      "metadata_synced_at": "2026-10-31T12:08:54.861320+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 23387,
-      "pushed_at": "2026-10-29T16:19:41Z",
+      "stars": 23618,
+      "pushed_at": "2026-10-30T20:27:17Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -1327,11 +1327,11 @@
         "trending:weekly/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600350+00:00",
-      "metadata_synced_at": "2026-10-30T12:04:33.691487+00:00",
+      "metadata_synced_at": "2026-10-31T12:08:54.857033+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 308714,
+      "stars": 309714,
       "pushed_at": "2026-10-29T23:35:34Z",
       "checks": {
         "license_declared": {
@@ -1356,15 +1356,15 @@
       "id": "SR-0036",
       "subject": "affaan-m/ECC",
       "html_url": "https://github.com/affaan-m/ECC",
-      "source": "trending:daily/all",
+      "source": "trending:weekly/all",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.600382+00:00",
-      "metadata_synced_at": "2026-10-29T05:25:53.600382+00:00",
+      "metadata_synced_at": "2026-10-31T12:08:54.857107+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 291787,
-      "pushed_at": "2026-10-26T04:56:56Z",
+      "stars": 293681,
+      "pushed_at": "2026-10-30T03:06:42Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -1391,11 +1391,11 @@
       "source": "trending:weekly/all",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.600415+00:00",
-      "metadata_synced_at": "2026-10-30T04:07:08.469412+00:00",
+      "metadata_synced_at": "2026-10-31T12:08:54.857165+00:00",
       "state": "candidate",
       "license": null,
       "archived": false,
-      "stars": 226509,
+      "stars": 227168,
       "pushed_at": "2026-04-20T10:05:04Z",
       "checks": {
         "license_declared": {
@@ -1493,15 +1493,16 @@
       "html_url": "https://github.com/thedotmack/claude-mem",
       "source": "trending:daily/all",
       "also_seen_in": [
-        "trending:daily/typescript"
+        "trending:daily/typescript",
+        "trending:weekly/typescript"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600755+00:00",
-      "metadata_synced_at": "2026-10-30T12:04:33.692261+00:00",
+      "metadata_synced_at": "2026-10-31T12:08:54.857794+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 104957,
-      "pushed_at": "2026-10-30T03:07:33Z",
+      "stars": 107020,
+      "pushed_at": "2026-10-31T08:56:15Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -1531,12 +1532,12 @@
         "trending:weekly/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600902+00:00",
-      "metadata_synced_at": "2026-10-30T04:07:08.470506+00:00",
+      "metadata_synced_at": "2026-10-31T12:08:54.857920+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 95674,
-      "pushed_at": "2026-10-29T18:41:45Z",
+      "stars": 97668,
+      "pushed_at": "2026-10-31T11:56:18Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -1629,11 +1630,11 @@
       "source": "trending:weekly/all",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.601405+00:00",
-      "metadata_synced_at": "2026-10-30T04:07:08.471734+00:00",
+      "metadata_synced_at": "2026-10-31T12:08:54.859095+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 52998,
+      "stars": 54712,
       "pushed_at": "2026-09-14T19:29:02Z",
       "checks": {
         "license_declared": {
@@ -1696,11 +1697,11 @@
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-29T05:25:53.602551+00:00",
-      "metadata_synced_at": "2026-10-30T04:07:08.473836+00:00",
+      "metadata_synced_at": "2026-10-31T12:08:54.861125+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 24064,
+      "stars": 24765,
       "pushed_at": "2026-10-22T16:47:40Z",
       "checks": {
         "license_declared": {
@@ -1922,11 +1923,11 @@
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-29T05:25:53.603573+00:00",
-      "metadata_synced_at": "2026-10-30T04:07:08.475692+00:00",
+      "metadata_synced_at": "2026-10-31T12:08:54.862968+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 9850,
+      "stars": 9997,
       "pushed_at": "2026-10-12T15:02:40Z",
       "checks": {
         "license_declared": {
@@ -2120,11 +2121,11 @@
       "source": "trending:weekly/go",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.604842+00:00",
-      "metadata_synced_at": "2026-10-30T04:07:08.478254+00:00",
+      "metadata_synced_at": "2026-10-31T12:08:54.865616+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 3725,
+      "stars": 3739,
       "pushed_at": "2026-10-23T07:50:53Z",
       "checks": {
         "license_declared": {
@@ -2284,11 +2285,11 @@
       "source": "trending:weekly/python",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.605723+00:00",
-      "metadata_synced_at": "2026-10-30T04:07:08.480568+00:00",
+      "metadata_synced_at": "2026-10-31T12:08:54.867112+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 1815,
+      "stars": 1824,
       "pushed_at": "2026-10-27T17:54:03Z",
       "checks": {
         "license_declared": {
@@ -2870,12 +2871,12 @@
       "source": "trending:daily/all",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T12:10:02.315149+00:00",
-      "metadata_synced_at": "2026-10-29T12:10:02.315149+00:00",
+      "metadata_synced_at": "2026-10-31T12:08:54.865419+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 3738,
-      "pushed_at": "2026-10-29T10:37:46Z",
+      "stars": 3972,
+      "pushed_at": "2026-10-30T20:29:57Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -3428,11 +3429,11 @@
       "source": "trending:weekly/python",
       "also_seen_in": [],
       "enqueued_at": "2026-10-30T12:04:33.693476+00:00",
-      "metadata_synced_at": "2026-10-30T12:04:33.693476+00:00",
+      "metadata_synced_at": "2026-10-31T12:08:54.858903+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 62559,
+      "stars": 62847,
       "pushed_at": "2026-10-28T07:17:33Z",
       "checks": {
         "license_declared": {
@@ -4261,6 +4262,76 @@
       "history": [
         {
           "at": "2026-10-31T05:11:50.022605+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0125",
+      "subject": "mattpocock/skills",
+      "html_url": "https://github.com/mattpocock/skills",
+      "source": "trending:daily/all",
+      "also_seen_in": [],
+      "enqueued_at": "2026-10-31T12:08:54.857058+00:00",
+      "metadata_synced_at": "2026-10-31T12:08:54.857058+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 307864,
+      "pushed_at": "2026-10-30T14:00:30Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-10-31T12:08:54.857058+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-31T12:08:54.857058+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0126",
+      "subject": "anthropics/skills",
+      "html_url": "https://github.com/anthropics/skills",
+      "source": "trending:daily/all",
+      "also_seen_in": [
+        "trending:weekly/all",
+        "trending:daily/python",
+        "trending:weekly/python"
+      ],
+      "enqueued_at": "2026-10-31T12:08:54.857206+00:00",
+      "metadata_synced_at": "2026-10-31T12:08:54.857206+00:00",
+      "state": "candidate",
+      "license": null,
+      "archived": false,
+      "stars": 185685,
+      "pushed_at": "2026-10-28T19:20:39Z",
+      "checks": {
+        "license_declared": {
+          "status": "fail",
+          "evidence": "GitHub API：未声明许可证",
+          "checked_at": "2026-10-31T12:08:54.857206+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [
+        "no_license"
+      ],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-10-31T12:08:54.857206+00:00",
           "event": "enqueued",
           "by": "worklens-bot",
           "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
