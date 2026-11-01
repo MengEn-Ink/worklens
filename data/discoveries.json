@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T23:15:52.699370+00:00",
+  "generated_at": "2026-11-01T00:14:30.687000+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -730,7 +730,6 @@
       "also_seen_in": [
         "trending:weekly/typescript"
       ],
-      "relationships": [],
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
@@ -906,15 +905,15 @@
         "wifi-security"
       ],
       "language": "Rust",
-      "stars": 101738,
-      "forks": 13215,
-      "open_issues": 517,
+      "stars": 101880,
+      "forks": 13235,
+      "open_issues": 522,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-30T18:11:36Z",
-      "updated_at": "2026-10-30T19:58:20Z",
+      "pushed_at": "2026-10-31T18:36:08Z",
+      "updated_at": "2026-11-01T00:07:55Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-10-30T20:02:29.303280+00:00",
+      "collected_at": "2026-11-01T00:14:34.187983+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -1925,15 +1924,15 @@
         "security-tools"
       ],
       "language": "TypeScript",
-      "stars": 50575,
-      "forks": 5825,
-      "open_issues": 29,
+      "stars": 50668,
+      "forks": 5852,
+      "open_issues": 30,
       "license": "AGPL-3.0",
       "archived": false,
       "pushed_at": "2026-10-27T06:17:04Z",
-      "updated_at": "2026-10-30T19:47:48Z",
+      "updated_at": "2026-11-01T00:03:33Z",
       "source": "trending:daily/typescript",
-      "collected_at": "2026-10-30T20:02:27.050569+00:00",
+      "collected_at": "2026-11-01T00:14:32.256972+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -2591,15 +2590,15 @@
         "wireguard"
       ],
       "language": "Go",
-      "stars": 38362,
-      "forks": 3391,
-      "open_issues": 4816,
+      "stars": 38434,
+      "forks": 3403,
+      "open_issues": 4811,
       "license": "BSD-3-Clause",
       "archived": false,
-      "pushed_at": "2026-10-30T19:08:43Z",
-      "updated_at": "2026-10-30T19:40:47Z",
+      "pushed_at": "2026-10-31T19:22:37Z",
+      "updated_at": "2026-10-31T23:31:22Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-10-30T20:02:28.860434+00:00",
+      "collected_at": "2026-11-01T00:14:33.699093+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -2791,15 +2790,15 @@
         "windows"
       ],
       "language": "Go",
-      "stars": 36845,
-      "forks": 1916,
-      "open_issues": 365,
+      "stars": 36870,
+      "forks": 1918,
+      "open_issues": 362,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-30T17:18:01Z",
-      "updated_at": "2026-10-30T19:43:50Z",
+      "pushed_at": "2026-10-31T23:43:09Z",
+      "updated_at": "2026-10-31T22:46:36Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-10-30T20:02:28.451557+00:00",
+      "collected_at": "2026-11-01T00:14:33.265546+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -3034,15 +3033,15 @@
       "description": "Algorithm powering the For You feed on X",
       "topics": [],
       "language": "Rust",
-      "stars": 33919,
-      "forks": 5484,
-      "open_issues": 158,
+      "stars": 33991,
+      "forks": 5498,
+      "open_issues": 159,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-10-30T01:27:44Z",
-      "updated_at": "2026-10-30T19:42:10Z",
+      "pushed_at": "2026-10-31T02:25:49Z",
+      "updated_at": "2026-10-31T23:55:35Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-10-30T20:02:29.703658+00:00",
+      "collected_at": "2026-11-01T00:14:34.552899+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -5677,6 +5676,23 @@
       "first_seen_at": "2026-10-31T05:10:08.773332+00:00"
     },
     {
+      "full_name": "jakubkrehel/skills",
+      "html_url": "https://github.com/jakubkrehel/skills",
+      "description": "A collection of agent skills that help you build great interfaces.",
+      "topics": [],
+      "language": "Markdown",
+      "stars": 9606,
+      "forks": 368,
+      "open_issues": 10,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-10-25T13:26:17Z",
+      "updated_at": "2026-11-01T00:06:12Z",
+      "source": "trending:weekly/all",
+      "collected_at": "2026-11-01T00:14:31.266207+00:00",
+      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
+    },
+    {
       "full_name": "carbon-design-system/carbon",
       "html_url": "https://github.com/carbon-design-system/carbon",
       "description": "A design system built by IBM",
@@ -5765,23 +5781,6 @@
       "source": "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}",
       "collected_at": "2026-10-31T05:10:25.720967+00:00",
       "first_seen_at": "2026-10-30T04:05:03.566212+00:00"
-    },
-    {
-      "full_name": "jakubkrehel/skills",
-      "html_url": "https://github.com/jakubkrehel/skills",
-      "description": "A collection of agent skills that help you build great interfaces.",
-      "topics": [],
-      "language": "Markdown",
-      "stars": 9319,
-      "forks": 356,
-      "open_issues": 10,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-10-25T13:26:17Z",
-      "updated_at": "2026-10-30T20:00:04Z",
-      "source": "trending:weekly/all",
-      "collected_at": "2026-10-30T20:02:25.742158+00:00",
-      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
       "full_name": "milind-soni/OpenMausBot",
@@ -6599,7 +6598,6 @@
       "also_seen_in": [
         "trending:daily/python"
       ],
-      "relationships": [],
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
@@ -8556,6 +8554,31 @@
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
+      "full_name": "trymirai/uzu",
+      "html_url": "https://github.com/trymirai/uzu",
+      "description": "A high-performance inference engine for AI models",
+      "topics": [
+        "ai",
+        "high-performance",
+        "inference",
+        "llm",
+        "metal",
+        "rust",
+        "tts"
+      ],
+      "language": "Rust",
+      "stars": 3141,
+      "forks": 208,
+      "open_issues": 25,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-10-31T19:55:16Z",
+      "updated_at": "2026-10-31T23:55:56Z",
+      "source": "trending:weekly/rust",
+      "collected_at": "2026-11-01T00:14:34.955517+00:00",
+      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
+    },
+    {
       "full_name": "abhinavxd/libredesk",
       "html_url": "https://github.com/abhinavxd/libredesk",
       "description": "Open-source, self-hosted customer support desk in a single binary. A lightweight alternative to Intercom, Zendesk, Chatwoot.",
@@ -8590,31 +8613,6 @@
       "source": "search:topic:ai-agent stars:>500 archived:false",
       "collected_at": "2026-10-31T19:51:28.127523+00:00",
       "first_seen_at": "2026-10-31T19:51:09.947209+00:00"
-    },
-    {
-      "full_name": "trymirai/uzu",
-      "html_url": "https://github.com/trymirai/uzu",
-      "description": "A high-performance inference engine for AI models",
-      "topics": [
-        "ai",
-        "high-performance",
-        "inference",
-        "llm",
-        "metal",
-        "rust",
-        "tts"
-      ],
-      "language": "Rust",
-      "stars": 3097,
-      "forks": 199,
-      "open_issues": 23,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-10-30T19:30:36Z",
-      "updated_at": "2026-10-30T19:46:32Z",
-      "source": "trending:weekly/rust",
-      "collected_at": "2026-10-30T20:02:30.078262+00:00",
-      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
       "full_name": "tianma-if/edgeever",
@@ -14711,57 +14709,57 @@
     },
     "trending:daily/all": {
       "ok": true,
-      "count": 16,
-      "cached": true,
-      "fetched_at": "2026-10-31T19:51:09.947209+00:00"
+      "count": 15,
+      "listed": 15,
+      "fetched_at": "2026-11-01T00:14:30.687000+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
       "count": 13,
-      "cached": true,
-      "fetched_at": "2026-10-31T19:51:09.947209+00:00"
+      "listed": 13,
+      "fetched_at": "2026-11-01T00:14:30.687000+00:00"
     },
     "trending:daily/python": {
       "ok": true,
-      "count": 9,
-      "cached": true,
-      "fetched_at": "2026-10-31T19:51:09.947209+00:00"
+      "count": 8,
+      "listed": 8,
+      "fetched_at": "2026-11-01T00:14:30.687000+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
-      "count": 17,
-      "cached": true,
-      "fetched_at": "2026-10-31T19:51:09.947209+00:00"
+      "count": 16,
+      "listed": 16,
+      "fetched_at": "2026-11-01T00:14:30.687000+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 14,
-      "cached": true,
-      "fetched_at": "2026-10-31T19:51:09.947209+00:00"
+      "listed": 14,
+      "fetched_at": "2026-11-01T00:14:30.687000+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
-      "count": 20,
-      "cached": true,
-      "fetched_at": "2026-10-31T19:51:09.947209+00:00"
+      "count": 19,
+      "listed": 19,
+      "fetched_at": "2026-11-01T00:14:30.687000+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
-      "count": 20,
-      "cached": true,
-      "fetched_at": "2026-10-31T19:51:09.947209+00:00"
+      "count": 19,
+      "listed": 19,
+      "fetched_at": "2026-11-01T00:14:30.687000+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 18,
-      "cached": true,
-      "fetched_at": "2026-10-31T19:51:09.947209+00:00"
+      "listed": 18,
+      "fetched_at": "2026-11-01T00:14:30.687000+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-10-31T23:15:52.699370+00:00"
+      "fetched_at": "2026-11-01T00:14:30.687000+00:00"
     }
   },
   "schema_version": 1
