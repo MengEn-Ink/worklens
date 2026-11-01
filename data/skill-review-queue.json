@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-31T19:51:57.690944+00:00",
+  "generated_at": "2026-11-01T05:43:49.697686+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -1491,18 +1491,19 @@
       "id": "SR-0040",
       "subject": "thedotmack/claude-mem",
       "html_url": "https://github.com/thedotmack/claude-mem",
-      "source": "trending:daily/all",
+      "source": "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}",
       "also_seen_in": [
         "trending:daily/typescript",
-        "trending:weekly/typescript"
+        "trending:weekly/typescript",
+        "trending:daily/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600755+00:00",
-      "metadata_synced_at": "2026-10-31T12:08:54.857794+00:00",
+      "metadata_synced_at": "2026-11-01T05:43:49.690334+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 107020,
-      "pushed_at": "2026-10-31T08:56:15Z",
+      "stars": 108119,
+      "pushed_at": "2026-11-01T05:21:17Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -1729,11 +1730,11 @@
       "source": "search:created:>{days_ago:30} stars:>300",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.602675+00:00",
-      "metadata_synced_at": "2026-10-31T05:11:50.013014+00:00",
+      "metadata_synced_at": "2026-11-01T05:43:49.692132+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 23076,
+      "stars": 23439,
       "pushed_at": "2026-10-18T20:20:24Z",
       "checks": {
         "license_declared": {
@@ -2019,11 +2020,11 @@
       "source": "search:created:>{days_ago:30} stars:>300",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.604240+00:00",
-      "metadata_synced_at": "2026-10-31T05:11:50.016006+00:00",
+      "metadata_synced_at": "2026-11-01T05:43:49.693502+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 5830,
+      "stars": 5871,
       "pushed_at": "2026-10-16T17:03:31Z",
       "checks": {
         "license_declared": {
@@ -2084,17 +2085,18 @@
       "id": "SR-0058",
       "subject": "QingYunA/answer-me-with-html",
       "html_url": "https://github.com/QingYunA/answer-me-with-html",
-      "source": "search:created:>{days_ago:30} stars:>300",
+      "source": "search:created:>{days_ago:90} topic:ai-agent stars:>100",
       "also_seen_in": [
-        "search:created:>{days_ago:90} topic:ai-agent stars:>100"
+        "search:created:>{days_ago:90} topic:ai-agent stars:>100",
+        "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}"
       ],
       "enqueued_at": "2026-10-29T05:25:53.604668+00:00",
-      "metadata_synced_at": "2026-10-31T05:11:50.016425+00:00",
+      "metadata_synced_at": "2026-11-01T05:43:49.693762+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 4924,
-      "pushed_at": "2026-10-31T03:14:50Z",
+      "stars": 4984,
+      "pushed_at": "2026-11-01T05:18:59Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -2153,11 +2155,11 @@
       "source": "search:created:>{days_ago:90} topic:ai-agent stars:>100",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.604900+00:00",
-      "metadata_synced_at": "2026-10-31T05:11:50.017317+00:00",
+      "metadata_synced_at": "2026-11-01T05:43:49.694250+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 3557,
+      "stars": 3562,
       "pushed_at": "2026-09-02T18:49:42Z",
       "checks": {
         "license_declared": {
@@ -2251,11 +2253,11 @@
       "source": "search:created:>{days_ago:90} topic:ai-agent stars:>100",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.605580+00:00",
-      "metadata_synced_at": "2026-10-31T05:11:50.018589+00:00",
+      "metadata_synced_at": "2026-11-01T05:43:49.695080+00:00",
       "state": "candidate",
       "license": "NOASSERTION",
       "archived": false,
-      "stars": 1971,
+      "stars": 1991,
       "pushed_at": "2026-10-12T05:29:10Z",
       "checks": {
         "license_declared": {
@@ -2317,12 +2319,12 @@
       "source": "search:topic:workflow-automation stars:>300 archived:false",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.605844+00:00",
-      "metadata_synced_at": "2026-10-29T05:25:53.605844+00:00",
+      "metadata_synced_at": "2026-11-01T05:43:49.695278+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 1653,
-      "pushed_at": "2026-10-28T21:56:07Z",
+      "stars": 1656,
+      "pushed_at": "2026-11-01T00:07:25Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -2383,11 +2385,11 @@
       "source": "search:created:>{days_ago:90} topic:ai-agent stars:>100",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.605923+00:00",
-      "metadata_synced_at": "2026-10-31T05:11:50.019143+00:00",
+      "metadata_synced_at": "2026-11-01T05:43:49.695372+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 1544,
+      "stars": 1543,
       "pushed_at": "2026-10-19T07:58:34Z",
       "checks": {
         "license_declared": {
@@ -2479,12 +2481,12 @@
       "source": "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.606702+00:00",
-      "metadata_synced_at": "2026-10-31T05:11:50.020655+00:00",
+      "metadata_synced_at": "2026-11-01T05:43:49.695901+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 826,
-      "pushed_at": "2026-10-31T05:03:03Z",
+      "stars": 849,
+      "pushed_at": "2026-11-01T05:03:50Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -3267,12 +3269,12 @@
         "search:topic:claude-code stars:>50 archived:false"
       ],
       "enqueued_at": "2026-10-30T04:07:08.481714+00:00",
-      "metadata_synced_at": "2026-10-30T04:07:08.481714+00:00",
+      "metadata_synced_at": "2026-11-01T05:43:49.695718+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 1021,
-      "pushed_at": "2026-10-30T04:03:40Z",
+      "stars": 1044,
+      "pushed_at": "2026-11-01T05:33:32Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -4075,12 +4077,12 @@
       "source": "search:topic:prompt-engineering stars:>300 archived:false",
       "also_seen_in": [],
       "enqueued_at": "2026-10-31T05:11:50.018703+00:00",
-      "metadata_synced_at": "2026-10-31T05:11:50.018703+00:00",
+      "metadata_synced_at": "2026-11-01T05:43:49.695160+00:00",
       "state": "candidate",
       "license": null,
       "archived": false,
-      "stars": 1893,
-      "pushed_at": "2026-10-31T05:01:48Z",
+      "stars": 1895,
+      "pushed_at": "2026-11-01T05:27:41Z",
       "checks": {
         "license_declared": {
           "status": "fail",
@@ -4111,12 +4113,12 @@
         "search:topic:prompt-engineering stars:>300 archived:false"
       ],
       "enqueued_at": "2026-10-31T05:11:50.019868+00:00",
-      "metadata_synced_at": "2026-10-31T05:11:50.019868+00:00",
+      "metadata_synced_at": "2026-11-01T05:43:49.695611+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 1100,
-      "pushed_at": "2026-10-31T05:05:15Z",
+      "stars": 1103,
+      "pushed_at": "2026-11-01T05:36:55Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -4140,15 +4142,17 @@
       "id": "SR-0121",
       "subject": "coco-research/coco",
       "html_url": "https://github.com/coco-research/coco",
-      "source": "search:topic:workflow-automation stars:>300 archived:false",
-      "also_seen_in": [],
+      "source": "search:topic:prompt-engineering stars:>300 archived:false",
+      "also_seen_in": [
+        "search:topic:workflow-automation stars:>300 archived:false"
+      ],
       "enqueued_at": "2026-10-31T05:11:50.020775+00:00",
-      "metadata_synced_at": "2026-10-31T05:11:50.020775+00:00",
+      "metadata_synced_at": "2026-11-01T05:43:49.695986+00:00",
       "state": "candidate",
       "license": "NOASSERTION",
       "archived": false,
-      "stars": 795,
-      "pushed_at": "2026-10-31T00:55:58Z",
+      "stars": 796,
+      "pushed_at": "2026-11-01T05:34:26Z",
       "checks": {
         "license_declared": {
           "status": "fail",
@@ -4558,6 +4562,106 @@
       "history": [
         {
           "at": "2026-10-31T19:51:57.690467+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0134",
+      "subject": "mksglu/context-mode",
+      "html_url": "https://github.com/mksglu/context-mode",
+      "source": "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}",
+      "also_seen_in": [
+        "search:topic:claude-code stars:>50 archived:false"
+      ],
+      "enqueued_at": "2026-11-01T05:43:49.691666+00:00",
+      "metadata_synced_at": "2026-11-01T05:43:49.691666+00:00",
+      "state": "candidate",
+      "license": "NOASSERTION",
+      "archived": false,
+      "stars": 33058,
+      "pushed_at": "2026-11-01T05:35:27Z",
+      "checks": {
+        "license_declared": {
+          "status": "fail",
+          "evidence": "GitHub API：license.spdx_id=NOASSERTION",
+          "checked_at": "2026-11-01T05:43:49.691666+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [
+        "license_unrecognized"
+      ],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-11-01T05:43:49.691666+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0135",
+      "subject": "MrGeDiao/shuorenhua",
+      "html_url": "https://github.com/MrGeDiao/shuorenhua",
+      "source": "search:topic:prompt-engineering stars:>300 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-11-01T05:43:49.694734+00:00",
+      "metadata_synced_at": "2026-11-01T05:43:49.694734+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 2398,
+      "pushed_at": "2026-11-01T05:08:02Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-11-01T05:43:49.694734+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-11-01T05:43:49.694734+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0136",
+      "subject": "malob/nix-config",
+      "html_url": "https://github.com/malob/nix-config",
+      "source": "search:topic:claude-code stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-11-01T05:43:49.696591+00:00",
+      "metadata_synced_at": "2026-11-01T05:43:49.696591+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 462,
+      "pushed_at": "2026-11-01T05:35:14Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-11-01T05:43:49.696591+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-11-01T05:43:49.696591+00:00",
           "event": "enqueued",
           "by": "worklens-bot",
           "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
