@@ -18,7 +18,10 @@
 - 公开仓库最新 main：`a80565e 数据：更新开源项目候选、深度解读缓存与 AI 资讯`。
 - 兜底采集：run #41304988197（workflow_dispatch，58s success）→ 采集后 Pages run #41305068149（workflow_run，head `a80565e` success）。
 - 线上 Pages 已是最新公开数据：`https://mengen-ink.github.io/worklens/data/ai-news.json` = `2026-11-01T12:08:42Z`，`discoveries.json` = `2026-11-01T12:07:57Z`，`skill-review-queue.json` = `2026-11-01T12:08:43Z`。
-- 本地质量门禁：`python3 scripts/health_check.py validate`、`python3 scripts/close_issues_ci.py validate`、`python3 scripts/security_scan.py --strict`、`python3 scripts/build_pages.py`、`node --test tests/*.js`、`python3 -m unittest discover -s tests -p 'test_*.py'`（见本提交 CI 结果）。
+- 本地质量门禁：`python3 scripts/health_check.py validate`（22 条巡检）、`python3 scripts/close_issues_ci.py validate`（19 条收口请求）、`security_scan.py --strict`、其余契约校验与 `build_pages.py`（routes=/, /ai-news/; skipped=none）全部通过；`node --test tests/*.js` 45 项、`python3 -m unittest` 141 项全过。
+- 推送后验收：main head `72bec4a` 上「质量与安全门禁」run #41305558291、「发布 GitHub Pages」run #41305558323、「收口巡检 Issue」run #41305558292 均 completed/success；#106 已由 `close-issues.yml` 于 `2026-11-01T12:15:07Z` 按账本评论并关闭；线上 `data/health-checks.json` 最新记录为本轮 `loop-20261101-2015-cst`（pass），`pages-manifest.json` 两 target 均 published。
+
+Closes #106
 
 **下一轮唯一最高优先级**
 

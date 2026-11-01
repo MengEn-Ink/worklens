@@ -1142,7 +1142,7 @@
         {
           "name": "Issue 状态更新",
           "result": "pass",
-          "evidence": "已创建本轮巡检 Issue #106；本提交同步更新 docs/loop-log.md 与 data/issue-close-requests.json，合入 main 后可据公开证据完成收口。"
+          "evidence": "已创建本轮巡检 Issue #106；本提交同步更新 docs/loop-log.md 与 data/issue-close-requests.json。推送后 main head 72bec4a 上质量门禁 run 41305558291、Pages run 41305558323、收口 run 41305558292 均 completed/success；close-issues.yml 已于 2026-11-01T12:15:07Z 按账本评论并关闭 #106；线上 data/health-checks.json 已提供本巡检记录（pass）。"
         }
       ],
       "data_freshness": [
