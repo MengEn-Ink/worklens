@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-01T05:43:49.697686+00:00",
+  "generated_at": "2026-11-01T12:08:43.673615+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -71,10 +71,11 @@
         "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}",
         "search:topic:workflow-automation stars:>300 archived:false",
         "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}",
-        "search:topic:claude-code stars:>50 archived:false"
+        "search:topic:claude-code stars:>50 archived:false",
+        "trending:daily/typescript"
       ],
       "enqueued_at": "2026-10-24T04:55:16.586479+00:00",
-      "metadata_synced_at": "2026-10-31T19:51:57.676571+00:00",
+      "metadata_synced_at": "2026-11-01T12:08:43.660089+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
@@ -1327,11 +1328,11 @@
         "trending:weekly/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600350+00:00",
-      "metadata_synced_at": "2026-10-31T12:08:54.857033+00:00",
+      "metadata_synced_at": "2026-11-01T12:08:43.659383+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 309714,
+      "stars": 310338,
       "pushed_at": "2026-10-29T23:35:34Z",
       "checks": {
         "license_declared": {
@@ -1457,17 +1458,17 @@
       "id": "SR-0039",
       "subject": "Graphify-Labs/graphify",
       "html_url": "https://github.com/Graphify-Labs/graphify",
-      "source": "trending:weekly/python",
+      "source": "trending:daily/python",
       "also_seen_in": [
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600576+00:00",
-      "metadata_synced_at": "2026-10-30T12:04:33.691876+00:00",
+      "metadata_synced_at": "2026-11-01T12:08:43.659818+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 138817,
-      "pushed_at": "2026-10-27T18:15:35Z",
+      "stars": 140274,
+      "pushed_at": "2026-11-01T00:53:07Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -1495,10 +1496,11 @@
       "also_seen_in": [
         "trending:daily/typescript",
         "trending:weekly/typescript",
-        "trending:daily/all"
+        "trending:daily/all",
+        "trending:weekly/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600755+00:00",
-      "metadata_synced_at": "2026-11-01T05:43:49.690334+00:00",
+      "metadata_synced_at": "2026-11-01T12:08:43.660206+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
@@ -1533,12 +1535,12 @@
         "trending:weekly/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600902+00:00",
-      "metadata_synced_at": "2026-10-31T12:08:54.857920+00:00",
+      "metadata_synced_at": "2026-11-01T12:08:43.660364+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 97668,
-      "pushed_at": "2026-10-31T11:56:18Z",
+      "stars": 98812,
+      "pushed_at": "2026-11-01T12:02:03Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -3495,11 +3497,11 @@
       "source": "trending:daily/all",
       "also_seen_in": [],
       "enqueued_at": "2026-10-30T12:04:33.695144+00:00",
-      "metadata_synced_at": "2026-10-30T12:04:33.695144+00:00",
+      "metadata_synced_at": "2026-11-01T12:08:43.662755+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 29958,
+      "stars": 31635,
       "pushed_at": "2026-10-19T02:43:42Z",
       "checks": {
         "license_declared": {
@@ -4310,18 +4312,18 @@
       "id": "SR-0126",
       "subject": "anthropics/skills",
       "html_url": "https://github.com/anthropics/skills",
-      "source": "trending:daily/all",
+      "source": "trending:weekly/all",
       "also_seen_in": [
         "trending:weekly/all",
         "trending:daily/python",
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-31T12:08:54.857206+00:00",
-      "metadata_synced_at": "2026-10-31T12:08:54.857206+00:00",
+      "metadata_synced_at": "2026-11-01T12:08:43.659560+00:00",
       "state": "candidate",
       "license": null,
       "archived": false,
-      "stars": 185685,
+      "stars": 186095,
       "pushed_at": "2026-10-28T19:20:39Z",
       "checks": {
         "license_declared": {
@@ -4662,6 +4664,70 @@
       "history": [
         {
           "at": "2026-11-01T05:43:49.696591+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0137",
+      "subject": "calesthio/OpenMontage",
+      "html_url": "https://github.com/calesthio/OpenMontage",
+      "source": "trending:daily/python",
+      "also_seen_in": [],
+      "enqueued_at": "2026-11-01T12:08:43.661312+00:00",
+      "metadata_synced_at": "2026-11-01T12:08:43.661312+00:00",
+      "state": "candidate",
+      "license": "AGPL-3.0",
+      "archived": false,
+      "stars": 74168,
+      "pushed_at": "2026-10-28T21:46:02Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=AGPL-3.0",
+          "checked_at": "2026-11-01T12:08:43.661312+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-11-01T12:08:43.661312+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0138",
+      "subject": "0x0funky/agent-sprite-forge",
+      "html_url": "https://github.com/0x0funky/agent-sprite-forge",
+      "source": "trending:daily/python",
+      "also_seen_in": [],
+      "enqueued_at": "2026-11-01T12:08:43.666671+00:00",
+      "metadata_synced_at": "2026-11-01T12:08:43.666671+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 4808,
+      "pushed_at": "2026-10-06T14:09:38Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-11-01T12:08:43.666671+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-11-01T12:08:43.666671+00:00",
           "event": "enqueued",
           "by": "worklens-bot",
           "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
