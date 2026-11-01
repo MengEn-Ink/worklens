@@ -18,6 +18,7 @@
 - 公开仓库最新 main：`1b314e5 数据：更新开源项目候选、深度解读缓存与 AI 资讯`。
 - 线上 Pages 已是最新公开数据：`https://mengen-ink.github.io/worklens/data/ai-news.json` = `2026-11-01T14:55:01Z`，`discoveries.json` = `2026-11-01T14:54:41Z`，`skill-review-queue.json` = `2026-11-01T12:08:43Z`。
 - 本地质量门禁：`python3 scripts/health_check.py validate`（23 条巡检）、`python3 scripts/close_issues_ci.py validate`（20 条收口请求）、`repo_insights.py validate`、`skill_adoptions.py validate`、`skill_review.py validate`、`core_circle.py`、`idea_pipeline.py validate`、`recommendation_review.py validate`、`security_scan.py --strict`、`build_pages.py`（routes=/, /ai-news/; skipped=none）全部通过；`node --test tests/*.js` 45 项、`python3 -m unittest discover -s tests -p 'test_*.py'` 141 项全过。
+- 推送后验收：main head `c242f14` 上「质量与安全门禁」run #41324700406、「发布 GitHub Pages」run #41324700482、「收口巡检 Issue」run #41324700474 均 completed/success；#107 已由 `close-issues.yml` 于 `2026-11-01T16:07:57Z` 按账本评论并关闭；线上 `data/health-checks.json` 最新记录为本轮 `loop-20261102-0003-cst`（pass），`/`、`/ai-news/`、`pages-manifest.json`、`data/issue-close-requests.json` 均 HTTP 200。
 
 Closes #107
 

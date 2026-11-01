@@ -1201,7 +1201,7 @@
         {
           "name": "Issue 状态更新",
           "result": "pass",
-          "evidence": "已创建本轮巡检 Issue #107；本提交同步更新 docs/loop-log.md 与 data/issue-close-requests.json，合入 main 后由 close-issues.yml 按公开账本评论并关闭。"
+          "evidence": "已创建本轮巡检 Issue #107；本提交同步更新 docs/loop-log.md 与 data/issue-close-requests.json。推送后 main head c242f14 上质量门禁 run 41324700406、Pages run 41324700482、收口 run 41324700474 均 completed/success；close-issues.yml 已于 2026-11-01T16:07:57Z 按账本评论并关闭 #107；线上 data/health-checks.json 已提供本巡检记录（pass）。"
         }
       ],
       "data_freshness": [
