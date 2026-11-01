@@ -3,6 +3,9 @@ name: 发布 GitHub Pages
 on:
   push:
     branches: [main]
+  workflow_run:
+    workflows: ["采集开源项目候选"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -16,9 +19,12 @@ concurrency:
 
 jobs:
   build:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - name: 组装 Hub 与 AI 情报页面
         run: python3 scripts/build_pages.py
       - uses: actions/upload-pages-artifact@v3
