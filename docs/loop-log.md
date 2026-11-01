@@ -2,6 +2,27 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-11-01（08 点轮）· 修复采集后 Pages 未自动发布（Issue #103）
+
+**成果**
+
+- 同步公开仓库 `main`：本轮事实源最新为 `5035bb1`；已复核上一轮 #102 已关闭；创建本轮巡检 Issue #103 前公开 open Issue / open PR 均为空。
+- Actions 巡检：最近公开 workflow runs 均 `completed/success`，最新为定时 `collect.yml` run #41251779650，以及 04 点轮「质量与安全门禁」run #41237700912、「发布 GitHub Pages」run #41237700957、「收口巡检 Issue」run #41237700910；巡检时无 running / queued / failed。
+- 数据巡检：公开仓库 `main` 的 `data/ai-news.json` / `data/discoveries.json` / `data/repo-insights.json` 生成于 `2026-10-31T23:15Z` 左右（AI 资讯 200 条、候选 494 条、深度解读 850 条，均未超过 240 分钟阈值），本轮不重复触发采集；但线上 Pages 的 `data/ai-news.json` 与 `data/discoveries.json` 仍停留在 `2026-10-31T19:51Z`，确认最新采集机器人提交没有自动触发 `pages.yml`。
+- 已修复发布缺口：`pages.yml` 新增对「采集开源项目候选」成功完成的 `workflow_run` 监听，并固定 checkout `main`，确保 `collect.yml` 由内置 `GITHUB_TOKEN` 推送的新数据也会重新发布到 GitHub Pages；README 已同步补充自动化节奏说明。
+- 验收与收口资料：本轮已更新 `data/health-checks.json`、`data/issue-close-requests.json` 与本日志；P0–P4 继续保持上线降级态，不自动安装 Skill、不启动未经确认的新功能。
+
+**验证证据**
+
+- 公开仓库最新 main：`5035bb1 数据：更新开源项目候选、深度解读缓存与 AI 资讯`。
+- 最新成功采集：run #41251779650（`2026-10-31T23:15:48Z`，head `56c1a33`）；最新成功 Pages 仍是 run #41237700957（`2026-10-31T20:11:06Z`，head `56c1a33`），与 23:15 数据提交脱钩。
+- 线上公开数据 `generated_at`：`ai-news` = `2026-10-31T19:51:56Z`，`discoveries` = `2026-10-31T19:51:09Z`；仓库 main 对应文件 `generated_at` 均已推进到 `2026-10-31T23:15Z`。
+- 修复点：`.github/workflows/pages.yml` 监听 `workflow_run`（`采集开源项目候选`）且仅在成功完成时执行，`actions/checkout@v4` 固定 `ref: main`，避免沿用触发事件的旧 `head_sha`。
+
+**下一轮唯一最高优先级**
+
+- 合入本轮修复后，优先验证 `collect.yml → pages.yml` 自动发布链路已恢复；若任一公开工作流失败或 #103 未收口，下一轮先修当前 Issue，再继续健康巡检降级态。
+
 ## 2026-11-01（04 点轮）· 健康巡检与数据新鲜度复核（Issue #102）
 
 **成果**

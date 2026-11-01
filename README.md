@@ -44,6 +44,7 @@ PC 与 H5 共用一套响应式页面。旧地址 `/desktop/` 会跳到 `/`，`/
 - 每四小时：健康巡检与数据刷新，结果写入 `data/health-checks.json`（`scripts/health_check.py validate`，CI 强制校验）。
 - Issue 收口：Loop 沙箱令牌没有 Issues 写权限时，把待关闭 Issue 与公开证据登记到 `data/issue-close-requests.json`（`scripts/close_issues_ci.py validate`，CI 强制校验），合入 main 后由 `close-issues.yml` 用内置 `GITHUB_TOKEN`（仅 `issues: write`）评论并关闭；脚本幂等，已关闭 Issue 自动跳过。
 - 每日：采集、去重、补充仓库元数据（GitHub Actions 每日 01:17 UTC）。
+- 采集后发布：`pages.yml` 同时监听 `main` push 与 `collect.yml` 成功完成，避免 Actions 内置 `GITHUB_TOKEN` 推送的新数据停留在仓库而未发布到站点。
 - 每个公开源默认独立 24 小时 TTL，支持 ETag/Last-Modified；刷新失败按源保留旧数据并标记 degraded/cached。
 - 采集仅调用公开 RSS/Atom/JSON/REST，不抓 HTML、不调用 LLM、零第三方 Python 依赖。
 - 仓库候选六类渠道（`config/sources.json`）：GitHub Trending 日榜/周榜 RSS（`trending_feeds`，4 小时 TTL）、主题搜索（`github_queries`，支持 `{days_ago:N}` 与按 stars 排序的「近 30 天新星」）、本人星标/仓库、AI 资讯中被提到的仓库（`feed_mentions`）、固定关注。去重后全部列出，不按星数/许可证丢弃；首次出现时间记为 `first_seen_at`，近 12 小时出现的进入「新上榜」。补全元数据每轮最多 `max_enrich_requests` 次 API 调用，超出则跳过并在源状态里记 `skipped`。
