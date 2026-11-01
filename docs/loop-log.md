@@ -2,6 +2,28 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-11-01（20 点轮）· 超窗兜底采集与发布链路复核（Issue #106）
+
+**成果**
+
+- 同步公开仓库 `main`：本轮事实源最新为 `a80565e`；已复核上一轮 #105 由 `close-issues.yml` 于 `2026-11-01T09:10:03Z` 评论并关闭；创建本轮巡检 Issue #106 前公开 open Issue / open PR 均为空。
+- Actions 巡检：最近公开 workflow runs 均 `completed/success`，最新为「采集开源项目候选」run #41304988197 与采集后自动触发的「发布 GitHub Pages」run #41305068149（head `a80565e`），巡检时无 running / queued / failed。
+- 数据刷新（超窗兜底）：巡检开始时 main 数据停留在 `2026-11-01T05:43:49Z`，距今约 388 分钟、超过 240 分钟阈值，且 12:00 UTC 定时窗口未见新数据提交；已手动 `workflow_dispatch` 触发 `collect.yml` run #41304988197（58s 成功），机器人产出提交 `a80565e`。刷新后 AI 资讯 200 条（14/14 源 ok，TTL 内缓存源标记 cached）、开源候选 493 条（34/34 源 ok）、深度解读覆盖 492/493（new 21 / reused 468 / regenerated 2 / rechecked_same 1 / skipped 1）、Skill 待审 138 条且 `policy.auto_install=false`。
+- Pages 复核：`collect.yml` 成功后 `pages.yml` 的 `workflow_run` 自动成功；线上 data 三个文件 `generated_at` 均推进到 `2026-11-01T12:08Z`，与 main 一致；`/` 与 `/ai-news/` HTTP 200，`pages-manifest.json` 中 hub、ai-news 均为 published，`/desktop/`、`/atelier/` 旧地址跳转 200。
+- 最小可交付：P0–P4 目标保持上线降级态；README 路线图仅剩需真人确认后才能推进的「喜好账本反哺排序」，本轮不启动未经确认的新功能、不自动安装 Skill。
+- Issue 收口：本次提交已把 #106 登记到 `data/issue-close-requests.json`；合入 main 后由 `close-issues.yml` 使用内置 `GITHUB_TOKEN`（`issues: write`）评论并关闭。
+
+**验证证据**
+
+- 公开仓库最新 main：`a80565e 数据：更新开源项目候选、深度解读缓存与 AI 资讯`。
+- 兜底采集：run #41304988197（workflow_dispatch，58s success）→ 采集后 Pages run #41305068149（workflow_run，head `a80565e` success）。
+- 线上 Pages 已是最新公开数据：`https://mengen-ink.github.io/worklens/data/ai-news.json` = `2026-11-01T12:08:42Z`，`discoveries.json` = `2026-11-01T12:07:57Z`，`skill-review-queue.json` = `2026-11-01T12:08:43Z`。
+- 本地质量门禁：`python3 scripts/health_check.py validate`、`python3 scripts/close_issues_ci.py validate`、`python3 scripts/security_scan.py --strict`、`python3 scripts/build_pages.py`、`node --test tests/*.js`、`python3 -m unittest discover -s tests -p 'test_*.py'`（见本提交 CI 结果）。
+
+**下一轮唯一最高优先级**
+
+- 先核验 #106 是否已由 `close-issues.yml` 按账本评论并关闭；随后继续健康巡检降级态：核对 main、运行中 / 失败 Actions、Pages 四入口和公开数据 4 小时新鲜度；`collect.yml` 已为每 4 小时定时（`0 */4 * * *` UTC），定时触发延迟或超窗时继续手动 `workflow_dispatch` 兜底。
+
 ## 2026-11-01（16 点轮）· 健康巡检与数据新鲜度复核（Issue #105）
 
 **成果**
