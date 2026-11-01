@@ -2,6 +2,29 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-11-02（04 点轮）· 超窗兜底采集与公开链路复核（Issue #108）
+
+**成果**
+
+- 同步公开仓库 `main`：本轮事实源最新为 `839d603`；已复核上一轮 #107 由 `close-issues.yml` 于 `2026-11-01T16:07:57Z` 评论并关闭；创建本轮巡检 Issue #108 前公开 open Issue / open PR 均为空。
+- Actions 巡检：最近公开 workflow runs 全部 `completed/success`；因 `20:00 UTC` 定时采集未在运行列表出现，已手动 `workflow_dispatch` 触发 `collect.yml` run #41345386723，并等待采集后自动触发的 `pages.yml` run #41345557266 成功，巡检时无 running / queued / failed。
+- 数据刷新（超窗兜底）：巡检开始时 main 与线上 Pages 的 `ai-news` / `discoveries` 仍停留在 `2026-11-01T14:55Z` 左右，`skill-review-queue` 停留在 `2026-11-01T12:08:43Z`，均已超过 240 分钟阈值；手动触发采集后公开数据刷新到 `2026-11-01T20:09Z–20:11Z`。刷新后 AI 资讯 200 条（14/14 源 ok）、开源候选 495 条（34/34 源 ok）、Skill 待审 142 条且 `policy.auto_install=false`。
+- Pages 复核：采集成功后 `pages.yml` 自动发布成功，线上 `data/ai-news.json`、`data/discoveries.json`、`data/skill-review-queue.json` 的 `generated_at` 已推进到 `2026-11-01T20:09Z–20:11Z`，与 main 一致；`/`、`/ai-news/`、`/desktop/`、`/atelier/`、`pages-manifest.json` 均 HTTP 200。
+- 最小可交付：P0–P4 目标继续保持上线降级态；README 路线图仅剩需真人确认后才能推进的「喜好账本反哺排序」，本轮不启动未经确认的新功能、不自动安装 Skill。
+- Issue 收口：本次提交同步更新 `docs/loop-log.md`、`data/health-checks.json` 与 `data/issue-close-requests.json`，合入 main 后由 `close-issues.yml` 使用内置 `GITHUB_TOKEN`（`issues: write`）评论并关闭 #108。
+
+**验证证据**
+
+- 公开仓库最新 main：`839d603 数据：更新开源项目候选、深度解读缓存与 AI 资讯`。
+- 兜底采集：run #41345386723（workflow_dispatch，success）→ 采集后自动发布 Pages run #41345557266（workflow_run，head `839d603` success）。
+- 线上公开数据：`https://mengen-ink.github.io/worklens/data/ai-news.json` = `2026-11-01T20:11:19Z`（200 条），`discoveries.json` = `2026-11-01T20:09:39Z`（495 条），`skill-review-queue.json` = `2026-11-01T20:11:20Z`（142 条）。
+- 线上入口探活：`https://mengen-ink.github.io/worklens/`、`/ai-news/`、`/desktop/`、`/atelier/`、`/pages-manifest.json` 均返回 HTTP 200。
+
+**下一轮唯一最高优先级**
+
+- 继续健康巡检降级态：下一轮先核验 #108 是否已由 `close-issues.yml` 按账本评论并关闭；随后核对 `main`、运行中 / 失败 Actions、Pages 四入口和公开数据 4 小时新鲜度，`collect.yml` 已为每 4 小时定时（`0 */4 UTC`），定时触发延迟或超窗时继续手动 `workflow_dispatch` 兜底。
+
+
 ## 2026-11-02（00 点轮）· 健康巡检与数据新鲜度复核（Issue #107）
 
 **成果**
