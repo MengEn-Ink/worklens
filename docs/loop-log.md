@@ -2,6 +2,31 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-11-02（16 点轮）· 兜底采集与 README 剩余事项复核（Issue #115）
+
+**成果**
+
+- 同步公开仓库 `main`：本轮事实源最新为 `52f6db9`；已复核上一轮 #113 已由 `close-issues.yml` 于 `2026-11-02T04:38:26Z` 评论并关闭；创建本轮巡检 Issue #115 后公开 open Issue 为当前轮自身、open PR 为空。
+- Actions 巡检：巡检开始时最近公开 workflow runs 全部 `completed/success`，但上一轮人工兜底采集产物距当前已约 218–220 分钟，接近 240 分钟阈值且新一轮 `04:00 UTC` 定时采集尚未出现；已手动 `workflow_dispatch` 触发 `collect.yml` run #41410492461，并确认采集后自动触发的 `pages.yml` run #41410707607 成功，巡检收口时无 running / queued / failed。
+- 数据刷新（主动兜底）：`ai-news` 刷新到 `2026-11-02T08:06:57Z`（200 条，公开资讯链路继续可用），`discoveries` 刷新到 `2026-11-02T08:05:20Z`（498 条候选），`skill-review-queue` 刷新到 `2026-11-02T08:06:59Z`（149 条，`policy.auto_install=false`）；公开数据均回到 5 分钟内新鲜状态。
+- Pages 复核：采集成功后 `pages.yml` 自动发布成功；线上 `data/ai-news.json`、`data/discoveries.json`、`data/skill-review-queue.json` 与 main 一致，`/`、`/ai-news/`、`/desktop/`、`/atelier/`、`pages-manifest.json` 均可继续以 HTTP 200 探活。
+- 最小可交付：继续维持 P0–P4 全部已上线事项的健康巡检降级态；根据 README 与当前实现复核，唯一未完成路线图仍是「喜好账本反哺排序」，而现有仓库仅具备本地喜好账本、推荐复盘账本与只读画像契约，尚缺真人确认后的全局权重回写链路，因此本轮不启动未经确认的新功能、不自动安装 Skill。
+- Issue 收口：本次提交同步更新 `docs/loop-log.md`、`data/health-checks.json` 与 `data/issue-close-requests.json`；合入 main 后由 `close-issues.yml` 使用内置 `GITHUB_TOKEN` 评论并关闭 #115。
+
+**验证证据**
+
+- 公开仓库最新 main：`52f6db9 数据：更新开源项目候选、深度解读缓存与 AI 资讯`。
+- 兜底采集：run #41410492461（workflow_dispatch，success）→ 采集后自动发布 Pages run #41410707607（workflow_run，success）。
+- 线上公开数据：`https://mengen-ink.github.io/worklens/data/ai-news.json` = `2026-11-02T08:06:57Z`（200 条），`discoveries.json` = `2026-11-02T08:05:20Z`（498 条），`skill-review-queue.json` = `2026-11-02T08:06:59Z`（149 条，`policy.auto_install=false`）。
+- 线上入口探活：`https://mengen-ink.github.io/worklens/`、`/ai-news/`、`/desktop/`、`/atelier/`、`/pages-manifest.json` 均返回 HTTP 200。
+- README 剩余事项复核：当前仓库已存在 `worklens-hub_9bx8/v1/data-adapter.js` 中的 `buildLocalProfile` / `localRelevance` 本地打分、`data/recommendation-reviews.json` 复盘账本与 `scripts/recommendation_review.py summarize` 只读汇总，但尚无将真人确认结论写回 `data/profile.json` 并影响默认排序的已上线链路，因此继续保持“待真人确认后再推进”的降级态。
+
+Closes #115
+
+**下一轮唯一最高优先级**
+
+- 先核验 #115 是否已由 `close-issues.yml` 按账本评论并关闭；随后继续健康巡检降级态：核对 main、运行中 / 失败 Actions、Pages 四入口与公开数据 240 分钟新鲜度。若 README 剩余事项「喜好账本反哺排序」获得真人确认，再按既有本地喜好账本 / 推荐复盘 / 画像契约补上全局权重回写与默认排序联动；未获确认前不启动新功能。
+
 ## 2026-11-02（12 点轮）· 超窗兜底采集与公开链路复核（Issue #113）
 
 **成果**
