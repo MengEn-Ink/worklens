@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T00:06:22.821715+00:00",
+  "generated_at": "2026-11-02T04:27:22.421635+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -230,7 +230,6 @@
       "also_seen_in": [
         "trending:daily/typescript"
       ],
-      "relationships": [],
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
@@ -928,15 +927,15 @@
         "wifi-security"
       ],
       "language": "Rust",
-      "stars": 101880,
-      "forks": 13235,
-      "open_issues": 522,
+      "stars": 102026,
+      "forks": 13254,
+      "open_issues": 536,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-31T18:36:08Z",
-      "updated_at": "2026-11-01T00:07:55Z",
+      "pushed_at": "2026-11-02T00:27:09Z",
+      "updated_at": "2026-11-02T04:26:54Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-01T00:14:34.187983+00:00",
+      "collected_at": "2026-11-02T04:27:25.170206+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -2806,15 +2805,15 @@
         "wireguard"
       ],
       "language": "Go",
-      "stars": 38434,
-      "forks": 3403,
-      "open_issues": 4811,
+      "stars": 38497,
+      "forks": 3409,
+      "open_issues": 4814,
       "license": "BSD-3-Clause",
       "archived": false,
-      "pushed_at": "2026-10-31T19:22:37Z",
-      "updated_at": "2026-10-31T23:31:22Z",
+      "pushed_at": "2026-11-01T18:46:24Z",
+      "updated_at": "2026-11-02T03:33:51Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-11-01T00:14:33.699093+00:00",
+      "collected_at": "2026-11-02T04:27:24.215496+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -2938,15 +2937,15 @@
         "windows"
       ],
       "language": "Go",
-      "stars": 36870,
+      "stars": 36903,
       "forks": 1918,
-      "open_issues": 362,
+      "open_issues": 361,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-10-31T23:43:09Z",
-      "updated_at": "2026-10-31T22:46:36Z",
+      "pushed_at": "2026-11-02T00:18:57Z",
+      "updated_at": "2026-11-02T03:48:10Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-11-01T00:14:33.265546+00:00",
+      "collected_at": "2026-11-02T04:27:24.650320+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -3188,15 +3187,15 @@
       "description": "Algorithm powering the For You feed on X",
       "topics": [],
       "language": "Rust",
-      "stars": 33991,
-      "forks": 5498,
+      "stars": 34012,
+      "forks": 5503,
       "open_issues": 159,
       "license": "Apache-2.0",
       "archived": false,
       "pushed_at": "2026-10-31T02:25:49Z",
-      "updated_at": "2026-10-31T23:55:35Z",
+      "updated_at": "2026-11-02T03:14:54Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-01T00:14:34.552899+00:00",
+      "collected_at": "2026-11-02T04:27:25.581393+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -5667,6 +5666,23 @@
       "first_seen_at": "2026-10-30T04:05:03.566212+00:00"
     },
     {
+      "full_name": "jakubkrehel/skills",
+      "html_url": "https://github.com/jakubkrehel/skills",
+      "description": "A collection of agent skills that help you build great interfaces.",
+      "topics": [],
+      "language": "Markdown",
+      "stars": 10140,
+      "forks": 394,
+      "open_issues": 11,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-02T01:29:43Z",
+      "updated_at": "2026-11-02T04:22:17Z",
+      "source": "trending:weekly/all",
+      "collected_at": "2026-11-02T04:27:22.928385+00:00",
+      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
+    },
+    {
       "full_name": "miniflux/v2",
       "html_url": "https://github.com/miniflux/v2",
       "description": "Minimalist and opinionated feed reader",
@@ -5768,23 +5784,6 @@
       "source": "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}",
       "collected_at": "2026-11-01T05:40:03.799695+00:00",
       "first_seen_at": "2026-11-01T05:39:49.152264+00:00"
-    },
-    {
-      "full_name": "jakubkrehel/skills",
-      "html_url": "https://github.com/jakubkrehel/skills",
-      "description": "A collection of agent skills that help you build great interfaces.",
-      "topics": [],
-      "language": "Markdown",
-      "stars": 9606,
-      "forks": 368,
-      "open_issues": 10,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-10-25T13:26:17Z",
-      "updated_at": "2026-11-01T00:06:12Z",
-      "source": "trending:weekly/all",
-      "collected_at": "2026-11-01T00:14:31.266207+00:00",
-      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
       "full_name": "RSS-Bridge/rss-bridge",
@@ -8489,6 +8488,31 @@
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
+      "full_name": "trymirai/uzu",
+      "html_url": "https://github.com/trymirai/uzu",
+      "description": "A high-performance inference engine for AI models",
+      "topics": [
+        "ai",
+        "high-performance",
+        "inference",
+        "llm",
+        "metal",
+        "rust",
+        "tts"
+      ],
+      "language": "Rust",
+      "stars": 3172,
+      "forks": 212,
+      "open_issues": 26,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-02T03:12:57Z",
+      "updated_at": "2026-11-02T04:04:19Z",
+      "source": "trending:weekly/rust",
+      "collected_at": "2026-11-02T04:27:25.969966+00:00",
+      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
+    },
+    {
       "full_name": "Natively-AI-assistant/natively-cluely-ai-assistant",
       "html_url": "https://github.com/Natively-AI-assistant/natively-cluely-ai-assistant",
       "description": "Natively — Free open-source AI meeting assistant, interview copilot, and note taker. The best alternative to Cluely, Otter, Granola, Final Round AI, Fireflies, and Interview Coder. Real-time transcription, AI meeting notes, lecture recording, local RAG, BYOK, and stealth mode. Runs locally. No subscriptions. No data breaches.",
@@ -8525,31 +8549,6 @@
       "source": "search:topic:ai-agent stars:>500 archived:false",
       "collected_at": "2026-11-01T20:10:00.753547+00:00",
       "first_seen_at": "2026-11-01T20:09:39.687319+00:00"
-    },
-    {
-      "full_name": "trymirai/uzu",
-      "html_url": "https://github.com/trymirai/uzu",
-      "description": "A high-performance inference engine for AI models",
-      "topics": [
-        "ai",
-        "high-performance",
-        "inference",
-        "llm",
-        "metal",
-        "rust",
-        "tts"
-      ],
-      "language": "Rust",
-      "stars": 3141,
-      "forks": 208,
-      "open_issues": 25,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-10-31T19:55:16Z",
-      "updated_at": "2026-10-31T23:55:56Z",
-      "source": "trending:weekly/rust",
-      "collected_at": "2026-11-01T00:14:34.955517+00:00",
-      "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
       "full_name": "estevanmaito/windmill-dashboard",
@@ -14896,56 +14895,56 @@
     "trending:daily/all": {
       "ok": true,
       "count": 14,
-      "cached": true,
-      "fetched_at": "2026-11-01T20:09:39.687319+00:00"
+      "listed": 14,
+      "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
       "count": 15,
-      "cached": true,
-      "fetched_at": "2026-11-01T20:09:39.687319+00:00"
+      "listed": 15,
+      "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     },
     "trending:daily/python": {
       "ok": true,
-      "count": 15,
-      "cached": true,
-      "fetched_at": "2026-11-01T20:09:39.687319+00:00"
+      "count": 14,
+      "listed": 14,
+      "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
-      "count": 17,
-      "cached": true,
-      "fetched_at": "2026-11-01T20:09:39.687319+00:00"
+      "count": 15,
+      "listed": 15,
+      "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 11,
-      "cached": true,
-      "fetched_at": "2026-11-01T20:09:39.687319+00:00"
+      "listed": 11,
+      "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
       "count": 19,
-      "cached": true,
-      "fetched_at": "2026-11-01T20:09:39.687319+00:00"
+      "listed": 19,
+      "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
-      "count": 20,
-      "cached": true,
-      "fetched_at": "2026-11-01T20:09:39.687319+00:00"
+      "count": 19,
+      "listed": 19,
+      "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 18,
-      "cached": true,
-      "fetched_at": "2026-11-01T20:09:39.687319+00:00"
+      "listed": 18,
+      "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-11-02T00:06:22.821715+00:00"
+      "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     }
   },
   "schema_version": 1
