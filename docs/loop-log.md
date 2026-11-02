@@ -2,6 +2,31 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-11-02（12 点轮）· 超窗兜底采集与公开链路复核（Issue #113）
+
+**成果**
+
+- 同步公开仓库 `main`：本轮事实源最新为 `bdd9fde`；已复核上一轮 #110 随 PR #111 合入被 `Closes #110` 自动关闭；创建本轮巡检 Issue #113 前公开 open Issue / open PR 均为空。
+- Actions 巡检：最近公开 workflow runs 全部 `completed/success`；因 `00:00 UTC` 定时采集未在运行列表出现（上一次 schedule 采集停留在 `2026-11-01T20:25:08Z` run #41346749070），已手动 `workflow_dispatch` 触发 `collect.yml` run #41388547600，并确认采集后自动触发的 `pages.yml` run #41388602213 成功，巡检时无 running / queued / failed。
+- 数据刷新（超窗兜底）：巡检开始时 main 与线上 Pages 的 `ai-news` / `discoveries` 停留在 `2026-11-02T00:06Z`（约 489 分钟），`skill-review-queue` 停留在 `2026-11-01T20:11:20Z`（约 503 分钟），均超过 240 分钟阈值；手动采集后 `ai-news` 刷新到 `2026-11-02T04:27:42Z`（200 条，14 源中 Hacker News 空解析 1 源降级、按缓存/降级策略保留可用数据），`discoveries` 刷新到 `2026-11-02T04:27:22Z`（495 条，34/34 源 ok），`repo-insights` 刷新到 `2026-11-02T04:27:26Z`（970 条）。`skill_review.py sync` 本轮确认待审队列内容无变化（无新 Skill 形态候选），保持 142 条、`policy.auto_install=false`，`generated_at` 不回写，健康账本按实记为 stale。
+- Pages 复核：采集成功后 `pages.yml` 自动发布成功，线上 `data/ai-news.json`、`data/discoveries.json`、`data/skill-review-queue.json` 与 main 一致；`/`、`/ai-news/`、`/desktop/`、`/atelier/`、`pages-manifest.json` 均 HTTP 200。
+- 最小可交付：P0–P4 目标继续保持上线降级态；README 路线图仅剩需真人确认后才能推进的「喜好账本反哺排序」，本轮不启动未经确认的新功能、不自动安装 Skill。
+- Issue 收口：本次提交同步更新 `docs/loop-log.md`、`data/health-checks.json` 与 `data/issue-close-requests.json`，合入 main 后由 `close-issues.yml` 使用内置 `GITHUB_TOKEN`（仅 `issues: write`）评论并关闭 #113。
+
+**验证证据**
+
+- 公开仓库最新 main：`bdd9fde 数据：更新开源项目候选、深度解读缓存与 AI 资讯`。
+- 兜底采集：run #41388547600（workflow_dispatch，success）→ 采集后自动发布 Pages run #41388602213（workflow_run，success）。
+- 本地采集链路：`python3 scripts/collect_public_feeds.py validate`（200 条，14 源中 1 个降级/失败）、`python3 scripts/collect_github.py validate`（495 repositories，34/34 源 ok）、`python3 scripts/health_check.py validate`（26 条巡检）、`python3 scripts/close_issues_ci.py validate`（23 条收口请求）、`repo_insights.py validate`、`skill_adoptions.py validate`、`skill_review.py validate`、`core_circle.py validate`、`idea_pipeline.py validate`、`recommendation_review.py validate`、`security_scan.py --strict`、`build_pages.py`（routes=/, /ai-news/; skipped=none）全部通过；`node --test tests/*.js` 45 项、`python3 -m unittest discover -s tests -p 'test_*.py'` 141 项全过。
+- 线上公开数据：`https://mengen-ink.github.io/worklens/data/ai-news.json` = `2026-11-02T04:27:42Z`（200 条），`discoveries.json` = `2026-11-02T04:27:22Z`（495 条），`skill-review-queue.json` = `2026-11-01T20:11:20Z`（142 条，内容无变化）。
+- 线上入口探活：`https://mengen-ink.github.io/worklens/`、`/ai-news/`、`/desktop/`、`/atelier/`、`/pages-manifest.json` 均返回 HTTP 200。
+
+Closes #113
+
+**下一轮唯一最高优先级**
+
+- 先核验 #113 是否已由 `close-issues.yml` 按账本评论并关闭；随后继续健康巡检降级态：核对 main、运行中 / 失败 Actions、Pages 四入口和公开数据 4 小时新鲜度；`collect.yml` 已为每 4 小时定时（`0 */4 UTC`），定时缺失或超窗时继续手动 `workflow_dispatch` 兜底；待审队列无新增候选时 `generated_at` 不回写属预期（只入队不流转），健康账本按实际龄期标记 stale 并说明，不把内容无变化误报为采集失败。
+
 ## 2026-11-02（08 点轮）· 健康巡检与本地数据刷新（Issue #110）
 
 **成果**
