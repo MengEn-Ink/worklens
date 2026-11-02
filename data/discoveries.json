@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T04:27:22.421635+00:00",
+  "generated_at": "2026-11-02T05:37:53.836209+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -230,6 +230,7 @@
       "also_seen_in": [
         "trending:daily/typescript"
       ],
+      "relationships": [],
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
@@ -14895,56 +14896,56 @@
     "trending:daily/all": {
       "ok": true,
       "count": 14,
-      "listed": 14,
+      "cached": true,
       "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
       "count": 15,
-      "listed": 15,
+      "cached": true,
       "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     },
     "trending:daily/python": {
       "ok": true,
-      "count": 14,
-      "listed": 14,
+      "count": 15,
+      "cached": true,
       "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
-      "count": 15,
-      "listed": 15,
+      "count": 17,
+      "cached": true,
       "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 11,
-      "listed": 11,
+      "cached": true,
       "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
       "count": 19,
-      "listed": 19,
+      "cached": true,
       "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
-      "count": 19,
-      "listed": 19,
+      "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 18,
-      "listed": 18,
+      "cached": true,
       "fetched_at": "2026-11-02T04:27:22.421635+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-11-02T04:27:22.421635+00:00"
+      "fetched_at": "2026-11-02T05:37:53.836209+00:00"
     }
   },
   "schema_version": 1
