@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T12:08:07.622147+00:00",
+  "generated_at": "2026-11-02T18:08:57.866611+00:00",
   "items": [
     {
       "title": "Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
@@ -3633,12 +3633,12 @@
       "checked_at": "2026-11-02T00:06:05.824419+00:00"
     },
     "Hacker News": {
-      "ok": false,
-      "degraded": true,
-      "cached": true,
-      "count": 1,
-      "error": "source returned an empty parsed result",
-      "fetched_at": "2026-10-31T23:15:53.224026+00:00"
+      "ok": true,
+      "cached": false,
+      "not_modified": false,
+      "count": 4,
+      "fetched_at": "2026-11-02T18:08:57.866611+00:00",
+      "checked_at": "2026-11-02T18:08:57.866611+00:00"
     },
     "Lobsters": {
       "ok": true,
@@ -4856,9 +4856,9 @@
     "Hacker News": {
       "items": [
         {
-          "title": "Anthropic blocks users for anything touching training larger models",
-          "url": "https://twitter.com/jiahaoshao1/status/2116475922190922088",
-          "published_at": "2026-10-31T19:39:19Z",
+          "title": "Launch HN: Momentic (YC W24) – Agents that catch bugs by using your app",
+          "url": "https://momentic.ai/",
+          "published_at": "2026-11-02T17:05:25Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4869,15 +4869,75 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50319358,
-            "score": 124,
-            "comments": 32
+            "hn_id": 50339913,
+            "score": 44,
+            "comments": 27
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "Anthropic's internal AI use, at retail prices, now exceeds its employee pay",
+          "url": "https://www.businessinsider.com/anthropic-claude-internal-ai-use-exceeds-employee-pay-tokens-2026-11",
+          "published_at": "2026-11-02T16:40:29Z",
+          "site_name": "Hacker News",
+          "source": [
+            "Hacker News"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [
+            "community"
+          ],
+          "metadata": {
+            "hn_id": 50339494,
+            "score": 85,
+            "comments": 60
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "LongCat-2.5: Native Multimodality for Agentic Tasks",
+          "url": "https://longcat.ai/blog/longcat-2.5",
+          "published_at": "2026-11-02T15:00:26Z",
+          "site_name": "Hacker News",
+          "source": [
+            "Hacker News"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [
+            "community"
+          ],
+          "metadata": {
+            "hn_id": 50337716,
+            "score": 45,
+            "comments": 16
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "Last night an AI agent performed brain surgery on a mouse",
+          "url": "https://twitter.com/OcanaSantero/status/2115442964574908902",
+          "published_at": "2026-11-02T12:50:59Z",
+          "site_name": "Hacker News",
+          "source": [
+            "Hacker News"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [
+            "community"
+          ],
+          "metadata": {
+            "hn_id": 50336138,
+            "score": 89,
+            "comments": 86
           },
           "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-10-31T23:15:53.224026+00:00",
-      "checked_at": "2026-10-31T23:15:53.224026+00:00",
+      "fetched_at": "2026-11-02T18:08:57.866611+00:00",
+      "checked_at": "2026-11-02T18:08:57.866611+00:00",
       "config_hash": "dab31b3ea2d6e110"
     },
     "Lobsters": {
