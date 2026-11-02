@@ -11,7 +11,7 @@
 - 数据刷新：巡检开始时 main 与线上 Pages 的 `ai-news` / `discoveries` 均为 `2026-11-01T20:25:14Z`，未超过 240 分钟阈值；本轮仍执行本地采集链路刷新，`data/ai-news.json` 推进到 `2026-11-02T00:06:05Z`（200 条，14 源中 1 个降级/失败，按缓存/降级策略保留可用数据），`data/discoveries.json` 推进到 `2026-11-02T00:06:22Z`（495 条）。`skill-review-queue` 保持 `2026-11-01T20:11:20Z`（142 条，`policy.auto_install=false`）。
 - Pages 复核：推送前线上 `/`、`/ai-news/`、`/desktop/`、`/atelier/`、`pages-manifest.json` 均 HTTP 200；线上 data 与推送前 main 一致。
 - 最小可交付：P0–P4 目标继续保持上线降级态；README 路线图仅剩需真人确认后才能推进的「喜好账本反哺排序」，本轮不启动未经确认的新功能、不自动安装 Skill。
-- Issue 收口：本次提交同步更新 `docs/loop-log.md`、`data/health-checks.json` 与 `data/issue-close-requests.json`，合入 main 后由 `close-issues.yml` 使用内置 `GITHUB_TOKEN`（`issues: write`）评论并关闭 #110。
+- Issue 收口：本次提交同步更新 `docs/loop-log.md`、`data/health-checks.json` 与 `data/issue-close-requests.json`；#110 随 PR #111 合入被 `Closes #110` 自动关闭，账本保留为幂等收口证据。
 
 **验证证据**
 
