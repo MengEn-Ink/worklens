@@ -177,7 +177,7 @@
     {
       "issue": 110,
       "title": "健康巡检：2026-11-02 08 点 WorkLens Loop",
-      "reason": "08 点轮健康巡检已完成：#108 已于 2026-11-01T20:14:24Z 关闭；巡检前 open Issue / PR 为空，已创建 #110。最近 Actions 均 completed/success，最新 Pages run 41346769788 与采集 run 41346749070 成功；开始时 main 与线上 Pages 的 ai-news/discoveries 均为 2026-11-01T20:25:14Z，未超过 240 分钟阈值。本轮本地采集链路刷新后 ai-news=2026-11-02T00:06:05Z（200 条，14 源中 1 个降级/失败，按缓存策略保留可用数据）、discoveries=2026-11-02T00:06:22Z（495 条），skill-queue=2026-11-01T20:11:20Z（142 条，auto_install=false）。线上四入口与 pages-manifest.json 均 200。P0-P4 保持降级态，不自动安装 Skill。",
+      "reason": "08 点轮健康巡检已完成：#108 已关闭；创建 #110 前 open Issue / PR 为空，最近 Actions 均 success。公开数据未超 240 分钟阈值；本轮本地刷新后 ai-news=2026-11-02T00:06:05Z（200 条，1 源降级）、discoveries=2026-11-02T00:06:22Z（495 条），skill-queue=2026-11-01T20:11:20Z（142 条，auto_install=false）。线上四入口与 pages-manifest.json 均 200；P0-P4 保持降级态，不自动安装 Skill。#110 随 PR #111 合入自动关闭，账本保留为幂等证据。",
       "evidence_ref": "data/health-checks.json",
       "requested_by": "worklens-loop",
       "requested_at": "2026-11-02T00:06:00Z"
