@@ -2,6 +2,30 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-11-02（20 点轮）· 本地采集兜底刷新与线上验收（Issue #117）
+
+**成果**
+
+- 同步公开仓库 `main`：创建本轮巡检 Issue #117 前公开 open Issue / open PR 均为空；本轮推送数据刷新提交 `fa36d8b` 后，公开 main 以该 head 为事实源。
+- Actions 巡检：推送前最近公开 workflow runs 均 `completed/success` 且无 running/queued/failed；因公开数据达到 240 分钟阈值，本轮选择本地执行采集脚本兜底刷新并推送 main。
+- 数据刷新（本地采集兜底）：`ai-news` 刷新到 `2026-11-02T12:08:07Z`（200 条，14 源中 1 源降级/失败，按缓存/降级策略保留可用数据），`discoveries` 刷新到 `2026-11-02T12:08:07Z`（491 条候选），`repo-insights` 刷新到 `2026-11-02T12:10:51Z`（覆盖 478/491，skipped=17），`skill-review-queue` 刷新到 `2026-11-02T12:11:03Z`（149 条，`policy.auto_install=false`）。
+- 验收质量门禁与 Pages：`fa36d8b` 的「质量与安全门禁」run #41442855934 success，「发布 GitHub Pages」run #41442855895 success；线上 `data/ai-news.json`、`data/discoveries.json`、`data/repo-insights.json`、`data/skill-review-queue.json` 的 `generated_at` 均与 main 一致。
+- Issue 收口：本次提交同步更新 `docs/loop-log.md` 与 `data/health-checks.json`；推送后以 Pages 回读账本为准完成 #117 关闭。
+
+**验证证据**
+
+- 公开仓库最新 main：`fa36d8b 数据：更新开源项目候选、深度解读缓存与 AI 资讯`。
+- 质量与安全门禁：https://github.com/MengEn-Ink/worklens/actions/runs/41442855934（success）。
+- Pages：https://github.com/MengEn-Ink/worklens/actions/runs/41442855895（success）。
+- 线上公开数据：`https://mengen-ink.github.io/worklens/data/ai-news.json` = `2026-11-02T12:08:07Z`（200 条），`discoveries.json` = `2026-11-02T12:08:07Z`（491 条），`repo-insights.json` = `2026-11-02T12:10:51Z`，`skill-review-queue.json` = `2026-11-02T12:11:03Z`（149 条）。
+- 线上入口探活：`https://mengen-ink.github.io/worklens/`、`/ai-news/`、`/desktop/`、`/atelier/`、`/pages-manifest.json` 均返回 HTTP 200。
+
+Closes #117
+
+**下一轮唯一最高优先级**
+
+- 继续健康巡检降级态：先确认 #117 已关闭；随后核对 main、运行中/失败 Actions、Pages 四入口与公开数据 240 分钟新鲜度；若真人明确确认推进「喜好账本反哺排序」，再按既有本地喜好账本与 profile.json 契约推进全局权重回写与默认排序联动。
+
 ## 2026-11-02（16 点轮）· 兜底采集与 README 剩余事项复核（Issue #115）
 
 **成果**
