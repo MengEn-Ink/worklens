@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-02T08:06:59.252384+00:00",
+  "generated_at": "2026-11-02T12:11:03.623613+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -66,7 +66,7 @@
       "id": "SR-0002",
       "subject": "paperclipai/paperclip",
       "html_url": "https://github.com/paperclipai/paperclip",
-      "source": "search:topic:workflow-automation stars:>300 archived:false",
+      "source": "search:topic:claude-code stars:>50 archived:false",
       "also_seen_in": [
         "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}",
         "search:topic:workflow-automation stars:>300 archived:false",
@@ -75,7 +75,7 @@
         "trending:daily/typescript"
       ],
       "enqueued_at": "2026-10-24T04:55:16.586479+00:00",
-      "metadata_synced_at": "2026-11-02T08:06:59.240214+00:00",
+      "metadata_synced_at": "2026-11-02T12:11:03.607287+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
@@ -1324,12 +1324,12 @@
       "id": "SR-0035",
       "subject": "obra/superpowers",
       "html_url": "https://github.com/obra/superpowers",
-      "source": "trending:daily/all",
+      "source": "trending:weekly/all",
       "also_seen_in": [
         "trending:weekly/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600350+00:00",
-      "metadata_synced_at": "2026-11-01T12:08:43.659383+00:00",
+      "metadata_synced_at": "2026-11-02T12:11:03.606414+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
@@ -1459,12 +1459,12 @@
       "id": "SR-0039",
       "subject": "Graphify-Labs/graphify",
       "html_url": "https://github.com/Graphify-Labs/graphify",
-      "source": "trending:daily/python",
+      "source": "trending:weekly/python",
       "also_seen_in": [
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600576+00:00",
-      "metadata_synced_at": "2026-11-01T12:08:43.659818+00:00",
+      "metadata_synced_at": "2026-11-02T12:11:03.606970+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
@@ -1530,13 +1530,13 @@
       "id": "SR-0041",
       "subject": "pbakaus/impeccable",
       "html_url": "https://github.com/pbakaus/impeccable",
-      "source": "trending:daily/all",
+      "source": "trending:weekly/all",
       "also_seen_in": [
         "trending:weekly/rust",
         "trending:weekly/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600902+00:00",
-      "metadata_synced_at": "2026-11-01T12:08:43.660364+00:00",
+      "metadata_synced_at": "2026-11-02T12:11:03.607555+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
@@ -2052,14 +2052,14 @@
       "id": "SR-0057",
       "subject": "JetBrains/thinkrail",
       "html_url": "https://github.com/JetBrains/thinkrail",
-      "source": "trending:weekly/typescript",
+      "source": "trending:weekly/all",
       "also_seen_in": [
         "trending:daily/typescript",
         "trending:weekly/typescript",
         "trending:daily/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.604334+00:00",
-      "metadata_synced_at": "2026-11-01T20:11:20.097954+00:00",
+      "metadata_synced_at": "2026-11-02T12:11:03.614385+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
@@ -3434,11 +3434,11 @@
       "source": "trending:weekly/python",
       "also_seen_in": [],
       "enqueued_at": "2026-10-30T12:04:33.693476+00:00",
-      "metadata_synced_at": "2026-10-31T12:08:54.858903+00:00",
+      "metadata_synced_at": "2026-11-02T12:11:03.608812+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 62847,
+      "stars": 63793,
       "pushed_at": "2026-10-28T07:17:33Z",
       "checks": {
         "license_declared": {
