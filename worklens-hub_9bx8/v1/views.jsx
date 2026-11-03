@@ -2,7 +2,7 @@
 /* global React, WL_UI, WL_HUB_ADAPTER */
 /* WorkLens Hub · 三个视图：本期 / 待审 / 我的（导出到 window.WL_VIEWS） */
 (function () {
-  const { useMemo, useState } = React;
+  const { useMemo, useState, useEffect, useRef } = React;
   const { Icon, Eyebrow, Pill, PriorityMark, Segmented, ScoreRow, TasteButtons, StateBlock, SkeletonRows, Avatar, RepoMetrics, LocalBadge, Explain } = WL_UI;
   const PAGE_SIZE = 30;
 
@@ -273,6 +273,13 @@
     const [query, setQuery] = useState('');
     const [showSkipped, setShowSkipped] = useState(false);
     const [limit, setLimit] = useState(PAGE_SIZE);
+
+    // 喜好账本反哺排序（最小）：首次点 ♥ 让「本机相关」排序自然发生；仍可手动切回。
+    const didInit = useRef(false);
+    useEffect(() => {
+      if (!didInit.current) { didInit.current = true; return; }
+      if (channel !== 'fresh' && sort === 'editor' && localProfile.ready) { setSort('local'); setLimit(PAGE_SIZE); }
+    }, [channel, sort, localProfile.ready]);
 
     const lovedCount = Object.values(taste).filter(value => value === 'love').length;
     const skippedCount = Object.values(taste).filter(value => value === 'skip').length;
