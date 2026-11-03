@@ -1729,6 +1729,60 @@
         }
       ],
       "next_action": "下一轮先确认 #121 是否已由 close-issues.yml 按账本评论并关闭；继续健康巡检降级态，核对 main、Actions、Pages 四入口与公开数据 240 分钟新鲜度。若公开数据超过阈值或定时采集缺失，继续手动 workflow_dispatch 或本地采集兜底；若真人明确确认推进喜好账本反哺排序，再补全全局权重回写与默认排序联动。"
+    },
+    {
+      "id": "loop-20261103-1626-cst",
+      "checked_at": "2026-11-03T08:26:00Z",
+      "actor": "worklens-loop",
+      "scope": "四小时健康巡检与数据刷新；收口 #122 喜好账本反哺排序最小可交付",
+      "result": "pass",
+      "issue_url": "https://github.com/MengEn-Ink/worklens/issues/122",
+      "actions": [
+        {
+          "name": "同步 main 与核对未关闭 Issue / PR / Actions",
+          "result": "pass",
+          "evidence": "main 已推进到 ca71c81；巡检时公开 open Issue 为 #122（其余 0）、open PR 为空；in_progress workflow runs=0。"
+        },
+        {
+          "name": "刷新公开数据（超过 240 分钟则兜底采集）",
+          "result": "pass",
+          "evidence": "巡检发现 ai-news/discoveries 仍停留在 2026-11-03T02:09Z（>240min），已本地执行 collect_github/collect_ai_news/collect_public_feeds/repo_insights/skill_review sync 兜底刷新并提交 9a5987a；刷新后 ai-news=2026-11-03T08:11:19Z（200 条）、discoveries=2026-11-03T08:11:19Z（478 条）、repo-insights=2026-11-03T08:15:22Z（覆盖 414/478，skipped=101）、skill-review-queue=2026-11-03T08:19:05Z（166 条，policy.auto_install=false）。"
+        },
+        {
+          "name": "收口最小可交付（#122）并验收质量门禁与 Pages",
+          "result": "pass",
+          "evidence": "#122 最小体验已在 ca71c81 合入：本期页首次点 ♥ 后自动切到本机相关排序（可切回），不改画像权重、不引入私有数据；9a5987a 门禁 run 41602561584、Pages run 41602561547 success；ca71c81 门禁 run 41602945503、Pages run 41602945450 success；线上 /、/ai-news/、/views.jsx 与公开 data JSON 均可回读 200。"
+        },
+        {
+          "name": "Issue 状态更新",
+          "result": "pass",
+          "evidence": "本提交将 #122 收口证据登记到 docs/loop-log.md 与 data/issue-close-requests.json；合入 main 后由 close-issues.yml 使用内置 GITHUB_TOKEN 评论并关闭。"
+        }
+      ],
+      "data_freshness": [
+        {
+          "path": "data/ai-news.json",
+          "generated_at": "2026-11-03T08:11:19Z",
+          "age_minutes_at_check": 15,
+          "item_count": 200,
+          "status": "fresh"
+        },
+        {
+          "path": "data/discoveries.json",
+          "generated_at": "2026-11-03T08:11:19Z",
+          "age_minutes_at_check": 15,
+          "item_count": 478,
+          "status": "fresh"
+        },
+        {
+          "path": "data/skill-review-queue.json",
+          "generated_at": "2026-11-03T08:19:05Z",
+          "age_minutes_at_check": 7,
+          "item_count": 166,
+          "status": "fresh"
+        }
+      ],
+      "next_action": "下一轮先确认 #122 是否已由 close-issues.yml 按账本评论并关闭；继续健康巡检降级态，核对 main、Actions、Pages 四入口与公开数据 240 分钟新鲜度。若公开数据超过阈值或定时采集缺失，继续手动 workflow_dispatch 或本地采集兜底；真人确认后再推进画像权重回写/默认排序等更激进调整。"
     }
   ]
 }

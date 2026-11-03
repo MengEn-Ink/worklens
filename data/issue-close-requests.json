@@ -237,6 +237,14 @@
       "requested_by": "worklens-loop",
       "evidence_ref": "data/health-checks.json",
       "reason": "12 点轮健康巡检验收标准已满足：#120 已关闭；创建 #121 前公开 open Issue / open PR 均为空；main 已同步到 80757b2，最近 Actions 均 completed/success。定时 collect.yml run 41564291233 与后续 Pages run 41564340604 均成功，公开数据仍在 240 分钟阈值内：ai-news=2026-11-03T02:09:05Z（200 条）、discoveries=2026-11-03T02:09:05Z（513 条）、repo-insights 覆盖 513/513，skill-review-queue=159 条且 auto_install=false。线上四入口与公开数据均可回读 HTTP 200；P0-P4 保持健康巡检降级态，不自动安装 Skill。"
+    },
+    {
+      "issue": 122,
+      "title": "喜好账本反哺排序：首次 ♥ 后自动切到「本机相关」排序（可随时切回）",
+      "requested_at": "2026-11-03T08:26:00Z",
+      "requested_by": "worklens-loop",
+      "evidence_ref": "docs/loop-log.md",
+      "reason": "Issue #122 最小可交付已完成并上线：提交 ca71c81 在本期页实现“首次点 ♥ 后自动切到本机相关排序（可切回）”；质量与安全门禁 run 41602945503 success，Pages run 41602945450 success；线上 /views.jsx 可检索 didInit 与反哺排序注释，入口与数据文件均 HTTP 200。按仓库约定通过账本 + close-issues.yml 使用内置 GITHUB_TOKEN 评论并关闭。"
     }
   ]
 }

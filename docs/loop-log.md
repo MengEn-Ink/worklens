@@ -2,6 +2,28 @@
 
 每轮闭环完成后记录：成果、验证证据、下一轮唯一最高优先级。最新在最上面。
 
+## 2026-11-03（16 点轮）· 数据刷新兜底 + 喜好账本反哺排序最小收口（Issue #122）
+
+**成果**
+
+- 同步公开仓库 `main`：开始时公开 open Issue / open PR 为空；按 Loop 规则创建 Issue #122 承载本轮最小可交付事项。
+- 数据刷新：巡检发现 `data/ai-news.json` 与 `data/discoveries.json` 的 `generated_at` 仍停留在 `2026-11-03T02:09Z` 左右，距本轮约 350+ 分钟，超过 240 分钟阈值；已本地执行 `scripts/collect_github.py`、`scripts/collect_ai_news.py`、`scripts/collect_public_feeds.py`、`scripts/repo_insights.py`、`scripts/skill_review.py sync` 兜底刷新公开数据并提交 `9a5987a`。
+- 体验收口（最小）：收口 Issue #122——用户在「本期」列表首次点 ♥ 后，如果仍处于「编辑优先」且不在「新上榜」频道，自动切到「本机相关」排序，让“喜好账本反哺排序”自然发生；仍可随时切回「编辑优先 / Stars」。实现提交 `ca71c81`。
+- 质量门禁与 Pages：`9a5987a` 与 `ca71c81` 的「质量与安全门禁」「发布 GitHub Pages」均 success；线上 `/`、`/ai-news/`、`/views.jsx` 与公开数据文件均可回读。
+- Issue 收口：本次提交将登记 `data/issue-close-requests.json` 收口请求；合入 main 后由 `close-issues.yml` 使用内置 `GITHUB_TOKEN` 评论并关闭 #122。
+
+**验证证据**
+
+- 本地：`node --test tests/*.js` 45/45 通过；`python3 -m unittest discover -s tests -p 'test_*.py'` 141/141 通过；`scripts/repo_insights.py validate`、`scripts/skill_review.py validate`、`scripts/security_scan.py --strict` 通过；`standard-lint` 对 `views.jsx` 未发现 `parsing/syntax error`、`no-undef`、`react/jsx-no-undef`、`import/no-unresolved` 四类阻断。
+- Actions：数据刷新提交 `9a5987a` 门禁 https://github.com/MengEn-Ink/worklens/actions/runs/41602561584 success，Pages https://github.com/MengEn-Ink/worklens/actions/runs/41602561547 success；体验收口提交 `ca71c81` 门禁 https://github.com/MengEn-Ink/worklens/actions/runs/41602945503 success，Pages https://github.com/MengEn-Ink/worklens/actions/runs/41602945450 success。
+- 线上验收：`https://mengen-ink.github.io/worklens/` 与 `/ai-news/` HTTP 200；`/data/ai-news.json`、`/data/discoveries.json`、`/data/repo-insights.json`、`/data/skill-review-queue.json` 与 `/views.jsx` 均 HTTP 200，且 `/views.jsx` 可检索到本轮新增的 `didInit` 与「反哺排序」注释。
+
+Closes #122
+
+**下一轮唯一最高优先级**
+
+- 先确认 #122 是否已由 `close-issues.yml` 按账本评论并关闭；随后继续健康巡检：核对 main、运行中 / 失败 Actions、Pages 四入口与公开数据 240 分钟新鲜度。若公开数据超过阈值或定时采集缺失，继续手动 `workflow_dispatch` 或本地采集兜底；真人确认后再推进更激进的“画像权重回写/默认排序”调整。
+
 ## 2026-11-03（12 点轮）· 定时采集链路复核与健康巡检（Issue #121）
 
 **成果**
