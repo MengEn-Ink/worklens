@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-03T08:19:05.031806+00:00",
+  "generated_at": "2026-11-03T19:23:15.217603+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -1330,12 +1330,12 @@
         "trending:weekly/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600350+00:00",
-      "metadata_synced_at": "2026-11-02T18:09:00.377571+00:00",
+      "metadata_synced_at": "2026-11-03T19:23:15.203344+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 311094,
-      "pushed_at": "2026-10-29T23:35:34Z",
+      "stars": 311764,
+      "pushed_at": "2026-11-03T02:51:39Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -1465,12 +1465,12 @@
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600576+00:00",
-      "metadata_synced_at": "2026-11-02T18:09:00.378012+00:00",
+      "metadata_synced_at": "2026-11-03T19:23:15.203731+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 141014,
-      "pushed_at": "2026-11-01T16:02:01Z",
+      "stars": 141726,
+      "pushed_at": "2026-11-02T19:38:53Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -1502,12 +1502,12 @@
         "trending:weekly/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600755+00:00",
-      "metadata_synced_at": "2026-11-03T08:19:05.017337+00:00",
+      "metadata_synced_at": "2026-11-03T19:23:15.203921+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 109912,
-      "pushed_at": "2026-11-02T07:59:38Z",
+      "stars": 111685,
+      "pushed_at": "2026-11-03T03:52:52Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -1537,12 +1537,12 @@
         "trending:weekly/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600902+00:00",
-      "metadata_synced_at": "2026-11-02T18:09:00.378542+00:00",
+      "metadata_synced_at": "2026-11-03T19:23:15.204092+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 100258,
-      "pushed_at": "2026-11-02T18:05:18Z",
+      "stars": 101343,
+      "pushed_at": "2026-11-03T17:12:23Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -2682,15 +2682,15 @@
       "id": "SR-0076",
       "subject": "mvanhorn/last30days-skill",
       "html_url": "https://github.com/mvanhorn/last30days-skill",
-      "source": "trending:weekly/python",
+      "source": "trending:daily/python",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T12:10:02.308918+00:00",
-      "metadata_synced_at": "2026-10-30T20:02:31.799326+00:00",
+      "metadata_synced_at": "2026-11-03T19:23:15.205062+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 65996,
-      "pushed_at": "2026-10-28T16:30:58Z",
+      "stars": 66464,
+      "pushed_at": "2026-11-03T14:42:28Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -2714,10 +2714,12 @@
       "id": "SR-0077",
       "subject": "vercel-labs/skills",
       "html_url": "https://github.com/vercel-labs/skills",
-      "source": "trending:weekly/typescript",
-      "also_seen_in": [],
+      "source": "trending:daily/typescript",
+      "also_seen_in": [
+        "trending:weekly/typescript"
+      ],
       "enqueued_at": "2026-10-29T12:10:02.309952+00:00",
-      "metadata_synced_at": "2026-11-03T08:19:05.019470+00:00",
+      "metadata_synced_at": "2026-11-03T19:23:15.206228+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
@@ -3435,11 +3437,11 @@
       "source": "trending:weekly/python",
       "also_seen_in": [],
       "enqueued_at": "2026-10-30T12:04:33.693476+00:00",
-      "metadata_synced_at": "2026-11-02T12:11:03.608812+00:00",
+      "metadata_synced_at": "2026-11-03T19:23:15.205142+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 63793,
+      "stars": 64347,
       "pushed_at": "2026-10-28T07:17:33Z",
       "checks": {
         "license_declared": {
@@ -3499,11 +3501,11 @@
       "source": "trending:daily/all",
       "also_seen_in": [],
       "enqueued_at": "2026-10-30T12:04:33.695144+00:00",
-      "metadata_synced_at": "2026-11-02T18:09:00.381601+00:00",
+      "metadata_synced_at": "2026-11-03T19:23:15.206547+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 33297,
+      "stars": 34486,
       "pushed_at": "2026-10-19T02:43:42Z",
       "checks": {
         "license_declared": {
@@ -4321,11 +4323,11 @@
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-31T12:08:54.857206+00:00",
-      "metadata_synced_at": "2026-11-02T18:09:00.377742+00:00",
+      "metadata_synced_at": "2026-11-03T19:23:15.203506+00:00",
       "state": "candidate",
       "license": null,
       "archived": false,
-      "stars": 186692,
+      "stars": 187053,
       "pushed_at": "2026-10-28T19:20:39Z",
       "checks": {
         "license_declared": {
@@ -4576,17 +4578,17 @@
       "id": "SR-0134",
       "subject": "mksglu/context-mode",
       "html_url": "https://github.com/mksglu/context-mode",
-      "source": "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}",
+      "source": "trending:daily/typescript",
       "also_seen_in": [
         "search:topic:claude-code stars:>50 archived:false"
       ],
       "enqueued_at": "2026-11-01T05:43:49.691666+00:00",
-      "metadata_synced_at": "2026-11-01T05:43:49.691666+00:00",
+      "metadata_synced_at": "2026-11-03T19:23:15.206689+00:00",
       "state": "candidate",
       "license": "NOASSERTION",
       "archived": false,
-      "stars": 33058,
-      "pushed_at": "2026-11-01T05:35:27Z",
+      "stars": 33364,
+      "pushed_at": "2026-11-03T19:16:23Z",
       "checks": {
         "license_declared": {
           "status": "fail",
@@ -4679,12 +4681,12 @@
       "source": "trending:daily/python",
       "also_seen_in": [],
       "enqueued_at": "2026-11-01T12:08:43.661312+00:00",
-      "metadata_synced_at": "2026-11-02T18:09:00.379586+00:00",
+      "metadata_synced_at": "2026-11-03T19:23:15.204910+00:00",
       "state": "candidate",
       "license": "AGPL-3.0",
       "archived": false,
-      "stars": 75119,
-      "pushed_at": "2026-10-28T21:46:02Z",
+      "stars": 75887,
+      "pushed_at": "2026-11-03T17:42:02Z",
       "checks": {
         "license_declared": {
           "status": "pass",

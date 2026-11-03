@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T11:48:57.001221+00:00",
+  "generated_at": "2026-11-03T19:23:11.663529+00:00",
   "items": [
     {
       "title": "Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
@@ -3562,10 +3562,11 @@
     },
     "Hacker News": {
       "ok": true,
-      "cached": true,
-      "count": 4,
-      "fetched_at": "2026-11-02T18:08:57.866611+00:00",
-      "checked_at": "2026-11-02T18:08:57.866611+00:00"
+      "cached": false,
+      "not_modified": false,
+      "count": 3,
+      "fetched_at": "2026-11-03T19:23:11.663529+00:00",
+      "checked_at": "2026-11-03T19:23:11.663529+00:00"
     },
     "Lobsters": {
       "ok": true,
@@ -4777,9 +4778,9 @@
     "Hacker News": {
       "items": [
         {
-          "title": "Launch HN: Momentic (YC W24) – Agents that catch bugs by using your app",
-          "url": "https://momentic.ai/",
-          "published_at": "2026-11-02T17:05:25Z",
+          "title": "USDB: Scaling Storage for Next-Generation Recommender Systems at ByteDance",
+          "url": "https://arxiv.org/abs/2611.02618",
+          "published_at": "2026-11-03T16:40:02Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4790,16 +4791,16 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50339913,
-            "score": 44,
-            "comments": 27
+            "hn_id": 50354250,
+            "score": 27,
+            "comments": 3
           },
           "also_seen_in": []
         },
         {
-          "title": "Anthropic's internal AI use, at retail prices, now exceeds its employee pay",
-          "url": "https://www.businessinsider.com/anthropic-claude-internal-ai-use-exceeds-employee-pay-tokens-2026-11",
-          "published_at": "2026-11-02T16:40:29Z",
+          "title": "Show HN: Interactive notes on RLHF, attention, LoRA and LLM evals",
+          "url": "https://concepts.laxmena.com/",
+          "published_at": "2026-11-03T15:48:35Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4810,16 +4811,16 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50339494,
-            "score": 85,
-            "comments": 60
+            "hn_id": 50353468,
+            "score": 35,
+            "comments": 3
           },
           "also_seen_in": []
         },
         {
-          "title": "LongCat-2.5: Native Multimodality for Agentic Tasks",
-          "url": "https://longcat.ai/blog/longcat-2.5",
-          "published_at": "2026-11-02T15:00:26Z",
+          "title": "OpenAI seems to be silently re-enabling model training on Codex chats",
+          "url": "https://news.ycombinator.com/item?id=50352757",
+          "published_at": "2026-11-03T14:53:41Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4830,35 +4831,15 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50337716,
-            "score": 45,
-            "comments": 16
-          },
-          "also_seen_in": []
-        },
-        {
-          "title": "Last night an AI agent performed brain surgery on a mouse",
-          "url": "https://twitter.com/OcanaSantero/status/2115442964574908902",
-          "published_at": "2026-11-02T12:50:59Z",
-          "site_name": "Hacker News",
-          "source": [
-            "Hacker News"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [
-            "community"
-          ],
-          "metadata": {
-            "hn_id": 50336138,
-            "score": 89,
-            "comments": 86
+            "hn_id": 50352757,
+            "score": 272,
+            "comments": 85
           },
           "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-02T18:08:57.866611+00:00",
-      "checked_at": "2026-11-02T18:08:57.866611+00:00",
+      "fetched_at": "2026-11-03T19:23:11.663529+00:00",
+      "checked_at": "2026-11-03T19:23:11.663529+00:00",
       "config_hash": "dab31b3ea2d6e110"
     },
     "Lobsters": {
