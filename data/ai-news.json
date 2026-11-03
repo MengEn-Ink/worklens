@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T18:08:57.866611+00:00",
+  "generated_at": "2026-11-03T00:03:17.817745+00:00",
   "items": [
     {
       "title": "Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
@@ -3634,8 +3634,7 @@
     },
     "Hacker News": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 4,
       "fetched_at": "2026-11-02T18:08:57.866611+00:00",
       "checked_at": "2026-11-02T18:08:57.866611+00:00"
