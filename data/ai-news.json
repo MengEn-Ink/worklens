@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T12:02:27.780109+00:00",
+  "generated_at": "2026-11-04T19:41:21.043538+00:00",
   "items": [
     {
       "title": "WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
@@ -3553,111 +3553,99 @@
   "source_status": {
     "AI News Aggregator": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 50,
       "fetched_at": "2026-11-04T12:02:27.780109+00:00",
       "checked_at": "2026-11-04T12:02:27.780109+00:00"
     },
     "GitHub Releases · LangChain": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 10,
       "fetched_at": "2026-11-04T12:02:27.780109+00:00",
       "checked_at": "2026-11-04T12:02:27.780109+00:00"
     },
     "GitHub Releases · OpenAI Python": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 10,
       "fetched_at": "2026-11-04T12:02:27.780109+00:00",
       "checked_at": "2026-11-04T12:02:27.780109+00:00"
     },
     "Hacker News": {
       "ok": true,
-      "cached": true,
-      "count": 3,
-      "fetched_at": "2026-11-03T19:23:11.663529+00:00",
-      "checked_at": "2026-11-03T19:23:11.663529+00:00"
+      "cached": false,
+      "not_modified": false,
+      "count": 2,
+      "fetched_at": "2026-11-04T19:41:21.043538+00:00",
+      "checked_at": "2026-11-04T19:41:21.043538+00:00"
     },
     "Lobsters": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 25,
       "fetched_at": "2026-11-04T12:02:27.780109+00:00",
       "checked_at": "2026-11-04T12:02:27.780109+00:00"
     },
     "OpenAI News": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 50,
       "fetched_at": "2026-11-04T12:02:27.780109+00:00",
       "checked_at": "2026-11-04T12:02:27.780109+00:00"
     },
     "Google Developers Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 20,
       "fetched_at": "2026-11-04T12:02:27.780109+00:00",
       "checked_at": "2026-11-04T12:02:27.780109+00:00"
     },
     "AWS Machine Learning Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 20,
       "fetched_at": "2026-11-04T12:02:27.780109+00:00",
       "checked_at": "2026-11-04T12:02:27.780109+00:00"
     },
     "NVIDIA Developer Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 30,
       "fetched_at": "2026-11-04T12:02:27.780109+00:00",
       "checked_at": "2026-11-04T12:02:27.780109+00:00"
     },
     "Cloudflare AI": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 20,
       "fetched_at": "2026-11-04T12:02:27.780109+00:00",
       "checked_at": "2026-11-04T12:02:27.780109+00:00"
     },
     "GitHub Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 10,
       "fetched_at": "2026-11-04T12:02:27.780109+00:00",
       "checked_at": "2026-11-04T12:02:27.780109+00:00"
     },
     "Stack Overflow Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 40,
       "fetched_at": "2026-11-04T12:02:27.780109+00:00",
       "checked_at": "2026-11-04T12:02:27.780109+00:00"
     },
     "OSV.dev": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 30,
       "fetched_at": "2026-11-04T12:02:27.780109+00:00",
       "checked_at": "2026-11-04T12:02:27.780109+00:00"
     },
     "CISA KEV": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 24,
       "fetched_at": "2026-11-04T12:02:27.780109+00:00",
       "checked_at": "2026-11-04T12:02:27.780109+00:00"
@@ -4802,9 +4790,9 @@
     "Hacker News": {
       "items": [
         {
-          "title": "USDB: Scaling Storage for Next-Generation Recommender Systems at ByteDance",
-          "url": "https://arxiv.org/abs/2611.02618",
-          "published_at": "2026-11-03T16:40:02Z",
+          "title": "Debian apt security update (man-in-the-middle)",
+          "url": "https://lists.debian.org/debian-security-announce/2026/msg00526.html?pow_referer=",
+          "published_at": "2026-11-04T15:04:14Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4815,16 +4803,16 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50354250,
-            "score": 27,
-            "comments": 3
+            "hn_id": 50366575,
+            "score": 111,
+            "comments": 23
           },
           "also_seen_in": []
         },
         {
-          "title": "Show HN: Interactive notes on RLHF, attention, LoRA and LLM evals",
-          "url": "https://concepts.laxmena.com/",
-          "published_at": "2026-11-03T15:48:35Z",
+          "title": "Tell HN: Gemini trains on chat history, even for subscribers (personal accounts)",
+          "url": "https://news.ycombinator.com/item?id=50363461",
+          "published_at": "2026-11-04T10:10:27Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4835,35 +4823,15 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50353468,
-            "score": 35,
-            "comments": 3
-          },
-          "also_seen_in": []
-        },
-        {
-          "title": "OpenAI seems to be silently re-enabling model training on Codex chats",
-          "url": "https://news.ycombinator.com/item?id=50352757",
-          "published_at": "2026-11-03T14:53:41Z",
-          "site_name": "Hacker News",
-          "source": [
-            "Hacker News"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [
-            "community"
-          ],
-          "metadata": {
-            "hn_id": 50352757,
-            "score": 272,
-            "comments": 85
+            "hn_id": 50363461,
+            "score": 536,
+            "comments": 137
           },
           "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-03T19:23:11.663529+00:00",
-      "checked_at": "2026-11-03T19:23:11.663529+00:00",
+      "fetched_at": "2026-11-04T19:41:21.043538+00:00",
+      "checked_at": "2026-11-04T19:41:21.043538+00:00",
       "config_hash": "dab31b3ea2d6e110"
     },
     "Lobsters": {
