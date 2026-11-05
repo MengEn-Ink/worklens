@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T19:41:21.043538+00:00",
+  "generated_at": "2026-11-05T00:50:37.784202+00:00",
   "items": [
     {
       "title": "WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
@@ -3574,8 +3574,7 @@
     },
     "Hacker News": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 2,
       "fetched_at": "2026-11-04T19:41:21.043538+00:00",
       "checked_at": "2026-11-04T19:41:21.043538+00:00"
