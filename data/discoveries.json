@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T12:05:52.052165+00:00",
+  "generated_at": "2026-11-05T21:53:00.911629+00:00",
   "candidates": [
     {
       "full_name": "mattpocock/skills",
@@ -39,15 +39,15 @@
         "superpowers"
       ],
       "language": "Shell",
-      "stars": 312357,
-      "forks": 27784,
-      "open_issues": 326,
+      "stars": 312974,
+      "forks": 27848,
+      "open_issues": 336,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-11-03T23:24:58Z",
-      "updated_at": "2026-11-04T19:38:32Z",
+      "updated_at": "2026-11-05T21:47:23Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-04T19:40:56.651342+00:00",
+      "collected_at": "2026-11-05T21:53:03.304517+00:00",
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
@@ -83,6 +83,7 @@
         "search:topic:claude-code stars:>50 archived:false",
         "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-10-28T06:51:52.570690+00:00"
     },
     {
@@ -153,15 +154,15 @@
         "agent-skills"
       ],
       "language": "Python",
-      "stars": 187371,
-      "forks": 22109,
-      "open_issues": 1480,
+      "stars": 187730,
+      "forks": 22150,
+      "open_issues": 1485,
       "license": null,
       "archived": false,
       "pushed_at": "2026-10-28T19:20:39Z",
-      "updated_at": "2026-11-04T19:35:35Z",
+      "updated_at": "2026-11-05T21:46:44Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-04T19:40:57.508785+00:00",
+      "collected_at": "2026-11-05T21:53:03.661331+00:00",
       "also_seen_in": [
         "trending:weekly/python"
       ],
@@ -306,15 +307,15 @@
         "tree-sitter"
       ],
       "language": "Python",
-      "stars": 142333,
-      "forks": 13611,
-      "open_issues": 1621,
+      "stars": 142925,
+      "forks": 13669,
+      "open_issues": 1611,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-03T22:46:46Z",
-      "updated_at": "2026-11-04T19:39:41Z",
+      "pushed_at": "2026-11-05T16:35:09Z",
+      "updated_at": "2026-11-05T21:48:54Z",
       "source": "trending:weekly/python",
-      "collected_at": "2026-11-04T19:41:02.255176+00:00",
+      "collected_at": "2026-11-05T21:53:07.563483+00:00",
       "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
     },
     {
@@ -414,15 +415,15 @@
       "description": "Lightweight coding agent that runs in your terminal",
       "topics": [],
       "language": "Rust",
-      "stars": 133180,
-      "forks": 21096,
-      "open_issues": 26434,
+      "stars": 133339,
+      "forks": 21127,
+      "open_issues": 26609,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-04T19:23:32Z",
-      "updated_at": "2026-11-04T19:37:05Z",
+      "pushed_at": "2026-11-05T21:44:30Z",
+      "updated_at": "2026-11-05T21:48:58Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-04T19:41:07.777608+00:00",
+      "collected_at": "2026-11-05T21:53:13.868680+00:00",
       "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
     },
     {
@@ -687,15 +688,15 @@
         "tunnel"
       ],
       "language": "Go",
-      "stars": 110443,
-      "forks": 15303,
+      "stars": 110457,
+      "forks": 15304,
       "open_issues": 34,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-04T17:10:38Z",
-      "updated_at": "2026-11-04T18:53:52Z",
+      "pushed_at": "2026-11-05T10:08:34Z",
+      "updated_at": "2026-11-05T17:25:41Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-11-04T19:41:07.228909+00:00",
+      "collected_at": "2026-11-05T21:53:11.590924+00:00",
       "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
     },
     {
@@ -739,15 +740,15 @@
         "slop"
       ],
       "language": "Rust",
-      "stars": 102608,
-      "forks": 6064,
+      "stars": 103833,
+      "forks": 6153,
       "open_issues": 65,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-04T17:14:29Z",
-      "updated_at": "2026-11-04T19:40:22Z",
+      "pushed_at": "2026-11-05T21:47:43Z",
+      "updated_at": "2026-11-05T21:47:49Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-04T19:40:57.101505+00:00",
+      "collected_at": "2026-11-05T21:53:02.949787+00:00",
       "also_seen_in": [
         "trending:weekly/rust"
       ],
@@ -874,15 +875,15 @@
         "xpath"
       ],
       "language": "Python",
-      "stars": 96286,
-      "forks": 10087,
-      "open_issues": 6,
+      "stars": 97858,
+      "forks": 10250,
+      "open_issues": 14,
       "license": "BSD-3-Clause",
       "archived": false,
-      "pushed_at": "2026-11-04T16:08:38Z",
-      "updated_at": "2026-11-04T19:39:50Z",
+      "pushed_at": "2026-11-05T18:01:47Z",
+      "updated_at": "2026-11-05T21:49:06Z",
       "source": "trending:daily/all",
-      "collected_at": "2026-11-04T19:40:54.258898+00:00",
+      "collected_at": "2026-11-05T21:53:01.719503+00:00",
       "also_seen_in": [
         "trending:daily/python",
         "trending:weekly/python"
@@ -1303,18 +1304,18 @@
         "video-production"
       ],
       "language": "Python",
-      "stars": 76427,
-      "forks": 10138,
-      "open_issues": 439,
+      "stars": 77103,
+      "forks": 10241,
+      "open_issues": 440,
       "license": "AGPL-3.0",
       "archived": false,
       "pushed_at": "2026-11-03T17:42:02Z",
-      "updated_at": "2026-11-04T19:38:08Z",
+      "updated_at": "2026-11-05T21:52:16Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-04T19:40:58.927253+00:00",
+      "collected_at": "2026-11-05T21:53:04.775045+00:00",
       "also_seen_in": [
-        "trending:weekly/python",
-        "trending:daily/python"
+        "trending:daily/python",
+        "trending:weekly/python"
       ],
       "relationships": [],
       "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
@@ -1537,15 +1538,15 @@
         "writing-tools"
       ],
       "language": "Python",
-      "stars": 64784,
-      "forks": 5109,
+      "stars": 65233,
+      "forks": 5155,
       "open_issues": 16,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-10-28T07:17:33Z",
-      "updated_at": "2026-11-04T19:36:05Z",
+      "updated_at": "2026-11-05T21:47:42Z",
       "source": "trending:weekly/python",
-      "collected_at": "2026-11-04T19:41:00.831564+00:00",
+      "collected_at": "2026-11-05T21:53:07.222916+00:00",
       "first_seen_at": "2026-11-02T12:08:07.610467+00:00"
     },
     {
@@ -1554,15 +1555,15 @@
       "description": "👻 Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.",
       "topics": [],
       "language": "Zig",
-      "stars": 63530,
-      "forks": 3817,
-      "open_issues": 262,
+      "stars": 63637,
+      "forks": 3830,
+      "open_issues": 261,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-11-04T18:37:10Z",
-      "updated_at": "2026-11-04T19:30:26Z",
+      "pushed_at": "2026-11-05T21:52:14Z",
+      "updated_at": "2026-11-05T21:50:49Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-04T19:40:57.895884+00:00",
+      "collected_at": "2026-11-05T21:53:04.054912+00:00",
       "first_seen_at": "2026-11-02T12:08:07.610467+00:00"
     },
     {
@@ -1810,15 +1811,15 @@
         "rag"
       ],
       "language": "Python",
-      "stars": 55023,
-      "forks": 6734,
-      "open_issues": 373,
+      "stars": 55416,
+      "forks": 6793,
+      "open_issues": 290,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-10-31T16:51:35Z",
-      "updated_at": "2026-11-04T19:25:09Z",
+      "pushed_at": "2026-11-05T19:03:44Z",
+      "updated_at": "2026-11-05T21:36:11Z",
       "source": "trending:weekly/python",
-      "collected_at": "2026-11-04T19:41:03.289602+00:00",
+      "collected_at": "2026-11-05T21:53:08.291193+00:00",
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
@@ -1979,6 +1980,23 @@
       "first_seen_at": "2026-11-02T08:05:20.296989+00:00"
     },
     {
+      "full_name": "Nutlope/hallmark",
+      "html_url": "https://github.com/Nutlope/hallmark",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "topics": [],
+      "language": "CSS",
+      "stars": 48683,
+      "forks": 2583,
+      "open_issues": 41,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-05T13:16:31Z",
+      "updated_at": "2026-11-05T21:52:34Z",
+      "source": "trending:weekly/all",
+      "collected_at": "2026-11-05T21:53:02.147979+00:00",
+      "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
+    },
+    {
       "full_name": "jeecgboot/JeecgBoot",
       "html_url": "https://github.com/jeecgboot/JeecgBoot",
       "description": "【AI 时代的业务系统基座】企业级 AI 低代码平台：权限、多租户、工作流、报表、大屏、AI 知识库等通用能力开箱即用，AI 只需生成业务差异部分。AI Skills 一句话生成完整系统——建表、前后端代码、菜单权限、BPM 流程、表单、报表、大屏全自动。内置 AI 应用平台（聊天、知识库、流程编排、MCP），兼容主流大模型。Java + Vue3，支持单体/微服务与信创国产化。",
@@ -2044,33 +2062,37 @@
         "workspace-manager"
       ],
       "language": "Rust",
-      "stars": 48057,
-      "forks": 3860,
-      "open_issues": 428,
+      "stars": 48295,
+      "forks": 3884,
+      "open_issues": 431,
       "license": "Apache-2.0",
       "archived": false,
       "pushed_at": "2026-11-03T11:36:13Z",
-      "updated_at": "2026-11-04T19:28:14Z",
+      "updated_at": "2026-11-05T21:38:05Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-04T19:41:08.119673+00:00",
+      "collected_at": "2026-11-05T21:53:12.034691+00:00",
       "first_seen_at": "2026-11-02T18:08:20.681670+00:00"
     },
     {
-      "full_name": "Nutlope/hallmark",
-      "html_url": "https://github.com/Nutlope/hallmark",
-      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "full_name": "pingdotgg/t3code",
+      "html_url": "https://github.com/pingdotgg/t3code",
+      "description": "",
       "topics": [],
-      "language": "CSS",
-      "stars": 47785,
-      "forks": 2524,
-      "open_issues": 42,
+      "language": "TypeScript",
+      "stars": 48177,
+      "forks": 9599,
+      "open_issues": 5371,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-11-04T11:37:25Z",
-      "updated_at": "2026-11-04T19:39:07Z",
+      "pushed_at": "2026-11-05T21:41:13Z",
+      "updated_at": "2026-11-05T21:52:03Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-04T19:40:55.768305+00:00",
-      "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
+      "collected_at": "2026-11-05T21:53:02.542812+00:00",
+      "also_seen_in": [
+        "trending:weekly/typescript"
+      ],
+      "relationships": [],
+      "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
       "full_name": "tashfeenahmed/freellmapi",
@@ -2088,6 +2110,23 @@
       "source": "trending:weekly/typescript",
       "collected_at": "2026-11-05T00:50:03.039086+00:00",
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
+    },
+    {
+      "full_name": "shiyu-coder/Kronos",
+      "html_url": "https://github.com/shiyu-coder/Kronos",
+      "description": "Kronos: A Foundation Model for the Language of Financial Markets",
+      "topics": [],
+      "language": "Python",
+      "stars": 46951,
+      "forks": 7757,
+      "open_issues": 297,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-04-13T12:38:49Z",
+      "updated_at": "2026-11-05T21:45:30Z",
+      "source": "trending:daily/python",
+      "collected_at": "2026-11-05T21:53:05.969119+00:00",
+      "first_seen_at": "2026-11-02T12:08:07.610467+00:00"
     },
     {
       "full_name": "DIYgod/RSSHub",
@@ -2131,23 +2170,6 @@
       "first_seen_at": "2026-10-28T06:51:43.946067+00:00"
     },
     {
-      "full_name": "shiyu-coder/Kronos",
-      "html_url": "https://github.com/shiyu-coder/Kronos",
-      "description": "Kronos: A Foundation Model for the Language of Financial Markets",
-      "topics": [],
-      "language": "Python",
-      "stars": 46776,
-      "forks": 7698,
-      "open_issues": 297,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-04-13T12:38:49Z",
-      "updated_at": "2026-11-04T19:24:16Z",
-      "source": "trending:daily/python",
-      "collected_at": "2026-11-04T19:40:54.625976+00:00",
-      "first_seen_at": "2026-11-02T12:08:07.610467+00:00"
-    },
-    {
       "full_name": "milvus-io/milvus",
       "html_url": "https://github.com/milvus-io/milvus",
       "description": "Milvus is a high-performance, cloud-native vector database built for scalable vector ANN search",
@@ -2184,28 +2206,6 @@
       "first_seen_at": "2026-11-02T08:05:20.296989+00:00"
     },
     {
-      "full_name": "pingdotgg/t3code",
-      "html_url": "https://github.com/pingdotgg/t3code",
-      "description": "",
-      "topics": [],
-      "language": "TypeScript",
-      "stars": 46217,
-      "forks": 9425,
-      "open_issues": 5065,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-04T19:39:35Z",
-      "updated_at": "2026-11-04T19:40:38Z",
-      "source": "trending:weekly/all",
-      "collected_at": "2026-11-04T19:40:56.226471+00:00",
-      "also_seen_in": [
-        "trending:daily/typescript",
-        "trending:weekly/typescript"
-      ],
-      "relationships": [],
-      "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
-    },
-    {
       "full_name": "AstrBotDevs/AstrBot",
       "html_url": "https://github.com/AstrBotDevs/AstrBot",
       "description": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
@@ -2229,15 +2229,15 @@
         "telegram"
       ],
       "language": "Python",
-      "stars": 45992,
-      "forks": 3378,
-      "open_issues": 1175,
+      "stars": 46141,
+      "forks": 3390,
+      "open_issues": 1160,
       "license": "AGPL-3.0",
       "archived": false,
-      "pushed_at": "2026-11-04T15:35:01Z",
-      "updated_at": "2026-11-04T19:37:38Z",
+      "pushed_at": "2026-11-05T09:21:36Z",
+      "updated_at": "2026-11-05T21:49:32Z",
       "source": "trending:weekly/python",
-      "collected_at": "2026-11-04T19:41:02.605768+00:00",
+      "collected_at": "2026-11-05T21:53:07.935663+00:00",
       "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
     },
     {
@@ -2246,15 +2246,15 @@
       "description": "Browser automation CLI for AI agents",
       "topics": [],
       "language": "Rust",
-      "stars": 45517,
-      "forks": 3127,
-      "open_issues": 487,
+      "stars": 45820,
+      "forks": 3144,
+      "open_issues": 489,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-04T17:41:09Z",
-      "updated_at": "2026-11-04T19:09:13Z",
+      "pushed_at": "2026-11-05T21:53:10Z",
+      "updated_at": "2026-11-05T21:52:31Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-04T19:41:10.061555+00:00",
+      "collected_at": "2026-11-05T21:53:13.521563+00:00",
       "first_seen_at": "2026-11-03T19:22:39.529433+00:00"
     },
     {
@@ -2434,15 +2434,15 @@
         "self-learning"
       ],
       "language": "TypeScript",
-      "stars": 41578,
-      "forks": 4774,
-      "open_issues": 194,
+      "stars": 41653,
+      "forks": 4787,
+      "open_issues": 198,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-11-04T00:49:54Z",
-      "updated_at": "2026-11-04T19:36:42Z",
+      "updated_at": "2026-11-05T21:30:04Z",
       "source": "trending:weekly/typescript",
-      "collected_at": "2026-11-04T19:41:04.534758+00:00",
+      "collected_at": "2026-11-05T21:53:09.449132+00:00",
       "first_seen_at": "2026-11-02T12:08:07.610467+00:00"
     },
     {
@@ -2567,15 +2567,15 @@
         "wayland-compositor"
       ],
       "language": "C++",
-      "stars": 40293,
-      "forks": 2167,
+      "stars": 40355,
+      "forks": 2169,
       "open_issues": 193,
       "license": "BSD-3-Clause",
       "archived": false,
-      "pushed_at": "2026-11-04T18:05:44Z",
-      "updated_at": "2026-11-04T19:34:19Z",
+      "pushed_at": "2026-11-05T09:57:29Z",
+      "updated_at": "2026-11-05T21:38:22Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-04T19:40:58.253663+00:00",
+      "collected_at": "2026-11-05T21:53:04.429036+00:00",
       "first_seen_at": "2026-11-02T18:08:20.681670+00:00"
     },
     {
@@ -2614,15 +2614,15 @@
         "wireguard"
       ],
       "language": "Go",
-      "stars": 38631,
-      "forks": 3423,
-      "open_issues": 4806,
+      "stars": 38686,
+      "forks": 3426,
+      "open_issues": 4785,
       "license": "BSD-3-Clause",
       "archived": false,
-      "pushed_at": "2026-11-04T19:39:39Z",
-      "updated_at": "2026-11-04T19:02:35Z",
+      "pushed_at": "2026-11-05T21:40:59Z",
+      "updated_at": "2026-11-05T21:41:28Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-11-04T19:41:06.483936+00:00",
+      "collected_at": "2026-11-05T21:53:11.272856+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -2687,6 +2687,28 @@
       "first_seen_at": "2026-11-05T12:05:52.052165+00:00"
     },
     {
+      "full_name": "cjpais/Handy",
+      "html_url": "https://github.com/cjpais/Handy",
+      "description": "A free, open source, and extensible speech-to-text application that works completely offline.",
+      "topics": [
+        "accessibility",
+        "cross-platform",
+        "speech-to-text",
+        "tauri-v2"
+      ],
+      "language": "Rust",
+      "stars": 37674,
+      "forks": 3553,
+      "open_issues": 194,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-02T23:56:50Z",
+      "updated_at": "2026-11-05T21:45:09Z",
+      "source": "trending:weekly/rust",
+      "collected_at": "2026-11-05T21:53:12.460363+00:00",
+      "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
+    },
+    {
       "full_name": "IceWhaleTech/CasaOS",
       "html_url": "https://github.com/IceWhaleTech/CasaOS",
       "description": "CasaOS - A simple, easy-to-use, elegant open-source Personal Cloud system.",
@@ -2716,28 +2738,6 @@
         "MengEn-Ink:starred"
       ],
       "first_seen_at": "2026-10-28T06:51:48.450207+00:00"
-    },
-    {
-      "full_name": "cjpais/Handy",
-      "html_url": "https://github.com/cjpais/Handy",
-      "description": "A free, open source, and extensible speech-to-text application that works completely offline.",
-      "topics": [
-        "accessibility",
-        "cross-platform",
-        "speech-to-text",
-        "tauri-v2"
-      ],
-      "language": "Rust",
-      "stars": 37511,
-      "forks": 3544,
-      "open_issues": 182,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-02T23:56:50Z",
-      "updated_at": "2026-11-04T19:36:03Z",
-      "source": "trending:weekly/rust",
-      "collected_at": "2026-11-04T19:41:08.489000+00:00",
-      "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
     },
     {
       "full_name": "veggiemonk/awesome-docker",
@@ -3015,15 +3015,15 @@
       "description": "Algorithm powering the For You feed on X",
       "topics": [],
       "language": "Rust",
-      "stars": 34073,
-      "forks": 5507,
+      "stars": 34097,
+      "forks": 5509,
       "open_issues": 164,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-04T17:01:40Z",
-      "updated_at": "2026-11-04T19:33:12Z",
+      "pushed_at": "2026-11-05T05:16:02Z",
+      "updated_at": "2026-11-05T19:47:33Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-04T19:41:09.385293+00:00",
+      "collected_at": "2026-11-05T21:53:14.221601+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -3249,15 +3249,15 @@
         "zero-trust-network-access"
       ],
       "language": "Go",
-      "stars": 30676,
-      "forks": 1825,
-      "open_issues": 790,
+      "stars": 30713,
+      "forks": 1829,
+      "open_issues": 791,
       "license": "NOASSERTION",
       "archived": false,
-      "pushed_at": "2026-11-04T19:21:35Z",
-      "updated_at": "2026-11-04T19:40:45Z",
+      "pushed_at": "2026-11-05T18:32:40Z",
+      "updated_at": "2026-11-05T21:35:33Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-11-04T19:41:05.690189+00:00",
+      "collected_at": "2026-11-05T21:53:09.890997+00:00",
       "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
     },
     {
@@ -4411,15 +4411,15 @@
         "webassembly"
       ],
       "language": "Go",
-      "stars": 17893,
-      "forks": 1104,
+      "stars": 17899,
+      "forks": 1105,
       "open_issues": 536,
       "license": "NOASSERTION",
       "archived": false,
-      "pushed_at": "2026-11-04T06:46:53Z",
-      "updated_at": "2026-11-04T16:03:04Z",
+      "pushed_at": "2026-11-05T20:53:43Z",
+      "updated_at": "2026-11-05T20:53:53Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-11-04T19:41:06.125516+00:00",
+      "collected_at": "2026-11-05T21:53:10.929071+00:00",
       "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
     },
     {
@@ -4551,6 +4551,32 @@
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
+      "full_name": "FlashML-org/FreeToken",
+      "html_url": "https://github.com/FlashML-org/FreeToken",
+      "description": "FreeToken brings datacenter-scale model serving to your desktop. Run massive models locally, fast and efficiently.",
+      "topics": [
+        "deepseek-v4",
+        "edge",
+        "glm",
+        "inference",
+        "minimax",
+        "moe",
+        "qwen",
+        "transformer"
+      ],
+      "language": "Python",
+      "stars": 16705,
+      "forks": 1642,
+      "open_issues": 469,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-11-05T21:16:03Z",
+      "updated_at": "2026-11-05T21:24:39Z",
+      "source": "trending:daily/python",
+      "collected_at": "2026-11-05T21:53:05.171228+00:00",
+      "first_seen_at": "2026-11-02T18:08:20.681670+00:00"
+    },
+    {
       "full_name": "udecode/plate",
       "html_url": "https://github.com/udecode/plate",
       "description": "Rich-text editor with AI and shadcn/ui",
@@ -4574,32 +4600,6 @@
       "source": "search:topic:shadcn-ui stars:>200 archived:false",
       "collected_at": "2026-11-05T12:06:19.978235+00:00",
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
-    },
-    {
-      "full_name": "FlashML-org/FreeToken",
-      "html_url": "https://github.com/FlashML-org/FreeToken",
-      "description": "FreeToken brings datacenter-scale model serving to your desktop. Run massive models locally, fast and efficiently.",
-      "topics": [
-        "deepseek-v4",
-        "edge",
-        "glm",
-        "inference",
-        "minimax",
-        "moe",
-        "qwen",
-        "transformer"
-      ],
-      "language": "Python",
-      "stars": 16594,
-      "forks": 1627,
-      "open_issues": 463,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-04T08:09:40Z",
-      "updated_at": "2026-11-04T19:33:37Z",
-      "source": "trending:daily/python",
-      "collected_at": "2026-11-04T19:40:59.744634+00:00",
-      "first_seen_at": "2026-11-02T18:08:20.681670+00:00"
     },
     {
       "full_name": "Jackett/Jackett",
@@ -4708,15 +4708,15 @@
         "smtp"
       ],
       "language": "Go",
-      "stars": 16189,
+      "stars": 16192,
       "forks": 1807,
       "open_issues": 252,
       "license": "AGPL-3.0",
       "archived": false,
       "pushed_at": "2026-06-11T06:44:04Z",
-      "updated_at": "2026-11-04T19:10:49Z",
+      "updated_at": "2026-11-05T21:20:08Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-11-04T19:41:04.967329+00:00",
+      "collected_at": "2026-11-05T21:53:10.233785+00:00",
       "first_seen_at": "2026-11-02T18:08:20.681670+00:00"
     },
     {
@@ -4845,6 +4845,7 @@
         "search:topic:claude-code stars:>50 archived:false",
         "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-02T08:05:20.296989+00:00"
     },
     {
@@ -5115,6 +5116,36 @@
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
+      "full_name": "milind-soni/OpenMausBot",
+      "html_url": "https://github.com/milind-soni/OpenMausBot",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "topics": [
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "computer-use",
+        "docker",
+        "electron",
+        "expo",
+        "grok",
+        "grok-bot",
+        "grok-bot-alternative",
+        "self-hosted",
+        "typescript"
+      ],
+      "language": "TypeScript",
+      "stars": 13184,
+      "forks": 1829,
+      "open_issues": 696,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-11-05T21:51:46Z",
+      "updated_at": "2026-11-05T21:52:46Z",
+      "source": "trending:weekly/typescript",
+      "collected_at": "2026-11-05T21:53:09.088523+00:00",
+      "first_seen_at": "2026-10-30T12:04:07.010396+00:00"
+    },
+    {
       "full_name": "tester-army/e2e",
       "html_url": "https://github.com/tester-army/e2e",
       "description": "Next generation e2e testing framework for web and mobile apps.",
@@ -5304,15 +5335,15 @@
         "spatial-ai"
       ],
       "language": "Python",
-      "stars": 12326,
-      "forks": 1512,
-      "open_issues": 158,
+      "stars": 12341,
+      "forks": 1519,
+      "open_issues": 155,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-04T19:39:41Z",
-      "updated_at": "2026-11-04T17:19:23Z",
+      "pushed_at": "2026-11-05T21:08:55Z",
+      "updated_at": "2026-11-05T19:53:06Z",
       "source": "trending:daily/python",
-      "collected_at": "2026-11-04T19:40:59.353633+00:00",
+      "collected_at": "2026-11-05T21:53:05.574600+00:00",
       "first_seen_at": "2026-11-02T12:08:07.610467+00:00"
     },
     {
@@ -5365,36 +5396,6 @@
       "source": "search:topic:prompt-engineering stars:>300 archived:false",
       "collected_at": "2026-11-05T12:06:13.131296+00:00",
       "first_seen_at": "2026-11-03T08:11:19.110821+00:00"
-    },
-    {
-      "full_name": "milind-soni/OpenMausBot",
-      "html_url": "https://github.com/milind-soni/OpenMausBot",
-      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
-      "topics": [
-        "ai-agents",
-        "claude-code",
-        "codex",
-        "computer-use",
-        "docker",
-        "electron",
-        "expo",
-        "grok",
-        "grok-bot",
-        "grok-bot-alternative",
-        "self-hosted",
-        "typescript"
-      ],
-      "language": "TypeScript",
-      "stars": 11980,
-      "forks": 1658,
-      "open_issues": 746,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-04T19:34:00Z",
-      "updated_at": "2026-11-04T19:30:29Z",
-      "source": "trending:weekly/typescript",
-      "collected_at": "2026-11-04T19:41:04.162366+00:00",
-      "first_seen_at": "2026-10-30T12:04:07.010396+00:00"
     },
     {
       "full_name": "Nasiko-Labs/nasiko",
@@ -5490,6 +5491,35 @@
       "updated_at": "2026-11-05T10:45:58Z",
       "source": "search:topic:prompt-engineering stars:>300 archived:false",
       "collected_at": "2026-11-05T12:06:13.131338+00:00",
+      "first_seen_at": "2026-11-02T08:05:20.296989+00:00"
+    },
+    {
+      "full_name": "max-sixty/worktrunk",
+      "html_url": "https://github.com/max-sixty/worktrunk",
+      "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+      "topics": [
+        "agents",
+        "claude-code",
+        "codex",
+        "developer-tools",
+        "git",
+        "worktrees"
+      ],
+      "language": "Rust",
+      "stars": 11463,
+      "forks": 433,
+      "open_issues": 51,
+      "license": "NOASSERTION",
+      "archived": false,
+      "pushed_at": "2026-11-05T08:57:29Z",
+      "updated_at": "2026-11-05T21:49:18Z",
+      "source": "trending:daily/all",
+      "collected_at": "2026-11-05T21:53:01.357749+00:00",
+      "also_seen_in": [
+        "trending:weekly/all",
+        "trending:weekly/rust"
+      ],
+      "relationships": [],
       "first_seen_at": "2026-11-02T08:05:20.296989+00:00"
     },
     {
@@ -5639,35 +5669,6 @@
       "first_seen_at": "2026-11-05T00:49:38.785350+00:00"
     },
     {
-      "full_name": "max-sixty/worktrunk",
-      "html_url": "https://github.com/max-sixty/worktrunk",
-      "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
-      "topics": [
-        "agents",
-        "claude-code",
-        "codex",
-        "developer-tools",
-        "git",
-        "worktrees"
-      ],
-      "language": "Rust",
-      "stars": 10945,
-      "forks": 408,
-      "open_issues": 71,
-      "license": "NOASSERTION",
-      "archived": false,
-      "pushed_at": "2026-11-04T14:07:58Z",
-      "updated_at": "2026-11-04T19:36:17Z",
-      "source": "trending:daily/all",
-      "collected_at": "2026-11-04T19:40:52.653404+00:00",
-      "also_seen_in": [
-        "trending:weekly/all",
-        "trending:weekly/rust"
-      ],
-      "relationships": [],
-      "first_seen_at": "2026-11-02T08:05:20.296989+00:00"
-    },
-    {
       "full_name": "jakubkrehel/skills",
       "html_url": "https://github.com/jakubkrehel/skills",
       "description": "A collection of agent skills that help you build great interfaces.",
@@ -5755,6 +5756,31 @@
       "first_seen_at": "2026-10-28T06:51:48.450178+00:00"
     },
     {
+      "full_name": "CopilotKit/OpenBot",
+      "html_url": "https://github.com/CopilotKit/OpenBot",
+      "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
+      "topics": [
+        "ag-ui",
+        "agent-governance",
+        "ai-agents",
+        "browser-automation",
+        "copilotkit",
+        "generative-ui",
+        "mcp"
+      ],
+      "language": "TypeScript",
+      "stars": 10248,
+      "forks": 1268,
+      "open_issues": 68,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-05T21:44:08Z",
+      "updated_at": "2026-11-05T21:43:30Z",
+      "source": "trending:weekly/typescript",
+      "collected_at": "2026-11-05T21:53:08.717787+00:00",
+      "first_seen_at": "2026-10-30T12:04:07.010396+00:00"
+    },
+    {
       "full_name": "MakazhanAlpamys/Soup",
       "html_url": "https://github.com/MakazhanAlpamys/Soup",
       "description": "Fine-tune LLMs from one YAML. Layer streaming trains an 8B model on a 4 GB laptop GPU.",
@@ -5795,31 +5821,6 @@
       ],
       "relationships": [],
       "first_seen_at": "2026-11-03T08:11:19.110821+00:00"
-    },
-    {
-      "full_name": "CopilotKit/OpenBot",
-      "html_url": "https://github.com/CopilotKit/OpenBot",
-      "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
-      "topics": [
-        "ag-ui",
-        "agent-governance",
-        "ai-agents",
-        "browser-automation",
-        "copilotkit",
-        "generative-ui",
-        "mcp"
-      ],
-      "language": "TypeScript",
-      "stars": 10122,
-      "forks": 1248,
-      "open_issues": 60,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-04T19:38:57Z",
-      "updated_at": "2026-11-04T19:37:19Z",
-      "source": "trending:weekly/typescript",
-      "collected_at": "2026-11-04T19:41:03.804143+00:00",
-      "first_seen_at": "2026-10-30T12:04:07.010396+00:00"
     },
     {
       "full_name": "gruntwork-io/terragrunt",
@@ -7319,15 +7320,15 @@
         "workspace"
       ],
       "language": "Rust",
-      "stars": 6142,
-      "forks": 571,
-      "open_issues": 256,
+      "stars": 6169,
+      "forks": 572,
+      "open_issues": 291,
       "license": "AGPL-3.0",
       "archived": false,
-      "pushed_at": "2026-11-04T19:38:43Z",
-      "updated_at": "2026-11-04T19:38:40Z",
+      "pushed_at": "2026-11-05T21:52:37Z",
+      "updated_at": "2026-11-05T21:52:41Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-04T19:41:08.991518+00:00",
+      "collected_at": "2026-11-05T21:53:12.833476+00:00",
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
@@ -7458,15 +7459,15 @@
         "vue"
       ],
       "language": "Go",
-      "stars": 5988,
-      "forks": 745,
+      "stars": 5998,
+      "forks": 746,
       "open_issues": 20,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-11-03T17:06:36Z",
-      "updated_at": "2026-11-04T18:38:41Z",
+      "pushed_at": "2026-11-05T13:05:25Z",
+      "updated_at": "2026-11-05T21:08:36Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-11-04T19:41:05.304756+00:00",
+      "collected_at": "2026-11-05T21:53:10.566938+00:00",
       "first_seen_at": "2026-11-02T12:08:07.610467+00:00"
     },
     {
@@ -7636,6 +7637,27 @@
       "first_seen_at": "2026-10-28T06:51:48.450225+00:00"
     },
     {
+      "full_name": "hieunc229/mailflare",
+      "html_url": "https://github.com/hieunc229/mailflare",
+      "description": "Email for professionals and teams",
+      "topics": [
+        "cloudflare",
+        "cloudflare-workers",
+        "email"
+      ],
+      "language": "TypeScript",
+      "stars": 5686,
+      "forks": 868,
+      "open_issues": 36,
+      "license": "AGPL-3.0",
+      "archived": false,
+      "pushed_at": "2026-11-05T17:28:01Z",
+      "updated_at": "2026-11-05T20:34:21Z",
+      "source": "trending:daily/typescript",
+      "collected_at": "2026-11-05T21:53:06.731544+00:00",
+      "first_seen_at": "2026-11-03T19:22:39.529433+00:00"
+    },
+    {
       "full_name": "Fei2411/DS-Bot",
       "html_url": "https://github.com/Fei2411/DS-Bot",
       "description": "A team of long-lived bots for DeepSeek Harness, with main bots, bot-to-bot messages and group chats.",
@@ -7656,27 +7678,6 @@
       "source": "search:created:>{days_ago:30} stars:>300",
       "collected_at": "2026-11-05T12:05:53.061494+00:00",
       "first_seen_at": "2026-10-30T04:05:03.566212+00:00"
-    },
-    {
-      "full_name": "hieunc229/mailflare",
-      "html_url": "https://github.com/hieunc229/mailflare",
-      "description": "Email for professionals and teams",
-      "topics": [
-        "cloudflare",
-        "cloudflare-workers",
-        "email"
-      ],
-      "language": "TypeScript",
-      "stars": 5635,
-      "forks": 856,
-      "open_issues": 45,
-      "license": "AGPL-3.0",
-      "archived": false,
-      "pushed_at": "2026-10-31T15:37:37Z",
-      "updated_at": "2026-11-04T19:05:07Z",
-      "source": "trending:daily/typescript",
-      "collected_at": "2026-11-04T19:41:01.727664+00:00",
-      "first_seen_at": "2026-11-03T19:22:39.529433+00:00"
     },
     {
       "full_name": "humanlayer/skills",
@@ -9190,15 +9191,15 @@
       "description": "",
       "topics": [],
       "language": "TypeScript",
-      "stars": 3148,
-      "forks": 248,
+      "stars": 3169,
+      "forks": 250,
       "open_issues": 13,
       "license": "Apache-2.0",
       "archived": false,
       "pushed_at": "2026-10-23T07:08:57Z",
-      "updated_at": "2026-11-04T18:58:44Z",
+      "updated_at": "2026-11-05T21:20:50Z",
       "source": "trending:daily/typescript",
-      "collected_at": "2026-11-04T19:40:53.857627+00:00",
+      "collected_at": "2026-11-05T21:53:06.371800+00:00",
       "also_seen_in": [
         "trending:weekly/typescript"
       ],
@@ -10155,6 +10156,44 @@
       "first_seen_at": "2026-10-28T06:51:48.450246+00:00"
     },
     {
+      "full_name": "leepokai/Codync",
+      "html_url": "https://github.com/leepokai/Codync",
+      "description": "Open source Grok Bot alternative, Bring your own agent and subscription: message Claude Code, Codex, Gemini CLI, Cursor, Copilot and 40+ AI agents as bots on your own computer, from iPhone, Mac, Windows, Linux or terminal. Agent-agnostic and free. Also a Muse and Dots alternative. Built in Rust.",
+      "topics": [
+        "acp",
+        "agent-client-protocol",
+        "ai-agents",
+        "ai-assistant",
+        "claude",
+        "claude-code",
+        "codex",
+        "coding-agents",
+        "cursor",
+        "gemini",
+        "gemini-cli",
+        "grok-bot-alternative",
+        "ios",
+        "iphone",
+        "linux",
+        "macos",
+        "mcp",
+        "open-source",
+        "rust",
+        "self-hosted"
+      ],
+      "language": "Rust",
+      "stars": 1896,
+      "forks": 195,
+      "open_issues": 81,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-11-05T21:10:19Z",
+      "updated_at": "2026-11-05T20:19:16Z",
+      "source": "trending:weekly/rust",
+      "collected_at": "2026-11-05T21:53:13.177116+00:00",
+      "first_seen_at": "2026-11-02T12:08:07.610467+00:00"
+    },
+    {
       "full_name": "devswha/ovis",
       "html_url": "https://github.com/devswha/ovis",
       "description": "Ovis (formerly herdr web UI): free, open-source browser and phone client for herdr. Chat and live terminal for Claude Code, Codex and every agent pane, remote PCs over SSH, web push alerts",
@@ -10241,44 +10280,6 @@
       "source": "trending:daily/typescript",
       "collected_at": "2026-11-05T12:06:46.344275+00:00",
       "first_seen_at": "2026-11-04T11:58:38.383863+00:00"
-    },
-    {
-      "full_name": "leepokai/Codync",
-      "html_url": "https://github.com/leepokai/Codync",
-      "description": "Open source Grok Bot alternative, Bring your own agent and subscription: message Claude Code, Codex, Gemini CLI, Cursor, Copilot and 40+ AI agents as bots on your own computer, from iPhone, Mac, Windows, Linux or terminal. Agent-agnostic and free. Also a Muse and Dots alternative. Built in Rust.",
-      "topics": [
-        "acp",
-        "agent-client-protocol",
-        "ai-agents",
-        "ai-assistant",
-        "claude",
-        "claude-code",
-        "codex",
-        "coding-agents",
-        "cursor",
-        "gemini",
-        "gemini-cli",
-        "grok-bot-alternative",
-        "ios",
-        "iphone",
-        "linux",
-        "macos",
-        "mcp",
-        "open-source",
-        "rust",
-        "self-hosted"
-      ],
-      "language": "Rust",
-      "stars": 1870,
-      "forks": 190,
-      "open_issues": 81,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-04T18:56:15Z",
-      "updated_at": "2026-11-04T19:11:14Z",
-      "source": "trending:weekly/rust",
-      "collected_at": "2026-11-04T19:41:09.705532+00:00",
-      "first_seen_at": "2026-11-02T12:08:07.610467+00:00"
     },
     {
       "full_name": "OpenAdaptAI/OpenAdapt",
@@ -12313,6 +12314,7 @@
       "also_seen_in": [
         "search:topic:claude-code stars:>50 archived:false"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-04T00:32:30.475024+00:00"
     },
     {
@@ -15331,121 +15333,134 @@
     "search:created:>{days_ago:30} stars:>300": {
       "ok": true,
       "count": 30,
+      "cached": true,
       "fetched_at": "2026-11-05T12:05:52.052165+00:00"
     },
     "search:created:>{days_ago:90} topic:ai-agent stars:>100": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-05T12:05:52.052165+00:00"
     },
     "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-11-05T12:05:52.052165+00:00"
     },
     "search:topic:claude-code stars:>50 archived:false": {
       "ok": true,
-      "count": 20,
+      "count": 24,
+      "cached": true,
       "fetched_at": "2026-11-05T12:05:52.052165+00:00"
     },
     "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
-      "count": 20,
+      "count": 25,
+      "cached": true,
       "fetched_at": "2026-11-05T12:05:52.052165+00:00"
     },
     "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-05T12:05:52.052165+00:00"
     },
     "search:topic:prompt-engineering stars:>300 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-05T12:05:52.052165+00:00"
     },
     "search:topic:workflow-automation stars:>300 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-05T12:05:52.052165+00:00"
     },
     "search:topic:shadcn-ui stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-05T12:05:52.052165+00:00"
     },
     "search:topic:react-components stars:>500 archived:false pushed:>{days_ago:60}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-05T12:05:52.052165+00:00"
     },
     "search:topic:rss stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-05T12:05:52.052165+00:00"
     },
     "search:topic:self-hosted stars:>2000 archived:false pushed:>{days_ago:30}": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-11-05T12:05:52.052165+00:00"
     },
     "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-11-05T12:05:52.052165+00:00"
     },
     "trending:daily/all": {
       "ok": true,
       "count": 16,
       "listed": 16,
-      "fetched_at": "2026-11-05T12:05:52.052165+00:00"
+      "fetched_at": "2026-11-05T21:53:00.911629+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
       "count": 14,
       "listed": 14,
-      "fetched_at": "2026-11-05T12:05:52.052165+00:00"
+      "fetched_at": "2026-11-05T21:53:00.911629+00:00"
     },
     "trending:daily/python": {
       "ok": true,
       "count": 18,
       "listed": 18,
-      "fetched_at": "2026-11-05T12:05:52.052165+00:00"
+      "fetched_at": "2026-11-05T21:53:00.911629+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
       "count": 15,
       "listed": 15,
-      "fetched_at": "2026-11-05T12:05:52.052165+00:00"
+      "fetched_at": "2026-11-05T21:53:00.911629+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 17,
       "listed": 17,
-      "fetched_at": "2026-11-05T12:05:52.052165+00:00"
+      "fetched_at": "2026-11-05T21:53:00.911629+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
       "count": 16,
       "listed": 16,
-      "fetched_at": "2026-11-05T12:05:52.052165+00:00"
+      "fetched_at": "2026-11-05T21:53:00.911629+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
       "count": 19,
       "listed": 19,
-      "fetched_at": "2026-11-05T12:05:52.052165+00:00"
+      "fetched_at": "2026-11-05T21:53:00.911629+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 18,
       "listed": 18,
-      "fetched_at": "2026-11-05T12:05:52.052165+00:00"
+      "fetched_at": "2026-11-05T21:53:00.911629+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-11-05T12:05:52.052165+00:00"
+      "fetched_at": "2026-11-05T21:53:00.911629+00:00"
     }
   },
   "schema_version": 1

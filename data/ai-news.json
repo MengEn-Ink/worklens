@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T12:08:29.642845+00:00",
+  "generated_at": "2026-11-05T21:53:22.315771+00:00",
   "items": [
     {
       "title": "Apple Multiple Products Improper Authentication Vulnerability",
@@ -3565,111 +3565,99 @@
   "source_status": {
     "AI News Aggregator": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 50,
       "fetched_at": "2026-11-05T12:08:29.642845+00:00",
       "checked_at": "2026-11-05T12:08:29.642845+00:00"
     },
     "GitHub Releases · LangChain": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 10,
       "fetched_at": "2026-11-05T12:08:29.642845+00:00",
       "checked_at": "2026-11-05T12:08:29.642845+00:00"
     },
     "GitHub Releases · OpenAI Python": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 10,
       "fetched_at": "2026-11-05T12:08:29.642845+00:00",
       "checked_at": "2026-11-05T12:08:29.642845+00:00"
     },
     "Hacker News": {
       "ok": true,
-      "cached": true,
-      "count": 2,
-      "fetched_at": "2026-11-04T19:41:21.043538+00:00",
-      "checked_at": "2026-11-04T19:41:21.043538+00:00"
+      "cached": false,
+      "not_modified": false,
+      "count": 5,
+      "fetched_at": "2026-11-05T21:53:22.315771+00:00",
+      "checked_at": "2026-11-05T21:53:22.315771+00:00"
     },
     "Lobsters": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 25,
       "fetched_at": "2026-11-05T12:08:29.642845+00:00",
       "checked_at": "2026-11-05T12:08:29.642845+00:00"
     },
     "OpenAI News": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 50,
       "fetched_at": "2026-11-05T12:08:29.642845+00:00",
       "checked_at": "2026-11-05T12:08:29.642845+00:00"
     },
     "Google Developers Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 20,
       "fetched_at": "2026-11-05T12:08:29.642845+00:00",
       "checked_at": "2026-11-05T12:08:29.642845+00:00"
     },
     "AWS Machine Learning Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 20,
       "fetched_at": "2026-11-05T12:08:29.642845+00:00",
       "checked_at": "2026-11-05T12:08:29.642845+00:00"
     },
     "NVIDIA Developer Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 30,
       "fetched_at": "2026-11-05T12:08:29.642845+00:00",
       "checked_at": "2026-11-05T12:08:29.642845+00:00"
     },
     "Cloudflare AI": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 20,
       "fetched_at": "2026-11-05T12:08:29.642845+00:00",
       "checked_at": "2026-11-05T12:08:29.642845+00:00"
     },
     "GitHub Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 10,
       "fetched_at": "2026-11-05T12:08:29.642845+00:00",
       "checked_at": "2026-11-05T12:08:29.642845+00:00"
     },
     "Stack Overflow Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 40,
       "fetched_at": "2026-11-05T12:08:29.642845+00:00",
       "checked_at": "2026-11-05T12:08:29.642845+00:00"
     },
     "OSV.dev": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 30,
       "fetched_at": "2026-11-05T12:08:29.642845+00:00",
       "checked_at": "2026-11-05T12:08:29.642845+00:00"
     },
     "CISA KEV": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 25,
       "fetched_at": "2026-11-05T12:08:29.642845+00:00",
       "checked_at": "2026-11-05T12:08:29.642845+00:00"
@@ -4814,9 +4802,9 @@
     "Hacker News": {
       "items": [
         {
-          "title": "Debian apt security update (man-in-the-middle)",
-          "url": "https://lists.debian.org/debian-security-announce/2026/msg00526.html?pow_referer=",
-          "published_at": "2026-11-04T15:04:14Z",
+          "title": "MS Paint Remote Code Execution Vulnerability",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2026-83844",
+          "published_at": "2026-11-05T20:43:42Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4827,16 +4815,16 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50366575,
-            "score": 111,
+            "hn_id": 50384233,
+            "score": 69,
             "comments": 23
           },
           "also_seen_in": []
         },
         {
-          "title": "Tell HN: Gemini trains on chat history, even for subscribers (personal accounts)",
-          "url": "https://news.ycombinator.com/item?id=50363461",
-          "published_at": "2026-11-04T10:10:27Z",
+          "title": "Hungary: Communist-era files released, up to 60k former agents revealed",
+          "url": "https://www.euronews.com/2026/11/04/hungary-communist-era-files-opened-up-to-60000-former-agents-revealed",
+          "published_at": "2026-11-05T19:16:34Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4847,15 +4835,75 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50363461,
-            "score": 536,
-            "comments": 137
+            "hn_id": 50383163,
+            "score": 73,
+            "comments": 14
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "Launch HN: Rivet (YC W23) – Scale and Orchestrate Agents on S3",
+          "url": "https://github.com/rivet-dev/rivet",
+          "published_at": "2026-11-05T17:17:42Z",
+          "site_name": "Hacker News",
+          "source": [
+            "Hacker News"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [
+            "community"
+          ],
+          "metadata": {
+            "hn_id": 50381687,
+            "score": 55,
+            "comments": 28
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "Show HN: Stroq – a local audit of what your coding agent did and why",
+          "url": "https://github.com/AGGIB/Stroq",
+          "published_at": "2026-11-05T15:54:41Z",
+          "site_name": "Hacker News",
+          "source": [
+            "Hacker News"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [
+            "community"
+          ],
+          "metadata": {
+            "hn_id": 50380704,
+            "score": 47,
+            "comments": 10
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "Alpine Linux Security Advisory: OpenSSH-server password authentication bypass",
+          "url": "https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass",
+          "published_at": "2026-11-05T14:44:20Z",
+          "site_name": "Hacker News",
+          "source": [
+            "Hacker News"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [
+            "community"
+          ],
+          "metadata": {
+            "hn_id": 50379704,
+            "score": 507,
+            "comments": 102
           },
           "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-04T19:41:21.043538+00:00",
-      "checked_at": "2026-11-04T19:41:21.043538+00:00",
+      "fetched_at": "2026-11-05T21:53:22.315771+00:00",
+      "checked_at": "2026-11-05T21:53:22.315771+00:00",
       "config_hash": "dab31b3ea2d6e110"
     },
     "Lobsters": {
