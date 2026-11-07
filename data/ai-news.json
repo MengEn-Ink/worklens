@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T21:25:25.865928+00:00",
+  "generated_at": "2026-11-07T05:39:39.739691+00:00",
   "items": [
     {
       "title": "Apple Multiple Products Improper Authentication Vulnerability",
@@ -1350,6 +1350,29 @@
       "also_seen_in": []
     },
     {
+      "title": "Inside GitHub’s new Git storage architecture",
+      "url": "https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture",
+      "published_at": "2026-11-06T19:24:21Z",
+      "site_name": "GitHub Blog",
+      "source": [
+        "GitHub Blog",
+        "Hacker News"
+      ],
+      "category": "engineering",
+      "priority": "P1",
+      "tags": [
+        "community"
+      ],
+      "metadata": {
+        "hn_id": 50397099,
+        "score": 100,
+        "comments": 20
+      },
+      "also_seen_in": [
+        "Hacker News"
+      ]
+    },
+    {
       "title": "langchain-typesafe==0.0.2",
       "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-typesafe%3D%3D0.0.2",
       "published_at": "2026-11-05T22:57:00Z",
@@ -1378,20 +1401,6 @@
         "AWS Machine Learning Blog"
       ],
       "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "Inside GitHub’s new Git storage architecture",
-      "url": "https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture",
-      "published_at": "2026-11-05T20:23:21Z",
-      "site_name": "GitHub Blog",
-      "source": [
-        "GitHub Blog"
-      ],
-      "category": "engineering",
       "priority": "P1",
       "tags": [],
       "metadata": {},
@@ -3562,10 +3571,11 @@
     },
     "Hacker News": {
       "ok": true,
-      "cached": true,
-      "count": 5,
-      "fetched_at": "2026-11-05T21:53:22.315771+00:00",
-      "checked_at": "2026-11-05T21:53:22.315771+00:00"
+      "cached": false,
+      "not_modified": false,
+      "count": 3,
+      "fetched_at": "2026-11-07T05:39:39.739691+00:00",
+      "checked_at": "2026-11-07T05:39:39.739691+00:00"
     },
     "Lobsters": {
       "ok": true,
@@ -4780,9 +4790,9 @@
     "Hacker News": {
       "items": [
         {
-          "title": "MS Paint Remote Code Execution Vulnerability",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2026-83844",
-          "published_at": "2026-11-05T20:43:42Z",
+          "title": "GitHub's new Git storage architecture",
+          "url": "https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture",
+          "published_at": "2026-11-06T19:24:21Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4793,16 +4803,16 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50384233,
-            "score": 69,
-            "comments": 23
+            "hn_id": 50397099,
+            "score": 100,
+            "comments": 20
           },
           "also_seen_in": []
         },
         {
-          "title": "Hungary: Communist-era files released, up to 60k former agents revealed",
-          "url": "https://www.euronews.com/2026/11/04/hungary-communist-era-files-opened-up-to-60000-former-agents-revealed",
-          "published_at": "2026-11-05T19:16:34Z",
+          "title": "Gemini Omni 1.2 Flash",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash",
+          "published_at": "2026-11-06T13:35:27Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4813,16 +4823,16 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50383163,
-            "score": 73,
-            "comments": 14
+            "hn_id": 50392118,
+            "score": 310,
+            "comments": 225
           },
           "also_seen_in": []
         },
         {
-          "title": "Launch HN: Rivet (YC W23) – Scale and Orchestrate Agents on S3",
-          "url": "https://github.com/rivet-dev/rivet",
-          "published_at": "2026-11-05T17:17:42Z",
+          "title": "Show HN: Tmux-restore saves tmux windows and agent sessions across reboots",
+          "url": "https://github.com/andrewboldi/tmux-restore",
+          "published_at": "2026-11-03T17:25:21Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4833,55 +4843,15 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50381687,
-            "score": 55,
-            "comments": 28
-          },
-          "also_seen_in": []
-        },
-        {
-          "title": "Show HN: Stroq – a local audit of what your coding agent did and why",
-          "url": "https://github.com/AGGIB/Stroq",
-          "published_at": "2026-11-05T15:54:41Z",
-          "site_name": "Hacker News",
-          "source": [
-            "Hacker News"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [
-            "community"
-          ],
-          "metadata": {
-            "hn_id": 50380704,
-            "score": 47,
-            "comments": 10
-          },
-          "also_seen_in": []
-        },
-        {
-          "title": "Alpine Linux Security Advisory: OpenSSH-server password authentication bypass",
-          "url": "https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass",
-          "published_at": "2026-11-05T14:44:20Z",
-          "site_name": "Hacker News",
-          "source": [
-            "Hacker News"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [
-            "community"
-          ],
-          "metadata": {
-            "hn_id": 50379704,
-            "score": 507,
-            "comments": 102
+            "hn_id": 50355009,
+            "score": 22,
+            "comments": 9
           },
           "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-05T21:53:22.315771+00:00",
-      "checked_at": "2026-11-05T21:53:22.315771+00:00",
+      "fetched_at": "2026-11-07T05:39:39.739691+00:00",
+      "checked_at": "2026-11-07T05:39:39.739691+00:00",
       "config_hash": "dab31b3ea2d6e110"
     },
     "Lobsters": {
