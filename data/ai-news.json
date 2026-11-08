@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T05:41:23.699125+00:00",
+  "generated_at": "2026-11-08T14:58:23.665119+00:00",
   "items": [
     {
       "title": "SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability",
@@ -1404,31 +1404,6 @@
       "also_seen_in": []
     },
     {
-      "title": "Inside GitHub’s new Git storage architecture",
-      "url": "https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture",
-      "published_at": "2026-11-06T19:24:21Z",
-      "site_name": "GitHub Blog",
-      "source": [
-        "GitHub Blog",
-        "Hacker News",
-        "Lobsters"
-      ],
-      "category": "engineering",
-      "priority": "P1",
-      "tags": [
-        "community"
-      ],
-      "metadata": {
-        "hn_id": 50397099,
-        "score": 100,
-        "comments": 20
-      },
-      "also_seen_in": [
-        "Hacker News",
-        "Lobsters"
-      ]
-    },
-    {
       "title": "Accelerating Reinforcement Learning Weight Refit with the Reshard Collective",
       "url": "https://developer.nvidia.com/blog/accelerating-reinforcement-learning-weight-refit-with-the-reshard-collective",
       "published_at": "2026-11-06T18:03:26Z",
@@ -1455,6 +1430,23 @@
       "tags": [],
       "metadata": {},
       "also_seen_in": []
+    },
+    {
+      "title": "Inside GitHub’s new Git storage architecture",
+      "url": "https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture",
+      "published_at": "2026-11-06T17:50:09Z",
+      "site_name": "GitHub Blog",
+      "source": [
+        "GitHub Blog",
+        "Lobsters"
+      ],
+      "category": "engineering",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": [
+        "Lobsters"
+      ]
     },
     {
       "title": "Taxonomy of agentic primitives in Amazon Quick",
@@ -3584,12 +3576,12 @@
       "checked_at": "2026-11-07T20:08:48.133560+00:00"
     },
     "Hacker News": {
-      "ok": false,
-      "degraded": true,
-      "cached": true,
-      "count": 3,
-      "error": "source returned an empty parsed result",
-      "fetched_at": "2026-11-07T05:39:39.739691+00:00"
+      "ok": true,
+      "cached": false,
+      "not_modified": false,
+      "count": 1,
+      "fetched_at": "2026-11-08T14:58:23.665119+00:00",
+      "checked_at": "2026-11-08T14:58:23.665119+00:00"
     },
     "Lobsters": {
       "ok": true,
@@ -4813,9 +4805,9 @@
     "Hacker News": {
       "items": [
         {
-          "title": "GitHub's new Git storage architecture",
-          "url": "https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture",
-          "published_at": "2026-11-06T19:24:21Z",
+          "title": "Agent memory needs its OpenTelemetry moment",
+          "url": "https://www.lorekit.io/blog/open-agent-memory-format",
+          "published_at": "2026-11-08T08:40:23Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4826,55 +4818,15 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50397099,
-            "score": 100,
-            "comments": 20
-          },
-          "also_seen_in": []
-        },
-        {
-          "title": "Gemini Omni 1.2 Flash",
-          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash",
-          "published_at": "2026-11-06T13:35:27Z",
-          "site_name": "Hacker News",
-          "source": [
-            "Hacker News"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [
-            "community"
-          ],
-          "metadata": {
-            "hn_id": 50392118,
-            "score": 310,
-            "comments": 225
-          },
-          "also_seen_in": []
-        },
-        {
-          "title": "Show HN: Tmux-restore saves tmux windows and agent sessions across reboots",
-          "url": "https://github.com/andrewboldi/tmux-restore",
-          "published_at": "2026-11-03T17:25:21Z",
-          "site_name": "Hacker News",
-          "source": [
-            "Hacker News"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [
-            "community"
-          ],
-          "metadata": {
-            "hn_id": 50355009,
-            "score": 22,
-            "comments": 9
+            "hn_id": 50411467,
+            "score": 92,
+            "comments": 74
           },
           "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-07T05:39:39.739691+00:00",
-      "checked_at": "2026-11-07T05:39:39.739691+00:00",
+      "fetched_at": "2026-11-08T14:58:23.665119+00:00",
+      "checked_at": "2026-11-08T14:58:23.665119+00:00",
       "config_hash": "dab31b3ea2d6e110"
     },
     "Lobsters": {
