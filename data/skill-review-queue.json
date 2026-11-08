@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T20:09:04.001574+00:00",
+  "generated_at": "2026-11-08T05:41:26.428852+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -1340,11 +1340,11 @@
         "trending:weekly/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600350+00:00",
-      "metadata_synced_at": "2026-11-07T05:39:42.926730+00:00",
+      "metadata_synced_at": "2026-11-08T05:41:26.418458+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 313707,
+      "stars": 314199,
       "pushed_at": "2026-11-03T23:24:58Z",
       "checks": {
         "license_declared": {
@@ -1475,12 +1475,12 @@
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600576+00:00",
-      "metadata_synced_at": "2026-11-07T05:39:42.927118+00:00",
+      "metadata_synced_at": "2026-11-08T05:41:26.418628+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 143631,
-      "pushed_at": "2026-11-06T17:11:19Z",
+      "stars": 144083,
+      "pushed_at": "2026-11-08T00:52:14Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -1547,12 +1547,12 @@
         "trending:weekly/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600902+00:00",
-      "metadata_synced_at": "2026-11-07T05:39:42.927614+00:00",
+      "metadata_synced_at": "2026-11-08T05:41:26.418932+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 104939,
-      "pushed_at": "2026-11-07T03:10:10Z",
+      "stars": 105680,
+      "pushed_at": "2026-11-08T03:02:02Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -3458,11 +3458,11 @@
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-30T12:04:33.693476+00:00",
-      "metadata_synced_at": "2026-11-07T05:39:42.928616+00:00",
+      "metadata_synced_at": "2026-11-08T05:41:26.419696+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 65719,
+      "stars": 66052,
       "pushed_at": "2026-10-28T07:17:33Z",
       "checks": {
         "license_declared": {
@@ -4345,11 +4345,11 @@
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-31T12:08:54.857206+00:00",
-      "metadata_synced_at": "2026-11-07T05:39:42.926805+00:00",
+      "metadata_synced_at": "2026-11-08T05:41:26.418548+00:00",
       "state": "candidate",
       "license": null,
       "archived": false,
-      "stars": 188251,
+      "stars": 188915,
       "pushed_at": "2026-11-06T22:32:32Z",
       "checks": {
         "license_declared": {
@@ -7239,6 +7239,40 @@
       "history": [
         {
           "at": "2026-11-07T20:09:04.000967+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0215",
+      "subject": "OpenMontageInc/OpenMontage",
+      "html_url": "https://github.com/OpenMontageInc/OpenMontage",
+      "source": "trending:weekly/all",
+      "also_seen_in": [
+        "trending:weekly/python"
+      ],
+      "enqueued_at": "2026-11-08T05:41:26.419571+00:00",
+      "metadata_synced_at": "2026-11-08T05:41:26.419571+00:00",
+      "state": "candidate",
+      "license": "AGPL-3.0",
+      "archived": false,
+      "stars": 78365,
+      "pushed_at": "2026-11-08T03:50:57Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=AGPL-3.0",
+          "checked_at": "2026-11-08T05:41:26.419571+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-11-08T05:41:26.419571+00:00",
           "event": "enqueued",
           "by": "worklens-bot",
           "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"

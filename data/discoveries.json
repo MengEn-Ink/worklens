@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T20:06:10.574371+00:00",
+  "generated_at": "2026-11-08T05:41:01.757304+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -106,15 +106,15 @@
         "superpowers"
       ],
       "language": "Shell",
-      "stars": 313707,
-      "forks": 27909,
-      "open_issues": 341,
+      "stars": 314199,
+      "forks": 27960,
+      "open_issues": 342,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-11-03T23:24:58Z",
-      "updated_at": "2026-11-07T05:38:10Z",
+      "updated_at": "2026-11-08T05:39:50Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-07T05:39:23.783030+00:00",
+      "collected_at": "2026-11-08T05:41:05.141887+00:00",
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
@@ -289,15 +289,15 @@
         "agent-skills"
       ],
       "language": "Python",
-      "stars": 188251,
-      "forks": 22200,
-      "open_issues": 1487,
+      "stars": 188915,
+      "forks": 22268,
+      "open_issues": 1493,
       "license": null,
       "archived": false,
       "pushed_at": "2026-11-06T22:32:32Z",
-      "updated_at": "2026-11-07T05:34:27Z",
+      "updated_at": "2026-11-08T05:38:13Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-07T05:39:22.937776+00:00",
+      "collected_at": "2026-11-08T05:41:04.257829+00:00",
       "also_seen_in": [
         "trending:weekly/python"
       ],
@@ -440,15 +440,15 @@
         "tree-sitter"
       ],
       "language": "Python",
-      "stars": 143631,
-      "forks": 13738,
-      "open_issues": 1651,
+      "stars": 144083,
+      "forks": 13789,
+      "open_issues": 1629,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-06T17:11:19Z",
-      "updated_at": "2026-11-07T05:38:22Z",
+      "pushed_at": "2026-11-08T00:52:14Z",
+      "updated_at": "2026-11-08T05:39:34Z",
       "source": "trending:weekly/python",
-      "collected_at": "2026-11-07T05:39:27.118915+00:00",
+      "collected_at": "2026-11-08T05:41:09.402120+00:00",
       "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
     },
     {
@@ -561,15 +561,15 @@
       "description": "Lightweight coding agent that runs in your terminal",
       "topics": [],
       "language": "Rust",
-      "stars": 133503,
-      "forks": 21160,
-      "open_issues": 26781,
+      "stars": 133597,
+      "forks": 21179,
+      "open_issues": 26885,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-07T04:48:46Z",
-      "updated_at": "2026-11-07T05:36:42Z",
+      "pushed_at": "2026-11-08T02:28:15Z",
+      "updated_at": "2026-11-08T05:00:18Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-07T05:39:32.377915+00:00",
+      "collected_at": "2026-11-08T05:41:12.578148+00:00",
       "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
     },
     {
@@ -841,15 +841,15 @@
         "slop"
       ],
       "language": "Rust",
-      "stars": 104939,
-      "forks": 6234,
-      "open_issues": 71,
+      "stars": 105680,
+      "forks": 6280,
+      "open_issues": 70,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-07T03:10:10Z",
-      "updated_at": "2026-11-07T05:35:57Z",
+      "pushed_at": "2026-11-08T03:02:02Z",
+      "updated_at": "2026-11-08T05:34:52Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-07T05:39:24.236890+00:00",
+      "collected_at": "2026-11-08T05:41:04.683151+00:00",
       "also_seen_in": [
         "trending:weekly/rust"
       ],
@@ -920,33 +920,6 @@
       "first_seen_at": "2026-11-07T14:49:51.944218+00:00"
     },
     {
-      "full_name": "mui/material-ui",
-      "html_url": "https://github.com/mui/material-ui",
-      "description": "Material UI: Comprehensive React component library that implements Google's Material Design. Free forever.",
-      "topics": [
-        "design-system",
-        "material-design",
-        "material-ui",
-        "react",
-        "react-components"
-      ],
-      "language": "JavaScript",
-      "stars": 99300,
-      "forks": 32508,
-      "open_issues": 1535,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-07T09:14:18Z",
-      "updated_at": "2026-11-07T12:59:44Z",
-      "source": "search:topic:design-system stars:>200 archived:false",
-      "collected_at": "2026-11-07T14:50:03.843141+00:00",
-      "also_seen_in": [
-        "search:topic:react-components stars:>500 archived:false pushed:>{days_ago:60}"
-      ],
-      "relationships": [],
-      "first_seen_at": "2026-10-28T06:51:50.916121+00:00"
-    },
-    {
       "full_name": "D4Vinci/Scrapling",
       "html_url": "https://github.com/D4Vinci/Scrapling",
       "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
@@ -973,21 +946,48 @@
         "xpath"
       ],
       "language": "Python",
-      "stars": 98928,
-      "forks": 10366,
+      "stars": 99416,
+      "forks": 10409,
       "open_issues": 15,
       "license": "BSD-3-Clause",
       "archived": false,
       "pushed_at": "2026-11-05T18:01:47Z",
-      "updated_at": "2026-11-07T05:38:11Z",
+      "updated_at": "2026-11-08T05:28:18Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-07T05:39:20.535691+00:00",
+      "collected_at": "2026-11-08T05:41:07.048510+00:00",
       "also_seen_in": [
         "trending:daily/python",
         "trending:weekly/python"
       ],
       "relationships": [],
       "first_seen_at": "2026-11-02T18:08:20.681670+00:00"
+    },
+    {
+      "full_name": "mui/material-ui",
+      "html_url": "https://github.com/mui/material-ui",
+      "description": "Material UI: Comprehensive React component library that implements Google's Material Design. Free forever.",
+      "topics": [
+        "design-system",
+        "material-design",
+        "material-ui",
+        "react",
+        "react-components"
+      ],
+      "language": "JavaScript",
+      "stars": 99300,
+      "forks": 32508,
+      "open_issues": 1535,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-07T09:14:18Z",
+      "updated_at": "2026-11-07T12:59:44Z",
+      "source": "search:topic:design-system stars:>200 archived:false",
+      "collected_at": "2026-11-07T14:50:03.843141+00:00",
+      "also_seen_in": [
+        "search:topic:react-components stars:>500 archived:false pushed:>{days_ago:60}"
+      ],
+      "relationships": [],
+      "first_seen_at": "2026-10-28T06:51:50.916121+00:00"
     },
     {
       "full_name": "tailwindlabs/tailwindcss",
@@ -1465,8 +1465,8 @@
       "first_seen_at": "2026-11-05T12:05:52.052165+00:00"
     },
     {
-      "full_name": "calesthio/OpenMontage",
-      "html_url": "https://github.com/calesthio/OpenMontage",
+      "full_name": "OpenMontageInc/OpenMontage",
+      "html_url": "https://github.com/OpenMontageInc/OpenMontage",
       "description": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
       "topics": [
         "agent",
@@ -1490,20 +1490,20 @@
         "video-production"
       ],
       "language": "Python",
-      "stars": 77821,
-      "forks": 10358,
-      "open_issues": 448,
+      "stars": 78365,
+      "forks": 10433,
+      "open_issues": 317,
       "license": "AGPL-3.0",
       "archived": false,
-      "pushed_at": "2026-11-03T17:42:02Z",
-      "updated_at": "2026-11-07T05:39:12Z",
+      "pushed_at": "2026-11-08T03:50:57Z",
+      "updated_at": "2026-11-08T05:37:35Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-07T05:39:25.081535+00:00",
+      "collected_at": "2026-11-08T05:41:06.647122+00:00",
       "also_seen_in": [
         "trending:weekly/python"
       ],
       "relationships": [],
-      "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
+      "first_seen_at": "2026-11-08T05:41:01.757304+00:00"
     },
     {
       "full_name": "Eugeny/tabby",
@@ -1670,15 +1670,15 @@
         "writing-tools"
       ],
       "language": "Python",
-      "stars": 65719,
-      "forks": 5190,
+      "stars": 66052,
+      "forks": 5220,
       "open_issues": 16,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-10-28T07:17:33Z",
-      "updated_at": "2026-11-07T05:34:08Z",
+      "updated_at": "2026-11-08T05:40:36Z",
       "source": "trending:weekly/python",
-      "collected_at": "2026-11-07T05:39:27.542649+00:00",
+      "collected_at": "2026-11-08T05:41:08.969724+00:00",
       "first_seen_at": "2026-11-02T12:08:07.610467+00:00"
     },
     {
@@ -1988,15 +1988,15 @@
         "rag"
       ],
       "language": "Python",
-      "stars": 56048,
-      "forks": 6854,
-      "open_issues": 317,
+      "stars": 56467,
+      "forks": 6895,
+      "open_issues": 322,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-06T08:42:04Z",
-      "updated_at": "2026-11-07T05:38:19Z",
+      "pushed_at": "2026-11-07T15:18:10Z",
+      "updated_at": "2026-11-08T05:38:48Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-07T05:39:23.371823+00:00",
+      "collected_at": "2026-11-08T05:41:05.561327+00:00",
       "also_seen_in": [
         "trending:weekly/python"
       ],
@@ -2112,6 +2112,27 @@
       ],
       "relationships": [],
       "first_seen_at": "2026-11-07T14:49:51.944218+00:00"
+    },
+    {
+      "full_name": "pingdotgg/t3code",
+      "html_url": "https://github.com/pingdotgg/t3code",
+      "description": "",
+      "topics": [],
+      "language": "TypeScript",
+      "stars": 51485,
+      "forks": 9902,
+      "open_issues": 5811,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-08T05:35:40Z",
+      "updated_at": "2026-11-08T05:40:22Z",
+      "source": "trending:weekly/all",
+      "collected_at": "2026-11-08T05:41:02.858361+00:00",
+      "also_seen_in": [
+        "trending:weekly/typescript"
+      ],
+      "relationships": [],
+      "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
       "full_name": "tldraw/tldraw",
@@ -2236,26 +2257,21 @@
       "first_seen_at": "2026-11-07T14:49:51.944218+00:00"
     },
     {
-      "full_name": "pingdotgg/t3code",
-      "html_url": "https://github.com/pingdotgg/t3code",
-      "description": "",
+      "full_name": "Nutlope/hallmark",
+      "html_url": "https://github.com/Nutlope/hallmark",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
       "topics": [],
-      "language": "TypeScript",
-      "stars": 50064,
-      "forks": 9770,
-      "open_issues": 5563,
+      "language": "CSS",
+      "stars": 50398,
+      "forks": 2671,
+      "open_issues": 45,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-11-07T05:23:53Z",
-      "updated_at": "2026-11-07T05:39:05Z",
+      "pushed_at": "2026-11-05T13:16:31Z",
+      "updated_at": "2026-11-08T05:40:44Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-07T05:39:22.492301+00:00",
-      "also_seen_in": [
-        "trending:daily/typescript",
-        "trending:weekly/typescript"
-      ],
-      "relationships": [],
-      "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
+      "collected_at": "2026-11-08T05:41:03.819585+00:00",
+      "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
     },
     {
       "full_name": "HKUDS/nanobot",
@@ -2296,23 +2312,6 @@
       "first_seen_at": "2026-11-02T08:05:20.296989+00:00"
     },
     {
-      "full_name": "Nutlope/hallmark",
-      "html_url": "https://github.com/Nutlope/hallmark",
-      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-      "topics": [],
-      "language": "CSS",
-      "stars": 49741,
-      "forks": 2634,
-      "open_issues": 44,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-05T13:16:31Z",
-      "updated_at": "2026-11-07T05:38:04Z",
-      "source": "trending:weekly/all",
-      "collected_at": "2026-11-07T05:39:22.025424+00:00",
-      "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
-    },
-    {
       "full_name": "herdrdev/herdr",
       "html_url": "https://github.com/herdrdev/herdr",
       "description": "the runtime your coding agents live on",
@@ -2337,15 +2336,15 @@
         "workspace-manager"
       ],
       "language": "Rust",
-      "stars": 48789,
-      "forks": 3926,
-      "open_issues": 441,
+      "stars": 49176,
+      "forks": 3966,
+      "open_issues": 447,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-03T11:36:13Z",
-      "updated_at": "2026-11-07T05:37:53Z",
+      "pushed_at": "2026-11-07T12:32:55Z",
+      "updated_at": "2026-11-08T05:37:58Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-07T05:39:31.970919+00:00",
+      "collected_at": "2026-11-08T05:41:12.135797+00:00",
       "first_seen_at": "2026-11-02T18:08:20.681670+00:00"
     },
     {
@@ -2450,20 +2449,37 @@
       "description": "Kronos: A Foundation Model for the Language of Financial Markets",
       "topics": [],
       "language": "Python",
-      "stars": 47096,
-      "forks": 7789,
+      "stars": 47274,
+      "forks": 7815,
       "open_issues": 297,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-04-13T12:38:49Z",
-      "updated_at": "2026-11-07T05:26:07Z",
+      "updated_at": "2026-11-08T05:30:37Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-07T05:39:26.638795+00:00",
+      "collected_at": "2026-11-08T05:41:07.427104+00:00",
       "also_seen_in": [
         "trending:weekly/python"
       ],
       "relationships": [],
       "first_seen_at": "2026-11-02T12:08:07.610467+00:00"
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "html_url": "https://github.com/vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "topics": [],
+      "language": "Rust",
+      "stars": 46979,
+      "forks": 3221,
+      "open_issues": 505,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-11-08T05:23:01Z",
+      "updated_at": "2026-11-08T05:39:01Z",
+      "source": "trending:weekly/rust",
+      "collected_at": "2026-11-08T05:41:13.444293+00:00",
+      "first_seen_at": "2026-11-03T19:22:39.529433+00:00"
     },
     {
       "full_name": "DIYgod/RSSHub",
@@ -2505,23 +2521,6 @@
       ],
       "relationships": [],
       "first_seen_at": "2026-10-28T06:51:43.946067+00:00"
-    },
-    {
-      "full_name": "vercel-labs/agent-browser",
-      "html_url": "https://github.com/vercel-labs/agent-browser",
-      "description": "Browser automation CLI for AI agents",
-      "topics": [],
-      "language": "Rust",
-      "stars": 46337,
-      "forks": 3174,
-      "open_issues": 489,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-07T05:27:47Z",
-      "updated_at": "2026-11-07T05:32:33Z",
-      "source": "trending:weekly/rust",
-      "collected_at": "2026-11-07T05:39:21.422068+00:00",
-      "first_seen_at": "2026-11-03T19:22:39.529433+00:00"
     },
     {
       "full_name": "janhq/jan",
@@ -2705,15 +2704,15 @@
         "self-learning"
       ],
       "language": "TypeScript",
-      "stars": 41712,
-      "forks": 4794,
-      "open_issues": 198,
+      "stars": 41747,
+      "forks": 4797,
+      "open_issues": 182,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-11-04T00:49:54Z",
-      "updated_at": "2026-11-07T05:30:54Z",
+      "pushed_at": "2026-11-08T01:09:52Z",
+      "updated_at": "2026-11-08T05:38:12Z",
       "source": "trending:weekly/typescript",
-      "collected_at": "2026-11-07T05:39:28.967580+00:00",
+      "collected_at": "2026-11-08T05:41:10.144107+00:00",
       "first_seen_at": "2026-11-02T12:08:07.610467+00:00"
     },
     {
@@ -2898,15 +2897,15 @@
         "wayland-compositor"
       ],
       "language": "C++",
-      "stars": 40453,
-      "forks": 2167,
-      "open_issues": 195,
+      "stars": 40507,
+      "forks": 2163,
+      "open_issues": 197,
       "license": "BSD-3-Clause",
       "archived": false,
       "pushed_at": "2026-11-06T16:58:14Z",
-      "updated_at": "2026-11-07T04:43:49Z",
+      "updated_at": "2026-11-08T05:05:36Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-07T05:39:24.686983+00:00",
+      "collected_at": "2026-11-08T05:41:05.972968+00:00",
       "first_seen_at": "2026-11-02T18:08:20.681670+00:00"
     },
     {
@@ -3135,15 +3134,15 @@
         "tauri-v2"
       ],
       "language": "Rust",
-      "stars": 37841,
-      "forks": 3573,
-      "open_issues": 204,
+      "stars": 37957,
+      "forks": 3584,
+      "open_issues": 209,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-11-07T00:19:26Z",
-      "updated_at": "2026-11-07T05:25:25Z",
+      "updated_at": "2026-11-08T05:28:27Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-07T05:39:32.782469+00:00",
+      "collected_at": "2026-11-08T05:41:12.978484+00:00",
       "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
     },
     {
@@ -3472,15 +3471,15 @@
       "description": "Algorithm powering the For You feed on X",
       "topics": [],
       "language": "Rust",
-      "stars": 34121,
-      "forks": 5515,
+      "stars": 34141,
+      "forks": 5516,
       "open_issues": 164,
       "license": "Apache-2.0",
       "archived": false,
       "pushed_at": "2026-11-07T04:10:53Z",
-      "updated_at": "2026-11-07T04:49:41Z",
+      "updated_at": "2026-11-08T05:39:57Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-07T05:39:34.060458+00:00",
+      "collected_at": "2026-11-08T05:41:14.311328+00:00",
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
@@ -3719,15 +3718,15 @@
         "zero-trust-network-access"
       ],
       "language": "Go",
-      "stars": 30749,
-      "forks": 1833,
-      "open_issues": 800,
+      "stars": 30775,
+      "forks": 1838,
+      "open_issues": 798,
       "license": "NOASSERTION",
       "archived": false,
-      "pushed_at": "2026-11-06T23:48:49Z",
-      "updated_at": "2026-11-07T03:01:55Z",
+      "pushed_at": "2026-11-07T13:55:37Z",
+      "updated_at": "2026-11-08T04:54:36Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-11-07T05:39:29.700622+00:00",
+      "collected_at": "2026-11-08T05:41:10.698224+00:00",
       "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
     },
     {
@@ -5093,14 +5092,14 @@
       ],
       "language": "Go",
       "stars": 16205,
-      "forks": 1808,
-      "open_issues": 252,
+      "forks": 1810,
+      "open_issues": 253,
       "license": "AGPL-3.0",
       "archived": false,
       "pushed_at": "2026-06-11T06:44:04Z",
-      "updated_at": "2026-11-07T05:30:47Z",
+      "updated_at": "2026-11-08T03:12:33Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-11-07T05:39:30.086072+00:00",
+      "collected_at": "2026-11-08T05:41:11.160903+00:00",
       "first_seen_at": "2026-11-02T18:08:20.681670+00:00"
     },
     {
@@ -5658,6 +5657,34 @@
       "first_seen_at": "2026-11-03T08:11:19.110821+00:00"
     },
     {
+      "full_name": "max-sixty/worktrunk",
+      "html_url": "https://github.com/max-sixty/worktrunk",
+      "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+      "topics": [
+        "agents",
+        "claude-code",
+        "codex",
+        "developer-tools",
+        "git",
+        "worktrees"
+      ],
+      "language": "Rust",
+      "stars": 11981,
+      "forks": 465,
+      "open_issues": 52,
+      "license": "NOASSERTION",
+      "archived": false,
+      "pushed_at": "2026-11-07T08:25:14Z",
+      "updated_at": "2026-11-08T05:09:48Z",
+      "source": "trending:weekly/all",
+      "collected_at": "2026-11-08T05:41:03.262829+00:00",
+      "also_seen_in": [
+        "trending:weekly/rust"
+      ],
+      "relationships": [],
+      "first_seen_at": "2026-11-02T08:05:20.296989+00:00"
+    },
+    {
       "full_name": "streamlink/streamlink",
       "html_url": "https://github.com/streamlink/streamlink",
       "description": "Streamlink is a CLI utility which pipes video streams from various services into a video player",
@@ -5720,34 +5747,6 @@
       "source": "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}",
       "collected_at": "2026-11-07T20:06:28.525686+00:00",
       "first_seen_at": "2026-11-07T20:06:10.574371+00:00"
-    },
-    {
-      "full_name": "max-sixty/worktrunk",
-      "html_url": "https://github.com/max-sixty/worktrunk",
-      "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
-      "topics": [
-        "agents",
-        "claude-code",
-        "codex",
-        "developer-tools",
-        "git",
-        "worktrees"
-      ],
-      "language": "Rust",
-      "stars": 11830,
-      "forks": 457,
-      "open_issues": 50,
-      "license": "NOASSERTION",
-      "archived": false,
-      "pushed_at": "2026-11-07T04:16:23Z",
-      "updated_at": "2026-11-07T05:37:42Z",
-      "source": "trending:weekly/all",
-      "collected_at": "2026-11-07T05:39:20.972568+00:00",
-      "also_seen_in": [
-        "trending:weekly/rust"
-      ],
-      "relationships": [],
-      "first_seen_at": "2026-11-02T08:05:20.296989+00:00"
     },
     {
       "full_name": "is-a-dev/register",
@@ -7274,6 +7273,44 @@
       "first_seen_at": "2026-11-01T05:39:49.152264+00:00"
     },
     {
+      "full_name": "mayswind/ezbookkeeping",
+      "html_url": "https://github.com/mayswind/ezbookkeeping",
+      "description": "ezBookkeeping is an open source, powerful, self-hosted personal finance app that is easy to use.",
+      "topics": [
+        "accounting",
+        "app",
+        "bookkeeping",
+        "docker",
+        "expense-manager",
+        "expense-tracker",
+        "expenses",
+        "finance",
+        "finance-management",
+        "finances",
+        "financial",
+        "golang",
+        "homelab",
+        "mobile",
+        "money",
+        "money-manager",
+        "personal-finance",
+        "self-hosted",
+        "typescript",
+        "vue"
+      ],
+      "language": "Go",
+      "stars": 6024,
+      "forks": 753,
+      "open_issues": 17,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-07T16:10:04Z",
+      "updated_at": "2026-11-08T02:51:43Z",
+      "source": "trending:weekly/go",
+      "collected_at": "2026-11-08T05:41:11.600009+00:00",
+      "first_seen_at": "2026-11-02T12:08:07.610467+00:00"
+    },
+    {
       "full_name": "simbasjungles/free-my-tv",
       "html_url": "https://github.com/simbasjungles/free-my-tv",
       "description": "A fast, ad-free home screen for Google TV, LG webOS and Samsung Tizen. One button to undo.",
@@ -7330,44 +7367,6 @@
       "source": "trending:weekly/rust",
       "collected_at": "2026-11-07T14:50:32.748117+00:00",
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
-    },
-    {
-      "full_name": "mayswind/ezbookkeeping",
-      "html_url": "https://github.com/mayswind/ezbookkeeping",
-      "description": "ezBookkeeping is an open source, powerful, self-hosted personal finance app that is easy to use.",
-      "topics": [
-        "accounting",
-        "app",
-        "bookkeeping",
-        "docker",
-        "expense-manager",
-        "expense-tracker",
-        "expenses",
-        "finance",
-        "finance-management",
-        "finances",
-        "financial",
-        "golang",
-        "homelab",
-        "mobile",
-        "money",
-        "money-manager",
-        "personal-finance",
-        "self-hosted",
-        "typescript",
-        "vue"
-      ],
-      "language": "Go",
-      "stars": 6016,
-      "forks": 752,
-      "open_issues": 18,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-06T17:17:50Z",
-      "updated_at": "2026-11-07T05:29:31Z",
-      "source": "trending:weekly/go",
-      "collected_at": "2026-11-07T05:39:30.503023+00:00",
-      "first_seen_at": "2026-11-02T12:08:07.610467+00:00"
     },
     {
       "full_name": "QingYunA/answer-me-with-html",
@@ -10087,28 +10086,6 @@
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
-      "full_name": "Dicklesworthstone/pi_agent_rust",
-      "html_url": "https://github.com/Dicklesworthstone/pi_agent_rust",
-      "description": "High-performance AI coding agent CLI written in Rust with zero unsafe code",
-      "topics": [
-        "ai-agents",
-        "cli",
-        "developer-tools",
-        "rust"
-      ],
-      "language": "Rust",
-      "stars": 1969,
-      "forks": 231,
-      "open_issues": 12,
-      "license": "NOASSERTION",
-      "archived": false,
-      "pushed_at": "2026-11-07T14:44:57Z",
-      "updated_at": "2026-11-07T14:44:54Z",
-      "source": "search:topic:developer-tools stars:>500 archived:false",
-      "collected_at": "2026-11-07T14:50:06.935168+00:00",
-      "first_seen_at": "2026-11-07T14:49:51.944218+00:00"
-    },
-    {
       "full_name": "leepokai/Codync",
       "html_url": "https://github.com/leepokai/Codync",
       "description": "Open source Grok Bot alternative, Bring your own agent and subscription: message Claude Code, Codex, Gemini CLI, Cursor, Copilot and 40+ AI agents as bots on your own computer, from iPhone, Mac, Windows, Linux or terminal. Agent-agnostic and free. Also a Muse and Dots alternative. Built in Rust.",
@@ -10135,16 +10112,38 @@
         "self-hosted"
       ],
       "language": "Rust",
-      "stars": 1940,
-      "forks": 199,
-      "open_issues": 84,
+      "stars": 1974,
+      "forks": 201,
+      "open_issues": 89,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-07T05:03:23Z",
-      "updated_at": "2026-11-07T05:26:31Z",
+      "pushed_at": "2026-11-08T04:02:43Z",
+      "updated_at": "2026-11-08T04:29:15Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-07T05:39:33.193635+00:00",
+      "collected_at": "2026-11-08T05:41:13.876200+00:00",
       "first_seen_at": "2026-11-02T12:08:07.610467+00:00"
+    },
+    {
+      "full_name": "Dicklesworthstone/pi_agent_rust",
+      "html_url": "https://github.com/Dicklesworthstone/pi_agent_rust",
+      "description": "High-performance AI coding agent CLI written in Rust with zero unsafe code",
+      "topics": [
+        "ai-agents",
+        "cli",
+        "developer-tools",
+        "rust"
+      ],
+      "language": "Rust",
+      "stars": 1969,
+      "forks": 231,
+      "open_issues": 12,
+      "license": "NOASSERTION",
+      "archived": false,
+      "pushed_at": "2026-11-07T14:44:57Z",
+      "updated_at": "2026-11-07T14:44:54Z",
+      "source": "search:topic:developer-tools stars:>500 archived:false",
+      "collected_at": "2026-11-07T14:50:06.935168+00:00",
+      "first_seen_at": "2026-11-07T14:49:51.944218+00:00"
     },
     {
       "full_name": "codenameone/CodenameOne",
@@ -11132,6 +11131,7 @@
       "also_seen_in": [
         "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-06T06:10:09.261717+00:00"
     },
     {
@@ -12362,6 +12362,7 @@
         "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}",
         "search:topic:claude-code stars:>50 archived:false"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-06T15:50:20.936113+00:00"
     },
     {
@@ -12869,6 +12870,7 @@
       "also_seen_in": [
         "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-06T15:50:20.936113+00:00"
     },
     {
@@ -14856,6 +14858,7 @@
       "also_seen_in": [
         "search:topic:claude-code stars:>50 archived:false"
       ],
+      "relationships": [],
       "first_seen_at": "2026-10-31T19:51:09.947209+00:00"
     },
     {
@@ -15688,121 +15691,134 @@
     "search:created:>{days_ago:30} stars:>300": {
       "ok": true,
       "count": 30,
+      "cached": true,
       "fetched_at": "2026-11-07T20:06:10.574371+00:00"
     },
     "search:created:>{days_ago:90} topic:ai-agent stars:>100": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-07T20:06:10.574371+00:00"
     },
     "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}": {
       "ok": true,
-      "count": 20,
+      "count": 23,
+      "cached": true,
       "fetched_at": "2026-11-07T20:06:10.574371+00:00"
     },
     "search:topic:claude-code stars:>50 archived:false": {
       "ok": true,
-      "count": 20,
+      "count": 23,
+      "cached": true,
       "fetched_at": "2026-11-07T20:06:10.574371+00:00"
     },
     "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-07T20:06:10.574371+00:00"
     },
     "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-11-07T20:06:10.574371+00:00"
     },
     "search:topic:prompt-engineering stars:>300 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-07T20:06:10.574371+00:00"
     },
     "search:topic:workflow-automation stars:>300 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-07T20:06:10.574371+00:00"
     },
     "search:topic:shadcn-ui stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-07T20:06:10.574371+00:00"
     },
     "search:topic:react-components stars:>500 archived:false pushed:>{days_ago:60}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-07T20:06:10.574371+00:00"
     },
     "search:topic:rss stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-07T20:06:10.574371+00:00"
     },
     "search:topic:self-hosted stars:>2000 archived:false pushed:>{days_ago:30}": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-11-07T20:06:10.574371+00:00"
     },
     "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-07T20:06:10.574371+00:00"
     },
     "trending:daily/all": {
       "ok": true,
       "count": 18,
       "listed": 18,
-      "fetched_at": "2026-11-07T20:06:10.574371+00:00"
+      "fetched_at": "2026-11-08T05:41:01.757304+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
       "count": 18,
       "listed": 18,
-      "fetched_at": "2026-11-07T20:06:10.574371+00:00"
+      "fetched_at": "2026-11-08T05:41:01.757304+00:00"
     },
     "trending:daily/python": {
       "ok": true,
       "count": 20,
       "listed": 20,
-      "fetched_at": "2026-11-07T20:06:10.574371+00:00"
+      "fetched_at": "2026-11-08T05:41:01.757304+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
       "count": 18,
       "listed": 18,
-      "fetched_at": "2026-11-07T20:06:10.574371+00:00"
+      "fetched_at": "2026-11-08T05:41:01.757304+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 17,
       "listed": 17,
-      "fetched_at": "2026-11-07T20:06:10.574371+00:00"
+      "fetched_at": "2026-11-08T05:41:01.757304+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
       "count": 17,
       "listed": 17,
-      "fetched_at": "2026-11-07T20:06:10.574371+00:00"
+      "fetched_at": "2026-11-08T05:41:01.757304+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
       "count": 20,
       "listed": 20,
-      "fetched_at": "2026-11-07T20:06:10.574371+00:00"
+      "fetched_at": "2026-11-08T05:41:01.757304+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 18,
       "listed": 18,
-      "fetched_at": "2026-11-07T20:06:10.574371+00:00"
+      "fetched_at": "2026-11-08T05:41:01.757304+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-11-07T20:06:10.574371+00:00"
+      "fetched_at": "2026-11-08T05:41:01.757304+00:00"
     }
   },
   "schema_version": 1
