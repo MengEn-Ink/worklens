@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T05:51:39.955585+00:00",
+  "generated_at": "2026-11-09T18:39:44.470197+00:00",
   "items": [
     {
       "title": "SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability",
@@ -3574,10 +3574,11 @@
     },
     "Hacker News": {
       "ok": true,
-      "cached": true,
+      "cached": false,
+      "not_modified": false,
       "count": 1,
-      "fetched_at": "2026-11-08T14:58:23.665119+00:00",
-      "checked_at": "2026-11-08T14:58:23.665119+00:00"
+      "fetched_at": "2026-11-09T18:39:44.470197+00:00",
+      "checked_at": "2026-11-09T18:39:44.470197+00:00"
     },
     "Lobsters": {
       "ok": true,
@@ -4792,9 +4793,9 @@
     "Hacker News": {
       "items": [
         {
-          "title": "Agent memory needs its OpenTelemetry moment",
-          "url": "https://www.lorekit.io/blog/open-agent-memory-format",
-          "published_at": "2026-11-08T08:40:23Z",
+          "title": "Magenta solar panels may be agrivoltaics' cleverest trick yet",
+          "url": "https://www.anthropocenemagazine.org/2026/10/magenta-solar-panels-may-be-agrivoltaics-cleverest-trick-yet",
+          "published_at": "2026-11-09T14:31:39Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4805,15 +4806,15 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50411467,
-            "score": 92,
-            "comments": 74
+            "hn_id": 50426175,
+            "score": 134,
+            "comments": 49
           },
           "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-08T14:58:23.665119+00:00",
-      "checked_at": "2026-11-08T14:58:23.665119+00:00",
+      "fetched_at": "2026-11-09T18:39:44.470197+00:00",
+      "checked_at": "2026-11-09T18:39:44.470197+00:00",
       "config_hash": "dab31b3ea2d6e110"
     },
     "Lobsters": {
