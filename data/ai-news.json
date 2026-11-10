@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T12:26:02.983894+00:00",
+  "generated_at": "2026-11-10T21:48:19.155704+00:00",
   "items": [
     {
       "title": "GPUStack Improper Authentication Vulnerability",
@@ -3574,10 +3574,11 @@
     },
     "Hacker News": {
       "ok": true,
-      "cached": true,
-      "count": 1,
-      "fetched_at": "2026-11-09T18:39:44.470197+00:00",
-      "checked_at": "2026-11-09T18:39:44.470197+00:00"
+      "cached": false,
+      "not_modified": false,
+      "count": 2,
+      "fetched_at": "2026-11-10T21:48:19.155704+00:00",
+      "checked_at": "2026-11-10T21:48:19.155704+00:00"
     },
     "Lobsters": {
       "ok": true,
@@ -4792,9 +4793,9 @@
     "Hacker News": {
       "items": [
         {
-          "title": "Magenta solar panels may be agrivoltaics' cleverest trick yet",
-          "url": "https://www.anthropocenemagazine.org/2026/10/magenta-solar-panels-may-be-agrivoltaics-cleverest-trick-yet",
-          "published_at": "2026-11-09T14:31:39Z",
+          "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
+          "url": "https://github.com/GoogleChrome/modern-web-guidance",
+          "published_at": "2026-11-10T18:01:15Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4805,15 +4806,35 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50426175,
-            "score": 134,
-            "comments": 49
+            "hn_id": 50443812,
+            "score": 179,
+            "comments": 51
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "AI usage generates a fragile codebase",
+          "url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase",
+          "published_at": "2026-11-10T10:25:58Z",
+          "site_name": "Hacker News",
+          "source": [
+            "Hacker News"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [
+            "community"
+          ],
+          "metadata": {
+            "hn_id": 50438318,
+            "score": 286,
+            "comments": 350
           },
           "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-09T18:39:44.470197+00:00",
-      "checked_at": "2026-11-09T18:39:44.470197+00:00",
+      "fetched_at": "2026-11-10T21:48:19.155704+00:00",
+      "checked_at": "2026-11-10T21:48:19.155704+00:00",
       "config_hash": "dab31b3ea2d6e110"
     },
     "Lobsters": {
