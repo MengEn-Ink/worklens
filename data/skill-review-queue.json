@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-11T05:49:09.739942+00:00",
+  "generated_at": "2026-11-11T16:00:51.653978+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -882,10 +882,11 @@
       "html_url": "https://github.com/rlaope/oh-my-hermes",
       "source": "search:topic:ai-agent stars:>500 archived:false",
       "also_seen_in": [
-        "search:topic:claude-code stars:>50 archived:false"
+        "search:topic:claude-code stars:>50 archived:false",
+        "trending:daily/python"
       ],
       "enqueued_at": "2026-10-25T06:07:53.833330+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.197632+00:00",
+      "metadata_synced_at": "2026-11-11T16:00:51.647535+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
@@ -1479,12 +1480,12 @@
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600576+00:00",
-      "metadata_synced_at": "2026-11-10T12:26:04.228813+00:00",
+      "metadata_synced_at": "2026-11-11T16:00:51.640848+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 145335,
-      "pushed_at": "2026-11-09T17:04:04Z",
+      "stars": 146004,
+      "pushed_at": "2026-11-10T21:53:12Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -2801,12 +2802,12 @@
       "source": "trending:daily/typescript",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T12:10:02.311013+00:00",
-      "metadata_synced_at": "2026-10-29T12:10:02.311013+00:00",
+      "metadata_synced_at": "2026-11-11T16:00:51.644150+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 25562,
-      "pushed_at": "2026-10-26T23:51:52Z",
+      "stars": 27309,
+      "pushed_at": "2026-11-07T06:05:56Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -4012,9 +4013,11 @@
       "subject": "Imbad0202/academic-research-skills",
       "html_url": "https://github.com/Imbad0202/academic-research-skills",
       "source": "search:topic:prompt-engineering stars:>300 archived:false",
-      "also_seen_in": [],
+      "also_seen_in": [
+        "trending:daily/python"
+      ],
       "enqueued_at": "2026-10-31T05:11:50.010575+00:00",
-      "metadata_synced_at": "2026-11-11T05:49:09.734282+00:00",
+      "metadata_synced_at": "2026-11-11T16:00:51.642571+00:00",
       "state": "candidate",
       "license": "NOASSERTION",
       "archived": false,
@@ -4351,11 +4354,11 @@
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-31T12:08:54.857206+00:00",
-      "metadata_synced_at": "2026-11-10T12:26:04.228620+00:00",
+      "metadata_synced_at": "2026-11-11T16:00:51.640692+00:00",
       "state": "candidate",
       "license": null,
       "archived": false,
-      "stars": 191777,
+      "stars": 192908,
       "pushed_at": "2026-11-06T22:32:32Z",
       "checks": {
         "license_declared": {
@@ -8154,6 +8157,70 @@
       "history": [
         {
           "at": "2026-11-11T05:49:09.738774+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0243",
+      "subject": "addyosmani/agent-skills",
+      "html_url": "https://github.com/addyosmani/agent-skills",
+      "source": "trending:daily/all",
+      "also_seen_in": [],
+      "enqueued_at": "2026-11-11T16:00:51.641206+00:00",
+      "metadata_synced_at": "2026-11-11T16:00:51.641206+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 115680,
+      "pushed_at": "2026-11-01T19:24:49Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-11-11T16:00:51.641206+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-11-11T16:00:51.641206+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0244",
+      "subject": "google-labs-code/stitch-skills",
+      "html_url": "https://github.com/google-labs-code/stitch-skills",
+      "source": "trending:daily/typescript",
+      "also_seen_in": [],
+      "enqueued_at": "2026-11-11T16:00:51.646125+00:00",
+      "metadata_synced_at": "2026-11-11T16:00:51.646125+00:00",
+      "state": "candidate",
+      "license": "Apache-2.0",
+      "archived": false,
+      "stars": 8737,
+      "pushed_at": "2026-08-17T20:20:23Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=Apache-2.0",
+          "checked_at": "2026-11-11T16:00:51.646125+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-11-11T16:00:51.646125+00:00",
           "event": "enqueued",
           "by": "worklens-bot",
           "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
