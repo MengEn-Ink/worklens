@@ -1,6 +1,162 @@
 {
-  "generated_at": "2026-11-10T21:48:19.155704+00:00",
+  "generated_at": "2026-11-11T05:49:00.861015+00:00",
   "items": [
+    {
+      "title": "Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-124194",
+      "published_at": "2026-11-10T00:00:00Z",
+      "site_name": "CISA",
+      "source": [
+        "CISA KEV"
+      ],
+      "category": "security",
+      "priority": "P0",
+      "tags": [
+        "security",
+        "known-exploited"
+      ],
+      "metadata": {
+        "id": "CVE-2026-124194",
+        "aliases": [
+          "CVE-2026-124194"
+        ],
+        "vendor": "Microsoft",
+        "product": "Office",
+        "due_date": "2026-11-24",
+        "known_ransomware": "Unknown"
+      },
+      "also_seen_in": []
+    },
+    {
+      "title": "Openwave Messaging Limited Webtop Media Transcoder Incorrect Resource Transfer Between Spheres Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-111793",
+      "published_at": "2026-11-10T00:00:00Z",
+      "site_name": "CISA",
+      "source": [
+        "CISA KEV"
+      ],
+      "category": "security",
+      "priority": "P0",
+      "tags": [
+        "security",
+        "known-exploited"
+      ],
+      "metadata": {
+        "id": "CVE-2026-111793",
+        "aliases": [
+          "CVE-2026-111793"
+        ],
+        "vendor": "Openwave Messaging Limited",
+        "product": "Webtop Media Transcoder",
+        "due_date": "2026-11-24",
+        "known_ransomware": "Unknown"
+      },
+      "also_seen_in": []
+    },
+    {
+      "title": "Cisco BroadWorks Improper Restriction of XML External Entity Reference Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-20320",
+      "published_at": "2026-11-10T00:00:00Z",
+      "site_name": "CISA",
+      "source": [
+        "CISA KEV"
+      ],
+      "category": "security",
+      "priority": "P0",
+      "tags": [
+        "security",
+        "known-exploited"
+      ],
+      "metadata": {
+        "id": "CVE-2026-20320",
+        "aliases": [
+          "CVE-2026-20320"
+        ],
+        "vendor": "Cisco",
+        "product": "BroadWorks",
+        "due_date": "2026-11-24",
+        "known_ransomware": "Unknown"
+      },
+      "also_seen_in": []
+    },
+    {
+      "title": "Barracuda Networks Multiple Products OS Command Injection Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-111560",
+      "published_at": "2026-11-10T00:00:00Z",
+      "site_name": "CISA",
+      "source": [
+        "CISA KEV"
+      ],
+      "category": "security",
+      "priority": "P0",
+      "tags": [
+        "security",
+        "known-exploited"
+      ],
+      "metadata": {
+        "id": "CVE-2026-111560",
+        "aliases": [
+          "CVE-2026-111560"
+        ],
+        "vendor": "Barracuda Networks",
+        "product": "Multiple Products",
+        "due_date": "2026-11-13",
+        "known_ransomware": "Unknown"
+      },
+      "also_seen_in": []
+    },
+    {
+      "title": "Barracuda Networks Email Security Gateway (ESG) Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-116606",
+      "published_at": "2026-11-10T00:00:00Z",
+      "site_name": "CISA",
+      "source": [
+        "CISA KEV"
+      ],
+      "category": "security",
+      "priority": "P0",
+      "tags": [
+        "security",
+        "known-exploited"
+      ],
+      "metadata": {
+        "id": "CVE-2026-116606",
+        "aliases": [
+          "CVE-2026-116606"
+        ],
+        "vendor": "Barracuda Networks",
+        "product": "Barracuda Email Security Gateway (ESG)",
+        "due_date": "2026-11-13",
+        "known_ransomware": "Unknown"
+      },
+      "also_seen_in": []
+    },
+    {
+      "title": "Google Chromium Use-After-Free Vulnerability",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-125350",
+      "published_at": "2026-11-10T00:00:00Z",
+      "site_name": "CISA",
+      "source": [
+        "CISA KEV"
+      ],
+      "category": "security",
+      "priority": "P0",
+      "tags": [
+        "security",
+        "known-exploited"
+      ],
+      "metadata": {
+        "id": "CVE-2026-125350",
+        "aliases": [
+          "CVE-2026-125350"
+        ],
+        "vendor": "Google",
+        "product": "Chromium",
+        "due_date": "2026-11-24",
+        "known_ransomware": "Unknown"
+      },
+      "also_seen_in": []
+    },
     {
       "title": "GPUStack Improper Authentication Vulnerability",
       "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-102895",
@@ -308,58 +464,6 @@
         "vendor": "Cisco",
         "product": "Secure Firewall ASA Software and Cisco Secure FTD Software",
         "due_date": "2026-11-01",
-        "known_ransomware": "Unknown"
-      },
-      "also_seen_in": []
-    },
-    {
-      "title": "Broadcom VMWare ESX Insufficient Logging Vulnerability",
-      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-41709",
-      "published_at": "2026-10-28T00:00:00Z",
-      "site_name": "CISA",
-      "source": [
-        "CISA KEV"
-      ],
-      "category": "security",
-      "priority": "P0",
-      "tags": [
-        "security",
-        "known-exploited"
-      ],
-      "metadata": {
-        "id": "CVE-2026-41709",
-        "aliases": [
-          "CVE-2026-41709"
-        ],
-        "vendor": "Broadcom",
-        "product": "VMware ESX",
-        "due_date": "2026-11-11",
-        "known_ransomware": "Unknown"
-      },
-      "also_seen_in": []
-    },
-    {
-      "title": "Linux Kernel Missing Initialization of a Variable Vulnerability",
-      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-46300",
-      "published_at": "2026-10-28T00:00:00Z",
-      "site_name": "CISA",
-      "source": [
-        "CISA KEV"
-      ],
-      "category": "security",
-      "priority": "P0",
-      "tags": [
-        "security",
-        "known-exploited"
-      ],
-      "metadata": {
-        "id": "CVE-2026-46300",
-        "aliases": [
-          "CVE-2026-46300"
-        ],
-        "vendor": "Linux",
-        "product": "Kernel",
-        "due_date": "2026-10-31",
         "known_ransomware": "Unknown"
       },
       "also_seen_in": []
@@ -1376,12 +1480,325 @@
       "also_seen_in": []
     },
     {
+      "title": "Gilbert + Tobin rethinks the business of law with AI",
+      "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
+      "published_at": "2026-11-12T00:00:00Z",
+      "site_name": "OpenAI",
+      "source": [
+        "OpenAI News"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "ChatGPT Plus for veterans and servicemembers",
+      "url": "https://openai.com/index/chatgpt-plus-for-veterans",
+      "published_at": "2026-11-11T08:00:00Z",
+      "site_name": "OpenAI",
+      "source": [
+        "OpenAI News"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "Introducing Kimi K3.1 Pro on Amazon Bedrock",
+      "url": "https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-1-pro-on-amazon-bedrock",
+      "published_at": "2026-11-11T01:07:19Z",
+      "site_name": "AWS Machine Learning",
+      "source": [
+        "AWS Machine Learning Blog"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "Build a daily dependency watcher with LangGraph and Amazon Bedrock AgentCore web search",
+      "url": "https://aws.amazon.com/blogs/machine-learning/build-a-daily-dependency-watcher-with-langgraph-and-amazon-bedrock-agentcore-web-search",
+      "published_at": "2026-11-10T23:34:05Z",
+      "site_name": "AWS Machine Learning",
+      "source": [
+        "AWS Machine Learning Blog"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "The agent evaluation playbook: Built-in, DeepEval, and AutoEval on Amazon Bedrock AgentCore Evaluations",
+      "url": "https://aws.amazon.com/blogs/machine-learning/the-agent-evaluation-playbook-built-in-deepeval-and-autoeval-on-agentcore",
+      "published_at": "2026-11-10T22:35:03Z",
+      "site_name": "AWS Machine Learning",
+      "source": [
+        "AWS Machine Learning Blog"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "langchain==1.4.10",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.10",
+      "published_at": "2026-11-10T18:37:33Z",
+      "site_name": "GitHub Releases",
+      "source": [
+        "GitHub Releases · LangChain"
+      ],
+      "category": "release",
+      "priority": "P1",
+      "tags": [
+        "agent",
+        "python"
+      ],
+      "metadata": {
+        "repository": "langchain-ai/langchain",
+        "release": "langchain==1.4.10"
+      },
+      "also_seen_in": []
+    },
+    {
+      "title": "Autonomous treasury agents: How Trovata built an AI-native solution on Amazon Bedrock and AgentCore",
+      "url": "https://aws.amazon.com/blogs/machine-learning/autonomous-treasury-agents-how-trovata-built-an-ai-native-solution-on-amazon-bedrock-and-agentcore",
+      "published_at": "2026-11-10T18:11:08Z",
+      "site_name": "AWS Machine Learning",
+      "source": [
+        "AWS Machine Learning Blog"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "Git security vulnerabilities announced",
+      "url": "https://github.blog/open-source/git/git-security-vulnerabilities-announced-7",
+      "published_at": "2026-11-10T18:00:00Z",
+      "site_name": "GitHub Blog",
+      "source": [
+        "GitHub Blog"
+      ],
+      "category": "engineering",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "How TCS built an agentic test orchestrator with Amazon Bedrock AgentCore",
+      "url": "https://aws.amazon.com/blogs/machine-learning/how-tcs-built-an-agentic-test-orchestrator-with-amazon-bedrock-agentcore",
+      "published_at": "2026-11-10T16:59:43Z",
+      "site_name": "AWS Machine Learning",
+      "source": [
+        "AWS Machine Learning Blog"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "Amazon Bedrock tokenomics data lake",
+      "url": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-tokenomics-data-lake",
+      "published_at": "2026-11-10T16:56:36Z",
+      "site_name": "AWS Machine Learning",
+      "source": [
+        "AWS Machine Learning Blog"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "Running AV Reasoning Models Within Onboard Compute and Latency Limits",
+      "url": "https://developer.nvidia.com/blog/running-av-reasoning-models-within-onboard-compute-and-latency-limits",
+      "published_at": "2026-11-10T16:00:00Z",
+      "site_name": "NVIDIA Developer",
+      "source": [
+        "NVIDIA Developer Blog"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "Agent Substrate: Advancing Kubernetes for Agents at Scale",
+      "url": "https://developer.nvidia.com/blog/agent-substrate-advancing-kubernetes-for-agents-at-scale",
+      "published_at": "2026-11-10T15:00:00Z",
+      "site_name": "NVIDIA Developer",
+      "source": [
+        "NVIDIA Developer Blog"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "Start and Restore GPU Workloads in Seconds with NVIDIA Snapshot",
+      "url": "https://developer.nvidia.com/blog/start-and-restore-gpu-workloads-in-seconds-with-nvidia-snapshot",
+      "published_at": "2026-11-10T15:00:00Z",
+      "site_name": "NVIDIA Developer",
+      "source": [
+        "NVIDIA Developer Blog"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "Manage Kubernetes Clusters for GPU Infrastructure with NVIDIA Kubernetes Engine",
+      "url": "https://developer.nvidia.com/blog/manage-kubernetes-clusters-for-gpu-infrastructure-with-nvidia-kubernetes-engine",
+      "published_at": "2026-11-10T15:00:00Z",
+      "site_name": "NVIDIA Developer",
+      "source": [
+        "NVIDIA Developer Blog"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "Helping caregivers use AI in everyday life",
+      "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
+      "published_at": "2026-11-10T12:00:00Z",
+      "site_name": "OpenAI",
+      "source": [
+        "OpenAI News"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "Introducing Businesses in ChatGPT",
+      "url": "https://openai.com/index/introducing-businesses-chatgpt",
+      "published_at": "2026-11-10T10:00:00Z",
+      "site_name": "OpenAI",
+      "source": [
+        "OpenAI News"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "Closing the AI guidance gap in education",
+      "url": "https://openai.com/index/closing-ai-guidance-gap-education",
+      "published_at": "2026-11-10T09:00:00Z",
+      "site_name": "OpenAI",
+      "source": [
+        "OpenAI News"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "Work at the Frontier: AI’s effect on freelance work",
+      "url": "https://openai.com/index/ai-effect-on-freelance-work",
+      "published_at": "2026-11-10T07:00:00Z",
+      "site_name": "OpenAI",
+      "source": [
+        "OpenAI News"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "v3.49.0",
+      "url": "https://github.com/openai/openai-python/releases/tag/v3.49.0",
+      "published_at": "2026-11-10T06:47:04Z",
+      "site_name": "GitHub Releases",
+      "source": [
+        "GitHub Releases · OpenAI Python"
+      ],
+      "category": "release",
+      "priority": "P1",
+      "tags": [
+        "ai",
+        "sdk",
+        "python"
+      ],
+      "metadata": {
+        "repository": "openai/openai-python",
+        "release": "v3.49.0"
+      },
+      "also_seen_in": []
+    },
+    {
+      "title": "langchain-core==1.7.7",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.7.7",
+      "published_at": "2026-11-10T04:08:29Z",
+      "site_name": "GitHub Releases",
+      "source": [
+        "GitHub Releases · LangChain"
+      ],
+      "category": "release",
+      "priority": "P1",
+      "tags": [
+        "agent",
+        "python"
+      ],
+      "metadata": {
+        "repository": "langchain-ai/langchain",
+        "release": "langchain-core==1.7.7"
+      },
+      "also_seen_in": []
+    },
+    {
       "title": "How skills and agents work in AWS Quick",
       "url": "https://aws.amazon.com/blogs/machine-learning/how-skills-and-agents-work-in-aws-quick",
       "published_at": "2026-11-10T00:21:34Z",
       "site_name": "AWS Machine Learning",
       "source": [
         "AWS Machine Learning Blog"
+      ],
+      "category": "ai",
+      "priority": "P1",
+      "tags": [],
+      "metadata": {},
+      "also_seen_in": []
+    },
+    {
+      "title": "Cogent and OpenAI build cyber defense factories for enterprises",
+      "url": "https://openai.com/index/cogent-security",
+      "published_at": "2026-11-10T00:00:00Z",
+      "site_name": "OpenAI",
+      "source": [
+        "OpenAI News"
       ],
       "category": "ai",
       "priority": "P1",
@@ -1725,20 +2142,6 @@
       "also_seen_in": []
     },
     {
-      "title": "Extend Claude Code to remote sessions on Amazon Bedrock AgentCore with security controls",
-      "url": "https://aws.amazon.com/blogs/machine-learning/extend-claude-code-to-remote-sessions-on-amazon-bedrock-agentcore-with-security-controls",
-      "published_at": "2026-11-06T16:45:58Z",
-      "site_name": "AWS Machine Learning",
-      "source": [
-        "AWS Machine Learning Blog"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
       "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
       "url": "https://openai.com/index/partnering-with-hacktron",
       "published_at": "2026-11-06T08:00:00Z",
@@ -1787,20 +2190,6 @@
       "also_seen_in": []
     },
     {
-      "title": "Getting started with Web Answer on Amazon Bedrock AgentCore",
-      "url": "https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore",
-      "published_at": "2026-11-05T21:04:24Z",
-      "site_name": "AWS Machine Learning",
-      "source": [
-        "AWS Machine Learning Blog"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
       "title": "Inside GitHub’s new Git storage architecture",
       "url": "https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture",
       "published_at": "2026-11-05T20:23:21Z",
@@ -1821,20 +2210,6 @@
       "site_name": "OpenAI",
       "source": [
         "OpenAI News"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "How Amazon Marketplace evaluates content quality with Amazon SageMaker AI",
-      "url": "https://aws.amazon.com/blogs/machine-learning/how-amazon-marketplace-evaluates-content-quality-with-amazon-sagemaker-ai",
-      "published_at": "2026-11-05T18:06:43Z",
-      "site_name": "AWS Machine Learning",
-      "source": [
-        "AWS Machine Learning Blog"
       ],
       "category": "ai",
       "priority": "P1",
@@ -2079,20 +2454,6 @@
       "also_seen_in": []
     },
     {
-      "title": "Use decision models with Amazon Bedrock AgentCore Evaluations",
-      "url": "https://aws.amazon.com/blogs/machine-learning/use-decision-models-with-amazon-bedrock-agentcore-evaluations",
-      "published_at": "2026-11-04T18:46:36Z",
-      "site_name": "AWS Machine Learning",
-      "source": [
-        "AWS Machine Learning Blog"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
       "title": "NVIDIA CUDA 13.5 Brings NVIDIA Vera Rubin GA Support",
       "url": "https://developer.nvidia.com/blog/nvidia-cuda-13-5-brings-nvidia-vera-rubin-ga-support",
       "published_at": "2026-11-04T18:46:07Z",
@@ -2104,26 +2465,6 @@
       "priority": "P1",
       "tags": [],
       "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "langchain==1.4.9",
-      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.9",
-      "published_at": "2026-11-04T17:07:40Z",
-      "site_name": "GitHub Releases",
-      "source": [
-        "GitHub Releases · LangChain"
-      ],
-      "category": "release",
-      "priority": "P1",
-      "tags": [
-        "agent",
-        "python"
-      ],
-      "metadata": {
-        "repository": "langchain-ai/langchain",
-        "release": "langchain==1.4.9"
-      },
       "also_seen_in": []
     },
     {
@@ -2178,34 +2519,6 @@
         "repository": "langchain-ai/langchain",
         "release": "langchain-anthropic==1.7.10"
       },
-      "also_seen_in": []
-    },
-    {
-      "title": "Smart Approvals in AWS Quick: Human oversight where it matters",
-      "url": "https://aws.amazon.com/blogs/machine-learning/smart-approvals-in-amazon-quick-human-oversight-where-it-matters",
-      "published_at": "2026-11-04T16:33:03Z",
-      "site_name": "AWS Machine Learning",
-      "source": [
-        "AWS Machine Learning Blog"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "Four layers of context engineering for production AI agents: How Deep Insight applies them in working code",
-      "url": "https://aws.amazon.com/blogs/machine-learning/four-layers-of-context-engineering-for-production-ai-agents-how-deep-insight-applies-them-in-working-code",
-      "published_at": "2026-11-04T16:30:40Z",
-      "site_name": "AWS Machine Learning",
-      "source": [
-        "AWS Machine Learning Blog"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
       "also_seen_in": []
     },
     {
@@ -2508,8 +2821,8 @@
       "also_seen_in": []
     },
     {
-      "title": "Rewarding defenders with bigger bug bounties",
-      "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
+      "title": "Preparing our next security sprint to harden OpenAI",
+      "url": "https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai",
       "published_at": "2026-11-02T18:00:00Z",
       "site_name": "OpenAI",
       "source": [
@@ -2522,8 +2835,8 @@
       "also_seen_in": []
     },
     {
-      "title": "Preparing our next security sprint to harden OpenAI",
-      "url": "https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai",
+      "title": "Rewarding defenders with bigger bug bounties",
+      "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
       "published_at": "2026-11-02T18:00:00Z",
       "site_name": "OpenAI",
       "source": [
@@ -2575,26 +2888,6 @@
       "priority": "P1",
       "tags": [],
       "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "langchain-core==1.7.4",
-      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.7.4",
-      "published_at": "2026-11-02T15:31:49Z",
-      "site_name": "GitHub Releases",
-      "source": [
-        "GitHub Releases · LangChain"
-      ],
-      "category": "release",
-      "priority": "P1",
-      "tags": [
-        "agent",
-        "python"
-      ],
-      "metadata": {
-        "repository": "langchain-ai/langchain",
-        "release": "langchain-core==1.7.4"
-      },
       "also_seen_in": []
     },
     {
@@ -3039,27 +3332,6 @@
       "also_seen_in": []
     },
     {
-      "title": "v3.40.0",
-      "url": "https://github.com/openai/openai-python/releases/tag/v3.40.0",
-      "published_at": "2026-10-27T15:37:52Z",
-      "site_name": "GitHub Releases",
-      "source": [
-        "GitHub Releases · OpenAI Python"
-      ],
-      "category": "release",
-      "priority": "P1",
-      "tags": [
-        "ai",
-        "sdk",
-        "python"
-      ],
-      "metadata": {
-        "repository": "openai/openai-python",
-        "release": "v3.40.0"
-      },
-      "also_seen_in": []
-    },
-    {
       "title": "Retell uses OpenAI models to help power 100M monthly calls",
       "url": "https://openai.com/index/retell-ai",
       "published_at": "2026-10-27T15:00:00Z",
@@ -3116,34 +3388,6 @@
       "also_seen_in": []
     },
     {
-      "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
-      "url": "https://openai.com/index/greptile-code-review-codex-astra",
-      "published_at": "2026-10-26T22:00:00Z",
-      "site_name": "OpenAI",
-      "source": [
-        "OpenAI News"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "Introducing GPT-6.1 Terra",
-      "url": "https://openai.com/index/introducing-gpt-6-1-terra",
-      "published_at": "2026-10-26T18:00:00Z",
-      "site_name": "OpenAI",
-      "source": [
-        "OpenAI News"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
       "title": "How NVIDIA Minerva Turns Telemetry Chaos Into Peak GPU Yield",
       "url": "https://developer.nvidia.com/blog/how-nvidia-minerva-turns-telemetry-chaos-into-peak-gpu-yield",
       "published_at": "2026-10-26T16:00:00Z",
@@ -3172,107 +3416,9 @@
       "also_seen_in": []
     },
     {
-      "title": "Working with academic communities to build scientific understanding",
-      "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
-      "published_at": "2026-10-26T14:30:00Z",
-      "site_name": "OpenAI",
-      "source": [
-        "OpenAI News"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
-      "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
-      "published_at": "2026-10-26T13:45:00Z",
-      "site_name": "OpenAI",
-      "source": [
-        "OpenAI News"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "ChatGPT’s expanding world of work",
-      "url": "https://openai.com/index/chatgpt-expanding-world-of-work",
-      "published_at": "2026-10-26T10:00:00Z",
-      "site_name": "OpenAI",
-      "source": [
-        "OpenAI News"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "How Fanatics and OpenAI streamline the fan experience",
-      "url": "https://openai.com/index/fanatics-streamline-fan-experience",
-      "published_at": "2026-10-26T07:00:00Z",
-      "site_name": "OpenAI",
-      "source": [
-        "OpenAI News"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
-      "url": "https://openai.com/index/openai-cut-incident-investigation",
-      "published_at": "2026-10-26T07:00:00Z",
-      "site_name": "OpenAI",
-      "source": [
-        "OpenAI News"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
       "title": "Scaling NVIDIA TensorRT Performance Optimization Beyond a Single Build Route with the Global Performance Tuner, Part 2",
       "url": "https://developer.nvidia.com/blog/scaling-nvidia-tensorrt-performance-optimization-beyond-a-single-build-route-with-the-global-performance-tuner-part-2",
       "published_at": "2026-10-23T17:27:52Z",
-      "site_name": "NVIDIA Developer",
-      "source": [
-        "NVIDIA Developer Blog"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "Scaling NVIDIA TensorRT Performance Optimization Beyond a Single Build Route with the Global Performance Tuner, Part 1",
-      "url": "https://developer.nvidia.com/blog/scaling-nvidia-tensorrt-performance-optimization-beyond-a-single-build-route-with-the-global-performance-tuner-part-1",
-      "published_at": "2026-10-23T17:27:35Z",
-      "site_name": "NVIDIA Developer",
-      "source": [
-        "NVIDIA Developer Blog"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "Using AI Agents to Teach Robots Like Microduck to Walk in Simulation",
-      "url": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation",
-      "published_at": "2026-10-23T14:58:32Z",
       "site_name": "NVIDIA Developer",
       "source": [
         "NVIDIA Developer Blog"
@@ -3292,34 +3438,6 @@
         "GitHub Blog"
       ],
       "category": "engineering",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "How to Read Data into GPU Memory in Python with NVIDIA GPUDirect Storage",
-      "url": "https://developer.nvidia.com/blog/how-to-read-data-into-gpu-memory-in-python-with-nvidia-gpudirect-storage",
-      "published_at": "2026-10-22T16:39:09Z",
-      "site_name": "NVIDIA Developer",
-      "source": [
-        "NVIDIA Developer Blog"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "Running Frontier-Class AI Models Across 8 NVIDIA DGX Spark Nodes",
-      "url": "https://developer.nvidia.com/blog/running-frontier-class-ai-models-across-8-nvidia-dgx-spark-nodes",
-      "published_at": "2026-10-22T16:00:00Z",
-      "site_name": "NVIDIA Developer",
-      "source": [
-        "NVIDIA Developer Blog"
-      ],
-      "category": "ai",
       "priority": "P1",
       "tags": [],
       "metadata": {},
@@ -3348,20 +3466,6 @@
         "Cloudflare AI"
       ],
       "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "How 3 Java Champions are using GitHub Copilot for increased productivity",
-      "url": "https://github.blog/ai-and-ml/github-copilot/how-3-java-champions-are-using-github-copilot-for-increased-productivity",
-      "published_at": "2026-10-20T16:05:03Z",
-      "site_name": "GitHub Blog",
-      "source": [
-        "GitHub Blog"
-      ],
-      "category": "engineering",
       "priority": "P1",
       "tags": [],
       "metadata": {},
@@ -3492,175 +3596,131 @@
       "tags": [],
       "metadata": {},
       "also_seen_in": []
-    },
-    {
-      "title": "One year later: Sovereign AI and the fight for choice",
-      "url": "https://blog.cloudflare.com/sovereign-ai-choice-one-year-later",
-      "published_at": "2026-10-01T13:04:19Z",
-      "site_name": "Cloudflare",
-      "source": [
-        "Cloudflare AI"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "Cloudflare OS: your company’s agent workspace, managed for you",
-      "url": "https://blog.cloudflare.com/managed-cloudflare-os",
-      "published_at": "2026-10-01T13:00:00Z",
-      "site_name": "Cloudflare",
-      "source": [
-        "Cloudflare AI"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "AI Search is now generally available",
-      "url": "https://blog.cloudflare.com/ai-search-ga",
-      "published_at": "2026-10-01T13:00:00Z",
-      "site_name": "Cloudflare",
-      "source": [
-        "Cloudflare AI"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
-    },
-    {
-      "title": "Cut your AI spend with AI Gateway's Auto Router",
-      "url": "https://blog.cloudflare.com/auto-router",
-      "published_at": "2026-09-30T13:00:00Z",
-      "site_name": "Cloudflare",
-      "source": [
-        "Cloudflare AI"
-      ],
-      "category": "ai",
-      "priority": "P1",
-      "tags": [],
-      "metadata": {},
-      "also_seen_in": []
     }
   ],
   "source_status": {
     "AI News Aggregator": {
       "ok": true,
-      "cached": true,
+      "cached": false,
+      "not_modified": false,
       "count": 50,
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00"
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00"
     },
     "GitHub Releases · LangChain": {
       "ok": true,
-      "cached": true,
+      "cached": false,
+      "not_modified": false,
       "count": 10,
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00"
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00"
     },
     "GitHub Releases · OpenAI Python": {
       "ok": true,
-      "cached": true,
+      "cached": false,
+      "not_modified": false,
       "count": 10,
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00"
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00"
     },
     "Hacker News": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 2,
       "fetched_at": "2026-11-10T21:48:19.155704+00:00",
       "checked_at": "2026-11-10T21:48:19.155704+00:00"
     },
     "Lobsters": {
       "ok": true,
-      "cached": true,
+      "cached": false,
+      "not_modified": false,
       "count": 25,
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00"
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00"
     },
     "OpenAI News": {
       "ok": true,
-      "cached": true,
+      "cached": false,
+      "not_modified": false,
       "count": 50,
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00"
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00"
     },
     "Google Developers Blog": {
       "ok": true,
-      "cached": true,
+      "cached": false,
+      "not_modified": false,
       "count": 20,
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00"
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00"
     },
     "AWS Machine Learning Blog": {
       "ok": true,
-      "cached": true,
+      "cached": false,
+      "not_modified": false,
       "count": 20,
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00"
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00"
     },
     "NVIDIA Developer Blog": {
       "ok": true,
-      "cached": true,
+      "cached": false,
+      "not_modified": false,
       "count": 30,
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00"
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00"
     },
     "Cloudflare AI": {
       "ok": true,
-      "cached": true,
+      "cached": false,
+      "not_modified": false,
       "count": 20,
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00"
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00"
     },
     "GitHub Blog": {
       "ok": true,
-      "cached": true,
+      "cached": false,
+      "not_modified": false,
       "count": 10,
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00"
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00"
     },
     "Stack Overflow Blog": {
       "ok": true,
-      "cached": true,
+      "cached": false,
+      "not_modified": false,
       "count": 40,
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00"
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00"
     },
     "OSV.dev": {
       "ok": true,
-      "cached": true,
+      "cached": false,
+      "not_modified": false,
       "count": 30,
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00"
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00"
     },
     "CISA KEV": {
       "ok": true,
-      "cached": true,
-      "count": 24,
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00"
+      "cached": false,
+      "not_modified": false,
+      "count": 28,
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00"
     }
   },
   "source_cache": {
     "AI News Aggregator": {
       "items": [
         {
-          "title": "AI 到底能不能独立做个产品？我拿一个小程序验证了",
-          "url": "https://juejin.cn/post/7706036898079473683",
-          "published_at": "2026-11-09T20:16:07.522000Z",
-          "site_name": "NewsNow",
+          "title": "突发！特朗普自曝警告某AI巨头CEO：准备坐牢吧",
+          "url": "https://aiera.com.cn/asi-post.html?id=123401",
+          "published_at": "2026-11-11T08:08:39Z",
+          "site_name": "新智元",
           "source": [
-            "juejin"
+            "新智元"
           ],
           "category": "ai",
           "priority": "P2",
@@ -3669,12 +3729,12 @@
           "also_seen_in": []
         },
         {
-          "title": "全球股市跌麻了：AI在进化，牛马在买单",
-          "url": "https://juejin.cn/post/7704958359515480079",
-          "published_at": "2026-11-09T20:16:07.522000Z",
-          "site_name": "NewsNow",
+          "title": "Fable 5.2睁眼拼魔方，中国AI闭眼搓麻将！人类「手感」首次Token化",
+          "url": "https://aiera.com.cn/asi-post.html?id=123352",
+          "published_at": "2026-11-11T08:04:50Z",
+          "site_name": "新智元",
           "source": [
-            "juejin"
+            "新智元"
           ],
           "category": "ai",
           "priority": "P2",
@@ -3683,12 +3743,12 @@
           "also_seen_in": []
         },
         {
-          "title": "AI 正在蚕食我们的编码能力",
-          "url": "https://juejin.cn/post/7705961716425490447",
-          "published_at": "2026-11-09T20:16:07.522000Z",
-          "site_name": "NewsNow",
+          "title": "1500万美元！OpenAI联手Anthropic，请数学家给AI「验卷」",
+          "url": "https://aiera.com.cn/asi-post.html?id=123324",
+          "published_at": "2026-11-11T08:03:25Z",
+          "site_name": "新智元",
           "source": [
-            "juejin"
+            "新智元"
           ],
           "category": "ai",
           "priority": "P2",
@@ -3697,12 +3757,12 @@
           "also_seen_in": []
         },
         {
-          "title": "AI-SDLC 实践 04｜方案设计：把 Spec 转化为技术方案，并拆解为多 SubAgent 可执行的任务",
-          "url": "https://juejin.cn/post/7705330413946060815",
-          "published_at": "2026-11-09T20:16:07.522000Z",
-          "site_name": "NewsNow",
+          "title": "百万Token 输入仅7毛！Meta突发最小模型Muse Ember，性能追平Hai...",
+          "url": "https://mp.weixin.qq.com/s/JMOaleUPNIYUBtO4Vwvv5g",
+          "published_at": "2026-11-11T02:06:45Z",
+          "site_name": "微信公众号",
           "source": [
-            "juejin"
+            "AI前线"
           ],
           "category": "ai",
           "priority": "P2",
@@ -3711,12 +3771,12 @@
           "also_seen_in": []
         },
         {
-          "title": "Dageno AI 2.0",
-          "url": "https://www.producthunt.com/products/agent-powered-geo-by-dageno",
-          "published_at": "2026-11-09T20:16:07.522000Z",
-          "site_name": "NewsNow",
+          "title": "当AI开始像员工一样上岗，企业还差什么？|极客时间企业版",
+          "url": "https://mp.weixin.qq.com/s/s7pnt-Vu4F_tAsTIUGmrnA",
+          "published_at": "2026-11-11T02:06:45Z",
+          "site_name": "微信公众号",
           "source": [
-            "producthunt"
+            "AI前线"
           ],
           "category": "ai",
           "priority": "P2",
@@ -3725,12 +3785,12 @@
           "also_seen_in": []
         },
         {
-          "title": "Arcjet AI security models",
-          "url": "https://www.producthunt.com/products/arcjet",
-          "published_at": "2026-11-09T20:16:07.522000Z",
-          "site_name": "NewsNow",
+          "title": "200位北大AI人，六条流向图谱Ⅰ甲子光年",
+          "url": "https://mp.weixin.qq.com/s/TXRnEtbr3DLmWRbHe8FKDw",
+          "published_at": "2026-11-11T01:10:11Z",
+          "site_name": "微信公众号",
           "source": [
-            "producthunt"
+            "甲子光年"
           ],
           "category": "ai",
           "priority": "P2",
@@ -3739,12 +3799,12 @@
           "also_seen_in": []
         },
         {
-          "title": "Pawse.ai",
-          "url": "https://www.producthunt.com/products/pawse-ai",
-          "published_at": "2026-11-09T20:16:07.522000Z",
-          "site_name": "NewsNow",
+          "title": "AI功能上线后没人用，产品经理怎么办？",
+          "url": "https://mp.weixin.qq.com/s/oDmLdZ1mIRjkg12go7ed-w",
+          "published_at": "2026-11-11T00:57:59Z",
+          "site_name": "微信公众号",
           "source": [
-            "producthunt"
+            "人人都是产品经理"
           ],
           "category": "ai",
           "priority": "P2",
@@ -3753,12 +3813,12 @@
           "also_seen_in": []
         },
         {
-          "title": "Egoist AI Passport",
-          "url": "https://www.producthunt.com/products/egoist-ai-passport",
-          "published_at": "2026-11-09T20:16:07.522000Z",
-          "site_name": "NewsNow",
+          "title": "报名开启Ⅰ启元实验室AI算法大赛，两大赛道聚焦开放世界目标感知！",
+          "url": "https://mp.weixin.qq.com/s/adcYyldefIv7qWJWTdJBJA",
+          "published_at": "2026-11-11T00:37:20Z",
+          "site_name": "微信公众号",
           "source": [
-            "producthunt"
+            "计算机视觉life"
           ],
           "category": "ai",
           "priority": "P2",
@@ -3767,12 +3827,12 @@
           "also_seen_in": []
         },
         {
-          "title": "Cardboard AI",
-          "url": "https://www.producthunt.com/products/cardboard-3",
-          "published_at": "2026-11-09T20:16:07.522000Z",
-          "site_name": "NewsNow",
+          "title": "集智首个全AI读书会来了：奇点临近下的网络安全与临界预警",
+          "url": "https://mp.weixin.qq.com/s/wvzOKrHfcA9hyRD71zMPKg",
+          "published_at": "2026-11-11T00:35:35Z",
+          "site_name": "微信公众号",
           "source": [
-            "producthunt"
+            "集智俱乐部"
           ],
           "category": "ai",
           "priority": "P2",
@@ -3781,12 +3841,12 @@
           "also_seen_in": []
         },
         {
-          "title": "Claude Fable 5.2 is now available in Cursor!\r\n\r\nAt max effort, it's the top model on CursorBench at 60...",
-          "url": "https://x.com/cursor_ai/status/2119880829212172509",
-          "published_at": "2026-11-09T19:52:29Z",
-          "site_name": "OPML RSS",
+          "title": "AI从Working、Coding到Oncall：腾讯视频如何让知识流动起来？",
+          "url": "https://mp.weixin.qq.com/s/aOV53imdYpJ8Sle24yBoUQ",
+          "published_at": "2026-11-11T00:16:36Z",
+          "site_name": "微信公众号",
           "source": [
-            "Cursor(@cursor_ai)"
+            "腾讯技术工程"
           ],
           "category": "ai",
           "priority": "P2",
@@ -3795,12 +3855,12 @@
           "also_seen_in": []
         },
         {
-          "title": "Show HN: 一款开源应用，让大型语言模型（LLM）能够控制你的iPhone（无需Mac）",
-          "url": "https://github.com/EliotAndres/iphone-use-app",
-          "published_at": "2026-11-09T19:49:41.882000Z",
-          "site_name": "Buzzing",
+          "title": "当美国无法建设数据中心，会对AI产生怎样的冲击",
+          "url": "https://mp.weixin.qq.com/s/nHn22mE_z5pwAEIQApfrNQ",
+          "published_at": "2026-11-11T00:15:23Z",
+          "site_name": "微信公众号",
           "source": [
-            "github.com"
+            "极客公园"
           ],
           "category": "ai",
           "priority": "P2",
@@ -3809,12 +3869,12 @@
           "also_seen_in": []
         },
         {
-          "title": "Last Thursday we hosted a private dinner for AI leaders in insurance at Niku Steakhouse.\r\n\r\nThe discus...",
-          "url": "https://x.com/jerryjliu0/status/2119878904358027743",
-          "published_at": "2026-11-09T19:44:50Z",
-          "site_name": "OPML RSS",
+          "title": "ChatGPT占全球 AI聊天流量超81%；iOS 27.3 曝光 Siri「个人记...",
+          "url": "https://mp.weixin.qq.com/s/Bycs7VRi_LIgArOgK4yoJA",
+          "published_at": "2026-11-11T00:15:23Z",
+          "site_name": "微信公众号",
           "source": [
-            "Jerry Liu(@jerryjliu0)"
+            "极客公园"
           ],
           "category": "ai",
           "priority": "P2",
@@ -3823,418 +3883,9 @@
           "also_seen_in": []
         },
         {
-          "title": "Claude Fable 5.2 from @AnthropicAI is live on OpenRouter: 1M context, $8/M input, $40/M output",
-          "url": "https://x.com/OpenRouter/status/2119875084521447767",
-          "published_at": "2026-11-09T19:29:40Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "OpenRouter(@OpenRouterAI)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Anthropic 发了新模型，OpenAI 发了台游戏机：Codex 版 Chromatic 掌机开卖，200 美元，用 Codex 自己做 Game Boy 游戏\r\n\r\n11 月 9 日，Anthro...",
-          "url": "https://x.com/dotey/status/2119873970920997274",
-          "published_at": "2026-11-09T19:25:14Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "宝玉(@dotey)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "homeassistant-ai / ha-mcp",
-          "url": "https://github.com/homeassistant-ai/ha-mcp",
-          "published_at": "2026-11-09T19:09:22Z",
-          "site_name": "TopHub",
-          "source": [
-            "GitHub · Trending Today",
-            "github"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": [
-            "github"
-          ]
-        },
-        {
-          "title": "Meta 发布最小模型 Muse Ember：单价和 Claude Haiku 5.5 一样，跑同一套测试只花三分之一的钱\r\n\r\nMeta 11 月 9 日发布 Muse Ember，这是它迄今最小、最便...",
-          "url": "https://x.com/dotey/status/2119868647220842659",
-          "published_at": "2026-11-09T19:04:05Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "宝玉(@dotey)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Mistral CEO Explains Why AI Models Are Becoming Defence Systems",
-          "url": "https://www.youtube.com/shorts/-sC-pOysEpA",
-          "published_at": "2026-11-09T19:00:45Z",
-          "site_name": "YouTube",
-          "source": [
-            "20VC"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "@claudeai @AnthropicAI @vercel 了解更多：\r\nhttps://t.co/1MantzB0Lc",
-          "url": "https://x.com/aisdk/status/2119867746876109094",
-          "published_at": "2026-11-09T19:00:30Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "AI SDK(@aisdk)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Use Claude Fable 5.2 with AI SDK",
-          "url": "https://x.com/aisdk/status/2119867734607753474",
-          "published_at": "2026-11-09T19:00:27Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "AI SDK(@aisdk)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Claude Fable 5.2 and Claude Mythos 5.2 are available now:",
-          "url": "https://x.com/AnthropicAI/status/2119867707546071125",
-          "published_at": "2026-11-09T19:00:21Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "Anthropic(@AnthropicAI)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Fable and Mythos are the same underlying model. Fable has strong safeguards to guard against misuse....",
-          "url": "https://x.com/claudeai/status/2119867136361316437",
-          "published_at": "2026-11-09T18:58:05Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "Claude(@claudeai)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Claude Fable 5.2 is available today on all paid plans, on the Claude Platform, and on all major clou...",
-          "url": "https://x.com/claudeai/status/2119867138987176141",
-          "published_at": "2026-11-09T18:58:05Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "Claude(@claudeai)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Ask HN: 分享你关于深入学习大型语言模型（LLMs）的最佳博客/视频",
-          "url": "https://news.ycombinator.com/item?id=50429583",
-          "published_at": "2026-11-09T18:45:48.487000Z",
-          "site_name": "Buzzing",
-          "source": [
-            "news.ycombinator.com"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Muse Ember from @AIatMeta is now live on OpenRouter! 🔥\r\n\r\nYour coding agent just got a whole crew. Us...",
-          "url": "https://x.com/OpenRouter/status/2119860904024314002",
-          "published_at": "2026-11-09T18:33:19Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "OpenRouter(@OpenRouterAI)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Sleep wearables are training AI on your brainwaves without explicit consent",
-          "url": "https://www.tomshardware.com/peripherals/wearable-tech/wearable-sleep-trackers-are-using-your-brainwaves-to-train-ai-models-without-explicit-user-consent-tens-of-millions-of-hours-of-eeg-data-harvested",
-          "published_at": "2026-11-09T18:29:41Z",
-          "site_name": "Zeli",
-          "source": [
-            "Hacker News · 24h最热"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "免费时代要结束？三星 Galaxy AI 准备收每月 4.99 美元",
-          "url": "https://www.aibase.com/news/32187",
-          "published_at": "2026-11-09T18:16:05.109000Z",
-          "site_name": "AIbase",
-          "source": [
-            "AIbase"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "字节 Seedream 5.5 发布：支持 100 轮连续编辑与原生透明输出，全面刷新 AI 图像创作天花板",
-          "url": "https://www.aibase.com/news/32186",
-          "published_at": "2026-11-09T18:16:05.109000Z",
-          "site_name": "AIbase",
-          "source": [
-            "AIbase"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "千问办公2.0发布:定位Team Agent，协作、自动任务、人机共创三线升级",
-          "url": "https://www.aibase.com/news/32184",
-          "published_at": "2026-11-09T18:16:05.109000Z",
-          "site_name": "AIbase",
-          "source": [
-            "AIbase"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Show HN: STE80 Humanizer——通过将文本写至ASD-STE100标准的80%，实现去AI化",
-          "url": "https://github.com/Dodaios/ste80-humanizer",
-          "published_at": "2026-11-09T18:14:12.813000Z",
-          "site_name": "Buzzing",
-          "source": [
-            "github.com"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Show HN: STE80 Humanizer – de-AI text by writing 80% of the way to ASD-STE100",
-          "url": "https://news.ycombinator.com/item?id=50429144",
-          "published_at": "2026-11-09T18:05:44Z",
-          "site_name": "NewsNow",
-          "source": [
-            "hackernews"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Muse Ember is available today on the Meta Model API, at $0.10 per million input tokens and $0.50 per...",
-          "url": "https://x.com/AIatMeta/status/2119853597542568405",
-          "published_at": "2026-11-09T18:04:17Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "AI at Meta(@AIatMeta)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "For agents that perform hundreds of small tasks, efficiency matters at every step. Muse Ember is bui...",
-          "url": "https://x.com/AIatMeta/status/2119853595453702580",
-          "published_at": "2026-11-09T18:04:16Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "AI at Meta(@AIatMeta)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Today we're introducing Muse Ember, our smallest and most efficient model, built for complex reasoni...",
-          "url": "https://x.com/AIatMeta/status/2119853591703998787",
-          "published_at": "2026-11-09T18:04:15Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "AI at Meta(@AIatMeta)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "随着云服务需求激增，谷歌推出新款AI芯片变体 - Reuters",
-          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOd1JDNDVNcnh0MU5wSzdrUVhVY3FpSklfazJZVWEtbGwyUkxydzhTcUVhV2F5aHdHV29OUE9Ea1JkZm93d2xVcU1VMEdEZE1xamt3RlktMVlqLUNGRVlIalpNd3ZRS2Z2LVN3b24yNUcyV1lkQm01MmJ3eHJLZVk3a3ZDSkhHcllvVHVxX1c1d3YtRHV3Q1g5d241UGNpLXJpSXRwTUYzcEdPcUhmN2FqdnBRNVZUYlM1WmJF?ceid=US%3Aen&gl=US&hl=en-US",
-          "published_at": "2026-11-09T17:57:47.984000Z",
-          "site_name": "Buzzing",
-          "source": [
-            "news.google.com"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "OpenAI ChatGPT/Codex Web + Desktop 基础设施团队 X 直招",
-          "url": "https://x.com/dotey/status/2119848789192392992",
-          "published_at": "2026-11-09T17:45:10Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "宝玉(@dotey)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Lilika Makabe’s internship provided meaningful connections and opportunities to grow; can AI bring u...",
-          "url": "https://x.com/MSFTResearch/status/2119841724058988658",
-          "published_at": "2026-11-09T17:17:06Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "Microsoft Research(@MSFTResearch)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "How do you improve your agents? @divyasan0 from the LangChain Academy team walks through how the thr...",
-          "url": "https://x.com/LangChain/status/2119837532502315503",
-          "published_at": "2026-11-09T17:00:27Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "LangChain(@LangChainAI)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Installing is even easier now. Tell your agent to go to https://t.co/nO1wcOJJ79. The page is readabl...",
-          "url": "https://x.com/OpenRouter/status/2119828383827894410",
-          "published_at": "2026-11-09T16:24:05Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "OpenRouter(@OpenRouterAI)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Coming soon: the OpenRouter MCP in your favorite plugin store (OpenAI, Anthropic and more), and no m...",
-          "url": "https://x.com/OpenRouter/status/2119828365947638173",
-          "published_at": "2026-11-09T16:24:01Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "OpenRouter(@OpenRouterAI)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "The OpenRouter MCP just got a big upgrade.\r\n\r\nTry all of what OpenRouter offers in your favorite agent...",
-          "url": "https://x.com/OpenRouter/status/2119828257940083148",
-          "published_at": "2026-11-09T16:23:35Z",
-          "site_name": "OPML RSS",
-          "source": [
-            "OpenRouter(@OpenRouterAI)"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "More than 400k Russians killed fighting in Ukraine war, leaked data suggests",
-          "url": "https://www.theguardian.com/world/2026/nov/09/russians-killed-ukraine-war-leaked-data",
-          "published_at": "2026-11-09T16:11:00Z",
-          "site_name": "Zeli",
-          "source": [
-            "Hacker News · 24h最热"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "刺破AI泡沫的最后一根针？",
-          "url": "https://www.huxiu.com/article/4904297.html?f=rss",
-          "published_at": "2026-11-09T16:10:40Z",
+          "title": "丘成桐谈AI：不管黑猫白猫，先找到真理再说",
+          "url": "https://www.huxiu.com/article/4904604.html?f=rss",
+          "published_at": "2026-11-11T00:13:22Z",
           "site_name": "Info Flow",
           "source": [
             "虎嗅 (Huxiu)"
@@ -4246,12 +3897,12 @@
           "also_seen_in": []
         },
         {
-          "title": "字节发布图像模型 Seedream 5.5：同一张图连改 100 轮不走样，能直接出透明底素材，即梦、豆包陆续上线\r\n\r\n字节跳动 Seed 团队 11 月 9 日发布 Seedream 5.5。用 AI...",
-          "url": "https://x.com/dotey/status/2119823986603299193",
-          "published_at": "2026-11-09T16:06:37Z",
-          "site_name": "OPML RSS",
+          "title": "AI那么能写，人为什么还要写作？",
+          "url": "https://mp.weixin.qq.com/s/0WEpK_Zjl9P_8vZ1-mkk6Q",
+          "published_at": "2026-11-11T00:07:54Z",
+          "site_name": "微信公众号",
           "source": [
-            "宝玉(@dotey)"
+            "辉哥奇谭"
           ],
           "category": "ai",
           "priority": "P2",
@@ -4260,12 +3911,12 @@
           "also_seen_in": []
         },
         {
-          "title": "猫王、埃米纳姆的版权所有者就AI训练一事起诉Suno",
-          "url": "https://reut.rs/4sMixBU",
-          "published_at": "2026-11-09T16:05:56.344000Z",
-          "site_name": "Buzzing",
+          "title": "【活动招募】AI时代，请持续阅读深圳湾青年悦读派”第二期暨APE...",
+          "url": "https://mp.weixin.qq.com/s/pYT0JwKSoknSV2z5XPQE4g",
+          "published_at": "2026-11-11T00:01:02Z",
+          "site_name": "微信公众号",
           "source": [
-            "reut.rs"
+            "第一财经YiMagazine"
           ],
           "category": "ai",
           "priority": "P2",
@@ -4274,26 +3925,12 @@
           "also_seen_in": []
         },
         {
-          "title": "Mistral CEO: Why OpenAI & Anthropic Will Come for Your Business | Are Chinese Models Truly Safe?",
-          "url": "https://www.youtube.com/watch?v=KotQbLX8pOw",
-          "published_at": "2026-11-09T15:00:02Z",
-          "site_name": "YouTube",
-          "source": [
-            "20VC"
-          ],
-          "category": "ai",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "[分享创造] 做了一个 3D AI 办公室，都是真实数据",
-          "url": "https://www.v2ex.com/t/1255687",
-          "published_at": "2026-11-09T14:40:28Z",
+          "title": "大模型如何定义芯片设计？",
+          "url": "https://www.huxiu.com/article/4903518.html?f=rss",
+          "published_at": "2026-11-11T00:00:00Z",
           "site_name": "Info Flow",
           "source": [
-            "V2EX (创意工作者社区)"
+            "虎嗅 (Huxiu)"
           ],
           "category": "ai",
           "priority": "P2",
@@ -4302,12 +3939,12 @@
           "also_seen_in": []
         },
         {
-          "title": "@ericyangpan 攀哥今天发的 personal agent 文章：\r\nhttps://t.co/FSQbq7ewVk\r\n\r\n还有很多精彩内容，推荐关注他的官网和公众号。",
-          "url": "https://x.com/vista8/status/2119801482312901049",
-          "published_at": "2026-11-09T14:37:12Z",
-          "site_name": "OPML RSS",
+          "title": "Agent 从Demo到生产，究竟还差几步？4周实战课来了",
+          "url": "https://mp.weixin.qq.com/s/fHxDCyZWVulVPraAVplpqQ",
+          "published_at": "2026-11-10T23:59:45Z",
+          "site_name": "微信公众号",
           "source": [
-            "向阳乔木(@vista8)"
+            "InfoQ"
           ],
           "category": "ai",
           "priority": "P2",
@@ -4316,9 +3953,37 @@
           "also_seen_in": []
         },
         {
-          "title": "美国知名风险投资家科斯拉看好 AI 重塑互联网：能让网站“有生命”",
-          "url": "https://www.ithome.com/1/024/559.htm",
-          "published_at": "2026-11-09T14:32:49Z",
+          "title": "AI改变的是数据接口，而不是查询引擎",
+          "url": "https://mp.weixin.qq.com/s/MwAu1ZYyLlc6FgdBJa0l8w",
+          "published_at": "2026-11-10T23:59:45Z",
+          "site_name": "微信公众号",
+          "source": [
+            "InfoQ"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Sea：电商、AI双线投入，“小腾讯”也要尴尬了？",
+          "url": "https://www.huxiu.com/article/4904600.html?f=rss",
+          "published_at": "2026-11-10T23:54:02Z",
+          "site_name": "Info Flow",
+          "source": [
+            "虎嗅 (Huxiu)"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "微软游说美国政府放弃中国光模块进口限制，担忧拖慢 AI 数据中心建设",
+          "url": "https://www.ithome.com/1/025/218.htm",
+          "published_at": "2026-11-10T23:53:35Z",
           "site_name": "Info Flow",
           "source": [
             "IT之家 (ITHome)"
@@ -4330,12 +3995,12 @@
           "also_seen_in": []
         },
         {
-          "title": "Magenta solar panels may be agrivoltaics' cleverest trick yet",
-          "url": "https://news.ycombinator.com/item?id=50426175",
-          "published_at": "2026-11-09T14:31:39Z",
-          "site_name": "NewsNow",
+          "title": "苹果国行AI备案新增iPad和笔记本/Claude Fable 5.2发布，价格降 20...",
+          "url": "https://mp.weixin.qq.com/s/hnxtUCpGhlI-2URHMCta0g",
+          "published_at": "2026-11-10T23:51:45Z",
+          "site_name": "微信公众号",
           "source": [
-            "hackernews"
+            "爱范儿"
           ],
           "category": "ai",
           "priority": "P2",
@@ -4344,9 +4009,135 @@
           "also_seen_in": []
         },
         {
-          "title": "使用大型语言模型（LLMs）运行文字游戏需要多少成本？",
-          "url": "https://dev.to/hiper2d/how-much-does-it-cost-to-run-a-text-game-with-llms-57o7",
-          "published_at": "2026-11-09T14:14:57.689000Z",
+          "title": "[分享创造] 月旦评：我又用 ai 跑了一个点评历史人物点评小站",
+          "url": "https://www.v2ex.com/t/1256018",
+          "published_at": "2026-11-10T23:51:10Z",
+          "site_name": "Info Flow",
+          "source": [
+            "V2EX (创意工作者社区)"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Anthropic对Office软件的挑战导致微软股价下跌 - Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQVU1YdlJPSUlEcmx5OUpyelIxZlBYSnp5QmUzbTJpNE5IcG4xSURIbndrNWlHSXJpMGVacnM2QlpmWGdUbWRtY0xJQ3l1Z3RqN0RCRDM5VXZEOFlQWktpNTBDdHZqTTJDRnhlUkFVS1VOQS1Dakx2VmFhSVU3WXlaTGFicjRpcnBPWjJkbHBtcExZbXQySktYOWRB?ceid=US%3Aen&gl=US&hl=en-US",
+          "published_at": "2026-11-10T23:45:04.738000Z",
+          "site_name": "Buzzing",
+          "source": [
+            "news.google.com"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "三位顶尖物理学家接连在论文中致谢AI，理论物理研究正在发生变革",
+          "url": "https://mp.weixin.qq.com/s/jN94-9VUNF3Uf_j7keWcBQ",
+          "published_at": "2026-11-10T23:41:12Z",
+          "site_name": "微信公众号",
+          "source": [
+            "DeepTech深科技"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "AI能设计蛋白质，却还做不了实验：下一代AI4S实验室该怎么建?",
+          "url": "https://mp.weixin.qq.com/s/lqU_kjH5B-_1ZdW66XvhNw",
+          "published_at": "2026-11-10T23:41:12Z",
+          "site_name": "微信公众号",
+          "source": [
+            "DeepTech深科技"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Fable5.2睁眼拼魔方，中国AI闭眼搓麻将！人类「手感」首次Token化",
+          "url": "https://mp.weixin.qq.com/s/W8yAZZSXVUWRuOCCk4O_yg",
+          "published_at": "2026-11-10T23:38:49Z",
+          "site_name": "微信公众号",
+          "source": [
+            "新智元"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "1500万美元！OpenAl联手Anthropic，请数学家给AI「验卷」",
+          "url": "https://mp.weixin.qq.com/s/w6cgy0wUPMYEjfJEueDEAg",
+          "published_at": "2026-11-10T23:38:49Z",
+          "site_name": "微信公众号",
+          "source": [
+            "新智元"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "突发！特朗普自曝警告某AI巨头CEO：准备坐牢吧",
+          "url": "https://mp.weixin.qq.com/s/y75NSJPmBM4nOqv_5EHnCA",
+          "published_at": "2026-11-10T23:38:49Z",
+          "site_name": "微信公众号",
+          "source": [
+            "新智元"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "英伟达逆势大跌，一夜蒸发1.29万亿元/苹果国行AI备案新增iPad和M...",
+          "url": "https://mp.weixin.qq.com/s/1U76K5nSYsfQOHgrG3zM8A",
+          "published_at": "2026-11-10T23:33:40Z",
+          "site_name": "微信公众号",
+          "source": [
+            "APPSO"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "技嘉推出 RTX Spark 迷你主机 AI Top Aero，最高 128GB 统一内存",
+          "url": "https://www.ithome.com/1/025/213.htm",
+          "published_at": "2026-11-10T23:29:42Z",
+          "site_name": "Info Flow",
+          "source": [
+            "IT之家 (ITHome)"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "我对我的AI代理进行了125次提示注入攻击。没有一次成功，但这并不是最有趣的部分",
+          "url": "https://dev.to/riadgaffar/i-ran-125-prompt-injection-attacks-on-my-ai-agent-none-got-through-and-that-wasnt-the-4ib6",
+          "published_at": "2026-11-10T23:28:52.139000Z",
           "site_name": "Buzzing",
           "source": [
             "dev.to"
@@ -4356,16 +4147,322 @@
           "tags": [],
           "metadata": {},
           "also_seen_in": []
+        },
+        {
+          "title": "Agent自演进驶入“双轨时代”！openJiuwen RSI再升级，首发TT...",
+          "url": "https://mp.weixin.qq.com/s/5lB8vmTm-4rplbY_KV46gA",
+          "published_at": "2026-11-10T23:24:47Z",
+          "site_name": "微信公众号",
+          "source": [
+            "量子位"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "本以为AI生图早就卷到头了，直到我试了试即梦的新模型。",
+          "url": "https://mp.weixin.qq.com/s/mTzAbh1hmYlZMzkwOpeTIg",
+          "published_at": "2026-11-10T23:22:30Z",
+          "site_name": "微信公众号",
+          "source": [
+            "差评"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Team Projects provides shared context for every teammate and their agents. Agents share plans before...",
+          "url": "https://x.com/cursor_ai/status/2120295565305282658",
+          "published_at": "2026-11-10T23:20:30Z",
+          "site_name": "OPML RSS",
+          "source": [
+            "Cursor(@cursor_ai)"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Your agents can now coordinate with your teammates’ agents.\r\n\r\nProjects has been rebuilt for multiplay...",
+          "url": "https://x.com/cursor_ai/status/2120295553309565139",
+          "published_at": "2026-11-10T23:20:27Z",
+          "site_name": "OPML RSS",
+          "source": [
+            "Cursor(@cursor_ai)"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "不卖Token，卖结果：一位CEO亲自下场的AI转型复盘！",
+          "url": "https://mp.weixin.qq.com/s/HAhlh14-lGI_TCL6LQukAw",
+          "published_at": "2026-11-10T23:20:23Z",
+          "site_name": "微信公众号",
+          "source": [
+            "虎嗅App"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "大厂大减员，真的是因为AI抢人类饭碗吗？",
+          "url": "https://mp.weixin.qq.com/s/VV7WV3OzRR1YWQPj5s3Biw",
+          "published_at": "2026-11-10T23:20:23Z",
+          "site_name": "微信公众号",
+          "source": [
+            "虎嗅App"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Agent领导力大考！Einsia Al发布WorkflowArena，行业首个多智...",
+          "url": "https://mp.weixin.qq.com/s/h1sWVA9j9L7auQvjpX3H8w",
+          "published_at": "2026-11-10T23:10:41Z",
+          "site_name": "微信公众号",
+          "source": [
+            "机器之心"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "NeurIPS 2026|VLM架构新突破：DGP打通全部ViT与LLM层，让...",
+          "url": "https://mp.weixin.qq.com/s/WfKSGGMM_fpVxJCr-hBadg",
+          "published_at": "2026-11-10T23:10:41Z",
+          "site_name": "微信公众号",
+          "source": [
+            "机器之心"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "创造一个能读懂生命的AI",
+          "url": "https://mp.weixin.qq.com/s/ZkvG5NxqaM9tJc1TbNZfcg",
+          "published_at": "2026-11-10T23:05:41Z",
+          "site_name": "微信公众号",
+          "source": [
+            "晚点LatePost"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "OpenAI第三季度营收飙升近50%，达到100亿美元",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-10/openai-third-quarter-revenue-soars-nearly-50-to-10-billion",
+          "published_at": "2026-11-10T22:57:46.708000Z",
+          "site_name": "Buzzing",
+          "source": [
+            "www.bloomberg.com"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "今日股市：道指随收益率飙升而下跌；英伟达股价暴跌；Anthropic寻求这一IPO定价 - Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOU2RaejE5V2Q0THo0YjhnUW84VFVkenl4aFZpZ2h1S3FJb2o3czNaSEF1LWNCYXdMY1N3Z1ZOYU81S29oUzJ4a2NMdXJrN1NxMzVvOXFEWXc5eTc4aEhPQlVIUVAwTVJ3enlGNEFBRlNmRDRDWDNQUmg5eVpPck1GRnhzR25XSi1rQkJYTjRsQ3FDVWdST2FkcUVzMlNBaUtqRGlsWVRtbl9GU3hFbWs3Tms4dDNDbEk?ceid=US%3Aen&gl=US&hl=en-US",
+          "published_at": "2026-11-10T22:57:46.647000Z",
+          "site_name": "Buzzing",
+          "source": [
+            "news.google.com"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Anthropic 升级 AI 办公套件：从头脑风暴到数据看板，Claude 想承包团队协作全流程",
+          "url": "https://www.ithome.com/1/025/204.htm",
+          "published_at": "2026-11-10T22:43:46Z",
+          "site_name": "Info Flow",
+          "source": [
+            "IT之家 (ITHome)"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "OpenAI 收购旅游初创公司 Odessia，探索 AI 旅行智能体业务",
+          "url": "https://www.ithome.com/1/025/202.htm",
+          "published_at": "2026-11-10T22:43:22Z",
+          "site_name": "Info Flow",
+          "source": [
+            "IT之家 (ITHome)"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Show HN: Warmctl – 实现 vLLM 推理的快速冷启动",
+          "url": "https://github.com/TensorRails/warmctl",
+          "published_at": "2026-11-10T22:41:47.627000Z",
+          "site_name": "Buzzing",
+          "source": [
+            "github.com"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "AI安全、CBA盈利、摩根大通扩充澳大利亚团队：澳大利亚简报",
+          "url": "https://www.bloomberg.com/news/newsletters/2026-11-10/ai-safety-cba-profit-jp-morgan-expands-australia-team-australia-briefing",
+          "published_at": "2026-11-10T22:26:07.298000Z",
+          "site_name": "Buzzing",
+          "source": [
+            "www.bloomberg.com"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Show HN: Tabichat 聊天演示：具备“思考”能力的 LLMs 仍被束缚在 Pi 的框架中",
+          "url": "https://tabichat.dev/demo.html",
+          "published_at": "2026-11-10T22:26:00.357000Z",
+          "site_name": "Buzzing",
+          "source": [
+            "tabichat.dev"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Show HN: 一款兼容SketchUp且具备AI功能的建模软件",
+          "url": "https://pushform.io/",
+          "published_at": "2026-11-10T22:26:00.251000Z",
+          "site_name": "Buzzing",
+          "source": [
+            "pushform.io"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "《AI黑客末日生存实用指南》",
+          "url": "https://www.theatlantic.com/technology/2026/11/how-to-prepare-for-the-ai-apocalypse/689367",
+          "published_at": "2026-11-10T22:09:56.847000Z",
+          "site_name": "Buzzing",
+          "source": [
+            "www.theatlantic.com"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Ever had your retriever pull the right documents, but the AI answer was still wrong?\r\n\r\n@steveonjava C...",
+          "url": "https://x.com/DeepLearningAI/status/2120276615057789204",
+          "published_at": "2026-11-10T22:05:12Z",
+          "site_name": "OPML RSS",
+          "source": [
+            "DeepLearning.AI(@DeepLearningAI)"
+          ],
+          "category": "ai",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00",
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00",
       "config_hash": "6e8a0dd912d8806f",
-      "etag": "\"6af2477a-8a95e\"",
-      "last_modified": "Mon, 09 Nov 2026 22:21:46 GMT"
+      "etag": "\"6af3d3c9-c25a9\"",
+      "last_modified": "Wed, 11 Nov 2026 02:32:41 GMT"
     },
     "GitHub Releases · LangChain": {
       "items": [
+        {
+          "title": "langchain==1.4.10",
+          "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.10",
+          "published_at": "2026-11-10T18:37:33Z",
+          "site_name": "GitHub Releases",
+          "source": [
+            "GitHub Releases · LangChain"
+          ],
+          "category": "release",
+          "priority": "P1",
+          "tags": [
+            "agent",
+            "python"
+          ],
+          "metadata": {
+            "repository": "langchain-ai/langchain",
+            "release": "langchain==1.4.10"
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "langchain-core==1.7.7",
+          "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.7.7",
+          "published_at": "2026-11-10T04:08:29Z",
+          "site_name": "GitHub Releases",
+          "source": [
+            "GitHub Releases · LangChain"
+          ],
+          "category": "release",
+          "priority": "P1",
+          "tags": [
+            "agent",
+            "python"
+          ],
+          "metadata": {
+            "repository": "langchain-ai/langchain",
+            "release": "langchain-core==1.7.7"
+          },
+          "also_seen_in": []
+        },
         {
           "title": "langchain-fireworks==1.7.3",
           "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-fireworks%3D%3D1.7.3",
@@ -4443,26 +4540,6 @@
           "metadata": {
             "repository": "langchain-ai/langchain",
             "release": "langchain-fireworks==1.7.2"
-          },
-          "also_seen_in": []
-        },
-        {
-          "title": "langchain==1.4.9",
-          "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.9",
-          "published_at": "2026-11-04T17:07:40Z",
-          "site_name": "GitHub Releases",
-          "source": [
-            "GitHub Releases · LangChain"
-          ],
-          "category": "release",
-          "priority": "P1",
-          "tags": [
-            "agent",
-            "python"
-          ],
-          "metadata": {
-            "repository": "langchain-ai/langchain",
-            "release": "langchain==1.4.9"
           },
           "also_seen_in": []
         },
@@ -4545,35 +4622,36 @@
             "release": "langchain-typesafe==0.0.1"
           },
           "also_seen_in": []
-        },
+        }
+      ],
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00",
+      "config_hash": "bbfaca93c3615337",
+      "etag": "W/\"bd633074356fdb35d302db4e22d4681f\""
+    },
+    "GitHub Releases · OpenAI Python": {
+      "items": [
         {
-          "title": "langchain-core==1.7.4",
-          "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.7.4",
-          "published_at": "2026-11-02T15:31:49Z",
+          "title": "v3.49.0",
+          "url": "https://github.com/openai/openai-python/releases/tag/v3.49.0",
+          "published_at": "2026-11-10T06:47:04Z",
           "site_name": "GitHub Releases",
           "source": [
-            "GitHub Releases · LangChain"
+            "GitHub Releases · OpenAI Python"
           ],
           "category": "release",
           "priority": "P1",
           "tags": [
-            "agent",
+            "ai",
+            "sdk",
             "python"
           ],
           "metadata": {
-            "repository": "langchain-ai/langchain",
-            "release": "langchain-core==1.7.4"
+            "repository": "openai/openai-python",
+            "release": "v3.49.0"
           },
           "also_seen_in": []
-        }
-      ],
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00",
-      "config_hash": "bbfaca93c3615337",
-      "etag": "W/\"cede1f803735086524b744cf8c3372b8\""
-    },
-    "GitHub Releases · OpenAI Python": {
-      "items": [
+        },
         {
           "title": "v3.48.0",
           "url": "https://github.com/openai/openai-python/releases/tag/v3.48.0",
@@ -4762,33 +4840,12 @@
             "release": "v3.41.0"
           },
           "also_seen_in": []
-        },
-        {
-          "title": "v3.40.0",
-          "url": "https://github.com/openai/openai-python/releases/tag/v3.40.0",
-          "published_at": "2026-10-27T15:37:52Z",
-          "site_name": "GitHub Releases",
-          "source": [
-            "GitHub Releases · OpenAI Python"
-          ],
-          "category": "release",
-          "priority": "P1",
-          "tags": [
-            "ai",
-            "sdk",
-            "python"
-          ],
-          "metadata": {
-            "repository": "openai/openai-python",
-            "release": "v3.40.0"
-          },
-          "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00",
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00",
       "config_hash": "99e358fe532ee3b9",
-      "etag": "W/\"6d8648e3c25670ce93a4e038bc0bde5b\""
+      "etag": "W/\"9e1caf65a0ab4540841f9205ad26bcee\""
     },
     "Hacker News": {
       "items": [
@@ -4840,9 +4897,275 @@
     "Lobsters": {
       "items": [
         {
-          "title": "Tabernetes: Kubernetes in your browser tab",
-          "url": "https://jkroepke.de/tabernetes",
-          "published_at": "2026-11-10T01:59:28Z",
+          "title": "The best algebras are spinny",
+          "url": "https://www.youtube.com/watch?v=-k-Dnw0F3kc",
+          "published_at": "2026-11-11T01:05:32Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "30 years of Internet transfers with curl",
+          "url": "https://daniel.haxx.se/blog/2026/11/11/30-years-of-internet-transfers-with-curl",
+          "published_at": "2026-11-10T23:42:39Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "What is Functional Programming?",
+          "url": "https://www.youtube.com/watch?v=bQlH49krwbk",
+          "published_at": "2026-11-10T23:20:23Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Rendering in batches with glimmer and Datastar",
+          "url": "https://yogthos.net/posts/2026-11-10-glimmer-datastar.html",
+          "published_at": "2026-11-10T22:54:17Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Go Turns 17",
+          "url": "https://go.dev/blog/17years",
+          "published_at": "2026-11-10T22:47:26Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Finding a vulnerability in Star Wars Episode I: Racer",
+          "url": "https://synacktiv.com/en/publications/star-wars-episode-i-racer",
+          "published_at": "2026-11-10T21:58:18Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "I deleted all my SSH keys",
+          "url": "https://blog.infected.systems/posts/2026-11-03-i-deleted-all-my-ssh-keys",
+          "published_at": "2026-11-10T20:49:23Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Searching for pedagogical materials on memory models",
+          "url": "https://lobste.rs/s/odnnzh/searching_for_pedagogical_materials_on",
+          "published_at": "2026-11-10T19:51:19Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Memory Safety Bugs in Rust Standard Library",
+          "url": "https://forge-blog.github.io/posts/rust-std-memory-safety",
+          "published_at": "2026-11-10T19:44:50Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Large-Scale Measurement and Real-World Mitigation of Web Browser Fingerprinting in the Wild",
+          "url": "https://fingerprinting.study/",
+          "published_at": "2026-11-10T19:14:08Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Synaptics patent claims stop work on DisplayLink drivers",
+          "url": "https://lwn.net/SubscriberLink/1102549/acbc92e00cee3a3f",
+          "published_at": "2026-11-10T16:57:25Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": ".name grandfathered",
+          "url": "https://neil.fraser.name/news/2026/11/10",
+          "published_at": "2026-11-10T16:52:12Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Weird licenses and the new open source",
+          "url": "https://dustri.org/b/weird-licenses-and-the-new-open-source.html",
+          "published_at": "2026-11-10T16:49:51Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Announcing .NET 11",
+          "url": "https://devblogs.microsoft.com/dotnet/announcing-dotnet-11",
+          "published_at": "2026-11-10T16:03:21Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "A faster Easter date function",
+          "url": "https://www.benjoffe.com/fast-easter",
+          "published_at": "2026-11-10T14:36:45Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "The hardest tarball",
+          "url": "https://stoppels.ch/2026/11/07/the-hardest-tarball.html",
+          "published_at": "2026-11-10T13:47:03Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Next-Level Benchmarking Overfitting",
+          "url": "http://databasearchitects.blogspot.com/2026/11/next-level-benchmarking-overfitting.html",
+          "published_at": "2026-11-10T12:20:55Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Open Graph images with Astro and Typst",
+          "url": "https://eaj.no/posts/open-graph-images-with-typst",
+          "published_at": "2026-11-10T11:42:48Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Building a networking switch ASIC chip",
+          "url": "https://essenceia.github.io/projects/expresso",
+          "published_at": "2026-11-10T07:39:39Z",
+          "site_name": "Lobsters",
+          "source": [
+            "Lobsters"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "You should try Gleam",
+          "url": "https://nchagnet.eu/blog/you-should-try-gleam",
+          "published_at": "2026-11-10T03:33:27Z",
           "site_name": "Lobsters",
           "source": [
             "Lobsters"
@@ -4868,163 +5191,9 @@
           "also_seen_in": []
         },
         {
-          "title": "The race to secure record-like information for domains",
-          "url": "https://alexsci.com/blog/the-race-to-secure-record-like-information-for-domains",
-          "published_at": "2026-11-09T23:25:03Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Docker has always used microVMs (well, since 2016)",
-          "url": "https://dave.recoil.org/docker-has-always-used-microvms",
-          "published_at": "2026-11-09T22:29:01Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Reverse engineering a vintage diode-transistor logic chip",
-          "url": "http://www.righto.com/2026/11/signetics-st680a-dtl-nand.html",
-          "published_at": "2026-11-09T22:25:03Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Two apps one process",
-          "url": "https://andersmurphy.com/2026/11/09/two-apps-one-process.html",
-          "published_at": "2026-11-09T22:14:10Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "PyPI's redesigned project pages with clearer security signals are now live",
-          "url": "https://blog.pypi.org/posts/2026-11-06-ui-updates-complete",
-          "published_at": "2026-11-09T21:45:49Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
           "title": "Microsoft are rejecting your mail",
           "url": "https://www.mythic-beasts.com/blog/2026/11/09/microsoft-are-rejecting-your-mail",
           "published_at": "2026-11-09T18:36:47Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Sure mate, buy me a bloody coffee",
-          "url": "https://peateasea.de/sure-mate-buy-me-a-bloody-coffee",
-          "published_at": "2026-11-09T18:35:57Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "I was wrong about dark mode",
-          "url": "https://dbushell.com/2026/11/09/dark-mode",
-          "published_at": "2026-11-09T16:54:03Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Terminal2Shell: Critical flaw grants instant shell access on every major OS",
-          "url": "https://terminal2shell.com/",
-          "published_at": "2026-11-09T15:41:50Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Playing classical music on a classic PC with GentleOS",
-          "url": "https://www.youtube.com/watch?v=Vp16LLOvegw",
-          "published_at": "2026-11-09T14:55:11Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "What is malloc doing, anyway?",
-          "url": "https://benmandrew.com/articles/what-is-malloc-doing-anyway",
-          "published_at": "2026-11-09T13:19:22Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "A C++ Quicksort Faster Than std::sort",
-          "url": "https://tiki.li/blog/about_blqsort",
-          "published_at": "2026-11-09T12:55:38Z",
           "site_name": "Lobsters",
           "source": [
             "Lobsters"
@@ -5064,48 +5233,6 @@
           "also_seen_in": []
         },
         {
-          "title": "Slightly better interpolating spline",
-          "url": "https://gasiulis.name/new-spline",
-          "published_at": "2026-11-09T11:54:39Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "What's new in Node.js 27",
-          "url": "https://nodejsdesignpatterns.com/blog/whats-new-in-nodejs-27",
-          "published_at": "2026-11-09T11:48:55Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "What are you doing this week?",
-          "url": "https://lobste.rs/s/tt42jc/what_are_you_doing_this_week",
-          "published_at": "2026-11-09T09:32:52Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
           "title": "How Much Energy Does Building Distro Packages Use",
           "url": "https://www.wezm.net/v2/posts/2026/distro-energy-use",
           "published_at": "2026-11-09T06:44:59Z",
@@ -5118,86 +5245,114 @@
           "tags": [],
           "metadata": {},
           "also_seen_in": []
-        },
-        {
-          "title": "Microsecond accurate NTP with a Raspberry Pi and PPS GPS(2021)",
-          "url": "https://austinsnerdythings.com/2021/04/19/microsecond-accurate-ntp-with-a-raspberry-pi-and-pps-gps",
-          "published_at": "2026-11-09T06:25:20Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "unlocking any car from X brand in most of the world",
-          "url": "https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world",
-          "published_at": "2026-11-09T04:43:15Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Herb Sutter: When a language’s creator and its owners strongly disagree: C++26 post-DIS, historical experience, and paths forward",
-          "url": "https://isocpp.org/files/papers/P4454R0.pdf",
-          "published_at": "2026-11-08T21:59:26Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Unattended reboots with encrypted disks",
-          "url": "https://jmmv.dev/2026/11/zkeys-intro.html",
-          "published_at": "2026-11-08T16:58:03Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "systemd loves Rust",
-          "url": "https://amutable.com/blog/systemd-loves-rust",
-          "published_at": "2026-11-08T12:55:05Z",
-          "site_name": "Lobsters",
-          "source": [
-            "Lobsters"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00",
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00",
       "config_hash": "543366e477095d2d",
-      "etag": "\"dmr6m8ydb3vz-c8c\"",
-      "last_modified": "Tue, 10 Nov 2026 02:40:24 GMT"
+      "etag": "\"dms58tu7o5vm-cab\"",
+      "last_modified": "Wed, 11 Nov 2026 05:48:31 GMT"
     },
     "OpenAI News": {
       "items": [
+        {
+          "title": "Gilbert + Tobin rethinks the business of law with AI",
+          "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
+          "published_at": "2026-11-12T00:00:00Z",
+          "site_name": "OpenAI",
+          "source": [
+            "OpenAI News"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "ChatGPT Plus for veterans and servicemembers",
+          "url": "https://openai.com/index/chatgpt-plus-for-veterans",
+          "published_at": "2026-11-11T08:00:00Z",
+          "site_name": "OpenAI",
+          "source": [
+            "OpenAI News"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Helping caregivers use AI in everyday life",
+          "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
+          "published_at": "2026-11-10T12:00:00Z",
+          "site_name": "OpenAI",
+          "source": [
+            "OpenAI News"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Introducing Businesses in ChatGPT",
+          "url": "https://openai.com/index/introducing-businesses-chatgpt",
+          "published_at": "2026-11-10T10:00:00Z",
+          "site_name": "OpenAI",
+          "source": [
+            "OpenAI News"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Closing the AI guidance gap in education",
+          "url": "https://openai.com/index/closing-ai-guidance-gap-education",
+          "published_at": "2026-11-10T09:00:00Z",
+          "site_name": "OpenAI",
+          "source": [
+            "OpenAI News"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Work at the Frontier: AI’s effect on freelance work",
+          "url": "https://openai.com/index/ai-effect-on-freelance-work",
+          "published_at": "2026-11-10T07:00:00Z",
+          "site_name": "OpenAI",
+          "source": [
+            "OpenAI News"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Cogent and OpenAI build cyber defense factories for enterprises",
+          "url": "https://openai.com/index/cogent-security",
+          "published_at": "2026-11-10T00:00:00Z",
+          "site_name": "OpenAI",
+          "source": [
+            "OpenAI News"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
         {
           "title": "ChatGPT Enterprise now available in AWS Marketplace",
           "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
@@ -5507,8 +5662,8 @@
           "also_seen_in": []
         },
         {
-          "title": "Rewarding defenders with bigger bug bounties",
-          "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
+          "title": "Preparing our next security sprint to harden OpenAI",
+          "url": "https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai",
           "published_at": "2026-11-02T18:00:00Z",
           "site_name": "OpenAI",
           "source": [
@@ -5521,8 +5676,8 @@
           "also_seen_in": []
         },
         {
-          "title": "Preparing our next security sprint to harden OpenAI",
-          "url": "https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai",
+          "title": "Rewarding defenders with bigger bug bounties",
+          "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
           "published_at": "2026-11-02T18:00:00Z",
           "site_name": "OpenAI",
           "source": [
@@ -5799,115 +5954,17 @@
           "tags": [],
           "metadata": {},
           "also_seen_in": []
-        },
-        {
-          "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
-          "url": "https://openai.com/index/greptile-code-review-codex-astra",
-          "published_at": "2026-10-26T22:00:00Z",
-          "site_name": "OpenAI",
-          "source": [
-            "OpenAI News"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Introducing GPT-6.1 Terra",
-          "url": "https://openai.com/index/introducing-gpt-6-1-terra",
-          "published_at": "2026-10-26T18:00:00Z",
-          "site_name": "OpenAI",
-          "source": [
-            "OpenAI News"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Working with academic communities to build scientific understanding",
-          "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
-          "published_at": "2026-10-26T14:30:00Z",
-          "site_name": "OpenAI",
-          "source": [
-            "OpenAI News"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
-          "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
-          "published_at": "2026-10-26T13:45:00Z",
-          "site_name": "OpenAI",
-          "source": [
-            "OpenAI News"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "ChatGPT’s expanding world of work",
-          "url": "https://openai.com/index/chatgpt-expanding-world-of-work",
-          "published_at": "2026-10-26T10:00:00Z",
-          "site_name": "OpenAI",
-          "source": [
-            "OpenAI News"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "How Fanatics and OpenAI streamline the fan experience",
-          "url": "https://openai.com/index/fanatics-streamline-fan-experience",
-          "published_at": "2026-10-26T07:00:00Z",
-          "site_name": "OpenAI",
-          "source": [
-            "OpenAI News"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
-          "url": "https://openai.com/index/openai-cut-incident-investigation",
-          "published_at": "2026-10-26T07:00:00Z",
-          "site_name": "OpenAI",
-          "source": [
-            "OpenAI News"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00",
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00",
       "config_hash": "d48a00c0f16df136"
     },
     "Google Developers Blog": {
       "items": [
         {
-          "title": "What is Pathways? Single-controller training for large models",
-          "url": "https://developers.googleblog.com/what-is-pathways-single-controller-training-for-large-models",
+          "title": "On-Device Speech Recognition and Text-to-Speech in Google AI Edge Gallery",
+          "url": "https://developers.googleblog.com/on-device-speech-recognition-and-text-to-speech-in-google-ai-edge-gallery",
           "published_at": null,
           "site_name": "Google Developers",
           "source": [
@@ -5922,6 +5979,20 @@
         {
           "title": "From prompt to app: Build with Google Maps in AI Studio",
           "url": "https://developers.googleblog.com/from-prompt-to-app-build-with-google-maps-in-ai-studio",
+          "published_at": null,
+          "site_name": "Google Developers",
+          "source": [
+            "Google Developers Blog"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "What is Pathways? Single-controller training for large models",
+          "url": "https://developers.googleblog.com/what-is-pathways-single-controller-training-for-large-models",
           "published_at": null,
           "site_name": "Google Developers",
           "source": [
@@ -6116,6 +6187,20 @@
           "also_seen_in": []
         },
         {
+          "title": "Integrating TorchTPU into TorchTitan and Optimizing Models for TPU",
+          "url": "https://developers.googleblog.com/integrating-torchtpu-into-torchtitan-and-optimizing-models-for-tpu",
+          "published_at": null,
+          "site_name": "Google Developers",
+          "source": [
+            "Google Developers Blog"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
           "title": "Unifying Edge AI: How Coral NPU’s open standard brings portable, energy-viable intelligence from model to silicon",
           "url": "https://developers.googleblog.com/unifying-edge-ai-how-coral-npus-open-standard-brings-portable-energy-viable-intelligence-from-model-to-silicon",
           "published_at": null,
@@ -6156,42 +6241,98 @@
           "tags": [],
           "metadata": {},
           "also_seen_in": []
-        },
-        {
-          "title": "Integrating TorchTPU into TorchTitan and Optimizing Models for TPU",
-          "url": "https://developers.googleblog.com/integrating-torchtpu-into-torchtitan-and-optimizing-models-for-tpu",
-          "published_at": null,
-          "site_name": "Google Developers",
-          "source": [
-            "Google Developers Blog"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Step by Step guide: Build a Voice Agent That Never Goes Silent using ADK",
-          "url": "https://developers.googleblog.com/step-by-step-guide-build-a-voice-agent-that-never-goes-silent-using-adk",
-          "published_at": null,
-          "site_name": "Google Developers",
-          "source": [
-            "Google Developers Blog"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00",
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00",
       "config_hash": "f3d360c8e952cc69"
     },
     "AWS Machine Learning Blog": {
       "items": [
+        {
+          "title": "Introducing Kimi K3.1 Pro on Amazon Bedrock",
+          "url": "https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-1-pro-on-amazon-bedrock",
+          "published_at": "2026-11-11T01:07:19Z",
+          "site_name": "AWS Machine Learning",
+          "source": [
+            "AWS Machine Learning Blog"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Build a daily dependency watcher with LangGraph and Amazon Bedrock AgentCore web search",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-a-daily-dependency-watcher-with-langgraph-and-amazon-bedrock-agentcore-web-search",
+          "published_at": "2026-11-10T23:34:05Z",
+          "site_name": "AWS Machine Learning",
+          "source": [
+            "AWS Machine Learning Blog"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "The agent evaluation playbook: Built-in, DeepEval, and AutoEval on Amazon Bedrock AgentCore Evaluations",
+          "url": "https://aws.amazon.com/blogs/machine-learning/the-agent-evaluation-playbook-built-in-deepeval-and-autoeval-on-agentcore",
+          "published_at": "2026-11-10T22:35:03Z",
+          "site_name": "AWS Machine Learning",
+          "source": [
+            "AWS Machine Learning Blog"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Autonomous treasury agents: How Trovata built an AI-native solution on Amazon Bedrock and AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/autonomous-treasury-agents-how-trovata-built-an-ai-native-solution-on-amazon-bedrock-and-agentcore",
+          "published_at": "2026-11-10T18:11:08Z",
+          "site_name": "AWS Machine Learning",
+          "source": [
+            "AWS Machine Learning Blog"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "How TCS built an agentic test orchestrator with Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/how-tcs-built-an-agentic-test-orchestrator-with-amazon-bedrock-agentcore",
+          "published_at": "2026-11-10T16:59:43Z",
+          "site_name": "AWS Machine Learning",
+          "source": [
+            "AWS Machine Learning Blog"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Amazon Bedrock tokenomics data lake",
+          "url": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-tokenomics-data-lake",
+          "published_at": "2026-11-10T16:56:36Z",
+          "site_name": "AWS Machine Learning",
+          "source": [
+            "AWS Machine Learning Blog"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
         {
           "title": "How skills and agents work in AWS Quick",
           "url": "https://aws.amazon.com/blogs/machine-learning/how-skills-and-agents-work-in-aws-quick",
@@ -6387,99 +6528,71 @@
           "tags": [],
           "metadata": {},
           "also_seen_in": []
-        },
-        {
-          "title": "Extend Claude Code to remote sessions on Amazon Bedrock AgentCore with security controls",
-          "url": "https://aws.amazon.com/blogs/machine-learning/extend-claude-code-to-remote-sessions-on-amazon-bedrock-agentcore-with-security-controls",
-          "published_at": "2026-11-06T16:45:58Z",
-          "site_name": "AWS Machine Learning",
-          "source": [
-            "AWS Machine Learning Blog"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Getting started with Web Answer on Amazon Bedrock AgentCore",
-          "url": "https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore",
-          "published_at": "2026-11-05T21:04:24Z",
-          "site_name": "AWS Machine Learning",
-          "source": [
-            "AWS Machine Learning Blog"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "How Amazon Marketplace evaluates content quality with Amazon SageMaker AI",
-          "url": "https://aws.amazon.com/blogs/machine-learning/how-amazon-marketplace-evaluates-content-quality-with-amazon-sagemaker-ai",
-          "published_at": "2026-11-05T18:06:43Z",
-          "site_name": "AWS Machine Learning",
-          "source": [
-            "AWS Machine Learning Blog"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Use decision models with Amazon Bedrock AgentCore Evaluations",
-          "url": "https://aws.amazon.com/blogs/machine-learning/use-decision-models-with-amazon-bedrock-agentcore-evaluations",
-          "published_at": "2026-11-04T18:46:36Z",
-          "site_name": "AWS Machine Learning",
-          "source": [
-            "AWS Machine Learning Blog"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Smart Approvals in AWS Quick: Human oversight where it matters",
-          "url": "https://aws.amazon.com/blogs/machine-learning/smart-approvals-in-amazon-quick-human-oversight-where-it-matters",
-          "published_at": "2026-11-04T16:33:03Z",
-          "site_name": "AWS Machine Learning",
-          "source": [
-            "AWS Machine Learning Blog"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Four layers of context engineering for production AI agents: How Deep Insight applies them in working code",
-          "url": "https://aws.amazon.com/blogs/machine-learning/four-layers-of-context-engineering-for-production-ai-agents-how-deep-insight-applies-them-in-working-code",
-          "published_at": "2026-11-04T16:30:40Z",
-          "site_name": "AWS Machine Learning",
-          "source": [
-            "AWS Machine Learning Blog"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00",
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00",
       "config_hash": "c02e7df21eebe513",
-      "last_modified": "Tue, 10 Nov 2026 01:38:45 GMT"
+      "last_modified": "Wed, 11 Nov 2026 01:41:56 GMT"
     },
     "NVIDIA Developer Blog": {
       "items": [
+        {
+          "title": "Running AV Reasoning Models Within Onboard Compute and Latency Limits",
+          "url": "https://developer.nvidia.com/blog/running-av-reasoning-models-within-onboard-compute-and-latency-limits",
+          "published_at": "2026-11-10T16:00:00Z",
+          "site_name": "NVIDIA Developer",
+          "source": [
+            "NVIDIA Developer Blog"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Agent Substrate: Advancing Kubernetes for Agents at Scale",
+          "url": "https://developer.nvidia.com/blog/agent-substrate-advancing-kubernetes-for-agents-at-scale",
+          "published_at": "2026-11-10T15:00:00Z",
+          "site_name": "NVIDIA Developer",
+          "source": [
+            "NVIDIA Developer Blog"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Start and Restore GPU Workloads in Seconds with NVIDIA Snapshot",
+          "url": "https://developer.nvidia.com/blog/start-and-restore-gpu-workloads-in-seconds-with-nvidia-snapshot",
+          "published_at": "2026-11-10T15:00:00Z",
+          "site_name": "NVIDIA Developer",
+          "source": [
+            "NVIDIA Developer Blog"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
+        {
+          "title": "Manage Kubernetes Clusters for GPU Infrastructure with NVIDIA Kubernetes Engine",
+          "url": "https://developer.nvidia.com/blog/manage-kubernetes-clusters-for-gpu-infrastructure-with-nvidia-kubernetes-engine",
+          "published_at": "2026-11-10T15:00:00Z",
+          "site_name": "NVIDIA Developer",
+          "source": [
+            "NVIDIA Developer Blog"
+          ],
+          "category": "ai",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
         {
           "title": "Make a Robot Arm Feel Weightless with NVIDIA Holoscan 5",
           "url": "https://developer.nvidia.com/blog/make-a-robot-arm-feel-weightless-with-nvidia-holoscan-5",
@@ -6843,69 +6956,13 @@
           "tags": [],
           "metadata": {},
           "also_seen_in": []
-        },
-        {
-          "title": "Scaling NVIDIA TensorRT Performance Optimization Beyond a Single Build Route with the Global Performance Tuner, Part 1",
-          "url": "https://developer.nvidia.com/blog/scaling-nvidia-tensorrt-performance-optimization-beyond-a-single-build-route-with-the-global-performance-tuner-part-1",
-          "published_at": "2026-10-23T17:27:35Z",
-          "site_name": "NVIDIA Developer",
-          "source": [
-            "NVIDIA Developer Blog"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Using AI Agents to Teach Robots Like Microduck to Walk in Simulation",
-          "url": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation",
-          "published_at": "2026-10-23T14:58:32Z",
-          "site_name": "NVIDIA Developer",
-          "source": [
-            "NVIDIA Developer Blog"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "How to Read Data into GPU Memory in Python with NVIDIA GPUDirect Storage",
-          "url": "https://developer.nvidia.com/blog/how-to-read-data-into-gpu-memory-in-python-with-nvidia-gpudirect-storage",
-          "published_at": "2026-10-22T16:39:09Z",
-          "site_name": "NVIDIA Developer",
-          "source": [
-            "NVIDIA Developer Blog"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
-        },
-        {
-          "title": "Running Frontier-Class AI Models Across 8 NVIDIA DGX Spark Nodes",
-          "url": "https://developer.nvidia.com/blog/running-frontier-class-ai-models-across-8-nvidia-dgx-spark-nodes",
-          "published_at": "2026-10-22T16:00:00Z",
-          "site_name": "NVIDIA Developer",
-          "source": [
-            "NVIDIA Developer Blog"
-          ],
-          "category": "ai",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00",
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00",
       "config_hash": "99054d1ca9d8add0",
-      "etag": "\"561f1038b743f8cd4f467535d3443768\"",
-      "last_modified": "Mon, 09 Nov 2026 19:09:36 GMT"
+      "etag": "\"1ecafcec588f56447f851ec7f786e694\"",
+      "last_modified": "Tue, 10 Nov 2026 22:04:05 GMT"
     },
     "Cloudflare AI": {
       "items": [
@@ -7190,13 +7247,27 @@
           "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00",
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00",
       "config_hash": "977709218bb0c815",
       "last_modified": "Tue, 27 Oct 2026 19:27:28 GMT"
     },
     "GitHub Blog": {
       "items": [
+        {
+          "title": "Git security vulnerabilities announced",
+          "url": "https://github.blog/open-source/git/git-security-vulnerabilities-announced-7",
+          "published_at": "2026-11-10T18:00:00Z",
+          "site_name": "GitHub Blog",
+          "source": [
+            "GitHub Blog"
+          ],
+          "category": "engineering",
+          "priority": "P1",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
         {
           "title": "Beyond code generation: A developer’s guide to agentic engineering",
           "url": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering",
@@ -7322,30 +7393,30 @@
           "tags": [],
           "metadata": {},
           "also_seen_in": []
-        },
-        {
-          "title": "How 3 Java Champions are using GitHub Copilot for increased productivity",
-          "url": "https://github.blog/ai-and-ml/github-copilot/how-3-java-champions-are-using-github-copilot-for-increased-productivity",
-          "published_at": "2026-10-20T16:05:03Z",
-          "site_name": "GitHub Blog",
-          "source": [
-            "GitHub Blog"
-          ],
-          "category": "engineering",
-          "priority": "P1",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00",
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00",
       "config_hash": "3c54010710f1f90f",
-      "etag": "\"ae4ad96872aeb29e9a6e50c24ae636ec\"",
-      "last_modified": "Mon, 09 Nov 2026 22:48:07 GMT"
+      "etag": "\"48f7e779590e07af71f68fb1d0a28998\"",
+      "last_modified": "Wed, 11 Nov 2026 00:18:17 GMT"
     },
     "Stack Overflow Blog": {
       "items": [
+        {
+          "title": "Customer support is the gnarliest AI problem",
+          "url": "https://stackoverflow.blog/2026/11/10/customer-support-is-the-gnarliest-ai-problem",
+          "published_at": "2026-11-10T08:40:00Z",
+          "site_name": "Stack Overflow Blog",
+          "source": [
+            "Stack Overflow Blog"
+          ],
+          "category": "engineering",
+          "priority": "P2",
+          "tags": [],
+          "metadata": {},
+          "also_seen_in": []
+        },
         {
           "title": "Never Share Your Password Again — The OAuth 2.0 Solution",
           "url": "https://stackoverflow.blog/2026/11/09/never-share-your-password-again-the-oauth-2-0-solution",
@@ -7891,26 +7962,12 @@
           "tags": [],
           "metadata": {},
           "also_seen_in": []
-        },
-        {
-          "title": "Organizations need decision-grade knowledge. AI makes it urgent.",
-          "url": "https://stackoverflow.blog/2026/09/30/organizations-need-decision-grade-knowledge-ai-makes-it-urgent",
-          "published_at": "2026-09-30T17:00:00Z",
-          "site_name": "Stack Overflow Blog",
-          "source": [
-            "Stack Overflow Blog"
-          ],
-          "category": "engineering",
-          "priority": "P2",
-          "tags": [],
-          "metadata": {},
-          "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00",
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00",
       "config_hash": "116c6c56b6b65f7e",
-      "etag": "\"02a91043ef7f4a2423e3001161185fef-ssl\""
+      "etag": "\"386a54c760464cad63c62afe39e5b88b-ssl\""
     },
     "OSV.dev": {
       "items": [
@@ -8665,12 +8722,168 @@
           "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00",
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00",
       "config_hash": "b568b17dd33f8972"
     },
     "CISA KEV": {
       "items": [
+        {
+          "title": "Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-124194",
+          "published_at": "2026-11-10T00:00:00Z",
+          "site_name": "CISA",
+          "source": [
+            "CISA KEV"
+          ],
+          "category": "security",
+          "priority": "P0",
+          "tags": [
+            "security",
+            "known-exploited"
+          ],
+          "metadata": {
+            "id": "CVE-2026-124194",
+            "aliases": [
+              "CVE-2026-124194"
+            ],
+            "vendor": "Microsoft",
+            "product": "Office",
+            "due_date": "2026-11-24",
+            "known_ransomware": "Unknown"
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "Openwave Messaging Limited Webtop Media Transcoder Incorrect Resource Transfer Between Spheres Vulnerability",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-111793",
+          "published_at": "2026-11-10T00:00:00Z",
+          "site_name": "CISA",
+          "source": [
+            "CISA KEV"
+          ],
+          "category": "security",
+          "priority": "P0",
+          "tags": [
+            "security",
+            "known-exploited"
+          ],
+          "metadata": {
+            "id": "CVE-2026-111793",
+            "aliases": [
+              "CVE-2026-111793"
+            ],
+            "vendor": "Openwave Messaging Limited",
+            "product": "Webtop Media Transcoder",
+            "due_date": "2026-11-24",
+            "known_ransomware": "Unknown"
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "Cisco BroadWorks Improper Restriction of XML External Entity Reference Vulnerability",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-20320",
+          "published_at": "2026-11-10T00:00:00Z",
+          "site_name": "CISA",
+          "source": [
+            "CISA KEV"
+          ],
+          "category": "security",
+          "priority": "P0",
+          "tags": [
+            "security",
+            "known-exploited"
+          ],
+          "metadata": {
+            "id": "CVE-2026-20320",
+            "aliases": [
+              "CVE-2026-20320"
+            ],
+            "vendor": "Cisco",
+            "product": "BroadWorks",
+            "due_date": "2026-11-24",
+            "known_ransomware": "Unknown"
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "Barracuda Networks Multiple Products OS Command Injection Vulnerability",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-111560",
+          "published_at": "2026-11-10T00:00:00Z",
+          "site_name": "CISA",
+          "source": [
+            "CISA KEV"
+          ],
+          "category": "security",
+          "priority": "P0",
+          "tags": [
+            "security",
+            "known-exploited"
+          ],
+          "metadata": {
+            "id": "CVE-2026-111560",
+            "aliases": [
+              "CVE-2026-111560"
+            ],
+            "vendor": "Barracuda Networks",
+            "product": "Multiple Products",
+            "due_date": "2026-11-13",
+            "known_ransomware": "Unknown"
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "Barracuda Networks Email Security Gateway (ESG) Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-116606",
+          "published_at": "2026-11-10T00:00:00Z",
+          "site_name": "CISA",
+          "source": [
+            "CISA KEV"
+          ],
+          "category": "security",
+          "priority": "P0",
+          "tags": [
+            "security",
+            "known-exploited"
+          ],
+          "metadata": {
+            "id": "CVE-2026-116606",
+            "aliases": [
+              "CVE-2026-116606"
+            ],
+            "vendor": "Barracuda Networks",
+            "product": "Barracuda Email Security Gateway (ESG)",
+            "due_date": "2026-11-13",
+            "known_ransomware": "Unknown"
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "Google Chromium Use-After-Free Vulnerability",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-125350",
+          "published_at": "2026-11-10T00:00:00Z",
+          "site_name": "CISA",
+          "source": [
+            "CISA KEV"
+          ],
+          "category": "security",
+          "priority": "P0",
+          "tags": [
+            "security",
+            "known-exploited"
+          ],
+          "metadata": {
+            "id": "CVE-2026-125350",
+            "aliases": [
+              "CVE-2026-125350"
+            ],
+            "vendor": "Google",
+            "product": "Chromium",
+            "due_date": "2026-11-24",
+            "known_ransomware": "Unknown"
+          },
+          "also_seen_in": []
+        },
         {
           "title": "GPUStack Improper Authentication Vulnerability",
           "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-102895",
@@ -8953,58 +9166,6 @@
             "vendor": "Cisco",
             "product": "Secure Firewall ASA Software and Cisco Secure FTD Software",
             "due_date": "2026-11-01",
-            "known_ransomware": "Unknown"
-          },
-          "also_seen_in": []
-        },
-        {
-          "title": "Broadcom VMWare ESX Insufficient Logging Vulnerability",
-          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-41709",
-          "published_at": "2026-10-28T00:00:00Z",
-          "site_name": "CISA",
-          "source": [
-            "CISA KEV"
-          ],
-          "category": "security",
-          "priority": "P0",
-          "tags": [
-            "security",
-            "known-exploited"
-          ],
-          "metadata": {
-            "id": "CVE-2026-41709",
-            "aliases": [
-              "CVE-2026-41709"
-            ],
-            "vendor": "Broadcom",
-            "product": "VMware ESX",
-            "due_date": "2026-11-11",
-            "known_ransomware": "Unknown"
-          },
-          "also_seen_in": []
-        },
-        {
-          "title": "Linux Kernel Missing Initialization of a Variable Vulnerability",
-          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-46300",
-          "published_at": "2026-10-28T00:00:00Z",
-          "site_name": "CISA",
-          "source": [
-            "CISA KEV"
-          ],
-          "category": "security",
-          "priority": "P0",
-          "tags": [
-            "security",
-            "known-exploited"
-          ],
-          "metadata": {
-            "id": "CVE-2026-46300",
-            "aliases": [
-              "CVE-2026-46300"
-            ],
-            "vendor": "Linux",
-            "product": "Kernel",
-            "due_date": "2026-10-31",
             "known_ransomware": "Unknown"
           },
           "also_seen_in": []
@@ -9296,11 +9457,11 @@
           "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-10T02:41:00.548647+00:00",
-      "checked_at": "2026-11-10T02:41:00.548647+00:00",
+      "fetched_at": "2026-11-11T05:49:00.861015+00:00",
+      "checked_at": "2026-11-11T05:49:00.861015+00:00",
       "config_hash": "62cebf61d5a8b1d0",
-      "etag": "\"1c12cd-65fdd54ecdfc8\"",
-      "last_modified": "Mon, 09 Nov 2026 19:54:37 GMT"
+      "etag": "\"1c3dcf-65ff0bbebda90\"",
+      "last_modified": "Tue, 10 Nov 2026 19:03:29 GMT"
     }
   },
   "schema_version": 2
