@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T12:28:08.319589+00:00",
+  "generated_at": "2026-11-12T22:10:23.747260+00:00",
   "candidates": [
     {
       "full_name": "mattpocock/skills",
@@ -113,15 +113,15 @@
         "agent-skills"
       ],
       "language": "Python",
-      "stars": 192908,
-      "forks": 22701,
-      "open_issues": 1517,
+      "stars": 193666,
+      "forks": 22784,
+      "open_issues": 1524,
       "license": null,
       "archived": false,
       "pushed_at": "2026-11-06T22:32:32Z",
-      "updated_at": "2026-11-11T16:00:02Z",
+      "updated_at": "2026-11-12T22:01:31Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-11T16:00:10.948066+00:00",
+      "collected_at": "2026-11-12T22:10:25.450636+00:00",
       "also_seen_in": [
         "trending:daily/python",
         "trending:weekly/python"
@@ -338,15 +338,15 @@
         "tree-sitter"
       ],
       "language": "Python",
-      "stars": 146004,
-      "forks": 13984,
-      "open_issues": 1639,
+      "stars": 146704,
+      "forks": 14073,
+      "open_issues": 1651,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-10T21:53:12Z",
-      "updated_at": "2026-11-11T16:00:17Z",
+      "pushed_at": "2026-11-12T21:47:45Z",
+      "updated_at": "2026-11-12T22:08:48Z",
       "source": "trending:weekly/python",
-      "collected_at": "2026-11-11T16:00:19.811640+00:00",
+      "collected_at": "2026-11-12T22:10:27.777600+00:00",
       "first_seen_at": "2026-11-01T12:07:57.132206+00:00"
     },
     {
@@ -463,15 +463,15 @@
       "description": "Lightweight coding agent that runs in your terminal",
       "topics": [],
       "language": "Rust",
-      "stars": 134895,
-      "forks": 21366,
-      "open_issues": 27178,
+      "stars": 135039,
+      "forks": 21408,
+      "open_issues": 27466,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-11T11:02:01Z",
-      "updated_at": "2026-11-11T15:57:18Z",
+      "pushed_at": "2026-11-12T21:41:36Z",
+      "updated_at": "2026-11-12T22:08:33Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-11T16:00:22.143539+00:00",
+      "collected_at": "2026-11-12T22:10:29.193690+00:00",
       "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
     },
     {
@@ -657,6 +657,30 @@
       "first_seen_at": "2026-11-10T02:38:34.224505+00:00"
     },
     {
+      "full_name": "addyosmani/agent-skills",
+      "html_url": "https://github.com/addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "topics": [
+        "agent-skills",
+        "antigravity",
+        "claude-code",
+        "codex",
+        "cursor",
+        "skills"
+      ],
+      "language": "JavaScript",
+      "stars": 116617,
+      "forks": 12205,
+      "open_issues": 137,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-01T19:24:49Z",
+      "updated_at": "2026-11-12T22:06:10Z",
+      "source": "trending:daily/all",
+      "collected_at": "2026-11-12T22:10:24.179596+00:00",
+      "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
+    },
+    {
       "full_name": "thedotmack/claude-mem",
       "html_url": "https://github.com/thedotmack/claude-mem",
       "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
@@ -693,30 +717,6 @@
       "source": "trending:weekly/typescript",
       "collected_at": "2026-11-12T12:29:07.183627+00:00",
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
-    },
-    {
-      "full_name": "addyosmani/agent-skills",
-      "html_url": "https://github.com/addyosmani/agent-skills",
-      "description": "Production-grade engineering skills for AI coding agents.",
-      "topics": [
-        "agent-skills",
-        "antigravity",
-        "claude-code",
-        "codex",
-        "cursor",
-        "skills"
-      ],
-      "language": "JavaScript",
-      "stars": 115680,
-      "forks": 12137,
-      "open_issues": 135,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-01T19:24:49Z",
-      "updated_at": "2026-11-11T15:58:08Z",
-      "source": "trending:daily/all",
-      "collected_at": "2026-11-11T16:00:11.424263+00:00",
-      "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
     },
     {
       "full_name": "paperclipai/paperclip",
@@ -916,15 +916,15 @@
         "xpath"
       ],
       "language": "Python",
-      "stars": 101524,
-      "forks": 10579,
-      "open_issues": 22,
+      "stars": 102091,
+      "forks": 10626,
+      "open_issues": 27,
       "license": "BSD-3-Clause",
       "archived": false,
-      "pushed_at": "2026-11-09T10:36:37Z",
-      "updated_at": "2026-11-11T15:59:39Z",
+      "pushed_at": "2026-11-11T19:16:10Z",
+      "updated_at": "2026-11-12T22:04:51Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-11T16:00:13.999192+00:00",
+      "collected_at": "2026-11-12T22:10:25.862584+00:00",
       "also_seen_in": [
         "trending:weekly/python"
       ],
@@ -1988,20 +1988,42 @@
         "workspace-manager"
       ],
       "language": "Rust",
-      "stars": 50209,
-      "forks": 4057,
-      "open_issues": 473,
+      "stars": 50589,
+      "forks": 4085,
+      "open_issues": 483,
       "license": "Apache-2.0",
       "archived": false,
       "pushed_at": "2026-11-07T12:32:55Z",
-      "updated_at": "2026-11-11T15:54:51Z",
+      "updated_at": "2026-11-12T22:09:15Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-11T16:00:21.539216+00:00",
+      "collected_at": "2026-11-12T22:10:26.351103+00:00",
       "also_seen_in": [
         "trending:weekly/rust"
       ],
       "relationships": [],
       "first_seen_at": "2026-11-02T18:08:20.681670+00:00"
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "html_url": "https://github.com/vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "topics": [],
+      "language": "Rust",
+      "stars": 50303,
+      "forks": 3502,
+      "open_issues": 569,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-11-12T21:48:50Z",
+      "updated_at": "2026-11-12T22:06:44Z",
+      "source": "trending:daily/all",
+      "collected_at": "2026-11-12T22:10:24.559172+00:00",
+      "also_seen_in": [
+        "trending:weekly/all",
+        "trending:weekly/rust"
+      ],
+      "relationships": [],
+      "first_seen_at": "2026-11-03T19:22:39.529433+00:00"
     },
     {
       "full_name": "HKUDS/nanobot",
@@ -2040,28 +2062,6 @@
       "source": "search:topic:workflow-automation stars:>300 archived:false",
       "collected_at": "2026-11-12T12:28:32.329827+00:00",
       "first_seen_at": "2026-11-11T05:46:50.616798+00:00"
-    },
-    {
-      "full_name": "vercel-labs/agent-browser",
-      "html_url": "https://github.com/vercel-labs/agent-browser",
-      "description": "Browser automation CLI for AI agents",
-      "topics": [],
-      "language": "Rust",
-      "stars": 49689,
-      "forks": 3476,
-      "open_issues": 583,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-11T15:14:13Z",
-      "updated_at": "2026-11-11T15:59:33Z",
-      "source": "trending:daily/all",
-      "collected_at": "2026-11-11T16:00:12.491515+00:00",
-      "also_seen_in": [
-        "trending:weekly/all",
-        "trending:weekly/rust"
-      ],
-      "relationships": [],
-      "first_seen_at": "2026-11-03T19:22:39.529433+00:00"
     },
     {
       "full_name": "jeecgboot/JeecgBoot",
@@ -5066,6 +5066,23 @@
       "first_seen_at": "2026-10-28T06:51:48.450203+00:00"
     },
     {
+      "full_name": "we-promise/sure",
+      "html_url": "https://github.com/we-promise/sure",
+      "description": "The personal finance app for everyone (by everyone)",
+      "topics": [],
+      "language": "Ruby",
+      "stars": 13835,
+      "forks": 1026,
+      "open_issues": 889,
+      "license": "AGPL-3.0",
+      "archived": false,
+      "pushed_at": "2026-11-12T21:54:49Z",
+      "updated_at": "2026-11-12T22:10:17Z",
+      "source": "trending:daily/all",
+      "collected_at": "2026-11-12T22:10:24.937617+00:00",
+      "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
+    },
+    {
       "full_name": "XiaomiMiMo/MiMo-Code",
       "html_url": "https://github.com/XiaomiMiMo/MiMo-Code",
       "description": "MiMo Code: Where Models and Agents Co-Evolve",
@@ -5308,23 +5325,6 @@
       "first_seen_at": "2026-11-12T12:28:08.319589+00:00"
     },
     {
-      "full_name": "we-promise/sure",
-      "html_url": "https://github.com/we-promise/sure",
-      "description": "The personal finance app for everyone (by everyone)",
-      "topics": [],
-      "language": "Ruby",
-      "stars": 12655,
-      "forks": 939,
-      "open_issues": 894,
-      "license": "AGPL-3.0",
-      "archived": false,
-      "pushed_at": "2026-11-11T15:10:43Z",
-      "updated_at": "2026-11-11T15:59:45Z",
-      "source": "trending:daily/all",
-      "collected_at": "2026-11-11T16:00:11.947353+00:00",
-      "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
-    },
-    {
       "full_name": "max-sixty/worktrunk",
       "html_url": "https://github.com/max-sixty/worktrunk",
       "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
@@ -5337,15 +5337,15 @@
         "worktrees"
       ],
       "language": "Rust",
-      "stars": 12441,
-      "forks": 492,
-      "open_issues": 58,
+      "stars": 12473,
+      "forks": 495,
+      "open_issues": 60,
       "license": "NOASSERTION",
       "archived": false,
-      "pushed_at": "2026-11-11T07:13:25Z",
-      "updated_at": "2026-11-11T15:54:06Z",
+      "pushed_at": "2026-11-12T20:06:56Z",
+      "updated_at": "2026-11-12T20:57:34Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-11T16:00:13.560840+00:00",
+      "collected_at": "2026-11-12T22:10:28.768715+00:00",
       "first_seen_at": "2026-11-02T08:05:20.296989+00:00"
     },
     {
@@ -6023,6 +6023,7 @@
         "search:topic:claude-code stars:>50 archived:false",
         "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-09T18:38:14.442557+00:00"
     },
     {
@@ -6273,15 +6274,15 @@
       "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
       "topics": [],
       "language": "TypeScript",
-      "stars": 8737,
-      "forks": 1056,
+      "stars": 8751,
+      "forks": 1055,
       "open_issues": 19,
       "license": "Apache-2.0",
       "archived": false,
       "pushed_at": "2026-08-17T20:20:23Z",
-      "updated_at": "2026-11-11T15:07:50Z",
+      "updated_at": "2026-11-12T15:30:10Z",
       "source": "trending:daily/typescript",
-      "collected_at": "2026-11-11T16:00:19.272956+00:00",
+      "collected_at": "2026-11-12T22:10:27.263442+00:00",
       "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
     },
     {
@@ -7985,6 +7986,7 @@
         "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}",
         "trending:daily/python"
       ],
+      "relationships": [],
       "first_seen_at": "2026-10-28T06:51:52.570687+00:00"
     },
     {
@@ -8188,15 +8190,15 @@
         "google-cloud"
       ],
       "language": "Go",
-      "stars": 4555,
-      "forks": 1605,
-      "open_issues": 411,
+      "stars": 4557,
+      "forks": 1604,
+      "open_issues": 407,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-11T15:48:26Z",
-      "updated_at": "2026-11-11T10:52:41Z",
+      "pushed_at": "2026-11-12T21:11:29Z",
+      "updated_at": "2026-11-12T12:19:51Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-11-11T16:00:20.960141+00:00",
+      "collected_at": "2026-11-12T22:10:28.340129+00:00",
       "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
     },
     {
@@ -9904,6 +9906,7 @@
       "also_seen_in": [
         "search:topic:claude-code stars:>50 archived:false"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-08T14:57:01.805749+00:00"
     },
     {
@@ -9931,6 +9934,40 @@
         "MengEn-Ink:starred"
       ],
       "first_seen_at": "2026-10-28T06:51:48.450209+00:00"
+    },
+    {
+      "full_name": "WhiteTowerAI/ohmygame",
+      "html_url": "https://github.com/WhiteTowerAI/ohmygame",
+      "description": "The open-source studio for making games with AI. Your own one-person game studio. Everything you need to make games with AI, in one app. Game canvas.  Bring your own key.",
+      "topics": [
+        "ai-coding",
+        "ai-coding-agent",
+        "ai-game-design",
+        "ai-game-dev",
+        "ai-game-development",
+        "ai-image",
+        "ai-video",
+        "canvas",
+        "game-ai",
+        "game-assets",
+        "game-development",
+        "gamedev",
+        "open-game",
+        "open-google-playground",
+        "pi-agent",
+        "pi-coding-agent-theme"
+      ],
+      "language": "TypeScript",
+      "stars": 2155,
+      "forks": 272,
+      "open_issues": 25,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-11-12T19:02:03Z",
+      "updated_at": "2026-11-12T20:08:21Z",
+      "source": "trending:daily/typescript",
+      "collected_at": "2026-11-12T22:10:26.848212+00:00",
+      "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
     },
     {
       "full_name": "the-open-engine/zeroshot",
@@ -10053,40 +10090,6 @@
       "source": "search:topic:github-pages stars:>100 archived:false",
       "collected_at": "2026-11-12T01:51:46.767179+00:00",
       "first_seen_at": "2026-11-10T21:45:13.102653+00:00"
-    },
-    {
-      "full_name": "WhiteTowerAI/ohmygame",
-      "html_url": "https://github.com/WhiteTowerAI/ohmygame",
-      "description": "The open-source studio for making games with AI. Your own one-person game studio. Everything you need to make games with AI, in one app. Game canvas.  Bring your own key.",
-      "topics": [
-        "ai-coding",
-        "ai-coding-agent",
-        "ai-game-design",
-        "ai-game-dev",
-        "ai-game-development",
-        "ai-image",
-        "ai-video",
-        "canvas",
-        "game-ai",
-        "game-assets",
-        "game-development",
-        "gamedev",
-        "open-game",
-        "open-google-playground",
-        "pi-agent",
-        "pi-coding-agent-theme"
-      ],
-      "language": "TypeScript",
-      "stars": 2096,
-      "forks": 264,
-      "open_issues": 20,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-11T14:11:31Z",
-      "updated_at": "2026-11-11T15:55:23Z",
-      "source": "trending:daily/typescript",
-      "collected_at": "2026-11-11T16:00:17.349408+00:00",
-      "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
     },
     {
       "full_name": "leepokai/Codync",
@@ -11853,6 +11856,7 @@
         "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}",
         "search:topic:claude-code stars:>50 archived:false"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-06T15:50:20.936113+00:00"
     },
     {
@@ -14858,121 +14862,134 @@
     "search:created:>{days_ago:30} stars:>300": {
       "ok": true,
       "count": 30,
+      "cached": true,
       "fetched_at": "2026-11-12T12:28:08.319589+00:00"
     },
     "search:created:>{days_ago:90} topic:ai-agent stars:>100": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-12T12:28:08.319589+00:00"
     },
     "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}": {
       "ok": true,
-      "count": 20,
+      "count": 22,
+      "cached": true,
       "fetched_at": "2026-11-12T12:28:08.319589+00:00"
     },
     "search:topic:claude-code stars:>50 archived:false": {
       "ok": true,
-      "count": 20,
+      "count": 25,
+      "cached": true,
       "fetched_at": "2026-11-12T12:28:08.319589+00:00"
     },
     "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
-      "count": 20,
+      "count": 25,
+      "cached": true,
       "fetched_at": "2026-11-12T12:28:08.319589+00:00"
     },
     "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-12T12:28:08.319589+00:00"
     },
     "search:topic:prompt-engineering stars:>300 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-12T12:28:08.319589+00:00"
     },
     "search:topic:workflow-automation stars:>300 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-12T12:28:08.319589+00:00"
     },
     "search:topic:shadcn-ui stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-12T12:28:08.319589+00:00"
     },
     "search:topic:react-components stars:>500 archived:false pushed:>{days_ago:60}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-12T12:28:08.319589+00:00"
     },
     "search:topic:rss stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-12T12:28:08.319589+00:00"
     },
     "search:topic:self-hosted stars:>2000 archived:false pushed:>{days_ago:30}": {
       "ok": true,
-      "count": 20,
+      "count": 22,
+      "cached": true,
       "fetched_at": "2026-11-12T12:28:08.319589+00:00"
     },
     "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-12T12:28:08.319589+00:00"
     },
     "trending:daily/all": {
       "ok": true,
       "count": 10,
       "listed": 10,
-      "fetched_at": "2026-11-12T12:28:08.319589+00:00"
+      "fetched_at": "2026-11-12T22:10:23.747260+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
       "count": 13,
       "listed": 13,
-      "fetched_at": "2026-11-12T12:28:08.319589+00:00"
+      "fetched_at": "2026-11-12T22:10:23.747260+00:00"
     },
     "trending:daily/python": {
       "ok": true,
       "count": 17,
       "listed": 17,
-      "fetched_at": "2026-11-12T12:28:08.319589+00:00"
+      "fetched_at": "2026-11-12T22:10:23.747260+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
       "count": 14,
       "listed": 14,
-      "fetched_at": "2026-11-12T12:28:08.319589+00:00"
+      "fetched_at": "2026-11-12T22:10:23.747260+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 13,
       "listed": 13,
-      "fetched_at": "2026-11-12T12:28:08.319589+00:00"
+      "fetched_at": "2026-11-12T22:10:23.747260+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
       "count": 14,
       "listed": 14,
-      "fetched_at": "2026-11-12T12:28:08.319589+00:00"
+      "fetched_at": "2026-11-12T22:10:23.747260+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
       "count": 20,
       "listed": 20,
-      "fetched_at": "2026-11-12T12:28:08.319589+00:00"
+      "fetched_at": "2026-11-12T22:10:23.747260+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 14,
       "listed": 14,
-      "fetched_at": "2026-11-12T12:28:08.319589+00:00"
+      "fetched_at": "2026-11-12T22:10:23.747260+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-11-12T12:28:08.319589+00:00"
+      "fetched_at": "2026-11-12T22:10:23.747260+00:00"
     }
   },
   "schema_version": 1

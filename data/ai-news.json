@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T12:30:26.590970+00:00",
+  "generated_at": "2026-11-12T22:10:45.261277+00:00",
   "items": [
     {
       "title": "Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
@@ -3577,16 +3577,14 @@
   "source_status": {
     "AI News Aggregator": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 50,
       "fetched_at": "2026-11-12T12:30:26.590970+00:00",
       "checked_at": "2026-11-12T12:30:26.590970+00:00"
     },
     "GitHub Releases · LangChain": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 10,
       "fetched_at": "2026-11-12T12:30:26.590970+00:00",
       "checked_at": "2026-11-12T12:30:26.590970+00:00"
@@ -3594,7 +3592,6 @@
     "GitHub Releases · OpenAI Python": {
       "ok": true,
       "cached": true,
-      "not_modified": true,
       "count": 10,
       "fetched_at": "2026-11-11T05:49:00.861015+00:00",
       "checked_at": "2026-11-12T12:30:26.590970+00:00"
@@ -3608,80 +3605,70 @@
     },
     "Lobsters": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 25,
       "fetched_at": "2026-11-12T12:30:26.590970+00:00",
       "checked_at": "2026-11-12T12:30:26.590970+00:00"
     },
     "OpenAI News": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 50,
       "fetched_at": "2026-11-12T12:30:26.590970+00:00",
       "checked_at": "2026-11-12T12:30:26.590970+00:00"
     },
     "Google Developers Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 20,
       "fetched_at": "2026-11-12T12:30:26.590970+00:00",
       "checked_at": "2026-11-12T12:30:26.590970+00:00"
     },
     "AWS Machine Learning Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 20,
       "fetched_at": "2026-11-12T12:30:26.590970+00:00",
       "checked_at": "2026-11-12T12:30:26.590970+00:00"
     },
     "NVIDIA Developer Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 30,
       "fetched_at": "2026-11-12T12:30:26.590970+00:00",
       "checked_at": "2026-11-12T12:30:26.590970+00:00"
     },
     "Cloudflare AI": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 20,
       "fetched_at": "2026-11-12T12:30:26.590970+00:00",
       "checked_at": "2026-11-12T12:30:26.590970+00:00"
     },
     "GitHub Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 10,
       "fetched_at": "2026-11-12T12:30:26.590970+00:00",
       "checked_at": "2026-11-12T12:30:26.590970+00:00"
     },
     "Stack Overflow Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 40,
       "fetched_at": "2026-11-12T12:30:26.590970+00:00",
       "checked_at": "2026-11-12T12:30:26.590970+00:00"
     },
     "OSV.dev": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 30,
       "fetched_at": "2026-11-12T12:30:26.590970+00:00",
       "checked_at": "2026-11-12T12:30:26.590970+00:00"
     },
     "CISA KEV": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 26,
       "fetched_at": "2026-11-12T12:30:26.590970+00:00",
       "checked_at": "2026-11-12T12:30:26.590970+00:00"

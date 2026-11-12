@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-12T12:30:44.309535+00:00",
+  "generated_at": "2026-11-12T22:10:46.174676+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -1480,12 +1480,12 @@
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600576+00:00",
-      "metadata_synced_at": "2026-11-11T16:00:51.640848+00:00",
+      "metadata_synced_at": "2026-11-12T22:10:46.164432+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 146004,
-      "pushed_at": "2026-11-10T21:53:12Z",
+      "stars": 146704,
+      "pushed_at": "2026-11-12T21:47:45Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -4355,11 +4355,11 @@
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-31T12:08:54.857206+00:00",
-      "metadata_synced_at": "2026-11-12T12:30:44.295375+00:00",
+      "metadata_synced_at": "2026-11-12T22:10:46.164230+00:00",
       "state": "candidate",
       "license": null,
       "archived": false,
-      "stars": 192908,
+      "stars": 193666,
       "pushed_at": "2026-11-06T22:32:32Z",
       "checks": {
         "license_declared": {
@@ -8171,11 +8171,11 @@
       "source": "trending:daily/all",
       "also_seen_in": [],
       "enqueued_at": "2026-11-11T16:00:51.641206+00:00",
-      "metadata_synced_at": "2026-11-11T16:00:51.641206+00:00",
+      "metadata_synced_at": "2026-11-12T22:10:46.164704+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 115680,
+      "stars": 116617,
       "pushed_at": "2026-11-01T19:24:49Z",
       "checks": {
         "license_declared": {
@@ -8203,11 +8203,11 @@
       "source": "trending:daily/typescript",
       "also_seen_in": [],
       "enqueued_at": "2026-11-11T16:00:51.646125+00:00",
-      "metadata_synced_at": "2026-11-11T16:00:51.646125+00:00",
+      "metadata_synced_at": "2026-11-12T22:10:46.168694+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 8737,
+      "stars": 8751,
       "pushed_at": "2026-08-17T20:20:23Z",
       "checks": {
         "license_declared": {
