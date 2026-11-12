@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T16:00:50.402210+00:00",
+  "generated_at": "2026-11-12T01:52:40.465703+00:00",
   "items": [
     {
       "title": "Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
@@ -3622,10 +3622,11 @@
     },
     "Hacker News": {
       "ok": true,
-      "cached": true,
-      "count": 2,
-      "fetched_at": "2026-11-10T21:48:19.155704+00:00",
-      "checked_at": "2026-11-10T21:48:19.155704+00:00"
+      "cached": false,
+      "not_modified": false,
+      "count": 6,
+      "fetched_at": "2026-11-12T01:52:40.465703+00:00",
+      "checked_at": "2026-11-12T01:52:40.465703+00:00"
     },
     "Lobsters": {
       "ok": true,
@@ -4837,9 +4838,9 @@
     "Hacker News": {
       "items": [
         {
-          "title": "Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives",
-          "url": "https://github.com/GoogleChrome/modern-web-guidance",
-          "published_at": "2026-11-10T18:01:15Z",
+          "title": "United Airlines bans AI agents from booking flights on behalf of travelers",
+          "url": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights",
+          "published_at": "2026-11-11T21:24:35Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4850,16 +4851,16 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50443812,
-            "score": 179,
-            "comments": 51
+            "hn_id": 50458900,
+            "score": 372,
+            "comments": 354
           },
           "also_seen_in": []
         },
         {
-          "title": "AI usage generates a fragile codebase",
-          "url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase",
-          "published_at": "2026-11-10T10:25:58Z",
+          "title": "Gemini Decisions API",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api",
+          "published_at": "2026-11-11T18:32:42Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4870,15 +4871,95 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50438318,
-            "score": 286,
-            "comments": 350
+            "hn_id": 50456791,
+            "score": 273,
+            "comments": 85
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "Launch HN: Pomerado (YC F26) – Turn any website into an MCP for agents",
+          "url": "https://news.ycombinator.com/item?id=50455811",
+          "published_at": "2026-11-11T17:11:56Z",
+          "site_name": "Hacker News",
+          "source": [
+            "Hacker News"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [
+            "community"
+          ],
+          "metadata": {
+            "hn_id": 50455811,
+            "score": 48,
+            "comments": 39
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "Faster Retrieval for Better, More Efficient RAG",
+          "url": "https://machinelearning.apple.com/research/faster-retrieval",
+          "published_at": "2026-11-11T16:57:45Z",
+          "site_name": "Hacker News",
+          "source": [
+            "Hacker News"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [
+            "community"
+          ],
+          "metadata": {
+            "hn_id": 50455633,
+            "score": 153,
+            "comments": 28
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "Atuin Threads: All your agent sessions on every machine",
+          "url": "https://blog.atuin.sh/threads-agent-sessions",
+          "published_at": "2026-11-11T14:10:46Z",
+          "site_name": "Hacker News",
+          "source": [
+            "Hacker News"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [
+            "community"
+          ],
+          "metadata": {
+            "hn_id": 50453637,
+            "score": 191,
+            "comments": 73
+          },
+          "also_seen_in": []
+        },
+        {
+          "title": "My AI agents found an unmapped Maya site?",
+          "url": "https://pietromiotti.com/latest/maya-site",
+          "published_at": "2026-11-11T12:05:22Z",
+          "site_name": "Hacker News",
+          "source": [
+            "Hacker News"
+          ],
+          "category": "community",
+          "priority": "P2",
+          "tags": [
+            "community"
+          ],
+          "metadata": {
+            "hn_id": 50452455,
+            "score": 928,
+            "comments": 338
           },
           "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-10T21:48:19.155704+00:00",
-      "checked_at": "2026-11-10T21:48:19.155704+00:00",
+      "fetched_at": "2026-11-12T01:52:40.465703+00:00",
+      "checked_at": "2026-11-12T01:52:40.465703+00:00",
       "config_hash": "dab31b3ea2d6e110"
     },
     "Lobsters": {

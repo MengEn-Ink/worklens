@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-11T16:00:51.653978+00:00",
+  "generated_at": "2026-11-12T01:52:43.672852+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -76,12 +76,12 @@
         "trending:daily/all"
       ],
       "enqueued_at": "2026-10-24T04:55:16.586479+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.190686+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.659295+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 112908,
-      "pushed_at": "2026-11-10T21:44:58Z",
+      "stars": 113200,
+      "pushed_at": "2026-11-12T01:51:21Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -108,12 +108,12 @@
       "source": "profile:MengEn-Ink:starred",
       "also_seen_in": [],
       "enqueued_at": "2026-10-24T04:55:16.587131+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.192433+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.661318+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 48421,
-      "pushed_at": "2026-11-05T14:34:39Z",
+      "stars": 48430,
+      "pushed_at": "2026-11-11T14:09:01Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -140,11 +140,11 @@
       "source": "repository:VoltAgent/awesome-agent-skills",
       "also_seen_in": [],
       "enqueued_at": "2026-10-24T04:55:16.587321+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.193059+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.661855+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 37047,
+      "stars": 37097,
       "pushed_at": "2026-11-05T10:43:36Z",
       "checks": {
         "license_declared": {
@@ -270,13 +270,13 @@
       "id": "SR-0008",
       "subject": "Cotal-AI/Cotal",
       "html_url": "https://github.com/Cotal-AI/Cotal",
-      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "source": "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}",
       "also_seen_in": [
         "search:topic:claude-code stars:>50 archived:false",
         "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}"
       ],
       "enqueued_at": "2026-10-24T04:55:16.589192+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.202695+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.671207+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
@@ -305,14 +305,14 @@
       "id": "SR-0009",
       "subject": "google/elephant-goldfish-model",
       "html_url": "https://github.com/google/elephant-goldfish-model",
-      "source": "search:topic:agent-skills stars:>50 archived:false",
+      "source": "search:topic:prompt-engineering stars:>300 archived:false",
       "also_seen_in": [
         "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}",
         "search:topic:prompt-engineering stars:>300 archived:false",
         "search:topic:developer-tools stars:>500 archived:false"
       ],
       "enqueued_at": "2026-10-24T04:55:16.589248+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.194783+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.663385+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
@@ -653,12 +653,12 @@
         "search:topic:ai-agent stars:>500 archived:false"
       ],
       "enqueued_at": "2026-10-24T05:53:20.219084+00:00",
-      "metadata_synced_at": "2026-11-06T06:11:12.918015+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.666032+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 5472,
-      "pushed_at": "2026-11-06T06:07:58Z",
+      "stars": 5516,
+      "pushed_at": "2026-11-12T01:49:31Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -753,12 +753,12 @@
         "search:topic:developer-tools stars:>500 archived:false"
       ],
       "enqueued_at": "2026-10-25T06:07:53.832478+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.191061+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.659850+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 95359,
-      "pushed_at": "2026-11-10T21:38:17Z",
+      "stars": 95656,
+      "pushed_at": "2026-11-12T01:21:48Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -849,12 +849,12 @@
       "source": "profile:MengEn-Ink:starred",
       "also_seen_in": [],
       "enqueued_at": "2026-10-25T06:07:53.833221+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.196630+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.664960+00:00",
       "state": "candidate",
       "license": "NOASSERTION",
       "archived": false,
-      "stars": 7370,
-      "pushed_at": "2026-11-09T15:17:49Z",
+      "stars": 7466,
+      "pushed_at": "2026-11-10T23:48:58Z",
       "checks": {
         "license_declared": {
           "status": "fail",
@@ -886,12 +886,12 @@
         "trending:daily/python"
       ],
       "enqueued_at": "2026-10-25T06:07:53.833330+00:00",
-      "metadata_synced_at": "2026-11-11T16:00:51.647535+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.666067+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 5368,
-      "pushed_at": "2026-11-10T21:07:13Z",
+      "stars": 5502,
+      "pushed_at": "2026-11-12T01:31:03Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -1552,12 +1552,12 @@
         "trending:weekly/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600902+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.190793+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.659480+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 107537,
-      "pushed_at": "2026-11-10T21:33:01Z",
+      "stars": 108335,
+      "pushed_at": "2026-11-12T01:49:46Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -1653,11 +1653,11 @@
       "source": "trending:weekly/all",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.601405+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.191834+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.660686+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 69165,
+      "stars": 70400,
       "pushed_at": "2026-09-14T19:29:02Z",
       "checks": {
         "license_declared": {
@@ -2666,18 +2666,18 @@
       "id": "SR-0075",
       "subject": "career-ops-hq/career-ops",
       "html_url": "https://github.com/career-ops-hq/career-ops",
-      "source": "search:topic:ai-agent stars:>500 archived:false",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
       "also_seen_in": [
         "search:topic:ai-agent stars:>500 archived:false",
         "search:topic:claude-code stars:>50 archived:false"
       ],
       "enqueued_at": "2026-10-29T12:10:02.308767+00:00",
-      "metadata_synced_at": "2026-11-07T20:09:03.988133+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.660518+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 80514,
-      "pushed_at": "2026-11-06T06:02:54Z",
+      "stars": 82010,
+      "pushed_at": "2026-11-12T01:47:36Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -2863,18 +2863,18 @@
       "id": "SR-0081",
       "subject": "kajisho5/ffmpeg-skill",
       "html_url": "https://github.com/kajisho5/ffmpeg-skill",
-      "source": "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
       "also_seen_in": [
         "search:topic:claude-code stars:>50 archived:false",
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-29T12:10:02.315086+00:00",
-      "metadata_synced_at": "2026-11-05T12:08:48.265283+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.666222+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 4572,
-      "pushed_at": "2026-11-05T12:04:00Z",
+      "stars": 5097,
+      "pushed_at": "2026-11-12T01:28:08Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -3528,11 +3528,11 @@
       "source": "trending:weekly/all",
       "also_seen_in": [],
       "enqueued_at": "2026-10-30T12:04:33.695144+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.192907+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.661727+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 38017,
+      "stars": 38491,
       "pushed_at": "2026-11-09T23:33:14Z",
       "checks": {
         "license_declared": {
@@ -3560,12 +3560,12 @@
       "source": "search:topic:agent-skills stars:>50 archived:false",
       "also_seen_in": [],
       "enqueued_at": "2026-10-30T14:59:27.205961+00:00",
-      "metadata_synced_at": "2026-10-30T14:59:27.205961+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.662075+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 32923,
-      "pushed_at": "2026-10-30T14:57:12Z",
+      "stars": 33256,
+      "pushed_at": "2026-11-12T01:24:34Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -3592,11 +3592,11 @@
       "source": "profile:MengEn-Ink:starred",
       "also_seen_in": [],
       "enqueued_at": "2026-10-30T14:59:27.207709+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.196988+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.665465+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 6503,
+      "stars": 6521,
       "pushed_at": "2026-11-06T17:50:39Z",
       "checks": {
         "license_declared": {
@@ -3659,12 +3659,12 @@
         "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}"
       ],
       "enqueued_at": "2026-10-30T14:59:27.210462+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.199547+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.667996+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 2210,
-      "pushed_at": "2026-11-10T21:43:14Z",
+      "stars": 2281,
+      "pushed_at": "2026-11-12T01:27:01Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -3916,15 +3916,15 @@
       "id": "SR-0113",
       "subject": "escoffier-labs/brigade",
       "html_url": "https://github.com/escoffier-labs/brigade",
-      "source": "search:topic:claude-code stars:>50 archived:false",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
       "also_seen_in": [],
       "enqueued_at": "2026-10-30T14:59:27.212429+00:00",
-      "metadata_synced_at": "2026-11-08T20:23:14.919411+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.672133+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
       "stars": 82,
-      "pushed_at": "2026-11-08T20:20:52Z",
+      "pushed_at": "2026-11-12T01:23:32Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -4318,12 +4318,12 @@
         "trending:weekly/all"
       ],
       "enqueued_at": "2026-10-31T12:08:54.857058+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.190035+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.658466+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 320808,
-      "pushed_at": "2026-11-09T14:03:07Z",
+      "stars": 322073,
+      "pushed_at": "2026-11-11T14:40:17Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -4582,12 +4582,12 @@
       "source": "search:topic:agent-skills stars:>50 archived:false",
       "also_seen_in": [],
       "enqueued_at": "2026-10-31T19:51:57.690467+00:00",
-      "metadata_synced_at": "2026-11-05T00:50:39.066882+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.672311+00:00",
       "state": "candidate",
       "license": "CC0-1.0",
       "archived": false,
       "stars": 53,
-      "pushed_at": "2026-11-05T00:28:42Z",
+      "pushed_at": "2026-11-12T01:37:41Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -4810,17 +4810,17 @@
       "id": "SR-0140",
       "subject": "reacher-z/Awesome-REA",
       "html_url": "https://github.com/reacher-z/Awesome-REA",
-      "source": "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
       "also_seen_in": [
         "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}"
       ],
       "enqueued_at": "2026-11-01T20:11:20.100582+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.199360+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.667602+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 2296,
-      "pushed_at": "2026-11-09T18:07:38Z",
+      "stars": 2584,
+      "pushed_at": "2026-11-12T01:27:09Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -5399,12 +5399,12 @@
       "source": "search:topic:agent-skills stars:>50 archived:false",
       "also_seen_in": [],
       "enqueued_at": "2026-11-03T00:03:18.680195+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.203568+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.671925+00:00",
       "state": "candidate",
       "license": "AGPL-3.0",
       "archived": false,
-      "stars": 158,
-      "pushed_at": "2026-11-10T21:30:34Z",
+      "stars": 161,
+      "pushed_at": "2026-11-12T01:43:53Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -6508,15 +6508,15 @@
       "id": "SR-0192",
       "subject": "agentskillexchange/skills",
       "html_url": "https://github.com/agentskillexchange/skills",
-      "source": "search:topic:claude-code stars:>50 archived:false",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
       "also_seen_in": [],
       "enqueued_at": "2026-11-05T12:08:48.271468+00:00",
-      "metadata_synced_at": "2026-11-05T12:08:48.271468+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.672219+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 61,
-      "pushed_at": "2026-11-05T12:05:32Z",
+      "stars": 62,
+      "pushed_at": "2026-11-12T01:27:21Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -7230,15 +7230,15 @@
       "id": "SR-0214",
       "subject": "starslingdev/skills",
       "html_url": "https://github.com/starslingdev/skills",
-      "source": "search:topic:claude-code stars:>50 archived:false",
+      "source": "search:topic:agent-skills stars:>50 archived:false",
       "also_seen_in": [],
       "enqueued_at": "2026-11-07T20:09:04.000967+00:00",
-      "metadata_synced_at": "2026-11-07T20:09:04.000967+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.672071+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 80,
-      "pushed_at": "2026-11-07T20:04:31Z",
+      "stars": 104,
+      "pushed_at": "2026-11-12T01:38:47Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -7719,11 +7719,11 @@
       "source": "profile:MengEn-Ink:starred",
       "also_seen_in": [],
       "enqueued_at": "2026-11-09T18:39:47.625435+00:00",
-      "metadata_synced_at": "2026-11-10T21:48:22.200352+00:00",
+      "metadata_synced_at": "2026-11-12T01:52:43.669006+00:00",
       "state": "candidate",
       "license": null,
       "archived": false,
-      "stars": 1507,
+      "stars": 1534,
       "pushed_at": "2026-04-11T18:15:59Z",
       "checks": {
         "license_declared": {
