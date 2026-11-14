@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T00:50:49.941505+00:00",
+  "generated_at": "2026-11-14T11:21:46.606485+00:00",
   "items": [
     {
       "title": "Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
@@ -3574,10 +3574,11 @@
     },
     "Hacker News": {
       "ok": true,
-      "cached": true,
-      "count": 5,
-      "fetched_at": "2026-11-13T06:14:08.236875+00:00",
-      "checked_at": "2026-11-13T06:14:08.236875+00:00"
+      "cached": false,
+      "not_modified": false,
+      "count": 2,
+      "fetched_at": "2026-11-14T11:21:46.606485+00:00",
+      "checked_at": "2026-11-14T11:21:46.606485+00:00"
     },
     "Lobsters": {
       "ok": true,
@@ -4795,9 +4796,9 @@
     "Hacker News": {
       "items": [
         {
-          "title": "Brave Search API now accepts agentic payments via the x402 protocol",
-          "url": "https://brave.com/blog/search-api-agentic-payments",
-          "published_at": "2026-11-13T03:08:08Z",
+          "title": "Security Agencies Worldwide Found to Use Ad-Based Surveillance System",
+          "url": "https://citizenlab.ca/security-agencies-worldwide-found-to-use-ad-based-surveillance-system",
+          "published_at": "2026-11-14T02:15:41Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4808,16 +4809,16 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50477649,
-            "score": 32,
-            "comments": 10
+            "hn_id": 50492950,
+            "score": 112,
+            "comments": 11
           },
           "also_seen_in": []
         },
         {
-          "title": "Gemini 4 Hydrogen and Orchestrator",
-          "url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity",
-          "published_at": "2026-11-12T18:52:01Z",
+          "title": "Ctrl+C, Ctrl+v, Ctrl+cve: Bypassing Android's Clipboard Read Security Measures",
+          "url": "https://toninoble.com/post/ctrlc-ctrlv-ctrlcve",
+          "published_at": "2026-11-13T18:23:49Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4828,75 +4829,15 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50472260,
-            "score": 372,
-            "comments": 101
-          },
-          "also_seen_in": []
-        },
-        {
-          "title": "Gemini 4 Hydrogen",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen",
-          "published_at": "2026-11-12T18:01:48Z",
-          "site_name": "Hacker News",
-          "source": [
-            "Hacker News"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [
-            "community"
-          ],
-          "metadata": {
-            "hn_id": 50471431,
-            "score": 502,
-            "comments": 320
-          },
-          "also_seen_in": []
-        },
-        {
-          "title": "I'm making LLMs work on small and old devices",
-          "url": "https://github.com/hyperionaidev/smolmaxxing",
-          "published_at": "2026-11-12T15:23:10Z",
-          "site_name": "Hacker News",
-          "source": [
-            "Hacker News"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [
-            "community"
-          ],
-          "metadata": {
-            "hn_id": 50468888,
-            "score": 326,
-            "comments": 119
-          },
-          "also_seen_in": []
-        },
-        {
-          "title": "Anthropic IPO",
-          "url": "https://ipo.anthropic.com/us",
-          "published_at": "2026-11-12T11:46:41Z",
-          "site_name": "Hacker News",
-          "source": [
-            "Hacker News"
-          ],
-          "category": "community",
-          "priority": "P2",
-          "tags": [
-            "community"
-          ],
-          "metadata": {
-            "hn_id": 50465829,
-            "score": 883,
-            "comments": 846
+            "hn_id": 50487605,
+            "score": 88,
+            "comments": 43
           },
           "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-13T06:14:08.236875+00:00",
-      "checked_at": "2026-11-13T06:14:08.236875+00:00",
+      "fetched_at": "2026-11-14T11:21:46.606485+00:00",
+      "checked_at": "2026-11-14T11:21:46.606485+00:00",
       "config_hash": "dab31b3ea2d6e110"
     },
     "Lobsters": {
