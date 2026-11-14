@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-14T11:21:49.210351+00:00",
+  "generated_at": "2026-11-14T17:55:31.372665+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -305,7 +305,7 @@
       "id": "SR-0009",
       "subject": "google/elephant-goldfish-model",
       "html_url": "https://github.com/google/elephant-goldfish-model",
-      "source": "search:topic:claude-code stars:>50 archived:false",
+      "source": "trending:weekly/all",
       "also_seen_in": [
         "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}",
         "search:topic:prompt-engineering stars:>300 archived:false",
@@ -314,12 +314,12 @@
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-24T04:55:16.589248+00:00",
-      "metadata_synced_at": "2026-11-14T11:21:49.200786+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.365231+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 18450,
-      "pushed_at": "2026-11-13T16:03:06Z",
+      "stars": 19008,
+      "pushed_at": "2026-11-14T09:40:03Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -583,10 +583,12 @@
       "html_url": "https://github.com/CherryHQ/cherry-studio",
       "source": "search:topic:agent-skills stars:>50 archived:false",
       "also_seen_in": [
-        "search:topic:ai-agent stars:>500 archived:false"
+        "search:topic:ai-agent stars:>500 archived:false",
+        "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}",
+        "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}"
       ],
       "enqueued_at": "2026-10-24T05:53:20.218018+00:00",
-      "metadata_synced_at": "2026-11-14T11:21:49.198483+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.363386+00:00",
       "state": "candidate",
       "license": "AGPL-3.0",
       "archived": false,
@@ -1151,12 +1153,12 @@
         "search:topic:claude-code stars:>50 archived:false"
       ],
       "enqueued_at": "2026-10-27T06:17:02.801000+00:00",
-      "metadata_synced_at": "2026-11-13T16:06:43.009286+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.364651+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 25815,
-      "pushed_at": "2026-11-13T11:36:55Z",
+      "stars": 26018,
+      "pushed_at": "2026-11-14T04:49:48Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -1583,19 +1585,19 @@
       "id": "SR-0042",
       "subject": "lobehub/lobehub",
       "html_url": "https://github.com/lobehub/lobehub",
-      "source": "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}",
+      "source": "trending:weekly/all",
       "also_seen_in": [
         "trending:daily/typescript",
         "trending:weekly/typescript",
         "trending:weekly/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.601206+00:00",
-      "metadata_synced_at": "2026-11-14T11:21:49.197354+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.362511+00:00",
       "state": "candidate",
       "license": "NOASSERTION",
       "archived": false,
-      "stars": 85317,
-      "pushed_at": "2026-11-13T16:03:36Z",
+      "stars": 85526,
+      "pushed_at": "2026-11-14T17:38:43Z",
       "checks": {
         "license_declared": {
           "status": "fail",
@@ -1919,12 +1921,12 @@
         "trending:weekly/typescript"
       ],
       "enqueued_at": "2026-10-29T05:25:53.603544+00:00",
-      "metadata_synced_at": "2026-11-14T11:21:49.201629+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.365955+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 10329,
-      "pushed_at": "2026-11-13T16:02:31Z",
+      "stars": 10894,
+      "pushed_at": "2026-11-14T17:52:22Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -2120,11 +2122,11 @@
         "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}"
       ],
       "enqueued_at": "2026-10-29T05:25:53.604668+00:00",
-      "metadata_synced_at": "2026-11-13T16:06:43.011517+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.367298+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 6303,
+      "stars": 6321,
       "pushed_at": "2026-11-11T19:55:14Z",
       "checks": {
         "license_declared": {
@@ -2184,11 +2186,11 @@
       "source": "search:created:>{days_ago:90} topic:ai-agent stars:>100",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.604900+00:00",
-      "metadata_synced_at": "2026-11-13T16:06:43.012271+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.368166+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 3646,
+      "stars": 3655,
       "pushed_at": "2026-09-02T18:49:42Z",
       "checks": {
         "license_declared": {
@@ -2282,11 +2284,11 @@
       "source": "search:created:>{days_ago:90} topic:ai-agent stars:>100",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.605580+00:00",
-      "metadata_synced_at": "2026-11-13T16:06:43.013092+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.368874+00:00",
       "state": "candidate",
       "license": "NOASSERTION",
       "archived": false,
-      "stars": 2306,
+      "stars": 2330,
       "pushed_at": "2026-11-09T02:29:30Z",
       "checks": {
         "license_declared": {
@@ -2348,12 +2350,12 @@
       "source": "search:topic:workflow-automation stars:>300 archived:false",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.605844+00:00",
-      "metadata_synced_at": "2026-11-12T12:30:44.305869+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.369434+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 1665,
-      "pushed_at": "2026-11-12T12:28:18Z",
+      "stars": 1667,
+      "pushed_at": "2026-11-14T15:09:04Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -2480,11 +2482,11 @@
       "source": "search:created:>{days_ago:90} topic:ai-agent stars:>100",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.606334+00:00",
-      "metadata_synced_at": "2026-11-13T16:06:43.013752+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.369788+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 1399,
+      "stars": 1410,
       "pushed_at": "2026-10-19T16:34:57Z",
       "checks": {
         "license_declared": {
@@ -2713,12 +2715,12 @@
       "source": "trending:daily/python",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T12:10:02.308918+00:00",
-      "metadata_synced_at": "2026-11-13T16:06:43.007830+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.363074+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 67521,
-      "pushed_at": "2026-11-13T03:02:54Z",
+      "stars": 67647,
+      "pushed_at": "2026-11-14T08:35:32Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -2811,11 +2813,11 @@
       "source": "trending:weekly/typescript",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T12:10:02.311013+00:00",
-      "metadata_synced_at": "2026-11-14T11:21:49.199940+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.364573+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 27583,
+      "stars": 27705,
       "pushed_at": "2026-11-13T09:01:14Z",
       "checks": {
         "license_declared": {
@@ -4028,12 +4030,12 @@
         "trending:daily/python"
       ],
       "enqueued_at": "2026-10-31T05:11:50.010575+00:00",
-      "metadata_synced_at": "2026-11-13T16:06:43.008060+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.363327+00:00",
       "state": "candidate",
       "license": "NOASSERTION",
       "archived": false,
-      "stars": 56779,
-      "pushed_at": "2026-11-13T15:51:09Z",
+      "stars": 56874,
+      "pushed_at": "2026-11-14T16:01:09Z",
       "checks": {
         "license_declared": {
           "status": "fail",
@@ -5286,12 +5288,12 @@
         "trending:daily/python"
       ],
       "enqueued_at": "2026-11-03T00:03:18.678615+00:00",
-      "metadata_synced_at": "2026-11-13T16:06:43.014106+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.369998+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 1073,
-      "pushed_at": "2026-11-13T15:56:42Z",
+      "stars": 1213,
+      "pushed_at": "2026-11-14T17:51:01Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -5872,12 +5874,12 @@
         "search:topic:prompt-engineering stars:>300 archived:false"
       ],
       "enqueued_at": "2026-11-04T00:33:38.806446+00:00",
-      "metadata_synced_at": "2026-11-13T16:06:43.010957+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.366439+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 7836,
-      "pushed_at": "2026-11-13T13:38:03Z",
+      "stars": 8451,
+      "pushed_at": "2026-11-14T17:26:27Z",
       "checks": {
         "license_declared": {
           "status": "fail",
@@ -6362,11 +6364,11 @@
       "source": "search:created:>{days_ago:30} stars:>300",
       "also_seen_in": [],
       "enqueued_at": "2026-11-05T12:08:48.264599+00:00",
-      "metadata_synced_at": "2026-11-13T16:06:43.011153+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.366760+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 7558,
+      "stars": 7754,
       "pushed_at": "2026-10-20T14:18:00Z",
       "checks": {
         "license_declared": {
@@ -6394,11 +6396,11 @@
       "source": "search:created:>{days_ago:30} stars:>300",
       "also_seen_in": [],
       "enqueued_at": "2026-11-05T12:08:48.264978+00:00",
-      "metadata_synced_at": "2026-11-13T16:06:43.011177+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.366982+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 7292,
+      "stars": 7437,
       "pushed_at": "2026-11-13T08:43:39Z",
       "checks": {
         "license_declared": {
@@ -6755,12 +6757,12 @@
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-11-06T15:53:10.806226+00:00",
-      "metadata_synced_at": "2026-11-14T11:21:49.200252+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.364789+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 24124,
-      "pushed_at": "2026-11-13T15:45:30Z",
+      "stars": 24227,
+      "pushed_at": "2026-11-14T15:31:00Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -6854,12 +6856,12 @@
         "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}"
       ],
       "enqueued_at": "2026-11-06T15:53:10.810756+00:00",
-      "metadata_synced_at": "2026-11-13T16:06:43.012537+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.368405+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 3099,
-      "pushed_at": "2026-11-13T16:03:53Z",
+      "stars": 3123,
+      "pushed_at": "2026-11-14T17:20:56Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -7830,17 +7832,17 @@
       "id": "SR-0232",
       "subject": "anthropics/claude-plugins-official",
       "html_url": "https://github.com/anthropics/claude-plugins-official",
-      "source": "search:topic:claude-code stars:>50 archived:false",
+      "source": "trending:daily/python",
       "also_seen_in": [
         "trending:daily/python"
       ],
       "enqueued_at": "2026-11-10T02:41:17.897695+00:00",
-      "metadata_synced_at": "2026-11-14T11:21:49.198800+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.363689+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 47138,
-      "pushed_at": "2026-11-13T15:52:28Z",
+      "stars": 47274,
+      "pushed_at": "2026-11-14T07:27:28Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -8251,11 +8253,11 @@
       "source": "trending:weekly/go",
       "also_seen_in": [],
       "enqueued_at": "2026-11-12T12:30:44.301608+00:00",
-      "metadata_synced_at": "2026-11-13T16:06:43.010861+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.366543+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 8008,
+      "stars": 8058,
       "pushed_at": "2026-11-08T10:51:13Z",
       "checks": {
         "license_declared": {
@@ -8283,11 +8285,11 @@
       "source": "search:created:>{days_ago:30} stars:>300",
       "also_seen_in": [],
       "enqueued_at": "2026-11-12T12:30:44.302215+00:00",
-      "metadata_synced_at": "2026-11-13T16:06:43.010825+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.366356+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 8119,
+      "stars": 8527,
       "pushed_at": "2026-11-03T18:14:13Z",
       "checks": {
         "license_declared": {
@@ -8346,17 +8348,17 @@
       "id": "SR-0248",
       "subject": "Pinvou/pinvou-agent",
       "html_url": "https://github.com/Pinvou/pinvou-agent",
-      "source": "search:topic:workflow-automation stars:>300 archived:false",
+      "source": "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}",
       "also_seen_in": [
         "search:topic:workflow-automation stars:>300 archived:false"
       ],
       "enqueued_at": "2026-11-12T12:30:44.304268+00:00",
-      "metadata_synced_at": "2026-11-13T16:06:43.012595+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.368468+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 3011,
-      "pushed_at": "2026-11-13T15:51:33Z",
+      "stars": 3020,
+      "pushed_at": "2026-11-14T17:41:09Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -8697,6 +8699,174 @@
       "history": [
         {
           "at": "2026-11-14T11:21:49.205177+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0259",
+      "subject": "PenglongHuang/chinese-novelist-skill",
+      "html_url": "https://github.com/PenglongHuang/chinese-novelist-skill",
+      "source": "search:topic:prompt-engineering stars:>300 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-11-14T17:55:31.367790+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.367790+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 4922,
+      "pushed_at": "2026-11-14T16:39:33Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-11-14T17:55:31.367790+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-11-14T17:55:31.367790+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0260",
+      "subject": "hashgraph-online/awesome-ai-plugins",
+      "html_url": "https://github.com/hashgraph-online/awesome-ai-plugins",
+      "source": "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}",
+      "also_seen_in": [
+        "search:topic:claude-code stars:>50 archived:false"
+      ],
+      "enqueued_at": "2026-11-14T17:55:31.370389+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.370389+00:00",
+      "state": "candidate",
+      "license": "Apache-2.0",
+      "archived": false,
+      "stars": 1046,
+      "pushed_at": "2026-11-14T17:49:31Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=Apache-2.0",
+          "checked_at": "2026-11-14T17:55:31.370389+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-11-14T17:55:31.370389+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0261",
+      "subject": "SourceWeft/SourceWeft",
+      "html_url": "https://github.com/SourceWeft/SourceWeft",
+      "source": "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}",
+      "also_seen_in": [],
+      "enqueued_at": "2026-11-14T17:55:31.371160+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.371160+00:00",
+      "state": "candidate",
+      "license": "NOASSERTION",
+      "archived": false,
+      "stars": 476,
+      "pushed_at": "2026-11-14T17:25:01Z",
+      "checks": {
+        "license_declared": {
+          "status": "fail",
+          "evidence": "GitHub API：license.spdx_id=NOASSERTION",
+          "checked_at": "2026-11-14T17:55:31.371160+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [
+        "license_unrecognized"
+      ],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-11-14T17:55:31.371160+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0262",
+      "subject": "BrianRWagner/ai-marketing-claude-code-skills",
+      "html_url": "https://github.com/BrianRWagner/ai-marketing-claude-code-skills",
+      "source": "search:topic:claude-code stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-11-14T17:55:31.371223+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.371223+00:00",
+      "state": "candidate",
+      "license": null,
+      "archived": false,
+      "stars": 454,
+      "pushed_at": "2026-11-14T17:51:05Z",
+      "checks": {
+        "license_declared": {
+          "status": "fail",
+          "evidence": "GitHub API：未声明许可证",
+          "checked_at": "2026-11-14T17:55:31.371223+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [
+        "no_license"
+      ],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-11-14T17:55:31.371223+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0263",
+      "subject": "liangdabiao/tikhub_api_skill",
+      "html_url": "https://github.com/liangdabiao/tikhub_api_skill",
+      "source": "search:topic:claude-code stars:>50 archived:false",
+      "also_seen_in": [],
+      "enqueued_at": "2026-11-14T17:55:31.372034+00:00",
+      "metadata_synced_at": "2026-11-14T17:55:31.372034+00:00",
+      "state": "candidate",
+      "license": null,
+      "archived": false,
+      "stars": 130,
+      "pushed_at": "2026-11-14T17:51:19Z",
+      "checks": {
+        "license_declared": {
+          "status": "fail",
+          "evidence": "GitHub API：未声明许可证",
+          "checked_at": "2026-11-14T17:55:31.372034+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [
+        "no_license"
+      ],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-11-14T17:55:31.372034+00:00",
           "event": "enqueued",
           "by": "worklens-bot",
           "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
