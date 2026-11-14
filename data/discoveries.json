@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T16:04:05.552685+00:00",
+  "generated_at": "2026-11-14T00:49:42.624406+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -187,17 +187,16 @@
         "agent-skills"
       ],
       "language": "Python",
-      "stars": 193666,
-      "forks": 22784,
-      "open_issues": 1524,
+      "stars": 194145,
+      "forks": 22831,
+      "open_issues": 1531,
       "license": null,
       "archived": false,
       "pushed_at": "2026-11-06T22:32:32Z",
-      "updated_at": "2026-11-12T22:01:31Z",
+      "updated_at": "2026-11-14T00:48:37Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-12T22:10:25.450636+00:00",
+      "collected_at": "2026-11-14T00:49:44.294784+00:00",
       "also_seen_in": [
-        "trending:daily/python",
         "trending:weekly/python"
       ],
       "relationships": [],
@@ -750,15 +749,15 @@
         "skills"
       ],
       "language": "JavaScript",
-      "stars": 116617,
-      "forks": 12205,
-      "open_issues": 137,
+      "stars": 117147,
+      "forks": 12250,
+      "open_issues": 140,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-11-01T19:24:49Z",
-      "updated_at": "2026-11-12T22:06:10Z",
+      "updated_at": "2026-11-14T00:48:39Z",
       "source": "trending:daily/all",
-      "collected_at": "2026-11-12T22:10:24.179596+00:00",
+      "collected_at": "2026-11-14T00:49:43.583928+00:00",
       "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
     },
     {
@@ -1050,15 +1049,15 @@
         "xpath"
       ],
       "language": "Python",
-      "stars": 102091,
-      "forks": 10626,
-      "open_issues": 27,
+      "stars": 102498,
+      "forks": 10674,
+      "open_issues": 30,
       "license": "BSD-3-Clause",
       "archived": false,
       "pushed_at": "2026-11-11T19:16:10Z",
-      "updated_at": "2026-11-12T22:04:51Z",
+      "updated_at": "2026-11-14T00:43:45Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-12T22:10:25.862584+00:00",
+      "collected_at": "2026-11-14T00:49:45.237460+00:00",
       "also_seen_in": [
         "trending:weekly/python"
       ],
@@ -2290,16 +2289,37 @@
         "workspace-manager"
       ],
       "language": "Rust",
-      "stars": 50589,
-      "forks": 4085,
-      "open_issues": 483,
+      "stars": 50849,
+      "forks": 4107,
+      "open_issues": 491,
       "license": "Apache-2.0",
       "archived": false,
       "pushed_at": "2026-11-07T12:32:55Z",
-      "updated_at": "2026-11-12T22:09:15Z",
+      "updated_at": "2026-11-14T00:46:07Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-12T22:10:26.351103+00:00",
+      "collected_at": "2026-11-14T00:49:47.730660+00:00",
       "first_seen_at": "2026-11-02T18:08:20.681670+00:00"
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "html_url": "https://github.com/vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "topics": [],
+      "language": "Rust",
+      "stars": 50725,
+      "forks": 3526,
+      "open_issues": 572,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-11-14T00:37:11Z",
+      "updated_at": "2026-11-14T00:49:31Z",
+      "source": "trending:weekly/all",
+      "collected_at": "2026-11-14T00:49:44.786344+00:00",
+      "also_seen_in": [
+        "trending:weekly/rust"
+      ],
+      "relationships": [],
+      "first_seen_at": "2026-11-03T19:22:39.529433+00:00"
     },
     {
       "full_name": "mudler/LocalAI",
@@ -2340,27 +2360,6 @@
       ],
       "relationships": [],
       "first_seen_at": "2026-11-13T16:04:05.552685+00:00"
-    },
-    {
-      "full_name": "vercel-labs/agent-browser",
-      "html_url": "https://github.com/vercel-labs/agent-browser",
-      "description": "Browser automation CLI for AI agents",
-      "topics": [],
-      "language": "Rust",
-      "stars": 50303,
-      "forks": 3502,
-      "open_issues": 569,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-12T21:48:50Z",
-      "updated_at": "2026-11-12T22:06:44Z",
-      "source": "trending:weekly/all",
-      "collected_at": "2026-11-12T22:10:24.559172+00:00",
-      "also_seen_in": [
-        "trending:weekly/rust"
-      ],
-      "relationships": [],
-      "first_seen_at": "2026-11-03T19:22:39.529433+00:00"
     },
     {
       "full_name": "HKUDS/nanobot",
@@ -5059,6 +5058,23 @@
       "first_seen_at": "2026-11-13T16:04:05.552685+00:00"
     },
     {
+      "full_name": "we-promise/sure",
+      "html_url": "https://github.com/we-promise/sure",
+      "description": "The personal finance app for everyone (by everyone)",
+      "topics": [],
+      "language": "Ruby",
+      "stars": 14741,
+      "forks": 1119,
+      "open_issues": 921,
+      "license": "AGPL-3.0",
+      "archived": false,
+      "pushed_at": "2026-11-13T22:00:45Z",
+      "updated_at": "2026-11-14T00:49:42Z",
+      "source": "trending:daily/all",
+      "collected_at": "2026-11-14T00:49:43.136521+00:00",
+      "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
+    },
+    {
       "full_name": "OrchestratorInc/agent-orchestrator",
       "html_url": "https://github.com/OrchestratorInc/agent-orchestrator",
       "description": "Plan, run and supervise fleets of agents from task to merged PR. Desktop (macOS, Windows, Linux) + iPhone & Android apps.  Supports Claude Code, Codex & 35+ coding agents.",
@@ -5133,23 +5149,6 @@
         "MengEn-Ink:starred"
       ],
       "first_seen_at": "2026-10-28T06:51:48.450203+00:00"
-    },
-    {
-      "full_name": "we-promise/sure",
-      "html_url": "https://github.com/we-promise/sure",
-      "description": "The personal finance app for everyone (by everyone)",
-      "topics": [],
-      "language": "Ruby",
-      "stars": 13835,
-      "forks": 1026,
-      "open_issues": 889,
-      "license": "AGPL-3.0",
-      "archived": false,
-      "pushed_at": "2026-11-12T21:54:49Z",
-      "updated_at": "2026-11-12T22:10:17Z",
-      "source": "trending:daily/all",
-      "collected_at": "2026-11-12T22:10:24.937617+00:00",
-      "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
     },
     {
       "full_name": "e2e-inc/e2e",
@@ -5317,6 +5316,30 @@
       "first_seen_at": "2026-11-12T12:28:08.319589+00:00"
     },
     {
+      "full_name": "max-sixty/worktrunk",
+      "html_url": "https://github.com/max-sixty/worktrunk",
+      "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+      "topics": [
+        "agents",
+        "claude-code",
+        "codex",
+        "developer-tools",
+        "git",
+        "worktrees"
+      ],
+      "language": "Rust",
+      "stars": 12514,
+      "forks": 495,
+      "open_issues": 59,
+      "license": "NOASSERTION",
+      "archived": false,
+      "pushed_at": "2026-11-13T20:49:46Z",
+      "updated_at": "2026-11-14T00:29:17Z",
+      "source": "trending:weekly/rust",
+      "collected_at": "2026-11-14T00:49:48.124615+00:00",
+      "first_seen_at": "2026-11-02T08:05:20.296989+00:00"
+    },
+    {
       "full_name": "NVIDIA/auto-ontology",
       "html_url": "https://github.com/NVIDIA/auto-ontology",
       "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
@@ -5336,30 +5359,6 @@
       ],
       "relationships": [],
       "first_seen_at": "2026-11-05T12:05:52.052165+00:00"
-    },
-    {
-      "full_name": "max-sixty/worktrunk",
-      "html_url": "https://github.com/max-sixty/worktrunk",
-      "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
-      "topics": [
-        "agents",
-        "claude-code",
-        "codex",
-        "developer-tools",
-        "git",
-        "worktrees"
-      ],
-      "language": "Rust",
-      "stars": 12473,
-      "forks": 495,
-      "open_issues": 60,
-      "license": "NOASSERTION",
-      "archived": false,
-      "pushed_at": "2026-11-12T20:06:56Z",
-      "updated_at": "2026-11-12T20:57:34Z",
-      "source": "trending:weekly/rust",
-      "collected_at": "2026-11-12T22:10:28.768715+00:00",
-      "first_seen_at": "2026-11-02T08:05:20.296989+00:00"
     },
     {
       "full_name": "Arize-ai/phoenix",
@@ -6075,15 +6074,15 @@
       "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
       "topics": [],
       "language": "TypeScript",
-      "stars": 8751,
-      "forks": 1055,
+      "stars": 8770,
+      "forks": 1053,
       "open_issues": 19,
       "license": "Apache-2.0",
       "archived": false,
       "pushed_at": "2026-08-17T20:20:23Z",
-      "updated_at": "2026-11-12T15:30:10Z",
+      "updated_at": "2026-11-13T23:23:36Z",
       "source": "trending:daily/typescript",
-      "collected_at": "2026-11-12T22:10:27.263442+00:00",
+      "collected_at": "2026-11-14T00:49:45.901453+00:00",
       "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
     },
     {
@@ -7535,6 +7534,7 @@
         "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}",
         "search:topic:claude-code stars:>50 archived:false"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-12T01:51:37.077032+00:00"
     },
     {
@@ -7675,6 +7675,7 @@
         "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}",
         "trending:daily/python"
       ],
+      "relationships": [],
       "first_seen_at": "2026-10-28T06:51:52.570687+00:00"
     },
     {
@@ -7876,15 +7877,15 @@
         "google-cloud"
       ],
       "language": "Go",
-      "stars": 4557,
+      "stars": 4556,
       "forks": 1604,
-      "open_issues": 407,
+      "open_issues": 425,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-12T21:11:29Z",
-      "updated_at": "2026-11-12T12:19:51Z",
+      "pushed_at": "2026-11-13T22:50:07Z",
+      "updated_at": "2026-11-13T07:19:22Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-11-12T22:10:28.340129+00:00",
+      "collected_at": "2026-11-14T00:49:47.013884+00:00",
       "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
     },
     {
@@ -9242,6 +9243,7 @@
       "also_seen_in": [
         "search:topic:claude-code stars:>50 archived:false"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-08T14:57:01.805749+00:00"
     },
     {
@@ -10410,6 +10412,7 @@
       "also_seen_in": [
         "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-12T01:51:37.077032+00:00"
     },
     {
@@ -11794,6 +11797,7 @@
       "also_seen_in": [
         "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-12T12:28:08.319589+00:00"
     },
     {
@@ -14735,121 +14739,134 @@
     "search:created:>{days_ago:30} stars:>300": {
       "ok": true,
       "count": 30,
+      "cached": true,
       "fetched_at": "2026-11-13T16:04:05.552685+00:00"
     },
     "search:created:>{days_ago:90} topic:ai-agent stars:>100": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-13T16:04:05.552685+00:00"
     },
     "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}": {
       "ok": true,
-      "count": 20,
+      "count": 24,
+      "cached": true,
       "fetched_at": "2026-11-13T16:04:05.552685+00:00"
     },
     "search:topic:claude-code stars:>50 archived:false": {
       "ok": true,
-      "count": 20,
+      "count": 26,
+      "cached": true,
       "fetched_at": "2026-11-13T16:04:05.552685+00:00"
     },
     "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
-      "count": 20,
+      "count": 23,
+      "cached": true,
       "fetched_at": "2026-11-13T16:04:05.552685+00:00"
     },
     "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-11-13T16:04:05.552685+00:00"
     },
     "search:topic:prompt-engineering stars:>300 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-13T16:04:05.552685+00:00"
     },
     "search:topic:workflow-automation stars:>300 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-13T16:04:05.552685+00:00"
     },
     "search:topic:shadcn-ui stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-13T16:04:05.552685+00:00"
     },
     "search:topic:react-components stars:>500 archived:false pushed:>{days_ago:60}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-13T16:04:05.552685+00:00"
     },
     "search:topic:rss stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-13T16:04:05.552685+00:00"
     },
     "search:topic:self-hosted stars:>2000 archived:false pushed:>{days_ago:30}": {
       "ok": true,
-      "count": 20,
+      "count": 22,
+      "cached": true,
       "fetched_at": "2026-11-13T16:04:05.552685+00:00"
     },
     "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-13T16:04:05.552685+00:00"
     },
     "trending:daily/all": {
       "ok": true,
       "count": 13,
       "listed": 13,
-      "fetched_at": "2026-11-13T16:04:05.552685+00:00"
+      "fetched_at": "2026-11-14T00:49:42.624406+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
       "count": 11,
       "listed": 11,
-      "fetched_at": "2026-11-13T16:04:05.552685+00:00"
+      "fetched_at": "2026-11-14T00:49:42.624406+00:00"
     },
     "trending:daily/python": {
       "ok": true,
       "count": 16,
       "listed": 16,
-      "fetched_at": "2026-11-13T16:04:05.552685+00:00"
+      "fetched_at": "2026-11-14T00:49:42.624406+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
       "count": 20,
       "listed": 20,
-      "fetched_at": "2026-11-13T16:04:05.552685+00:00"
+      "fetched_at": "2026-11-14T00:49:42.624406+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 14,
       "listed": 14,
-      "fetched_at": "2026-11-13T16:04:05.552685+00:00"
+      "fetched_at": "2026-11-14T00:49:42.624406+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
       "count": 15,
       "listed": 15,
-      "fetched_at": "2026-11-13T16:04:05.552685+00:00"
+      "fetched_at": "2026-11-14T00:49:42.624406+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
       "count": 21,
       "listed": 21,
-      "fetched_at": "2026-11-13T16:04:05.552685+00:00"
+      "fetched_at": "2026-11-14T00:49:42.624406+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 13,
       "listed": 13,
-      "fetched_at": "2026-11-13T16:04:05.552685+00:00"
+      "fetched_at": "2026-11-14T00:49:42.624406+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-11-13T16:04:05.552685+00:00"
+      "fetched_at": "2026-11-14T00:49:42.624406+00:00"
     }
   },
   "schema_version": 1
