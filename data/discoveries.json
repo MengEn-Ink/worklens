@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T23:47:58.651535+00:00",
+  "generated_at": "2026-11-15T05:58:45.800922+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -148,15 +148,15 @@
         "agent-skills"
       ],
       "language": "Python",
-      "stars": 194145,
-      "forks": 22831,
-      "open_issues": 1531,
+      "stars": 194709,
+      "forks": 22905,
+      "open_issues": 1543,
       "license": null,
       "archived": false,
-      "pushed_at": "2026-11-06T22:32:32Z",
-      "updated_at": "2026-11-14T00:48:37Z",
+      "pushed_at": "2026-11-14T21:52:49Z",
+      "updated_at": "2026-11-15T05:57:01Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-14T00:49:44.294784+00:00",
+      "collected_at": "2026-11-15T05:58:47.002728+00:00",
       "also_seen_in": [
         "trending:weekly/python"
       ],
@@ -568,15 +568,15 @@
         "skills"
       ],
       "language": "JavaScript",
-      "stars": 117147,
-      "forks": 12250,
-      "open_issues": 140,
+      "stars": 117645,
+      "forks": 12310,
+      "open_issues": 124,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-11-01T19:24:49Z",
-      "updated_at": "2026-11-14T00:48:39Z",
+      "pushed_at": "2026-11-14T04:33:56Z",
+      "updated_at": "2026-11-15T05:54:27Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-14T00:49:43.583928+00:00",
+      "collected_at": "2026-11-15T05:58:47.954379+00:00",
       "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
     },
     {
@@ -751,15 +751,15 @@
         "xpath"
       ],
       "language": "Python",
-      "stars": 102498,
-      "forks": 10674,
-      "open_issues": 30,
+      "stars": 103038,
+      "forks": 10735,
+      "open_issues": 21,
       "license": "BSD-3-Clause",
       "archived": false,
-      "pushed_at": "2026-11-11T19:16:10Z",
-      "updated_at": "2026-11-14T00:43:45Z",
+      "pushed_at": "2026-11-14T17:28:43Z",
+      "updated_at": "2026-11-15T05:57:55Z",
       "source": "trending:weekly/python",
-      "collected_at": "2026-11-14T00:49:45.237460+00:00",
+      "collected_at": "2026-11-15T05:58:49.348991+00:00",
       "first_seen_at": "2026-11-02T18:08:20.681670+00:00"
     },
     {
@@ -1854,6 +1854,27 @@
       "first_seen_at": "2026-11-08T20:20:53.782475+00:00"
     },
     {
+      "full_name": "vercel-labs/agent-browser",
+      "html_url": "https://github.com/vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "topics": [],
+      "language": "Rust",
+      "stars": 51296,
+      "forks": 3582,
+      "open_issues": 576,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-11-15T03:21:45Z",
+      "updated_at": "2026-11-15T05:52:15Z",
+      "source": "trending:weekly/all",
+      "collected_at": "2026-11-15T05:58:47.496552+00:00",
+      "also_seen_in": [
+        "trending:weekly/rust"
+      ],
+      "relationships": [],
+      "first_seen_at": "2026-11-03T19:22:39.529433+00:00"
+    },
+    {
       "full_name": "astral-sh/ruff",
       "html_url": "https://github.com/astral-sh/ruff",
       "description": "An extremely fast Python linter and code formatter, written in Rust.",
@@ -1881,6 +1902,42 @@
       "source": "trending:weekly/rust",
       "collected_at": "2026-11-14T11:21:03.298965+00:00",
       "first_seen_at": "2026-11-07T14:49:51.944218+00:00"
+    },
+    {
+      "full_name": "herdrdev/herdr",
+      "html_url": "https://github.com/herdrdev/herdr",
+      "description": "the runtime your coding agents live on",
+      "topics": [
+        "agent",
+        "agent-orchestration",
+        "ai",
+        "ai-agents",
+        "claude-code",
+        "cli",
+        "codex",
+        "coding-agents",
+        "developer-tools",
+        "devtools",
+        "multiplexer",
+        "rust",
+        "terminal",
+        "terminal-multiplexer",
+        "terminal-ui",
+        "tmux",
+        "tui",
+        "workspace-manager"
+      ],
+      "language": "Rust",
+      "stars": 51026,
+      "forks": 4130,
+      "open_issues": 495,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-11-07T12:32:55Z",
+      "updated_at": "2026-11-15T05:46:04Z",
+      "source": "trending:weekly/rust",
+      "collected_at": "2026-11-15T05:58:50.241384+00:00",
+      "first_seen_at": "2026-11-02T18:08:20.681670+00:00"
     },
     {
       "full_name": "alibaba/open-code-review",
@@ -1944,63 +2001,6 @@
       "source": "search:topic:self-hosted stars:>2000 archived:false pushed:>{days_ago:30}",
       "collected_at": "2026-11-14T17:53:13.896937+00:00",
       "first_seen_at": "2026-11-14T17:52:34.688203+00:00"
-    },
-    {
-      "full_name": "herdrdev/herdr",
-      "html_url": "https://github.com/herdrdev/herdr",
-      "description": "the runtime your coding agents live on",
-      "topics": [
-        "agent",
-        "agent-orchestration",
-        "ai",
-        "ai-agents",
-        "claude-code",
-        "cli",
-        "codex",
-        "coding-agents",
-        "developer-tools",
-        "devtools",
-        "multiplexer",
-        "rust",
-        "terminal",
-        "terminal-multiplexer",
-        "terminal-ui",
-        "tmux",
-        "tui",
-        "workspace-manager"
-      ],
-      "language": "Rust",
-      "stars": 50849,
-      "forks": 4107,
-      "open_issues": 491,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-07T12:32:55Z",
-      "updated_at": "2026-11-14T00:46:07Z",
-      "source": "trending:weekly/rust",
-      "collected_at": "2026-11-14T00:49:47.730660+00:00",
-      "first_seen_at": "2026-11-02T18:08:20.681670+00:00"
-    },
-    {
-      "full_name": "vercel-labs/agent-browser",
-      "html_url": "https://github.com/vercel-labs/agent-browser",
-      "description": "Browser automation CLI for AI agents",
-      "topics": [],
-      "language": "Rust",
-      "stars": 50725,
-      "forks": 3526,
-      "open_issues": 572,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-14T00:37:11Z",
-      "updated_at": "2026-11-14T00:49:31Z",
-      "source": "trending:weekly/all",
-      "collected_at": "2026-11-14T00:49:44.786344+00:00",
-      "also_seen_in": [
-        "trending:weekly/rust"
-      ],
-      "relationships": [],
-      "first_seen_at": "2026-11-03T19:22:39.529433+00:00"
     },
     {
       "full_name": "HKUDS/nanobot",
@@ -4926,6 +4926,23 @@
       "first_seen_at": "2026-11-14T17:52:34.688203+00:00"
     },
     {
+      "full_name": "we-promise/sure",
+      "html_url": "https://github.com/we-promise/sure",
+      "description": "The personal finance app for everyone (by everyone)",
+      "topics": [],
+      "language": "Ruby",
+      "stars": 15416,
+      "forks": 1304,
+      "open_issues": 944,
+      "license": "AGPL-3.0",
+      "archived": false,
+      "pushed_at": "2026-11-15T04:58:28Z",
+      "updated_at": "2026-11-15T05:57:40Z",
+      "source": "trending:daily/all",
+      "collected_at": "2026-11-15T05:58:46.436186+00:00",
+      "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
+    },
+    {
       "full_name": "oblien/openship",
       "html_url": "https://github.com/oblien/openship",
       "description": "Self-hosted deployment platform",
@@ -4974,23 +4991,6 @@
       "source": "trending:daily/typescript",
       "collected_at": "2026-11-14T11:20:55.132677+00:00",
       "first_seen_at": "2026-11-14T11:20:28.800577+00:00"
-    },
-    {
-      "full_name": "we-promise/sure",
-      "html_url": "https://github.com/we-promise/sure",
-      "description": "The personal finance app for everyone (by everyone)",
-      "topics": [],
-      "language": "Ruby",
-      "stars": 14741,
-      "forks": 1119,
-      "open_issues": 921,
-      "license": "AGPL-3.0",
-      "archived": false,
-      "pushed_at": "2026-11-13T22:00:45Z",
-      "updated_at": "2026-11-14T00:49:42Z",
-      "source": "trending:daily/all",
-      "collected_at": "2026-11-14T00:49:43.136521+00:00",
-      "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
     },
     {
       "full_name": "OrchestratorInc/agent-orchestrator",
@@ -5274,15 +5274,15 @@
         "worktrees"
       ],
       "language": "Rust",
-      "stars": 12514,
-      "forks": 495,
-      "open_issues": 59,
-      "license": "NOASSERTION",
+      "stars": 12532,
+      "forks": 497,
+      "open_issues": 62,
+      "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-13T20:49:46Z",
-      "updated_at": "2026-11-14T00:29:17Z",
+      "pushed_at": "2026-11-15T01:03:17Z",
+      "updated_at": "2026-11-15T04:24:04Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-14T00:49:48.124615+00:00",
+      "collected_at": "2026-11-15T05:58:50.720563+00:00",
       "first_seen_at": "2026-11-02T08:05:20.296989+00:00"
     },
     {
@@ -5996,6 +5996,23 @@
       "first_seen_at": "2026-11-14T11:20:28.800577+00:00"
     },
     {
+      "full_name": "google-labs-code/stitch-skills",
+      "html_url": "https://github.com/google-labs-code/stitch-skills",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "topics": [],
+      "language": "TypeScript",
+      "stars": 8972,
+      "forks": 1069,
+      "open_issues": 19,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-08-17T20:20:23Z",
+      "updated_at": "2026-11-15T05:52:05Z",
+      "source": "trending:daily/typescript",
+      "collected_at": "2026-11-15T05:58:48.697744+00:00",
+      "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
+    },
+    {
       "full_name": "l0ng-ai/openidea",
       "html_url": "https://github.com/l0ng-ai/openidea",
       "description": "The IDE you know, rebuilt in Rust. IntelliJ IDEA–style keymap, tool windows and search-everywhere in a fast native app: editor, code insight, debugger, Git, terminal, database and HTTP clients for 60+ languages.",
@@ -6084,23 +6101,6 @@
       "source": "search:created:>{days_ago:30} stars:>300",
       "collected_at": "2026-11-14T17:52:35.782534+00:00",
       "first_seen_at": "2026-11-10T02:38:34.224505+00:00"
-    },
-    {
-      "full_name": "google-labs-code/stitch-skills",
-      "html_url": "https://github.com/google-labs-code/stitch-skills",
-      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
-      "topics": [],
-      "language": "TypeScript",
-      "stars": 8770,
-      "forks": 1053,
-      "open_issues": 19,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-08-17T20:20:23Z",
-      "updated_at": "2026-11-13T23:23:36Z",
-      "source": "trending:daily/typescript",
-      "collected_at": "2026-11-14T00:49:45.901453+00:00",
-      "first_seen_at": "2026-11-11T16:00:10.545184+00:00"
     },
     {
       "full_name": "founded-labs/react-native-reusables",
@@ -14764,55 +14764,55 @@
       "ok": true,
       "count": 12,
       "listed": 12,
-      "fetched_at": "2026-11-14T23:47:58.651535+00:00"
+      "fetched_at": "2026-11-15T05:58:45.800922+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
       "count": 15,
       "listed": 15,
-      "fetched_at": "2026-11-14T23:47:58.651535+00:00"
+      "fetched_at": "2026-11-15T05:58:45.800922+00:00"
     },
     "trending:daily/python": {
       "ok": true,
       "count": 16,
       "listed": 16,
-      "fetched_at": "2026-11-14T23:47:58.651535+00:00"
+      "fetched_at": "2026-11-15T05:58:45.800922+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
       "count": 18,
       "listed": 18,
-      "fetched_at": "2026-11-14T23:47:58.651535+00:00"
+      "fetched_at": "2026-11-15T05:58:45.800922+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 16,
       "listed": 16,
-      "fetched_at": "2026-11-14T23:47:58.651535+00:00"
+      "fetched_at": "2026-11-15T05:58:45.800922+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
       "count": 17,
       "listed": 17,
-      "fetched_at": "2026-11-14T23:47:58.651535+00:00"
+      "fetched_at": "2026-11-15T05:58:45.800922+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
       "count": 19,
       "listed": 19,
-      "fetched_at": "2026-11-14T23:47:58.651535+00:00"
+      "fetched_at": "2026-11-15T05:58:45.800922+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 14,
       "listed": 14,
-      "fetched_at": "2026-11-14T23:47:58.651535+00:00"
+      "fetched_at": "2026-11-15T05:58:45.800922+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-11-14T23:47:58.651535+00:00"
+      "fetched_at": "2026-11-15T05:58:45.800922+00:00"
     }
   },
   "schema_version": 1
