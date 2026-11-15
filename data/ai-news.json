@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T05:59:01.470891+00:00",
+  "generated_at": "2026-11-15T15:34:43.004232+00:00",
   "items": [
     {
       "title": "UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
@@ -3598,10 +3598,11 @@
     },
     "Hacker News": {
       "ok": true,
-      "cached": true,
+      "cached": false,
+      "not_modified": false,
       "count": 2,
-      "fetched_at": "2026-11-14T11:21:46.606485+00:00",
-      "checked_at": "2026-11-14T11:21:46.606485+00:00"
+      "fetched_at": "2026-11-15T15:34:43.004232+00:00",
+      "checked_at": "2026-11-15T15:34:43.004232+00:00"
     },
     "Lobsters": {
       "ok": true,
@@ -4813,9 +4814,9 @@
     "Hacker News": {
       "items": [
         {
-          "title": "Security Agencies Worldwide Found to Use Ad-Based Surveillance System",
-          "url": "https://citizenlab.ca/security-agencies-worldwide-found-to-use-ad-based-surveillance-system",
-          "published_at": "2026-11-14T02:15:41Z",
+          "title": "Understanding Positional Embeddings in Modern LLMs",
+          "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
+          "published_at": "2026-11-15T12:14:06Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4826,16 +4827,16 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50492950,
-            "score": 112,
-            "comments": 11
+            "hn_id": 50506376,
+            "score": 73,
+            "comments": 0
           },
           "also_seen_in": []
         },
         {
-          "title": "Ctrl+C, Ctrl+v, Ctrl+cve: Bypassing Android's Clipboard Read Security Measures",
-          "url": "https://toninoble.com/post/ctrlc-ctrlv-ctrlcve",
-          "published_at": "2026-11-13T18:23:49Z",
+          "title": "PyPI's redesigned project pages with clearer security signals are now live",
+          "url": "https://blog.pypi.org/posts/2026-11-06-ui-updates-complete",
+          "published_at": "2026-11-14T15:40:52Z",
           "site_name": "Hacker News",
           "source": [
             "Hacker News"
@@ -4846,15 +4847,15 @@
             "community"
           ],
           "metadata": {
-            "hn_id": 50487605,
-            "score": 88,
-            "comments": 43
+            "hn_id": 50497892,
+            "score": 261,
+            "comments": 117
           },
           "also_seen_in": []
         }
       ],
-      "fetched_at": "2026-11-14T11:21:46.606485+00:00",
-      "checked_at": "2026-11-14T11:21:46.606485+00:00",
+      "fetched_at": "2026-11-15T15:34:43.004232+00:00",
+      "checked_at": "2026-11-15T15:34:43.004232+00:00",
       "config_hash": "dab31b3ea2d6e110"
     },
     "Lobsters": {
