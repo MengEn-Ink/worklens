@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T05:58:46.152218+00:00",
+  "generated_at": "2026-11-16T18:19:40.233247+00:00",
   "items": [
     {
       "title": "UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
@@ -3597,11 +3597,12 @@
       "checked_at": "2026-11-15T20:59:34.280690+00:00"
     },
     "Hacker News": {
-      "ok": true,
+      "ok": false,
+      "degraded": true,
       "cached": true,
       "count": 2,
-      "fetched_at": "2026-11-15T15:34:43.004232+00:00",
-      "checked_at": "2026-11-15T15:34:43.004232+00:00"
+      "error": "source returned an empty parsed result",
+      "fetched_at": "2026-11-15T15:34:43.004232+00:00"
     },
     "Lobsters": {
       "ok": true,
