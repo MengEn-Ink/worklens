@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-17T02:54:18.151693+00:00",
+  "generated_at": "2026-11-17T13:00:55.958642+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -2714,10 +2714,13 @@
       "id": "SR-0076",
       "subject": "mvanhorn/last30days-skill",
       "html_url": "https://github.com/mvanhorn/last30days-skill",
-      "source": "trending:weekly/python",
-      "also_seen_in": [],
+      "source": "trending:daily/all",
+      "also_seen_in": [
+        "trending:daily/python",
+        "trending:weekly/python"
+      ],
       "enqueued_at": "2026-10-29T12:10:02.308918+00:00",
-      "metadata_synced_at": "2026-11-16T18:19:43.062420+00:00",
+      "metadata_synced_at": "2026-11-17T13:00:55.947901+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
@@ -2876,7 +2879,7 @@
       "id": "SR-0081",
       "subject": "kajisho5/ffmpeg-skill",
       "html_url": "https://github.com/kajisho5/ffmpeg-skill",
-      "source": "trending:daily/python",
+      "source": "trending:daily/all",
       "also_seen_in": [
         "search:topic:claude-code stars:>50 archived:false",
         "trending:weekly/python",
@@ -2884,7 +2887,7 @@
         "trending:daily/python"
       ],
       "enqueued_at": "2026-10-29T12:10:02.315086+00:00",
-      "metadata_synced_at": "2026-11-17T02:54:18.144686+00:00",
+      "metadata_synced_at": "2026-11-17T13:00:55.952155+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
@@ -8658,11 +8661,11 @@
       "source": "trending:weekly/python",
       "also_seen_in": [],
       "enqueued_at": "2026-11-14T11:21:49.203029+00:00",
-      "metadata_synced_at": "2026-11-14T11:21:49.203029+00:00",
+      "metadata_synced_at": "2026-11-17T13:00:55.952178+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 6383,
+      "stars": 6892,
       "pushed_at": "2026-09-13T14:10:31Z",
       "checks": {
         "license_declared": {
