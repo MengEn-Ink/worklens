@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-18T07:01:24.903290+00:00",
+  "generated_at": "2026-11-18T17:08:50.499782+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -1345,16 +1345,16 @@
       "id": "SR-0035",
       "subject": "obra/superpowers",
       "html_url": "https://github.com/obra/superpowers",
-      "source": "trending:weekly/all",
+      "source": "trending:daily/all",
       "also_seen_in": [
         "trending:weekly/all"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600350+00:00",
-      "metadata_synced_at": "2026-11-09T05:51:40.582269+00:00",
+      "metadata_synced_at": "2026-11-18T17:08:50.493000+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 314686,
+      "stars": 319852,
       "pushed_at": "2026-11-03T23:24:58Z",
       "checks": {
         "license_declared": {
@@ -1379,15 +1379,15 @@
       "id": "SR-0036",
       "subject": "affaan-m/ECC",
       "html_url": "https://github.com/affaan-m/ECC",
-      "source": "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}",
+      "source": "trending:daily/all",
       "also_seen_in": [],
       "enqueued_at": "2026-10-29T05:25:53.600382+00:00",
-      "metadata_synced_at": "2026-11-17T02:54:18.138373+00:00",
+      "metadata_synced_at": "2026-11-18T17:08:50.493025+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 304700,
-      "pushed_at": "2026-11-17T02:38:38Z",
+      "stars": 306275,
+      "pushed_at": "2026-11-17T06:41:46Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -1480,17 +1480,17 @@
       "id": "SR-0039",
       "subject": "Graphify-Labs/graphify",
       "html_url": "https://github.com/Graphify-Labs/graphify",
-      "source": "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}",
+      "source": "trending:daily/python",
       "also_seen_in": [
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-29T05:25:53.600576+00:00",
-      "metadata_synced_at": "2026-11-15T20:59:46.668889+00:00",
+      "metadata_synced_at": "2026-11-18T17:08:50.493114+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
-      "stars": 148339,
-      "pushed_at": "2026-11-15T20:17:32Z",
+      "stars": 150043,
+      "pushed_at": "2026-11-17T21:21:11Z",
       "checks": {
         "license_declared": {
           "status": "pass",
@@ -2879,7 +2879,7 @@
       "id": "SR-0081",
       "subject": "kajisho5/ffmpeg-skill",
       "html_url": "https://github.com/kajisho5/ffmpeg-skill",
-      "source": "trending:daily/all",
+      "source": "trending:daily/python",
       "also_seen_in": [
         "search:topic:claude-code stars:>50 archived:false",
         "trending:weekly/python",
@@ -2887,7 +2887,7 @@
         "trending:daily/python"
       ],
       "enqueued_at": "2026-10-29T12:10:02.315086+00:00",
-      "metadata_synced_at": "2026-11-18T07:01:24.896813+00:00",
+      "metadata_synced_at": "2026-11-18T17:08:50.496293+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
@@ -3477,16 +3477,16 @@
       "id": "SR-0099",
       "subject": "blader/humanizer",
       "html_url": "https://github.com/blader/humanizer",
-      "source": "search:topic:prompt-engineering stars:>300 archived:false",
+      "source": "trending:weekly/python",
       "also_seen_in": [
         "trending:weekly/python"
       ],
       "enqueued_at": "2026-10-30T12:04:33.693476+00:00",
-      "metadata_synced_at": "2026-11-10T02:41:17.896852+00:00",
+      "metadata_synced_at": "2026-11-18T17:08:50.493843+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 67155,
+      "stars": 70725,
       "pushed_at": "2026-11-10T01:35:15Z",
       "checks": {
         "license_declared": {
@@ -5288,14 +5288,14 @@
       "id": "SR-0154",
       "subject": "NVIDIA/SkillEvaluator",
       "html_url": "https://github.com/NVIDIA/SkillEvaluator",
-      "source": "trending:daily/all",
+      "source": "trending:daily/python",
       "also_seen_in": [
         "trending:daily/python",
         "trending:daily/all",
         "search:topic:claude-code stars:>50 archived:false"
       ],
       "enqueued_at": "2026-11-03T00:03:18.678615+00:00",
-      "metadata_synced_at": "2026-11-18T07:01:24.898631+00:00",
+      "metadata_synced_at": "2026-11-18T17:08:50.497256+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
@@ -8229,10 +8229,11 @@
       "source": "trending:daily/all",
       "also_seen_in": [
         "trending:daily/typescript",
-        "trending:weekly/typescript"
+        "trending:weekly/typescript",
+        "trending:weekly/all"
       ],
       "enqueued_at": "2026-11-11T16:00:51.646125+00:00",
-      "metadata_synced_at": "2026-11-17T23:28:08.624743+00:00",
+      "metadata_synced_at": "2026-11-18T17:08:50.495864+00:00",
       "state": "candidate",
       "license": "Apache-2.0",
       "archived": false,
@@ -8661,11 +8662,11 @@
       "source": "trending:weekly/python",
       "also_seen_in": [],
       "enqueued_at": "2026-11-14T11:21:49.203029+00:00",
-      "metadata_synced_at": "2026-11-17T13:00:55.952178+00:00",
+      "metadata_synced_at": "2026-11-18T17:08:50.496469+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 6892,
+      "stars": 7087,
       "pushed_at": "2026-09-13T14:10:31Z",
       "checks": {
         "license_declared": {
@@ -8957,10 +8958,11 @@
       "source": "trending:daily/all",
       "also_seen_in": [
         "trending:weekly/python",
-        "trending:daily/python"
+        "trending:daily/python",
+        "trending:weekly/all"
       ],
       "enqueued_at": "2026-11-15T15:34:46.706513+00:00",
-      "metadata_synced_at": "2026-11-17T23:28:08.624873+00:00",
+      "metadata_synced_at": "2026-11-18T17:08:50.496034+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
@@ -9671,6 +9673,72 @@
       "history": [
         {
           "at": "2026-11-18T07:01:24.902409+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0288",
+      "subject": "ComposioHQ/awesome-claude-skills",
+      "html_url": "https://github.com/ComposioHQ/awesome-claude-skills",
+      "source": "trending:daily/python",
+      "also_seen_in": [],
+      "enqueued_at": "2026-11-18T17:08:50.493695+00:00",
+      "metadata_synced_at": "2026-11-18T17:08:50.493695+00:00",
+      "state": "candidate",
+      "license": null,
+      "archived": false,
+      "stars": 79799,
+      "pushed_at": "2026-09-18T07:16:11Z",
+      "checks": {
+        "license_declared": {
+          "status": "fail",
+          "evidence": "GitHub API：未声明许可证",
+          "checked_at": "2026-11-18T17:08:50.493695+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [
+        "no_license"
+      ],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-11-18T17:08:50.493695+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0289",
+      "subject": "virgiliojr94/book-to-skill",
+      "html_url": "https://github.com/virgiliojr94/book-to-skill",
+      "source": "trending:daily/python",
+      "also_seen_in": [],
+      "enqueued_at": "2026-11-18T17:08:50.494340+00:00",
+      "metadata_synced_at": "2026-11-18T17:08:50.494340+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 38375,
+      "pushed_at": "2026-11-08T21:22:31Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-11-18T17:08:50.494340+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-11-18T17:08:50.494340+00:00",
           "event": "enqueued",
           "by": "worklens-bot",
           "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"

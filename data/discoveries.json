@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T06:58:44.041902+00:00",
+  "generated_at": "2026-11-18T17:07:57.866129+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -42,6 +42,7 @@
         "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}",
         "search:topic:claude-code stars:>50 archived:false"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-13T06:12:51.675276+00:00"
     },
     {
@@ -63,6 +64,58 @@
         "MengEn-Ink:starred"
       ],
       "first_seen_at": "2026-10-31T12:07:51.099487+00:00"
+    },
+    {
+      "full_name": "obra/superpowers",
+      "html_url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "topics": [
+        "ai",
+        "brainstorming",
+        "coding",
+        "obra",
+        "sdlc",
+        "skills",
+        "subagent-driven-development",
+        "superpowers"
+      ],
+      "language": "Shell",
+      "stars": 319852,
+      "forks": 28533,
+      "open_issues": 359,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-03T23:24:58Z",
+      "updated_at": "2026-11-18T17:07:50Z",
+      "source": "trending:daily/all",
+      "collected_at": "2026-11-18T17:07:58.729196+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
+      "full_name": "affaan-m/ECC",
+      "html_url": "https://github.com/affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "productivity"
+      ],
+      "language": "JavaScript",
+      "stars": 306275,
+      "forks": 45092,
+      "open_issues": 164,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-17T06:41:46Z",
+      "updated_at": "2026-11-18T17:06:46Z",
+      "source": "trending:daily/all",
+      "collected_at": "2026-11-18T17:07:59.692847+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
       "full_name": "NousResearch/hermes-agent",
@@ -97,6 +150,7 @@
         "search:topic:claude-code stars:>50 archived:false",
         "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-07T14:49:51.944218+00:00"
     },
     {
@@ -163,43 +217,6 @@
       ],
       "relationships": [],
       "first_seen_at": "2026-10-31T12:07:51.099487+00:00"
-    },
-    {
-      "full_name": "huggingface/transformers",
-      "html_url": "https://github.com/huggingface/transformers",
-      "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
-      "topics": [
-        "audio",
-        "deep-learning",
-        "deepseek",
-        "gemma",
-        "glm",
-        "hacktoberfest",
-        "llm",
-        "machine-learning",
-        "model-hub",
-        "natural-language-processing",
-        "nlp",
-        "pretrained-models",
-        "python",
-        "pytorch",
-        "pytorch-transformers",
-        "qwen",
-        "speech-recognition",
-        "transformer",
-        "vlm"
-      ],
-      "language": "Python",
-      "stars": 169304,
-      "forks": 35276,
-      "open_issues": 1113,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-18T04:54:35Z",
-      "updated_at": "2026-11-18T06:56:40Z",
-      "source": "trending:daily/python",
-      "collected_at": "2026-11-18T06:59:35.388218+00:00",
-      "first_seen_at": "2026-11-17T02:51:36.336893+00:00"
     },
     {
       "full_name": "langgenius/dify",
@@ -311,6 +328,44 @@
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
     },
     {
+      "full_name": "Graphify-Labs/graphify",
+      "html_url": "https://github.com/Graphify-Labs/graphify",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "topics": [
+        "ai-agents",
+        "antigravity",
+        "ast",
+        "claude-code",
+        "code-analysis",
+        "code-search",
+        "codex",
+        "cursor",
+        "developer-tools",
+        "gemini",
+        "graphify",
+        "graphrag",
+        "knowledge-graph",
+        "leiden",
+        "llm",
+        "mcp",
+        "openclaw",
+        "rag",
+        "skills",
+        "tree-sitter"
+      ],
+      "language": "Python",
+      "stars": 150043,
+      "forks": 14419,
+      "open_issues": 1671,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-11-17T21:21:11Z",
+      "updated_at": "2026-11-18T17:03:10Z",
+      "source": "trending:daily/python",
+      "collected_at": "2026-11-18T17:08:05.218788+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "langchain-ai/langchain",
       "html_url": "https://github.com/langchain-ai/langchain",
       "description": "The agent engineering platform.",
@@ -385,7 +440,6 @@
       "also_seen_in": [
         "trending:weekly/python"
       ],
-      "relationships": [],
       "first_seen_at": "2026-11-05T12:05:52.052165+00:00"
     },
     {
@@ -494,6 +548,10 @@
       "updated_at": "2026-11-18T06:58:14Z",
       "source": "search:topic:claude-code stars:>50 archived:false",
       "collected_at": "2026-11-18T06:58:55.390006+00:00",
+      "also_seen_in": [
+        "trending:daily/typescript"
+      ],
+      "relationships": [],
       "first_seen_at": "2026-11-05T12:05:52.052165+00:00"
     },
     {
@@ -625,6 +683,10 @@
       "updated_at": "2026-11-18T06:59:07Z",
       "source": "search:topic:self-hosted stars:>2000 archived:false pushed:>{days_ago:30}",
       "collected_at": "2026-11-18T06:59:23.450279+00:00",
+      "also_seen_in": [
+        "trending:weekly/typescript"
+      ],
+      "relationships": [],
       "first_seen_at": "2026-11-18T06:58:44.041902+00:00"
     },
     {
@@ -728,30 +790,9 @@
       "archived": false,
       "pushed_at": "2026-11-18T05:14:00Z",
       "updated_at": "2026-11-18T06:57:42Z",
-      "source": "trending:weekly/all",
+      "source": "trending:weekly/python",
       "collected_at": "2026-11-18T06:59:33.679608+00:00",
-      "also_seen_in": [
-        "trending:weekly/python"
-      ],
-      "relationships": [],
       "first_seen_at": "2026-11-07T14:49:51.944218+00:00"
-    },
-    {
-      "full_name": "openai/whisper",
-      "html_url": "https://github.com/openai/whisper",
-      "description": "Robust Speech Recognition via Large-Scale Weak Supervision",
-      "topics": [],
-      "language": "Python",
-      "stars": 112944,
-      "forks": 13695,
-      "open_issues": 186,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-08-31T17:19:19Z",
-      "updated_at": "2026-11-17T13:00:08Z",
-      "source": "trending:daily/python",
-      "collected_at": "2026-11-17T13:00:24.554477+00:00",
-      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
       "full_name": "pbakaus/impeccable",
@@ -775,68 +816,6 @@
       "source": "search:topic:agent-skills stars:>50 archived:false",
       "collected_at": "2026-11-17T23:26:23.252216+00:00",
       "first_seen_at": "2026-11-17T23:26:15.152128+00:00"
-    },
-    {
-      "full_name": "ruvnet/RuView",
-      "html_url": "https://github.com/ruvnet/RuView",
-      "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
-      "topics": [
-        "claude",
-        "claude-code",
-        "esp32",
-        "firmware",
-        "home-assistant",
-        "home-automation",
-        "iot",
-        "mcp",
-        "monitoring",
-        "networking",
-        "pose-estimation",
-        "react",
-        "rf",
-        "self-learning",
-        "spatial-intelligence",
-        "typescript",
-        "webassembly",
-        "wifi",
-        "wifi-security"
-      ],
-      "language": "Rust",
-      "stars": 104547,
-      "forks": 13590,
-      "open_issues": 595,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-18T06:17:10Z",
-      "updated_at": "2026-11-18T06:53:42Z",
-      "source": "trending:weekly/rust",
-      "collected_at": "2026-11-18T06:59:44.824897+00:00",
-      "first_seen_at": "2026-11-10T02:38:34.224505+00:00"
-    },
-    {
-      "full_name": "angular/angular",
-      "html_url": "https://github.com/angular/angular",
-      "description": "Deliver web apps with confidence 🚀",
-      "topics": [
-        "angular",
-        "javascript",
-        "pwa",
-        "typescript",
-        "web",
-        "web-framework",
-        "web-performance"
-      ],
-      "language": "TypeScript",
-      "stars": 101488,
-      "forks": 28213,
-      "open_issues": 961,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-17T00:52:39Z",
-      "updated_at": "2026-11-17T13:00:21Z",
-      "source": "trending:daily/typescript",
-      "collected_at": "2026-11-17T13:00:28.917803+00:00",
-      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
       "full_name": "mui/material-ui",
@@ -996,7 +975,6 @@
       "also_seen_in": [
         "trending:daily/typescript"
       ],
-      "relationships": [],
       "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
@@ -1009,15 +987,15 @@
         "ui"
       ],
       "language": "JavaScript",
-      "stars": 89265,
-      "forks": 6163,
-      "open_issues": 1315,
+      "stars": 89678,
+      "forks": 6215,
+      "open_issues": 1303,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-11-17T12:51:13Z",
-      "updated_at": "2026-11-17T13:00:21Z",
+      "pushed_at": "2026-11-18T17:04:23Z",
+      "updated_at": "2026-11-18T17:03:30Z",
       "source": "trending:daily/all",
-      "collected_at": "2026-11-17T13:00:23.230377+00:00",
+      "collected_at": "2026-11-18T17:07:59.202578+00:00",
       "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
@@ -1206,6 +1184,41 @@
       "first_seen_at": "2026-10-28T06:51:48.450166+00:00"
     },
     {
+      "full_name": "ComposioHQ/awesome-claude-skills",
+      "html_url": "https://github.com/ComposioHQ/awesome-claude-skills",
+      "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "antigravity",
+        "automation",
+        "claude",
+        "claude-code",
+        "codex",
+        "composio",
+        "cursor",
+        "developer-tools",
+        "gemini-cli",
+        "mcp",
+        "openai-codex",
+        "rube",
+        "saas",
+        "skill",
+        "workflow-automation"
+      ],
+      "language": "Python",
+      "stars": 79799,
+      "forks": 9783,
+      "open_issues": 1915,
+      "license": null,
+      "archived": false,
+      "pushed_at": "2026-09-18T07:16:11Z",
+      "updated_at": "2026-11-18T16:33:30Z",
+      "source": "trending:daily/python",
+      "collected_at": "2026-11-18T17:08:02.803824+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "unslothai/unsloth",
       "html_url": "https://github.com/unslothai/unsloth",
       "description": "Local UI to run and train LLMs and diffusion models. Supports GGUF, MLX, Qwen3.8, DeepSeek-V4.1, MiniMax-H3, Gemma 4, FLUX and more.",
@@ -1248,35 +1261,42 @@
       "first_seen_at": "2026-11-14T17:52:34.688203+00:00"
     },
     {
-      "full_name": "nestjs/nest",
-      "html_url": "https://github.com/nestjs/nest",
-      "description": "A progressive TypeScript framework for Node.js backends: from a small API in one file to efficient, scalable, enterprise-grade systems 🚀",
+      "full_name": "usestrix/strix",
+      "html_url": "https://github.com/usestrix/strix",
+      "description": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
       "topics": [
-        "framework",
-        "hacktoberfest",
-        "javascript",
-        "javascript-framework",
-        "microservices",
-        "nest",
-        "nestjs",
-        "node",
-        "nodejs",
-        "nodejs-framework",
-        "typescript",
-        "typescript-framework",
-        "websockets"
+        "agents",
+        "ai-hacking",
+        "ai-penetration-testing",
+        "ai-pentesting",
+        "ai-security",
+        "artificial-intelligence",
+        "bug-bounty",
+        "code-quality",
+        "ctf-tools",
+        "cybersecurity",
+        "cybersecurity-tools",
+        "ethical-hacking",
+        "hacking",
+        "llm-security",
+        "offensive-security",
+        "penetration-testing",
+        "pentesting-tools",
+        "red-teaming",
+        "security",
+        "security-automation"
       ],
-      "language": "TypeScript",
-      "stars": 77148,
-      "forks": 8742,
-      "open_issues": 35,
-      "license": "MIT",
+      "language": "Python",
+      "stars": 76462,
+      "forks": 8690,
+      "open_issues": 606,
+      "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-17T09:27:50Z",
-      "updated_at": "2026-11-17T12:59:53Z",
-      "source": "trending:daily/typescript",
-      "collected_at": "2026-11-17T13:00:27.543911+00:00",
-      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
+      "pushed_at": "2026-11-17T23:54:46Z",
+      "updated_at": "2026-11-18T17:03:53Z",
+      "source": "trending:daily/python",
+      "collected_at": "2026-11-18T17:08:01.362896+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
       "full_name": "Eugeny/tabby",
@@ -1372,6 +1392,54 @@
       "first_seen_at": "2026-11-18T06:58:44.041902+00:00"
     },
     {
+      "full_name": "Alishahryar1/free-claude-code",
+      "html_url": "https://github.com/Alishahryar1/free-claude-code",
+      "description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
+      "topics": [],
+      "language": "Python",
+      "stars": 71502,
+      "forks": 11079,
+      "open_issues": 416,
+      "license": "NOASSERTION",
+      "archived": false,
+      "pushed_at": "2026-11-18T07:56:32Z",
+      "updated_at": "2026-11-18T17:05:19Z",
+      "source": "trending:weekly/python",
+      "collected_at": "2026-11-18T17:08:11.058124+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
+      "full_name": "blader/humanizer",
+      "html_url": "https://github.com/blader/humanizer",
+      "description": "Agent skill that removes signs of AI-generated writing from text",
+      "topics": [
+        "agent-skills",
+        "ai-humanizer",
+        "ai-writing",
+        "chatgpt",
+        "claude",
+        "claude-code",
+        "codex",
+        "cursor",
+        "humanize-ai-text",
+        "humanizer",
+        "llm",
+        "prompt-engineering",
+        "writing-tools"
+      ],
+      "language": "Python",
+      "stars": 70725,
+      "forks": 5554,
+      "open_issues": 7,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-10T01:35:15Z",
+      "updated_at": "2026-11-18T17:07:57Z",
+      "source": "trending:weekly/python",
+      "collected_at": "2026-11-18T17:08:09.189854+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "mvanhorn/last30days-skill",
       "html_url": "https://github.com/mvanhorn/last30days-skill",
       "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
@@ -1415,6 +1483,30 @@
       "first_seen_at": "2026-11-16T18:16:50.356118+00:00"
     },
     {
+      "full_name": "jingyaogong/minimind",
+      "html_url": "https://github.com/jingyaogong/minimind",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "topics": [
+        "artificial-intelligence",
+        "large-language-model"
+      ],
+      "language": "Python",
+      "stars": 66458,
+      "forks": 8720,
+      "open_issues": 62,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-11-18T15:09:40Z",
+      "updated_at": "2026-11-18T17:00:48Z",
+      "source": "trending:daily/all",
+      "collected_at": "2026-11-18T17:08:00.160091+00:00",
+      "also_seen_in": [
+        "trending:daily/python"
+      ],
+      "relationships": [],
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "nocodb/nocodb",
       "html_url": "https://github.com/nocodb/nocodb",
       "description": "🔥 🔥 🔥 A Free & Self-hostable Airtable Alternative",
@@ -1450,32 +1542,6 @@
       "first_seen_at": "2026-10-28T06:51:48.450145+00:00"
     },
     {
-      "full_name": "pingdotgg/t3code",
-      "html_url": "https://github.com/pingdotgg/t3code",
-      "description": "The best way to control Claude Code, Codex and more from any computer or phone",
-      "topics": [
-        "agent-orchestration",
-        "agents",
-        "ai",
-        "chatgpt",
-        "claude",
-        "claude-code",
-        "code",
-        "vibe-coding"
-      ],
-      "language": "TypeScript",
-      "stars": 64458,
-      "forks": 11339,
-      "open_issues": 3517,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-18T06:57:27Z",
-      "updated_at": "2026-11-18T06:56:54Z",
-      "source": "trending:weekly/typescript",
-      "collected_at": "2026-11-18T06:59:39.491244+00:00",
-      "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
-    },
-    {
       "full_name": "xingshaocheng/architect-awesome",
       "html_url": "https://github.com/xingshaocheng/architect-awesome",
       "description": "后端架构师技术图谱",
@@ -1494,32 +1560,6 @@
         "MengEn-Ink:starred"
       ],
       "first_seen_at": "2026-10-28T06:51:48.450256+00:00"
-    },
-    {
-      "full_name": "router-for-me/CLIProxyAPI",
-      "html_url": "https://github.com/router-for-me/CLIProxyAPI",
-      "description": "Wrap Antigravity, ChatGPT Codex, Claude Code, Grok Build, Muse Code, Devin as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini Series, GPT Series, Grok Series, Claude model through API",
-      "topics": [
-        "antigravity",
-        "claude",
-        "claude-code",
-        "codex",
-        "devin",
-        "gemini",
-        "muse",
-        "openai"
-      ],
-      "language": "Go",
-      "stars": 58866,
-      "forks": 9019,
-      "open_issues": 896,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-17T22:18:30Z",
-      "updated_at": "2026-11-17T23:06:49Z",
-      "source": "trending:weekly/go",
-      "collected_at": "2026-11-17T23:26:55.588683+00:00",
-      "first_seen_at": "2026-11-14T11:20:28.800577+00:00"
     },
     {
       "full_name": "appwrite/appwrite",
@@ -1581,7 +1621,7 @@
       "archived": false,
       "pushed_at": "2026-11-18T05:14:01Z",
       "updated_at": "2026-11-18T06:58:53Z",
-      "source": "trending:daily/all",
+      "source": "trending:weekly/all",
       "collected_at": "2026-11-18T06:59:32.049123+00:00",
       "also_seen_in": [
         "trending:daily/typescript",
@@ -1606,6 +1646,23 @@
       "source": "trending:weekly/go",
       "collected_at": "2026-11-17T23:26:54.973488+00:00",
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
+    },
+    {
+      "full_name": "tashfeenahmed/freellmapi",
+      "html_url": "https://github.com/tashfeenahmed/freellmapi",
+      "description": "10.1 billion tokens per month. 87 free LLM providers. 1,313 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
+      "topics": [],
+      "language": "TypeScript",
+      "stars": 54506,
+      "forks": 7666,
+      "open_issues": 53,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-17T22:48:44Z",
+      "updated_at": "2026-11-18T17:07:23Z",
+      "source": "trending:daily/typescript",
+      "collected_at": "2026-11-18T17:08:06.224693+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
       "full_name": "alibaba/open-code-review",
@@ -1725,35 +1782,6 @@
       "source": "search:topic:react-components stars:>500 archived:false pushed:>{days_ago:60}",
       "collected_at": "2026-11-18T06:59:16.384207+00:00",
       "first_seen_at": "2026-11-08T20:20:53.782475+00:00"
-    },
-    {
-      "full_name": "astral-sh/ruff",
-      "html_url": "https://github.com/astral-sh/ruff",
-      "description": "An extremely fast Python linter and code formatter, written in Rust.",
-      "topics": [
-        "linter",
-        "pep8",
-        "python",
-        "python3",
-        "ruff",
-        "rust",
-        "rustpython",
-        "static-analysis",
-        "static-code-analysis",
-        "style-guide",
-        "styleguide"
-      ],
-      "language": "Rust",
-      "stars": 51416,
-      "forks": 2816,
-      "open_issues": 2292,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-17T22:20:54Z",
-      "updated_at": "2026-11-17T23:26:49Z",
-      "source": "trending:weekly/rust",
-      "collected_at": "2026-11-17T23:26:58.236230+00:00",
-      "first_seen_at": "2026-11-07T14:49:51.944218+00:00"
     },
     {
       "full_name": "ClickHouse/ClickHouse",
@@ -2079,42 +2107,42 @@
       "first_seen_at": "2026-11-18T06:58:44.041902+00:00"
     },
     {
-      "full_name": "ifixai-ai/iFixAi",
-      "html_url": "https://github.com/ifixai-ai/iFixAi",
-      "description": "Independent Auditing of AI Agents. Run by human or the agent itself, to answer the most crucial question in the AI Agent Economy. Is the agent doing what is supposed to do? With iFixAi you can have this answer in less than 120 seconds.",
+      "full_name": "GyulyVGC/sniffnet",
+      "html_url": "https://github.com/GyulyVGC/sniffnet",
+      "description": "Comfortably monitor your network traffic 🕵️‍♂️",
       "topics": [
-        "agent-evaluation",
-        "ai",
-        "ai-alignment",
-        "ai-evaluation",
-        "ai-governance",
-        "ai-safety",
-        "cli",
-        "diagnostic-tool",
-        "eu-ai-act",
-        "hallucination-detection",
-        "iso-42001",
-        "llm-evaluation",
-        "llm-security",
-        "nist-ai-rmf",
-        "owasp-llm",
-        "prompt-injection",
-        "python",
-        "responsible-ai",
-        "risk-assessment",
-        "risk-management"
+        "app",
+        "application",
+        "cybersecurity",
+        "gui",
+        "iced",
+        "ip-geolocation",
+        "ipfix",
+        "linux",
+        "macos",
+        "network",
+        "network-monitoring",
+        "networking",
+        "packet-capture",
+        "packet-sniffer",
+        "pcap",
+        "rust",
+        "security",
+        "tool",
+        "utility",
+        "windows"
       ],
-      "language": "Python",
-      "stars": 46196,
-      "forks": 1826,
-      "open_issues": 8,
+      "language": "Rust",
+      "stars": 43078,
+      "forks": 2021,
+      "open_issues": 59,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-13T12:13:52Z",
-      "updated_at": "2026-11-17T12:47:07Z",
-      "source": "trending:daily/python",
-      "collected_at": "2026-11-17T13:00:24.980869+00:00",
-      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
+      "pushed_at": "2026-11-18T16:42:32Z",
+      "updated_at": "2026-11-18T16:52:57Z",
+      "source": "trending:weekly/rust",
+      "collected_at": "2026-11-18T17:08:14.375922+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
       "full_name": "saadeghi/daisyui",
@@ -2505,6 +2533,7 @@
         "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}",
         "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-07T14:49:51.944218+00:00"
     },
     {
@@ -2555,44 +2584,47 @@
         "orchestration"
       ],
       "language": "Go",
-      "stars": 38972,
-      "forks": 6045,
+      "stars": 38983,
+      "forks": 6041,
       "open_issues": 112,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-17T12:50:11Z",
-      "updated_at": "2026-11-17T13:00:10Z",
+      "pushed_at": "2026-11-18T14:30:27Z",
+      "updated_at": "2026-11-18T17:03:54Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-11-17T13:00:30.858466+00:00",
+      "collected_at": "2026-11-18T17:08:11.789947+00:00",
       "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
-      "full_name": "HKUDS/Vibe-Trading",
-      "html_url": "https://github.com/HKUDS/Vibe-Trading",
-      "description": "\"Vibe-Trading: Your Personal Trading Agent\"",
+      "full_name": "virgiliojr94/book-to-skill",
+      "html_url": "https://github.com/virgiliojr94/book-to-skill",
+      "description": "Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work.",
       "topics": [
-        "ai-agent",
-        "algorithmic-trading",
-        "backtesting",
-        "fintech",
+        "agent-skills",
+        "ai-agents",
+        "book-to-skill",
+        "context-engineering",
+        "document-processing",
+        "edtech",
+        "knowledge-base",
+        "knowledge-management",
         "llm",
-        "mcp",
-        "multi-agent",
-        "python",
-        "quantitative-finance",
-        "trading"
+        "pdf-to-markdown",
+        "rag",
+        "self-study",
+        "study-tools"
       ],
       "language": "Python",
-      "stars": 38443,
-      "forks": 6260,
-      "open_issues": 20,
+      "stars": 38375,
+      "forks": 4085,
+      "open_issues": 37,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-11-17T16:43:28Z",
-      "updated_at": "2026-11-17T22:35:43Z",
+      "pushed_at": "2026-11-08T21:22:31Z",
+      "updated_at": "2026-11-18T16:55:04Z",
       "source": "trending:daily/python",
-      "collected_at": "2026-11-17T23:26:48.408215+00:00",
-      "first_seen_at": "2026-11-16T18:16:50.356118+00:00"
+      "collected_at": "2026-11-18T17:08:02.320143+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
       "full_name": "yetone/magpie",
@@ -2936,6 +2968,7 @@
       "also_seen_in": [
         "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-17T02:51:36.336893+00:00"
     },
     {
@@ -2998,12 +3031,8 @@
       "archived": false,
       "pushed_at": "2026-11-18T06:08:40Z",
       "updated_at": "2026-11-18T06:14:51Z",
-      "source": "trending:daily/python",
+      "source": "trending:weekly/python",
       "collected_at": "2026-11-18T06:59:34.844458+00:00",
-      "also_seen_in": [
-        "trending:weekly/python"
-      ],
-      "relationships": [],
       "first_seen_at": "2026-11-13T16:04:05.552685+00:00"
     },
     {
@@ -3257,6 +3286,31 @@
       "first_seen_at": "2026-10-30T14:58:22.918715+00:00"
     },
     {
+      "full_name": "karakeep-app/karakeep",
+      "html_url": "https://github.com/karakeep-app/karakeep",
+      "description": "A self-hostable bookmark-everything app (links, notes and images) with AI-based automatic tagging and full text search",
+      "topics": [
+        "bookmark-manager",
+        "bookmarks",
+        "bookmarks-manager",
+        "nextjs",
+        "react-native",
+        "read-it-later",
+        "self-hosted"
+      ],
+      "language": "TypeScript",
+      "stars": 30679,
+      "forks": 1661,
+      "open_issues": 731,
+      "license": "AGPL-3.0",
+      "archived": false,
+      "pushed_at": "2026-11-15T18:52:41Z",
+      "updated_at": "2026-11-18T16:33:28Z",
+      "source": "trending:daily/typescript",
+      "collected_at": "2026-11-18T17:08:05.765865+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "meta/astryx",
       "html_url": "https://github.com/meta/astryx",
       "description": "An open source design system that's fully customizable and agent ready",
@@ -3375,6 +3429,10 @@
       "updated_at": "2026-11-18T06:51:45Z",
       "source": "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}",
       "collected_at": "2026-11-18T06:58:58.827364+00:00",
+      "also_seen_in": [
+        "trending:daily/typescript"
+      ],
+      "relationships": [],
       "first_seen_at": "2026-11-18T06:58:44.041902+00:00"
     },
     {
@@ -3590,27 +3648,6 @@
       "first_seen_at": "2026-11-07T20:06:10.574371+00:00"
     },
     {
-      "full_name": "henrygd/beszel",
-      "html_url": "https://github.com/henrygd/beszel",
-      "description": "Lightweight server monitoring with historical data, docker stats, and alerts.",
-      "topics": [
-        "homelab",
-        "monitoring",
-        "self-hosted"
-      ],
-      "language": "Go",
-      "stars": 27451,
-      "forks": 1188,
-      "open_issues": 394,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-17T20:02:44Z",
-      "updated_at": "2026-11-18T06:25:39Z",
-      "source": "trending:weekly/go",
-      "collected_at": "2026-11-18T06:59:44.106794+00:00",
-      "first_seen_at": "2026-11-13T16:04:05.552685+00:00"
-    },
-    {
       "full_name": "promptfoo/promptfoo",
       "html_url": "https://github.com/promptfoo/promptfoo",
       "description": "Test your prompts, agents, and RAGs. Red teaming/pentesting/vulnerability scanning for AI. Compare performance of GPT, Claude, Gemini, DeepSeek, and more. Simple declarative configs with command line and CI/CD integration.  Used by OpenAI and Anthropic.",
@@ -3746,44 +3783,6 @@
       "first_seen_at": "2026-10-31T05:10:08.773332+00:00"
     },
     {
-      "full_name": "CapSoftware/Cap",
-      "html_url": "https://github.com/CapSoftware/Cap",
-      "description": "Open source Loom alternative. Beautiful, shareable screen recordings.",
-      "topics": [
-        "app",
-        "cap",
-        "coss",
-        "loom",
-        "mac",
-        "nextjs",
-        "nextjs15",
-        "open-source",
-        "oss",
-        "react",
-        "record",
-        "rust",
-        "screen-capture",
-        "screen-recorder",
-        "screenshot",
-        "solidjs",
-        "tauri",
-        "tauri-app",
-        "typescript",
-        "vite"
-      ],
-      "language": "Rust",
-      "stars": 25185,
-      "forks": 2372,
-      "open_issues": 439,
-      "license": "NOASSERTION",
-      "archived": false,
-      "pushed_at": "2026-11-17T23:25:38Z",
-      "updated_at": "2026-11-17T21:21:49Z",
-      "source": "trending:weekly/rust",
-      "collected_at": "2026-11-17T23:26:59.419267+00:00",
-      "first_seen_at": "2026-11-15T15:33:15.615752+00:00"
-    },
-    {
       "full_name": "vercel-labs/agent-desktop",
       "html_url": "https://github.com/vercel-labs/agent-desktop",
       "description": "Computer use CLI for AI agents",
@@ -3847,10 +3846,63 @@
       "collected_at": "2026-11-18T06:58:55.390053+00:00",
       "also_seen_in": [
         "search:topic:self-hosted stars:>2000 archived:false pushed:>{days_ago:30}",
-        "trending:weekly/typescript"
+        "trending:weekly/typescript",
+        "trending:daily/typescript"
       ],
       "relationships": [],
       "first_seen_at": "2026-10-30T12:04:07.010396+00:00"
+    },
+    {
+      "full_name": "navidrome/navidrome",
+      "html_url": "https://github.com/navidrome/navidrome",
+      "description": "🎧 Your Personal Streaming Service ",
+      "topics": [
+        "airsonic",
+        "madsonic",
+        "media-server",
+        "music",
+        "music-server",
+        "navidrome",
+        "opensubsonic",
+        "raspberry-pi",
+        "self-hosted",
+        "streamer",
+        "streaming-api",
+        "streaming-audio",
+        "subsonic",
+        "subsonic-server"
+      ],
+      "language": "Go",
+      "stars": 24834,
+      "forks": 1820,
+      "open_issues": 314,
+      "license": "GPL-3.0",
+      "archived": false,
+      "pushed_at": "2026-11-18T17:07:15Z",
+      "updated_at": "2026-11-18T16:07:26Z",
+      "source": "trending:weekly/go",
+      "collected_at": "2026-11-18T17:08:12.892011+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
+      "full_name": "HKUDS/RAG-Anything",
+      "html_url": "https://github.com/HKUDS/RAG-Anything",
+      "description": "\"RAG-Anything: All-in-One RAG Framework\"",
+      "topics": [
+        "multi-modal-rag",
+        "retrieval-augmented-generation"
+      ],
+      "language": "Python",
+      "stars": 24637,
+      "forks": 2884,
+      "open_issues": 84,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-16T15:36:03Z",
+      "updated_at": "2026-11-18T16:44:44Z",
+      "source": "trending:daily/python",
+      "collected_at": "2026-11-18T17:08:03.279194+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
       "full_name": "timqian/chinese-independent-blogs",
@@ -4195,23 +4247,6 @@
       "first_seen_at": "2026-11-17T02:51:36.336893+00:00"
     },
     {
-      "full_name": "anthropics/claude-quickstarts",
-      "html_url": "https://github.com/anthropics/claude-quickstarts",
-      "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
-      "topics": [],
-      "language": "Python",
-      "stars": 21088,
-      "forks": 3495,
-      "open_issues": 245,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-06T19:37:57Z",
-      "updated_at": "2026-11-18T06:51:26Z",
-      "source": "trending:weekly/python",
-      "collected_at": "2026-11-18T06:59:37.284047+00:00",
-      "first_seen_at": "2026-11-10T02:38:34.224505+00:00"
-    },
-    {
       "full_name": "birobirobiro/awesome-shadcn-ui",
       "html_url": "https://github.com/birobirobiro/awesome-shadcn-ui",
       "description": "A curated list of awesome things related to shadcn/ui.",
@@ -4353,27 +4388,6 @@
       "first_seen_at": "2026-10-28T06:51:48.450227+00:00"
     },
     {
-      "full_name": "motion-canvas/motion-canvas",
-      "html_url": "https://github.com/motion-canvas/motion-canvas",
-      "description": "Visualize Your Ideas With Code",
-      "topics": [
-        "animation",
-        "presentation",
-        "visualization"
-      ],
-      "language": "TypeScript",
-      "stars": 20002,
-      "forks": 921,
-      "open_issues": 179,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-07-02T20:01:32Z",
-      "updated_at": "2026-11-17T20:56:53Z",
-      "source": "trending:daily/typescript",
-      "collected_at": "2026-11-17T23:26:49.019583+00:00",
-      "first_seen_at": "2026-11-16T18:16:50.356118+00:00"
-    },
-    {
       "full_name": "ag-ui-protocol/ag-ui",
       "html_url": "https://github.com/ag-ui-protocol/ag-ui",
       "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
@@ -4435,6 +4449,23 @@
       "first_seen_at": "2026-11-18T06:58:44.041902+00:00"
     },
     {
+      "full_name": "andrewyng/openworker",
+      "html_url": "https://github.com/andrewyng/openworker",
+      "description": "",
+      "topics": [],
+      "language": "Python",
+      "stars": 19442,
+      "forks": 2776,
+      "open_issues": 415,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-17T15:15:44Z",
+      "updated_at": "2026-11-18T16:44:21Z",
+      "source": "trending:weekly/python",
+      "collected_at": "2026-11-18T17:08:10.567389+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "xerj-org/xerj",
       "html_url": "https://github.com/xerj-org/xerj",
       "description": "AI search engine and MCP server for bots and agents. One Rust binary indexes code, docs, logs, JSONL/CSV and PDFs for BM25 full-text, vector and hybrid search, code search without grep, agent memory and RAG. Elasticsearch-compatible API; Corpus Hub serves hundreds of reference memory corpora.",
@@ -4475,27 +4506,6 @@
       ],
       "relationships": [],
       "first_seen_at": "2026-11-17T02:51:36.336893+00:00"
-    },
-    {
-      "full_name": "google-deepmind/mujoco",
-      "html_url": "https://github.com/google-deepmind/mujoco",
-      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
-      "topics": [
-        "mujoco",
-        "physics",
-        "robotics"
-      ],
-      "language": "C++",
-      "stars": 18261,
-      "forks": 2211,
-      "open_issues": 421,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-18T00:20:16Z",
-      "updated_at": "2026-11-18T06:58:13Z",
-      "source": "trending:weekly/all",
-      "collected_at": "2026-11-18T06:59:34.220844+00:00",
-      "first_seen_at": "2026-11-10T02:38:34.224505+00:00"
     },
     {
       "full_name": "heydamir/unslop",
@@ -4569,6 +4579,27 @@
       "first_seen_at": "2026-11-10T02:38:34.224505+00:00"
     },
     {
+      "full_name": "cursor/plugins",
+      "html_url": "https://github.com/cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "topics": [],
+      "language": "TypeScript",
+      "stars": 17113,
+      "forks": 1886,
+      "open_issues": 677,
+      "license": null,
+      "archived": false,
+      "pushed_at": "2026-11-18T12:24:36Z",
+      "updated_at": "2026-11-18T16:52:27Z",
+      "source": "trending:daily/all",
+      "collected_at": "2026-11-18T17:07:58.258814+00:00",
+      "also_seen_in": [
+        "trending:daily/typescript"
+      ],
+      "relationships": [],
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "udecode/plate",
       "html_url": "https://github.com/udecode/plate",
       "description": "Rich-text editor with AI and shadcn/ui",
@@ -4592,6 +4623,35 @@
       "source": "search:topic:shadcn-ui stars:>200 archived:false",
       "collected_at": "2026-11-18T06:59:12.840480+00:00",
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
+    },
+    {
+      "full_name": "Billionmail/BillionMail",
+      "html_url": "https://github.com/Billionmail/BillionMail",
+      "description": "BillionMail gives you open-source MailServer, NewsLetter,  Email Marketing — fully self-hosted, dev-friendly, and free from monthly fees. Join the discord: https://discord.gg/asfXzBUhZr",
+      "topics": [
+        "dovecot",
+        "email",
+        "email-marketing",
+        "mail",
+        "mailserver",
+        "newsletter",
+        "newsletters",
+        "postfix",
+        "rspamd",
+        "server",
+        "smtp"
+      ],
+      "language": "Go",
+      "stars": 16415,
+      "forks": 1832,
+      "open_issues": 251,
+      "license": "AGPL-3.0",
+      "archived": false,
+      "pushed_at": "2026-06-11T06:44:04Z",
+      "updated_at": "2026-11-18T10:27:01Z",
+      "source": "trending:weekly/go",
+      "collected_at": "2026-11-18T17:08:12.317817+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
       "full_name": "Jackett/Jackett",
@@ -4838,6 +4898,7 @@
       "also_seen_in": [
         "search:topic:claude-code stars:>50 archived:false"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-13T06:12:51.675276+00:00"
     },
     {
@@ -5049,6 +5110,27 @@
       ],
       "relationships": [],
       "first_seen_at": "2026-11-13T16:04:05.552685+00:00"
+    },
+    {
+      "full_name": "elder-plinius/G0DM0D3",
+      "html_url": "https://github.com/elder-plinius/G0DM0D3",
+      "description": "LIBERATED AI CHAT",
+      "topics": [],
+      "language": "TypeScript",
+      "stars": 12669,
+      "forks": 2922,
+      "open_issues": 91,
+      "license": "AGPL-3.0",
+      "archived": false,
+      "pushed_at": "2026-07-15T14:48:02Z",
+      "updated_at": "2026-11-18T17:01:37Z",
+      "source": "trending:daily/typescript",
+      "collected_at": "2026-11-18T17:08:06.683606+00:00",
+      "also_seen_in": [
+        "trending:weekly/typescript"
+      ],
+      "relationships": [],
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
       "full_name": "max-sixty/worktrunk",
@@ -5639,6 +5721,32 @@
       "first_seen_at": "2026-11-18T06:58:44.041902+00:00"
     },
     {
+      "full_name": "lnkiai/m3e-canvas",
+      "html_url": "https://github.com/lnkiai/m3e-canvas",
+      "description": "Sketch Material 3 Expressive screens in the browser and turn them into vibe-coding prompts.",
+      "topics": [
+        "design-tool",
+        "material-3-expressive",
+        "material-design",
+        "material3",
+        "nextjs",
+        "prompt",
+        "react",
+        "vibe-coding"
+      ],
+      "language": "TypeScript",
+      "stars": 10611,
+      "forks": 1190,
+      "open_issues": 11,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-17T01:15:33Z",
+      "updated_at": "2026-11-18T16:53:55Z",
+      "source": "trending:daily/typescript",
+      "collected_at": "2026-11-18T17:08:08.468083+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "Ranchero-Software/NetNewsWire",
       "html_url": "https://github.com/Ranchero-Software/NetNewsWire",
       "description": "RSS reader for macOS and iOS.",
@@ -5832,7 +5940,8 @@
       "collected_at": "2026-11-17T23:26:43.052849+00:00",
       "also_seen_in": [
         "trending:daily/typescript",
-        "trending:weekly/typescript"
+        "trending:weekly/typescript",
+        "trending:weekly/all"
       ],
       "relationships": [],
       "first_seen_at": "2026-11-16T18:16:50.356118+00:00"
@@ -6002,6 +6111,23 @@
       "first_seen_at": "2026-11-18T06:58:44.041902+00:00"
     },
     {
+      "full_name": "a-ghorbani/pocketpal-ai",
+      "html_url": "https://github.com/a-ghorbani/pocketpal-ai",
+      "description": "An app that brings language models directly to your phone.",
+      "topics": [],
+      "language": "TypeScript",
+      "stars": 9569,
+      "forks": 1148,
+      "open_issues": 137,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-17T13:10:50Z",
+      "updated_at": "2026-11-18T16:13:40Z",
+      "source": "trending:daily/typescript",
+      "collected_at": "2026-11-18T17:08:08.053627+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "getarcaneapp/arcane",
       "html_url": "https://github.com/getarcaneapp/arcane",
       "description": "Modern Docker Management, Designed for Everyone",
@@ -6139,7 +6265,8 @@
       "collected_at": "2026-11-17T23:26:42.311256+00:00",
       "also_seen_in": [
         "trending:daily/python",
-        "trending:weekly/python"
+        "trending:weekly/python",
+        "trending:weekly/all"
       ],
       "relationships": [],
       "first_seen_at": "2026-11-15T15:33:15.615752+00:00"
@@ -6237,6 +6364,32 @@
       "first_seen_at": "2026-10-31T05:10:08.773332+00:00"
     },
     {
+      "full_name": "nightly-labs/openbot",
+      "html_url": "https://github.com/nightly-labs/openbot",
+      "description": "A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration.",
+      "topics": [
+        "ai-agents",
+        "bun",
+        "codex",
+        "electron",
+        "local-first",
+        "macos",
+        "solidjs",
+        "typescript"
+      ],
+      "language": "TypeScript",
+      "stars": 8884,
+      "forks": 858,
+      "open_issues": 3584,
+      "license": "NOASSERTION",
+      "archived": false,
+      "pushed_at": "2026-11-18T17:06:41Z",
+      "updated_at": "2026-11-18T17:02:41Z",
+      "source": "trending:daily/typescript",
+      "collected_at": "2026-11-18T17:08:07.583565+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "mvschwarz/openrig",
       "html_url": "https://github.com/mvschwarz/openrig",
       "description": "Build your own network of agents from Claude Code, Codex and Pi: persistent teams with roles, shared context and owned work.",
@@ -6266,6 +6419,7 @@
       "also_seen_in": [
         "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-05T12:05:52.052165+00:00"
     },
     {
@@ -6382,7 +6536,6 @@
       "also_seen_in": [
         "trending:daily/python"
       ],
-      "relationships": [],
       "first_seen_at": "2026-11-17T02:51:36.336893+00:00"
     },
     {
@@ -6622,10 +6775,9 @@
       "archived": false,
       "pushed_at": "2026-11-18T04:53:18Z",
       "updated_at": "2026-11-18T06:49:11Z",
-      "source": "trending:daily/all",
+      "source": "trending:daily/python",
       "collected_at": "2026-11-18T06:59:32.536585+00:00",
       "also_seen_in": [
-        "trending:daily/python",
         "trending:weekly/python"
       ],
       "relationships": [],
@@ -6811,34 +6963,6 @@
       "first_seen_at": "2026-11-17T02:51:36.336893+00:00"
     },
     {
-      "full_name": "DeanChensj/jiangshan-map",
-      "html_url": "https://github.com/DeanChensj/jiangshan-map",
-      "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
-      "topics": [
-        "ancient-china",
-        "cartography",
-        "china-map",
-        "chinese-history",
-        "classical-chinese-poetry",
-        "digital-humanities",
-        "gis",
-        "historical-atlas",
-        "historical-map",
-        "interactive-map"
-      ],
-      "language": "JavaScript",
-      "stars": 7563,
-      "forks": 906,
-      "open_issues": 11,
-      "license": "GPL-3.0",
-      "archived": false,
-      "pushed_at": "2026-11-17T12:53:49Z",
-      "updated_at": "2026-11-17T12:58:28Z",
-      "source": "trending:daily/all",
-      "collected_at": "2026-11-17T13:00:22.176716+00:00",
-      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
-    },
-    {
       "full_name": "Zipstack/unstract",
       "html_url": "https://github.com/Zipstack/unstract",
       "description": "LLM-Driven Extraction of Unstructured Data — Built for API Deployments & ETL Pipeline Workflows",
@@ -7019,15 +7143,36 @@
       "description": "Thirteen Claude skills that run an Instagram account: Reels off 26 scored hook formulas, a viral research skill, a caption linter, and a humanizer. Free, MIT.",
       "topics": [],
       "language": "Python",
-      "stars": 6892,
-      "forks": 1338,
-      "open_issues": 62,
+      "stars": 7087,
+      "forks": 1377,
+      "open_issues": 64,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-09-13T14:10:31Z",
-      "updated_at": "2026-11-17T12:59:14Z",
+      "updated_at": "2026-11-18T17:00:43Z",
       "source": "trending:weekly/python",
-      "collected_at": "2026-11-17T13:00:30.029578+00:00",
+      "collected_at": "2026-11-18T17:08:10.059388+00:00",
+      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
+    },
+    {
+      "full_name": "hieunc229/mailflare",
+      "html_url": "https://github.com/hieunc229/mailflare",
+      "description": "Email for professionals and teams",
+      "topics": [
+        "cloudflare",
+        "cloudflare-workers",
+        "email"
+      ],
+      "language": "TypeScript",
+      "stars": 7052,
+      "forks": 1225,
+      "open_issues": 29,
+      "license": "AGPL-3.0",
+      "archived": false,
+      "pushed_at": "2026-11-18T17:04:04Z",
+      "updated_at": "2026-11-18T17:08:01Z",
+      "source": "trending:daily/typescript",
+      "collected_at": "2026-11-18T17:08:07.128542+00:00",
       "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
@@ -7043,7 +7188,7 @@
       "archived": false,
       "pushed_at": "2026-11-17T16:06:07Z",
       "updated_at": "2026-11-17T23:16:46Z",
-      "source": "trending:daily/all",
+      "source": "trending:weekly/all",
       "collected_at": "2026-11-17T23:26:41.709352+00:00",
       "also_seen_in": [
         "trending:daily/python",
@@ -7051,31 +7196,6 @@
       ],
       "relationships": [],
       "first_seen_at": "2026-11-14T11:20:28.800577+00:00"
-    },
-    {
-      "full_name": "hieunc229/mailflare",
-      "html_url": "https://github.com/hieunc229/mailflare",
-      "description": "Email for professionals and teams",
-      "topics": [
-        "cloudflare",
-        "cloudflare-workers",
-        "email"
-      ],
-      "language": "TypeScript",
-      "stars": 6770,
-      "forks": 1161,
-      "open_issues": 37,
-      "license": "AGPL-3.0",
-      "archived": false,
-      "pushed_at": "2026-11-16T09:25:23Z",
-      "updated_at": "2026-11-17T12:43:00Z",
-      "source": "trending:daily/typescript",
-      "collected_at": "2026-11-17T13:00:28.491399+00:00",
-      "also_seen_in": [
-        "trending:weekly/typescript"
-      ],
-      "relationships": [],
-      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
       "full_name": "zouzg/mybatis-generator-gui",
@@ -7096,6 +7216,32 @@
         "MengEn-Ink:starred"
       ],
       "first_seen_at": "2026-10-28T06:51:48.450244+00:00"
+    },
+    {
+      "full_name": "martin-olivier/airgorah",
+      "html_url": "https://github.com/martin-olivier/airgorah",
+      "description": "A WiFi security auditing software",
+      "topics": [
+        "gui",
+        "kali",
+        "linux-app",
+        "security",
+        "security-audit",
+        "wifi",
+        "wifi-security",
+        "wireless"
+      ],
+      "language": "Rust",
+      "stars": 6637,
+      "forks": 1093,
+      "open_issues": 18,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-17T19:32:54Z",
+      "updated_at": "2026-11-18T15:53:28Z",
+      "source": "trending:weekly/rust",
+      "collected_at": "2026-11-18T17:08:13.893038+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
       "full_name": "s1dashu/ip-as-logo-skill",
@@ -7200,6 +7346,44 @@
       "source": "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}",
       "collected_at": "2026-11-18T06:59:02.277837+00:00",
       "first_seen_at": "2026-11-18T06:58:44.041902+00:00"
+    },
+    {
+      "full_name": "dograh-hq/dograh",
+      "html_url": "https://github.com/dograh-hq/dograh",
+      "description": "Open source voice AI platform. Self-hosted alternative to Vapi and Retell. On Prem, BYOK across  Speech to Speech or LLM/STT/TTS, with a visual workflow builder, MCP native and telephony support.",
+      "topics": [
+        "ai-calling",
+        "asterisk-ari",
+        "conversational-ai",
+        "inbound-calls",
+        "local-llm",
+        "no-code",
+        "on-prem-voice-agent-platform",
+        "open-source",
+        "open-source-voice-ai",
+        "outbound-calls",
+        "pipecat",
+        "python",
+        "self-hosted",
+        "speech-to-speech",
+        "speech-to-text",
+        "telephony",
+        "text-to-speech",
+        "vapi-alternative",
+        "voice-agents",
+        "voice-ai-platform"
+      ],
+      "language": "Python",
+      "stars": 6210,
+      "forks": 1600,
+      "open_issues": 122,
+      "license": "BSD-2-Clause",
+      "archived": false,
+      "pushed_at": "2026-11-16T01:24:19Z",
+      "updated_at": "2026-11-18T16:06:47Z",
+      "source": "trending:daily/python",
+      "collected_at": "2026-11-18T17:08:01.839271+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
       "full_name": "Eglantine-Community/Eglantine",
@@ -7952,6 +8136,34 @@
       "first_seen_at": "2026-10-28T06:51:48.450234+00:00"
     },
     {
+      "full_name": "crmne/zapfast",
+      "html_url": "https://github.com/crmne/zapfast",
+      "description": "ZapFast: a fast, native WhatsApp client in Rust and egui",
+      "topics": [
+        "chat",
+        "desktop-app",
+        "egui",
+        "linux",
+        "macos",
+        "messaging",
+        "rust",
+        "whatsapp",
+        "whatsapp-client",
+        "windows"
+      ],
+      "language": "Rust",
+      "stars": 4723,
+      "forks": 476,
+      "open_issues": 284,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-17T18:30:02Z",
+      "updated_at": "2026-11-18T15:49:24Z",
+      "source": "trending:weekly/rust",
+      "collected_at": "2026-11-18T17:08:13.467921+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "intuitem/ciso-assistant-community",
       "html_url": "https://github.com/intuitem/ciso-assistant-community",
       "description": "CISO Assistant is a one-stop-shop GRC platform for Risk Management, AppSec, Compliance & Audit, TPRM, BIA, Privacy, and Reporting. It supports 200+ global frameworks with automatic control mapping, including ISO 27001, NIST CSF, SOC 2, CIS, PCI DSS, NIS2, DORA, GDPR, HIPAA, CMMC, and more.",
@@ -8261,6 +8473,30 @@
       "first_seen_at": "2026-11-17T23:26:15.152128+00:00"
     },
     {
+      "full_name": "google-research/paper-orchestra",
+      "html_url": "https://github.com/google-research/paper-orchestra",
+      "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+      "topics": [
+        "ai-research-assistant",
+        "multi-agent-systems"
+      ],
+      "language": "Python",
+      "stars": 4014,
+      "forks": 503,
+      "open_issues": 37,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-11-15T18:08:08Z",
+      "updated_at": "2026-11-18T17:07:58Z",
+      "source": "trending:daily/all",
+      "collected_at": "2026-11-18T17:08:00.765414+00:00",
+      "also_seen_in": [
+        "trending:daily/python"
+      ],
+      "relationships": [],
+      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
+    },
+    {
       "full_name": "Folkbench/folkbench",
       "html_url": "https://github.com/Folkbench/folkbench",
       "description": "AI API 中转站推荐与评测：中转站排行榜、中转站检测、Claude / GPT / Gemini 中转站对比 · AI API relay rankings · Folkbench Switch for Claude Code, Codex & Gemini CLI",
@@ -8437,6 +8673,38 @@
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
+      "full_name": "3441293738/creatorhub",
+      "html_url": "https://github.com/3441293738/creatorhub",
+      "description": "多平台内容监控·采集·搬运 一个 Web 面板管起抖音 / 小红书 / 快手 / 视频号 / TikTok",
+      "topics": [
+        "automation",
+        "content-monitoring",
+        "crawler",
+        "douyin",
+        "fastapi",
+        "kuaishou",
+        "playwright",
+        "python",
+        "rednote",
+        "shipinhao",
+        "tiktok",
+        "tiktok-api",
+        "web-scraping",
+        "xiaohongshu"
+      ],
+      "language": "Python",
+      "stars": 3664,
+      "forks": 718,
+      "open_issues": 23,
+      "license": null,
+      "archived": false,
+      "pushed_at": "2026-11-18T16:41:38Z",
+      "updated_at": "2026-11-18T16:41:11Z",
+      "source": "trending:daily/python",
+      "collected_at": "2026-11-18T17:08:04.306877+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "Athou/commafeed",
       "html_url": "https://github.com/Athou/commafeed",
       "description": "Google Reader inspired self-hosted personal RSS reader.",
@@ -8496,6 +8764,23 @@
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
+      "full_name": "FujiwaraChoki/supoclip",
+      "html_url": "https://github.com/FujiwaraChoki/supoclip",
+      "description": "An open-source OpusClip alternative",
+      "topics": [],
+      "language": "Python",
+      "stars": 3525,
+      "forks": 791,
+      "open_issues": 81,
+      "license": "NOASSERTION",
+      "archived": false,
+      "pushed_at": "2026-11-18T15:02:14Z",
+      "updated_at": "2026-11-18T16:58:20Z",
+      "source": "trending:weekly/python",
+      "collected_at": "2026-11-18T17:08:09.623106+00:00",
+      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
+    },
+    {
       "full_name": "Tencent/LoopForge",
       "html_url": "https://github.com/Tencent/LoopForge",
       "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
@@ -8535,7 +8820,8 @@
         "search:topic:claude-code stars:>50 archived:false",
         "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}",
         "search:topic:workflow-automation stars:>300 archived:false",
-        "search:topic:self-hosted stars:>2000 archived:false pushed:>{days_ago:30}"
+        "search:topic:self-hosted stars:>2000 archived:false pushed:>{days_ago:30}",
+        "trending:daily/all"
       ],
       "relationships": [],
       "first_seen_at": "2026-11-12T12:28:08.319589+00:00"
@@ -8595,34 +8881,9 @@
       "archived": false,
       "pushed_at": "2026-11-18T05:27:36Z",
       "updated_at": "2026-11-18T06:46:21Z",
-      "source": "trending:daily/all",
-      "collected_at": "2026-11-18T06:59:31.512239+00:00",
-      "also_seen_in": [
-        "trending:daily/python"
-      ],
-      "relationships": [],
-      "first_seen_at": "2026-11-13T16:04:05.552685+00:00"
-    },
-    {
-      "full_name": "FujiwaraChoki/supoclip",
-      "html_url": "https://github.com/FujiwaraChoki/supoclip",
-      "description": "An open-source OpusClip alternative",
-      "topics": [],
-      "language": "Python",
-      "stars": 3378,
-      "forks": 753,
-      "open_issues": 77,
-      "license": "AGPL-3.0",
-      "archived": false,
-      "pushed_at": "2026-11-17T12:25:05Z",
-      "updated_at": "2026-11-17T12:17:57Z",
       "source": "trending:daily/python",
-      "collected_at": "2026-11-17T13:00:26.532312+00:00",
-      "also_seen_in": [
-        "trending:weekly/python"
-      ],
-      "relationships": [],
-      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
+      "collected_at": "2026-11-18T06:59:31.512239+00:00",
+      "first_seen_at": "2026-11-13T16:04:05.552685+00:00"
     },
     {
       "full_name": "runkids/skillshare",
@@ -8889,6 +9150,23 @@
       "first_seen_at": "2026-11-18T06:58:44.041902+00:00"
     },
     {
+      "full_name": "HKUDS/AutoSwarm",
+      "html_url": "https://github.com/HKUDS/AutoSwarm",
+      "description": "AutoSwarm: Unify All Your Agents. Break Context Barriers. Watch Them Work Together for You.",
+      "topics": [],
+      "language": "Python",
+      "stars": 2644,
+      "forks": 437,
+      "open_issues": 34,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-18T16:17:07Z",
+      "updated_at": "2026-11-18T15:45:39Z",
+      "source": "trending:daily/python",
+      "collected_at": "2026-11-18T17:08:03.758516+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "poco-ai/Agentero",
       "html_url": "https://github.com/poco-ai/Agentero",
       "description": "Unified research workspace for humans & agents — PDF Q&A with citations, Vault, writing. 为人与 Agent 协作的科研工作台；补齐 Zotero 时代的人机上下文断点。",
@@ -8967,23 +9245,6 @@
         "MengEn-Ink:starred"
       ],
       "first_seen_at": "2026-10-29T12:08:00.708193+00:00"
-    },
-    {
-      "full_name": "googlecolab/google-colab-cli",
-      "html_url": "https://github.com/googlecolab/google-colab-cli",
-      "description": "A CLI for interacting with Google Colab runtimes",
-      "topics": [],
-      "language": "Python",
-      "stars": 2520,
-      "forks": 368,
-      "open_issues": 32,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-15T02:33:41Z",
-      "updated_at": "2026-11-17T12:28:01Z",
-      "source": "trending:weekly/python",
-      "collected_at": "2026-11-17T13:00:29.569509+00:00",
-      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
       "full_name": "lioensky/VCPToolBox",
@@ -9188,38 +9449,6 @@
       "source": "search:created:>{days_ago:90} topic:ai-agent stars:>100",
       "collected_at": "2026-11-18T06:58:48.520445+00:00",
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
-    },
-    {
-      "full_name": "isair/jarvis",
-      "html_url": "https://github.com/isair/jarvis",
-      "description": "A 100% private and local AI assistant for your desktop. Always present, able to jump into conversations. Supports unlimited MCP tools and unlimited memory with self-learning. Free WisprFlow alternative with its dictation support. Runs on macOS, Windows and Linux.",
-      "topics": [
-        "ai",
-        "ai-assistant",
-        "assistant",
-        "health",
-        "local-ai",
-        "machine-learning",
-        "mcp",
-        "nutrition",
-        "privacy",
-        "private",
-        "search",
-        "searching",
-        "voice",
-        "voice-assistant"
-      ],
-      "language": "Python",
-      "stars": 2339,
-      "forks": 553,
-      "open_issues": 179,
-      "license": "NOASSERTION",
-      "archived": false,
-      "pushed_at": "2026-11-17T04:18:57Z",
-      "updated_at": "2026-11-17T12:29:40Z",
-      "source": "trending:daily/python",
-      "collected_at": "2026-11-17T13:00:24.046642+00:00",
-      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
       "full_name": "n8n-io/nod",
@@ -9458,30 +9687,6 @@
       ],
       "relationships": [],
       "first_seen_at": "2026-11-17T02:51:36.336893+00:00"
-    },
-    {
-      "full_name": "google-research/paper-orchestra",
-      "html_url": "https://github.com/google-research/paper-orchestra",
-      "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
-      "topics": [
-        "ai-research-assistant",
-        "multi-agent-systems"
-      ],
-      "language": "Python",
-      "stars": 2195,
-      "forks": 328,
-      "open_issues": 35,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-15T18:08:08Z",
-      "updated_at": "2026-11-17T12:59:09Z",
-      "source": "trending:daily/all",
-      "collected_at": "2026-11-17T13:00:22.730216+00:00",
-      "also_seen_in": [
-        "trending:daily/python"
-      ],
-      "relationships": [],
-      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
       "full_name": "Rongronggg9/RSS-to-Telegram-Bot",
@@ -10150,23 +10355,6 @@
       "first_seen_at": "2026-10-28T06:51:48.450239+00:00"
     },
     {
-      "full_name": "bkerler/mtkclient",
-      "html_url": "https://github.com/bkerler/mtkclient",
-      "description": "Mediatek Flash and Repair Utility",
-      "topics": [],
-      "language": "Python",
-      "stars": 1547,
-      "forks": 314,
-      "open_issues": 85,
-      "license": "GPL-3.0",
-      "archived": false,
-      "pushed_at": "2026-10-26T08:53:35Z",
-      "updated_at": "2026-11-17T11:57:34Z",
-      "source": "trending:daily/python",
-      "collected_at": "2026-11-17T13:00:26.094733+00:00",
-      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
-    },
-    {
       "full_name": "Cay-Zhang/RSSBud",
       "html_url": "https://github.com/Cay-Zhang/RSSBud",
       "description": "An RSS feed discovery app for iOS/macOS that works particularly well with RSSHub, a popular feed generation service. Available on the App Store.",
@@ -10488,29 +10676,6 @@
       "source": "search:topic:react-components stars:>500 archived:false pushed:>{days_ago:60}",
       "collected_at": "2026-11-18T06:59:16.384201+00:00",
       "first_seen_at": "2026-11-18T06:58:44.041902+00:00"
-    },
-    {
-      "full_name": "dsx-ai-factory/nvke",
-      "html_url": "https://github.com/dsx-ai-factory/nvke",
-      "description": "NVIDIA Kubernetes Engine (NVKE). A management plane for GPU Kubernetes on bare metal.",
-      "topics": [
-        "bare-metal",
-        "cluster-api",
-        "gpu",
-        "kubernetes",
-        "nvidia"
-      ],
-      "language": "Go",
-      "stars": 1237,
-      "forks": 165,
-      "open_issues": 203,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-18T06:03:38Z",
-      "updated_at": "2026-11-17T23:28:05Z",
-      "source": "trending:weekly/go",
-      "collected_at": "2026-11-18T06:59:41.478335+00:00",
-      "first_seen_at": "2026-11-13T16:04:05.552685+00:00"
     },
     {
       "full_name": "jdf2e/nutui-react",
@@ -10835,39 +11000,6 @@
       "source": "search:topic:claude-code stars:>50 archived:false",
       "collected_at": "2026-11-18T06:58:55.390064+00:00",
       "first_seen_at": "2026-11-18T06:58:44.041902+00:00"
-    },
-    {
-      "full_name": "s0ld13rr/pentestcode",
-      "html_url": "https://github.com/s0ld13rr/pentestcode",
-      "description": "PentestCode - Multi-agent AI penetration testing system with persistent engagement state, strategic coordination, and parallel autonomous operations.",
-      "topics": [
-        "ai-agents",
-        "ai-security",
-        "ai-security-tool",
-        "anthropic",
-        "autonomous-agents",
-        "autonomous-agents-system",
-        "gpt",
-        "multi-agent-system",
-        "offensive-security",
-        "openai",
-        "penetration-testing",
-        "penetration-testing-tools",
-        "pentest",
-        "security-automation",
-        "security-testing"
-      ],
-      "language": "TypeScript",
-      "stars": 1103,
-      "forks": 177,
-      "open_issues": 7,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-05T14:57:38Z",
-      "updated_at": "2026-11-17T12:49:45Z",
-      "source": "trending:daily/typescript",
-      "collected_at": "2026-11-17T13:00:27.129335+00:00",
-      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
       "full_name": "gravity-ui/uikit",
@@ -12056,6 +12188,44 @@
       "first_seen_at": "2026-11-18T06:58:44.041902+00:00"
     },
     {
+      "full_name": "vstorm-co/agenticos",
+      "html_url": "https://github.com/vstorm-co/agenticos",
+      "description": "Open-source, self-hosted AI agent platform for your company's AI teammates. Build, run and govern agents on your own servers and models: shared chat, RAG, skills, a real browser, 4,700+ MCP servers, budgets, approvals and an audit trail. An alternative to ChatGPT Enterprise and Grok Bot. Apache-2.0, built on Pydantic AI.",
+      "topics": [
+        "agentic-ai",
+        "agentic-os",
+        "agents",
+        "ai-agents",
+        "ai-assistant",
+        "ai-governance",
+        "ai-teammates",
+        "browser-automation",
+        "fastapi",
+        "llm",
+        "local-llm",
+        "mcp",
+        "mcp-server",
+        "model-context-protocol",
+        "on-premise",
+        "open-source",
+        "pydantic-ai",
+        "python",
+        "rag",
+        "self-hosted"
+      ],
+      "language": "Python",
+      "stars": 422,
+      "forks": 76,
+      "open_issues": 40,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-11-18T15:37:06Z",
+      "updated_at": "2026-11-18T16:26:38Z",
+      "source": "trending:daily/python",
+      "collected_at": "2026-11-18T17:08:04.745249+00:00",
+      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
+    },
+    {
       "full_name": "GizClaw/flowcraft",
       "html_url": "https://github.com/GizClaw/flowcraft",
       "description": "Production-grade Go SDK for building AI agents with long-term memory, knowledge retrieval, and voice — runnable as a library, a daemon, or a real-time pipeline.",
@@ -12247,44 +12417,6 @@
       "source": "search:topic:design-system stars:>200 archived:false",
       "collected_at": "2026-11-17T23:26:30.417075+00:00",
       "first_seen_at": "2026-11-16T18:16:50.356118+00:00"
-    },
-    {
-      "full_name": "vstorm-co/agenticos",
-      "html_url": "https://github.com/vstorm-co/agenticos",
-      "description": "Open-source, self-hosted AI agent platform for your company's AI teammates. Build, run and govern agents on your own servers and models: shared chat, RAG, skills, a real browser, 4,700+ MCP servers, budgets, approvals and an audit trail. An alternative to ChatGPT Enterprise and Grok Bot. Apache-2.0, built on Pydantic AI.",
-      "topics": [
-        "agentic-ai",
-        "agentic-os",
-        "agents",
-        "ai-agents",
-        "ai-assistant",
-        "ai-governance",
-        "ai-teammates",
-        "browser-automation",
-        "fastapi",
-        "llm",
-        "local-llm",
-        "mcp",
-        "mcp-server",
-        "model-context-protocol",
-        "on-premise",
-        "open-source",
-        "pydantic-ai",
-        "python",
-        "rag",
-        "self-hosted"
-      ],
-      "language": "Python",
-      "stars": 390,
-      "forks": 68,
-      "open_issues": 33,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-17T11:25:28Z",
-      "updated_at": "2026-11-17T12:40:04Z",
-      "source": "trending:daily/python",
-      "collected_at": "2026-11-17T13:00:25.542738+00:00",
-      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
       "full_name": "rdehuyss/micropython-ota-updater",
@@ -14276,121 +14408,134 @@
     "search:created:>{days_ago:30} stars:>300": {
       "ok": true,
       "count": 30,
+      "cached": true,
       "fetched_at": "2026-11-18T06:58:44.041902+00:00"
     },
     "search:created:>{days_ago:90} topic:ai-agent stars:>100": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-18T06:58:44.041902+00:00"
     },
     "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}": {
       "ok": true,
-      "count": 20,
+      "count": 24,
+      "cached": true,
       "fetched_at": "2026-11-18T06:58:44.041902+00:00"
     },
     "search:topic:claude-code stars:>50 archived:false": {
       "ok": true,
-      "count": 20,
+      "count": 24,
+      "cached": true,
       "fetched_at": "2026-11-18T06:58:44.041902+00:00"
     },
     "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
-      "count": 20,
+      "count": 24,
+      "cached": true,
       "fetched_at": "2026-11-18T06:58:44.041902+00:00"
     },
     "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-18T06:58:44.041902+00:00"
     },
     "search:topic:prompt-engineering stars:>300 archived:false": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-11-18T06:58:44.041902+00:00"
     },
     "search:topic:workflow-automation stars:>300 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-18T06:58:44.041902+00:00"
     },
     "search:topic:shadcn-ui stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-18T06:58:44.041902+00:00"
     },
     "search:topic:react-components stars:>500 archived:false pushed:>{days_ago:60}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-18T06:58:44.041902+00:00"
     },
     "search:topic:rss stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-18T06:58:44.041902+00:00"
     },
     "search:topic:self-hosted stars:>2000 archived:false pushed:>{days_ago:30}": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-11-18T06:58:44.041902+00:00"
     },
     "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
-      "count": 20,
+      "count": 24,
+      "cached": true,
       "fetched_at": "2026-11-18T06:58:44.041902+00:00"
     },
     "trending:daily/all": {
       "ok": true,
       "count": 15,
       "listed": 15,
-      "fetched_at": "2026-11-18T06:58:44.041902+00:00"
+      "fetched_at": "2026-11-18T17:07:57.866129+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
       "count": 14,
       "listed": 14,
-      "fetched_at": "2026-11-18T06:58:44.041902+00:00"
+      "fetched_at": "2026-11-18T17:07:57.866129+00:00"
     },
     "trending:daily/python": {
       "ok": true,
       "count": 16,
       "listed": 16,
-      "fetched_at": "2026-11-18T06:58:44.041902+00:00"
+      "fetched_at": "2026-11-18T17:07:57.866129+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
-      "count": 13,
-      "listed": 13,
-      "fetched_at": "2026-11-18T06:58:44.041902+00:00"
+      "count": 17,
+      "listed": 17,
+      "fetched_at": "2026-11-18T17:07:57.866129+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 17,
       "listed": 17,
-      "fetched_at": "2026-11-18T06:58:44.041902+00:00"
+      "fetched_at": "2026-11-18T17:07:57.866129+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
       "count": 17,
       "listed": 17,
-      "fetched_at": "2026-11-18T06:58:44.041902+00:00"
+      "fetched_at": "2026-11-18T17:07:57.866129+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
-      "count": 18,
-      "listed": 18,
-      "fetched_at": "2026-11-18T06:58:44.041902+00:00"
+      "count": 17,
+      "listed": 17,
+      "fetched_at": "2026-11-18T17:07:57.866129+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 10,
       "listed": 10,
-      "fetched_at": "2026-11-18T06:58:44.041902+00:00"
+      "fetched_at": "2026-11-18T17:07:57.866129+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-11-18T06:58:44.041902+00:00"
+      "fetched_at": "2026-11-18T17:07:57.866129+00:00"
     }
   },
   "schema_version": 1

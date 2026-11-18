@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T07:01:06.509112+00:00",
+  "generated_at": "2026-11-18T17:08:49.850618+00:00",
   "items": [
     {
       "title": "Perforce Puppet Enterprise Deserialization of Untrusted Data Vulnerability",
@@ -3565,112 +3565,98 @@
   "source_status": {
     "AI News Aggregator": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 50,
       "fetched_at": "2026-11-18T07:01:06.509112+00:00",
       "checked_at": "2026-11-18T07:01:06.509112+00:00"
     },
     "GitHub Releases · LangChain": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 10,
       "fetched_at": "2026-11-18T07:01:06.509112+00:00",
       "checked_at": "2026-11-18T07:01:06.509112+00:00"
     },
     "GitHub Releases · OpenAI Python": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 10,
       "fetched_at": "2026-11-18T07:01:06.509112+00:00",
       "checked_at": "2026-11-18T07:01:06.509112+00:00"
     },
     "Hacker News": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 4,
       "fetched_at": "2026-11-18T07:01:06.509112+00:00",
       "checked_at": "2026-11-18T07:01:06.509112+00:00"
     },
     "Lobsters": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 25,
       "fetched_at": "2026-11-18T07:01:06.509112+00:00",
       "checked_at": "2026-11-18T07:01:06.509112+00:00"
     },
     "OpenAI News": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 50,
       "fetched_at": "2026-11-18T07:01:06.509112+00:00",
       "checked_at": "2026-11-18T07:01:06.509112+00:00"
     },
     "Google Developers Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 20,
       "fetched_at": "2026-11-18T07:01:06.509112+00:00",
       "checked_at": "2026-11-18T07:01:06.509112+00:00"
     },
     "AWS Machine Learning Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 20,
       "fetched_at": "2026-11-18T07:01:06.509112+00:00",
       "checked_at": "2026-11-18T07:01:06.509112+00:00"
     },
     "NVIDIA Developer Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 30,
       "fetched_at": "2026-11-18T07:01:06.509112+00:00",
       "checked_at": "2026-11-18T07:01:06.509112+00:00"
     },
     "Cloudflare AI": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 20,
       "fetched_at": "2026-11-18T07:01:06.509112+00:00",
       "checked_at": "2026-11-18T07:01:06.509112+00:00"
     },
     "GitHub Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 10,
       "fetched_at": "2026-11-18T07:01:06.509112+00:00",
       "checked_at": "2026-11-18T07:01:06.509112+00:00"
     },
     "Stack Overflow Blog": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 40,
       "fetched_at": "2026-11-18T07:01:06.509112+00:00",
       "checked_at": "2026-11-18T07:01:06.509112+00:00"
     },
     "OSV.dev": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 30,
       "fetched_at": "2026-11-18T07:01:06.509112+00:00",
       "checked_at": "2026-11-18T07:01:06.509112+00:00"
     },
     "CISA KEV": {
       "ok": true,
-      "cached": false,
-      "not_modified": false,
+      "cached": true,
       "count": 25,
       "fetched_at": "2026-11-18T07:01:06.509112+00:00",
       "checked_at": "2026-11-18T07:01:06.509112+00:00"
