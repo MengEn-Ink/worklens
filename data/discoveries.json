@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T00:44:01.781225+00:00",
+  "generated_at": "2026-11-23T14:18:49.147702+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -80,15 +80,15 @@
         "superpowers"
       ],
       "language": "Shell",
-      "stars": 323866,
-      "forks": 28725,
-      "open_issues": 363,
+      "stars": 324705,
+      "forks": 28805,
+      "open_issues": 361,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-11-03T23:24:58Z",
-      "updated_at": "2026-11-22T06:17:09Z",
+      "updated_at": "2026-11-23T14:18:33Z",
       "source": "trending:daily/all",
-      "collected_at": "2026-11-22T06:17:53.683403+00:00",
+      "collected_at": "2026-11-23T14:18:49.641752+00:00",
       "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
@@ -1282,15 +1282,15 @@
         "workflow-automation"
       ],
       "language": "Python",
-      "stars": 80023,
-      "forks": 9812,
-      "open_issues": 1919,
+      "stars": 80125,
+      "forks": 9836,
+      "open_issues": 1922,
       "license": null,
       "archived": false,
       "pushed_at": "2026-09-18T07:16:11Z",
-      "updated_at": "2026-11-22T05:31:19Z",
+      "updated_at": "2026-11-23T14:17:28Z",
       "source": "trending:weekly/python",
-      "collected_at": "2026-11-22T06:17:58.271736+00:00",
+      "collected_at": "2026-11-23T14:18:53.522483+00:00",
       "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
@@ -1576,15 +1576,15 @@
         "large-language-model"
       ],
       "language": "Python",
-      "stars": 68262,
-      "forks": 8927,
-      "open_issues": 63,
+      "stars": 69266,
+      "forks": 9048,
+      "open_issues": 62,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-21T09:14:27Z",
-      "updated_at": "2026-11-22T06:11:07Z",
+      "pushed_at": "2026-11-23T04:01:07Z",
+      "updated_at": "2026-11-23T14:15:34Z",
       "source": "trending:daily/all",
-      "collected_at": "2026-11-22T06:17:54.175778+00:00",
+      "collected_at": "2026-11-23T14:18:50.062402+00:00",
       "also_seen_in": [
         "trending:daily/python",
         "trending:weekly/python"
@@ -2221,6 +2221,7 @@
       "also_seen_in": [
         "search:topic:rss stars:>200 archived:false"
       ],
+      "relationships": [],
       "first_seen_at": "2026-10-28T06:51:43.946067+00:00"
     },
     {
@@ -2659,6 +2660,7 @@
       "also_seen_in": [
         "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-07T14:49:51.944218+00:00"
     },
     {
@@ -2706,15 +2708,15 @@
         "orchestration"
       ],
       "language": "Go",
-      "stars": 39051,
+      "stars": 39127,
       "forks": 6052,
       "open_issues": 117,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-20T09:03:22Z",
-      "updated_at": "2026-11-22T06:15:27Z",
+      "pushed_at": "2026-11-23T12:45:34Z",
+      "updated_at": "2026-11-23T12:35:26Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-11-22T06:17:59.810247+00:00",
+      "collected_at": "2026-11-23T14:18:55.295556+00:00",
       "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
@@ -4247,15 +4249,15 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "stars": 19530,
-      "forks": 2799,
-      "open_issues": 441,
+      "stars": 19553,
+      "forks": 2803,
+      "open_issues": 446,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-11-20T23:39:00Z",
-      "updated_at": "2026-11-22T01:20:59Z",
+      "updated_at": "2026-11-23T14:14:10Z",
       "source": "trending:weekly/python",
-      "collected_at": "2026-11-22T06:17:57.256124+00:00",
+      "collected_at": "2026-11-23T14:18:52.669390+00:00",
       "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
@@ -4308,15 +4310,15 @@
       "description": "Cursor plugin specification and official plugins",
       "topics": [],
       "language": "TypeScript",
-      "stars": 18172,
-      "forks": 1985,
-      "open_issues": 690,
+      "stars": 18687,
+      "forks": 2029,
+      "open_issues": 689,
       "license": null,
       "archived": false,
       "pushed_at": "2026-11-22T01:02:38Z",
-      "updated_at": "2026-11-22T06:12:26Z",
+      "updated_at": "2026-11-23T14:00:26Z",
       "source": "trending:daily/all",
-      "collected_at": "2026-11-22T06:17:54.726144+00:00",
+      "collected_at": "2026-11-23T14:18:50.502199+00:00",
       "also_seen_in": [
         "trending:daily/typescript"
       ],
@@ -4596,6 +4598,35 @@
       "first_seen_at": "2026-11-15T15:33:15.615752+00:00"
     },
     {
+      "full_name": "Billionmail/BillionMail",
+      "html_url": "https://github.com/Billionmail/BillionMail",
+      "description": "BillionMail gives you open-source MailServer, NewsLetter,  Email Marketing — fully self-hosted, dev-friendly, and free from monthly fees. Join the discord: https://discord.gg/asfXzBUhZr",
+      "topics": [
+        "dovecot",
+        "email",
+        "email-marketing",
+        "mail",
+        "mailserver",
+        "newsletter",
+        "newsletters",
+        "postfix",
+        "rspamd",
+        "server",
+        "smtp"
+      ],
+      "language": "Go",
+      "stars": 16459,
+      "forks": 1834,
+      "open_issues": 259,
+      "license": "AGPL-3.0",
+      "archived": false,
+      "pushed_at": "2026-06-11T06:44:04Z",
+      "updated_at": "2026-11-23T14:16:27Z",
+      "source": "trending:weekly/go",
+      "collected_at": "2026-11-23T14:18:54.798123+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "dagster-io/dagster",
       "html_url": "https://github.com/dagster-io/dagster",
       "description": "An orchestration platform for the development, production, and observation of data assets.",
@@ -4627,35 +4658,6 @@
       "source": "search:topic:workflow-automation stars:>300 archived:false",
       "collected_at": "2026-11-23T00:44:25.255953+00:00",
       "first_seen_at": "2026-11-23T00:44:01.781225+00:00"
-    },
-    {
-      "full_name": "Billionmail/BillionMail",
-      "html_url": "https://github.com/Billionmail/BillionMail",
-      "description": "BillionMail gives you open-source MailServer, NewsLetter,  Email Marketing — fully self-hosted, dev-friendly, and free from monthly fees. Join the discord: https://discord.gg/asfXzBUhZr",
-      "topics": [
-        "dovecot",
-        "email",
-        "email-marketing",
-        "mail",
-        "mailserver",
-        "newsletter",
-        "newsletters",
-        "postfix",
-        "rspamd",
-        "server",
-        "smtp"
-      ],
-      "language": "Go",
-      "stars": 16447,
-      "forks": 1834,
-      "open_issues": 251,
-      "license": "AGPL-3.0",
-      "archived": false,
-      "pushed_at": "2026-06-11T06:44:04Z",
-      "updated_at": "2026-11-22T03:55:25Z",
-      "source": "trending:weekly/go",
-      "collected_at": "2026-11-22T06:17:59.260944+00:00",
-      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
       "full_name": "Jackett/Jackett",
@@ -4855,6 +4857,7 @@
         "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}",
         "search:topic:claude-code stars:>50 archived:false"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-13T06:12:51.675276+00:00"
     },
     {
@@ -6194,6 +6197,7 @@
         "search:topic:claude-code stars:>50 archived:false",
         "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}"
       ],
+      "relationships": [],
       "first_seen_at": "2026-11-20T16:53:19.669948+00:00"
     },
     {
@@ -6619,15 +6623,15 @@
         "email"
       ],
       "language": "TypeScript",
-      "stars": 7425,
-      "forks": 1303,
-      "open_issues": 48,
+      "stars": 7481,
+      "forks": 1322,
+      "open_issues": 59,
       "license": "AGPL-3.0",
       "archived": false,
       "pushed_at": "2026-11-21T09:20:26Z",
-      "updated_at": "2026-11-22T04:30:50Z",
+      "updated_at": "2026-11-23T14:14:51Z",
       "source": "trending:daily/typescript",
-      "collected_at": "2026-11-22T06:17:56.475190+00:00",
+      "collected_at": "2026-11-23T14:18:51.919564+00:00",
       "also_seen_in": [
         "trending:weekly/typescript"
       ],
@@ -6737,6 +6741,32 @@
       "first_seen_at": "2026-11-21T21:33:28.036320+00:00"
     },
     {
+      "full_name": "martin-olivier/airgorah",
+      "html_url": "https://github.com/martin-olivier/airgorah",
+      "description": "A WiFi security auditing software",
+      "topics": [
+        "gui",
+        "kali",
+        "linux-app",
+        "security",
+        "security-audit",
+        "wifi",
+        "wifi-security",
+        "wireless"
+      ],
+      "language": "Rust",
+      "stars": 6944,
+      "forks": 1127,
+      "open_issues": 18,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-17T19:32:54Z",
+      "updated_at": "2026-11-23T14:10:10Z",
+      "source": "trending:weekly/rust",
+      "collected_at": "2026-11-23T14:18:55.874963+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "mdiri-ai/SoduWork",
       "html_url": "https://github.com/mdiri-ai/SoduWork",
       "description": "The AI-native engine for teams and their agents. Multi-harness, multi-agent, self-hosted.",
@@ -6773,32 +6803,6 @@
       "source": "search:created:>{days_ago:30} stars:>300",
       "collected_at": "2026-11-23T00:44:02.679897+00:00",
       "first_seen_at": "2026-11-17T02:51:36.336893+00:00"
-    },
-    {
-      "full_name": "martin-olivier/airgorah",
-      "html_url": "https://github.com/martin-olivier/airgorah",
-      "description": "A WiFi security auditing software",
-      "topics": [
-        "gui",
-        "kali",
-        "linux-app",
-        "security",
-        "security-audit",
-        "wifi",
-        "wifi-security",
-        "wireless"
-      ],
-      "language": "Rust",
-      "stars": 6812,
-      "forks": 1109,
-      "open_issues": 18,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-17T19:32:54Z",
-      "updated_at": "2026-11-22T06:14:22Z",
-      "source": "trending:weekly/rust",
-      "collected_at": "2026-11-22T06:18:00.374255+00:00",
-      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
       "full_name": "Gaurav-Gosain/tuios",
@@ -7206,6 +7210,26 @@
       "first_seen_at": "2026-11-13T16:04:05.552685+00:00"
     },
     {
+      "full_name": "google-research/paper-orchestra",
+      "html_url": "https://github.com/google-research/paper-orchestra",
+      "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+      "topics": [
+        "ai-research-assistant",
+        "multi-agent-systems"
+      ],
+      "language": "Python",
+      "stars": 6090,
+      "forks": 783,
+      "open_issues": 56,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-11-15T18:08:08Z",
+      "updated_at": "2026-11-23T14:05:46Z",
+      "source": "trending:daily/python",
+      "collected_at": "2026-11-23T14:18:51.351289+00:00",
+      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
+    },
+    {
       "full_name": "pytorch/torchtitan",
       "html_url": "https://github.com/pytorch/torchtitan",
       "description": "A PyTorch native platform for training generative AI models",
@@ -7334,26 +7358,6 @@
         "MengEn-Ink:starred"
       ],
       "first_seen_at": "2026-10-28T06:51:48.450225+00:00"
-    },
-    {
-      "full_name": "google-research/paper-orchestra",
-      "html_url": "https://github.com/google-research/paper-orchestra",
-      "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
-      "topics": [
-        "ai-research-assistant",
-        "multi-agent-systems"
-      ],
-      "language": "Python",
-      "stars": 5782,
-      "forks": 733,
-      "open_issues": 51,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-15T18:08:08Z",
-      "updated_at": "2026-11-22T06:13:32Z",
-      "source": "trending:daily/python",
-      "collected_at": "2026-11-22T06:17:55.526003+00:00",
-      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
       "full_name": "Tencent/LoopForge",
@@ -7874,6 +7878,34 @@
       "first_seen_at": "2026-11-03T08:11:19.110821+00:00"
     },
     {
+      "full_name": "crmne/zapfast",
+      "html_url": "https://github.com/crmne/zapfast",
+      "description": "ZapFast: a fast, native WhatsApp client in Rust and egui",
+      "topics": [
+        "chat",
+        "desktop-app",
+        "egui",
+        "linux",
+        "macos",
+        "messaging",
+        "rust",
+        "whatsapp",
+        "whatsapp-client",
+        "windows"
+      ],
+      "language": "Rust",
+      "stars": 4970,
+      "forks": 510,
+      "open_issues": 324,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-23T11:29:19Z",
+      "updated_at": "2026-11-23T14:13:34Z",
+      "source": "trending:weekly/rust",
+      "collected_at": "2026-11-23T14:18:56.309461+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "Agenta-AI/agenta",
       "html_url": "https://github.com/Agenta-AI/agenta",
       "description": "Agenta is a workspace where you and your team build agents and automations.",
@@ -7945,34 +7977,6 @@
       "source": "search:topic:react-components stars:>500 archived:false pushed:>{days_ago:60}",
       "collected_at": "2026-11-23T00:44:31.745266+00:00",
       "first_seen_at": "2026-11-23T00:44:01.781225+00:00"
-    },
-    {
-      "full_name": "crmne/zapfast",
-      "html_url": "https://github.com/crmne/zapfast",
-      "description": "ZapFast: a fast, native WhatsApp client in Rust and egui",
-      "topics": [
-        "chat",
-        "desktop-app",
-        "egui",
-        "linux",
-        "macos",
-        "messaging",
-        "rust",
-        "whatsapp",
-        "whatsapp-client",
-        "windows"
-      ],
-      "language": "Rust",
-      "stars": 4885,
-      "forks": 499,
-      "open_issues": 309,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-22T01:26:43Z",
-      "updated_at": "2026-11-22T05:24:08Z",
-      "source": "trending:weekly/rust",
-      "collected_at": "2026-11-22T06:18:00.849737+00:00",
-      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
       "full_name": "autobrr/qui",
@@ -8349,15 +8353,15 @@
       "description": "An open-source OpusClip alternative",
       "topics": [],
       "language": "Python",
-      "stars": 4013,
-      "forks": 949,
-      "open_issues": 134,
+      "stars": 4109,
+      "forks": 978,
+      "open_issues": 128,
       "license": "NOASSERTION",
       "archived": false,
-      "pushed_at": "2026-11-21T22:21:22Z",
-      "updated_at": "2026-11-22T05:56:08Z",
+      "pushed_at": "2026-11-23T11:46:08Z",
+      "updated_at": "2026-11-23T14:05:33Z",
       "source": "trending:weekly/python",
-      "collected_at": "2026-11-22T06:17:57.741138+00:00",
+      "collected_at": "2026-11-23T14:18:53.066161+00:00",
       "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
@@ -8858,6 +8862,23 @@
       "source": "search:topic:design-system stars:>200 archived:false",
       "collected_at": "2026-11-22T16:08:32.321791+00:00",
       "first_seen_at": "2026-11-21T12:22:58.308385+00:00"
+    },
+    {
+      "full_name": "ardia-browser/ardia",
+      "html_url": "https://github.com/ardia-browser/ardia",
+      "description": "A free Chromium browser for the Mac: Arc's sidebar, Dia's polish. Chat on Discord: discord.gg/TdhuXrbcA6",
+      "topics": [],
+      "language": "TypeScript",
+      "stars": 2885,
+      "forks": 381,
+      "open_issues": 1153,
+      "license": "GPL-3.0",
+      "archived": false,
+      "pushed_at": "2026-11-23T14:09:22Z",
+      "updated_at": "2026-11-23T14:11:37Z",
+      "source": "trending:weekly/typescript",
+      "collected_at": "2026-11-23T14:18:54.254185+00:00",
+      "first_seen_at": "2026-11-23T14:18:49.147702+00:00"
     },
     {
       "full_name": "ZeroLu/awesome-seedance",
@@ -15035,121 +15056,134 @@
     "search:created:>{days_ago:30} stars:>300": {
       "ok": true,
       "count": 30,
+      "cached": true,
       "fetched_at": "2026-11-23T00:44:01.781225+00:00"
     },
     "search:created:>{days_ago:90} topic:ai-agent stars:>100": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-23T00:44:01.781225+00:00"
     },
     "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-11-23T00:44:01.781225+00:00"
     },
     "search:topic:claude-code stars:>50 archived:false": {
       "ok": true,
-      "count": 20,
+      "count": 24,
+      "cached": true,
       "fetched_at": "2026-11-23T00:44:01.781225+00:00"
     },
     "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-11-23T00:44:01.781225+00:00"
     },
     "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-23T00:44:01.781225+00:00"
     },
     "search:topic:prompt-engineering stars:>300 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-23T00:44:01.781225+00:00"
     },
     "search:topic:workflow-automation stars:>300 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-23T00:44:01.781225+00:00"
     },
     "search:topic:shadcn-ui stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-23T00:44:01.781225+00:00"
     },
     "search:topic:react-components stars:>500 archived:false pushed:>{days_ago:60}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-23T00:44:01.781225+00:00"
     },
     "search:topic:rss stars:>200 archived:false": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-11-23T00:44:01.781225+00:00"
     },
     "search:topic:self-hosted stars:>2000 archived:false pushed:>{days_ago:30}": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-11-23T00:44:01.781225+00:00"
     },
     "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
-      "count": 20,
+      "count": 21,
+      "cached": true,
       "fetched_at": "2026-11-23T00:44:01.781225+00:00"
     },
     "trending:daily/all": {
       "ok": true,
       "count": 16,
       "listed": 16,
-      "fetched_at": "2026-11-23T00:44:01.781225+00:00"
+      "fetched_at": "2026-11-23T14:18:49.147702+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
       "count": 13,
       "listed": 13,
-      "fetched_at": "2026-11-23T00:44:01.781225+00:00"
+      "fetched_at": "2026-11-23T14:18:49.147702+00:00"
     },
     "trending:daily/python": {
       "ok": true,
       "count": 23,
       "listed": 23,
-      "fetched_at": "2026-11-23T00:44:01.781225+00:00"
+      "fetched_at": "2026-11-23T14:18:49.147702+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
       "count": 17,
       "listed": 17,
-      "fetched_at": "2026-11-23T00:44:01.781225+00:00"
+      "fetched_at": "2026-11-23T14:18:49.147702+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 15,
       "listed": 15,
-      "fetched_at": "2026-11-23T00:44:01.781225+00:00"
+      "fetched_at": "2026-11-23T14:18:49.147702+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
-      "count": 17,
-      "listed": 17,
-      "fetched_at": "2026-11-23T00:44:01.781225+00:00"
+      "count": 18,
+      "listed": 18,
+      "fetched_at": "2026-11-23T14:18:49.147702+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
       "count": 14,
       "listed": 14,
-      "fetched_at": "2026-11-23T00:44:01.781225+00:00"
+      "fetched_at": "2026-11-23T14:18:49.147702+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 7,
       "listed": 7,
-      "fetched_at": "2026-11-23T00:44:01.781225+00:00"
+      "fetched_at": "2026-11-23T14:18:49.147702+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-11-23T00:44:01.781225+00:00"
+      "fetched_at": "2026-11-23T14:18:49.147702+00:00"
     }
   },
   "schema_version": 1
