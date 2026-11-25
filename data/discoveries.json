@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T14:42:40.050570+00:00",
+  "generated_at": "2026-11-25T00:32:08.040678+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -14453,55 +14453,55 @@
       "ok": true,
       "count": 16,
       "listed": 16,
-      "fetched_at": "2026-11-24T14:42:40.050570+00:00"
+      "fetched_at": "2026-11-25T00:32:08.040678+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
       "count": 13,
       "listed": 13,
-      "fetched_at": "2026-11-24T14:42:40.050570+00:00"
+      "fetched_at": "2026-11-25T00:32:08.040678+00:00"
     },
     "trending:daily/python": {
       "ok": true,
       "count": 23,
       "listed": 23,
-      "fetched_at": "2026-11-24T14:42:40.050570+00:00"
+      "fetched_at": "2026-11-25T00:32:08.040678+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
       "count": 17,
       "listed": 17,
-      "fetched_at": "2026-11-24T14:42:40.050570+00:00"
+      "fetched_at": "2026-11-25T00:32:08.040678+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 15,
       "listed": 15,
-      "fetched_at": "2026-11-24T14:42:40.050570+00:00"
+      "fetched_at": "2026-11-25T00:32:08.040678+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
       "count": 18,
       "listed": 18,
-      "fetched_at": "2026-11-24T14:42:40.050570+00:00"
+      "fetched_at": "2026-11-25T00:32:08.040678+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
       "count": 15,
       "listed": 15,
-      "fetched_at": "2026-11-24T14:42:40.050570+00:00"
+      "fetched_at": "2026-11-25T00:32:08.040678+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 7,
       "listed": 7,
-      "fetched_at": "2026-11-24T14:42:40.050570+00:00"
+      "fetched_at": "2026-11-25T00:32:08.040678+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-11-24T14:42:40.050570+00:00"
+      "fetched_at": "2026-11-25T00:32:08.040678+00:00"
     }
   },
   "schema_version": 1
