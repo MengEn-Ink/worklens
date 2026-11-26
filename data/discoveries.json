@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T14:05:58.137887+00:00",
+  "generated_at": "2026-11-26T00:07:48.361845+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -80,15 +80,15 @@
         "superpowers"
       ],
       "language": "Shell",
-      "stars": 325635,
-      "forks": 28881,
-      "open_issues": 359,
+      "stars": 326596,
+      "forks": 28981,
+      "open_issues": 372,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-11-03T23:24:58Z",
-      "updated_at": "2026-11-24T14:40:45Z",
+      "pushed_at": "2026-11-24T23:59:04Z",
+      "updated_at": "2026-11-26T00:07:31Z",
       "source": "trending:daily/all",
-      "collected_at": "2026-11-24T14:42:40.705118+00:00",
+      "collected_at": "2026-11-26T00:07:48.645282+00:00",
       "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
@@ -1000,15 +1000,15 @@
         "workflow-automation"
       ],
       "language": "Python",
-      "stars": 80223,
-      "forks": 9850,
-      "open_issues": 1922,
+      "stars": 80322,
+      "forks": 9883,
+      "open_issues": 1925,
       "license": null,
       "archived": false,
       "pushed_at": "2026-09-18T07:16:11Z",
-      "updated_at": "2026-11-24T14:31:51Z",
+      "updated_at": "2026-11-26T00:06:38Z",
       "source": "trending:weekly/python",
-      "collected_at": "2026-11-24T14:42:45.622204+00:00",
+      "collected_at": "2026-11-26T00:07:51.898512+00:00",
       "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
@@ -1370,15 +1370,15 @@
         "large-language-model"
       ],
       "language": "Python",
-      "stars": 69977,
-      "forks": 9117,
-      "open_issues": 63,
+      "stars": 70931,
+      "forks": 9220,
+      "open_issues": 64,
       "license": "Apache-2.0",
       "archived": false,
       "pushed_at": "2026-11-23T04:01:07Z",
-      "updated_at": "2026-11-24T14:42:13Z",
+      "updated_at": "2026-11-26T00:02:36Z",
       "source": "trending:daily/all",
-      "collected_at": "2026-11-24T14:42:41.315616+00:00",
+      "collected_at": "2026-11-26T00:07:48.968663+00:00",
       "also_seen_in": [
         "trending:daily/python",
         "trending:weekly/python"
@@ -2384,15 +2384,15 @@
         "orchestration"
       ],
       "language": "Go",
-      "stars": 38985,
-      "forks": 6049,
-      "open_issues": 117,
+      "stars": 39103,
+      "forks": 6050,
+      "open_issues": 112,
       "license": "Apache-2.0",
       "archived": false,
-      "pushed_at": "2026-11-24T14:26:30Z",
-      "updated_at": "2026-11-24T14:27:30Z",
+      "pushed_at": "2026-11-25T21:10:26Z",
+      "updated_at": "2026-11-26T00:00:33Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-11-24T14:42:47.863732+00:00",
+      "collected_at": "2026-11-26T00:07:53.330127+00:00",
       "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
@@ -4035,15 +4035,15 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "stars": 19571,
-      "forks": 2802,
-      "open_issues": 448,
+      "stars": 19601,
+      "forks": 2808,
+      "open_issues": 443,
       "license": "MIT",
       "archived": false,
-      "pushed_at": "2026-11-24T14:26:43Z",
-      "updated_at": "2026-11-24T14:35:45Z",
+      "pushed_at": "2026-11-25T11:13:09Z",
+      "updated_at": "2026-11-25T23:37:10Z",
       "source": "trending:weekly/python",
-      "collected_at": "2026-11-24T14:42:44.443280+00:00",
+      "collected_at": "2026-11-26T00:07:51.132595+00:00",
       "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
@@ -4052,15 +4052,15 @@
       "description": "Cursor plugin specification and official plugins",
       "topics": [],
       "language": "TypeScript",
-      "stars": 19055,
-      "forks": 2058,
-      "open_issues": 692,
+      "stars": 19524,
+      "forks": 2106,
+      "open_issues": 702,
       "license": null,
       "archived": false,
-      "pushed_at": "2026-11-24T10:37:37Z",
-      "updated_at": "2026-11-24T14:41:29Z",
+      "pushed_at": "2026-11-25T23:42:15Z",
+      "updated_at": "2026-11-26T00:04:15Z",
       "source": "trending:daily/all",
-      "collected_at": "2026-11-24T14:42:41.936863+00:00",
+      "collected_at": "2026-11-26T00:07:49.414756+00:00",
       "also_seen_in": [
         "trending:daily/typescript"
       ],
@@ -4390,15 +4390,15 @@
         "smtp"
       ],
       "language": "Go",
-      "stars": 16470,
-      "forks": 1835,
+      "stars": 16482,
+      "forks": 1838,
       "open_issues": 261,
       "license": "AGPL-3.0",
       "archived": false,
       "pushed_at": "2026-06-11T06:44:04Z",
-      "updated_at": "2026-11-24T12:18:39Z",
+      "updated_at": "2026-11-25T23:54:33Z",
       "source": "trending:weekly/go",
-      "collected_at": "2026-11-24T14:42:47.306108+00:00",
+      "collected_at": "2026-11-26T00:07:52.931850+00:00",
       "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
@@ -6398,15 +6398,15 @@
         "email"
       ],
       "language": "TypeScript",
-      "stars": 7555,
-      "forks": 1346,
-      "open_issues": 61,
+      "stars": 7680,
+      "forks": 1378,
+      "open_issues": 109,
       "license": "AGPL-3.0",
       "archived": false,
-      "pushed_at": "2026-11-24T12:20:40Z",
-      "updated_at": "2026-11-24T14:36:47Z",
+      "pushed_at": "2026-11-24T20:12:26Z",
+      "updated_at": "2026-11-26T00:00:10Z",
       "source": "trending:daily/typescript",
-      "collected_at": "2026-11-24T14:42:43.623945+00:00",
+      "collected_at": "2026-11-26T00:07:50.590396+00:00",
       "also_seen_in": [
         "trending:weekly/typescript"
       ],
@@ -6568,15 +6568,15 @@
         "wireless"
       ],
       "language": "Rust",
-      "stars": 6994,
-      "forks": 1126,
+      "stars": 7065,
+      "forks": 1131,
       "open_issues": 19,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-11-23T19:32:52Z",
-      "updated_at": "2026-11-24T14:24:29Z",
+      "updated_at": "2026-11-25T23:55:18Z",
       "source": "trending:weekly/rust",
-      "collected_at": "2026-11-24T14:42:49.217878+00:00",
+      "collected_at": "2026-11-26T00:07:54.283485+00:00",
       "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
@@ -6818,6 +6818,26 @@
       "first_seen_at": "2026-11-17T02:51:36.336893+00:00"
     },
     {
+      "full_name": "google-research/paper-orchestra",
+      "html_url": "https://github.com/google-research/paper-orchestra",
+      "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+      "topics": [
+        "ai-research-assistant",
+        "multi-agent-systems"
+      ],
+      "language": "Python",
+      "stars": 6422,
+      "forks": 832,
+      "open_issues": 62,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-11-15T18:08:08Z",
+      "updated_at": "2026-11-25T23:59:51Z",
+      "source": "trending:daily/python",
+      "collected_at": "2026-11-26T00:07:49.972934+00:00",
+      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
+    },
+    {
       "full_name": "sadmann7/tablecn",
       "html_url": "https://github.com/sadmann7/tablecn",
       "description": "Data table and data grid components built with shadcn/ui, featuring sorting, filtering, pagination, infinite scrolling, and real-time collaboration.",
@@ -6976,26 +6996,6 @@
       "source": "trending:daily/all",
       "collected_at": "2026-11-25T14:07:12.627394+00:00",
       "first_seen_at": "2026-11-20T16:53:19.669948+00:00"
-    },
-    {
-      "full_name": "google-research/paper-orchestra",
-      "html_url": "https://github.com/google-research/paper-orchestra",
-      "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
-      "topics": [
-        "ai-research-assistant",
-        "multi-agent-systems"
-      ],
-      "language": "Python",
-      "stars": 6251,
-      "forks": 806,
-      "open_issues": 57,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-15T18:08:08Z",
-      "updated_at": "2026-11-24T14:37:02Z",
-      "source": "trending:daily/python",
-      "collected_at": "2026-11-24T14:42:42.964027+00:00",
-      "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
       "full_name": "Eglantine-Community/Eglantine",
@@ -7564,6 +7564,34 @@
       "first_seen_at": "2026-11-16T18:16:50.356118+00:00"
     },
     {
+      "full_name": "crmne/zapfast",
+      "html_url": "https://github.com/crmne/zapfast",
+      "description": "ZapFast: a fast, native WhatsApp client in Rust and egui",
+      "topics": [
+        "chat",
+        "desktop-app",
+        "egui",
+        "linux",
+        "macos",
+        "messaging",
+        "rust",
+        "whatsapp",
+        "whatsapp-client",
+        "windows"
+      ],
+      "language": "Rust",
+      "stars": 5076,
+      "forks": 524,
+      "open_issues": 371,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-24T21:32:01Z",
+      "updated_at": "2026-11-26T00:00:51Z",
+      "source": "trending:weekly/rust",
+      "collected_at": "2026-11-26T00:07:54.702598+00:00",
+      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
+    },
+    {
       "full_name": "microsoft/PyRIT",
       "html_url": "https://github.com/microsoft/PyRIT",
       "description": "Open-source AI red teaming toolkit from Microsoft. Test generative AI systems with automated scans, adaptive multi-turn attacks, and a web UI.",
@@ -7670,34 +7698,6 @@
       "source": "search:topic:prompt-engineering stars:>300 archived:false",
       "collected_at": "2026-11-25T14:06:44.396027+00:00",
       "first_seen_at": "2026-11-03T08:11:19.110821+00:00"
-    },
-    {
-      "full_name": "crmne/zapfast",
-      "html_url": "https://github.com/crmne/zapfast",
-      "description": "ZapFast: a fast, native WhatsApp client in Rust and egui",
-      "topics": [
-        "chat",
-        "desktop-app",
-        "egui",
-        "linux",
-        "macos",
-        "messaging",
-        "rust",
-        "whatsapp",
-        "whatsapp-client",
-        "windows"
-      ],
-      "language": "Rust",
-      "stars": 5021,
-      "forks": 515,
-      "open_issues": 336,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-23T11:29:19Z",
-      "updated_at": "2026-11-24T14:27:40Z",
-      "source": "trending:weekly/rust",
-      "collected_at": "2026-11-24T14:42:49.751419+00:00",
-      "first_seen_at": "2026-11-18T17:07:57.866129+00:00"
     },
     {
       "full_name": "modelflare-ai/AnyModelBot",
@@ -8225,15 +8225,15 @@
       "description": "An open-source OpusClip alternative",
       "topics": [],
       "language": "Python",
-      "stars": 4153,
-      "forks": 991,
-      "open_issues": 129,
+      "stars": 4215,
+      "forks": 1003,
+      "open_issues": 130,
       "license": "NOASSERTION",
       "archived": false,
-      "pushed_at": "2026-11-24T08:11:39Z",
-      "updated_at": "2026-11-24T14:22:19Z",
+      "pushed_at": "2026-11-25T23:40:04Z",
+      "updated_at": "2026-11-25T22:55:45Z",
       "source": "trending:weekly/python",
-      "collected_at": "2026-11-24T14:42:45.006422+00:00",
+      "collected_at": "2026-11-26T00:07:51.531782+00:00",
       "first_seen_at": "2026-11-17T13:00:21.589183+00:00"
     },
     {
@@ -8759,15 +8759,15 @@
       "description": "A free Chromium browser for the Mac: Arc's sidebar, Dia's polish. Chat on Discord: discord.gg/TdhuXrbcA6",
       "topics": [],
       "language": "TypeScript",
-      "stars": 2937,
-      "forks": 387,
-      "open_issues": 1161,
+      "stars": 3019,
+      "forks": 401,
+      "open_issues": 1125,
       "license": "GPL-3.0",
       "archived": false,
-      "pushed_at": "2026-11-24T14:40:41Z",
-      "updated_at": "2026-11-24T14:25:49Z",
+      "pushed_at": "2026-11-26T00:07:22Z",
+      "updated_at": "2026-11-25T23:54:29Z",
       "source": "trending:weekly/typescript",
-      "collected_at": "2026-11-24T14:42:46.381097+00:00",
+      "collected_at": "2026-11-26T00:07:52.445525+00:00",
       "first_seen_at": "2026-11-23T14:18:49.147702+00:00"
     },
     {
@@ -10384,6 +10384,23 @@
       "first_seen_at": "2026-10-29T01:26:06.513268+00:00"
     },
     {
+      "full_name": "misakano7545/workbuddy2api-panel",
+      "html_url": "https://github.com/misakano7545/workbuddy2api-panel",
+      "description": "把腾讯WorkBuddy账号变成 OpenAI 兼容 API 的多账号网关，同时自动完成任务中心全部任务，附 Web 管理面板（账号池可视化 / 积分任务 / 配置热更新）。基于 Sliverkiss/workbuddy2api 的增强分支",
+      "topics": [],
+      "language": "Go",
+      "stars": 1472,
+      "forks": 374,
+      "open_issues": 3,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-25T15:28:15Z",
+      "updated_at": "2026-11-25T22:42:31Z",
+      "source": "trending:weekly/go",
+      "collected_at": "2026-11-26T00:07:53.721519+00:00",
+      "first_seen_at": "2026-11-24T14:42:40.050570+00:00"
+    },
+    {
       "full_name": "traceroot-ai/traceroot",
       "html_url": "https://github.com/traceroot-ai/traceroot",
       "description": "traceroot: the open-source platform that continuously improves your ai agents.",
@@ -10427,23 +10444,6 @@
       "source": "search:topic:rss stars:>200 archived:false",
       "collected_at": "2026-11-25T14:06:58.499606+00:00",
       "first_seen_at": "2026-11-25T14:05:58.137887+00:00"
-    },
-    {
-      "full_name": "misakano7545/workbuddy2api-panel",
-      "html_url": "https://github.com/misakano7545/workbuddy2api-panel",
-      "description": "把腾讯WorkBuddy账号变成 OpenAI 兼容 API 的多账号网关，同时自动完成任务中心全部任务，附 Web 管理面板（账号池可视化 / 积分任务 / 配置热更新）。基于 Sliverkiss/workbuddy2api 的增强分支",
-      "topics": [],
-      "language": "Go",
-      "stars": 1442,
-      "forks": 367,
-      "open_issues": 6,
-      "license": "MIT",
-      "archived": false,
-      "pushed_at": "2026-11-24T07:20:16Z",
-      "updated_at": "2026-11-24T14:19:47Z",
-      "source": "trending:weekly/go",
-      "collected_at": "2026-11-24T14:42:48.410689+00:00",
-      "first_seen_at": "2026-11-24T14:42:40.050570+00:00"
     },
     {
       "full_name": "INK-Q/agy-fast",
@@ -14328,177 +14328,207 @@
   "source_status": {
     "repository:wuyoscar/AISafetyHot-Hub": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "repository:DIYgod/RSSHub": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "repository:mshibanami/GitHubTrendingRSS": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "repository:CodeSigils/skill-discovery": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "repository:VoltAgent/awesome-agent-skills": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "profile:MengEn-Ink:owned": {
       "ok": true,
       "count": 30,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "profile:MengEn-Ink:starred": {
       "ok": true,
       "count": 64,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:topic:agent-skills stars:>50 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:topic:github-pages stars:>100 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:topic:design-system stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:topic:developer-tools stars:>500 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:topic:ai-agent stars:>500 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:created:>{days_ago:30} stars:>300": {
       "ok": true,
       "count": 30,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:created:>{days_ago:90} topic:ai-agent stars:>100": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:topic:claude-code stars:>50 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:topic:prompt-engineering stars:>300 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:topic:workflow-automation stars:>300 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:topic:shadcn-ui stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:topic:react-components stars:>500 archived:false pushed:>{days_ago:60}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:topic:rss stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:topic:self-hosted stars:>2000 archived:false pushed:>{days_ago:30}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-25T14:05:58.137887+00:00"
     },
     "trending:daily/all": {
       "ok": true,
       "count": 16,
       "listed": 16,
-      "fetched_at": "2026-11-25T14:05:58.137887+00:00"
+      "fetched_at": "2026-11-26T00:07:48.361845+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
       "count": 13,
       "listed": 13,
-      "fetched_at": "2026-11-25T14:05:58.137887+00:00"
+      "fetched_at": "2026-11-26T00:07:48.361845+00:00"
     },
     "trending:daily/python": {
       "ok": true,
       "count": 23,
       "listed": 23,
-      "fetched_at": "2026-11-25T14:05:58.137887+00:00"
+      "fetched_at": "2026-11-26T00:07:48.361845+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
       "count": 17,
       "listed": 17,
-      "fetched_at": "2026-11-25T14:05:58.137887+00:00"
+      "fetched_at": "2026-11-26T00:07:48.361845+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 15,
       "listed": 15,
-      "fetched_at": "2026-11-25T14:05:58.137887+00:00"
+      "fetched_at": "2026-11-26T00:07:48.361845+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
       "count": 18,
       "listed": 18,
-      "fetched_at": "2026-11-25T14:05:58.137887+00:00"
+      "fetched_at": "2026-11-26T00:07:48.361845+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
       "count": 15,
       "listed": 15,
-      "fetched_at": "2026-11-25T14:05:58.137887+00:00"
+      "fetched_at": "2026-11-26T00:07:48.361845+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 7,
       "listed": 7,
-      "fetched_at": "2026-11-25T14:05:58.137887+00:00"
+      "fetched_at": "2026-11-26T00:07:48.361845+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-11-25T14:05:58.137887+00:00"
+      "fetched_at": "2026-11-26T00:07:48.361845+00:00"
     }
   },
   "schema_version": 1
