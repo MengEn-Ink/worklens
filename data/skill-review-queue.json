@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-27T00:32:10.170000+00:00",
+  "generated_at": "2026-11-27T13:40:56.456737+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -11709,6 +11709,38 @@
       "history": [
         {
           "at": "2026-11-27T00:32:10.169679+00:00",
+          "event": "enqueued",
+          "by": "worklens-bot",
+          "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
+        }
+      ]
+    },
+    {
+      "id": "SR-0350",
+      "subject": "obsidianmd/obsidian-skills",
+      "html_url": "https://github.com/obsidianmd/obsidian-skills",
+      "source": "trending:weekly/all",
+      "also_seen_in": [],
+      "enqueued_at": "2026-11-27T13:40:56.444870+00:00",
+      "metadata_synced_at": "2026-11-27T13:40:56.444870+00:00",
+      "state": "candidate",
+      "license": "MIT",
+      "archived": false,
+      "stars": 54213,
+      "pushed_at": "2026-11-26T17:50:16Z",
+      "checks": {
+        "license_declared": {
+          "status": "pass",
+          "evidence": "GitHub API：license.spdx_id=MIT",
+          "checked_at": "2026-11-27T13:40:56.444870+00:00",
+          "by": "worklens-bot"
+        }
+      },
+      "risk_flags": [],
+      "trial": null,
+      "history": [
+        {
+          "at": "2026-11-27T13:40:56.444870+00:00",
           "event": "enqueued",
           "by": "worklens-bot",
           "note": "从 discoveries.json 自动入队（Skill 分类，仅公开元数据）"
