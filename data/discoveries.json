@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T07:35:20.293124+00:00",
+  "generated_at": "2026-11-28T16:45:46.691238+00:00",
   "candidates": [
     {
       "full_name": "morluto/rea",
@@ -1700,23 +1700,6 @@
       "first_seen_at": "2026-11-19T12:45:02.222720+00:00"
     },
     {
-      "full_name": "vercel-labs/agent-browser",
-      "html_url": "https://github.com/vercel-labs/agent-browser",
-      "description": "Browser automation CLI for AI agents",
-      "topics": [],
-      "language": "Rust",
-      "stars": 54374,
-      "forks": 3793,
-      "open_issues": 498,
-      "license": "Apache-2.0",
-      "archived": false,
-      "pushed_at": "2026-11-27T02:10:30Z",
-      "updated_at": "2026-11-28T07:33:56Z",
-      "source": "trending:weekly/rust",
-      "collected_at": "2026-11-28T07:36:50.931206+00:00",
-      "first_seen_at": "2026-11-03T19:22:39.529433+00:00"
-    },
-    {
       "full_name": "obsidianmd/obsidian-skills",
       "html_url": "https://github.com/obsidianmd/obsidian-skills",
       "description": "Teach your agent to use Obsidian and open formats including Markdown, Bases, JSON Canvas.",
@@ -1743,16 +1726,33 @@
         "skills"
       ],
       "language": "Shell",
-      "stars": 54213,
-      "forks": 3858,
+      "stars": 54541,
+      "forks": 3879,
       "open_issues": 5,
       "license": "MIT",
       "archived": false,
       "pushed_at": "2026-11-26T17:50:16Z",
-      "updated_at": "2026-11-27T13:39:52Z",
+      "updated_at": "2026-11-28T16:43:33Z",
       "source": "trending:weekly/all",
-      "collected_at": "2026-11-27T13:40:15.093944+00:00",
+      "collected_at": "2026-11-28T16:45:47.101127+00:00",
       "first_seen_at": "2026-11-27T13:40:14.515021+00:00"
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "html_url": "https://github.com/vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "topics": [],
+      "language": "Rust",
+      "stars": 54374,
+      "forks": 3793,
+      "open_issues": 498,
+      "license": "Apache-2.0",
+      "archived": false,
+      "pushed_at": "2026-11-27T02:10:30Z",
+      "updated_at": "2026-11-28T07:33:56Z",
+      "source": "trending:weekly/rust",
+      "collected_at": "2026-11-28T07:36:50.931206+00:00",
+      "first_seen_at": "2026-11-03T19:22:39.529433+00:00"
     },
     {
       "full_name": "CherryHQ/cherry-studio",
@@ -8840,6 +8840,23 @@
       "first_seen_at": "2026-11-20T06:52:29.892030+00:00"
     },
     {
+      "full_name": "NYLLON-SOFTWARE/SignuDoc",
+      "html_url": "https://github.com/NYLLON-SOFTWARE/SignuDoc",
+      "description": "Open-source document signature platform. Not affiliated with DocuSign. ",
+      "topics": [],
+      "language": "TypeScript",
+      "stars": 3668,
+      "forks": 785,
+      "open_issues": 82,
+      "license": "MIT",
+      "archived": false,
+      "pushed_at": "2026-11-27T06:35:54Z",
+      "updated_at": "2026-11-28T16:36:25Z",
+      "source": "trending:daily/typescript",
+      "collected_at": "2026-11-28T16:45:47.805119+00:00",
+      "first_seen_at": "2026-11-28T16:45:46.691238+00:00"
+    },
+    {
       "full_name": "Athou/commafeed",
       "html_url": "https://github.com/Athou/commafeed",
       "description": "Google Reader inspired self-hosted personal RSS reader.",
@@ -14748,177 +14765,207 @@
   "source_status": {
     "repository:wuyoscar/AISafetyHot-Hub": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "repository:DIYgod/RSSHub": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "repository:mshibanami/GitHubTrendingRSS": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "repository:CodeSigils/skill-discovery": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "repository:VoltAgent/awesome-agent-skills": {
       "ok": true,
+      "count": 1,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "profile:MengEn-Ink:owned": {
       "ok": true,
       "count": 30,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "profile:MengEn-Ink:starred": {
       "ok": true,
       "count": 64,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:topic:agent-skills stars:>50 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:topic:github-pages stars:>100 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:topic:design-system stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:topic:developer-tools stars:>500 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:topic:ai-agent stars:>500 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:created:>{days_ago:30} stars:>300": {
       "ok": true,
       "count": 30,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:created:>{days_ago:90} topic:ai-agent stars:>100": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:topic:mcp stars:>100 archived:false pushed:>{days_ago:30}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:topic:claude-code stars:>50 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:topic:llm stars:>1000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:topic:rag stars:>300 archived:false pushed:>{days_ago:30}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:topic:prompt-engineering stars:>300 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:topic:workflow-automation stars:>300 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:topic:shadcn-ui stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:topic:react-components stars:>500 archived:false pushed:>{days_ago:60}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:topic:rss stars:>200 archived:false": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:topic:self-hosted stars:>2000 archived:false pushed:>{days_ago:30}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "search:topic:cli stars:>2000 archived:false pushed:>{days_ago:14}": {
       "ok": true,
       "count": 20,
+      "cached": true,
       "fetched_at": "2026-11-28T07:35:20.293124+00:00"
     },
     "trending:daily/all": {
       "ok": true,
       "count": 16,
       "listed": 16,
-      "fetched_at": "2026-11-28T07:35:20.293124+00:00"
+      "fetched_at": "2026-11-28T16:45:46.691238+00:00"
     },
     "trending:weekly/all": {
       "ok": true,
       "count": 15,
       "listed": 15,
-      "fetched_at": "2026-11-28T07:35:20.293124+00:00"
+      "fetched_at": "2026-11-28T16:45:46.691238+00:00"
     },
     "trending:daily/python": {
       "ok": true,
       "count": 24,
       "listed": 24,
-      "fetched_at": "2026-11-28T07:35:20.293124+00:00"
+      "fetched_at": "2026-11-28T16:45:46.691238+00:00"
     },
     "trending:daily/typescript": {
       "ok": true,
-      "count": 17,
-      "listed": 17,
-      "fetched_at": "2026-11-28T07:35:20.293124+00:00"
+      "count": 18,
+      "listed": 18,
+      "fetched_at": "2026-11-28T16:45:46.691238+00:00"
     },
     "trending:weekly/python": {
       "ok": true,
       "count": 15,
       "listed": 15,
-      "fetched_at": "2026-11-28T07:35:20.293124+00:00"
+      "fetched_at": "2026-11-28T16:45:46.691238+00:00"
     },
     "trending:weekly/typescript": {
       "ok": true,
       "count": 19,
       "listed": 19,
-      "fetched_at": "2026-11-28T07:35:20.293124+00:00"
+      "fetched_at": "2026-11-28T16:45:46.691238+00:00"
     },
     "trending:weekly/go": {
       "ok": true,
       "count": 15,
       "listed": 15,
-      "fetched_at": "2026-11-28T07:35:20.293124+00:00"
+      "fetched_at": "2026-11-28T16:45:46.691238+00:00"
     },
     "trending:weekly/rust": {
       "ok": true,
       "count": 7,
       "listed": 7,
-      "fetched_at": "2026-11-28T07:35:20.293124+00:00"
+      "fetched_at": "2026-11-28T16:45:46.691238+00:00"
     },
     "mention:ai-news": {
       "ok": true,
       "count": 2,
       "listed": 2,
-      "fetched_at": "2026-11-28T07:35:20.293124+00:00"
+      "fetched_at": "2026-11-28T16:45:46.691238+00:00"
     }
   },
   "schema_version": 1

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-28T07:38:17.856418+00:00",
+  "generated_at": "2026-11-28T16:46:12.817551+00:00",
   "policy": {
     "auto_install": false,
     "human_gate": "candidate 之后的所有流转必须由真人记录 decided_by、时间与理由",
@@ -11725,11 +11725,11 @@
       "source": "trending:weekly/all",
       "also_seen_in": [],
       "enqueued_at": "2026-11-27T13:40:56.444870+00:00",
-      "metadata_synced_at": "2026-11-27T13:40:56.444870+00:00",
+      "metadata_synced_at": "2026-11-28T16:46:12.805072+00:00",
       "state": "candidate",
       "license": "MIT",
       "archived": false,
-      "stars": 54213,
+      "stars": 54541,
       "pushed_at": "2026-11-26T17:50:16Z",
       "checks": {
         "license_declared": {
